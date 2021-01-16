@@ -12,9 +12,13 @@
       </div>
     </PageHeader>
     <Main>
-      <div :style="{ height: '100vh' }">
-        <Heading as="h5">StrikingDash</Heading>
-      </div>
+      <a-row :gutter="25">
+        <a-col :sm="24" :xs="24">
+          <Cards headless>
+            <Heading as="h3">Skeleton Page</Heading>
+          </Cards>
+        </a-col>
+      </a-row>
     </Main>
   </div>
 </template>
@@ -28,6 +32,7 @@ import { Main } from "../styled";
 import { PageHeader } from "../../components/pageHeaders/PageHeaders";
 import { PlusIcon } from "vue-feather-icons";
 import Heading from "../../components/heading/Heading";
+import Cards from "../../components/cards/frame/CardsFrame";
 
 export default {
   name: "Sidebar",
@@ -40,6 +45,7 @@ export default {
     Main,
     PageHeader,
     Heading,
+    Cards,
   },
   data() {
     return {};

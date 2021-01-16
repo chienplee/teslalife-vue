@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 
 import router from "./routes/AdminRoutes";
-import store from "@/core/services/store";
+import store from "@/vuex/store";
 import './static/css/style.css';
 // Vue 3rd party plugins
 import "@/core/plugins/ant-design";

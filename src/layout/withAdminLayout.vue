@@ -195,6 +195,7 @@ import { SearchIcon, XIcon, MoreVerticalIcon } from "vue-feather-icons";
 import AuthInfo from "../components/utilities/auth-info/info";
 import AsideItems from "./Aside";
 import TopMenu from "./TopMenuItems";
+import { mapGetters } from "vuex";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -221,16 +222,16 @@ export default {
   },
   data() {
     return {
-      darkMode: false,
       collapsed: false,
       hide: true,
       searchHide: true,
       customizerAction: false,
       activeSearch: false,
-      rtl: false,
-      topMenu: false,
       innerWidth: window.innerWidth,
     };
+  },
+  computed: {
+    ...mapGetters(["rtl", "darkMode", "topMenu"]),
   },
   created() {
     this.collapsed = window.innerWidth <= 1200 && true;

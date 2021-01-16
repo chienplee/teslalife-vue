@@ -42,6 +42,7 @@
 import { SearchIcon } from "vue-feather-icons";
 import { Div } from "./header-search-style";
 import Popover from "../popup/Popup";
+import { mapGetters } from "vuex";
 
 export default {
   name: "HeaderSearch",
@@ -111,9 +112,11 @@ export default {
           count: 100000,
         },
       ],
-      rtl: false,
       visible: false,
     };
+  },
+  computed: {
+    ...mapGetters(["rtl"]),
   },
   methods: {
     search: function(e, searchDatas) {

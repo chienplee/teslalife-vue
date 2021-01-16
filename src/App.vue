@@ -2,9 +2,9 @@
   <ThemeProvider
     :theme="{
       ...theme,
-      rtl: false,
-      topMenu: false,
-      darkMode: false,
+      rtl,
+      topMenu,
+      darkMode,
     }"
   >
     <WithAdminLayout />
@@ -14,6 +14,7 @@
 import { ThemeProvider } from "vue-styled-components";
 import { theme } from "./config/theme/themeVariables";
 import WithAdminLayout from "./layout/withAdminLayout";
+import { mapGetters } from "vuex";
 
 export default {
   name: "App",
@@ -27,10 +28,8 @@ export default {
       theme,
     };
   },
-
-  methods: {},
-  created() {
-    this.$store.dispatch("ACTION_LOAD_SIDEBAR_MENU");
+  computed: {
+    ...mapGetters(["rtl", "darkMode", "topMenu"]),
   },
 };
 </script>

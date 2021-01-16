@@ -9,7 +9,7 @@ export default new Router({
         {
           path: '/',
           name: 'dashboard',
-          component: () => import("@/container/ui-elements/Home.vue"),
+          component: () => import("@/view/pages/BlankPage.vue"),
         },        
       ]
   });

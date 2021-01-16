@@ -41,12 +41,24 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+
+      <!-- <p slot="title" class="sidebar-nav-title">Pages</p> -->
+      <a-menu-item key="starter">
+        <CircleIcon />
+        <span>
+          <router-link @click="toggleCollapsed" to="/starter`">
+            Blank Page
+          </router-link>
+        </span>
+      </a-menu-item>
     </template>
   </a-menu>
 </template>
 <script>
-import { HomeIcon } from "vue-feather-icons";
+import { HomeIcon, CircleIcon } from "vue-feather-icons";
 import VueTypes from "vue-types";
+import { mapGetters } from "vuex";
+
 export default {
   name: "AsideItems",
   props: {
@@ -57,8 +69,10 @@ export default {
       mode: "inline",
       rootSubmenuKeys: ["sub1", "sub2", "sub4"],
       openKeys: ["sub1"],
-      darkMode: false,
     };
+  },
+  computed: {
+    ...mapGetters(["darkMode"]),
   },
   methods: {
     onOpenChange(openKeys) {
@@ -74,6 +88,7 @@ export default {
   },
   components: {
     HomeIcon,
+    CircleIcon,
   },
 };
 </script>
