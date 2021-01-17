@@ -10,6 +10,11 @@ export default new Router({
           path: '/',
           name: 'dashboard',
           component: () => import("@/view/pages/BlankPage.vue"),
+        },
+        {
+          path: '/starter',
+          name: 'starter',
+          component: () => import("@/view/pages/BlankPage.vue"),
         },        
       ]
   });

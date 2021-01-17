@@ -46,7 +46,7 @@
       <a-menu-item key="starter">
         <CircleIcon />
         <span>
-          <router-link @click="toggleCollapsed" to="/starter`">
+          <router-link @click="toggleCollapsed" to="/starter">
             Blank Page
           </router-link>
         </span>
