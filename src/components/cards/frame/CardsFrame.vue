@@ -55,7 +55,7 @@ export default {
       VueTypes.object,
       VueTypes.node,
     ]),
-    size: VueTypes.oneOf(["default", "small"]).def("default"),
+    size: VueTypes.oneOf(["default", "small", "large"]).def("default"),
     more: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,

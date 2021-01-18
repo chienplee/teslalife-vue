@@ -6,7 +6,7 @@ import store from "@/vuex/store";
 import './static/css/style.css';
 // Vue 3rd party plugins
 import "@/core/plugins/ant-design";
-import "@/core/plugins/fontawesome";
+import "@/core/plugins/fonts";
 
 Vue.config.productionTip = false;
 

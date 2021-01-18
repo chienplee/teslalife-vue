@@ -20,7 +20,7 @@ const grayHover = '#363A51';
 const lightColor = '#9299B8';
 const lightHover = '#e2e6ea';
 const whiteColor = '#ffffff';
-const dashColor = '#E3E6EF';
+const dashColor = '#5A5F7D';
 const whiteHover = '#5A5F7D';
 const extraLightColor = '#ADB4D2';
 const dangerColor = '#FF4D4F';
@@ -35,9 +35,9 @@ const lightGrayColor = '#868EAE';
 const sliderRailColor = 'rgba(95,99,242,0.2)';
 const graySolid = '#9299b8';
 const pinkColor = '#F63178';
-const btnlg = '48px';
-const btnsm = '36px';
-const btnxs = '29px';
+const btnlg = '52px !important';
+const btnsm = '36px !important';
+const btnxs = '29px !important';
 
 const theme = {
   'primary-color': primaryColor, // primary color for all components
@@ -66,6 +66,7 @@ const theme = {
   black: '#000',
   pink: pinkColor,
   'dash-color': dashColor, // info state color
+  'dash-hover': grayHover, // info state color
   'extra-light-color': extraLightColor, // info state color
   'danger-color': dangerColor,
   'danger-hover': dangerHover,

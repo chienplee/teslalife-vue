@@ -42,20 +42,47 @@
         </a-menu-item>
       </a-sub-menu>
 
-      <!-- <p slot="title" class="sidebar-nav-title">Pages</p> -->
-      <a-menu-item key="starter">
-        <CircleIcon />
-        <span>
-          <router-link @click="toggleCollapsed" to="/starter">
-            Blank Page
-          </router-link>
-        </span>
-      </a-menu-item>
+      <a-menu-item-group key="features">
+        <p slot="title" class="sidebar-nav-title">FEATURES</p>
+        <a-sub-menu key="components">
+          <template slot="title"
+            ><LayersIcon /><span>UI Elements</span></template
+          >
+          <a-menu-item key="alerts">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/alerts"
+            >
+              Alerts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="button">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/button"
+            >
+              Buttons
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
+      </a-menu-item-group>
+
+      <a-menu-item-group key="pages">
+        <p slot="title" class="sidebar-nav-title">Pages</p>
+        <a-menu-item key="starter">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/starter">
+              Blank Page
+            </router-link>
+          </span>
+        </a-menu-item>
+      </a-menu-item-group>
     </template>
   </a-menu>
 </template>
 <script>
-import { HomeIcon, CircleIcon } from "vue-feather-icons";
+import { HomeIcon, CircleIcon, LayersIcon } from "vue-feather-icons";
 import VueTypes from "vue-types";
 import { mapGetters } from "vuex";
 
@@ -89,6 +116,7 @@ export default {
   components: {
     HomeIcon,
     CircleIcon,
+    LayersIcon,
   },
 };
 </script>

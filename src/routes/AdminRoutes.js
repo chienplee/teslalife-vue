@@ -12,6 +12,16 @@ export default new Router({
           component: () => import("@/view/pages/BlankPage.vue"),
         },
         {
+          path: '/components/alerts',
+          name: 'alerts',
+          component: () => import("@/view/uiElements/Alerts.vue"),
+        },
+        {
+          path: '/components/button',
+          name: 'button',
+          component: () => import("@/view/uiElements/Button.vue"),
+        },          
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),

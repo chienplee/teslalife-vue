@@ -9,30 +9,30 @@ const props = [
     "size",
     "outlined",
     "ghost",
-    "transparented",
+    "transparent",
     "raised",
     "squared",
     "color",
     "social",
-    "load",
+    "loading",
   ];
 const outline = (theme, type) => {
   return `
-        background: transparent;
-        border: 1px solid ${type !== 'light' ? theme[`${type}-color`] : theme['border-color-normal']};
-        color: ${type !== 'default' && theme[`${type}-color`]};
+        background: transparent !important;
+        border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'light' ? theme[`${type}-color`] : theme['border-color-normal']} !important;
+        color: ${type !== 'default' && theme[`${type}-color`]} !important;
   
         &:hover, &:focus {
-          background: transparent;
-          border: 1px solid ${type !== 'default' && theme[`${type}-hover`]};
-          color: ${type !== 'default' && theme[`${type}-hover`]};
+          background: transparent !important;
+          border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'default' && theme[`${type}-hover`]} !important;
+          color: ${type !== 'default' && theme[`${type}-hover`]} !important;
         }
     `;
 };
 
 const ghosts = theme => {
   return `
-          background: transparent;
+          background: transparent !important;
           border: 1px solid ${theme['border-color-normal']} !important;
           color: ${theme['border-color-normal']} !important;
             
@@ -44,88 +44,88 @@ const ghosts = theme => {
       `;
 };
 
-const transparents = (theme, type) => {
+const transparents = (theme, type) => {    
   return `
-        background: ${type !== 'default' && theme[`${type}-color`]}15;
-        border-width: 0px;
-        color: ${type !== 'default' && theme[`${type}-color`]};
+        background: ${type !== 'default' && theme[`${type}-color`]}15 !important;
+        border-width: 0px !important;
+        color: ${type !== 'default' && theme[`${type}-color`]} !important;
         &:hover, &:focus {
-            background: ${type !== 'default' && theme[`${type}-hover`]}15;
-            border-width: 0px;
-            color: ${type !== 'default' && theme[`${type}-hover`]}; 
+            background: ${type !== 'default' && theme[`${type}-hover`]}15 !important;
+            border-width: 0px !important;
+            color: ${type !== 'default' && theme[`${type}-hover`]} !important; 
         }
     `;
 };
 
 const raise = (theme, type) => {
   return `
-        box-shadow: 0 10px 15px ${type !== 'white' ? theme[`${type}-color`] : '#9299B8'}20;
+        box-shadow: 0 10px 15px ${type !== 'white' ? theme[`${type}-color`] : '#9299B8'}20 !important;
     `;
 };
 
 const square = (theme, type) => `
-      background: ${type !== 'default' && theme[`${type}-color`]};
-      border: 1px solid ${type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']};
-      color: ${type !== 'default' && '#ffffff'};
-      border-radius: 0px;
-      padding: 0px 15px;
+      background: ${type !== 'default' && theme[`${type}-color`]} !important;
+      border: 1px solid ${type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']} !important;
+      color: ${type !== 'default' && '#ffffff'} !important;
+      border-radius: 0px !important;
+      padding: 0px 15px !important;
   
       &:hover, &:focus {
-          background: ${type !== 'default' && theme[`${type}-hover`]};
-          border: 1px solid ${type !== 'default' && theme[`${type}-hover`]};
-          color: ${type !== 'default' && '#ffffff'};
+          background: ${type !== 'default' && theme[`${type}-hover`]} !important;
+          border: 1px solid ${type !== 'default' && theme[`${type}-hover`]} !important;
+          color: ${type !== 'default' && '#ffffff'} !important;
       }
   `;
 
 const squareOutline = (theme, type) => `
-      background: transparent;
-      border: 1px solid ${type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']};
-      color: ${type !== 'default' && theme[`${type}-color`]};
-      border-radius: 0px;
-      padding: 0px 15px;
+      background: transparent !important;
+      border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']} !important;
+      color: ${type !== 'default' && theme[`${type}-color`]} !important;
+      border-radius: 0px !important;
+      padding: 0px 15px !important;
       &:hover, &:focus {
-          background: ${type !== 'default' && theme[`${type}-hover`]};
-          border: 1px solid ${type !== 'default' && theme[`${type}-hover`]};
-          color: ${type !== 'default' && '#ffffff'};
+          background: ${type !== 'default' && theme[`${type}-hover`]} !important;
+          border: 1px solid ${type !== 'default' && theme[`${type}-hover`]} !important;
+          color: ${type !== 'default' && '#ffffff'} !important;
       }
   `;
 
 const socialButton = (color, shape) => `
-      background: ${color};
-      background: ${color};
-      border: 1px solid ${color};
-      color: #ffffff;
-      border-radius: ${!shape ? '4px' : '40px'};
-      padding: 0px 12px;
-      display: inline-flex;
-      align-items: center;
+      background: ${color} !important;
+      background: ${color} !important;
+      border: 1px solid ${color} !important;
+      color: #ffffff !important;
+      border-radius: ${!shape ? '4px' : '40px'} !important;
+      padding: 0px 12px !important;
+      display: inline-flex !important;
+      align-items: center !important;
       span {
-          padding-left: 5px;
+          padding-left: 5px !important;
       }
       &:hover, &:focus {
-          background: ${color}90;
-          border: 1px solid ${color}90;
-          color: #ffffff;
+          background: ${color}90 !important;
+          border: 1px solid ${color}90 !important;
+          color: #ffffff !important;
       }
   `;
 
 const ButtonStyled = Styled(Button, props)`
 
-    background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`]};
-    border-width: 0px;
-    border-style: ${({ type }) => (type !== 'dashed' ? 'solid' : 'dashed')};
-    color: ${({ type }) => (type !== 'default' ? '#ffffff' : '#5A5F7D')};
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: ${({ shape }) => (!shape ? '4px' : '40px')};
-    padding: 0px 20.5px;
-    height: ${({ size, theme }) => (size !== 'default' ? theme[`btn-height-${size}`] : '42px')};
-    font-weight: 500;
-    box-shadow: 0 0;
+    background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`]+ " !important"};
+    border-width: 0px !important;
+    border-style: ${({ type }) => (type !== 'dash' ? 'solid' : 'dashed !important')};
+    color: ${({ type }) => (type !== 'default' ? '#ffffff' : '#5A5F7D')} !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: ${({ shape }) => (!shape ? '4px' : '40px')} !important;
+    padding: 0px 20.5px !important;
+    height: ${({ size, theme }) => (size !== 'default' ? theme[`btn-height-${size}`] : '42px !important')};
+    font-weight: 500 !important;
+    box-shadow: 0 0 !important;
     &:hover, &:focus {
-        background: ${({ type, theme }) => type !== 'default' && theme[`${type}-hover`]};
-        color: ${({ type }) => (type !== 'default' ? '#ffffff' : '#5A5F7D')};
+        background: ${({ type, theme }) => type !== 'default' && theme[`${type}-hover`]+ " !important"};
+        color: ${({ type }) => (type !== 'default' ? '#ffffff' : '#5A5F7D')} !important;
     }
     i,
     svg,
@@ -146,20 +146,20 @@ const ButtonStyled = Styled(Button, props)`
     ${({ social, color, shape }) => social && socialButton(color, shape)};
 `;
 
-const ButtonStyledGroup = Styled(ButtonGroup, props)`
+const ButtonStyledGroup = Styled(ButtonGroup)`
     >.ant-btn:first-child{
         border-top-left-radius: 3px !important;
         border-bottom-left-radius: 3px !important;
     }
     button {
-        margin: 0px;
-        padding: 0 10.75px;
-        height: 30px;
-        font-size: 12px;
-        font-weight: 500;
+        margin: 0px !important;
+        padding: 0 10.75px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;        
     }
     .ant-btn-light:hover{
-        background: #F4F5F7;
+        background: #F4F5F7 !important;
     }
 `;
 

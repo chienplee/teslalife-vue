@@ -27,15 +27,18 @@ export const Button = {
     "color",
     "social",
     "load",
+    "default",
+    "block",
+    "disabled",
   ],
   render() {
     return (
       <ButtonStyled
         squared={this.squared}
-        outlined={this.outlined ? 1 : 0}
+        outlined={this.outlined ? true : false}
         ghost={this.ghost}
-        transparent={this.transparented ? 1 : 0}
-        raised={this.raised ? 1 : 0}
+        transparent={this.transparented ? true : false}
+        raised={this.raised ? true : false}
         data={this.type}
         size={this.size}
         shape={this.shape}
@@ -45,6 +48,8 @@ export const Button = {
         social={this.social}
         onClick={() => this.load && this.enterLoading}
         loading={this.loading}
+        block={this.block}
+        disabled={this.disabled}
       >
         {this.$slots.default}
       </ButtonStyled>

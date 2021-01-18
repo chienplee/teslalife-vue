@@ -22,7 +22,7 @@
         <span>CSV</span>
       </router-link>
     </template>
-    <Button type="white">
+    <Button size="small" type="white">
       <DownloadIcon size="14" />
       Export
     </Button>

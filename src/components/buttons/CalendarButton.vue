@@ -1,7 +1,7 @@
 <template>
   <Popover placement="bottomRight" title="Search by Calendar" action="click">
     <DateRangePickerOne slot="content" />
-    <Button type="white">
+    <Button size="small" type="white">
       <CalendarIcon size="14" />
       Calendar
     </Button>

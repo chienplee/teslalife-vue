@@ -22,7 +22,7 @@
         <span>Instagram</span>
       </router-link>
     </template>
-    <Button type="white">
+    <Button size="small" type="white">
       <Share2Icon size="14" />
       Share
     </Button>

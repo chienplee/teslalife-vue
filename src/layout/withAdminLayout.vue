@@ -19,7 +19,7 @@
             <Button
               v-if="!topMenu || innerWidth <= 991"
               @click.native="toggleCollapsed(collapsed)"
-              type="link"
+              type="white"
             >
               <img
                 :src="
