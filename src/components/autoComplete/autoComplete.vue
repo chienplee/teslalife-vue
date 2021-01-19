@@ -33,12 +33,12 @@
     </a-input>
   </AutoCompleteStyled>
   <AutoCompleteStyled
-    :data-source="searchData"
+    :data-source="state.dataSource"
     :style="{ width }"
     @select="onSelect"
     @search="onSearching"
     :placeholder="placeholder"
-    v-model="value"
+    :value="value"
     v-else
   />
 </template>
@@ -65,19 +65,29 @@ export default {
   data() {
     return {
       value: "",
+      state: {
+        dataSource: [],
+        notData: this.dataSource,
+      },
     };
   },
   computed: {
     ...mapGetters(["rtl"]),
-    searchData() {
-      return this.dataSource;
-    },
   },
-
   methods: {
     onSearching(searchText) {
       this.value = searchText;
       this.$emit("onSearch", searchText);
+      let arrayData = [];
+      const data = this.dataSource.filter((item) =>
+        item.title.toUpperCase().startsWith(searchText.toUpperCase())
+      );
+      if (data.length) {
+        data.map((item) => arrayData.push(item.title));
+      } else {
+        arrayData = ["Data Not Found!"];
+      }
+      this.state.dataSource = !searchText ? [] : arrayData;
     },
     onSelect() {},
   },

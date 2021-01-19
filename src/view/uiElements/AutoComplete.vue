@@ -18,12 +18,12 @@
             <Cards title="Basic Usage">
               <div class="auto-complete-input">
                 <AutoComplete
-                  :dataSource="state.dataSource"
-                  @onSearch="onSearch"
+                  :dataSource="searchData"
+                  @onSearch.native="onSearch"
                 />
                 <AutoComplete
-                  :dataSource="state.dataSource"
-                  @onSearch="onSearch"
+                  :dataSource="searchData"
+                  @onSearch.native="onSearch"
                 />
               </div>
             </Cards>
@@ -90,24 +90,11 @@ export default {
           count: 100000,
         },
       ],
-      state: {
-        dataSource: this.searchData,
-        notData: this.searchData,
-      },
     };
   },
   methods: {
     onSearch(searchText) {
-      let arrayData = [];
-      const data = this.searchData.filter((item) =>
-        item.title.toUpperCase().startsWith(searchText.toUpperCase())
-      );
-      if (data.length) {
-        data.map((item) => arrayData.push(item.title));
-      } else {
-        arrayData = ["Data Not Found!"];
-      }
-      this.state.dataSource = !searchText ? [] : arrayData;
+      console.log(searchText);
     },
     patternSearch(searchText) {
       const data = this.searchData.filter((item) =>

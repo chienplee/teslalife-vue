@@ -7,7 +7,11 @@
     :showIcon="showIcon && showIcon"
     :outlined="outlined"
     :closeText="closeText && closeText"
-  />
+  >
+    <div slot="description">
+      <slot name="description"></slot>
+    </div>
+  </Style>
 </template>
 
 <script>
