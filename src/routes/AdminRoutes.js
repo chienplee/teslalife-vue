@@ -30,6 +30,11 @@ export default new Router({
           path: '/components/button',
           name: 'button',
           component: () => import("@/view/uiElements/Button.vue"),
+        },
+        {
+          path: '/components/badge',
+          name: 'badge',
+          component: () => import("@/view/uiElements/Badge.vue"),
         },          
         {
           path: '/starter',
