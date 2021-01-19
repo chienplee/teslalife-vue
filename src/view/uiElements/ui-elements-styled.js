@@ -2,7 +2,7 @@ import Styled from 'vue-styled-components';
 
 const DropdownStyle = Styled.div`
   .ant-card-body .ant-btn {
-      margin-right: 10px;
+    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
       margin-bottom: 10px;
       height: 36px;
       font-weight: 400;
@@ -16,7 +16,7 @@ const DropdownIconStyleWrapper = Styled.div`
   button{
     padding: 0 !important;
     >span{
-      padding: 0 10px 0 16px
+      padding: ${({ theme }) => (theme.rtl ? '0 16px 0 10px' : '0 10px 0 16px')}
     }
   }
   .ant-dropdown-trigger{
@@ -24,7 +24,8 @@ const DropdownIconStyleWrapper = Styled.div`
     display: inline-flex;
     align-items: center;
     padding: 0 8px;
-    border-left: 1px solid ${({ theme }) => theme['border-color-normal']};
+    ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
+  theme['border-color-normal']};
   }
 `;
 
@@ -55,7 +56,7 @@ const CarouselStyleWraper = Styled.div`
     margin-bottom: 16px !important;
   }
   .ant-radio-button-wrapper{
-    height: 38px;
+    height: 38px !important;
     line-height: 36px !important;
     font-weight: 600;
     color: ${({ theme }) => theme['light-color']}
@@ -75,7 +76,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    right: 10px;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
     padding: 0 4px;
     font-size: 10px;
     font-weight: 600;
@@ -84,7 +85,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-dot{
     top: 10px;
-    right: 10px;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
     width: 10px;
     height: 10px;
     border: 2px solid #fff;
@@ -105,41 +106,41 @@ const BadgeWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    right: 15px;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
     font-size: 10px;
     font-weight: 600;
     min-width: 20px;
     padding: 0;
     height: 20px;
     line-height: 14px;
-    border: 3px solid #fff
+    border: 3px solid #fff;    
   }
   .ant-scroll-number-custom-component{
     top: 10px !important;
-    right: 15px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
   }
   .ant-badge-dot{
     top: 0;
-    right: -1px;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: -1px !important;
     border: 1px solid #fff;
     width: 10px;
     height: 10px;
   }
   .ant-badge-status-text{
-    margin-left: 10px;
+    ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 10px !important;
     color: #9299B8;
   }
 `;
 
 const BadgeRedStyle = Styled.div`
   .ant-badge:not(:last-child){
-    margin-right: 20px;
+    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px !important;
   }
 `;
 
 const BadgeStandAloneStyle = Styled.div`
   .ant-badge-count{
-    left: 0;
+    ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: 0 !important;
     border: 0;
     font-size: 12px !important;
     font-weight: 500;
@@ -163,7 +164,7 @@ const BreadcrumbWrapperStyle = Styled.div`
     color: #5A5F7D;
     .ant-breadcrumb-link{
       .anticon{
-        margin-right: 2px;
+        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 2px !important;
       }
     }
   }
@@ -213,7 +214,7 @@ const BadgeDynamicStyle = Styled.div`
 .badge-dynamic{
   .ant-btn-group{
     padding-top: 4px;
-    margin: 6px 0 0 12px;
+    margin: ${({ theme }) => (theme.rtl ? '6px 12px 0 0' : '6px 0 0 12px')};
     border: 1px solid ${({ theme }) => theme['border-color-normal']};
     border-radius: 5px;
     padding: 0;
@@ -221,25 +222,26 @@ const BadgeDynamicStyle = Styled.div`
       z-index: 2;
       &:first-child{
         z-index: 22;
-        border-right: 1px solid ${({ theme }) => theme['border-color-normal']};
+        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
+  theme['border-color-normal']};
       }
     }
 
   }
 }
 .ant-badge-dot{
-  right: 16px;
+  ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 16px !important;
   top: 8px;
 }
 .ant-switch{
   min-width: 44px;
   height: 22px;
-  margin-left: 15px;
+  ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
   .ant-switch-handle{
     top: 4px;
   }
   .ant-switch-checked .ant-switch-handle{
-    left: calc(100% - 14px - 5px);
+    ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: calc(100% - 14px - 5px);
   }
 }
 `;
@@ -325,6 +327,203 @@ const SelectRadioStyle = Styled.div`
   }
 `;
 
+const TimeLinePointerIconWrap = Styled.div`
+  padding: 20px;
+  .ant-timeline-item-last > .ant-timeline-item-tail{
+    display: block;
+  }
+  .ant-timeline-item-tail{
+    border-width: 3px;
+  }
+  .ant-timeline-item{
+    padding-bottom: 28px;
+    &:last-child{
+      padding-bottom: 0;
+    }
+    &.primary{
+      .ant-timeline-item-head{
+        background-color: #E7E8FD;
+      }
+    }
+    &.info{
+      .ant-timeline-item-head{
+        background-color: #DFF0FF;
+      }
+    }
+    &.warning{
+      .ant-timeline-item-head{
+        background-color: #FFEEDA;
+      }
+    }
+    &.pink{
+      .ant-timeline-item-head{
+        background-color: #FFE8F2;
+      }
+    }
+    &.success{
+      .ant-timeline-item-head{
+        background-color: #DDF7F0;
+      }
+    }
+    &.danger{
+      .ant-timeline-item-head{
+        background-color: #FFE4E5;
+      }
+    }
+    .ant-timeline-item-head{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      &:after,
+      &:before{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -8px;
+        width: 8px;
+        height: 8px;
+        content: "";
+        background-color: #fff;
+      }
+      &:before{
+        top: auto;
+        bottom: -8px;
+      }
+    }
+    .ant-timeline-item-content{
+      margin: ${({ theme }) => (theme.rtl ? '-38px 42px 0 0' : '-38px 0 0 42px')};
+      h3{
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: ${({ theme }) => theme['dark-color']};
+      }
+      p{
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 330px;
+        margin-bottom: 12px;
+      }
+      .tags{
+        font-size: 14px;
+        color: ${({ theme }) => theme['light-gray-color']};
+      }
+    }
+  }
+`;
+
+const TimelineNormalWrap = Styled.div`
+  .ant-timeline-item-last > .ant-timeline-item-content{
+    min-height: auto;
+  }
+  
+  .ant-timeline-right{
+    .ant-timeline-item-right{
+      .ant-timeline-item-content{
+        width: calc(100% - 32px) !important;
+      }
+    }
+  }
+  .ant-timeline-item{
+    padding-bottom: 25px;
+    &:last-child{
+      padding-bottom: 0;
+    }
+    &.active{
+      .timeline-content-text{
+        p{
+          color: ${({ theme }) => theme['primary-color']};
+        }
+      }
+    }
+    .ant-timeline-item-content{
+      margin: ${({ theme }) => (theme.rtl ? '0 32px 0 0' : '0 0 0 32px')};
+      font-size: 14px !important;
+      .timeline-content-inner{
+        .timeline-content-time{
+          min-width: 65px;
+          font-weight: 600;
+          color: ${({ theme }) => theme['light-gray-color']};
+        }
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+`;
+
+const TimelineBoxWrap = Styled.div`
+  .ant-timeline-item-last > .ant-timeline-item-tail{
+    display: block;
+  }
+  .ant-timeline-item{
+    .ant-timeline-item-head{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: ${({ theme }) => theme['bg-color-light']};
+    }
+    &.ant-timeline-item-left{
+      .ant-timeline-item-content{
+        &:after{
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 16px solid #EFF0F3;
+          border-bottom: 8px solid transparent;
+          top: 40%;
+          transform: translateY(-50%);
+          ${({ theme }) => (theme.rtl ? 'right' : 'left')}: -16px;
+        }
+      }
+    }
+    &.ant-timeline-item-right{
+      .ant-timeline-item-content{
+        ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 6px;
+        &:after{
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          ${({ theme }) => (theme.rtl ? 'border-right' : 'border-left')}: 16px solid #EFF0F3;
+          border-bottom: 8px solid transparent;
+          top: 40%;
+          transform: translateY(-50%);
+          ${({ theme }) => (theme.rtl ? 'left' : 'right')}: -16px;
+        }
+        .content-box{
+          text-align: left !important;
+        }
+      }
+    }
+    .ant-timeline-item-content{
+      h2{
+        font-size: 14px;
+        color: ${({ theme }) => theme['extra-light-color']};
+      }
+      .content-box{
+        padding: 18px 20px;
+        border-radius: 10px;
+        background-color: #EFF0F3;
+        p{
+          line-height: 1.75;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+`;
+
 export {
   DropdownStyle,
   DropdownIconStyleWrapper,
@@ -341,4 +540,7 @@ export {
   CasCaderStyleWrapper,
   SelectWrapperStyle,
   SelectRadioStyle,
+  TimeLinePointerIconWrap,
+  TimelineNormalWrap,
+  TimelineBoxWrap,
 };

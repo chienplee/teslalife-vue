@@ -34,7 +34,7 @@
                   :outlined="false"
                   :closable="true"
                   :showIcon="false"
-                  description="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
+                  description="Warning Text Warning Text Warning Text Warning Text Warning Text Warning TextWarning Text"
                   type="warning"
                 />
               </div>

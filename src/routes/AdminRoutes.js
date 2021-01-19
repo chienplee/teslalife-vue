@@ -17,8 +17,8 @@ export default new Router({
           component: () => import("@/view/uiElements/Alerts.vue"),
         },
         {
-          path: "/components/avatar",
-          name: "avatar",
+          path: '/components/avatar',
+          name: 'avatar',
           component: () => import("@/view/uiElements/Avatar.vue"),
         },
         {

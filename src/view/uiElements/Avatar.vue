@@ -37,20 +37,20 @@
                 >
                   {{ user }}
                 </a-avatar>
-                <a-button
-                  size="extra-small"
+                <Button
+                  size="small"
                   class="btn-outlined"
                   type="light"
-                  outlined
+                  :outlined="true"
                   :style="{
                     margin: '0 10px',
                     verticalAlign: 'middle',
                     color: '#ADB4D2',
                   }"
-                  @click="changeUser"
+                  @click.native="changeUser"
                 >
                   Change
-                </a-button>
+                </Button>
               </div>
             </AvatarWraperStyle>
           </Cards>
@@ -65,7 +65,8 @@
               <a-avatar
                 src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
               />
-              <a-avatar :style="{ color: '#f56a00', backgroundColor: '#fde3cf' }"
+              <a-avatar
+                :style="{ color: '#f56a00', backgroundColor: '#fde3cf' }"
                 >U</a-avatar
               >
               <a-avatar :style="{ backgroundColor: '#20C997' }" icon="user" />
@@ -73,7 +74,7 @@
           </Cards>
           <Cards title="with badge">
             <AvatarWraperStyle>
-              <span :style="{ marginRight: 10 }">
+              <span :style="{ [!rtl ? 'marginRight' : 'marginLeft']: 10 }">
                 <a-badge :count="1">
                   <a-avatar shape="square" icon="user" />
                 </a-badge>
@@ -130,10 +131,11 @@ export default {
   },
   methods: {
     changeUser() {
+      const index = UserList.indexOf(this.user);
       this.user =
-        UserList.length - 1 ? UserList[1] : UserList[0];
+        index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
       this.color =
-        ColorList.length - 1 ? ColorList[1] : ColorList[0];
+        index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0];
     },
   },
   computed: {
