@@ -55,15 +55,15 @@ export default {
       VueTypes.object,
       VueTypes.node,
     ]),
-    size: VueTypes.oneOf(["default", "small", "large"]).def("default"),
+    size: VueTypes.oneOf(["default", "small"]).def("default"),
     more: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,
-    headless: VueTypes.bool,
+    headless: VueTypes.bool.def(false),
     border: VueTypes.bool.def(false),
     caption: VueTypes.string,
     bodypadding: VueTypes.string,
-    moreText: VueTypes.bool,
+    moreText: VueTypes.bool.def(false),
   },
 };
 </script>

@@ -22,6 +22,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Avatar.vue"),
         },
         {
+          path: '/components/autoComplete',
+          name: 'autoComplete',
+          component: () => import("@/view/uiElements/AutoComplete"),
+        },
+        {
           path: '/components/button',
           name: 'button',
           component: () => import("@/view/uiElements/Button.vue"),

@@ -23,14 +23,14 @@ export default {
     type: VueTypes.oneOf(["success", "info", "warning", "error"]).def(
       "success"
     ),
-    message: VueTypes.oneOfType([VueTypes.string, VueTypes.node]).def(
+    message: VueTypes.string.def(
       "Hello there! A simple success alert—check it out!"
     ),
-    description: VueTypes.oneOfType([VueTypes.string, VueTypes.node]),
-    showIcon: VueTypes.bool,
-    outlined: VueTypes.bool,
-    closable: VueTypes.bool,
-    closeText: VueTypes.oneOfType([VueTypes.string, VueTypes.node]),
+    description: VueTypes.oneOfType([VueTypes.string]),
+    showIcon: VueTypes.bool.def(false),
+    outlined: VueTypes.bool.def(false),
+    closable: VueTypes.bool.def(false),
+    closeText: VueTypes.oneOfType([VueTypes.string]),
     icon: VueTypes.node,
   },
 };

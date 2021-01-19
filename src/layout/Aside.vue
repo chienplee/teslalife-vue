@@ -64,6 +64,14 @@
               Avatar
             </router-link>
           </a-menu-item>
+          <a-menu-item key="autoComplete">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/autoComplete"
+            >
+              AutoComplete
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="button">
             <router-link
               @click.native="toggleCollapsed"

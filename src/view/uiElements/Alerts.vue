@@ -14,7 +14,7 @@
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
-          <Cards title="Basic" size="default">
+          <Cards title="Basic">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -27,7 +27,7 @@
               </div>
             </AlertList>
           </Cards>
-          <Cards title="Closable" size="default">
+          <Cards title="Closable">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -48,7 +48,7 @@
               />
             </AlertList>
           </Cards>
-          <Cards title="Icon" size="default">
+          <Cards title="Icon">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -121,7 +121,7 @@
           </Cards>
         </a-col>
         <a-col :md="12" :xs="24">
-          <Cards title="More Types" size="default">
+          <Cards title="More Types">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -159,7 +159,7 @@
               </div>
             </AlertList>
           </Cards>
-          <Cards title="Description" size="default">
+          <Cards title="Description">
             <AlertList>
               <Alert
                 :outlined="false"
@@ -195,7 +195,7 @@
               />
             </AlertList>
           </Cards>
-          <Cards title="Customized Close Text" size="default">
+          <Cards title="Customized Close Text">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -210,7 +210,7 @@
               </div>
             </AlertList>
           </Cards>
-          <Cards title="Smoothly Unmount" size="default">
+          <Cards title="Smoothly Unmount">
             <AlertList>
               <div class="alert-empty-message">
                 <Alert
@@ -231,16 +231,18 @@
 </template>
 
 <script>
+import { PlusIcon } from "vue-feather-icons";
+import config from "../../config/config";
+// @Todo merge with global register
+import Cards from "../../components/cards/frame/CardsFrame";
+import Alert from "../../components/alerts/Alerts";
 import { Button } from "../../components/buttons/Buttons";
 import CalendarButton from "../../components/buttons/CalendarButton";
 import ExportButton from "../../components/buttons/ExportButton";
 import ShareButton from "../../components/buttons/ShareButton";
 import { Main, AlertList } from "../styled";
 import { PageHeader } from "../../components/pageHeaders/PageHeaders";
-import { PlusIcon } from "vue-feather-icons";
-import config from "../../config/config";
-import Cards from "../../components/cards/frame/CardsFrame";
-import Alert from "../../components/alerts/Alerts";
+
 const { theme } = config;
 
 export default {
