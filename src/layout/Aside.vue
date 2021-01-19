@@ -88,6 +88,19 @@
               Calendar
             </router-link>
           </a-menu-item>
+          <a-menu-item key="cards">
+            <router-link @click.native="toggleCollapsed" to="/components/cards">
+              Cards
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="carousel">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/carousel"
+            >
+              Carousel
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 

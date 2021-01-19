@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="Calendar">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -49,7 +49,7 @@ import { PlusIcon } from "vue-feather-icons";
 import { Main, CalendarWrapper } from "../styled";
 
 export default {
-  name: "Buttons",
+  name: "Calendar",
   components: {
     PlusIcon,
     Main,

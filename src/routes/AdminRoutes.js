@@ -35,7 +35,17 @@ export default new Router({
           path: '/components/calendar',
           name: 'calendar',
           component: () => import("@/view/uiElements/Calendar"),
-        },      
+        },
+        {
+          path: '/components/cards',
+          name: 'cards',
+          component: () => import("@/view/uiElements/Cards"),
+        },
+        {
+          path: '/components/carousel',
+          name: 'carousel',
+          component: () => import("@/view/uiElements/Carousel"),
+        },
         {
           path: '/starter',
           name: 'starter',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="Auto Complete">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -40,7 +40,7 @@ import { PlusIcon } from "vue-feather-icons";
 import AutoComplete from "../../components/autoComplete/autoComplete";
 
 export default {
-  name: "Buttons",
+  name: "AutoComplete",
   components: {
     PlusIcon,
     Main,
