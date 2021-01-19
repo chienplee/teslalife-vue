@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Menu,Dropdown, Layout,PageHeader, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge  } from 'ant-design-vue';
+import { Button, Menu,Dropdown, Layout,PageHeader, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge  } from 'ant-design-vue';
 
 Vue.use(Button);
 Vue.use(Menu);
@@ -16,3 +16,4 @@ Vue.use(Dropdown);
 Vue.use(Badge);
 Vue.use(DatePicker)
 Vue.use(PageHeader)
+Vue.use(Calendar)

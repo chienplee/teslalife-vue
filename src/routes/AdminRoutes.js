@@ -25,12 +25,17 @@ export default new Router({
           path: '/components/autoComplete',
           name: 'autoComplete',
           component: () => import("@/view/uiElements/AutoComplete"),
-        },
+        },        
         {
           path: '/components/button',
           name: 'button',
           component: () => import("@/view/uiElements/Button.vue"),
-        },          
+        },
+        {
+          path: '/components/calendar',
+          name: 'calendar',
+          component: () => import("@/view/uiElements/Calendar"),
+        },      
         {
           path: '/starter',
           name: 'starter',

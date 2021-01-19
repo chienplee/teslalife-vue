@@ -80,6 +80,14 @@
               Buttons
             </router-link>
           </a-menu-item>
+          <a-menu-item key="calendar">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/calendar"
+            >
+              Calendar
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 
