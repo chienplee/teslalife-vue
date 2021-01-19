@@ -59,7 +59,7 @@ export default {
     more: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,
-    headless: VueTypes.bool.def(false),
+    headless: VueTypes.bool,
     border: VueTypes.bool.def(false),
     caption: VueTypes.string,
     bodypadding: VueTypes.string,
