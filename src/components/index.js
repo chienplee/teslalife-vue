@@ -19,7 +19,3 @@ import { PageHeader } from "./pageHeaders/PageHeaders.vue";
   Vue.component(`sd-${c.name}`, c);
 });
 
-
-// ].map((c) => {
-//   Vue.component("buttons", c);
-// });
