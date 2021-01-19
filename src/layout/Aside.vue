@@ -80,6 +80,12 @@
               Buttons
             </router-link>
           </a-menu-item>
+          <a-menu-item key="badge">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/badge"
+            >
+              Badge
           <a-menu-item key="calendar">
             <router-link
               @click.native="toggleCollapsed"

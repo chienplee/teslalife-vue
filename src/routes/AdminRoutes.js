@@ -32,6 +32,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Button.vue"),
         },
         {
+          path: '/components/badge',
+          name: 'badge',
+          component: () => import("@/view/uiElements/Badge.vue"),
+        },
+        {         
           path: '/components/calendar',
           name: 'calendar',
           component: () => import("@/view/uiElements/Calendar"),
