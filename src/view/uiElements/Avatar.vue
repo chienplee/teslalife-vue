@@ -110,7 +110,7 @@ const UserList = ["U", "Lucy", "Tom", "Edward"];
 const ColorList = ["#f56a00", "#7265e6", "#ffbf00", "#00a2ae"];
 
 export default {
-  name: "Buttons",
+  name: "Avatar",
   components: {
     PlusIcon,
     Button,
