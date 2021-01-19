@@ -7,6 +7,7 @@ import './static/css/style.css';
 // Vue 3rd party plugins
 import "@/core/plugins/ant-design";
 import "@/core/plugins/fonts";
+import "./components/index";
 
 Vue.config.productionTip = false;
 
