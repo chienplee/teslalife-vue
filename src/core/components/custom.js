@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Cards from "../../components/cards/frame/CardsFrame.vue";
-import Alert from "../../components/alerts/Alerts.vue";
+import Alerts from "../../components/alerts/Alerts.vue";
 import {Button, BtnGroup} from "../../components/buttons/Buttons.vue";
 import CalendarButton from "../../components/buttons/CalendarButton.vue";
 import ExportButton from "../../components/buttons/ExportButton.vue";
@@ -9,7 +9,7 @@ import {PageHeader} from "../../components/pageHeaders/PageHeaders.vue";
 
 [
   Cards,
-  Alert,
+  Alerts,
   {
     name: "Button",
     ...Button
