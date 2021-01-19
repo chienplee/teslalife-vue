@@ -1,23 +1,23 @@
 <template>
   <div>
-    <sd-PageHeader title="Blank Page">
+    <sdPageHeader title="Blank Page">
       <div slot="buttons" class="page-header-actions">
-        <sd-CalendarButton />
-        <sd-ExportButton />
-        <sd-ShareButton />
-        <sd-Button size="small" type="primary">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
           <PlusIcon size="14" />
           Add New
-        </sd-Button>
+        </sdButton>
       </div>
-    </sd-PageHeader>
+    </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
-          <sd-Cards title="Basic">
+          <sdCards title="Basic">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="false"
@@ -26,11 +26,11 @@
                 />
               </div>
             </AlertList>
-          </sd-Cards>
-          <sd-Cards title="Closable">
+          </sdCards>
+          <sdCards title="Closable">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="true"
                   :showIcon="false"
@@ -38,7 +38,7 @@
                   type="warning"
                 />
               </div>
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="true"
                 :showIcon="false"
@@ -47,11 +47,11 @@
                 type="error"
               />
             </AlertList>
-          </sd-Cards>
-          <sd-Cards title="Icon">
+          </sdCards>
+          <sdCards title="Icon">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="true"
@@ -59,7 +59,7 @@
                   description="Success Tips"
                   type="success"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="true"
@@ -67,7 +67,7 @@
                   description="Informational Notes"
                   type="info"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="true"
@@ -75,7 +75,7 @@
                   description="Warning"
                   type="warning"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="true"
@@ -84,7 +84,7 @@
                   type="error"
                 />
               </div>
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="true"
@@ -92,7 +92,7 @@
                 description="Detailed description and advice about successful copywriting."
                 type="success"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="true"
@@ -100,7 +100,7 @@
                 description="Additional description and information about copywriting."
                 type="info"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="true"
@@ -108,7 +108,7 @@
                 description="This is a warning notice about copywriting."
                 type="warning"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="true"
@@ -118,13 +118,13 @@
                 type="error"
               />
             </AlertList>
-          </sd-Cards>
+          </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
-          <sd-Cards title="More Types">
+          <sdCards title="More Types">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="false"
@@ -132,7 +132,7 @@
                   description="Success Text"
                   type="success"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="false"
@@ -140,7 +140,7 @@
                   description="Info Text"
                   type="info"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="false"
@@ -148,7 +148,7 @@
                   description="Warning Text"
                   type="warning"
                 />
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="false"
                   :showIcon="false"
@@ -158,10 +158,10 @@
                 />
               </div>
             </AlertList>
-          </sd-Cards>
-          <sd-Cards title="Description">
+          </sdCards>
+          <sdCards title="Description">
             <AlertList>
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="false"
@@ -169,7 +169,7 @@
                 description="Success Description Success Description Success Description"
                 type="success"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="false"
@@ -177,7 +177,7 @@
                 description="Info Description Info Description Info Description Info Description"
                 type="info"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="false"
@@ -185,7 +185,7 @@
                 description="Warning Description Warning Description Warning Description Warning Description"
                 type="warning"
               />
-              <sd-Alerts
+              <sdAlerts
                 :outlined="false"
                 :closable="false"
                 :showIcon="false"
@@ -194,11 +194,11 @@
                 type="error"
               />
             </AlertList>
-          </sd-Cards>
-          <sd-Cards title="Customized Close Text">
+          </sdCards>
+          <sdCards title="Customized Close Text">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   closeText="Close Now"
                   :outlined="false"
                   :closable="true"
@@ -209,11 +209,11 @@
                 />
               </div>
             </AlertList>
-          </sd-Cards>
-          <sd-Cards title="Smoothly Unmount">
+          </sdCards>
+          <sdCards title="Smoothly Unmount">
             <AlertList>
               <div class="alert-empty-message">
-                <sd-Alerts
+                <sdAlerts
                   :outlined="false"
                   :closable="true"
                   :showIcon="false"
@@ -223,7 +223,7 @@
                 />
               </div>
             </AlertList>
-          </sd-Cards>
+          </sdCards>
         </a-col>
       </a-row>
     </Main>

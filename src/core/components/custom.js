@@ -24,5 +24,5 @@ import {PageHeader} from "../../components/pageHeaders/PageHeaders.vue";
   {name: "PageHeader",
 ...PageHeader},
 ].map((c) => {  
-  Vue.component(`sd-${c.name}`, c);
+  Vue.component(`sd${c.name}`, c);
 });

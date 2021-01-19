@@ -1,227 +1,227 @@
 <template>
   <div>
-    <PageHeader title="Blank Page">
+    <sdPageHeader title="Blank Page">
       <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
           <PlusIcon size="14" />
           Add New
-        </Button>
+        </sdButton>
       </div>
-    </PageHeader>
+    </sdPageHeader>
     <Main class="button-example">
       <a-row :gutter="25">
         <a-col :md="12">
-          <Cards title="Basic" size="default">
-            <Button size="default" type="primary">
+          <sdCards title="Basic" size="default">
+            <sdButton size="default" type="primary">
               Primary
-            </Button>
-            <Button size="default" type="secondary">
+            </sdButton>
+            <sdButton size="default" type="secondary">
               Secondary
-            </Button>
-            <Button size="default" type="success">
+            </sdButton>
+            <sdButton size="default" type="success">
               Success
-            </Button>
-            <Button size="default" type="info">
+            </sdButton>
+            <sdButton size="default" type="info">
               Info
-            </Button>
-            <Button size="default" type="warning">
+            </sdButton>
+            <sdButton size="default" type="warning">
               Warning
-            </Button>
-            <Button size="default" type="danger">
+            </sdButton>
+            <sdButton size="default" type="danger">
               Danger
-            </Button>
-            <Button size="default" type="link">
+            </sdButton>
+            <sdButton size="default" type="link">
               Link
-            </Button>
-            <Button size="default" type="dark">
+            </sdButton>
+            <sdButton size="default" type="dark">
               Dark
-            </Button>
-            <Button size="default" type="light">
+            </sdButton>
+            <sdButton size="default" type="light">
               Light
-            </Button>
-            <Button size="default" type="white">
+            </sdButton>
+            <sdButton size="default" type="white">
               White
-            </Button>
-          </Cards>
-          <Cards title="Light Color" size="default">
-            <Button size="default" :transparented="true" type="primary">
+            </sdButton>
+          </sdCards>
+          <sdCards title="Light Color" size="default">
+            <sdButton size="default" :transparented="true" type="primary">
               Primary
-            </Button>
-            <Button size="default" :transparented="true" type="secondary">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="secondary">
               Secondary
-            </Button>
-            <Button size="default" :transparented="true" type="success">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="success">
               Success
-            </Button>
-            <Button size="default" :transparented="true" type="info">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="info">
               Info
-            </Button>
-            <Button size="default" :transparented="true" type="warning">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="warning">
               Warning
-            </Button>
-            <Button size="default" :transparented="true" type="danger">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="danger">
               Danger
-            </Button>
-            <Button size="default" :transparented="true" type="dark">
+            </sdButton>
+            <sdButton size="default" :transparented="true" type="dark">
               Dark
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-transparent"
               size="default"
               :transparented="true"
               type="light"
             >
               Light
-            </Button>
-          </Cards>
-          <Cards title="Rounded" size="default">
-            <Button size="default" shape="circle" type="primary">
+            </sdButton>
+          </sdCards>
+          <sdCards title="Rounded" size="default">
+            <sdButton size="default" shape="circle" type="primary">
               Primary
-            </Button>
-            <Button size="default" shape="circle" type="secondary">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="secondary">
               Secondary
-            </Button>
-            <Button size="default" shape="circle" type="success">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="success">
               Success
-            </Button>
-            <Button size="default" shape="circle" type="info">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="info">
               Info
-            </Button>
-            <Button size="default" shape="circle" type="warning">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="warning">
               Warning
-            </Button>
-            <Button size="default" shape="circle" type="danger">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="danger">
               Danger
-            </Button>
-            <Button size="default" shape="circle" type="dark">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="dark">
               Dark
-            </Button>
-            <Button size="default" shape="circle" type="light">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="light">
               Light
-            </Button>
-            <Button size="default" shape="circle" type="white">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="white">
               White
-            </Button>
-          </Cards>
-          <Cards title="Icon" size="default">
-            <Button size="default" type="primary">
+            </sdButton>
+          </sdCards>
+          <sdCards title="Icon" size="default">
+            <sdButton size="default" type="primary">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" transparented type="primary">
+            </sdButton>
+            <sdButton size="default" transparented type="primary">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" outlined type="primary">
+            </sdButton>
+            <sdButton size="default" outlined type="primary">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" outlined type="white">
+            </sdButton>
+            <sdButton size="default" outlined type="white">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" type="light">
+            </sdButton>
+            <sdButton size="default" type="light">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" raised type="white">
+            </sdButton>
+            <sdButton size="default" raised type="white">
               <LayersIcon />
               Default
-            </Button>
-            <Button class="btn-icon" size="default" type="primary">
+            </sdButton>
+            <sdButton class="btn-icon" size="default" type="primary">
               <LayersIcon />
-            </Button>
-            <Button class="btn-icon" size="default" outlined type="primary">
+            </sdButton>
+            <sdButton class="btn-icon" size="default" outlined type="primary">
               <LayersIcon />
-            </Button>
-            <Button class="btn-icon" size="default" type="light">
+            </sdButton>
+            <sdButton class="btn-icon" size="default" type="light">
               <LayersIcon />
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon btn-outlined"
               size="default"
               :outlined="true"
               type="light"
             >
               <LayersIcon />
-            </Button>
-          </Cards>
-          <Cards title="Size" size="default">
+            </sdButton>
+          </sdCards>
+          <sdCards title="Size" size="default">
             <a-row>
               <ButtonSizeWrapper>
-                <Button size="large" type="primary">
+                <sdButton size="large" type="primary">
                   Large Button
-                </Button>
-                <Button size="default" type="secondary">
+                </sdButton>
+                <sdButton size="default" type="secondary">
                   Default
-                </Button>
-                <Button size="small" type="success">
+                </sdButton>
+                <sdButton size="small" type="success">
                   Small
-                </Button>
+                </sdButton>
               </ButtonSizeWrapper>
             </a-row>
-          </Cards>
+          </sdCards>
 
-          <Cards title="Multiple Buttons" size="default">
-            <Button size="default" type="primary">
+          <sdCards title="Multiple Buttons" size="default">
+            <sdButton size="default" type="primary">
               Primary
-            </Button>
+            </sdButton>
 
-            <Button size="default" type="secondary">
+            <sdButton size="default" type="secondary">
               Secondary
-            </Button>
+            </sdButton>
 
             <Dropdown :action="['click']" placement="bottomLeft">
               <BtnWithIcon>
-                <Button size="default" :outlined="true" type="white">
+                <sdButton size="default" :outlined="true" type="white">
                   Actions
                   <a-icon type="down" />
-                </Button>
+                </sdButton>
               </BtnWithIcon>
             </Dropdown>
-          </Cards>
+          </sdCards>
 
-          <Cards title="Group Button" size="default">
+          <sdCards title="Group Button" size="default">
             <ButtonsGroupWrapper>
               <div class="button-group-single">
                 <h4>Basic</h4>
                 <a-row>
-                  <BtnGroup>
-                    <Button size="small" type="primary">
+                  <sdBtnGroup>
+                    <sdButton size="small" type="primary">
                       Today
-                    </Button>
-                    <Button size="small" :outlined="true" type="white">
+                    </sdButton>
+                    <sdButton size="small" :outlined="true" type="white">
                       Week
-                    </Button>
-                    <Button size="small" :outlined="true" type="white">
+                    </sdButton>
+                    <sdButton size="small" :outlined="true" type="white">
                       Month
-                    </Button>
-                    <Button size="small" :outlined="true" type="white">
+                    </sdButton>
+                    <sdButton size="small" :outlined="true" type="white">
                       Year
-                    </Button>
-                  </BtnGroup>
-                  <BtnGroup>
-                    <Button size="small" :outlined="true" type="white">
+                    </sdButton>
+                  </sdBtnGroup>
+                  <sdBtnGroup>
+                    <sdButton size="small" :outlined="true" type="white">
                       Cancel
-                    </Button>
-                    <Button size="small" :outlined="true" type="white">
+                    </sdButton>
+                    <sdButton size="small" :outlined="true" type="white">
                       Ok
-                    </Button>
-                  </BtnGroup>
-                  <BtnGroup>
-                    <Button size="small" type="light">
+                    </sdButton>
+                  </sdBtnGroup>
+                  <sdBtnGroup>
+                    <sdButton size="small" type="light">
                       Left
-                    </Button>
-                    <Button size="small" type="light">
+                    </sdButton>
+                    <sdButton size="small" type="light">
                       Middle
-                    </Button>
-                    <Button size="small" type="light">
+                    </sdButton>
+                    <sdButton size="small" type="light">
                       Right
-                    </Button>
-                  </BtnGroup>
+                    </sdButton>
+                  </sdBtnGroup>
                 </a-row>
               </div>
 
@@ -229,147 +229,147 @@
                 <h4>With Icon</h4>
                 <a-row>
                   <BtnWithIcon>
-                    <BtnGroup>
-                      <Button size="small" type="primary" class="active">
+                    <sdBtnGroup>
+                      <sdButton size="small" type="primary" class="active">
                         <a-icon type="left" />
                         Go Back
-                      </Button>
-                      <Button size="small" type="primary">
+                      </sdButton>
+                      <sdButton size="small" type="primary">
                         Go Forward
                         <a-icon type="right" />
-                      </Button>
-                    </BtnGroup>
+                      </sdButton>
+                    </sdBtnGroup>
                   </BtnWithIcon>
                 </a-row>
               </div>
             </ButtonsGroupWrapper>
-          </Cards>
+          </sdCards>
 
-          <Cards title="BlocK" size="default">
+          <sdCards title="BlocK" size="default">
             <BlockButtonsWrapper>
-              <Button size="large" type="primary" block>
+              <sdButton size="large" type="primary" block>
                 Large Button
-              </Button>
-              <Button size="default" type="secondary" block>
+              </sdButton>
+              <sdButton size="default" type="secondary" block>
                 Default
-              </Button>
-              <Button size="small" type="success" block>
+              </sdButton>
+              <sdButton size="small" type="success" block>
                 Small
-              </Button>
+              </sdButton>
             </BlockButtonsWrapper>
-          </Cards>
+          </sdCards>
         </a-col>
         <a-col :md="12">
-          <Cards title="Outline" size="default">
-            <Button size="default" :outlined="true" type="primary">
+          <sdCards title="Outline" size="default">
+            <sdButton size="default" :outlined="true" type="primary">
               Primary
-            </Button>
-            <Button size="default" :outlined="true" type="secondary">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="secondary">
               Secondary
-            </Button>
-            <Button size="default" :outlined="true" type="success">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="success">
               Success
-            </Button>
-            <Button size="default" :outlined="true" type="info">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="info">
               Info
-            </Button>
-            <Button size="default" :outlined="true" type="warning">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="warning">
               Warning
-            </Button>
-            <Button size="default" :outlined="true" type="danger">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="danger">
               Danger
-            </Button>
-            <Button size="default" :outlined="true" type="dark">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="dark">
               Dark
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-outlined"
               size="default"
               :outlined="true"
               type="light"
             >
               Light
-            </Button>
-            <Button size="default" :outlined="true" type="dash">
+            </sdButton>
+            <sdButton size="default" :outlined="true" type="dash">
               Dashed
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
 
-          <Cards title="Raised" size="default">
-            <Button size="default" :raised="true" type="primary">
+          <sdCards title="Raised" size="default">
+            <sdButton size="default" :raised="true" type="primary">
               Primary
-            </Button>
-            <Button size="default" :raised="true" type="secondary">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="secondary">
               Secondary
-            </Button>
-            <Button size="default" :raised="true" type="success">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="success">
               Success
-            </Button>
-            <Button size="default" :raised="true" type="info">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="info">
               Info
-            </Button>
-            <Button size="default" :raised="true" type="warning">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="warning">
               Warning
-            </Button>
-            <Button size="default" :raised="true" type="danger">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="danger">
               Danger
-            </Button>
-            <Button size="default" :raised="true" type="dark">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="dark">
               Dark
-            </Button>
-            <Button size="default" :raised="true" type="white">
+            </sdButton>
+            <sdButton size="default" :raised="true" type="white">
               White
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
 
-          <Cards title="Rounded Outline" size="default">
-            <Button
+          <sdCards title="Rounded Outline" size="default">
+            <sdButton
               size="default"
               :outlined="true"
               shape="circle"
               type="primary"
             >
               Primary
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               :outlined="true"
               shape="circle"
               type="secondary"
             >
               Secondary
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               :outlined="true"
               shape="circle"
               type="success"
             >
               Success
-            </Button>
-            <Button size="default" :outlined="true" shape="circle" type="info">
+            </sdButton>
+            <sdButton size="default" :outlined="true" shape="circle" type="info">
               Info
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               :outlined="true"
               shape="circle"
               type="warning"
             >
               Warning
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               :outlined="true"
               shape="circle"
               type="danger"
             >
               Danger
-            </Button>
-            <Button size="default" :outlined="true" shape="circle" type="dark">
+            </sdButton>
+            <sdButton size="default" :outlined="true" shape="circle" type="dark">
               Dark
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-outlined"
               size="default"
               :outlined="true"
@@ -377,18 +377,18 @@
               type="light"
             >
               Light
-            </Button>
-            <Button size="default" :outlined="true" shape="circle" type="dash">
+            </sdButton>
+            <sdButton size="default" :outlined="true" shape="circle" type="dash">
               Dashed
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
 
-          <Cards title="Rounded with Icon" size="default">
-            <Button size="default" shape="circle" type="primary">
+          <sdCards title="Rounded with Icon" size="default">
+            <sdButton size="default" shape="circle" type="primary">
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               shape="circle"
               :transparented="true"
@@ -396,8 +396,8 @@
             >
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               shape="circle"
               :outlined="true"
@@ -405,8 +405,8 @@
             >
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-outlined"
               size="default"
               shape="circle"
@@ -415,24 +415,24 @@
             >
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" shape="circle" type="light">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="light">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" shape="circle" :raised="true" type="white">
+            </sdButton>
+            <sdButton size="default" shape="circle" :raised="true" type="white">
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon"
               size="default"
               shape="round"
               type="primary"
             >
               <LayersIcon />
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon"
               size="default"
               :outlined="true"
@@ -440,8 +440,8 @@
               type="primary"
             >
               <LayersIcon />
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon btn-outlined"
               size="default"
               :outlined="true"
@@ -449,37 +449,37 @@
               type="light"
             >
               <LayersIcon />
-            </Button>
-            <Button class="btn-icon" size="default" shape="round" type="light">
+            </sdButton>
+            <sdButton class="btn-icon" size="default" shape="round" type="light">
               <LayersIcon />
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
 
-          <Cards title="Disabled" size="default">
+          <sdCards title="Disabled" size="default">
             <a-row>
-              <Button size="default" type="primary">
+              <sdButton size="default" type="primary">
                 Primary
-              </Button>
-              <Button size="default" type="primary" disabled>
+              </sdButton>
+              <sdButton size="default" type="primary" disabled>
                 Primary(Disabled)
-              </Button>
+              </sdButton>
             </a-row>
             <a-row>
-              <Button size="default" :outlined="true" type="white">
+              <sdButton size="default" :outlined="true" type="white">
                 Default
-              </Button>
-              <Button size="default" :outlined="true" type="white" disabled>
+              </sdButton>
+              <sdButton size="default" :outlined="true" type="white" disabled>
                 Default(Disabled)
-              </Button>
+              </sdButton>
             </a-row>
-          </Cards>
+          </sdCards>
 
-          <Cards title="Loading" size="default">
-            <Button size="default" shape="circle" type="primary">
+          <sdCards title="Loading" size="default">
+            <sdButton size="default" shape="circle" type="primary">
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               shape="circle"
               :transparented="true"
@@ -487,8 +487,8 @@
             >
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               size="default"
               shape="circle"
               :outlined="true"
@@ -496,28 +496,28 @@
             >
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" shape="circle" :outlined="true" type="white">
+            </sdButton>
+            <sdButton size="default" shape="circle" :outlined="true" type="white">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" shape="circle" type="light">
+            </sdButton>
+            <sdButton size="default" shape="circle" type="light">
               <LayersIcon />
               Default
-            </Button>
-            <Button size="default" shape="circle" :raised="true" type="white">
+            </sdButton>
+            <sdButton size="default" shape="circle" :raised="true" type="white">
               <LayersIcon />
               Default
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon"
               size="default"
               shape="round"
               type="primary"
             >
               <LayersIcon />
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon"
               size="default"
               :outlined="true"
@@ -525,8 +525,8 @@
               type="primary"
             >
               <LayersIcon />
-            </Button>
-            <Button
+            </sdButton>
+            <sdButton
               class="btn-icon btn-outlined"
               size="default"
               :outlined="true"
@@ -534,13 +534,13 @@
               type="light"
             >
               <LayersIcon />
-            </Button>
-            <Button class="btn-icon" size="default" shape="round" type="light">
+            </sdButton>
+            <sdButton class="btn-icon" size="default" shape="round" type="light">
               <LayersIcon />
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
 
-          <Cards
+          <sdCards
             :bodyStyle="{
               backgroundImage: `linear-gradient(90deg, ${theme['primary-color']}, ${theme['secondary-color']})`,
               borderRadius: `0 0 10px 10px`,
@@ -548,16 +548,16 @@
             title="Ghost"
             size="default"
           >
-            <Button size="default" type="primary" :ghost="true">
+            <sdButton size="default" type="primary" :ghost="true">
               Primary
-            </Button>
-            <Button size="default" type="secondary" :ghost="true">
+            </sdButton>
+            <sdButton size="default" type="secondary" :ghost="true">
               Secondary
-            </Button>
-            <Button size="default" type="success" :ghost="true">
+            </sdButton>
+            <sdButton size="default" type="success" :ghost="true">
               Default
-            </Button>
-          </Cards>
+            </sdButton>
+          </sdCards>
         </a-col>
       </a-row>
     </Main>
@@ -565,10 +565,6 @@
 </template>
 
 <script>
-import { Button, BtnGroup } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import {
   Main,
   ButtonsGroupWrapper,
@@ -576,9 +572,7 @@ import {
   ButtonSizeWrapper,
   BtnWithIcon,
 } from "../styled";
-import { PageHeader } from "../../components/pageHeaders/PageHeaders";
 import { PlusIcon, LayersIcon } from "vue-feather-icons";
-import Cards from "../../components/cards/frame/CardsFrame";
 import config from "../../config/config";
 import Dropdown from "../../components/dropdown/Dropdown";
 
@@ -589,14 +583,7 @@ export default {
   components: {
     PlusIcon,
     LayersIcon,
-    Button,
-    BtnGroup,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
-    PageHeader,
-    Cards,
     Dropdown,
     ButtonsGroupWrapper,
     BlockButtonsWrapper,

@@ -1,20 +1,20 @@
 <template>
   <div>
-    <PageHeader title="Blank Page">
+    <sdPageHeader title="Blank Page">
       <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
           <PlusIcon size="14" />
           Add New
-        </Button>
+        </sdButton>
       </div>
-    </PageHeader>
+    </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :sm="12" :xs="24">
-          <Cards title="Basic">
+          <sdCards title="Basic">
             <AvatarWraperStyle :style="{ marginBottom: 10 }">
               <a-avatar :size="64" icon="user" />
               <a-avatar size="large" icon="user" />
@@ -27,8 +27,8 @@
               <a-avatar shape="square" icon="user" />
               <a-avatar shape="square" size="small" icon="user" />
             </AvatarWraperStyle>
-          </Cards>
-          <Cards title="Autoset Font Size">
+          </sdCards>
+          <sdCards title="Autoset Font Size">
             <AvatarWraperStyle>
               <div>
                 <a-avatar
@@ -37,7 +37,7 @@
                 >
                   {{ user }}
                 </a-avatar>
-                <Button
+                <sdButton
                   size="small"
                   class="btn-outlined"
                   type="light"
@@ -50,13 +50,13 @@
                   @click.native="changeUser"
                 >
                   Change
-                </Button>
+                </sdButton>
               </div>
             </AvatarWraperStyle>
-          </Cards>
+          </sdCards>
         </a-col>
         <a-col :md="12" :sm="12" :xs="24">
-          <Cards title="Type">
+          <sdCards title="Type">
             <AvatarWraperStyle>
               <a-avatar icon="user" />
               <a-avatar icon="user" />
@@ -71,8 +71,8 @@
               >
               <a-avatar :style="{ backgroundColor: '#20C997' }" icon="user" />
             </AvatarWraperStyle>
-          </Cards>
-          <Cards title="with badge">
+          </sdCards>
+          <sdCards title="with badge">
             <AvatarWraperStyle>
               <span :style="{ [!rtl ? 'marginRight' : 'marginLeft']: 10 }">
                 <a-badge :count="1">
@@ -85,7 +85,7 @@
                 </a-badge>
               </span>
             </AvatarWraperStyle>
-          </Cards>
+          </sdCards>
         </a-col>
       </a-row>
     </Main>
@@ -93,15 +93,9 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PageHeader } from "../../components/pageHeaders/PageHeaders";
 import { PlusIcon } from "vue-feather-icons";
 import config from "../../config/config";
-import Cards from "../../components/cards/frame/CardsFrame";
 import { AvatarWraperStyle } from "./ui-elements-styled";
 import { mapGetters } from "vuex";
 
@@ -113,13 +107,7 @@ export default {
   name: "Avatar",
   components: {
     PlusIcon,
-    Button,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
-    PageHeader,
-    Cards,
     AvatarWraperStyle,
   },
   data() {
