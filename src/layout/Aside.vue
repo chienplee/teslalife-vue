@@ -56,6 +56,14 @@
               Alerts
             </router-link>
           </a-menu-item>
+          <a-menu-item key="avatar">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/avatar"
+            >
+              Avatar
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="button">
             <router-link
               @click.native="toggleCollapsed"
