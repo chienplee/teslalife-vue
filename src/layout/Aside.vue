@@ -85,6 +85,11 @@
               Badge
             </router-link>
           </a-menu-item>
+          <a-menu-item key="breadcrumb">
+            <router-link @click.native="toggleCollapsed" to="/components/breadcrumb">
+              Breadcrumb
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="calendar">
             <router-link
               @click.native="toggleCollapsed"
