@@ -17,11 +17,11 @@
           <a-col :md="12" :sm="24" :xs="24">
             <sdCards title="Basic Usage">
               <div class="auto-complete-input">
-                <AutoComplete
+                <sdAutoComplete
                   :dataSource="searchData"
                   @onSearch.native="onSearch"
                 />
-                <AutoComplete
+                <sdAutoComplete
                   :dataSource="searchData"
                   @onSearch.native="onSearch"
                 />
@@ -37,7 +37,6 @@
 <script>
 import { Main, AutoCompleteWrapper } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
-import AutoComplete from "../../components/autoComplete/autoComplete";
 
 export default {
   name: "AutoComplete",
@@ -45,7 +44,6 @@ export default {
     PlusIcon,
     Main,
     AutoCompleteWrapper,
-    AutoComplete,
   },
   data() {
     return {

@@ -143,6 +143,22 @@
               Comments
             </router-link>
           </a-menu-item>
+          <a-menu-item key="dash-base">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/dash-base"
+            >
+              Dashboard Base
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="datePicker">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/datePicker"
+            >
+              DatePicker
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 
