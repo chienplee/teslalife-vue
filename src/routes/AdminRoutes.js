@@ -52,6 +52,26 @@ export default new Router({
           component: () => import("@/view/uiElements/Carousel"),
         },
         {
+          path: '/components/cascader',
+          name: 'cascader',
+          component: () => import("@/view/uiElements/Cascader"),
+        },
+        {
+          path: '/components/checkbox',
+          name: 'checkbox',
+          component: () => import("@/view/uiElements/Checkbox"),
+        },
+        {
+          path: '/components/collapse',
+          name: 'collapse',
+          component: () => import("@/view/uiElements/Collapse"),
+        },
+        {
+          path: '/components/comments',
+          name: 'comments',
+          component: () => import("@/view/uiElements/Comments"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),

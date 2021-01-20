@@ -5,7 +5,8 @@ import {Button, BtnGroup} from "../../components/buttons/Buttons.vue";
 import CalendarButton from "../../components/buttons/CalendarButton.vue";
 import ExportButton from "../../components/buttons/ExportButton.vue";
 import ShareButton from "../../components/buttons/ShareButton.vue";
-import {PageHeader} from "../../components/pageHeaders/PageHeaders.vue";
+import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
+import Cascader from "../../components/cascader/Cascader";
 
 [
   Cards,
@@ -23,6 +24,7 @@ import {PageHeader} from "../../components/pageHeaders/PageHeaders.vue";
   ShareButton,
   {name: "PageHeader",
 ...PageHeader},
+Cascader
 ].map((c) => {  
   Vue.component(`sd${c.name}`, c);
 });

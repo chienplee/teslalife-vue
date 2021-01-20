@@ -106,6 +106,38 @@
               Carousel
             </router-link>
           </a-menu-item>
+          <a-menu-item key="cascader">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/cascader"
+            >
+              Cascader
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="checkbox">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/checkbox"
+            >
+              Checkbox
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="collapse">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/collapse"
+            >
+              Collapse
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="comments">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/comments"
+            >
+              Comments
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 
