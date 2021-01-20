@@ -81,10 +81,7 @@
             </router-link>
           </a-menu-item>
           <a-menu-item key="badge">
-            <router-link
-              @click.native="toggleCollapsed"
-              to="/components/badge"
-            >
+            <router-link @click.native="toggleCollapsed" to="/components/badge">
               Badge
             </router-link>
           </a-menu-item>
@@ -94,6 +91,19 @@
               to="/components/calendar"
             >
               Calendar
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="cards">
+            <router-link @click.native="toggleCollapsed" to="/components/cards">
+              Cards
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="carousel">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/carousel"
+            >
+              Carousel
             </router-link>
           </a-menu-item>
         </a-sub-menu>

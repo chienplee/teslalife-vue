@@ -1,6 +1,6 @@
 <template>
   <CardFrame
-    v-if="headless"
+    v-if="!headless"
     :size="size"
     :title="title"
     :bodyStyle="bodyStyle && bodyStyle"
@@ -11,10 +11,13 @@
   >
     <template slot="extra">
       <Dropdown v-if="more" :action="['click']" placement="bottomCenter">
-        <slot name="more"></slot>
-        <router-link to="#"
-          >{{!moreText ? <MoreHorizontalIcon /> : 'More'}}</router-link
-        >
+        <template slot="overlay">
+          <slot name="more"></slot>
+        </template>
+        <router-link v-if="!moreText" to="#"
+          ><MoreHorizontalIcon
+        /></router-link>
+        <router-link v-else to="#">More</router-link>
       </Dropdown>
       <slot name="button"></slot>
     </template>
@@ -56,11 +59,11 @@ export default {
       VueTypes.node,
     ]),
     size: VueTypes.oneOf(["default", "small"]).def("default"),
-    more: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
+    more: VueTypes.bool.def(false),
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,
-    headless: VueTypes.bool,
-    border: VueTypes.bool.def(false),
+    headless: VueTypes.bool.def(false),
+    border: VueTypes.bool.def(true),
     caption: VueTypes.string,
     bodypadding: VueTypes.string,
     moreText: VueTypes.bool.def(false),

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="Alerts">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -237,7 +237,7 @@ import { Main, AlertList } from "../styled";
 const { theme } = config;
 
 export default {
-  name: "Buttons",
+  name: "Alerts",
   components: {
     PlusIcon,
     Main,

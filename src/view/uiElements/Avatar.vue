@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="Avatar">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
