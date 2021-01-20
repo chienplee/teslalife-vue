@@ -36,6 +36,11 @@ export default new Router({
           name: 'badge',
           component: () => import("@/view/uiElements/Badge.vue"),
         },
+        {
+          path: '/components/breadcrumb',
+          name: 'breadcrumb',
+          component: () => import("@/view/uiElements/Breadcrumb.vue"),
+        },
         {         
           path: '/components/calendar',
           name: 'calendar',
