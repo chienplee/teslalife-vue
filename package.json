@@ -19,6 +19,7 @@
     "vue": "^2.6.11",
     "vue-date-fns": "^2.0.1",
     "vue-feather-icons": "^5.1.0",
+    "vue-fragment": "^1.5.1",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.4.8",
     "vue-styled-components": "^1.5.1",

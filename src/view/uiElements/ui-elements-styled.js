@@ -524,6 +524,18 @@ const TimelineBoxWrap = Styled.div`
   }
 `;
 
+const DashboardBaseStyleWrap = Styled.div`
+    h1{
+        margin-bottom: 30px;
+    }
+    .ant-row{
+        margin: -5px 0;
+    }
+    .ant-col{
+        margin: 5px 0;
+    }
+`;
+
 export {
   DropdownStyle,
   DropdownIconStyleWrapper,
@@ -543,4 +555,5 @@ export {
   TimeLinePointerIconWrap,
   TimelineNormalWrap,
   TimelineBoxWrap,
+  DashboardBaseStyleWrap
 };

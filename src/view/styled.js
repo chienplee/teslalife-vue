@@ -823,21 +823,24 @@ const CalendarWrapper = Styled.div`
 `;
 
 const DatePickerWrapper = Styled.div`
-    .ant-picker{
-        padding: 6px 11px 6px;
-        width: 100%;
-        border-color: #E3E6EF;
-        border-radius: 5px;
+    .ant-calendar-picker{
+        padding: 6px 11px 6px !important;
+        width: 100% !important;
+        border-color: #E3E6EF !important;
+        border-radius: 5px !important;
     }
-    .ant-picker:not(:last-child){
-        margin-bottom: 20px;
+    .ant-calendar-picker:not(:last-child){
+        margin-bottom: 20px !important;
     }
-    .ant-picker-input > input{
-        color: #5A5F7D;
+    .ant-calendar-picker-input > input{
+        color: #5A5F7D !important;
     }
-    .ant-picker-range .ant-picker-input > input{
-        text-align: center;
-        font-weight: 500;
+    .ant-calendar-picker-range .ant-calendar-picker-input > input{
+        text-align: center !important;
+        font-weight: 500 !important;
+    }
+    .ant-calendar-picker-clear, .ant-calendar-picker-icon {       
+        right: 24px;        
     }
 `;
 

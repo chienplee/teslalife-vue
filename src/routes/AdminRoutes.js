@@ -72,6 +72,16 @@ export default new Router({
           component: () => import("@/view/uiElements/Comments"),
         },
         {
+          path: '/components/dash-base',
+          name: 'dash-base',
+          component: () => import("@/view/uiElements/DashboardBase"),
+        },
+        {
+          path: '/components/datePicker',
+          name: 'datePicker',
+          component: () => import("@/view/uiElements/DatePicker"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),
