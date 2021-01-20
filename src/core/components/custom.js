@@ -10,6 +10,7 @@ import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 import Cascader from "../../components/cascader/Cascader";
 import Heading from '../../components/heading/Heading';
 import AutoComplete from "../../components/autoComplete/autoComplete";
+import Dropdown from "../../components/dropdown/Dropdown";
 
 [
   {
@@ -33,7 +34,8 @@ import AutoComplete from "../../components/autoComplete/autoComplete";
   {name: "PageHeader",
 ...PageHeader},
 Cascader,
-AutoComplete
+AutoComplete,
+Dropdown
 ].map((c) => {  
   Vue.component(`sd${c.name}`, c);
 });

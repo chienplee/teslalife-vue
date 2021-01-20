@@ -154,6 +154,24 @@
               DatePicker
             </router-link>
           </a-menu-item>
+          <a-menu-item key="dropdown">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/dropdown"
+            >
+              Dropdown
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="input">
+            <router-link @click.native="toggleCollapsed" to="/components/input">
+              Input
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="list">
+            <router-link @click.native="toggleCollapsed" to="/components/list">
+              List
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 

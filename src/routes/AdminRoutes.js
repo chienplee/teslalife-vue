@@ -82,6 +82,21 @@ export default new Router({
           component: () => import("@/view/uiElements/DatePicker"),
         },
         {
+          path: '/components/dropdown',
+          name: 'dropdown',
+          component: () => import("@/view/uiElements/Dropdown"),
+        },
+        {
+          path: '/components/input',
+          name: 'input',
+          component: () => import("@/view/uiElements/Input"),
+        },
+        {
+          path: '/components/list',
+          name: 'list',
+          component: () => import("@/view/uiElements/List"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),

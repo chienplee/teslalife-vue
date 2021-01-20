@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Checkbox">
+    <sdPageHeader title="DatePicker">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -144,7 +144,7 @@ import { PlusIcon } from "vue-feather-icons";
 import { Main, DatePickerWrapper } from "../styled";
 import moment from "moment";
 export default {
-  name: "Checkbox",
+  name: "DatePicker",
   components: {
     PlusIcon,
     Main,
