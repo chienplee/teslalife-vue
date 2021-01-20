@@ -63,7 +63,7 @@ export default {
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,
     headless: VueTypes.bool.def(false),
-    border: VueTypes.bool.def(true),
+    border: VueTypes.bool.def(false),
     caption: VueTypes.string,
     bodypadding: VueTypes.string,
     moreText: VueTypes.bool.def(false),

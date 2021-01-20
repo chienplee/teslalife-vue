@@ -86,7 +86,10 @@
             </router-link>
           </a-menu-item>
           <a-menu-item key="breadcrumb">
-            <router-link @click.native="toggleCollapsed" to="/components/breadcrumb">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/breadcrumb"
+            >
               Breadcrumb
             </router-link>
           </a-menu-item>
@@ -175,6 +178,19 @@
           <a-menu-item key="list">
             <router-link @click.native="toggleCollapsed" to="/components/list">
               List
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="menu">
+            <router-link @click.native="toggleCollapsed" to="/components/menu">
+              Menu
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="message">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/message"
+            >
+              Message
             </router-link>
           </a-menu-item>
         </a-sub-menu>
