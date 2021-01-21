@@ -13,183 +13,185 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Basic">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb>
-                <a-breadcrumb-item>Home</a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>An Application</a-breadcrumb-item>
-              </a-breadcrumb>
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-          <sdCards title="Other Router Integration">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb :routes="routes">
-                <template
-                  slot="itemRender"
-                  slot-scope="{ route, routes, paths }"
+          <a-col :lg="12" :xs="24">
+            <div class="atbd-drawer">
+              <sdCards title="Basic" caption="The simplest use of Drawer">
+                <Drawer title="Basic Drawer" placement="right">
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                </Drawer>
+              </sdCards>
+            </div>
+          </a-col>
+          <a-col :lg="12" :xs="24">
+            <div class="atbd-drawer">
+              <sdCards title="Custom placement" caption="The simplest use of Drawer">
+                <div class="drawer-placement">
+                  <Drawer customPlacement title="Basic Drawer">
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                  </Drawer>
+                </div>
+              </sdCards>
+            </div>
+          </a-col>
+          <a-col :lg="12" :xs="24">
+            <sdCards title="Render in current dom" caption="The simplest use of Drawer">
+              <div
+                style={{
+                  height: 200,
+                  overflow: 'hidden',
+                  position: 'relative',
+                  padding: 48,
+                  textAlign: 'center',
+                }}
+              >
+                <Drawer render title="Basic Drawer">
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                </Drawer>
+              </div>
+            </sdCards>
+          </a-col>
+          <a-col :lg="12" :xs="24">
+            <div class="atbd-drawer">
+              <sdCards title="Submit form in drawer" caption="The simplest use of Drawer">
+                <Drawer btnText="+ New account" title="Basic Drawer">
+                  <Form layout="vertical" hideRequiredMark>
+                    <a-row gutter={16}>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item
+                          name="name"
+                          label="Name"
+                          rules={[{ required: true, message: 'Please enter user name' }]}
+                        >
+                          <Input placeholder="Please enter user name" />
+                        </Form.Item>
+                      </a-col>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item name="url" label="Url" rules={[{ required: true, message: 'Please enter url' }]}>
+                          <Input
+                            style={{ width: '100%' }}
+                            addonBefore="http://"
+                            addonAfter=".com"
+                            placeholder="Please enter url"
+                          />
+                        </Form.Item>
+                      </a-col>
+                    </a-row>
+                    <a-row gutter={16}>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item
+                          name="owner"
+                          label="Owner"
+                          rules={[{ required: true, message: 'Please select an owner' }]}
+                        >
+                          <Select placeholder="Please select an owner">
+                            <Option value="xiao">Xiaoxiao Fu</Option>
+                            <Option value="mao">Maomao Zhou</Option>
+                          </Select>
+                        </Form.Item>
+                      </a-col>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item
+                          name="type"
+                          label="Type"
+                          rules={[{ required: true, message: 'Please choose the type' }]}
+                        >
+                          <Select placeholder="Please choose the type">
+                            <Option value="private">Private</Option>
+                            <Option value="public">Public</Option>
+                          </Select>
+                        </Form.Item>
+                      </a-col>
+                    </a-row>
+                    <a-row gutter={16}>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item
+                          name="approver"
+                          label="Approver"
+                          rules={[{ required: true, message: 'Please choose the approver' }]}
+                        >
+                          <Select placeholder="Please choose the approver">
+                            <Option value="jack">Jack Ma</Option>
+                            <Option value="tom">Tom Liu</Option>
+                          </Select>
+                        </Form.Item>
+                      </a-col>
+                      <a-col lg={12} sm={24} xs={24}>
+                        <Form.Item
+                          name="dateTime"
+                          label="DateTime"
+                          rules={[{ required: true, message: 'Please choose the dateTime' }]}
+                        >
+                          <DatePicker.RangePicker
+                            style={{ width: '100%' }}
+                            getPopupContainer={trigger => trigger.parentNode}
+                          />
+                        </Form.Item>
+                      </a-col>
+                    </a-row>
+                    <a-row gutter={16}>
+                      <a-col lg={24} sm={24} xs={24}>
+                        <Form.Item
+                          name="description"
+                          label="Description"
+                          rules={[
+                            {
+                              required: true,
+                              message: 'please enter url description',
+                            },
+                          ]}
+                        >
+                          <Input.TextArea a-rows={4} placeholder="please enter url description" />
+                        </Form.Item>
+                      </a-col>
+                    </a-row>
+                  </Form>
+                </Drawer>
+              </sdCards>
+            </div>
+          </a-col>
+          <a-col :lg="12" :xs="24">
+            <div class="atbd-drawer">
+              <sdCards title="Multi Label Drawer" caption="The simplest use of Drawer">
+                <Drawer
+                  title="Basic Drawer"
+                  childTitle="Lavel Two"
+                  childDrawer={
+                    <>
+                      <p>Some contents...</p>
+                      <p>Some contents...</p>
+                      <p>Some contents...</p>
+                    </>
+                  }
                 >
-                  <span v-if="routes.indexOf(route) === routes.length - 1">
-                    {{ route.breadcrumbName }}
-                  </span>
-                  <router-link v-else :to="`${basePath}/${paths.join('/')}`">
-                    {{ route.breadcrumbName }}
-                  </router-link>
-                </template>
-              </a-breadcrumb>
-              <br />
-              {{ $route.path }}
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-          <sdCards title="Bread crumbs with drop down menu">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb>
-                <a-breadcrumb-item>Ant Design Vue</a-breadcrumb-item>
-                <a-breadcrumb-item><a href="">Component</a></a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <a href="">General</a>
-                  <a-menu slot="overlay">
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.alipay.com/"
-                      >
-                        General
-                      </a>
-                    </a-menu-item>
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.taobao.com/"
-                      >
-                        Layout
-                      </a>
-                    </a-menu-item>
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.tmall.com/"
-                      >
-                        Navigation
-                      </a>
-                    </a-menu-item>
-                  </a-menu>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>Button</a-breadcrumb-item>
-              </a-breadcrumb>
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-        </a-col>
-        <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="With Icon">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb>
-                <a-breadcrumb-item>
-                  <a-icon type="home" />
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">
-                    <span>Application List</span>
-                  </router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>An Application</a-breadcrumb-item>
-              </a-breadcrumb>
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-
-          <sdCards title="Configuring the Separator">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb separator=">">
-                <a-breadcrumb-item>Home</a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-item>An Application</a-breadcrumb-item>
-              </a-breadcrumb>
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-
-          <sdCards title="Configuring the Separator">
-            <BreadcrumbWrapperStyle>
-              <a-breadcrumb separator="">
-                <a-breadcrumb-item>Location</a-breadcrumb-item>
-                <a-breadcrumb-separator>:</a-breadcrumb-separator>
-                <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-separator />
-                <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
-                </a-breadcrumb-item>
-                <a-breadcrumb-separator />
-                <a-breadcrumb-item>An Application</a-breadcrumb-item>
-              </a-breadcrumb>
-            </BreadcrumbWrapperStyle>
-          </sdCards>
-        </a-col>
-      </a-row>
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                  <p>Some contents...</p>
+                </Drawer>
+              </sdCards>
+            </div>
+          </a-col>
+        </a-row>
     </Main>
   </div>
 </template>
 
 <script>
+const { Option } = Select;
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
-import { BreadcrumbWrapperStyle } from "./ui-elements-styled";
+import { Drawer } from '../../components/drawer/drawer';
 export default {
   name: "Badge",
   components: {
     PlusIcon,
     Main,
-    BreadcrumbWrapperStyle,
-  },
-  data() {
-    return {
-      basePath: "/components/breadcrumb",
-      routes: [
-        {
-          path: "index",
-          breadcrumbName: "home",
-        },
-        {
-          path: "first",
-          breadcrumbName: "first",
-          children: [
-            {
-              path: "/general",
-              breadcrumbName: "General",
-            },
-            {
-              path: "/layout",
-              breadcrumbName: "Layout",
-            },
-            {
-              path: "/navigation",
-              breadcrumbName: "Navigation",
-            },
-          ],
-        },
-        {
-          path: "second",
-          breadcrumbName: "second",
-        },
-      ],
-    };
+    Drawer
   },
 };
 </script>
