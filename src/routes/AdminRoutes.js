@@ -87,6 +87,11 @@ export default new Router({
           component: () => import("@/view/uiElements/DatePicker"),
         },
         {
+          path: '/components/drawer',
+          name: 'drawer',
+          component: () => import("@/view/uiElements/Drawer"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),
