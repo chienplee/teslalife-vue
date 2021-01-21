@@ -92,6 +92,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Dropdown"),
         },
         {
+          path: '/components/drawer',
+          name: 'drawer',
+          component: () => import("@/view/uiElements/Drawer"),
+        },
+        {
           path: '/components/input',
           name: 'input',
           component: () => import("@/view/uiElements/Input"),

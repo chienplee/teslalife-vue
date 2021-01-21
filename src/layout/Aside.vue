@@ -162,6 +162,14 @@
               DatePicker
             </router-link>
           </a-menu-item>
+          <a-menu-item key="drawer">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/drawer"
+            >
+              Drawer
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="dropdown">
             <router-link
               @click.native="toggleCollapsed"
