@@ -274,6 +274,11 @@
               Radio
             </router-link>
           </a-menu-item>
+          <a-menu-item key="rate">
+            <router-link @click.native="toggleCollapsed" to="/components/rate">
+              Rate
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">

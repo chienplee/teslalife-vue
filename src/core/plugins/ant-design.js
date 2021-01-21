@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import { Button, Menu, Dropdown, Drawer, Select, InputNumber, Form, Cascader, Popconfirm, Empty, Progress, Pagination, Modal, Divider, Space, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge, Breadcrumb  } from 'ant-design-vue';
+import { Button, Menu, Dropdown, Drawer, Select, InputNumber, Form, Cascader, Popconfirm, Empty, Progress, Pagination, Modal, Divider, Space, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge, Breadcrumb, Rate  } from 'ant-design-vue';
 
+Vue.use(Rate);
 Vue.use(Button);
 Vue.use(Menu);
 Vue.use(Layout);

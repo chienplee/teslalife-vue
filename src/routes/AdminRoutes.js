@@ -172,6 +172,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Radio"),
         },
         {
+          path: '/components/rate',
+          name: 'rate',
+          component: () => import("@/view/uiElements/Rate"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),
