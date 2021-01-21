@@ -170,6 +170,30 @@
               Drawer
             </router-link>
           </a-menu-item>
+          <a-menu-item key="empty">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/empty"
+            >
+              Empty
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="form">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/form"
+            >
+              Form
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="grid">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/grid"
+            >
+              Grid
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="dropdown">
             <router-link
               @click.native="toggleCollapsed"
@@ -261,7 +285,6 @@
           </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
-
       <a-menu-item-group key="pages">
         <p slot="title" class="sidebar-nav-title">Pages</p>
         <a-menu-item key="starter">
