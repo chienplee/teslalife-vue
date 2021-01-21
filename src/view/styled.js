@@ -879,7 +879,7 @@ const PageHeaderWrapper = Styled.div`
 
 const MessageStyleWrapper = Styled.div`
     .ant-btn-lg{
-        font-size: 14px;
+        font-size: 14px !important;
     }
 `;
 
