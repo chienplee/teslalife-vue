@@ -208,7 +208,7 @@ import { Main } from "../styled";
 import { GridStyle, GridStyleGutter, GridStyleOffset } from './GridStyled';
 import { PlusIcon } from "vue-feather-icons";
 export default {
-  name: "Form",
+  name: "Grid",
   components: {
     PlusIcon,
     Main,

@@ -171,26 +171,17 @@
             </router-link>
           </a-menu-item>
           <a-menu-item key="empty">
-            <router-link
-              @click.native="toggleCollapsed"
-              to="/components/empty"
-            >
+            <router-link @click.native="toggleCollapsed" to="/components/empty">
               Empty
             </router-link>
           </a-menu-item>
           <a-menu-item key="form">
-            <router-link
-              @click.native="toggleCollapsed"
-              to="/components/form"
-            >
+            <router-link @click.native="toggleCollapsed" to="/components/form">
               Form
             </router-link>
           </a-menu-item>
           <a-menu-item key="grid">
-            <router-link
-              @click.native="toggleCollapsed"
-              to="/components/grid"
-            >
+            <router-link @click.native="toggleCollapsed" to="/components/grid">
               Grid
             </router-link>
           </a-menu-item>
