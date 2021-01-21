@@ -186,6 +186,14 @@
               Form
             </router-link>
           </a-menu-item>
+          <a-menu-item key="grid">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/grid"
+            >
+              Grid
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="dropdown">
             <router-link
               @click.native="toggleCollapsed"

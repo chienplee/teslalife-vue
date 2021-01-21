@@ -107,6 +107,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Form"),
         },
         {
+          path: '/components/grid',
+          name: 'grid',
+          component: () => import("@/view/uiElements/Grid"),
+        },
+        {
           path: '/components/input',
           name: 'input',
           component: () => import("@/view/uiElements/Input"),
