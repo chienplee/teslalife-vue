@@ -147,6 +147,16 @@ export default new Router({
           component: () => import("@/view/uiElements/Popover"),
         },
         {
+          path: '/components/progressbar',
+          name: 'progressbar',
+          component: () => import("@/view/uiElements/Progressbar"),
+        },
+        {
+          path: '/components/radio',
+          name: 'radio',
+          component: () => import("@/view/uiElements/Radio"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),

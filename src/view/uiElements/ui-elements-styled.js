@@ -536,7 +536,17 @@ const DashboardBaseStyleWrap = Styled.div`
     }
 `;
 
+const ProgressBarStyle = Styled.div`
+  .ant-progress > div{
+    width: 100%;
+  }
+  .ant-progress .ant-progress-text{
+    margin-left: 0px !important;
+  }
+`;
+
 export {
+  ProgressBarStyle,
   DropdownStyle,
   DropdownIconStyleWrapper,
   SpinerWraperStyle,

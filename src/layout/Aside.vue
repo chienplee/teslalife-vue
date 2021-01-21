@@ -246,6 +246,19 @@
               Popover
             </router-link>
           </a-menu-item>
+          <a-menu-item key="progressbar">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/progressbar"
+            >
+              Progress Bar
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="radio">
+            <router-link @click.native="toggleCollapsed" to="/components/radio">
+              Radio
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 
