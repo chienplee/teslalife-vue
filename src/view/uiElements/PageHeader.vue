@@ -1,0 +1,117 @@
+<template>
+  <div>
+    <sdPageHeader title="PageHeader">
+      <div slot="buttons" class="page-header-actions">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
+          <PlusIcon size="14" />
+          Add New
+        </sdButton>
+      </div>
+    </sdPageHeader>
+    <Main>
+      <a-row :gutter="25">
+        <a-col :md="24" :xs="24">
+          <sdCards title="Basic Header">
+            <PageHeaderWrapper>
+              <sdPageHeader
+                bgColor="#fff"
+                title="Title"
+                subTitle="This is a subtitle"
+              />
+            </PageHeaderWrapper>
+          </sdCards>
+        </a-col>
+        <a-col :md="24" :xs="24">
+          <sdCards title="Custom header">
+            <PageHeaderWrapper>
+              <sdPageHeader title="Title">
+                <div slot="buttons" class="page-header-actions">
+                  <sdCalendarButton />
+                  <sdExportButton />
+                  <sdShareButton />
+                  <sdButton size="small" type="primary">
+                    <PlusIcon size="14" />
+                    Add New
+                  </sdButton>
+                </div>
+              </sdPageHeader>
+            </PageHeaderWrapper>
+          </sdCards>
+        </a-col>
+        <a-col :md="24" :xs="24">
+          <sdCards title="Breadcrumb header">
+            <PageHeaderWrapper>
+              <sdPageHeader
+                bgColor="#fff"
+                title="Title"
+                subTitle="This is a subtitle"
+                :routes="{ props: { routes } }"
+              />
+            </PageHeaderWrapper>
+          </sdCards>
+        </a-col>
+        <a-col :md="24" :xs="24">
+          <sdCards title="Extra Content header">
+            <PageHeaderWrapper>
+              <sdPageHeader
+                bgColor="#fff"
+                title="Title"
+                subTitle="This is a subtitle"
+                :routes="{ props: { routes } }"
+              >
+                <a-space slot="buttons">
+                  <sdButton size="small" type="default">
+                    Operation
+                  </sdButton>
+                  <sdButton size="small" type="default">
+                    Operation
+                  </sdButton>
+                  <sdButton size="small" type="primary">
+                    Primary
+                  </sdButton>
+                </a-space>
+              </sdPageHeader>
+            </PageHeaderWrapper>
+          </sdCards>
+        </a-col>
+      </a-row>
+    </Main>
+  </div>
+</template>
+
+<script>
+import { PlusIcon } from "vue-feather-icons";
+import { Main, PageHeaderWrapper } from "../styled";
+const routes = [
+  {
+    path: "index",
+    breadcrumbName: "First-level Menu",
+  },
+  {
+    path: "first",
+    breadcrumbName: "Second-level Menu",
+  },
+  {
+    path: "second",
+    breadcrumbName: "Third-level Menu",
+  },
+];
+
+export default {
+  name: "PageHeader",
+  components: {
+    PlusIcon,
+    Main,
+    PageHeaderWrapper,
+  },
+  data() {
+    return {
+      routes,
+    };
+  },
+  methods: {},
+};
+</script>

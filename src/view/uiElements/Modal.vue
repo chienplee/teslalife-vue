@@ -199,7 +199,7 @@ import { Main } from "../styled";
 import { Modal } from "ant-design-vue";
 
 export default {
-  name: "Message",
+  name: "Modal",
   components: {
     PlusIcon,
     Main,

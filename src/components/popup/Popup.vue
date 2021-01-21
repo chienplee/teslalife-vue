@@ -36,7 +36,7 @@ import { CheckIcon } from "vue-feather-icons";
 export default {
   name: "Popover",
   props: {
-    placement: VueTypes.string.def("bottomCenter"),
+    placement: VueTypes.string.def("bottom"),
     title: VueTypes.string,
     action: VueTypes.string.def("hover"),
   },

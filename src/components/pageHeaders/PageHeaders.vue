@@ -10,7 +10,7 @@ export const PageHeader = {
     subTitle: VueTypes.oneOfType([VueTypes.string, VueTypes.object]),
     bgColor: VueTypes.string,
     classes: VueTypes.string,
-    routes: VueTypes.arrayOf(VueTypes.object),
+    routes: VueTypes.object,
     buttons: VueTypes.array,
     ghost: VueTypes.bool,
   },

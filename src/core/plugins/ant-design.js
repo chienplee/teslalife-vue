@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Menu,Dropdown, Cascader, Modal, Space, Form, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge, Breadcrumb  } from 'ant-design-vue';
+import { Button, Menu,Dropdown, Cascader, Popconfirm, Pagination, Modal, Divider, Space, Form, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, Input, AutoComplete, Popover, Badge, Breadcrumb  } from 'ant-design-vue';
 
 Vue.use(Button);
 Vue.use(Menu);
@@ -12,6 +12,7 @@ Vue.use(Input);
 Vue.use(AutoComplete);
 Vue.use(Popover);
 Vue.use(Checkbox);
+Vue.use(Divider);
 Vue.use(Avatar);
 Vue.use(Dropdown);
 Vue.use(Badge);
@@ -30,3 +31,5 @@ Vue.use(List)
 Vue.use(Form)
 Vue.use(Space)
 Vue.use(Modal)
+Vue.use(Pagination)
+Vue.use(Popconfirm)

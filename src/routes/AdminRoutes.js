@@ -120,7 +120,32 @@ export default new Router({
           path: '/components/modal',
           name: 'modal',
           component: () => import("@/view/uiElements/Modal"),
-        },        
+        },
+        {
+          path: '/components/notification',
+          name: 'notification',
+          component: () => import("@/view/uiElements/Notification"),
+        },
+        {
+          path: '/components/pageHeader',
+          name: 'pageHeader',
+          component: () => import("@/view/uiElements/PageHeader"),
+        },
+        {
+          path: '/components/pagination',
+          name: 'pagination',
+          component: () => import("@/view/uiElements/Pagination"),
+        },
+        {
+          path: '/components/popConfirm',
+          name: 'popConfirm',
+          component: () => import("@/view/uiElements/PopConfirm"),
+        },
+        {
+          path: '/components/popover',
+          name: 'popover',
+          component: () => import("@/view/uiElements/Popover"),
+        },
         {
           path: '/starter',
           name: 'starter',

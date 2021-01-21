@@ -206,6 +206,46 @@
               Modal
             </router-link>
           </a-menu-item>
+          <a-menu-item key="notification">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/notification"
+            >
+              Notification
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="pageHeader">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/pageHeader"
+            >
+              PageHeader
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="pagination">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/pagination"
+            >
+              Pagination
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="popConfirm">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/popConfirm"
+            >
+              PopConfirm
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="popover">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/popover"
+            >
+              Popover
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 
