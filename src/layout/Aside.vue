@@ -270,6 +270,14 @@
               Popover
             </router-link>
           </a-menu-item>
+          <a-menu-item key="progressBar">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/progressBar"
+            >
+              Progress Bar
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">
