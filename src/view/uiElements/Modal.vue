@@ -1,0 +1,277 @@
+<template>
+  <div>
+    <sdPageHeader title="Modals">
+      <div slot="buttons" class="page-header-actions">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
+          <PlusIcon size="14" />
+          Add New
+        </sdButton>
+      </div>
+    </sdPageHeader>
+    <Main>
+      <a-row :gutter="25">
+        <a-col :md="12" :xs="24">
+          <sdCards title="Basic">
+            <p>
+              When requiring users to interact with the application, but without
+              jumping to a new page and interrupting the user's workflow, you
+              can use Modal to create a new floating layer over the current page
+              to get user feedback or display information. Additionally
+            </p>
+            <sdModal
+              title="Basic Modal"
+              :type="modalType"
+              :onOk="handleOk"
+              :visible="visible"
+              :onCancel="handleCancel"
+            >
+              <p>
+                When requiring users to interact with the application, but
+                without jumping to a new page and interrupting the user's
+                workflow, you can use Modal to create a new floating layer over
+                the current page to get user feedback or display information.
+                Additionally
+              </p>
+            </sdModal>
+            <a-space>
+              <sdButton
+                @click.native="
+                  () => {
+                    showModal();
+                    changeType('primary');
+                  }
+                "
+                type="primary"
+                >Primary</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showModal();
+                    changeType('success');
+                  }
+                "
+                type="success"
+                >Success</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showModal();
+                    changeType('warning');
+                  }
+                "
+                type="warning"
+                >Warning</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showModal();
+                    changeType('error');
+                  }
+                "
+                type="error"
+                >Error</sdButton
+              >
+            </a-space>
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :xs="24">
+          <sdCards title="Color Modal">
+            <p>
+              When requiring users to interact with the application, but without
+              jumping to a new page and interrupting the user's workflow, you
+              can use Modal to create a new floating layer over the current page
+              to get user feedback or display information. Additionally
+            </p>
+            <sdModal
+              title="Color Modal"
+              :color="true"
+              :type="modalType"
+              :onOk="handleOk"
+              :visible="colorVisible"
+              :onCancel="handleCancel"
+            >
+              <p>
+                When requiring users to interact with the application, but
+                without jumping to a new page and interrupting the user's
+                workflow, you can use Modal to create a new floating layer over
+                the current page to get user feedback or display information.
+                Additionally
+              </p>
+            </sdModal>
+            <a-space>
+              <sdButton
+                @click.native="
+                  () => {
+                    showColorModal();
+                    changeType('primary');
+                  }
+                "
+                type="primary"
+                >Primary</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showColorModal();
+                    changeType('success');
+                  }
+                "
+                type="success"
+                >Success</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showColorModal();
+                    changeType('warning');
+                  }
+                "
+                type="warning"
+                >Warning</sdButton
+              >
+              <sdButton
+                @click.native="
+                  () => {
+                    showColorModal();
+                    changeType('error');
+                  }
+                "
+                type="error"
+                >Error</sdButton
+              >
+            </a-space>
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :xs="24">
+          <sdCards title="Color Modal">
+            <p>
+              When requiring users to interact with the application, but without
+              jumping to a new page and interrupting the user's workflow, you
+              can use Modal to create a new floating layer over the current page
+              to get user feedback or display information. Additionally
+            </p>
+            <sdModal
+              title="Color Modal"
+              :color="true"
+              :type="modalType"
+              :onOk="handleOk"
+              :visible="colorVisible"
+              :onCancel="handleCancel"
+            >
+              <p>
+                When requiring users to interact with the application, but
+                without jumping to a new page and interrupting the user's
+                workflow, you can use Modal to create a new floating layer over
+                the current page to get user feedback or display information.
+                Additionally
+              </p>
+            </sdModal>
+            <a-space>
+              <sdButton type="info" @click.native="info">
+                Info
+              </sdButton>
+              <sdButton type="success" @click.native="success">
+                Success
+              </sdButton>
+              <sdButton type="error" @click.native="error">
+                Error
+              </sdButton>
+              <sdButton type="warning" @click.native="warning">
+                Warning
+              </sdButton>
+            </a-space>
+          </sdCards>
+        </a-col>
+      </a-row>
+    </Main>
+  </div>
+</template>
+
+<script>
+import { PlusIcon } from "vue-feather-icons";
+import { Main } from "../styled";
+import { Modal } from "ant-design-vue";
+
+export default {
+  name: "Message",
+  components: {
+    PlusIcon,
+    Main,
+  },
+  data() {
+    return {
+      visible: false,
+      confirmLoading: false,
+      modalType: "primary",
+      colorVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.visible = true;
+    },
+    showColorModal() {
+      this.colorVisible = true;
+    },
+    handleOk() {
+      this.confirmLoading = true;
+      setTimeout(() => {
+        this.visible = false;
+        this.colorVisible = false;
+        this.confirmLoading = false;
+      }, 2000);
+    },
+    handleCancel() {
+      this.visible = false;
+      this.colorVisible = false;
+    },
+    changeType(type) {
+      this.modalType = type;
+    },
+    info() {
+      const h = this.$createElement;
+      Modal.info({
+        title: "This is a notification message",
+        content: h("div", {}, [
+          h("p", "some messages...some messages..."),
+          h("p", "some messages...some messages..."),
+        ]),
+        onOk() {},
+      });
+    },
+
+    success() {
+      Modal.success({
+        title: "This is a success message",
+        // JSX support
+        content: (
+          <div>
+            <p>some messages...some messages...</p>
+            <p>some messages...some messages...</p>
+          </div>
+        ),
+      });
+    },
+
+    error() {
+      Modal.error({
+        title: "This is an error message",
+        content: "some messages...some messages...",
+      });
+    },
+
+    warning() {
+      Modal.warning({
+        title: "This is a warning message",
+        content: "some messages...some messages...",
+      });
+    },
+  },
+};
+</script>

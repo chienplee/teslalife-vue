@@ -193,6 +193,11 @@
               Message
             </router-link>
           </a-menu-item>
+          <a-menu-item key="modal">
+            <router-link @click.native="toggleCollapsed" to="/components/modal">
+              Modal
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
 

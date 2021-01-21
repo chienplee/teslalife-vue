@@ -97,6 +97,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Input"),
         },
         {
+          path: '/components/list',
+          name: 'list',
+          component: () => import("@/view/uiElements/List"),
+        },
+        {
           path: '/components/menu',
           name: 'menu',
           component: () => import("@/view/uiElements/Menu"),
@@ -105,12 +110,12 @@ export default new Router({
           path: '/components/message',
           name: 'message',
           component: () => import("@/view/uiElements/Message"),
-        },
+        }, 
         {
-          path: '/components/list',
-          name: 'list',
-          component: () => import("@/view/uiElements/List"),
-        },
+          path: '/components/modal',
+          name: 'modal',
+          component: () => import("@/view/uiElements/Modal"),
+        },        
         {
           path: '/starter',
           name: 'starter',
