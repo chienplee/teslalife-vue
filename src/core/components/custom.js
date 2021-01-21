@@ -11,6 +11,8 @@ import Cascader from "../../components/cascader/Cascader";
 import Heading from '../../components/heading/Heading';
 import AutoComplete from "../../components/autoComplete/autoComplete";
 import Dropdown from "../../components/dropdown/Dropdown";
+import Popover from "../../components/popup/Popup";
+import Modal from "../../components/modals/Modals";
 
 [
   {
@@ -35,7 +37,9 @@ import Dropdown from "../../components/dropdown/Dropdown";
 ...PageHeader},
 Cascader,
 AutoComplete,
-Dropdown
+Dropdown,
+Popover,
+Modal
 ].map((c) => {  
   Vue.component(`sd${c.name}`, c);
 });

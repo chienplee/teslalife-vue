@@ -112,6 +112,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Input"),
         },
         {
+          path: '/components/list',
+          name: 'list',
+          component: () => import("@/view/uiElements/List"),
+        },
+        {
           path: '/components/menu',
           name: 'menu',
           component: () => import("@/view/uiElements/Menu"),
@@ -120,11 +125,36 @@ export default new Router({
           path: '/components/message',
           name: 'message',
           component: () => import("@/view/uiElements/Message"),
+        }, 
+        {
+          path: '/components/modal',
+          name: 'modal',
+          component: () => import("@/view/uiElements/Modal"),
         },
         {
-          path: '/components/list',
-          name: 'list',
-          component: () => import("@/view/uiElements/List"),
+          path: '/components/notification',
+          name: 'notification',
+          component: () => import("@/view/uiElements/Notification"),
+        },
+        {
+          path: '/components/pageHeader',
+          name: 'pageHeader',
+          component: () => import("@/view/uiElements/PageHeader"),
+        },
+        {
+          path: '/components/pagination',
+          name: 'pagination',
+          component: () => import("@/view/uiElements/Pagination"),
+        },
+        {
+          path: '/components/popConfirm',
+          name: 'popConfirm',
+          component: () => import("@/view/uiElements/PopConfirm"),
+        },
+        {
+          path: '/components/popover',
+          name: 'popover',
+          component: () => import("@/view/uiElements/Popover"),
         },
         {
           path: '/starter',
