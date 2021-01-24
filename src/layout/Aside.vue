@@ -279,6 +279,11 @@
               Rate
             </router-link>
           </a-menu-item>
+          <a-menu-item key="result">
+            <router-link @click.native="toggleCollapsed" to="/components/result">
+              Result
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">

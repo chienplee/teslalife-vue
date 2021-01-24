@@ -177,6 +177,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Rate"),
         },
         {
+          path: '/components/result',
+          name: 'result',
+          component: () => import("@/view/uiElements/Result"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),
