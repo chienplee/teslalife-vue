@@ -284,6 +284,11 @@
               Result
             </router-link>
           </a-menu-item>
+          <a-menu-item key="select">
+            <router-link @click.native="toggleCollapsed" to="/components/select">
+              Select
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">
