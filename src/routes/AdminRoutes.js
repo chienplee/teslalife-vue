@@ -187,6 +187,11 @@ export default new Router({
           component: () => import("@/view/uiElements/Select"),
         },
         {
+          path: '/components/skeleton',
+          name: 'skeleton',
+          component: () => import("@/view/uiElements/Skeleton"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),

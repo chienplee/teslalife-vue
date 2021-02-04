@@ -289,6 +289,11 @@
               Select
             </router-link>
           </a-menu-item>
+          <a-menu-item key="skeleton">
+            <router-link @click.native="toggleCollapsed" to="/components/skeleton">
+              Skeleton
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">
