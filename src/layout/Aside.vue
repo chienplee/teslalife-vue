@@ -280,28 +280,51 @@
             </router-link>
           </a-menu-item>
           <a-menu-item key="result">
-            <router-link @click.native="toggleCollapsed" to="/components/result">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/result"
+            >
               Result
             </router-link>
           </a-menu-item>
           <a-menu-item key="select">
-            <router-link @click.native="toggleCollapsed" to="/components/select">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/select"
+            >
               Select
             </router-link>
           </a-menu-item>
           <a-menu-item key="skeleton">
-            <router-link @click.native="toggleCollapsed" to="/components/skeleton">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/skeleton"
+            >
               Skeleton
             </router-link>
           </a-menu-item>
           <a-menu-item key="slider">
-            <router-link @click.native="toggleCollapsed" to="/components/slider">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/slider"
+            >
               Slider
             </router-link>
           </a-menu-item>
           <a-menu-item key="spiner">
-            <router-link @click.native="toggleCollapsed" to="/components/Spiner">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/spiner"
+            >
               Spiner
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="statistic">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/components/statistic"
+            >
+              Statistic
             </router-link>
           </a-menu-item>
         </a-sub-menu>
