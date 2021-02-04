@@ -294,6 +294,16 @@
               Skeleton
             </router-link>
           </a-menu-item>
+          <a-menu-item key="slider">
+            <router-link @click.native="toggleCollapsed" to="/components/slider">
+              Slider
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="spiner">
+            <router-link @click.native="toggleCollapsed" to="/components/Spiner">
+              Spiner
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">

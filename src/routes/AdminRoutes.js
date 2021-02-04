@@ -192,6 +192,16 @@ export default new Router({
           component: () => import("@/view/uiElements/Skeleton"),
         },
         {
+          path: '/components/slider',
+          name: 'slider',
+          component: () => import("@/view/uiElements/Slider"),
+        },
+        {
+          path: '/components/spiner',
+          name: 'spiner',
+          component: () => import("@/view/uiElements/Spiner"),
+        },
+        {
           path: '/starter',
           name: 'starter',
           component: () => import("@/view/pages/BlankPage.vue"),
