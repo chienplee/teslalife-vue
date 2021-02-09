@@ -1,6 +1,4 @@
-import Styled from 'styled-components';
-import { Slider } from 'antd';
-
+import Styled from 'vue-styled-components';
 const IconWrapper = Styled.div`
     position: relative;
     padding: 0px 30px;
@@ -21,8 +19,4 @@ const IconWrapper = Styled.div`
     }
 `;
 
-const SliderStyle = Styled(Slider)`
-
-`;
-
-export { IconWrapper, SliderStyle };
+export { IconWrapper };

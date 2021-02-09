@@ -1,108 +1,98 @@
-/* eslint-disable vue/forbid-prop-types */
-import React, { useState } from 'react';
-import { InputNumber, Row, Col } from 'antd';
-import PropTypes from 'prop-types';
-import { FrownOutlined } from '@ant-design/icons';
-import { IconWrapper, SliderStyle } from './style';
+<template>
+  <a-row v-if="input">
+    <a-col :xl="20" :xs="24">
+      <a-slider
+        :min="min"
+        :max="max"
+        onChange="onChanges"
+        :value="typeof inputValue === 'number' ? inputValue : 0"
+        :step="step"
+      />
+    </a-col>
+    <a-col :xl="4" :xs="24">
+      <a-input-number
+        :min="min"
+        :max="max"
+        :value="inputValue"
+        onChange="onChanges"
+        :step="step"
+      />
+    </a-col>
+  </a-row>
+  <IconWrapper v-else-if="icon">
+    <a-icon type="frown" :style="{ color: preColor }" />
+    <a-slider
+      :min="mini"
+      :max="maxi"
+      onChange="{handleChange}"
+      :value="value"
+    />
+    <a-icon type="frown" :style="{ color: nextColor }" />
+  </IconWrapper>
+  <a-slider
+    v-else
+    :marks="marks"
+    :default-value="defaultValue || defaultValues"
+    :range="range"
+    :step="step"
+    :vertical="vertical"
+    :onAfterChange="onAfterChanges"
+    :onChange="onChange"
+    :max="max"
+    :min="min"
+  />
+</template>
 
-const Slider = props => {
-  const {
-    defaultValue,
-    range,
-    min,
-    max,
-    step,
-    input,
-    icon,
-    marks,
-    vertical,
-    defaultValues,
-    onAfterChange,
-    onChange,
-  } = props;
-
-  const [state, setState] = useState({
-    inputValue: 1,
-    mini: min,
-    maxi: max,
-  });
-
-  const onChanges = value => {
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(value)) {
-      return;
-    }
-
-    setState({
-      ...state,
-      inputValue: value,
-    });
-    if (onChange) onChange(value);
-  };
-
-  const handleChange = value => {
-    setState({ ...state, value });
-    if (onChange) onChange(value);
-  };
-
-  const { inputValue, value, mini, maxi } = state;
-  const mid = ((maxi - mini) / 2).toFixed(5);
-  const preColor = value >= mid ? '' : 'rgba(0, 0, 0, .45)';
-  const nextColor = value >= mid ? 'rgba(0, 0, 0, .45)' : '';
-
-  const onAfterChanges = values => {
-    if (onAfterChange) onAfterChange(values);
-  };
-
-  return input ? (
-    <Row>
-      <Col xl={20} xs={24}>
-        <SliderStyle
-          min={min}
-          max={max}
-          onChange={onChanges}
-          value={typeof inputValue === 'number' ? inputValue : 0}
-          step={step}
-        />
-      </Col>
-      <Col xl={4} xs={24}>
-        <InputNumber min={min} max={max} value={inputValue} onChange={onChanges} step={step} />
-      </Col>
-    </Row>
-  ) : icon ? (
-    <IconWrapper>
-      <FrownOutlined style={{ color: preColor }} />
-      <SliderStyle min={mini} max={maxi} onChange={handleChange} value={value} />
-      <FrownOutlined style={{ color: nextColor }} />
-    </IconWrapper>
-  ) : (
-        <SliderStyle
-          marks={marks}
-          defaultValue={defaultValue || defaultValues}
-          range={range}
-          step={step}
-          vertical={vertical}
-          onAfterChange={onAfterChanges}
-          onChange={onChange}
-          max={max}
-          min={min}
-        />
-      );
+<script>
+import VueTypes from "vue-types";
+import { IconWrapper } from "./style";
+export default {
+  name: "Slider",
+  components: {
+    IconWrapper,
+  },
+  props: {
+    defaultValue: VueTypes.number,
+    defaultValues: VueTypes.array,
+    range: VueTypes.bool,
+    step: VueTypes.number,
+    input: VueTypes.bool,
+    icon: VueTypes.bool,
+    marks: VueTypes.object,
+    vertical: VueTypes.bool,
+    min: VueTypes.number,
+    max: VueTypes.number,
+    onAfterChange: VueTypes.func,
+    onChange: VueTypes.func,
+  },
+  data() {
+    return {
+      inputValue: 1,
+      mini: this.min,
+      maxi: this.max,
+      value: "",
+      mid: ((this.maxi - this.mini) / 2).toFixed(5),
+      preColor: this.value >= this.mid ? "" : "rgba(0, 0, 0, .45)",
+      nextColor: this.value >= this.mid ? "rgba(0, 0, 0, .45)" : "",
+    };
+  },
+  methods: {
+    onChanges(value) {
+      // eslint-disable-next-line no-restricted-globals
+      if (isNaN(value)) {
+        return;
+      }
+      this.inputValue = this.value;
+      if (this.onChanges) this.onChange(value);
+    },
+    handleChange(value) {
+      this.value = value;
+      if (this.onChange) this.onChange(value);
+    },
+    onAfterChanges(values) {
+      if (this.nAfterChange) this.onAfterChange(values);
+    },
+  },
 };
+</script>
 
-Slider.propTypes = {
-  defaultValue: PropTypes.number,
-  defaultValues: PropTypes.array,
-  range: PropTypes.bool,
-  step: PropTypes.number,
-  input: PropTypes.bool,
-  icon: PropTypes.bool,
-  marks: PropTypes.object,
-  vertical: PropTypes.bool,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  onAfterChange: PropTypes.func,
-  onChange: PropTypes.func,
-};
-
-export { Slider };
