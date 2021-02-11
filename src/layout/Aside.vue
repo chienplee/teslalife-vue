@@ -328,6 +328,39 @@
             </router-link>
           </a-menu-item>
         </a-sub-menu>
+
+        <a-sub-menu key="forms">
+          <template slot="title"><DiscIcon /><span>Forms</span></template>
+          <a-menu-item key="alerts">
+            <router-link @click.native="toggleCollapsed" to="/forms/form-layout">
+              Form Layout
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="form-elements">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/forms/form-elements"
+            >
+              Form Elements
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="form-components">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/forms/form-components"
+            >
+              Form Components
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="form-validation">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/forms/form-validation"
+            >
+              Form Validation
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
       </a-menu-item-group>
       <a-menu-item-group key="pages">
         <p slot="title" class="sidebar-nav-title">Pages</p>
@@ -344,7 +377,7 @@
   </a-menu>
 </template>
 <script>
-import { HomeIcon, CircleIcon, LayersIcon } from "vue-feather-icons";
+import { HomeIcon, CircleIcon, LayersIcon , DiscIcon,} from "vue-feather-icons";
 import VueTypes from "vue-types";
 import { mapGetters } from "vuex";
 
@@ -379,6 +412,7 @@ export default {
     HomeIcon,
     CircleIcon,
     LayersIcon,
+    DiscIcon,
   },
 };
 </script>
