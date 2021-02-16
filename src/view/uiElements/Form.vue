@@ -13,7 +13,7 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" :sm="24" xs="24">
+        <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Elements of Form" caption="The simplest use of Form">
             <BasicFormWrapper>
               <a-form :form="form" layout="vertical" name="basicforms" @submit="handleSubmit">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Empty">
+    <sdPageHeader title="Form Validation">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -13,98 +13,232 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" :sm="24" xs="24">
-          <sdCards title="Elements of Form" caption="The simplest use of Form">
-            <BasicFormWrapper>
-              <a-form
-                :form="form"
-                layout="vertical"
-                name="basicforms"
-                @submit="handleSubmit"
-              >
-                <a-form-item label="Username" name="username">
-                  <a-input placeholder="Username" />
-                </a-form-item>
+        <a-col :xs="24">
+          <sdCards title="Custom Styles" caption="The simplest use of Form">
+            <FormValidationWrap>
+              <VerticalFormStyleWrap>
+                <a-form :form="form" @submit="handleSubmit" name="sDash_validation-form" layout="vertical">
+                  <a-row :gutter="30">
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="First Name">
+                        <a-input
+                          placeholder="First Name"
+                          name="fname"
+                          v-decorator="[
+                            'fname',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your first name!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="Last Name">
+                        <a-input
+                          placeholder="Last Name"
+                          name="lname"
+                          v-decorator="[
+                            'lname',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your last name!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="Username">
+                        <a-input
+                          placeholder="Username"
+                          name="username"
+                          v-decorator="[
+                            'username',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your username!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="12" :xs="24">
+                      <a-form-item label="City">
+                        <a-input
+                          name="city"
+                          placeholder="City"
+                          v-decorator="[
+                            'city',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your city!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="6" :xs="24">
+                      <a-form-item label="State">
+                        <a-input
+                          name="state"
+                          placeholder="State"
+                          v-decorator="[
+                            'state',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your state!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="6" :xs="24">
+                      <a-form-item label="Zip">
+                        <a-input
+                          name="zip-code"
+                          placeholder="Zip"
+                          v-decorator="[
+                            'zip-code',
+                            {
+                              rules: [
+                                {
+                                  required: true,
+                                  message: 'Please input your zip!',
+                                },
+                              ],
+                            },
+                          ]"
+                        />
+                      </a-form-item>
+                    </a-col>
+                  </a-row>
+                  <div class="sDash_agree-check">
+                    <a-form-item>
+                      <a-checkbox name="checkbox">
+                        Agree to terms and conditions
+                      </a-checkbox>
+                    </a-form-item>
+                  </div>
+                  <div class="sDash_form-action mt-20">
+                    <a-button type="primary" html-type="submit">
+                      Submit Form
+                    </a-button>
+                  </div>
+                </a-form>
+              </VerticalFormStyleWrap>
+            </FormValidationWrap>
+          </sdCards>
+        </a-col>
 
-                <a-form-item label="Email" name="email">
-                  <a-input
-                    v-decorator="[
-                      'email',
-                      {
-                        rules: [
-                          {
-                            type: 'email',
-                            message: 'The input is not valid E-mail!',
-                          },
-                          {
-                            required: true,
-                            message: 'Please input your E-mail!',
-                          },
-                        ],
-                      },
-                    ]"
-                  />
-                </a-form-item>
-
-                <a-form-item label="Age" name="age">
-                  <a-input-number
-                    style="width: 100%"
-                    v-decorator="[
-                      'age',
-                      {
-                        rules: [
-                          {
-                            type: 'number',
-                            message: 'Please input your age!',
-                          },
-                          {
-                            required: true,
-                            message: 'Please input your age!',
-                          },
-                        ],
-                      },
-                    ]"
-                  />
-                </a-form-item>
-                <a-form-item label="Website" name="website">
-                  <a-input placeholder="http://website.com" />
-                </a-form-item>
-                <a-form-item label="Textarea" name="textarea">
-                  <a-textarea
-                    placeholder="Controlled autosize"
-                    :auto-size="{ minRows: 3, maxRows: 5 }"
-                  />
-                </a-form-item>
-
-                <a-form-item label="Website" name="website">
-                  <a-input placeholder="http://website.com" />
-                </a-form-item>
-                <a-form-item label="Casecader" name="casecader">
-                  <a-cascader
-                    :options="options"
-                    :default-value="['zhejiang', 'hangzhou', 'xihu']"
-                    @change="onChange(value)"
-                  />
-                </a-form-item>
-                <a-form-item label="Select" name="select">
-                  <a-select
-                    show-search
-                    placeholder="Select a person"
-                    option-filter-prop="children"
-                    :filter-option="filterOption"
-                  >
-                    <a-select-option value="jack"> Jack </a-select-option>
-                    <a-select-option value="lucy"> Lucy </a-select-option>
-                    <a-select-option value="tom"> Tom </a-select-option>
-                  </a-select>
-                </a-form-item>
-                <a-form-item>
-                  <sdButton htmlType="submit" size="default" type="primary">
-                    Submit
-                  </sdButton>
-                </a-form-item>
-              </a-form>
-            </BasicFormWrapper>
+        <a-col :xs="24">
+          <sdCards title="Server Side" >
+            <FormValidationWrap>
+              <VerticalFormStyleWrap>
+                <a-form name="sDash_vertical-form" layout="vertical">
+                  <a-row :gutter="30">
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="First Name" validate-status="success"
+                      help="Looks good!"
+                      >
+                        <a-input
+                          placeholder="First Name"
+                          name="fname2"
+                          value="Duran"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="Last Name"
+                        validate-status="success"
+                          help="Looks good!">
+                        <a-input
+                          placeholder="Last Name"
+                          name="lname"
+                          value="Clayton"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="8" :xs="24">
+                      <a-form-item label="Username" validate-status="error">
+                        <a-input
+                          placeholder="Username"
+                          name="username"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="12" :xs="24">
+                      <a-form-item label="City" help="Please provide a valid city." validate-status="error">
+                        <a-input
+                          name="city"
+                          placeholder="City"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="6" :xs="24">
+                      <a-form-item label="State" help="Please provide a valid state."
+                          validate-status="error">
+                        <a-input
+                          name="state"
+                          placeholder="State"
+                        />
+                      </a-form-item>
+                    </a-col>
+                    <a-col :md="6" :xs="24">
+                      <a-form-item label="Zip" help="Please provide a valid zip."
+                          validate-status="error">
+                        <a-input
+                          name="zip-code"
+                          placeholder="Zip"
+                        />
+                      </a-form-item>
+                    </a-col>
+                  </a-row>
+                  <div class="sDash_agree-check">
+                    <a-form-item help="You must agree before submitting." validate-status="error">
+                      <a-checkbox name="checkbox">
+                        Agree to terms and conditions
+                      </a-checkbox>
+                    </a-form-item>
+                  </div>
+                   <a-row>
+                      <a-col :xs="24">
+                        <a-form-item help="You must agree before submitting." validate-status="error">
+                          <a-input-password
+                          name="password"
+                        />
+                      </a-form-item>
+                      </a-col>
+                    </a-row>
+                  <div class="sDash_form-action mt-20">
+                    <a-button type="primary" html-type="submit">
+                      Submit Form
+                    </a-button>
+                  </div>
+                </a-form>
+              </VerticalFormStyleWrap>
+            </FormValidationWrap>
           </sdCards>
         </a-col>
       </a-row>
@@ -113,53 +247,22 @@
 </template>
 
 <script>
-import { Main, BasicFormWrapper } from "../styled";
+import { FormValidationWrap, VerticalFormStyleWrap } from "./overview/Style";
+import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
 export default {
   name: "Form",
   components: {
     PlusIcon,
     Main,
-    BasicFormWrapper,
+    FormValidationWrap,
+    VerticalFormStyleWrap,
   },
 
   data() {
     return {
+      formLayout: "horizontal",
       form: this.$form.createForm(this, { name: "coordinated" }),
-      options: [
-        {
-          value: "zhejiang",
-          label: "Zhejiang",
-          children: [
-            {
-              value: "hangzhou",
-              label: "Hangzhou",
-              children: [
-                {
-                  value: "xihu",
-                  label: "West Lake",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          value: "jiangsu",
-          label: "Jiangsu",
-          children: [
-            {
-              value: "nanjing",
-              label: "Nanjing",
-              children: [
-                {
-                  value: "zhonghuamen",
-                  label: "Zhong Hua Men",
-                },
-              ],
-            },
-          ],
-        },
-      ],
     };
   },
   methods: {
@@ -171,15 +274,11 @@ export default {
         }
       });
     },
-    onChange(value) {
+    handleSelectChange(value) {
       console.log(value);
-    },
-    filterOption(input, option) {
-      return (
-        option.componentOptions.children[0].text
-          .toLowerCase()
-          .indexOf(input.toLowerCase()) >= 0
-      );
+      this.form.setFieldsValue({
+        note: `Hi, ${value === "male" ? "man" : "lady"}!`,
+      });
     },
   },
 };

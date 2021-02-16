@@ -1,5 +1,4 @@
 import Styled from 'vue-styled-components';
-
 const Main = Styled.div`
     padding: 0px 30px 20px;
     min-height: 715px;
@@ -90,7 +89,7 @@ const Main = Styled.div`
     /* // ant Calendar Picker */
     .ant-picker-calendar{
         .ant-badge-status-text{
-            color: ${({ theme }) => theme['gray-color']}
+            color: ${({ theme }) => theme['gray-color']};
         }
     }
     .ant-picker-calendar-header .ant-picker-calendar-year-select{
@@ -702,6 +701,45 @@ const Main = Styled.div`
         max-width: 100%;
         margin: 25px 0;
     }
+
+    // Ant Dragger
+    .ant-upload-drag{
+        background-color: #fff !important;
+        border-radius: 10px !important;
+        display: flex;
+        align-items: center;
+        min-height: 100px;
+        border-color: #C6D0DC;
+        &.sDash-uploader-large{
+            min-height: 180px;
+        }
+        .ant-upload-drag-container{
+            .ant-upload-text{
+                margin-bottom: 0;
+                font-size: 15px;
+                color: #9299B8;
+            }
+        }
+    }
+
+    // Form Validation
+    .ant-form-item{
+        &.ant-form-item-has-success{
+            .ant-input{
+                border-color: ${({ theme }) => theme['success-color']};
+            }
+            &.ant-form-item-with-help{
+                .ant-form-item-explain{
+                    color: ${({ theme }) => theme['success-color']};
+                }
+            }
+        }
+        &.ant-form-item-with-help{
+            .ant-form-item-explain{
+                margin-top: 6px;
+            }
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -823,24 +861,21 @@ const CalendarWrapper = Styled.div`
 `;
 
 const DatePickerWrapper = Styled.div`
-    .ant-calendar-picker{
-        padding: 6px 11px 6px !important;
-        width: 100% !important;
-        border-color: #E3E6EF !important;
-        border-radius: 5px !important;
+    .ant-picker{
+        padding: 6px 11px 6px;
+        width: 100%;
+        border-color: #E3E6EF;
+        border-radius: 5px;
     }
-    .ant-calendar-picker:not(:last-child){
-        margin-bottom: 20px !important;
+    .ant-picker:not(:last-child){
+        margin-bottom: 20px;
     }
-    .ant-calendar-picker-input > input{
-        color: #5A5F7D !important;
+    .ant-picker-input > input{
+        color: #5A5F7D;
     }
-    .ant-calendar-picker-range .ant-calendar-picker-input > input{
-        text-align: center !important;
-        font-weight: 500 !important;
-    }
-    .ant-calendar-picker-clear, .ant-calendar-picker-icon {       
-        right: 24px;        
+    .ant-picker-range .ant-picker-input > input{
+        text-align: center;
+        font-weight: 500;
     }
 `;
 
@@ -879,7 +914,7 @@ const PageHeaderWrapper = Styled.div`
 
 const MessageStyleWrapper = Styled.div`
     .ant-btn-lg{
-        font-size: 14px !important;
+        font-size: 14px;
     }
 `;
 
@@ -900,6 +935,16 @@ const BasicFormWrapper = Styled.div`
                 }
             }
         }
+        .ant-input-affix-wrapper > input.ant-input{
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .ant-input-affix-wrapper .ant-input-prefix svg{
+            color: #9299B8;
+        }
+    }
+    .ant-form-item-control-input{
+        min-height: auto !important;
     }
     .ant-form-item{
         flex-flow: column;
@@ -1019,6 +1064,42 @@ const BasicFormWrapper = Styled.div`
     .adTodo-form{
         .btn-adTodo {
             font-size: 14px;
+        }
+    }
+
+    .sDash_form-action{
+        margin: -7.5px;
+        button{
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            margin: 7.5px;
+            padding: 6.4px 19px;
+            &.ant-btn-light{
+                height: 44px;
+                background-color: #F1F2F6;
+                border-color: #F1F2F6;
+            }
+        }
+        .ant-form-item{
+            margin-bottom: 25px !important;
+        }
+        .ant-btn-light{
+            background-color: #F8F9FB;
+        }
+    }
+    .sDash_color-picker{
+        border: 1px solid #E3E6EF;
+        border-radius: 4px;
+        padding: 11px 14px;
+        input{
+            width: 100%;
+            border: 0 none;
+            background-color: #fff;
+            &::-webkit-color-swatch{
+                min-height: 18px;
+                border: 1px solid #C6D0DC;
+            }
         }
     }
 `;
@@ -1624,3 +1705,4 @@ export {
   ImportStyleWrap,
   ExportStyleWrap,
 };
+

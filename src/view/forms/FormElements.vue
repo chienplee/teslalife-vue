@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Empty">
+    <sdPageHeader title="Horizontal Form">
       <div slot="buttons" class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
@@ -13,99 +13,137 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" :sm="24" xs="24">
-          <sdCards title="Elements of Form" caption="The simplest use of Form">
-            <BasicFormWrapper>
-              <a-form
-                :form="form"
-                layout="vertical"
-                name="basicforms"
-                @submit="handleSubmit"
-              >
-                <a-form-item label="Username" name="username">
-                  <a-input placeholder="Username" />
-                </a-form-item>
+        <a-col :xs="24">
+          <GridForm />
+        </a-col>
 
-                <a-form-item label="Email" name="email">
-                  <a-input
-                    v-decorator="[
-                      'email',
-                      {
-                        rules: [
-                          {
-                            type: 'email',
-                            message: 'The input is not valid E-mail!',
-                          },
-                          {
-                            required: true,
-                            message: 'Please input your E-mail!',
-                          },
-                        ],
-                      },
-                    ]"
-                  />
-                </a-form-item>
+        <a-col :lg="12" :xs="24">
+          <SizedForm />
+          <InputForm />
+        </a-col>
 
-                <a-form-item label="Age" name="age">
-                  <a-input-number
-                    style="width: 100%"
-                    v-decorator="[
-                      'age',
-                      {
-                        rules: [
-                          {
-                            type: 'number',
-                            message: 'Please input your age!',
-                          },
-                          {
-                            required: true,
-                            message: 'Please input your age!',
-                          },
-                        ],
-                      },
-                    ]"
-                  />
-                </a-form-item>
-                <a-form-item label="Website" name="website">
-                  <a-input placeholder="http://website.com" />
-                </a-form-item>
-                <a-form-item label="Textarea" name="textarea">
-                  <a-textarea
-                    placeholder="Controlled autosize"
-                    :auto-size="{ minRows: 3, maxRows: 5 }"
-                  />
-                </a-form-item>
-
-                <a-form-item label="Website" name="website">
-                  <a-input placeholder="http://website.com" />
-                </a-form-item>
-                <a-form-item label="Casecader" name="casecader">
-                  <a-cascader
-                    :options="options"
-                    :default-value="['zhejiang', 'hangzhou', 'xihu']"
-                    @change="onChange(value)"
-                  />
-                </a-form-item>
-                <a-form-item label="Select" name="select">
-                  <a-select
-                    show-search
-                    placeholder="Select a person"
-                    option-filter-prop="children"
-                    :filter-option="filterOption"
-                  >
-                    <a-select-option value="jack"> Jack </a-select-option>
-                    <a-select-option value="lucy"> Lucy </a-select-option>
-                    <a-select-option value="tom"> Tom </a-select-option>
-                  </a-select>
-                </a-form-item>
-                <a-form-item>
-                  <sdButton htmlType="submit" size="default" type="primary">
-                    Submit
-                  </sdButton>
-                </a-form-item>
-              </a-form>
-            </BasicFormWrapper>
+        <a-col :lg="12" :xs="24">
+          <sdCards title="Text Input" class="mb-25">
+            <a-form name="sDash_textarea" layout="vertical">
+              <a-form-item name="basic-textarea" label="Basic Textarea">
+                <a-textarea placeholder="Basic usage" :rows="2" />
+              </a-form-item>
+              <a-form-item label="Unresizable Textarea">
+                <a-textarea
+                  placeholder="Unresizable Textarea"
+                  name="unresizable-textarea"
+                  class="sDash_unresizable"
+                  :rows="3"
+                />
+              </a-form-item>
+            </a-form>
           </sdCards>
+        </a-col>
+        <a-col :lg="12" :xs="24">
+          <sdCards title="Select" class="mb-25">
+            <a-form name="sDash_Select" layout="vertical">
+              <a-form-item label="Basic Select">
+                <a-select
+                  size="large"
+                  name="basic-select"
+                  class="sDash_fullwidth-select"
+                >
+                  <a-select-option value="1">1</a-select-option>
+                  <a-select-option default-value="2" value="2"
+                    >2</a-select-option
+                  >
+                  <a-select-option value="3">3</a-select-option>
+                  <a-select-option value="4">4</a-select-option>
+                </a-select>
+              </a-form-item>
+              <a-form-item label="Disabled Basic Select">
+                <a-select
+                  size="large"
+                  name="disabled-select"
+                  class="sDash_fullwidth-select"
+                  disabled
+                >
+                  <a-select-option value="1">1</a-select-option>
+                </a-select>
+              </a-form-item>
+              <a-form-item label="Multiple Select">
+                <a-select
+                  mode="multiple"
+                  :default-value="['1', '2']"
+                  placeholder="Please select"
+                >
+                  <a-select-option value="1">1</a-select-option>
+                  <a-select-option value="2">2</a-select-option>
+                  <a-select-option value="3">3</a-select-option>
+                  <a-select-option value="4">4</a-select-option>
+                </a-select>
+              </a-form-item>
+              <a-form-item label="Disabled Multiple Select">
+                <a-select
+                  mode="multiple"
+                  :default-value="['1', '2']"
+                  placeholder="Please select"
+                  disabled
+                >
+                  <a-select-option value="1">1</a-select-option>
+                  <a-select-option value="2">2</a-select-option>
+                  <a-select-option value="3">3</a-select-option>
+                  <a-select-option value="4">4</a-select-option>
+                </a-select>
+              </a-form-item>
+            </a-form>
+          </sdCards>
+          <sdCards title="File Browser" class="sDash_upload-form mb-25">
+            <a-form name="sDash_file_browser" layout="vertical">
+              <a-upload
+                class="sDash_upload-basic"
+                name="file"
+                :multiple="true"
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                :headers="headers"
+                @change="handleChange"
+              >
+                <span class="sDash_upload-text">Select File</span>
+                <router-link to="#" class="sDash_upload-browse">
+                  Browse
+                </router-link>
+              </a-upload>
+            </a-form>
+          </sdCards>
+          <CheckListWrap class="mb-25">
+            <sdCards title="Checkboxes and Radios">
+              <div class="sDash_check-list-wrap">
+                <ul class="sDash_check-list sDash_check-list--left">
+                  <li>
+                    <a-checkbox>Checkbox</a-checkbox>
+                  </li>
+                  <li>
+                    <a-checkbox checked> Checked </a-checkbox>
+                  </li>
+                  <li>
+                    <a-checkbox disabled> Disabled Unchecked </a-checkbox>
+                  </li>
+                  <li>
+                    <a-checkbox checked disabled> Disabled Checked </a-checkbox>
+                  </li>
+                </ul>
+                <ul class="sDash_check-list sDash_check-list--right">
+                  <li>
+                    <a-radio>Uncheck</a-radio>
+                  </li>
+                  <li>
+                    <a-radio checked>Checked</a-radio>
+                  </li>
+                  <li>
+                    <a-radio disabled>Disabled Unchecked</a-radio>
+                  </li>
+                  <li>
+                    <a-radio checked disabled> Disabled Checked </a-radio>
+                  </li>
+                </ul>
+              </div>
+            </sdCards>
+          </CheckListWrap>
         </a-col>
       </a-row>
     </Main>
@@ -113,73 +151,39 @@
 </template>
 
 <script>
-import { Main, BasicFormWrapper } from "../styled";
+import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
+import { CheckListWrap } from "./overview/Style";
+import GridForm from "./overview/GridForm";
+import SizedForm from "./overview/SizedForm";
+import InputForm from "./overview/InputForm";
 export default {
-  name: "Form",
+  name: "FormElement",
   components: {
     PlusIcon,
     Main,
-    BasicFormWrapper,
+    GridForm,
+    SizedForm,
+    InputForm,
+    CheckListWrap,
   },
-
   data() {
     return {
-      form: this.$form.createForm(this, { name: "coordinated" }),
-      options: [
-        {
-          value: "zhejiang",
-          label: "Zhejiang",
-          children: [
-            {
-              value: "hangzhou",
-              label: "Hangzhou",
-              children: [
-                {
-                  value: "xihu",
-                  label: "West Lake",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          value: "jiangsu",
-          label: "Jiangsu",
-          children: [
-            {
-              value: "nanjing",
-              label: "Nanjing",
-              children: [
-                {
-                  value: "zhonghuamen",
-                  label: "Zhong Hua Men",
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      headers: {
+        authorization: "authorization-text",
+      },
     };
   },
   methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          console.log("Received values of form: ", values);
-        }
-      });
-    },
-    onChange(value) {
-      console.log(value);
-    },
-    filterOption(input, option) {
-      return (
-        option.componentOptions.children[0].text
-          .toLowerCase()
-          .indexOf(input.toLowerCase()) >= 0
-      );
+    handleChange(info) {
+      if (info.file.status !== "uploading") {
+        //console.log(info.file, info.fileList);
+      }
+      if (info.file.status === "done") {
+        this.$message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === "error") {
+        this.$message.error(`${info.file.name} file upload failed.`);
+      }
     },
   },
 };
