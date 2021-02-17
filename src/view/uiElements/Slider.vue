@@ -15,10 +15,10 @@
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
-            <Slider :onChange="onChange" :default-value="30" />
-            <Slider :onChange="onChange" range :default-value="[20, 50]" />
+            <Slider :default-value="30" />
+            <Slider range :default-values="[20, 50]" />
           </sdCards>
-          <sdCards title="With Input" caption="The simplest use of slider">
+          <!-- <sdCards title="With Input" caption="The simplest use of slider">
             <div className="slider-with-input">
               <div className="slider-with-input__single">
                 <h3>With integer</h3>
@@ -59,9 +59,9 @@
                 />
               </div>
             </div>
-          </sdCards>
+          </sdCards> -->
         </a-col>
-        <a-col :md="12" :sm="24" :xs="24">
+        <!-- <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="with Icon" caption="The simplest use of slider">
             <Slider :onChange="onChange" icon :min="1" :max="100" />
           </sdCards>
@@ -84,7 +84,7 @@
               <Slider :marks="marks" :step="null" :default-value="37" />
             </div>
           </sdCards>
-        </a-col>
+        </a-col> -->
       </a-row>
     </Main>
   </div>
