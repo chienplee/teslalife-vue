@@ -15,8 +15,12 @@
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
-            <Slider :default-value="30" />
-            <Slider range :default-values="[20, 50]" />
+            <Slider :min="0" :max="100" :defaultValue="30" />
+            <Slider
+              :onChange="onChange"
+              :range="true"
+              :defaultValues="[20, 50]"
+            />
           </sdCards>
           <!-- <sdCards title="With Input" caption="The simplest use of slider">
             <div className="slider-with-input">
@@ -121,15 +125,16 @@ export default {
           label: <strong>100°C</strong>,
         },
       },
-      methods: {
-        onChange(value) {
-          this.onChangeValue = value;
-        },
-        onAfterChange(value) {
-          this.afterChangeValue = value;
-        },
-      },
     };
+  },
+  methods: {
+    onChange(value) {
+      console.log(value);
+      this.onChangeValue = value;
+    },
+    onAfterChange(value) {
+      this.afterChangeValue = value;
+    },
   },
 };
 </script>

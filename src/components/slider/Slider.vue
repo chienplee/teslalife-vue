@@ -26,16 +26,11 @@
     <a-icon type="frown" :style="{ color: nextColor }" /> -->
     </IconWrapper>
     <a-slider
-      v-else
-      :marks="marks"
-      :default-value="defaultValue || defaultValues"
       :range="range"
-      :step="step"
-      :vertical="vertical"
-      :onAfterChange="onAfterChanges"
+      v-else
+      id="test"
+      :default-value="defaultValue || defaultValues"
       @change="onChanges"
-      :max="max"
-      :min="min"
     />
   </div>
 </template>
@@ -51,17 +46,16 @@ export default {
   props: {
     defaultValue: VueTypes.number,
     defaultValues: VueTypes.array,
-    range: VueTypes.bool,
-    step: VueTypes.number,
-    input: VueTypes.bool,
-    icon: VueTypes.bool,
+    range: VueTypes.bool.def(false),
+    step: VueTypes.number.def(2),
+    input: VueTypes.bool.def(false),
+    icon: VueTypes.bool.def(false),
     marks: VueTypes.object,
-    vertical: VueTypes.bool,
-    min: VueTypes.number,
-    max: VueTypes.number,
+    vertical: VueTypes.bool.def(false),
+    min: VueTypes.number.def(0),
+    max: VueTypes.number.def(100),
     onAfterChange: VueTypes.func,
     onChange: VueTypes.func,
-    
   },
   data() {
     return {
@@ -81,7 +75,10 @@ export default {
         return;
       }
       this.inputValue = this.value;
-      if (this.onChanges) this.onChange(value);
+      if (this.onChange) {
+        this.onChange(value);
+        // console.log(value);
+      }
     },
     handleChange(value) {
       this.value = value;
