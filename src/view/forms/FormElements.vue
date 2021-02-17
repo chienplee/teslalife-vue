@@ -151,6 +151,7 @@
 </template>
 
 <script>
+import { message } from 'ant-design-vue';
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
 import { CheckListWrap } from "./overview/Style";
@@ -180,9 +181,9 @@ export default {
         //console.log(info.file, info.fileList);
       }
       if (info.file.status === "done") {
-        this.$message.success(`${info.file.name} file uploaded successfully`);
+        message.success(`${info.file.name} file uploaded successfully`);
       } else if (info.file.status === "error") {
-        this.$message.error(`${info.file.name} file upload failed.`);
+        message.error(`${info.file.name} file upload failed.`);
       }
     },
   },
