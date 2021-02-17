@@ -4,8 +4,8 @@
       <a-slider
         :min="min"
         :max="max"
-        onChange="onChanges"
-        :value="typeof inputValue === 'number' ? inputValue : 0"
+        @change="onChanges"
+        :v-model="typeof inputValue === 'number' ? inputValue : 0"
         :step="step"
       />
     </a-col>
@@ -13,20 +13,15 @@
       <a-input-number
         :min="min"
         :max="max"
-        :value="inputValue"
-        onChange="onChanges"
+        :v-model="inputValue"
+        @change="onChanges"
         :step="step"
       />
     </a-col>
   </a-row>
   <IconWrapper v-else-if="icon">
     <a-icon type="frown" :style="{ color: preColor }" />
-    <a-slider
-      :min="mini"
-      :max="maxi"
-      onChange="{handleChange}"
-      :value="value"
-    />
+    <a-slider :min="mini" :max="maxi" @change="handleChange" :v-model="value" />
     <a-icon type="frown" :style="{ color: nextColor }" />
   </IconWrapper>
   <a-slider
@@ -37,7 +32,7 @@
     :step="step"
     :vertical="vertical"
     :onAfterChange="onAfterChanges"
-    :onChange="onChange"
+    @change="onChanges"
     :max="max"
     :min="min"
   />
@@ -95,4 +90,3 @@ export default {
   },
 };
 </script>
-

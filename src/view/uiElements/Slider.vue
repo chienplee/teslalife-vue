@@ -15,8 +15,8 @@
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
-            <Slider onChange="onChange" :default-value="30" />
-            <Slider onChange="onChange" range :default-value="[20, 50]" />
+            <Slider :onChange="onChange" :default-value="30" />
+            <Slider :onChange="onChange" range :default-value="[20, 50]" />
           </sdCards>
           <sdCards title="With Input" caption="The simplest use of slider">
             <div className="slider-with-input">
@@ -35,8 +35,8 @@
               range
               :step="10"
               :default-values="[20, 50]"
-              onChange="onChange"
-              onAfterChange="onAfterChange"
+              :onChange="onChange"
+              :onAfterChange="onAfterChange"
             />
           </sdCards>
           <sdCards
@@ -63,7 +63,7 @@
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="with Icon" caption="The simplest use of slider">
-            <Slider onChange="onChange" icon :min="1" :max="100" />
+            <Slider :onChange="onChange" icon :min="1" :max="100" />
           </sdCards>
           <sdCards
             title="Graduated slider"
@@ -92,10 +92,10 @@
 
 <script>
 import { Main } from "../styled";
-import { Slider } from "../../components/slider/Slider";
+import Slider from "../../components/slider/Slider";
 import { PlusIcon } from "vue-feather-icons";
 export default {
-  name: "Slider",
+  name: "Sliders",
   components: {
     PlusIcon,
     Main,
