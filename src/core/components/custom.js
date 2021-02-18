@@ -8,6 +8,7 @@ import ExportButton from "../../components/buttons/ExportButton.vue";
 import ShareButton from "../../components/buttons/ShareButton.vue";
 import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 import { ChartJsBarChart, ChartjsHorizontalChart } from "../../components/charts/chartjs.vue";
+import { GoogleBasicBarChart, GoogleMaterialBarChart } from "../../components/charts/googleChart.vue";
 import Cascader from "../../components/cascader/Cascader";
 import Heading from '../../components/heading/Heading';
 import AutoComplete from "../../components/autoComplete/autoComplete";
@@ -27,8 +28,16 @@ import Modal from "../../components/modals/Modals";
     ...ChartJsBarChart
   },
   {
+    name: "GoogleMaterialBarChart",
+    ...GoogleMaterialBarChart,
+  },
+  {
     name: "ChartjsHorizontalChart",
     ...ChartjsHorizontalChart
+  },
+  {
+    name: "GoogleBasicBarChart",
+    ...GoogleBasicBarChart
   },
   Alerts,
   {

@@ -331,9 +331,17 @@
 
         <a-sub-menu key="chart">
           <template slot="title"><DiscIcon /><span>Charts</span></template>
-          <a-menu-item key="alerts">
-            <router-link @click.native="toggleCollapsed" to="/chart/chartjs">
+          <a-menu-item key="chartJs">
+            <router-link @click.native="toggleCollapsed" to="/chart/chart-js">
               Chart js
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="googleChart">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/chart/google-chart"
+            >
+              Google Chart
             </router-link>
           </a-menu-item>
         </a-sub-menu>
