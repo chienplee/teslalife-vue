@@ -11,12 +11,12 @@ export default [
   },
   {
     path: "/forms/form-components",
-    name: "FormComponents",
+    name: "formComponents",
     component: () => import("@/view/forms/FormComponents.vue"),
   },
   {
     path: "/forms/form-validation",
-    name: "FormValidation",
+    name: "formValidation",
     component: () => import("@/view/forms/FormValidation.vue"),
   },
   {

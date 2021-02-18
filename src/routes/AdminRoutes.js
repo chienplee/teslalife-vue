@@ -213,5 +213,10 @@ export default new Router({
       component: () => import("@/view/pages/BlankPage.vue"),
     },
     ...FeaturesRoutes,
+    {
+      path: "/tables/basic",
+      name: "table",
+      component: () => import("@/view/table/table.vue"),
+    },
   ],
 });

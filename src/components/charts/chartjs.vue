@@ -1,5 +1,5 @@
 <script>
-import { Bar, HorizontalBar } from "vue-chartjs";
+import { Bar, HorizontalBar, Line } from "vue-chartjs";
 import VueTypes from "vue-types";
 export const ChartJsBarChart = {
   name: "ChartJsBarChart",
@@ -160,6 +160,177 @@ export const ChartjsHorizontalChart = {
         datasets: this.datasets,
       },
       this.options
+    );
+  },
+};
+
+export const ChartjsStackedChart = {
+  name: "ChartjsStackedChart",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string).def([
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ]),
+    height: VueTypes.number.def(250),
+    datasets: VueTypes.arrayOf(VueTypes.object).def([
+      {
+        data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
+        backgroundColor: "#001737",
+      },
+      {
+        data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
+        backgroundColor: "#1ce1ac",
+      },
+    ]),
+    options: VueTypes.object.def({
+      maintainAspectRatio: true,
+      responsive: true,
+      legend: {
+        display: false,
+        labels: {
+          display: false,
+        },
+      },
+      scales: {
+        yAxes: [
+          {
+            stacked: true,
+            gridLines: {
+              color: "#e5e9f2",
+            },
+            ticks: {
+              beginAtZero: true,
+              fontSize: 10,
+              fontColor: "#182b49",
+            },
+          },
+        ],
+        xAxes: [
+          {
+            stacked: true,
+            gridLines: {
+              display: false,
+            },
+            barPercentage: 0.6,
+            ticks: {
+              beginAtZero: true,
+              fontSize: 11,
+              fontColor: "#182b49",
+            },
+          },
+        ],
+      },
+    }),
+  },
+
+  extends: Bar,
+  mounted() {
+    // Overwriting base render method with actual data.
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets,
+      },
+      this.options
+    );
+  },
+};
+
+const ChartjsLineChartSudo = {
+  name: "ChartjsLineChartSudo",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string),
+    height: VueTypes.number,
+    width: VueTypes.number,
+    datasets: VueTypes.arrayOf(VueTypes.object),
+    options: VueTypes.object,
+  },
+  extends: Line,
+  mounted() {
+    // Overwriting base render method with actual data.
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets,
+      },
+      this.options
+    );
+  },
+};
+
+export const ChartjsLineChart = {
+  name: "ChartjsLineChart",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string).def([
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ]),
+    height: VueTypes.number.def(450),
+    width: VueTypes.number.def(null),
+    datasets: VueTypes.arrayOf(VueTypes.object).def([
+      {
+        data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
+        borderColor: "#001737",
+        borderWidth: 1,
+        fill: false,
+      },
+      {
+        data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
+        borderColor: "#1ce1ac",
+        borderWidth: 1,
+        fill: false,
+      },
+    ]),
+    options: VueTypes.object.def({
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          left: "-10",
+          right: 0,
+          top: 0,
+          bottom: "-10",
+        },
+      },
+      legend: {
+        display: false,
+        labels: {
+          display: false,
+        },
+      },
+    }),
+  },
+  render() {
+    return (
+      <sdChartContainer class="parentContainer">
+        <ChartjsLineChartSudo
+          labels={this.labels}
+          height={this.height}
+          width={this.width}
+          datasets={this.datasets}
+          options={this.options}
+        />
+      </sdChartContainer>
     );
   },
 };

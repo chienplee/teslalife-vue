@@ -17,10 +17,19 @@
           <sdCards title="Bar Chart">
             <sdChartJsBarChart class="foo" :style="{ marginBottom: '20px' }" />
           </sdCards>
+          <sdCards title="Stacked Chart">
+            <sdChartjsStackedChart />
+          </sdCards>
         </a-col>
+
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Horizontal Chart">
             <sdChartjsHorizontalChart />
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :sm="24" :xs="24">
+          <sdCards title="Horizontal Chart">
+            <sdChartjsLineChart />
           </sdCards>
         </a-col>
       </a-row>
