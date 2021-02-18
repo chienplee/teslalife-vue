@@ -2,7 +2,7 @@
 import { PageHeaderStyle } from "./style";
 import VueTypes from "vue-types";
 export const PageHeader = {
-  comments: {
+  components: {
     PageHeaderStyle,
   },
   props: {

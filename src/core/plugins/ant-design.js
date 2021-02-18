@@ -1,5 +1,7 @@
 import Vue from 'vue';
-import { Button, Menu, Dropdown, Drawer, Select, Skeleton, Spin, Statistic, Slider, InputNumber, Form, Cascader, Popconfirm, Empty, Progress, Pagination, Modal, Divider, Space, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, TimePicker, Input, AutoComplete, Popover, Badge, Breadcrumb, Rate, Result, Table, Upload, message, Tag  } from 'ant-design-vue';
+import {Button, Menu, Dropdown, Drawer, Select, Skeleton, Spin, Statistic, Slider, InputNumber, Form, Cascader, Popconfirm, Empty, Progress, Pagination, Modal, Divider, Space, List, Comment, Tooltip, Collapse, Checkbox, Radio, Layout, PageHeader, Card, Carousel, Calendar, Switch, Icon, Avatar, Row, Col,DatePicker, TimePicker, Input, AutoComplete, Popover, Badge, Breadcrumb, Rate, Result, Table, Upload, message, Tag  } from 'ant-design-vue';
+
+Vue.prototype.$message = message;
 
 Vue.use(Rate);
 Vue.use(Button);
@@ -48,5 +50,4 @@ Vue.use(Pagination)
 Vue.use(Popconfirm)
 Vue.use(Progress)
 Vue.use(Result)
-Vue.use(message)
 Vue.use(Tag)
