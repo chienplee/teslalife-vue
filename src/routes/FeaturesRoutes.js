@@ -19,4 +19,10 @@ export default [
     name: "FormValidation",
     component: () => import("@/view/forms/FormValidation.vue"),
   },
+
+  {
+    path: "/chart/chartjs",
+    name: "FormValidation",
+    component: () => import("@/view/charts/ChartJs.vue"),
+  },
 ];

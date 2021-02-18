@@ -329,10 +329,22 @@
           </a-menu-item>
         </a-sub-menu>
 
+        <a-sub-menu key="chart">
+          <template slot="title"><DiscIcon /><span>Charts</span></template>
+          <a-menu-item key="alerts">
+            <router-link @click.native="toggleCollapsed" to="/chart/chartjs">
+              Chart js
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
+
         <a-sub-menu key="forms">
           <template slot="title"><DiscIcon /><span>Forms</span></template>
           <a-menu-item key="alerts">
-            <router-link @click.native="toggleCollapsed" to="/forms/form-layout">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/forms/form-layout"
+            >
               Form Layout
             </router-link>
           </a-menu-item>
@@ -389,7 +401,7 @@
   </a-menu>
 </template>
 <script>
-import { HomeIcon, CircleIcon, LayersIcon , DiscIcon, CpuIcon} from "vue-feather-icons";
+import { HomeIcon, CircleIcon, LayersIcon, DiscIcon, CpuIcon } from "vue-feather-icons";
 import VueTypes from "vue-types";
 import { mapGetters } from "vuex";
 
