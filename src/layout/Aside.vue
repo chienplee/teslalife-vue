@@ -361,6 +361,18 @@
             </router-link>
           </a-menu-item>
         </a-sub-menu>
+
+         <a-sub-menu key="tables">
+          <template slot="title"><CpuIcon /><span>Table</span></template>
+          <a-menu-item key="table">
+            <router-link @click.native="toggleCollapsed" to="/tables/basic">
+              Basic Table
+            </router-link>
+          </a-menu-item>
+          
+        </a-sub-menu>
+
+
       </a-menu-item-group>
       <a-menu-item-group key="pages">
         <p slot="title" class="sidebar-nav-title">Pages</p>
@@ -377,7 +389,7 @@
   </a-menu>
 </template>
 <script>
-import { HomeIcon, CircleIcon, LayersIcon , DiscIcon,} from "vue-feather-icons";
+import { HomeIcon, CircleIcon, LayersIcon , DiscIcon, CpuIcon} from "vue-feather-icons";
 import VueTypes from "vue-types";
 import { mapGetters } from "vuex";
 
@@ -413,6 +425,7 @@ export default {
     CircleIcon,
     LayersIcon,
     DiscIcon,
+    CpuIcon,
   },
 };
 </script>

@@ -22,18 +22,19 @@
               :defaultValues="[20, 50]"
             />
           </sdCards>
-          <!-- <sdCards title="With Input" caption="The simplest use of slider">
-            <div className="slider-with-input">
-              <div className="slider-with-input__single">
+          <sdCards title="With Input" caption="The simplest use of slider">
+            <div class="slider-with-input">
+              <div class="slider-with-input__single">
                 <h3>With integer</h3>
                 <Slider input :min="1" :max="100" />
               </div>
-              <div className="slider-with-input__single">
+              <div class="slider-with-input__single">
                 <h3>With Decimal</h3>
                 <Slider input :min="0" :max="1" :step="0.01" />
               </div>
             </div>
           </sdCards>
+          <!-- 
           <sdCards title="Range" caption="The simplest use of slider">
             <Slider
               range
