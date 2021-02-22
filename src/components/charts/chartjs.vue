@@ -1,6 +1,6 @@
 <script>
 import { Bar, HorizontalBar, Line } from "vue-chartjs";
-import { customTooltips } from '../utilities/utilities';
+import { customTooltips } from "../utilities/utilities";
 
 import VueTypes from "vue-types";
 export const ChartJsBarChart = {
@@ -358,23 +358,24 @@ const ChartjsAreaChartSudo = {
       },
       {
         tooltips: {
-              mode: 'nearest',
-              intersect: false,
-              enabled: false,
-              custom: customTooltips,
-              callbacks: {
-                labelColor() {
-                 // console.log(this.datasets);
-                  return {
-                    backgroundColor: this.datasets.map(item => item.borderColor),
-                    borderColor: 'transparent',
-                  };
-                },
-              },
+          mode: "nearest",
+          intersect: false,
+          enabled: false,
+          custom: customTooltips,
+          callbacks: {
+            labelColor() {
+              return {
+                backgroundColor: this._data.datasets.map(
+                  (item) => item.borderColor
+                ),
+                borderColor: "transparent",
+              };
             },
-            ...this.options,
-            ...this.layout,
-          }
+          },
+        },
+        ...this.options,
+        ...this.layout,
+      }
     );
   },
 };
@@ -399,85 +400,84 @@ export const ChartjsAreaChart = {
     height: VueTypes.number.def(250),
     width: VueTypes.number,
     datasets: VueTypes.arrayOf(VueTypes.object).def([
-    {
-      data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
-      borderColor: '#001737',
-      borderWidth: 1,
-      fill: true,
-      backgroundColor: '#00173750',
-      pointHoverBorderColor: 'transparent',
-    },
-    {
-      data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
-      borderColor: '#1ce1ac',
-      borderWidth: 1,
-      fill: true,
-      backgroundColor: '#1ce1ac50',
-      pointHoverBorderColor: 'transparent',
-    },
+      {
+        data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
+        borderColor: "#001737",
+        borderWidth: 1,
+        fill: true,
+        backgroundColor: "#00173750",
+        pointHoverBorderColor: "transparent",
+      },
+      {
+        data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
+        borderColor: "#1ce1ac",
+        borderWidth: 1,
+        fill: true,
+        backgroundColor: "#1ce1ac50",
+        pointHoverBorderColor: "transparent",
+      },
     ]),
     options: VueTypes.object.def({
       maintainAspectRatio: true,
-    hover: {
-      mode: 'nearest',
-      intersect: false,
-    },
-
-    layout: {
-      padding: {
-        left: -10,
-        right: 0,
-        top: 2,
-        bottom: -10,
+      hover: {
+        mode: "nearest",
+        intersect: false,
       },
-    },
-    legend: {
-      display: false,
-      labels: {
+
+      layout: {
+        padding: {
+          left: -10,
+          right: 0,
+          top: 2,
+          bottom: -10,
+        },
+      },
+      legend: {
         display: false,
-      },
-    },
-    elements: {
-      point: {
-        radius: 0,
-      },
-    },
-    scales: {
-      yAxes: [
-        {
-          stacked: true,
-          gridLines: {
-            display: false,
-            color: '#e5e9f2',
-          },
-          ticks: {
-            beginAtZero: true,
-            fontSize: 10,
-            display: false,
-            stepSize: 20,
-          },
+        labels: {
+          display: false,
         },
-      ],
-      xAxes: [
-        {
-          stacked: true,
-          gridLines: {
-            display: false,
+      },
+      elements: {
+        point: {
+          radius: 0,
+        },
+      },
+      scales: {
+        yAxes: [
+          {
+            stacked: true,
+            gridLines: {
+              display: false,
+              color: "#e5e9f2",
+            },
+            ticks: {
+              beginAtZero: true,
+              fontSize: 10,
+              display: false,
+              stepSize: 20,
+            },
           },
+        ],
+        xAxes: [
+          {
+            stacked: true,
+            gridLines: {
+              display: false,
+            },
 
-          ticks: {
-            beginAtZero: true,
-            fontSize: 11,
-            display: false,
+            ticks: {
+              beginAtZero: true,
+              fontSize: 11,
+              display: false,
+            },
           },
-        },
-      ],
-    },
+        ],
+      },
     }),
     id: VueTypes.string,
   },
   render() {
-    console.log(this.datasets);
     return (
       <sdChartContainer class="parentContainer">
         <ChartjsAreaChartSudo
