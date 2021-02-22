@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="FeatherIcons">
+    <sdPageHeader title="FontAwesome Icons">
       <div slot="buttons" class="page-header-actions">
         <CalendarButton />
         <ExportButton />
@@ -16,7 +16,7 @@
         <a-col :sm="24" :xs="24">
           <IconWrapper>
             <sdCards title="Simply beautiful open source icons">
-              <FeatherIcon />
+              <FontAwesomeIcon />
             </sdCards>
           </IconWrapper>
         </a-col>
@@ -32,11 +32,11 @@ import ExportButton from "../../components/buttons/ExportButton";
 import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
-import FeatherIcon from "../../components/icons/FeatherIcon";
+import FontAwesomeIcon from "../../components/icons/FaIcons";
 import { IconWrapper } from "./IconStyled";
 
 export default {
-  name: "FeatherIcons",
+  name: "FontAwesome",
   components: {
     PlusIcon,
     Button,
@@ -44,7 +44,7 @@ export default {
     ExportButton,
     ShareButton,
     Main,
-    FeatherIcon,
+    FontAwesomeIcon,
     IconWrapper,
   },
   data() {

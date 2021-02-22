@@ -33,5 +33,15 @@ export default [
     path: "/icons/featherIcons",
     name: "featherIcons",
     component: () => import("@/view/icons/FeatherIcons.vue"),
+  },
+  {
+    path: "/icons/antdIcons",
+    name: "antdIcons",
+    component: () => import("@/view/icons/AntdIcons.vue"),
+  },
+  {
+    path: "/icons/fa",
+    name: "fa",
+    component: () => import("@/view/icons/FaIcons.vue"),
   }
 ];
