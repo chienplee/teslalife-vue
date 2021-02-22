@@ -28,8 +28,13 @@
           </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Horizontal Chart">
+          <sdCards title="Line Chart">
             <sdChartjsLineChart />
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :sm="24" :xs="24">
+          <sdCards title="Area Chart">
+            <sdChartjsAreaChart />
           </sdCards>
         </a-col>
       </a-row>
