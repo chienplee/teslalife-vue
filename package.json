@@ -17,6 +17,7 @@
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
+    "recharts": "^2.0.6",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue-date-fns": "^2.0.1",

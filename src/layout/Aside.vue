@@ -382,17 +382,26 @@
           </a-menu-item>
         </a-sub-menu>
 
-         <a-sub-menu key="tables">
+        <a-sub-menu key="icons">
+          <template slot="title"><DiscIcon /><span>Icons</span></template>
+          <a-menu-item key="alerts">
+            <router-link
+              @click.native="toggleCollapsed"
+              to="/icons/featherIcons"
+            >
+              FeatherIcons
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
+
+        <a-sub-menu key="tables">
           <template slot="title"><CpuIcon /><span>Table</span></template>
           <a-menu-item key="table">
             <router-link @click.native="toggleCollapsed" to="/tables/basic">
               Basic Table
             </router-link>
           </a-menu-item>
-          
         </a-sub-menu>
-
-
       </a-menu-item-group>
       <a-menu-item-group key="pages">
         <p slot="title" class="sidebar-nav-title">Pages</p>
@@ -409,7 +418,13 @@
   </a-menu>
 </template>
 <script>
-import { HomeIcon, CircleIcon, LayersIcon, DiscIcon, CpuIcon } from "vue-feather-icons";
+import {
+  HomeIcon,
+  CircleIcon,
+  LayersIcon,
+  DiscIcon,
+  CpuIcon,
+} from "vue-feather-icons";
 import VueTypes from "vue-types";
 import { mapGetters } from "vuex";
 

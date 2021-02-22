@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="FeatherIcons">
       <div slot="buttons" class="page-header-actions">
         <CalendarButton />
         <ExportButton />
@@ -14,8 +14,9 @@
     <Main>
       <a-row :gutter="25">
         <a-col :sm="24" :xs="24">
-          <sdCards headless>
+          <sdCards title="Simply beautiful open source icons">
             <sdHeading as="h3">Skeleton Page</sdHeading>
+            <p v-for="(Icon, key) in Object.keys(Icons)" :key="key + 1"></p>
           </sdCards>
         </a-col>
       </a-row>
@@ -30,9 +31,10 @@ import ExportButton from "../../components/buttons/ExportButton";
 import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
+import * as Icons from "vue-feather-icons";
 
 export default {
-  name: "Sidebar",
+  name: "FeatherIcons",
   components: {
     PlusIcon,
     Button,
@@ -42,7 +44,9 @@ export default {
     Main,
   },
   data() {
-    return {};
+    return {
+      Icons,
+    };
   },
 };
 </script>

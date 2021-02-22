@@ -29,4 +29,9 @@ export default [
     name: "googleChart",
     component: () => import("@/view/charts/GoogleCharts.vue"),
   },
+  {
+    path: "/icons/featherIcons",
+    name: "featherIcons",
+    component: () => import("@/view/icons/FeatherIcons.vue"),
+  }
 ];
