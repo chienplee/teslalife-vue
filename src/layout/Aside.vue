@@ -404,6 +404,25 @@
           </a-menu-item>
         </a-sub-menu>
 
+        <a-sub-menu key="maps">
+          <template slot="title"><DiscIcon /><span>Maps</span></template>
+          <a-menu-item key="featherIcons">
+            <router-link @click.native="toggleCollapsed" to="/maps/google">
+              Google Maps
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="antdIcons">
+            <router-link @click.native="toggleCollapsed" to="/icons/antdIcons">
+              Ant Design Icons
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="fa">
+            <router-link @click.native="toggleCollapsed" to="/icons/fa">
+              FontAwesome Icons
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
+
         <a-sub-menu key="tables">
           <template slot="title"><CpuIcon /><span>Table</span></template>
           <a-menu-item key="table">

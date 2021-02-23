@@ -43,5 +43,10 @@ export default [
     path: "/icons/fa",
     name: "fa",
     component: () => import("@/view/icons/FaIcons.vue"),
+  },
+  {
+    path: "/maps/google",
+    name: "google",
+    component: () => import("@/view/maps/GoogleMaps.vue"),
   }
 ];
