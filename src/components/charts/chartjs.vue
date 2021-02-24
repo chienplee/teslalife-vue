@@ -1,5 +1,5 @@
 <script>
-import { Bar, HorizontalBar, Line } from "vue-chartjs";
+import { Bar, HorizontalBar, Line, Pie, Doughnut } from "vue-chartjs";
 import { customTooltips } from "../utilities/utilities";
 
 import VueTypes from "vue-types";
@@ -423,7 +423,6 @@ export const ChartjsAreaChart = {
         mode: "nearest",
         intersect: false,
       },
-
       layout: {
         padding: {
           left: -10,
@@ -489,6 +488,203 @@ export const ChartjsAreaChart = {
           id={this.id}
         />
       </sdChartContainer>
+    );
+  },
+};
+
+const ChartjsBarChartTransparentSudo = {
+  name: "ChartjsBarChartTransparentSudo",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string),
+    height: VueTypes.number,
+    datasets: VueTypes.arrayOf(VueTypes.object),
+    options: VueTypes.object,
+    layout: VueTypes.object,
+  },
+  extends: Bar,
+  mounted() {
+    // Overwriting base render method with actual data.
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets,
+      },
+      {
+        tooltips: {
+          mode: "label",
+          intersect: false,
+          position: "average",
+          enabled: false,
+          custom: customTooltips,
+          callbacks: {
+            label(t, d) {
+              const dstLabel = d.datasets[t.datasetIndex].label;
+              const { yLabel } = t;
+              return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
+            },
+            labelColor(tooltipItem, chart) {
+              const dataset =
+                chart.config.data.datasets[tooltipItem.datasetIndex];
+              return {
+                backgroundColor: dataset.hoverBackgroundColor,
+                borderColor: "transparent",
+                usePointStyle: true,
+              };
+            },
+          },
+        },
+        ...this.options,
+        ...this.layout,
+      }
+    );
+  },
+};
+
+export const ChartjsBarChartTransparent = {
+  name: "ChartjsBarChartTransparent",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string).def([
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ]),
+    height: VueTypes.number.def(176),
+    datasets: VueTypes.arrayOf(VueTypes.object).def([
+      {
+        data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
+        backgroundColor: "rgba(0,23,55, .5)",
+        label: "Profit",
+      },
+      {
+        data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
+        backgroundColor: "rgba(28,225,172, .5)",
+        label: "Lose",
+      },
+    ]),
+    options: VueTypes.object.def({
+      maintainAspectRatio: true,
+      responsive: true,
+      legend: {
+        display: true,
+        position: "bottom",
+        align: "start",
+        labels: {
+          boxWidth: 6,
+          display: true,
+          usePointStyle: true,
+        },
+      },
+      layout: {
+        padding: {
+          left: "0",
+          right: 0,
+          top: 0,
+          bottom: "0",
+        },
+      },
+      scales: {
+        yAxes: [
+          {
+            gridLines: {
+              color: "#e5e9f2",
+            },
+            ticks: {
+              beginAtZero: true,
+              fontSize: 13,
+              fontColor: "#182b49",
+              max: 80,
+              stepSize: 20,
+              callback(value) {
+                return `${value}k`;
+              },
+            },
+          },
+        ],
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+            },
+            barPercentage: 0.6,
+            ticks: {
+              beginAtZero: true,
+              fontSize: 13,
+              fontColor: "#182b49",
+            },
+          },
+        ],
+      },
+    }),
+    layout: VueTypes.object,
+  },
+  render() {
+    return (
+      <sdChartContainer class="parentContainer">
+        <ChartjsBarChartTransparentSudo
+          labels={this.labels}
+          height={window.innerWidth <= 575 ? 230 : this.height}
+          datasets={this.datasets}
+          options={this.options}
+          layout={this.layout}
+        />
+      </sdChartContainer>
+    );
+  },
+};
+
+export const ChartjsPieChart = {
+  name: "ChartjsPieChart",
+  props: {
+    labels: VueTypes.arrayOf(VueTypes.string).def([
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+    ]),
+    height: VueTypes.number.def(200),
+    datasets: VueTypes.arrayOf(VueTypes.object).def([
+      {
+        data: [20, 20, 30, 5, 25],
+        backgroundColor: [
+          "#560bd0",
+          "#007bff",
+          "#00cccc",
+          "#cbe0e3",
+          "#74de00",
+        ],
+      },
+    ]),
+    options: VueTypes.object.def({
+      maintainAspectRatio: true,
+      responsive: true,
+      legend: {
+        display: false,
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true,
+      },
+    }),
+  },
+  extends: Pie,
+  mounted() {
+    // Overwriting base render method with actual data.
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets,
+      },
+      this.options
     );
   },
 };
