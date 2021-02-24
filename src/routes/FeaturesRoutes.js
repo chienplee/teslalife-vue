@@ -48,5 +48,15 @@ export default [
     path: "/maps/google",
     name: "google",
     component: () => import("@/view/maps/GoogleMaps.vue"),
+  },
+  {
+    path: "/maps/leaflet",
+    name: "leaflet",
+    component: () => import("@/view/maps/Leaflet.vue"),
+  },
+  {
+    path: "/maps/vector",
+    name: "vector",
+    component: () => import("@/view/maps/Vector.vue"),
   }
 ];

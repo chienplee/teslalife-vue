@@ -65,7 +65,7 @@ const ListGroup = Styled.div`
   }
 `;
 
-const Badge = Styled.span`
+const Badge = Styled('span', ['type'])`
   display: inline-block;
   margin-bottom: 32px;
   padding: 5px 20px;

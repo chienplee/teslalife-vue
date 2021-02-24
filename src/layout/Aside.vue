@@ -406,19 +406,19 @@
 
         <a-sub-menu key="maps">
           <template slot="title"><DiscIcon /><span>Maps</span></template>
-          <a-menu-item key="featherIcons">
+          <a-menu-item key="google">
             <router-link @click.native="toggleCollapsed" to="/maps/google">
               Google Maps
             </router-link>
           </a-menu-item>
-          <a-menu-item key="antdIcons">
-            <router-link @click.native="toggleCollapsed" to="/icons/antdIcons">
-              Ant Design Icons
+          <a-menu-item key="leaflet">
+            <router-link @click.native="toggleCollapsed" to="/maps/leaflet">
+              Leaflet
             </router-link>
           </a-menu-item>
-          <a-menu-item key="fa">
-            <router-link @click.native="toggleCollapsed" to="/icons/fa">
-              FontAwesome Icons
+          <a-menu-item key="vector">
+            <router-link @click.native="toggleCollapsed" to="/maps/vector">
+              Vector
             </router-link>
           </a-menu-item>
         </a-sub-menu>
@@ -439,6 +439,22 @@
           <span>
             <router-link @click="toggleCollapsed" to="/starter">
               Blank Page
+            </router-link>
+          </span>
+        </a-menu-item>
+        <a-menu-item key="pricing">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/page/pricing">
+              Pricing
+            </router-link>
+          </span>
+        </a-menu-item>
+        <a-menu-item key="banners">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/page/banners">
+              Banners
             </router-link>
           </span>
         </a-menu-item>

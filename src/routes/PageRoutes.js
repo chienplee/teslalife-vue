@@ -1,0 +1,18 @@
+export default [
+    {
+        path: "/starter",
+        name: "starter",
+        component: () => import("@/view/pages/BlankPage.vue"),
+    },
+    {
+        path: "/page/pricing",
+        name: "pricing",
+        component: () => import("@/view/pages/PricingTable.vue"),
+    },
+    {
+        path: "/page/banners",
+        name: "banners",
+        component: () => import("@/view/pages/Banners.vue"),
+    },
+  ];
+  

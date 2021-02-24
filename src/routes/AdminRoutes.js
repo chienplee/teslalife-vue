@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import FeaturesRoutes from "./FeaturesRoutes";
+import PageRoutes from "./PageRoutes";
+
 Vue.use(Router);
 
 export default new Router({
@@ -206,17 +208,13 @@ export default new Router({
       path: "/components/statistic",
       name: "statistic",
       component: () => import("@/view/uiElements/Statistic"),
-    },
-    {
-      path: "/starter",
-      name: "starter",
-      component: () => import("@/view/pages/BlankPage.vue"),
-    },
-    ...FeaturesRoutes,
+    },    
     {
       path: "/tables/basic",
       name: "table",
       component: () => import("@/view/table/table.vue"),
     },
+    ...FeaturesRoutes,
+    ...PageRoutes,
   ],
 });
