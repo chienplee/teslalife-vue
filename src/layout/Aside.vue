@@ -434,6 +434,14 @@
       </a-menu-item-group>
       <a-menu-item-group key="pages">
         <p slot="title" class="sidebar-nav-title">Pages</p>
+        <a-menu-item key="testimonials">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/page/testimonials">
+              Testimonials
+            </router-link>
+          </span>
+        </a-menu-item>
         <a-menu-item key="starter">
           <CircleIcon />
           <span>

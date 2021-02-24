@@ -12,9 +12,9 @@
       </div>
     </sdPageHeader>
     <Main>
-      <a-row :gutter="25">
+      <a-row :gutter="25" type="flex" justify="center">
         <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-          <PricingCard :style="{ marginBottom: 30 }">
+          <PricingCard style="margin-bottom: 30px">
             <Badge class="pricing-badge" type="dark">Free Forever</Badge>
             <sdHeading class="pricing-title" as="h3">
               Free
@@ -37,7 +37,7 @@
           </PricingCard>
         </a-col>
         <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-          <PricingCard :style="{ marginBottom: 30 }">
+          <PricingCard style="margin-bottom: 30px">
             <Badge class="pricing-badge" type="primary">Basic Plan</Badge>
             <sdHeading class="price-amount" as="h3">
               <sup class="currency">$</sup>19
@@ -57,7 +57,7 @@
           </PricingCard>
         </a-col>
         <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-          <PricingCard :style="{ marginBottom: 30 }">
+          <PricingCard style="margin-bottom: 30px">
             <Badge class="pricing-badge" type="secondary">Business</Badge>
             <sdHeading class="price-amount" as="h3">
               <sup class="currency">$</sup>39
@@ -78,7 +78,7 @@
           </PricingCard>
         </a-col>
         <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-          <PricingCard :style="{ marginBottom: 30 }">
+          <PricingCard style="margin-bottom: 30px">
             <Badge class="pricing-badge" type="success">Enterprise</Badge>
             <sdHeading class="price-amount" as="h3">
               <sup class="currency">$</sup>79
@@ -103,9 +103,9 @@
       <a-row :gutter="25">
         <a-col :xs="24">
           <sdCards headless>
-            <a-row :gutter="25" justify="center">
+            <a-row :gutter="25" type="flex" justify="center">
               <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-                <PricingCard :style="{ marginBottom: 30 }">
+                <PricingCard style="margin-bottom: 30px">
                   <Badge class="pricing-badge" type="dark">Free Forever</Badge>
                   <sdHeading class="price-amount" as="h3">
                     Free
@@ -128,7 +128,7 @@
                 </PricingCard>
               </a-col>
               <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-                <PricingCard :style="{ marginBottom: 30 }">
+                <PricingCard style="margin-bottom: 30px">
                   <Badge class="pricing-badge" type="primary">Basic Plan</Badge>
                   <sdHeading as="h3">
                     <sup class="currency">$</sup> 19
@@ -148,7 +148,7 @@
                 </PricingCard>
               </a-col>
               <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-                <PricingCard :style="{ marginBottom: 30 }">
+                <PricingCard style="margin-bottom: 30px">
                   <Badge class="pricing-badge" type="secondary">Business</Badge>
                   <sdHeading as="h3">
                     <sup class="currency">$</sup>39
@@ -170,7 +170,7 @@
                 </PricingCard>
               </a-col>
               <a-col :xxl="6" :lg="8" :sm="12" :xs="24">
-                <PricingCard :style="{ marginBottom: 30 }">
+                <PricingCard style="margin-bottom: 30px">
                   <Badge class="pricing-badge" type="success">Enterprise</Badge>
                   <sdHeading as="h3">
                     <sup class="currency">$</sup>79

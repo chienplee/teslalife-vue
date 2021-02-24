@@ -20,6 +20,7 @@
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "recharts": "^2.0.6",
+    "swiper": "^6.4.15",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue-date-fns": "^2.0.1",
@@ -48,6 +49,7 @@
     "esm": "^3.2.25",
     "less": "^4.0.0",
     "less-loader": "^6.0.0",
+    "sass-loader": "^11.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
