@@ -14,5 +14,10 @@ export default [
         name: "banners",
         component: () => import("@/view/pages/Banners.vue"),
     },
+    {
+        path: "/page/testimonials",
+        name: "testimonials",
+        component: () => import("@/view/pages/Testimonials.vue"),
+    },
   ];
   

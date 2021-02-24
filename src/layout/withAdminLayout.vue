@@ -132,7 +132,7 @@
             :width="280"
             :style="{
               margin: '63px 0 0 0',
-              padding: '15px 15px 55px 15px',
+              padding: '15px 15px 155px 15px',
               overflowY: 'auto',
               height: '100vh',
               position: 'fixed',
