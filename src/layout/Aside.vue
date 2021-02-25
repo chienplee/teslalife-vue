@@ -442,6 +442,14 @@
             </router-link>
           </span>
         </a-menu-item>
+        <a-menu-item key="profile-settings">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/page/profile-settings">
+              Settings
+            </router-link>
+          </span>
+        </a-menu-item>
         <a-menu-item key="starter">
           <CircleIcon />
           <span>

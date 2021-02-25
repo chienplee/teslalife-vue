@@ -19,5 +19,10 @@ export default [
         name: "testimonials",
         component: () => import("@/view/pages/Testimonials.vue"),
     },
+    {
+        path: "/page/profile-settings",
+        name: "profileSettings",
+        component: () => import("@/view/pages/settings/Settings.vue"),
+    },
   ];
   

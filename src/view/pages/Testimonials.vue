@@ -14,21 +14,49 @@
     <Main>
       <a-row :gutter="25">
         <a-col :sm="24" :xs="24">
-          <sdCards headless>
-            <template>
-              <swiper
-                :slides-per-view="3"
-                :space-between="50"
-                @swiper="onSwiper"
-                @slideChange="onSlideChange"
-              >
-                <div>Slide 1</div>
-                <div>Slide 2</div>
-                <div>Slide 3</div>
-                ...
-              </swiper>
-            </template>
-          </sdCards>
+          <TestimonialStyleWrapper>
+            <sdCards headless>
+              <div class="testimonial-block theme-1">
+                <h2 class="testimonial-title">Testimonial 1</h2>
+                <Swiper
+                  :active-index="3"
+                  loop
+                  pagination-visible
+                  pagination-clickable
+                  ref="switchDemo"
+                  :slides-per-view="3"
+                >
+                  <div
+                    :key="n"
+                    v-for="n in 5"
+                    class="testimonial-block__single"
+                  >
+                    <figure>
+                      <img
+                        :src="require(`../../static/img/users/5.png`)"
+                        alt=""
+                      />
+                      <figcaption>
+                        <h2 class="client-name">{{ n }}</h2>
+                        <p class="client-designation">{{ n }}</p>
+                        <p class="client-review">{{ n }}</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </Swiper>
+                <router-link
+                  to="#"
+                  class="swiper-button-prev"
+                  @click.native="prev"
+                ></router-link
+                ><router-link
+                  to="#"
+                  class="swiper-button-next"
+                  @click.native="next"
+                ></router-link>
+              </div>
+            </sdCards>
+          </TestimonialStyleWrapper>
         </a-col>
       </a-row>
     </Main>
@@ -42,15 +70,8 @@ import ExportButton from "../../components/buttons/ExportButton";
 import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
-import SwiperCore, { Navigation, Pagination } from "swiper/core";
-import Swiper from "swiper/bundle";
-// import { SwiperSlide } from "swiper";
-
-// import "swiper/swiper.scss";
-// import "swiper/components/pagination/pagination.scss";
-import "swiper/swiper-bundle.css";
-
-SwiperCore.use([Navigation, Pagination]);
+import { Swiper } from "vue2-swiper";
+import { TestimonialStyleWrapper } from "./style";
 
 export default {
   name: "Testimonials",
@@ -62,7 +83,7 @@ export default {
     ShareButton,
     Main,
     Swiper,
-    // SwiperSlide,
+    TestimonialStyleWrapper,
   },
   data() {
     return {
@@ -93,11 +114,11 @@ export default {
     };
   },
   methods: {
-    onSwiper(swiper) {
-      console.log(swiper);
+    prev() {
+      this.$refs.switchDemo.prev();
     },
-    onSlideChange() {
-      console.log("slide change");
+    next() {
+      this.$refs.switchDemo.next();
     },
   },
 };
