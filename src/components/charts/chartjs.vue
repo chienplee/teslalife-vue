@@ -1,5 +1,5 @@
 <script>
-import { Bar, HorizontalBar, Line, Pie, Doughnut } from "vue-chartjs";
+import { Bar, HorizontalBar, Line, Pie } from "vue-chartjs";
 import { customTooltips } from "../utilities/utilities";
 
 import VueTypes from "vue-types";
