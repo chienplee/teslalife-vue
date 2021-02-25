@@ -17,7 +17,10 @@
           <AuthorBox />
         </a-col>
         <a-col :xxl="18" :lg="16" :md="14" :xs="24">
-          <SettingWrapper> </SettingWrapper>
+          <SettingWrapper>
+            <CoverSection />
+            <router-view></router-view>
+          </SettingWrapper>
         </a-col>
       </a-row>
     </Main>
@@ -33,6 +36,7 @@ import { Main } from "../../styled";
 import { PlusIcon } from "vue-feather-icons";
 import { SettingWrapper } from "./overview/style";
 import AuthorBox from "./overview/ProfileAuthorBox";
+import CoverSection from "./overview/CoverSection";
 
 export default {
   name: "Settings",
@@ -45,6 +49,7 @@ export default {
     Main,
     SettingWrapper,
     AuthorBox,
+    CoverSection,
   },
   data() {
     return {};

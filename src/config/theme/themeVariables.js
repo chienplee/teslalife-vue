@@ -165,7 +165,7 @@ const theme = {
   'rate-star-size': '13px',
 
   // Switch
-  'switch-min-width': '35px',
+  'switch-min-width': '30px',
   'switch-sm-min-width': '30px',
   'switch-height': '18px',
   'switch-sm-height': '15px',

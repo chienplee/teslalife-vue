@@ -3,7 +3,6 @@ import { Row, Col } from "ant-design-vue";
 import { Icon, IconWrapper } from "./IconStyled";
 import { faIcons } from "../../config/icon/icon.json";
 import * as FontAwesomeIcon from "@fortawesome/free-solid-svg-icons";
-// import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   name: "FontAwesome",

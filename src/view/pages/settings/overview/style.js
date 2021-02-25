@@ -73,7 +73,7 @@ const ProfileAuthorBox = Styled.div`
                 img{
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 13px;
                 }
-                &.active{
+                &.router-link-exact-active{
                     font-weight: 500;
                     color: ${({ theme }) => theme['primary-color']};
                     background: ${({ theme }) => theme['primary-color']}05;

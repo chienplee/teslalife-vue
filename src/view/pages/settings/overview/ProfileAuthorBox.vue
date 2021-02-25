@@ -92,7 +92,7 @@ const AuthorBox = {
   },
   data() {
     return {
-      path: this.$route.path,
+      path: this.$route.matched[0].path,
     };
   },
 };
