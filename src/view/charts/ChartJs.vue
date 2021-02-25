@@ -20,21 +20,22 @@
           <sdCards title="Stacked Chart">
             <sdChartjsStackedChart />
           </sdCards>
+          <sdCards title="Area Chart">
+            <sdChartjsAreaChart />
+          </sdCards>
         </a-col>
-
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Horizontal Chart">
             <sdChartjsHorizontalChart />
           </sdCards>
-        </a-col>
-        <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Line Chart">
             <sdChartjsLineChart />
           </sdCards>
-        </a-col>
-        <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Area Chart">
-            <sdChartjsAreaChart />
+           <sdCards title="Transparent Chart">
+            <sdChartjsBarChartTransparent />
+          </sdCards>
+           <sdCards title="Pie Chart">
+            <sdChartjsPieChart />
           </sdCards>
         </a-col>
       </a-row>
