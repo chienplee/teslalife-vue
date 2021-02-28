@@ -84,5 +84,247 @@ export const GoogleMaterialBarChart = {
   },
 };
 
+export const GoogleStackedChart = {
+  name: "GoogleStackedChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        chart: {
+          title: this.title,
+        },
+        width: this.width,
+        height: this.height,
+        chartArea: { width: this.chartArea },
+        isStacked: true,
+        hAxis: {
+          title: 'Total',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City',
+        },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    title: VueTypes.string.def("Chart"),
+    chartArea: VueTypes.string.def("50%"),
+  },
+  render() {
+    return (
+      <GChart
+        type="BarChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "3" }}
+        height={this.height}
+      />
+    );
+  },
+};
+
+export const GoogleCustomColorChart = {
+  name: "GoogleCustomColorChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        title: this.title,
+        width: this.width,
+        height: this.height,
+        colors: this.colors,
+        chartArea: { width: this.chartArea },
+        hAxis: {
+          title: "Total",
+          minValue: 0,
+        },
+        vAxis: {
+          title: "City",
+        },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    title: VueTypes.string.def("Chart"),
+    chartArea: VueTypes.string.def("50%"),
+    colors: VueTypes.array,
+  },
+  render() {
+    return (
+      <GChart
+        type="BarChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "4" }}
+      />
+    );
+  },
+};
+
+export const GoogleComboChart = {
+  name: "GoogleComboChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        title: this.title,
+        width: this.width,
+        height: this.height,
+        colors: this.colors,
+        chartArea: { width: this.chartArea },
+        seriesType: 'bars',
+        series: { 5: { type: 'line' } },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    title: VueTypes.string.def("Chart"),
+    chartArea: VueTypes.string.def("50%"),
+    colors: VueTypes.array,
+  },
+  render() {
+    return (
+      <GChart
+        type="ComboChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "5" }}
+      />
+    );
+  },
+};
+
+export const GoogleLineChart = {
+  name: "GoogleLineChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        width: this.width,
+        height: this.height,
+        hAxis: {
+          title: 'Time',
+        },
+        vAxis: {
+          title: 'Popularity',
+        },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+  },
+  render() {
+    return (
+      <GChart
+        type="LineChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "6" }}
+      />
+    );
+  },
+};
+
+export const GoogleMultiLineChart = {
+  name: "GoogleMultiLineChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        width: this.width,
+        height: this.height,
+        hAxis: {
+          title: 'Time',
+        },
+        vAxis: {
+          title: 'Popularity',
+        },
+        series: {
+          0: { curveType: 'function' },
+          1: { curveType: 'function' },
+        },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+  },
+  render() {
+    return (
+      <GChart
+        type="LineChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "7" }}
+      />
+    );
+  },
+};
+
+export const GoogleBasicPieChart = {
+  name: "GoogleBasicPieChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        title: this.title,
+        width: this.width,
+        height: this.height,
+        chartArea: { width: this.chartArea }
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    title: VueTypes.string.def("Chart"),
+    chartArea: VueTypes.string.def("50%"),
+  },
+  render() {
+    return (
+      <GChart
+        type="PieChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "9" }}
+      />
+    );
+  },
+};
+
 export default GoogleBasicBarChart;
 </script>
