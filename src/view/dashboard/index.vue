@@ -30,8 +30,10 @@ import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
 
+const SocialMediaOverview = import("./overview/index/SocialMediaOverview");
+
 export default {
-  name: "Sidebar",
+  name: "Index",
   components: {
     PlusIcon,
     CalendarButton,
