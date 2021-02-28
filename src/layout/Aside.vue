@@ -442,6 +442,14 @@
             </router-link>
           </span>
         </a-menu-item>
+        <a-menu-item key="gallery">
+          <CircleIcon />
+          <span>
+            <router-link @click="toggleCollapsed" to="/page/gallery">
+              Gallery
+            </router-link>
+          </span>
+        </a-menu-item>
         <a-menu-item key="profile-settings">
           <CircleIcon />
           <span>
