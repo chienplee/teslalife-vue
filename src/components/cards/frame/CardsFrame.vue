@@ -9,6 +9,7 @@
     :bodypadding="bodypadding && bodypadding"
     :style="{ width: '100%' }"
   >
+    <slot name="caption"></slot>
     <template slot="extra">
       <Dropdown v-if="more" :action="['click']" placement="bottomCenter">
         <template slot="overlay">
