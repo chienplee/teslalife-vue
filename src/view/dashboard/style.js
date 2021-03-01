@@ -1,4 +1,4 @@
-import Styled from 'styled-components';
+import Styled from 'vue-styled-components';
 
 const EChartCard = Styled.div`
     display: flex;
