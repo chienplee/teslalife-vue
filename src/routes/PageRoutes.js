@@ -60,5 +60,10 @@ export default [
         name: "faq`s",
         component: () => import("@/view/pages/Faq.vue"),
     },
+    {
+        path: "/page/404",
+        name: "404",
+        component: () => import("@/view/pages/404.vue"),
+    },
   ];
   

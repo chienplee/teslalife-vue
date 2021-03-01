@@ -49,6 +49,14 @@
               :height="300"
             />
           </sdCards>
+          <sdCards title="Basic Pie Chart">
+            <sdGoogle3dPieChart
+              :data="pieChartData"
+              width="100%"
+              :height="300"
+              chartArea="100%"
+            />
+          </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Bar Chart">
@@ -79,7 +87,7 @@
               :height="300"
             />
           </sdCards>
-          <sdCards title="Organization Chart">
+          <sdCards title="3d Pie Chart">
             <sdGoogleBasicPieChart
               :data="pieChartData"
               width="100%"

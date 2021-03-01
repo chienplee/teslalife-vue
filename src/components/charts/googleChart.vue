@@ -311,7 +311,43 @@ export const GoogleBasicPieChart = {
     width: VueTypes.string.def("100%"),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
-    title: VueTypes.string.def("Chart"),
+    title: VueTypes.string.def("My Daily Activities"),
+    chartArea: VueTypes.string.def("50%"),
+  },
+  render() {
+    return (
+      <GChart
+        type="PieChart"
+        data={this.data}
+        options={this.chartOptions}
+        rootProps={{ "data-testid": "9" }}
+      />
+    );
+  },
+};
+
+export const Google3dPieChart = {
+  name: "Google3dPieChart",
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        title: this.title,
+        width: this.width,
+        height: this.height,
+        is3D:true,
+        chartArea: { width: this.chartArea }
+      },
+    };
+  },
+  methods: {},
+  props: {
+    width: VueTypes.string.def("100%"),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    title: VueTypes.string.def("My Daily Activities"),
     chartArea: VueTypes.string.def("50%"),
   },
   render() {

@@ -1,3 +1,7 @@
 1. Unresizable Textarea
 2. Basic Inputs
 3. Dropzone consoele error and design fix
+
+ Google Chart
+--------------
+1. Organization Chart 
