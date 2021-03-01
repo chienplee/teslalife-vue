@@ -55,5 +55,10 @@ export default [
         name: "gallery",
         component: () => import("@/view/pages/Gallery.vue"),
     },
+    {
+        path: "/page/404",
+        name: "404",
+        component: () => import("@/view/pages/404.vue"),
+    },
   ];
   

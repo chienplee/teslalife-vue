@@ -474,11 +474,11 @@
             </router-link>
           </span>
         </a-menu-item>
-        <a-menu-item key="banners">
+        <a-menu-item key="404">
           <CircleIcon />
           <span>
-            <router-link @click="toggleCollapsed" to="/page/banners">
-              Banners
+            <router-link @click="toggleCollapsed" to="/page/404">
+              404
             </router-link>
           </span>
         </a-menu-item>
