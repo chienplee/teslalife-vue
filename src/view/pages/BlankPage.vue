@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Blank Page">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <CalendarButton />
+          <ExportButton />
+          <ShareButton />
+          <sdButton size="small" type="primary">
+            <PlusOutlined size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -28,19 +30,16 @@ import CalendarButton from "../../components/buttons/CalendarButton";
 import ExportButton from "../../components/buttons/ExportButton";
 import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
+import { PlusOutlined } from "@ant-design/icons-vue";
 
 export default {
-  name: "Sidebar",
+  name: "BlankPage",
   components: {
-    PlusIcon,
+    PlusOutlined,
     CalendarButton,
     ExportButton,
     ShareButton,
     Main,
-  },
-  data() {
-    return {};
   },
 };
 </script>

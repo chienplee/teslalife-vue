@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 
 const H1 = Styled.h1`
   font-size: 30px;

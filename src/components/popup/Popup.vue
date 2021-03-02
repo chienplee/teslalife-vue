@@ -5,25 +5,27 @@
     :title="title && title"
     :trigger="action"
   >
-    <template v-if="title" slot="title">
+    <template v-if="title" v-slot:title>
       <Title>{{ title }}</Title>
     </template>
-    <Content slot="content">
-      <slot name="content">
-        <router-link to="#">
-          <CheckIcon size="16" />
-          <span>Btn Dropdown one</span>
-        </router-link>
-        <router-link to="#">
-          <CheckIcon size="16" />
-          <span>Btn Dropdown two</span>
-        </router-link>
-        <router-link to="#">
-          <CheckIcon size="16" />
-          <span>Btn Dropdown three</span>
-        </router-link>
-      </slot>
-    </Content>
+    <template v-slot:content>
+      <Content>
+        <slot name="content">
+          <a to="#">
+            <CheckIcon size="16" />
+            <span>Btn Dropdown one</span>
+          </a>
+          <a to="#">
+            <CheckIcon size="16" />
+            <span>Btn Dropdown two</span>
+          </a>
+          <a to="#">
+            <CheckIcon size="16" />
+            <span>Btn Dropdown three</span>
+          </a>
+        </slot>
+      </Content>
+    </template>
     <slot></slot>
   </a-popover>
 </template>

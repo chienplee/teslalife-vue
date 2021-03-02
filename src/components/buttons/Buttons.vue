@@ -1,5 +1,6 @@
 <script>
 import { ButtonStyled, ButtonStyledGroup } from "./styled";
+import VueTypes from "vue-types";
 export const Button = {
   components: {
     ButtonStyled,
@@ -14,23 +15,36 @@ export const Button = {
       this.loading = true;
     },
   },
-  props: [
-    "type",
-    "shape",
-    "icon",
-    "size",
-    "outlined",
-    "ghost",
-    "transparented",
-    "raised",
-    "squared",
-    "color",
-    "social",
-    "load",
-    "default",
-    "block",
-    "disabled",
-  ],
+  props: {
+    type: VueTypes.oneOf([
+      "primary",
+      "secondary",
+      "success",
+      "info",
+      "warning",
+      "danger",
+      "link",
+      "dark",
+      "light",
+      "white",
+      "dashed",
+      "error",
+      "default",
+    ]).def("default"),
+    shape: VueTypes.string,
+    icon: VueTypes.string,
+    size: VueTypes.string,
+    color: VueTypes.string,
+    outlined: VueTypes.bool.def(false),
+    block: VueTypes.bool.def(false),
+    disabled: VueTypes.bool.def(false),
+    transparented: VueTypes.bool.def(false),
+    raised: VueTypes.bool.def(false),
+    squared: VueTypes.bool.def(false),
+    social: VueTypes.bool.def(false),
+    load: VueTypes.bool.def(false),
+    ghost: VueTypes.bool.def(false),
+  },
   render() {
     return (
       <ButtonStyled
@@ -46,12 +60,12 @@ export const Button = {
         icon={this.icon}
         color={this.color}
         social={this.social}
-        onClick={() => this.load && this.enterLoading}
+        click={() => this.load && this.enterLoading}
         loading={this.loading}
         block={this.block}
         disabled={this.disabled}
       >
-        {this.$slots.default}
+        {this.$slots.default()}
       </ButtonStyled>
     );
   },
@@ -63,7 +77,7 @@ export const BtnGroup = {
   },
 
   render() {
-    return <ButtonStyledGroup>{this.$slots.default}</ButtonStyledGroup>;
+    return <ButtonStyledGroup>{this.$slots.default()}</ButtonStyledGroup>;
   },
 };
 export default Button;

@@ -17,15 +17,15 @@
           <a-col :md="12" :xs="24">
             <sdCards title="Basic Dropdown">
               <sdDropdown placement="bottomLeft">
-                <router-link to="#">Hover me</router-link>
+                <a to="#">Hover me</a>
               </sdDropdown>
             </sdCards>
             <sdCards title="Event menu">
               <sdDropdown :action="['hover']" placement="bottomLeft">
-                <router-link to="#">hover me </router-link>
+                <a to="#">hover me </a>
               </sdDropdown>
               <sdDropdown :action="['click']" placement="bottomCenter">
-                <router-link to="#">click </router-link>
+                <a to="#">click </a>
               </sdDropdown>
             </sdCards>
           </a-col>
@@ -104,17 +104,17 @@
                 >
                   Bottom Left Click
                   <sdDropdown placement="bottomLeft" :action="['click']">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="ellipsis" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
                   Top Left hover
                   <sdDropdown placement="topLeft">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="ellipsis" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton
@@ -126,17 +126,17 @@
                 >
                   Bottom Right hover
                   <sdDropdown placement="bottomRight" :action="['hover']">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="user" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
                   Top Right hover
                   <sdDropdown placement="topRight">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="ellipsis" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="error">
@@ -144,25 +144,25 @@
                     Tooltip
                   </a-tooltip>
                   <sdDropdown placement="bottomLeft" size="small">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="ellipsis" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="warning">
                   Warning
                   <sdDropdown placement="bottomLeft" size="small">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="ellipsis" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
                   Info
                   <sdDropdown placement="bottomLeft" size="small">
-                    <router-link to="#">
+                    <a to="#">
                       <a-icon type="download" />
-                    </router-link>
+                    </a>
                   </sdDropdown>
                 </sdButton>
               </DropdownIconStyleWrapper>

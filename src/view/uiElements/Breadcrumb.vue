@@ -19,10 +19,10 @@
               <a-breadcrumb>
                 <a-breadcrumb-item>Home</a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
+                  <a to="#">Application Center</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
+                  <a to="#">Application List</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>An Application</a-breadcrumb-item>
               </a-breadcrumb>
@@ -31,10 +31,7 @@
           <sdCards title="Other Router Integration">
             <BreadcrumbWrapperStyle>
               <a-breadcrumb :routes="routes">
-                <template
-                  slot="itemRender"
-                  slot-scope="{ route, routes, paths }"
-                >
+                <template v-slot:itemRender="{ route, routes, paths }">
                   <span v-if="routes.indexOf(route) === routes.length - 1">
                     {{ route.breadcrumbName }}
                   </span>
@@ -97,12 +94,12 @@
                   <a-icon type="home" />
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
+                  <a to="#">Application Center</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">
+                  <a to="#">
                     <span>Application List</span>
-                  </router-link>
+                  </a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>An Application</a-breadcrumb-item>
               </a-breadcrumb>
@@ -114,10 +111,10 @@
               <a-breadcrumb separator=">">
                 <a-breadcrumb-item>Home</a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
+                  <a to="#">Application Center</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
+                  <a to="#">Application List</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>An Application</a-breadcrumb-item>
               </a-breadcrumb>
@@ -130,11 +127,11 @@
                 <a-breadcrumb-item>Location</a-breadcrumb-item>
                 <a-breadcrumb-separator>:</a-breadcrumb-separator>
                 <a-breadcrumb-item>
-                  <router-link to="#">Application Center</router-link>
+                  <a to="#">Application Center</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-separator />
                 <a-breadcrumb-item>
-                  <router-link to="#">Application List</router-link>
+                  <a to="#">Application List</a>
                 </a-breadcrumb-item>
                 <a-breadcrumb-separator />
                 <a-breadcrumb-item>An Application</a-breadcrumb-item>

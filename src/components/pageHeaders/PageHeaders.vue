@@ -32,13 +32,13 @@ export const PageHeader = {
             subTitle={this.subTitle}
             breadcrumb={this.routes && this.routes}
             ghost={this.ghost}
-          >
-            <template slot="extra">{this.$slots.buttons}</template>
-          </PageHeaderStyle>
+            extra={this.$slots.buttons()}
+          ></PageHeaderStyle>
         </div>
       </div>
     );
   },
 };
+
 export default PageHeader;
 </script>

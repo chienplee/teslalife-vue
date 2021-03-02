@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 const props = ["darkMode"]
 const InfoWraper = Styled('div', props)`
     display: flex;

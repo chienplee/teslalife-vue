@@ -1,19 +1,24 @@
-import Vue from "vue";
-import Router from "vue-router";
-import FeaturesRoutes from "./FeaturesRoutes";
-import PageRoutes from "./PageRoutes";
+import { createWebHistory, createRouter } from "vue-router";
+// import FeaturesRoutes from "./FeaturesRoutes";
+// import PageRoutes from "./PageRoutes";
 
-Vue.use(Router);
 
-export default new Router({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes: [
+  const routes = [
     {
       path: "/",
       name: "dashboard",
       component: () => import("@/view/pages/BlankPage.vue"),
     },
+    {
+      // path: "*",
+      path: "/:catchAll(.*)",
+      name: "NotFound",
+      component: "PageNotFound",
+      meta: {
+        requiresAuth: false
+      }
+    }
+    /*
     {
       path: "/components/alerts",
       name: "alerts",
@@ -216,5 +221,14 @@ export default new Router({
     },
     ...FeaturesRoutes,
     ...PageRoutes,
-  ],
+    */
+  ]
+
+
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
+
+export default router;

@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 import { PageHeader } from 'ant-design-vue';
 
 const PageHeaderStyle = Styled(PageHeader)`

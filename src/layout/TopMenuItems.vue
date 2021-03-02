@@ -3,9 +3,9 @@
     <div class="strikingDash-top-menu">
       <ul>
         <li class="has-subMenu">
-          <router-link to="#" class="parent">
+          <a to="#" class="parent">
             Dashboard
-          </router-link>
+          </a>
           <ul class="subMenu">
             <li>
               <router-link to="/social">

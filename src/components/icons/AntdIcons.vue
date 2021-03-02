@@ -1,7 +1,7 @@
 <script>
 import { Row, Col } from "ant-design-vue";
 import { AnIcon, IconWrapper } from "./IconStyled";
-import * as Icons from "@ant-design/icons";
+import * as Icons from "@ant-design/icons-vue";
 
 export default {
   name: "AntdIcon",

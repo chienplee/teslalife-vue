@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 const Main = Styled.div`
     padding: 0px 30px 20px;
     min-height: 715px;

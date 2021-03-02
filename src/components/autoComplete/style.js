@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 import { AutoComplete } from 'ant-design-vue';
 
 const props = ['customComponent', 'patterns', 'patternButtons', 'width', 'onSearch', 'dataSource', 'placeholder']

@@ -1,57 +1,37 @@
 <template>
-  <Popover placement="bottomLeft" action="click">
-    <template slot="content">
-      <router-link to="#">
-        <PrinterIcon size="16" />
+  <sdPopover placement="bottomLeft" action="click">
+    <template v-slot:content>
+      <a to="#">
+        <sdFeatherIcons type="printer" />
         <span>Printer</span>
-      </router-link>
-      <router-link to="#">
-        <BookOpenIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="book-open" />
         <span>PDF</span>
-      </router-link>
-      <router-link to="#">
-        <FileTextIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="file-text" />
         <span>Google Sheets</span>
-      </router-link>
-      <router-link to="#">
-        <XIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="x" />
         <span>Excel (XLSX)</span>
-      </router-link>
-      <router-link to="#">
-        <FileIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="file" />
         <span>CSV</span>
-      </router-link>
+      </a>
     </template>
-    <Button size="small" type="white">
-      <DownloadIcon size="14" />
+    <sdButton size="small" type="white">
+      <sdFeatherIcons type="download" />
       Export
-    </Button>
-  </Popover>
+    </sdButton>
+  </sdPopover>
 </template>
 
 <script>
-import Popover from "../popup/Popup";
-import { Button } from "./Buttons";
-import {
-  DownloadIcon,
-  FileIcon,
-  XIcon,
-  FileTextIcon,
-  BookOpenIcon,
-  PrinterIcon,
-} from "vue-feather-icons";
-
 export default {
   name: "ExportButton",
-  components: {
-    Button,
-    Popover,
-    DownloadIcon,
-    FileIcon,
-    XIcon,
-    FileTextIcon,
-    BookOpenIcon,
-    PrinterIcon,
-  },
+  components: {},
 };
 </script>

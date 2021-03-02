@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 import { Modal } from 'ant-design-vue';
 
 const ModalStyledColord = (type, theme) => `

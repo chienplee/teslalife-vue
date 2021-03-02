@@ -11,7 +11,7 @@
       :headers="headers"
       @change="onChange"
     >
-      <router-link to="#"> <CameraIcon size="16" /> Change Cover </router-link>
+      <a to="#"> <CameraIcon size="16" /> Change Cover </a>
     </a-upload>
   </div>
 </template>

@@ -104,9 +104,9 @@
                 @change="handleChange"
               >
                 <span class="sDash_upload-text">Select File</span>
-                <router-link to="#" class="sDash_upload-browse">
+                <a to="#" class="sDash_upload-browse">
                   Browse
-                </router-link>
+                </a>
               </a-upload>
             </a-form>
           </sdCards>
@@ -151,7 +151,7 @@
 </template>
 
 <script>
-import { message } from 'ant-design-vue';
+import { message } from "ant-design-vue";
 import { Main } from "../styled";
 import { PlusIcon } from "vue-feather-icons";
 import { CheckListWrap } from "./overview/Style";

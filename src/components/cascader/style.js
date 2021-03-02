@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 
 const CascaderStyle = Styled.div`
     margin: 15px 0;

@@ -16,9 +16,9 @@
             :xs="12"
             class="align-center-v navbar-brand"
           >
-            <Button
+            <sdButton
               v-if="!topMenu || innerWidth <= 991"
-              @click.native="toggleCollapsed(collapsed)"
+              @click="toggleCollapsed(collapsed)"
               type="white"
             >
               <img
@@ -29,7 +29,7 @@
                 "
                 alt="menu"
               />
-            </Button>
+            </sdButton>
             <router-link
               :class="
                 topMenu && innerWidth > 991
@@ -60,15 +60,15 @@
                   :class="
                     `${activeSearch ? 'search-toggle active' : 'search-toggle'}`
                   "
-                  @click.native="
+                  @click="
                     () => {
                       toggleSearch();
                     }
                   "
                   to="#"
                 >
-                  <SearchIcon />
-                  <XIcon />
+                  <sdFeatherIcons type="search" />
+                  <sdFeatherIcons type="x" />
                 </router-link>
                 <div
                   :class="
@@ -81,7 +81,7 @@
                 >
                   <form action="">
                     <span class="search-icon">
-                      <SearchIcon />
+                      <sdFeatherIcons type="search" />
                     </span>
                     <input type="text" name="search" />
                   </form>
@@ -95,18 +95,18 @@
             <div class="mobile-action">
               <router-link
                 class="btn-search"
-                @click.native="(e) => handleSearchHide(e, searchHide)"
+                @click="(e) => handleSearchHide(e, searchHide)"
                 to="#"
               >
-                <SearchIcon v-if="searchHide" />
-                <XIcon v-else />
+                <sdFeatherIcons type="search" v-if="searchHide" />
+                <sdFeatherIcons type="x" v-else />
               </router-link>
               <router-link
                 class="btn-auth"
-                @click.native="() => onShowHide(hide)"
+                @click="() => onShowHide(hide)"
                 to="#"
               >
-                <MoreVerticalIcon />
+                <sdFeatherIcons type="more-vertical" />
               </router-link>
             </div>
           </a-col>
@@ -168,9 +168,9 @@
                 </a-col>
                 <a-col :md="12" :xs="24">
                   <div class="admin-footer__links">
-                    <router-link to="#">About</router-link>
-                    <router-link to="#">Team</router-link>
-                    <router-link to="#">Contact</router-link>
+                    <a to="#">About</a>
+                    <a to="#">Team</a>
+                    <a to="#">Contact</a>
                   </div>
                 </a-col>
               </a-row>
@@ -189,13 +189,11 @@ import {
   SmallScreenAuthInfo,
   TopMenuSearch,
 } from "./style";
-import { Button } from "../components/buttons/Buttons";
 import HeaderSearch from "../components/header-search/HeaderSearch";
-import { SearchIcon, XIcon, MoreVerticalIcon } from "vue-feather-icons";
+
 import AuthInfo from "../components/utilities/auth-info/info";
 import AsideItems from "./Aside";
 import TopMenu from "./TopMenuItems";
-import { mapGetters } from "vuex";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -204,7 +202,6 @@ export default {
   components: {
     Div,
     Header,
-    Button,
     Layout,
     Footer,
     Sider,
@@ -212,9 +209,6 @@ export default {
     HeaderSearch,
     SmallScreenSearch,
     SmallScreenAuthInfo,
-    SearchIcon,
-    XIcon,
-    MoreVerticalIcon,
     TopMenuSearch,
     AuthInfo,
     AsideItems,
@@ -231,7 +225,16 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rtl", "darkMode", "topMenu"]),
+    rtl() {
+      return this.$store.state.themeLayout.rtl;
+    },
+    darkMode() {
+      return this.$store.state.themeLayout.darkMode;
+    },
+
+    topMenu() {
+      return this.$store.state.themeLayout.topMenu;
+    },
   },
   created() {
     this.collapsed = window.innerWidth <= 1200 && true;

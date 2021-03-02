@@ -11,10 +11,9 @@
   </ThemeProvider>
 </template>
 <script>
-import { ThemeProvider } from "vue-styled-components";
+import { ThemeProvider } from "vue3-styled-components";
 import { theme } from "./config/theme/themeVariables";
 import WithAdminLayout from "./layout/withAdminLayout";
-import { mapGetters } from "vuex";
 
 export default {
   name: "App",
@@ -29,7 +28,16 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rtl", "darkMode", "topMenu"]),
+    rtl() {
+      return this.$store.state.themeLayout.rtl;
+    },
+    darkMode() {
+      return this.$store.state.themeLayout.darkMode;
+    },
+
+    topMenu() {
+      return this.$store.state.themeLayout.topMenu;
+    },
   },
 };
 </script>

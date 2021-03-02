@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 
 const ProfileAuthorBox = Styled.div`
     .ant-card-body{

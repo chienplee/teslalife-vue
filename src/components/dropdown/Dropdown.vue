@@ -5,19 +5,21 @@
     :title="title"
     :trigger="action"
   >
-    <Content slot="overlay">
-      <slot name="overlay">
-        <router-link to="#">
-          <span>Export to CSV</span>
-        </router-link>
-        <router-link to="#">
-          <span>Export to XML</span>
-        </router-link>
-        <router-link to="#">
-          <span>Export to Drive</span>
-        </router-link>
-      </slot>
-    </Content>
+    <template v-slot:overlay>
+      <Content>
+        <slot name="overlay">
+          <a to="#">
+            <span>Export to CSV</span>
+          </a>
+          <a to="#">
+            <span>Export to XML</span>
+          </a>
+          <a to="#">
+            <span>Export to Drive</span>
+          </a>
+        </slot>
+      </Content>
+    </template>
     <slot></slot>
   </a-dropdown>
 </template>

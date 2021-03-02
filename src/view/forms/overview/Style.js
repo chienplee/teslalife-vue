@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 
 const HorizontalFormStyleWrap = Styled.div`
     .ant-card{

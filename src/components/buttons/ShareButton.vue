@@ -1,57 +1,37 @@
 <template>
-  <Popover placement="bottomLeft" action="click">
-    <template slot="content">
-      <router-link to="#">
-        <FacebookIcon size="16" />
+  <sdPopover placement="bottomLeft" action="click">
+    <template v-slot:content>
+      <a to="#">
+        <sdFeatherIcons type="facebook" />
         <span>Facebook</span>
-      </router-link>
-      <router-link to="#">
-        <TwitterIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="twitter" />
         <span>Twitter</span>
-      </router-link>
-      <router-link to="#">
-        <RssIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="rss" />
         <span>Feed</span>
-      </router-link>
-      <router-link to="#">
-        <LinkedinIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="linkedin" />
         <span>Linkedin</span>
-      </router-link>
-      <router-link to="#">
-        <InstagramIcon size="16" />
+      </a>
+      <a to="#">
+        <sdFeatherIcons type="instagram" />
         <span>Instagram</span>
-      </router-link>
+      </a>
     </template>
-    <Button size="small" type="white">
-      <Share2Icon size="14" />
+    <sdButton size="small" type="white">
+      <sdFeatherIcons type="share-2" size="14" />
       Share
-    </Button>
-  </Popover>
+    </sdButton>
+  </sdPopover>
 </template>
 
 <script>
-import Popover from "../popup/Popup";
-import { Button } from "./Buttons";
-import {
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-  RssIcon,
-  InstagramIcon,
-  Share2Icon,
-} from "vue-feather-icons";
-
 export default {
   name: "ShareButton",
-  components: {
-    Button,
-    Popover,
-    FacebookIcon,
-    TwitterIcon,
-    LinkedinIcon,
-    RssIcon,
-    InstagramIcon,
-    Share2Icon,
-  },
+  components: {},
 };
 </script>

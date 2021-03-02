@@ -178,26 +178,26 @@ import {
 const MoreContent = () => {
   return (
     <div>
-      <router-link to="#">
+      <a to="#">
         <PrinterIcon size="16" />
         <span>Printer</span>
-      </router-link>
-      <router-link to="#">
+      </a>
+      <a to="#">
         <BookOpenIcon size="16" />
         <span>PDF</span>
-      </router-link>
-      <router-link to="#">
+      </a>
+      <a to="#">
         <FileTextIcon size="16" />
         <span>Google Sheets</span>
-      </router-link>
-      <router-link to="#">
+      </a>
+      <a to="#">
         <XIcon size="16" />
         <span>Excel (XLSX)</span>
-      </router-link>
-      <router-link to="#">
+      </a>
+      <a to="#">
         <FileIcon size="16" />
         <span>CSV</span>
-      </router-link>
+      </a>
     </div>
   );
 };

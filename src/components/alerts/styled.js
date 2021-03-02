@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 import { Alert } from 'ant-design-vue';
 
 const props = ['type', 'icon', 'message', 'description', 'showIcon', 'outlined', 'closable', 'closeText'];

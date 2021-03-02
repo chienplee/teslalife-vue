@@ -17,10 +17,10 @@
           <sdCards title="Basic">
             <BadgeWraperStyle>
               <a-badge count="5">
-                <router-link to="#" class="head-example" />
+                <a to="#" class="head-example" />
               </a-badge>
               <a-badge count="0" showZero>
-                <router-link to="#" class="head-example" />
+                <a to="#" class="head-example" />
               </a-badge>
               <a-badge>
                 <a-icon
@@ -28,7 +28,7 @@
                   type="clock-circle"
                   style="color: #f5222d"
                 />
-                <router-link to="#" class="head-example" />
+                <a to="#" class="head-example" />
               </a-badge>
             </BadgeWraperStyle>
           </sdCards>
@@ -37,16 +37,16 @@
             <BadgeWraperStyle>
               <BadgeOverflowStyle>
                 <a-badge count="99">
-                  <router-link to="#" class="head-example" />
+                  <a to="#" class="head-example" />
                 </a-badge>
                 <a-badge count="100">
-                  <router-link to="#" class="head-example" />
+                  <a to="#" class="head-example" />
                 </a-badge>
                 <a-badge count="99" :overflowCount="10">
-                  <router-link to="#" class="head-example" />
+                  <a to="#" class="head-example" />
                 </a-badge>
                 <a-badge count="1000" :overflowCount="999">
-                  <router-link to="#" class="head-example" />
+                  <a to="#" class="head-example" />
                 </a-badge>
               </BadgeOverflowStyle>
             </BadgeWraperStyle>
@@ -54,11 +54,11 @@
 
           <sdCards title="Clickable">
             <BadgeWraperStyle>
-              <router-link to="#">
+              <a to="#">
                 <a-badge :count="5">
                   <span class="head-example" />
                 </a-badge>
-              </router-link>
+              </a>
             </BadgeWraperStyle>
           </sdCards>
 
@@ -106,7 +106,7 @@
                   <a-icon type="bell" />
                 </a-badge>
                 <a-badge dot>
-                  <router-link to="#">something</router-link>
+                  <a to="#">something</a>
                 </a-badge>
               </BadgeRedStyle>
             </BadgeWraperStyle>
@@ -120,7 +120,7 @@
                   :style="{ display: 'flex', alignItems: 'flex-start' }"
                 >
                   <a-badge :count="count">
-                    <router-link to="#" class="head-example" />
+                    <a to="#" class="head-example" />
                   </a-badge>
                   <sdBtnGroup>
                     <sdButton type="white" @click.native="decline">
@@ -139,7 +139,7 @@
                   }"
                 >
                   <a-badge :dot="show">
-                    <router-link to="#" class="head-example" />
+                    <a to="#" class="head-example" />
                   </a-badge>
                   <a-switch @change="onChange" :checked="show" />
                 </div>

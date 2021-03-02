@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Popover">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <PlusIcon size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <DropdownStyle>
       <Main>
@@ -17,15 +19,15 @@
           <a-col :md="12" :xs="24">
             <sdCards title="Basic Popover">
               <sdPopover placement="bottomLeft">
-                <router-link to="#">Hover me</router-link>
+                <a to="#">Hover me</a>
               </sdPopover>
             </sdCards>
             <sdCards title="Event menu">
               <sdPopover action="hover" placement="bottomLeft">
-                <router-link to="#">hover me </router-link>
+                <a to="#">hover me </a>
               </sdPopover>
               <sdPopover action="click" placement="bottom">
-                <router-link to="#">click </router-link>
+                <a to="#">click </a>
               </sdPopover>
             </sdCards>
           </a-col>

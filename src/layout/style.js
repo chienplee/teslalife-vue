@@ -1,4 +1,4 @@
-import Styled from 'vue-styled-components';
+import Styled from 'vue3-styled-components';
 const props = {
     hide: Boolean,    
     searchHide: Boolean,
@@ -315,7 +315,7 @@ const Div = Styled('div', props)`
                         position: relative;
                     }
                     >span{
-                        width: 100%;
+                        /* width: 100%; */
                         .pl-0{
                             ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 0px;
                         }
