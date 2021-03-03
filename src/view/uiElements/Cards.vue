@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Cards">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -25,7 +27,9 @@
                   :more="true"
                   :style="{ width: 400 }"
                 >
-                  <MoreContent slot="more" />
+                  <template v-slot:more>
+                    <MoreContent />
+                  </template>
                   <p>Card content</p>
                   <p>Card content</p>
                   <p>Card content</p>
@@ -40,7 +44,9 @@
                   :more="true"
                   :style="{ width: 400 }"
                 >
-                  <MoreContent slot="more" />
+                  <template v-slot:more>
+                    <MoreContent />
+                  </template>
                   <p>Card content</p>
                   <p>Card content</p>
                   <p>Card content</p>
@@ -63,7 +69,9 @@
                   :more="true"
                   :style="{ width: 400 }"
                 >
-                  <MoreContent slot="more" />
+                  <template v-slot:more>
+                    <MoreContent />
+                  </template>
                   <p>Card content</p>
                   <p>Card content</p>
                   <p>Card content</p>
@@ -164,38 +172,30 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { CardStyleWrapper } from "./ui-elements-styled";
-import {
-  PrinterIcon,
-  BookOpenIcon,
-  FileTextIcon,
-  XIcon,
-  FileIcon,
-} from "vue-feather-icons";
 
 const MoreContent = () => {
   return (
     <div>
       <a to="#">
-        <PrinterIcon size="16" />
+        <sdFeatherIcons type="printer" size="16" />
         <span>Printer</span>
       </a>
       <a to="#">
-        <BookOpenIcon size="16" />
+        <sdFeatherIcons type="book-open" size="16" />
         <span>PDF</span>
       </a>
       <a to="#">
-        <FileTextIcon size="16" />
+        <sdFeatherIcons type="file-text" size="16" />
         <span>Google Sheets</span>
       </a>
       <a to="#">
-        <XIcon size="16" />
+        <sdFeatherIcons type="x" size="16" />
         <span>Excel (XLSX)</span>
       </a>
       <a to="#">
-        <FileIcon size="16" />
+        <sdFeatherIcons type="file" size="16" />
         <span>CSV</span>
       </a>
     </div>
@@ -205,7 +205,6 @@ const MoreContent = () => {
 export default {
   name: "Cards",
   components: {
-    PlusIcon,
     Main,
     CardStyleWrapper,
     MoreContent,

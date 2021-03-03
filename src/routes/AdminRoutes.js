@@ -43,6 +43,11 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "calendar",
       component: () => import("@/view/uiElements/Calendar"),
     },
+    {
+      path: "/components/cards",
+      name: "cards",
+      component: () => import("@/view/uiElements/Cards"),
+    },
     /*
     {
       path: "/components/autoComplete",
@@ -54,11 +59,7 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "button",
       component: () => import("@/view/uiElements/Button.vue"),
     },
-    {
-      path: "/components/cards",
-      name: "cards",
-      component: () => import("@/view/uiElements/Cards"),
-    },
+    
     {
       path: "/components/carousel",
       name: "carousel",
