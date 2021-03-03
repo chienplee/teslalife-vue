@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Avatar">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -47,7 +49,7 @@
                     verticalAlign: 'middle',
                     color: '#ADB4D2',
                   }"
-                  @click.native="changeUser"
+                  @click="changeUser"
                 >
                   Change
                 </sdButton>
@@ -94,7 +96,7 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
+
 import config from "../../config/config";
 import { AvatarWraperStyle } from "./ui-elements-styled";
 import { mapGetters } from "vuex";
@@ -106,7 +108,6 @@ const ColorList = ["#f56a00", "#7265e6", "#ffbf00", "#00a2ae"];
 export default {
   name: "Avatar",
   components: {
-    PlusIcon,
     Main,
     AvatarWraperStyle,
   },

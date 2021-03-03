@@ -1,12 +1,11 @@
 import app from "../../config/configApp";
-import { Fragment } from "vue-fragment";
 import Cards from "../../components/cards/frame/CardsFrame.vue";
 import FeatherIcons from '../../components/utilities/featherIcons.vue'
-// import Alerts from "../../components/alerts/Alerts.vue";
+import Alerts from "../../components/alerts/Alerts.vue";
 import { Button, BtnGroup } from "../../components/buttons/Buttons.vue";
-// import CalendarButton from "../../components/buttons/CalendarButton.vue";
-// import ExportButton from "../../components/buttons/ExportButton.vue";
-// import ShareButton from "../../components/buttons/ShareButton.vue";
+import CalendarButton from "../../components/buttons/CalendarButton.vue";
+import ExportButton from "../../components/buttons/ExportButton.vue";
+import ShareButton from "../../components/buttons/ShareButton.vue";
 import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 // import {
 //   GoogleBasicBarChart,
@@ -37,10 +36,6 @@ import Popover from "../../components/popup/Popup";
 // import Modal from "../../components/modals/Modals";
 
 [
-  {
-    name: "Fragment",
-    ...Fragment,
-  },
   Heading,
   Cards,
   // {
@@ -90,7 +85,7 @@ import Popover from "../../components/popup/Popup";
   //   name: "ChartjsStackedChart",
   //   ...ChartjsStackedChart,
   // },
-  // Alerts,
+  Alerts,
   {
     name: "Button",
     ...Button,
@@ -99,9 +94,9 @@ import Popover from "../../components/popup/Popup";
     name: "BtnGroup",
     ...BtnGroup,
   },
-  // CalendarButton,
-  // ExportButton,
-  // ShareButton,
+  CalendarButton,
+  ExportButton,
+  ShareButton,
   { name: "PageHeader", ...PageHeader },
   // Cascader,
   // AutoComplete,

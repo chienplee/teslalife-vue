@@ -17,8 +17,7 @@ import { createWebHistory, createRouter } from "vue-router";
       meta: {
         requiresAuth: false
       }
-    }
-    /*
+    },
     {
       path: "/components/alerts",
       name: "alerts",
@@ -29,6 +28,7 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "avatar",
       component: () => import("@/view/uiElements/Avatar.vue"),
     },
+    /*
     {
       path: "/components/autoComplete",
       name: "autoComplete",

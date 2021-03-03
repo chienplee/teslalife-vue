@@ -12,15 +12,15 @@
       <Content>
         <slot name="content">
           <a to="#">
-            <CheckIcon size="16" />
+            <sdFeatherIcons type="check" size="16" />
             <span>Btn Dropdown one</span>
           </a>
           <a to="#">
-            <CheckIcon size="16" />
+            <sdFeatherIcons type="check" size="16" />
             <span>Btn Dropdown two</span>
           </a>
           <a to="#">
-            <CheckIcon size="16" />
+            <sdFeatherIcons type="check" size="16" />
             <span>Btn Dropdown three</span>
           </a>
         </slot>
@@ -33,7 +33,6 @@
 <script>
 import { Content, Title } from "./style";
 import VueTypes from "vue-types";
-import { CheckIcon } from "vue-feather-icons";
 
 export default {
   name: "Popover",
@@ -50,7 +49,6 @@ export default {
   components: {
     Content,
     Title,
-    CheckIcon,
   },
 };
 </script>

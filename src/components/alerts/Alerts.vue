@@ -8,9 +8,11 @@
     :outlined="outlined"
     :closeText="closeText && closeText"
   >
-    <div slot="description">
-      <slot name="description"></slot>
-    </div>
+    <template v-slot:description>
+      <div>
+        <slot name="description"></slot>
+      </div>
+    </template>
   </Style>
 </template>
 
