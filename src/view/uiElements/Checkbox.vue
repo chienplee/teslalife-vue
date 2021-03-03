@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Checkbox">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -48,7 +50,6 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 
 const plainOptions = ["Apple", "Pear", "Orange"];
@@ -57,7 +58,6 @@ const defaultCheckedList = ["Apple", "Orange"];
 export default {
   name: "Checkbox",
   components: {
-    PlusIcon,
     Main,
   },
   data() {

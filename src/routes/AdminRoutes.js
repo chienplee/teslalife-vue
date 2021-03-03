@@ -53,6 +53,16 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "carousel",
       component: () => import("@/view/uiElements/Carousel"),
     },
+    {
+      path: "/components/checkbox",
+      name: "checkbox",
+      component: () => import("@/view/uiElements/Checkbox"),
+    },
+    {
+      path: "/components/collapse",
+      name: "collapse",
+      component: () => import("@/view/uiElements/Collapse"),
+    },
     /*
     {
       path: "/components/autoComplete",
@@ -69,16 +79,7 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "cascader",
       component: () => import("@/view/uiElements/Cascader"),
     },
-    {
-      path: "/components/checkbox",
-      name: "checkbox",
-      component: () => import("@/view/uiElements/Checkbox"),
-    },
-    {
-      path: "/components/collapse",
-      name: "collapse",
-      component: () => import("@/view/uiElements/Collapse"),
-    },
+    
     {
       path: "/components/comments",
       name: "comments",
