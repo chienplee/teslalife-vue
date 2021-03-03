@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Blank Page">
-      <div slot="buttons" class="page-header-actions">
+    <template v-slot:buttons>
+      <div class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
         <sdShareButton />
         <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
+          <sdFeatherIcons type="plus" size="14" />
           Add New
         </sdButton>
       </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -23,11 +25,13 @@
                 <a to="#" class="head-example" />
               </a-badge>
               <a-badge>
-                <a-icon
-                  slot="count"
+                <template v-slot:count>
+                   <a-icon
                   type="clock-circle"
                   style="color: #f5222d"
                 />
+                </template>
+               
                 <a to="#" class="head-example" />
               </a-badge>
             </BadgeWraperStyle>
@@ -123,10 +127,10 @@
                     <a to="#" class="head-example" />
                   </a-badge>
                   <sdBtnGroup>
-                    <sdButton type="white" @click.native="decline">
+                    <sdButton type="white" @click="decline">
                       <a-icon type="minus" />
                     </sdButton>
-                    <sdButton type="white" @click.native="increase">
+                    <sdButton type="white" @click="increase">
                       <a-icon type="plus" />
                     </sdButton>
                   </sdBtnGroup>
@@ -154,7 +158,6 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import {
   BadgeWraperStyle,
   BadgeStandAloneStyle,
@@ -166,7 +169,6 @@ import { mapGetters } from "vuex";
 export default {
   name: "Badge",
   components: {
-    PlusIcon,
     Main,
     BadgeWraperStyle,
     BadgeStandAloneStyle,

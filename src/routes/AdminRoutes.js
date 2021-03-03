@@ -28,6 +28,11 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "avatar",
       component: () => import("@/view/uiElements/Avatar.vue"),
     },
+    {
+      path: "/components/badge",
+      name: "badge",
+      component: () => import("@/view/uiElements/Badge.vue"),
+    },
     /*
     {
       path: "/components/autoComplete",
