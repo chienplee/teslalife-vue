@@ -1,16 +1,16 @@
 <template>
   <div>
     <sdPageHeader title="Blank Page">
-    <template v-slot:buttons>
-      <div class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <sdFeatherIcons type="plus" size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
       </template>
     </sdPageHeader>
     <Main>
@@ -26,12 +26,9 @@
               </a-badge>
               <a-badge>
                 <template v-slot:count>
-                   <a-icon
-                  type="clock-circle"
-                  style="color: #f5222d"
-                />
+                  <sdFeatherIcons type="clock" style="color: #f5222d" />
                 </template>
-               
+
                 <a to="#" class="head-example" />
               </a-badge>
             </BadgeWraperStyle>
@@ -104,10 +101,10 @@
             <BadgeWraperStyle>
               <BadgeRedStyle>
                 <a-badge dot>
-                  <a-icon type="bell" />
+                  <sdFeatherIcons type="bell" />
                 </a-badge>
                 <a-badge count="0" dot>
-                  <a-icon type="bell" />
+                  <sdFeatherIcons type="bell" />
                 </a-badge>
                 <a-badge dot>
                   <a to="#">something</a>
@@ -128,10 +125,10 @@
                   </a-badge>
                   <sdBtnGroup>
                     <sdButton type="white" @click="decline">
-                      <a-icon type="minus" />
+                      <sdFeatherIcons type="minus" />
                     </sdButton>
                     <sdButton type="white" @click="increase">
-                      <a-icon type="plus" />
+                      <sdFeatherIcons type="plus" />
                     </sdButton>
                   </sdBtnGroup>
                 </div>

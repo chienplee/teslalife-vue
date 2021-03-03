@@ -253,6 +253,7 @@ export default {
       this.searchHide = true;
     },
     toggleCollapsedMobile: function(collapsed) {
+      console.log("hello");
       if (innerWidth <= 990) {
         this.collapsed = !collapsed;
       }

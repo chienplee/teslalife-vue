@@ -95,7 +95,7 @@
             <BreadcrumbWrapperStyle>
               <a-breadcrumb>
                 <a-breadcrumb-item>
-                  <a-icon type="home" />
+                  <sdFeatherIcons type="home" />
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
                   <a to="#">Application Center</a>

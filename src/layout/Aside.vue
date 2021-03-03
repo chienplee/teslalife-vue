@@ -12,32 +12,32 @@
         ><sdFeatherIcons type="home" /><span>Dashboard</span></template
       >
       <a-menu-item key="home">
-        <router-link @click="toggleCollapsed" to="/">
+        <router-link click="toggleCollapsed" to="/">
           Social Media
         </router-link>
       </a-menu-item>
       <a-menu-item key="business">
-        <router-link @click="toggleCollapsed" to="/business">
+        <router-link click="toggleCollapsed" to="/business">
           Fintech / Business
         </router-link>
       </a-menu-item>
       <a-menu-item key="performance">
-        <router-link @click="toggleCollapsed" to="/performance">
+        <router-link click="toggleCollapsed" to="/performance">
           Site Performance
         </router-link>
       </a-menu-item>
       <a-menu-item key="eco">
-        <router-link @click="toggleCollapsed" to="/eco">
+        <router-link click="toggleCollapsed" to="/eco">
           Ecommerce
         </router-link>
       </a-menu-item>
       <a-menu-item key="crm">
-        <router-link @click="toggleCollapsed" to="/crm">
+        <router-link click="toggleCollapsed" to="/crm">
           CRM
         </router-link>
       </a-menu-item>
       <a-menu-item key="sales">
-        <router-link @click="toggleCollapsed" to="/sales">
+        <router-link click="toggleCollapsed" to="/sales">
           Sales Performance
         </router-link>
       </a-menu-item>
@@ -52,197 +52,197 @@
           ><sdFeatherIcons type="circle" /><span>UI Elements</span></template
         >
         <a-menu-item key="alerts">
-          <router-link @click="toggleCollapsed" to="/components/alerts">
+          <router-link click="toggleCollapsed" to="/components/alerts">
             Alerts
           </router-link>
         </a-menu-item>
         <a-menu-item key="avatar">
-          <router-link @click="toggleCollapsed" to="/components/avatar">
+          <router-link click="toggleCollapsed" to="/components/avatar">
             Avatar
           </router-link>
         </a-menu-item>
         <a-menu-item key="autoComplete">
-          <router-link @click="toggleCollapsed" to="/components/autoComplete">
+          <router-link click="toggleCollapsed" to="/components/autoComplete">
             AutoComplete
           </router-link>
         </a-menu-item>
         <a-menu-item key="button">
-          <router-link @click="toggleCollapsed" to="/components/button">
+          <router-link click="toggleCollapsed" to="/components/button">
             Buttons
           </router-link>
         </a-menu-item>
         <a-menu-item key="badge">
-          <router-link @click="toggleCollapsed" to="/components/badge">
+          <router-link click="toggleCollapsed" to="/components/badge">
             Badge
           </router-link>
         </a-menu-item>
         <a-menu-item key="breadcrumb">
-          <router-link @click="toggleCollapsed" to="/components/breadcrumb">
+          <router-link click="toggleCollapsed" to="/components/breadcrumb">
             Breadcrumb
           </router-link>
         </a-menu-item>
         <a-menu-item key="calendar">
-          <router-link @click="toggleCollapsed" to="/components/calendar">
+          <router-link click="toggleCollapsed" to="/components/calendar">
             Calendar
           </router-link>
         </a-menu-item>
         <a-menu-item key="cards">
-          <router-link @click="toggleCollapsed" to="/components/cards">
+          <router-link click="toggleCollapsed" to="/components/cards">
             Cards
           </router-link>
         </a-menu-item>
         <a-menu-item key="carousel">
-          <router-link @click="toggleCollapsed" to="/components/carousel">
+          <router-link click="toggleCollapsed" to="/components/carousel">
             Carousel
           </router-link>
         </a-menu-item>
         <a-menu-item key="cascader">
-          <router-link @click="toggleCollapsed" to="/components/cascader">
+          <router-link click="toggleCollapsed" to="/components/cascader">
             Cascader
           </router-link>
         </a-menu-item>
         <a-menu-item key="checkbox">
-          <router-link @click="toggleCollapsed" to="/components/checkbox">
+          <router-link click="toggleCollapsed" to="/components/checkbox">
             Checkbox
           </router-link>
         </a-menu-item>
         <a-menu-item key="collapse">
-          <router-link @click="toggleCollapsed" to="/components/collapse">
+          <router-link click="toggleCollapsed" to="/components/collapse">
             Collapse
           </router-link>
         </a-menu-item>
         <a-menu-item key="comments">
-          <router-link @click="toggleCollapsed" to="/components/comments">
+          <router-link click="toggleCollapsed" to="/components/comments">
             Comments
           </router-link>
         </a-menu-item>
         <a-menu-item key="dash-base">
-          <router-link @click="toggleCollapsed" to="/components/dash-base">
+          <router-link click="toggleCollapsed" to="/components/dash-base">
             Dashboard Base
           </router-link>
         </a-menu-item>
         <a-menu-item key="datePicker">
-          <router-link @click="toggleCollapsed" to="/components/datePicker">
+          <router-link click="toggleCollapsed" to="/components/datePicker">
             DatePicker
           </router-link>
         </a-menu-item>
         <a-menu-item key="drawer">
-          <router-link @click="toggleCollapsed" to="/components/drawer">
+          <router-link click="toggleCollapsed" to="/components/drawer">
             Drawer
           </router-link>
         </a-menu-item>
         <a-menu-item key="empty">
-          <router-link @click="toggleCollapsed" to="/components/empty">
+          <router-link click="toggleCollapsed" to="/components/empty">
             Empty
           </router-link>
         </a-menu-item>
         <a-menu-item key="form">
-          <router-link @click="toggleCollapsed" to="/components/form">
+          <router-link click="toggleCollapsed" to="/components/form">
             Form
           </router-link>
         </a-menu-item>
         <a-menu-item key="grid">
-          <router-link @click="toggleCollapsed" to="/components/grid">
+          <router-link click="toggleCollapsed" to="/components/grid">
             Grid
           </router-link>
         </a-menu-item>
         <a-menu-item key="dropdown">
-          <router-link @click="toggleCollapsed" to="/components/dropdown">
+          <router-link click="toggleCollapsed" to="/components/dropdown">
             Dropdown
           </router-link>
         </a-menu-item>
         <a-menu-item key="input">
-          <router-link @click="toggleCollapsed" to="/components/input">
+          <router-link click="toggleCollapsed" to="/components/input">
             Input
           </router-link>
         </a-menu-item>
         <a-menu-item key="list">
-          <router-link @click="toggleCollapsed" to="/components/list">
+          <router-link click="toggleCollapsed" to="/components/list">
             List
           </router-link>
         </a-menu-item>
         <a-menu-item key="menu">
-          <router-link @click="toggleCollapsed" to="/components/menu">
+          <router-link click="toggleCollapsed" to="/components/menu">
             Menu
           </router-link>
         </a-menu-item>
         <a-menu-item key="message">
-          <router-link @click="toggleCollapsed" to="/components/message">
+          <router-link click="toggleCollapsed" to="/components/message">
             Message
           </router-link>
         </a-menu-item>
         <a-menu-item key="modal">
-          <router-link @click="toggleCollapsed" to="/components/modal">
+          <router-link click="toggleCollapsed" to="/components/modal">
             Modal
           </router-link>
         </a-menu-item>
         <a-menu-item key="notification">
-          <router-link @click="toggleCollapsed" to="/components/notification">
+          <router-link click="toggleCollapsed" to="/components/notification">
             Notification
           </router-link>
         </a-menu-item>
         <a-menu-item key="pageHeader">
-          <router-link @click="toggleCollapsed" to="/components/pageHeader">
+          <router-link click="toggleCollapsed" to="/components/pageHeader">
             PageHeader
           </router-link>
         </a-menu-item>
         <a-menu-item key="pagination">
-          <router-link @click="toggleCollapsed" to="/components/pagination">
+          <router-link click="toggleCollapsed" to="/components/pagination">
             Pagination
           </router-link>
         </a-menu-item>
         <a-menu-item key="popConfirm">
-          <router-link @click="toggleCollapsed" to="/components/popConfirm">
+          <router-link click="toggleCollapsed" to="/components/popConfirm">
             PopConfirm
           </router-link>
         </a-menu-item>
         <a-menu-item key="popover">
-          <router-link @click="toggleCollapsed" to="/components/popover">
+          <router-link click="toggleCollapsed" to="/components/popover">
             Popover
           </router-link>
         </a-menu-item>
         <a-menu-item key="progressbar">
-          <router-link @click="toggleCollapsed" to="/components/progressbar">
+          <router-link click="toggleCollapsed" to="/components/progressbar">
             Progress Bar
           </router-link>
         </a-menu-item>
         <a-menu-item key="radio">
-          <router-link @click="toggleCollapsed" to="/components/radio">
+          <router-link click="toggleCollapsed" to="/components/radio">
             Radio
           </router-link>
         </a-menu-item>
         <a-menu-item key="rate">
-          <router-link @click="toggleCollapsed" to="/components/rate">
+          <router-link click="toggleCollapsed" to="/components/rate">
             Rate
           </router-link>
         </a-menu-item>
         <a-menu-item key="result">
-          <router-link @click="toggleCollapsed" to="/components/result">
+          <router-link click="toggleCollapsed" to="/components/result">
             Result
           </router-link>
         </a-menu-item>
         <a-menu-item key="select">
-          <router-link @click="toggleCollapsed" to="/components/select">
+          <router-link click="toggleCollapsed" to="/components/select">
             Select
           </router-link>
         </a-menu-item>
         <a-menu-item key="skeleton">
-          <router-link @click="toggleCollapsed" to="/components/skeleton">
+          <router-link click="toggleCollapsed" to="/components/skeleton">
             Skeleton
           </router-link>
         </a-menu-item>
         <a-menu-item key="slider">
-          <router-link @click="toggleCollapsed" to="/components/slider">
+          <router-link click="toggleCollapsed" to="/components/slider">
             Slider
           </router-link>
         </a-menu-item>
         <a-menu-item key="spiner">
-          <router-link @click="toggleCollapsed" to="/components/spiner">
+          <router-link click="toggleCollapsed" to="/components/spiner">
             Spiner
           </router-link>
         </a-menu-item>
         <a-menu-item key="statistic">
-          <router-link @click="toggleCollapsed" to="/components/statistic">
+          <router-link click="toggleCollapsed" to="/components/statistic">
             Statistic
           </router-link>
         </a-menu-item>
@@ -253,12 +253,12 @@
           ><sdFeatherIcons type="circle" /><span>Charts</span></template
         >
         <a-menu-item key="chartJs">
-          <router-link @click="toggleCollapsed" to="/chart/chart-js">
+          <router-link click="toggleCollapsed" to="/chart/chart-js">
             Chart js
           </router-link>
         </a-menu-item>
         <a-menu-item key="googleChart">
-          <router-link @click="toggleCollapsed" to="/chart/google-chart">
+          <router-link click="toggleCollapsed" to="/chart/google-chart">
             Google Chart
           </router-link>
         </a-menu-item>
@@ -269,22 +269,22 @@
           ><sdFeatherIcons type="circle" /><span>Forms</span></template
         >
         <a-menu-item key="alerts">
-          <router-link @click="toggleCollapsed" to="/forms/form-layout">
+          <router-link click="toggleCollapsed" to="/forms/form-layout">
             Form Layout
           </router-link>
         </a-menu-item>
         <a-menu-item key="form-elements">
-          <router-link @click="toggleCollapsed" to="/forms/form-elements">
+          <router-link click="toggleCollapsed" to="/forms/form-elements">
             Form Elements
           </router-link>
         </a-menu-item>
         <a-menu-item key="form-components">
-          <router-link @click="toggleCollapsed" to="/forms/form-components">
+          <router-link click="toggleCollapsed" to="/forms/form-components">
             Form Components
           </router-link>
         </a-menu-item>
         <a-menu-item key="form-validation">
-          <router-link @click="toggleCollapsed" to="/forms/form-validation">
+          <router-link click="toggleCollapsed" to="/forms/form-validation">
             Form Validation
           </router-link>
         </a-menu-item>
@@ -295,17 +295,17 @@
           ><sdFeatherIcons type="circle" /><span>Icons</span></template
         >
         <a-menu-item key="featherIcons">
-          <router-link @click="toggleCollapsed" to="/icons/featherIcons">
+          <router-link click="toggleCollapsed" to="/icons/featherIcons">
             FeatherIcons
           </router-link>
         </a-menu-item>
         <a-menu-item key="antdIcons">
-          <router-link @click="toggleCollapsed" to="/icons/antdIcons">
+          <router-link click="toggleCollapsed" to="/icons/antdIcons">
             Ant Design Icons
           </router-link>
         </a-menu-item>
         <a-menu-item key="fa">
-          <router-link @click="toggleCollapsed" to="/icons/fa">
+          <router-link click="toggleCollapsed" to="/icons/fa">
             FontAwesome Icons
           </router-link>
         </a-menu-item>
@@ -316,17 +316,17 @@
           ><sdFeatherIcons type="circle" /><span>Maps</span></template
         >
         <a-menu-item key="google">
-          <router-link @click="toggleCollapsed" to="/maps/google">
+          <router-link click="toggleCollapsed" to="/maps/google">
             Google Maps
           </router-link>
         </a-menu-item>
         <a-menu-item key="leaflet">
-          <router-link @click="toggleCollapsed" to="/maps/leaflet">
+          <router-link click="toggleCollapsed" to="/maps/leaflet">
             Leaflet
           </router-link>
         </a-menu-item>
         <a-menu-item key="vector">
-          <router-link @click="toggleCollapsed" to="/maps/vector">
+          <router-link click="toggleCollapsed" to="/maps/vector">
             Vector
           </router-link>
         </a-menu-item>
@@ -337,7 +337,7 @@
           ><sdFeatherIcons type="circle" /><span>Table</span></template
         >
         <a-menu-item key="table">
-          <router-link @click="toggleCollapsed" to="/tables/basic">
+          <router-link click="toggleCollapsed" to="/tables/basic">
             Basic Table
           </router-link>
         </a-menu-item>
@@ -350,7 +350,7 @@
       <a-menu-item key="testimonials">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/testimonials">
+          <router-link click="toggleCollapsed" to="/page/testimonials">
             Testimonials
           </router-link>
         </span>
@@ -358,7 +358,7 @@
       <a-menu-item key="faq`s">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/faqs">
+          <router-link click="toggleCollapsed" to="/page/faqs">
             FAQs
           </router-link>
         </span>
@@ -366,7 +366,7 @@
       <a-menu-item key="gallery">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/gallery">
+          <router-link click="toggleCollapsed" to="/page/gallery">
             Gallery
           </router-link>
         </span>
@@ -374,7 +374,7 @@
       <a-menu-item key="profile-settings">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/profile-settings">
+          <router-link click="toggleCollapsed" to="/page/profile-settings">
             Settings
           </router-link>
         </span>
@@ -382,7 +382,7 @@
       <a-menu-item key="starter">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/starter">
+          <router-link click="toggleCollapsed" to="/starter">
             Blank Page
           </router-link>
         </span>
@@ -390,7 +390,7 @@
       <a-menu-item key="pricing">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/pricing">
+          <router-link click="toggleCollapsed" to="/page/pricing">
             Pricing
           </router-link>
         </span>
@@ -398,7 +398,7 @@
       <a-menu-item key="404">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link @click="toggleCollapsed" to="/page/404">
+          <router-link click="toggleCollapsed" to="/page/404">
             404
           </router-link>
         </span>

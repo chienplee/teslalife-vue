@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
 // import FeaturesRoutes from "./FeaturesRoutes";
 // import PageRoutes from "./PageRoutes";
 
@@ -8,16 +8,7 @@ import { createWebHistory, createRouter } from "vue-router";
       path: "/",
       name: "dashboard",
       component: () => import("@/view/pages/BlankPage.vue"),
-    },
-    {
-      // path: "*",
-      path: "/:catchAll(.*)",
-      name: "NotFound",
-      component: "PageNotFound",
-      meta: {
-        requiresAuth: false
-      }
-    },
+    },    
     {
       path: "/components/alerts",
       name: "alerts",
@@ -47,11 +38,11 @@ import { createWebHistory, createRouter } from "vue-router";
       path: "/components/cards",
       name: "cards",
       component: () => import("@/view/uiElements/Cards"),
-    },
+    },    
     {
-      path: "/components/carousel",
-      name: "carousel",
-      component: () => import("@/view/uiElements/Carousel"),
+      path: "/components/button",
+      name: "button",
+      component: () => import("@/view/uiElements/Button.vue"),
     },
     {
       path: "/components/checkbox",
@@ -70,9 +61,9 @@ import { createWebHistory, createRouter } from "vue-router";
       component: () => import("@/view/uiElements/AutoComplete"),
     },
     {
-      path: "/components/button",
-      name: "button",
-      component: () => import("@/view/uiElements/Button.vue"),
+      path: "/components/carousel",
+      name: "carousel",
+      component: () => import("@/view/uiElements/Carousel"),
     },
     {
       path: "/components/cascader",
@@ -229,6 +220,8 @@ import { createWebHistory, createRouter } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(),
+  hash: createWebHashHistory(),
+  abstract: createMemoryHistory(),
   routes,
 });
 
