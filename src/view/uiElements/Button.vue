@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Buttons">
-      <div slot="buttons" class="page-header-actions">
+      <template v-slot:buttons>
+      <div class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
         <sdShareButton />
         <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
+          <sdFeatherIcons type="plus" size="14" />
           Add New
         </sdButton>
       </div>
+      </template>
     </sdPageHeader>
     <Main class="button-example">
       <a-row :gutter="25">
@@ -108,46 +110,36 @@
           </sdCards>
           <sdCards title="Icon" size="default">
             <sdButton size="default" type="primary">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" transparented type="primary">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" outlined type="primary">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" outlined type="white">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" type="light">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" raised type="white">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton class="btn-icon" size="default" type="primary">
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton class="btn-icon" size="default" outlined type="primary">
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton class="btn-icon" size="default" type="light">
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton
               class="btn-icon btn-outlined"
               size="default"
               :outlined="true"
               type="light"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
           </sdCards>
           <sdCards title="Size" size="default">
             <a-row>
@@ -385,8 +377,7 @@
 
           <sdCards title="Rounded with Icon" size="default">
             <sdButton size="default" shape="circle" type="primary">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               size="default"
@@ -394,8 +385,7 @@
               :transparented="true"
               type="primary"
             >
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               size="default"
@@ -403,8 +393,7 @@
               :outlined="true"
               type="primary"
             >
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               class="btn-outlined"
@@ -413,16 +402,13 @@
               :outlined="true"
               type="light"
             >
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" shape="circle" type="light">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" shape="circle" :raised="true" type="white">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               class="btn-icon"
@@ -430,8 +416,7 @@
               shape="round"
               type="primary"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton
               class="btn-icon"
               size="default"
@@ -439,8 +424,7 @@
               shape="round"
               type="primary"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton
               class="btn-icon btn-outlined"
               size="default"
@@ -448,11 +432,9 @@
               shape="round"
               type="light"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton class="btn-icon" size="default" shape="round" type="light">
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
           </sdCards>
 
           <sdCards title="Disabled" size="default">
@@ -476,8 +458,7 @@
 
           <sdCards title="Loading" size="default">
             <sdButton size="default" shape="circle" type="primary">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               size="default"
@@ -485,8 +466,7 @@
               :transparented="true"
               type="primary"
             >
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               size="default"
@@ -494,20 +474,16 @@
               :outlined="true"
               type="primary"
             >
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" shape="circle" :outlined="true" type="white">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" shape="circle" type="light">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton size="default" shape="circle" :raised="true" type="white">
-              <LayersIcon />
-              Default
+              <sdFeatherIcons type="layers" size="14" />              Default
             </sdButton>
             <sdButton
               class="btn-icon"
@@ -515,8 +491,7 @@
               shape="round"
               type="primary"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton
               class="btn-icon"
               size="default"
@@ -524,8 +499,7 @@
               shape="round"
               type="primary"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton
               class="btn-icon btn-outlined"
               size="default"
@@ -533,11 +507,9 @@
               shape="round"
               type="light"
             >
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
             <sdButton class="btn-icon" size="default" shape="round" type="light">
-              <LayersIcon />
-            </sdButton>
+              <sdFeatherIcons type="layers" size="14" />            </sdButton>
           </sdCards>
 
           <sdCards
@@ -572,7 +544,7 @@ import {
   ButtonSizeWrapper,
   BtnWithIcon,
 } from "../styled";
-import { PlusIcon, LayersIcon } from "vue-feather-icons";
+
 import config from "../../config/config";
 import Dropdown from "../../components/dropdown/Dropdown";
 
@@ -581,8 +553,6 @@ const { theme } = config;
 export default {
   name: "Buttons",
   components: {
-    PlusIcon,
-    LayersIcon,
     Main,
     Dropdown,
     ButtonsGroupWrapper,
