@@ -33,6 +33,16 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "badge",
       component: () => import("@/view/uiElements/Badge.vue"),
     },
+    {
+      path: "/components/breadcrumb",
+      name: "breadcrumb",
+      component: () => import("@/view/uiElements/Breadcrumb.vue"),
+    },
+    {
+      path: "/components/calendar",
+      name: "calendar",
+      component: () => import("@/view/uiElements/Calendar"),
+    },
     /*
     {
       path: "/components/autoComplete",
@@ -43,21 +53,6 @@ import { createWebHistory, createRouter } from "vue-router";
       path: "/components/button",
       name: "button",
       component: () => import("@/view/uiElements/Button.vue"),
-    },
-    {
-      path: "/components/badge",
-      name: "badge",
-      component: () => import("@/view/uiElements/Badge.vue"),
-    },
-    {
-      path: "/components/breadcrumb",
-      name: "breadcrumb",
-      component: () => import("@/view/uiElements/Breadcrumb.vue"),
-    },
-    {
-      path: "/components/calendar",
-      name: "calendar",
-      component: () => import("@/view/uiElements/Calendar"),
     },
     {
       path: "/components/cards",

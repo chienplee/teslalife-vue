@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Breadcrumb">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -51,35 +53,37 @@
                 <a-breadcrumb-item><a href="">Component</a></a-breadcrumb-item>
                 <a-breadcrumb-item>
                   <a href="">General</a>
-                  <a-menu slot="overlay">
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.alipay.com/"
-                      >
-                        General
-                      </a>
-                    </a-menu-item>
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.taobao.com/"
-                      >
-                        Layout
-                      </a>
-                    </a-menu-item>
-                    <a-menu-item>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://www.tmall.com/"
-                      >
-                        Navigation
-                      </a>
-                    </a-menu-item>
-                  </a-menu>
+                  <template v-slot:overlay>
+                    <a-menu>
+                      <a-menu-item>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="http://www.alipay.com/"
+                        >
+                          General
+                        </a>
+                      </a-menu-item>
+                      <a-menu-item>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="http://www.taobao.com/"
+                        >
+                          Layout
+                        </a>
+                      </a-menu-item>
+                      <a-menu-item>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="http://www.tmall.com/"
+                        >
+                          Navigation
+                        </a>
+                      </a-menu-item>
+                    </a-menu>
+                  </template>
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>Button</a-breadcrumb-item>
               </a-breadcrumb>
@@ -146,12 +150,10 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import { BreadcrumbWrapperStyle } from "./ui-elements-styled";
 export default {
   name: "Badge",
   components: {
-    PlusIcon,
     Main,
     BreadcrumbWrapperStyle,
   },

@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Calendar">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -24,12 +26,15 @@
           <sdCards title="Notice Calendar">
             <CalendarWrapper>
               <a-calendar>
-                <ul slot="dateCellRender" slot-scope="value" class="events">
-                  <li v-for="item in getListData(value)" :key="item.content">
-                    <a-badge :status="item.type" :text="item.content" />
-                  </li>
-                </ul>
-                <template slot="monthCellRender" slot-scope="value">
+                <template v-slot:dateCellRender:value>
+                  <ul class="events">
+                    <li v-for="item in getListData(value)" :key="item.content">
+                      <a-badge :status="item.type" :text="item.content" />
+                    </li>
+                  </ul>
+                </template>
+
+                <template v-slot:monthCellRender:value>
                   <div v-if="getMonthData(value)" class="notes-month">
                     <section>{{ getMonthData(value) }}</section>
                     <span>Backlog number</span>
@@ -45,13 +50,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main, CalendarWrapper } from "../styled";
 
 export default {
   name: "Calendar",
   components: {
-    PlusIcon,
     Main,
     CalendarWrapper,
   },
