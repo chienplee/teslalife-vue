@@ -25,22 +25,6 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       component: () => import("@/view/uiElements/Badge.vue"),
     },
     {
-      path: "/components/button",
-      name: "button",
-      component: () => import("@/view/uiElements/Button.vue"),
-    },
-    /*
-    {
-      path: "/components/autoComplete",
-      name: "autoComplete",
-      component: () => import("@/view/uiElements/AutoComplete"),
-    },
-    {
-      path: "/components/badge",
-      name: "badge",
-      component: () => import("@/view/uiElements/Badge.vue"),
-    },
-    {
       path: "/components/breadcrumb",
       name: "breadcrumb",
       component: () => import("@/view/uiElements/Breadcrumb.vue"),
@@ -54,6 +38,17 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       path: "/components/cards",
       name: "cards",
       component: () => import("@/view/uiElements/Cards"),
+    },    
+    {
+      path: "/components/button",
+      name: "button",
+      component: () => import("@/view/uiElements/Button.vue"),
+    },
+    /*
+    {
+      path: "/components/autoComplete",
+      name: "autoComplete",
+      component: () => import("@/view/uiElements/AutoComplete"),
     },
     {
       path: "/components/carousel",
