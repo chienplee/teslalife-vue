@@ -59,6 +59,16 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       name: "comments",
       component: () => import("@/view/uiElements/Comments"),
     },
+    {
+      path: "/components/dash-base",
+      name: "dash-base",
+      component: () => import("@/view/uiElements/DashboardBase"),
+    },
+    {
+      path: "/components/datePicker",
+      name: "datePicker",
+      component: () => import("@/view/uiElements/DatePicker"),
+    },
     /*
     {
       path: "/components/autoComplete",
@@ -75,16 +85,7 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       name: "cascader",
       component: () => import("@/view/uiElements/Cascader"),
     },
-    {
-      path: "/components/dash-base",
-      name: "dash-base",
-      component: () => import("@/view/uiElements/DashboardBase"),
-    },
-    {
-      path: "/components/datePicker",
-      name: "datePicker",
-      component: () => import("@/view/uiElements/DatePicker"),
-    },
+   
     {
       path: "/components/dropdown",
       name: "dropdown",

@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="DatePicker">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+            <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -107,27 +109,27 @@
           <sdCards title="Extra Footer">
             <DatePickerWrapper>
               <a-date-picker>
-                <template slot="renderExtraFooter">
+                <template v-slot:renderExtraFooter>
                   extra footer
                 </template>
               </a-date-picker>
               <a-date-picker show-time>
-                <template slot="renderExtraFooter">
+                <template v-slot:renderExtraFooter>
                   extra footer
                 </template>
               </a-date-picker>
               <a-range-picker>
-                <template slot="renderExtraFooter">
+                <template v-slot:renderExtraFooter>
                   extra footer
                 </template>
               </a-range-picker>
               <a-range-picker show-time>
-                <template slot="renderExtraFooter">
+                <template v-slot:renderExtraFooter>
                   extra footer
                 </template>
               </a-range-picker>
               <a-month-picker placeholder="Select month">
-                <template slot="renderExtraFooter">
+                <template v-slot:renderExtraFooter>
                   extra footer
                 </template>
               </a-month-picker>
@@ -140,13 +142,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main, DatePickerWrapper } from "../styled";
 import moment from "moment";
 export default {
   name: "DatePicker",
   components: {
-    PlusIcon,
     Main,
     DatePickerWrapper,
   },
