@@ -54,6 +54,11 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       name: "collapse",
       component: () => import("@/view/uiElements/Collapse"),
     },
+    {
+      path: "/components/comments",
+      name: "comments",
+      component: () => import("@/view/uiElements/Comments"),
+    },
     /*
     {
       path: "/components/autoComplete",
@@ -69,12 +74,6 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
       path: "/components/cascader",
       name: "cascader",
       component: () => import("@/view/uiElements/Cascader"),
-    },
-    
-    {
-      path: "/components/comments",
-      name: "comments",
-      component: () => import("@/view/uiElements/Comments"),
     },
     {
       path: "/components/dash-base",
