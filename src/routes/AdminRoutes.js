@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
 // import FeaturesRoutes from "./FeaturesRoutes";
 // import PageRoutes from "./PageRoutes";
 
@@ -8,16 +8,7 @@ import { createWebHistory, createRouter } from "vue-router";
       path: "/",
       name: "dashboard",
       component: () => import("@/view/pages/BlankPage.vue"),
-    },
-    {
-      // path: "*",
-      path: "/:catchAll(.*)",
-      name: "NotFound",
-      component: "PageNotFound",
-      meta: {
-        requiresAuth: false
-      }
-    },
+    },    
     {
       path: "/components/alerts",
       name: "alerts",
@@ -33,16 +24,16 @@ import { createWebHistory, createRouter } from "vue-router";
       name: "badge",
       component: () => import("@/view/uiElements/Badge.vue"),
     },
+    {
+      path: "/components/button",
+      name: "button",
+      component: () => import("@/view/uiElements/Button.vue"),
+    },
     /*
     {
       path: "/components/autoComplete",
       name: "autoComplete",
       component: () => import("@/view/uiElements/AutoComplete"),
-    },
-    {
-      path: "/components/button",
-      name: "button",
-      component: () => import("@/view/uiElements/Button.vue"),
     },
     {
       path: "/components/badge",
@@ -233,6 +224,8 @@ import { createWebHistory, createRouter } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(),
+  hash: createWebHashHistory(),
+  abstract: createMemoryHistory(),
   routes,
 });
 

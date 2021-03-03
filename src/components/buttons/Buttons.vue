@@ -33,7 +33,7 @@ export const Button = {
     ]).def("default"),
     shape: VueTypes.string,
     icon: VueTypes.string,
-    size: VueTypes.string,
+    size: VueTypes.oneOf(["large", "default", "small"]),
     color: VueTypes.string,
     outlined: VueTypes.bool.def(false),
     block: VueTypes.bool.def(false),
