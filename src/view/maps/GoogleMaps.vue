@@ -1,37 +1,45 @@
 <template>
   <div>
     <sdPageHeader title="Google Map">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Google Map Basic">
-            <div>
-              <google-map
-                class="map-wrapper"
-                id="map"
-                :center="position"
-                ref="Map"
-              >
-                <google-map-marker :position="position"></google-map-marker>
-              </google-map>
-            </div>
+            <GoogleMap
+              :api-key="apiKey"
+              style="width: 100%; height: 500px"
+              :center="position"
+              :zoom="15"
+            >
+              <Marker :options="{ position }" />
+            </GoogleMap>
           </sdCards>
         </a-col>
-
         <a-col :md="12" :xs="24">
           <sdCards title="Google Map Custom Marker with info window">
             <div>
-              <google-map
+              <GoogleMap
+                :api-key="apiKey"
+                style="width: 100%; height: 500px"
+                :center="position"
+                :zoom="15"
+              >
+                <Marker :options="{ position }" />
+              </GoogleMap>
+
+              <!-- <google-map
                 class="map-wrapper"
                 id="map1"
                 :center="position"
@@ -51,68 +59,7 @@
                   <h4>Hello</h4>
                   <p>This is most of the beautiful</p>
                 </google-map-infowindow>
-              </google-map>
-            </div>
-          </sdCards>
-        </a-col>
-        <a-col :md="12" :xs="24">
-          <sdCards title="Google Map light style">
-            <div>
-              <google-map
-                class="map-wrapper"
-                id="map2"
-                :center="position"
-                ref="Map"
-                :options="style.light"
-              >
-                <google-map-marker :position="position"></google-map-marker>
-              </google-map>
-            </div>
-          </sdCards>
-        </a-col>
-        <a-col :md="12" :xs="24">
-          <sdCards title="Google Map dark style">
-            <div>
-              <google-map
-                class="map-wrapper"
-                id="map3"
-                :center="position"
-                ref="Map"
-                :options="style.dark"
-              >
-                <google-map-marker :position="position"></google-map-marker>
-              </google-map>
-            </div>
-          </sdCards>
-        </a-col>
-        <a-col :md="12" :xs="24">
-          <sdCards title="Google Map theme color">
-            <div>
-              <google-map
-                class="map-wrapper"
-                id="map3"
-                :center="position"
-                ref="Map"
-                :options="style.theme"
-                :zoom="15"
-              >
-                <google-map-marker :position="position"></google-map-marker>
-              </google-map>
-            </div>
-          </sdCards>
-        </a-col>
-        <a-col :md="12" :xs="24">
-          <sdCards title="Google Map style map">
-            <div>
-              <google-map
-                class="map-wrapper"
-                id="map4"
-                :center="position"
-                ref="Map"
-                :options="style.styleMap"
-              >
-                <google-map-marker :position="position"></google-map-marker>
-              </google-map>
+              </google-map> -->
             </div>
           </sdCards>
         </a-col>
@@ -122,28 +69,25 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
-// import GMaps from "../../components/maps/googleMaps";
 import mapData from "../../config/map/google-maps-styles";
+import { GoogleMap, Marker } from "vue3-google-map";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "GoogleMaps",
   components: {
-    PlusIcon,
-    Button,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
+    GoogleMap,
+    Marker,
+  },
+  setup() {
+    const center = { lat: 40.689247, lng: -74.044502 };
+    return { center };
   },
   data() {
-    console.log(mapData.mapOneStyles);
     return {
+      apiKey: "AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08",
       showInfo: false,
       position: {
         lat: 50.797897,
@@ -165,7 +109,7 @@ export default {
       console.log(context);
     },
   },
-};
+});
 </script>
 
 <style scoped>

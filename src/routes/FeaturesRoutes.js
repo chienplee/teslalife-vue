@@ -19,18 +19,6 @@ export default [
     name: "chartJs",
     component: () => import("@/view/charts/ChartJs.vue"),
   },
-  /*
-  {
-    path: "/forms/form-validation",
-    name: "formValidation",
-    component: () => import("@/view/forms/FormValidation.vue"),
-  },
-  
-  {
-    path: "/chart/google-chart",
-    name: "googleChart",
-    component: () => import("@/view/charts/GoogleCharts.vue"),
-  },
   {
     path: "/icons/featherIcons",
     name: "featherIcons",
@@ -56,10 +44,22 @@ export default [
     name: "leaflet",
     component: () => import("@/view/maps/Leaflet.vue"),
   },
+  /*
   {
     path: "/maps/vector",
     name: "vector",
     component: () => import("@/view/maps/Vector.vue"),
   }
+  {
+    path: "/forms/form-validation",
+    name: "formValidation",
+    component: () => import("@/view/forms/FormValidation.vue"),
+  },
+  
+  {
+    path: "/chart/google-chart",
+    name: "googleChart",
+    component: () => import("@/view/charts/GoogleCharts.vue"),
+  },
   */
 ];
