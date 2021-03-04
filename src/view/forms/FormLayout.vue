@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Horizontal Form">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -35,7 +37,6 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import HorizontalForm from "./overview/HorizontalForm";
 import HorizontalIconForm from "./overview/HorizontalIconForm";
 import VerticalForm from "./overview/VerticalForm";
@@ -44,7 +45,6 @@ import MultiColumnForm from "./overview/MultiColumnForm";
 export default {
   name: "Form",
   components: {
-    PlusIcon,
     Main,
     HorizontalForm,
     HorizontalIconForm,

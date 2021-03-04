@@ -19,15 +19,15 @@ import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 //   Google3dPieChart,
 // } from "../../components/charts/googleChart.vue";
 // import {
-//   ChartJsBarChart,
-//   ChartjsHorizontalChart,
-//   ChartjsStackedChart,
-//   ChartjsLineChart,
-//   ChartjsAreaChart,
-//   ChartjsBarChartTransparent,
-//   ChartjsPieChart,
+//   // ChartJsBarChart,
+//   // ChartjsHorizontalChart,
+//   // ChartjsStackedChart,
+//   // ChartjsLineChart,
+//   // ChartjsAreaChart,
+//   // ChartjsBarChartTransparent,
+//   // ChartjsPieChart,
 // } from "../../components/charts/chartjs.vue";
-// import { ChartContainer } from "../../view/dashboard/style";
+import { ChartContainer } from "../../view/dashboard/style";
 // import Cascader from "../../components/cascader/Cascader";
 import Heading from "../../components/heading/Heading";
 // import AutoComplete from "../../components/autoComplete/autoComplete";
@@ -42,10 +42,10 @@ import Popover from "../../components/popup/Popup";
   //   name: "ChartJsBarChart",
   //   ...ChartJsBarChart,
   // },
-  // {
-  //   name: "ChartContainer",
-  //   ...ChartContainer,
-  // },
+  {
+    name: "ChartContainer",
+    ...ChartContainer,
+  },
   // {
   //   name: "ChartjsLineChart",
   //   ...ChartjsLineChart,

@@ -10,7 +10,9 @@
               </a-col>
               <a-col :lg="16" :md="15" :xs="24">
                 <a-input value="Duran Clayton" placeholder="input placeholder">
-                  <UserIcon slot="prefix" size="14" />
+                  <template v-slot:prefix>
+                    <sdFeatherIcon type="user" size="14" />
+                  </template>
                 </a-input>
               </a-col>
             </a-row>
@@ -24,7 +26,9 @@
                   value="username@email.com"
                   placeholder="input placeholder"
                 >
-                  <MailIcon slot="prefix" size="14" />
+                  <template v-slot:prefix>
+                    <sdFeatherIcon type="mail" size="14" />
+                  </template>
                 </a-input>
               </a-col>
             </a-row>
@@ -38,7 +42,9 @@
                   value="12345678"
                   placeholder="with input password"
                 >
-                  <LockIcon slot="prefix" size="14" />
+                  <template v-slot:prefix>
+                    <sdFeatherIcon type="lock" size="14" />
+                  </template>
                 </a-input-password>
               </a-col>
             </a-row>
@@ -49,11 +55,7 @@
                 :xs="{ span: 24, offset: 0 }"
               >
                 <div class="sDash_form-action">
-                  <sdButton
-                    class="btn-signin"
-                    html-type="submit"
-                    type="light"
-                  >
+                  <sdButton class="btn-signin" html-type="submit" type="light">
                     Cancel
                   </sdButton>
                   <sdButton class="btn-signin" type="primary">
@@ -70,7 +72,6 @@
 </template>
 
 <script>
-import { UserIcon, MailIcon, LockIcon } from "vue-feather-icons";
 import { HorizontalFormStyleWrap } from "./Style";
 import { BasicFormWrapper } from "../../styled";
 export default {
@@ -78,9 +79,6 @@ export default {
   components: {
     BasicFormWrapper,
     HorizontalFormStyleWrap,
-    UserIcon,
-    MailIcon,
-    LockIcon,
   },
 };
 </script>

@@ -15,15 +15,17 @@ export default [
     component: () => import("@/view/forms/FormComponents.vue"),
   },
   {
-    path: "/forms/form-validation",
-    name: "formValidation",
-    component: () => import("@/view/forms/FormValidation.vue"),
-  },
-  {
     path: "/chart/chart-js",
     name: "chartJs",
     component: () => import("@/view/charts/ChartJs.vue"),
   },
+  /*
+  {
+    path: "/forms/form-validation",
+    name: "formValidation",
+    component: () => import("@/view/forms/FormValidation.vue"),
+  },
+  
   {
     path: "/chart/google-chart",
     name: "googleChart",
@@ -59,4 +61,5 @@ export default [
     name: "vector",
     component: () => import("@/view/maps/Vector.vue"),
   }
+  */
 ];
