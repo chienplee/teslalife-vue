@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Theme Configuration">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -395,7 +397,6 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { DashboardBaseStyleWrap } from "./ui-elements-styled";
 import Palette from "../../components/color-palette/palette";
@@ -403,7 +404,6 @@ import config from "../../config/config";
 export default {
   name: "ThemeConfiguration",
   components: {
-    PlusIcon,
     Main,
     DashboardBaseStyleWrap,
     Palette,

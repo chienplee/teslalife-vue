@@ -3,65 +3,75 @@ vue/require-v-for-key */
 <template>
   <div>
     <sdPageHeader title="Comments">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :xs="24">
           <sdCards title="Basic comment">
             <a-comment>
-              <template slot="actions">
+              <template v-slot:actions>
                 <span key="comment-basic-like">
                   <a-tooltip title="Like">
-                    <a-icon
-                      type="like"
+                    <sdFeatherIcons
+                      type="thumbs-up"
+                      size="12"
                       :theme="action === 'liked' ? 'filled' : 'outlined'"
                       @click="like"
                     />
                   </a-tooltip>
-                  <span style="padding-left: '8px';cursor: 'auto'">
+                  <span style="padding-left: '8px'; cursor: 'auto'">
                     {{ likes }}
                   </span>
                 </span>
                 <span key="comment-basic-dislike">
                   <a-tooltip title="Dislike">
-                    <a-icon
-                      type="dislike"
-                      :theme="action === 'disliked' ? 'filled' : 'outlined'"
+                    <sdFeatherIcons
+                      type="thumbs-down"
+                      size="12"
+                      ::theme="action === 'disliked' ? 'filled' : 'outlined'"
                       @click="dislike"
                     />
                   </a-tooltip>
-                  <span style="padding-left: '8px';cursor: 'auto'">
+                  <span style="padding-left: '8px'; cursor: 'auto'">
                     {{ dislikes }}
                   </span>
                 </span>
                 <span key="comment-basic-reply-to">Reply to</span>
               </template>
-              <a slot="author">Han Solo</a>
-              <a-avatar
-                slot="avatar"
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                alt="Han Solo"
-              />
-              <p slot="content">
-                We supply a series of design principles, practical patterns and
-                high quality design resources (Sketch and Axure), to help people
-                create their product prototypes beautifully and efficiently.
-              </p>
-              <a-tooltip
-                slot="datetime"
-                :title="moment().format('YYYY-MM-DD HH:mm:ss')"
-              >
-                <span>{{ moment().fromNow() }}</span>
-              </a-tooltip>
+              <template v-slot:author>
+                <a>Han Solo</a>
+              </template>
+
+              <template v-slot:avatar>
+                <a-avatar
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  alt="Han Solo"
+                />
+              </template>
+              <template v-slot:content>
+                <p>
+                  We supply a series of design principles, practical patterns
+                  and high quality design resources (Sketch and Axure), to help
+                  people create their product prototypes beautifully and
+                  efficiently.
+                </p>
+              </template>
+              <template v-slot:datetime>
+                <a-tooltip :title="moment().format('YYYY-MM-DD HH:mm:ss')">
+                  <span>{{ moment().fromNow() }}</span>
+                </a-tooltip>
+              </template>
             </a-comment>
           </sdCards>
         </a-col>
@@ -73,125 +83,163 @@ vue/require-v-for-key */
               item-layout="horizontal"
               :data-source="data"
             >
-              <a-list-item slot="renderItem" slot-scope="item">
-                <a-comment :author="item.author" :avatar="item.avatar">
-                  <template slot="actions">
-                    <span v-for="(action, key) in data.actions" :key="key">{{
-                      action
-                    }}</span>
-                  </template>
-                  <p slot="content">
-                    {{ item.content }}
-                  </p>
-                  <a-tooltip
-                    slot="datetime"
-                    :title="item.datetime.format('YYYY-MM-DD HH:mm:ss')"
-                  >
-                    <span>{{ item.datetime.fromNow() }}</span>
-                  </a-tooltip>
-                </a-comment>
-              </a-list-item>
+              <template #renderItem="{ item }">
+                <a-list-item>
+                  <a-comment :author="item.author" :avatar="item.avatar">
+                    <template #actions>
+                      <span
+                        v-for="(action, index) in item.actions"
+                        :key="index"
+                        >{{ action }}</span
+                      >
+                    </template>
+                    <template #content>
+                      <p>
+                        {{ item.content }}
+                      </p>
+                    </template>
+                    <template #datetime>
+                      <a-tooltip
+                        :title="item.datetime.format('YYYY-MM-DD HH:mm:ss')"
+                      >
+                        <span>{{ item.datetime.fromNow() }}</span>
+                      </a-tooltip>
+                    </template>
+                  </a-comment>
+                </a-list-item>
+              </template>
             </a-list>
           </sdCards>
         </a-col>
+
         <a-col :xs="24">
           <sdCards title="Nested comments">
             <a-comment>
-              <span slot="actions" key="comment-nested-reply-to">Reply to</span>
-              <a slot="author">Han Solo</a>
-              <a-avatar
-                slot="avatar"
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                alt="Han Solo"
-              />
-              <p slot="content">
-                We supply a series of design principles, practical patterns and
-                high quality design resources (Sketch and Axure).
-              </p>
-              <a-comment>
-                <span slot="actions">Reply to</span>
-                <a slot="author">Han Solo</a>
+              <template v-slot:actions>
+                <span key="comment-nested-reply-to">Reply to</span>
+              </template>
+              <template v-slot:author>
+                <a>Han Solo</a>
+              </template>
+              <template v-slot:avatar>
                 <a-avatar
-                  slot="avatar"
                   src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                   alt="Han Solo"
                 />
-                <p slot="content">
+              </template>
+              <template v-slot:content>
+                <p>
                   We supply a series of design principles, practical patterns
                   and high quality design resources (Sketch and Axure).
                 </p>
-                <a-comment>
-                  <span slot="actions">Reply to</span>
-                  <a slot="author">Han Solo</a>
+              </template>
+              <a-comment>
+                <template v-slot:actions>
+                  <span>Reply to</span>
+                </template>
+                <template v-slot:author>
+                  <a>Han Solo</a>
+                </template>
+                <template v-slot:avatar>
                   <a-avatar
-                    slot="avatar"
                     src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                     alt="Han Solo"
                   />
-                  <p slot="content">
+                </template>
+                <template v-slot:content>
+                  <p>
                     We supply a series of design principles, practical patterns
                     and high quality design resources (Sketch and Axure).
                   </p>
+                </template>
+                <a-comment>
+                  <template v-slot:actions>
+                    <span>Reply to</span>
+                  </template>
+                  <template v-slot:author>
+                    <a>Han Solo</a>
+                  </template>
+                  <template v-slot:avatar>
+                    <a-avatar
+                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                      alt="Han Solo"
+                    />
+                  </template>
+                  <template v-slot:content>
+                    <p>
+                      We supply a series of design principles, practical
+                      patterns and high quality design resources (Sketch and
+                      Axure).
+                    </p>
+                  </template>
                 </a-comment>
                 <a-comment>
-                  <span slot="actions">Reply to</span>
-                  <a slot="author">Han Solo</a>
-                  <a-avatar
-                    slot="avatar"
-                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                    alt="Han Solo"
-                  />
-                  <p slot="content">
-                    We supply a series of design principles, practical patterns
-                    and high quality design resources (Sketch and Axure).
-                  </p>
+                  <template v-slot:actions>
+                    <span>Reply to</span>
+                  </template>
+                  <template v-slot:author>
+                    <a>Han Solo</a>
+                  </template>
+                  <template v-slot:avatar>
+                    <a-avatar
+                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                      alt="Han Solo"
+                    />
+                  </template>
+                  <template v-slot:content>
+                    <p>
+                      We supply a series of design principles, practical
+                      patterns and high quality design resources (Sketch and
+                      Axure).
+                    </p>
+                  </template>
                 </a-comment>
               </a-comment>
             </a-comment>
           </sdCards>
         </a-col>
+
         <a-col :xs="24">
           <sdCards title="Reply Editor">
             <a-list
               v-if="comments.length"
               :data-source="comments"
-              :header="
-                `${comments.length} ${
-                  comments.length > 1 ? 'replies' : 'reply'
-                }`
-              "
+              :header="`${comments.length} ${
+                comments.length > 1 ? 'replies' : 'reply'
+              }`"
               item-layout="horizontal"
             >
-              <a-list-item slot="renderItem" slot-scope="item">
-                <a-comment
-                  :author="item.author"
-                  :avatar="item.avatar"
-                  :content="item.content"
-                  :datetime="item.datetime"
-                />
-              </a-list-item>
+              <template v-slot:renderItem:iteam>
+                <a-list-item>
+                  <a-comment
+                    :author="item.author"
+                    :avatar="item.avatar"
+                    :content="item.content"
+                    :datetime="item.datetime"
+                  />
+                </a-list-item>
+              </template>
             </a-list>
             <a-comment>
-              <a-avatar
-                slot="avatar"
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                alt="Han Solo"
-              />
-              <div slot="content">
-                <a-form-item>
-                  <a-textarea :rows="4" :value="value" @change="handleChange" />
-                </a-form-item>
-                <a-form-item>
-                  <sdButton
-                    html-type="submit"
-                    :load="true"
-                    type="primary"
-                    @click.native="handleSubmit"
-                  >
-                    Add Comment
-                  </sdButton>
-                </a-form-item>
-              </div>
+              <template v-slot:avatar>
+                <a-avatar
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  alt="Han Solo"
+                />
+              </template>
+              <template v-slot:content>
+                <a-textarea :rows="4" :value="value" @change="handleChange" />
+                <br />
+                <br />
+                <sdButton
+                  html-type="submit"
+                  :load="true"
+                  type="primary"
+                  @click="handleSubmit"
+                >
+                  Add Comment
+                </sdButton>
+              </template>
             </a-comment>
           </sdCards>
         </a-col>
@@ -201,14 +249,12 @@ vue/require-v-for-key */
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import moment from "moment";
 
 export default {
   name: "Comments",
   components: {
-    PlusIcon,
     Main,
   },
   data() {

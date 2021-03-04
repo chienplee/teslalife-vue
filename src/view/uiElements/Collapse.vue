@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Collapse">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -122,7 +124,10 @@
           <sdCards title="Custom Panel">
             <a-collapse default-active-key="1" :bordered="false">
               <template #expandIcon="props">
-                <a-icon type="caret-right" :rotate="props.isActive ? 90 : 0" />
+                <sdFeatherIcons
+                  :type="props.isActive ? 'chevron-down' : 'chevron-right'"
+                  size="14"
+                />
               </template>
               <a-collapse-panel
                 key="1"
@@ -154,13 +159,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 
 export default {
   name: "Collapse",
   components: {
-    PlusIcon,
     Main,
   },
   data() {
