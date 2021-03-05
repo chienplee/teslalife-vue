@@ -17,10 +17,10 @@ export default {
   render() {
     return (
       <Row gutter={15}>
-        {Object.keys(Icons).map((icon) => {
+        {Object.keys(Icons.icons).map((icon) => {
           return (
             <Col xl={6} md={12} xs={24} key={icon}>
-              <Icon className="icon-single">
+              <Icon class="icon-single">
                 <sdFeatherIcons type={icon} size="14" />
                 <span> {icon}</span>
               </Icon>

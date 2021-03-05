@@ -17,7 +17,12 @@
           <sdCards title="Custom Styles" caption="The simplest use of Form">
             <FormValidationWrap>
               <VerticalFormStyleWrap>
-                <a-form :form="form" @submit="handleSubmit" name="sDash_validation-form" layout="vertical">
+                <a-form
+                  :form="form"
+                  @submit="handleSubmit"
+                  name="sDash_validation-form"
+                  layout="vertical"
+                >
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
                       <a-form-item label="First Name">
@@ -153,14 +158,16 @@
         </a-col>
 
         <a-col :xs="24">
-          <sdCards title="Server Side" >
+          <sdCards title="Server Side">
             <FormValidationWrap>
               <VerticalFormStyleWrap>
                 <a-form name="sDash_vertical-form" layout="vertical">
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
-                      <a-form-item label="First Name" validate-status="success"
-                      help="Looks good!"
+                      <a-form-item
+                        label="First Name"
+                        validate-status="success"
+                        help="Looks good!"
                       >
                         <a-input
                           placeholder="First Name"
@@ -170,9 +177,11 @@
                       </a-form-item>
                     </a-col>
                     <a-col :md="8" :xs="24">
-                      <a-form-item label="Last Name"
+                      <a-form-item
+                        label="Last Name"
                         validate-status="success"
-                          help="Looks good!">
+                        help="Looks good!"
+                      >
                         <a-input
                           placeholder="Last Name"
                           name="lname"
@@ -182,55 +191,57 @@
                     </a-col>
                     <a-col :md="8" :xs="24">
                       <a-form-item label="Username" validate-status="error">
-                        <a-input
-                          placeholder="Username"
-                          name="username"
-                        />
+                        <a-input placeholder="Username" name="username" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="12" :xs="24">
-                      <a-form-item label="City" help="Please provide a valid city." validate-status="error">
-                        <a-input
-                          name="city"
-                          placeholder="City"
-                        />
+                      <a-form-item
+                        label="City"
+                        help="Please provide a valid city."
+                        validate-status="error"
+                      >
+                        <a-input name="city" placeholder="City" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="6" :xs="24">
-                      <a-form-item label="State" help="Please provide a valid state."
-                          validate-status="error">
-                        <a-input
-                          name="state"
-                          placeholder="State"
-                        />
+                      <a-form-item
+                        label="State"
+                        help="Please provide a valid state."
+                        validate-status="error"
+                      >
+                        <a-input name="state" placeholder="State" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="6" :xs="24">
-                      <a-form-item label="Zip" help="Please provide a valid zip."
-                          validate-status="error">
-                        <a-input
-                          name="zip-code"
-                          placeholder="Zip"
-                        />
+                      <a-form-item
+                        label="Zip"
+                        help="Please provide a valid zip."
+                        validate-status="error"
+                      >
+                        <a-input name="zip-code" placeholder="Zip" />
                       </a-form-item>
                     </a-col>
                   </a-row>
                   <div class="sDash_agree-check">
-                    <a-form-item help="You must agree before submitting." validate-status="error">
+                    <a-form-item
+                      help="You must agree before submitting."
+                      validate-status="error"
+                    >
                       <a-checkbox name="checkbox">
                         Agree to terms and conditions
                       </a-checkbox>
                     </a-form-item>
                   </div>
-                   <a-row>
-                      <a-col :xs="24">
-                        <a-form-item help="You must agree before submitting." validate-status="error">
-                          <a-input-password
-                          name="password"
-                        />
+                  <a-row>
+                    <a-col :xs="24">
+                      <a-form-item
+                        help="You must agree before submitting."
+                        validate-status="error"
+                      >
+                        <a-input-password name="password" />
                       </a-form-item>
-                      </a-col>
-                    </a-row>
+                    </a-col>
+                  </a-row>
                   <div class="sDash_form-action mt-20">
                     <a-button type="primary" html-type="submit">
                       Submit Form

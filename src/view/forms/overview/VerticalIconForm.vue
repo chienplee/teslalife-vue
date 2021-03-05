@@ -6,7 +6,9 @@
           <a-form name="sDash_vertical-form-with-icon" layout="vertical">
             <a-form-item label="Name">
               <a-input value="Duran Clayton" placeholder="input placeholder">
-                <UserIcon slot="prefix" size="14" />
+                <template v-slot:prefix>
+                  <sdFeatherIcon type="user" size="14" />
+                </template>
               </a-input>
             </a-form-item>
             <a-form-item label="Email Address">
@@ -15,7 +17,9 @@
                 value="username@email.com"
                 placeholder="input placeholder"
               >
-                <MailIcon slot="prefix" size="14" />
+                <template v-slot:prefix>
+                  <sdFeatherIcon type="mail" size="14" />
+                </template>
               </a-input>
             </a-form-item>
 
@@ -25,15 +29,13 @@
                 value="12345678"
                 placeholder="with input password"
               >
-                <LockIcon slot="prefix" size="14" />
+                <template v-slot:prefix>
+                  <sdFeatherIcon type="lock" size="14" />
+                </template>
               </a-input-password>
             </a-form-item>
             <div class="sDash_form-action">
-              <sdButton
-                className="btn-signin"
-                htmlType="submit"
-                type="light"
-              >
+              <sdButton className="btn-signin" htmlType="submit" type="light">
                 Cancel
               </sdButton>
               <sdButton class="btn-signin" type="primary">
@@ -48,7 +50,6 @@
 </template>
 
 <script>
-import { UserIcon, MailIcon, LockIcon } from "vue-feather-icons";
 import { VerticalFormStyleWrap } from "./Style";
 import { BasicFormWrapper } from "../../styled";
 export default {
@@ -56,9 +57,6 @@ export default {
   components: {
     BasicFormWrapper,
     VerticalFormStyleWrap,
-    UserIcon,
-    MailIcon,
-    LockIcon,
   },
 };
 </script>

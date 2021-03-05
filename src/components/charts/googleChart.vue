@@ -100,11 +100,11 @@ export const GoogleStackedChart = {
         chartArea: { width: this.chartArea },
         isStacked: true,
         hAxis: {
-          title: 'Total',
+          title: "Total",
           minValue: 0,
         },
         vAxis: {
-          title: 'City',
+          title: "City",
         },
       },
     };
@@ -187,8 +187,8 @@ export const GoogleComboChart = {
         height: this.height,
         colors: this.colors,
         chartArea: { width: this.chartArea },
-        seriesType: 'bars',
-        series: { 5: { type: 'line' } },
+        seriesType: "bars",
+        series: { 5: { type: "line" } },
       },
     };
   },
@@ -224,10 +224,10 @@ export const GoogleLineChart = {
         width: this.width,
         height: this.height,
         hAxis: {
-          title: 'Time',
+          title: "Time",
         },
         vAxis: {
-          title: 'Popularity',
+          title: "Popularity",
         },
       },
     };
@@ -261,14 +261,14 @@ export const GoogleMultiLineChart = {
         width: this.width,
         height: this.height,
         hAxis: {
-          title: 'Time',
+          title: "Time",
         },
         vAxis: {
-          title: 'Popularity',
+          title: "Popularity",
         },
         series: {
-          0: { curveType: 'function' },
-          1: { curveType: 'function' },
+          0: { curveType: "function" },
+          1: { curveType: "function" },
         },
       },
     };
@@ -302,7 +302,7 @@ export const GoogleBasicPieChart = {
         title: this.title,
         width: this.width,
         height: this.height,
-        chartArea: { width: this.chartArea }
+        chartArea: { width: this.chartArea },
       },
     };
   },
@@ -337,8 +337,8 @@ export const Google3dPieChart = {
         title: this.title,
         width: this.width,
         height: this.height,
-        is3D:true,
-        chartArea: { width: this.chartArea }
+        is3D: true,
+        chartArea: { width: this.chartArea },
       },
     };
   },

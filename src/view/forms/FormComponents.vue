@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Form Component">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <FormComponentsWrap>
@@ -22,21 +24,27 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item name="input-name">
                         <a-input placeholder="Name">
-                          <UserIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="user" size="14" />
+                          </template>
                         </a-input>
                       </a-form-item>
                     </a-col>
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="email" placeholder="Email">
-                          <MailIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="mail" size="14" />
+                          </template>
                         </a-input>
                       </a-form-item>
                     </a-col>
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="input-location" placeholder="Location">
-                          <MapPinIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="map-pin" size="14" />
+                          </template>
                         </a-input>
                       </a-form-item>
                     </a-col>
@@ -47,7 +55,9 @@
                           value="12345678"
                           placeholder="with input password"
                         >
-                          <LockIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="lock" size="14" />
+                          </template>
                         </a-input-password>
                       </a-form-item>
                     </a-col>
@@ -57,14 +67,18 @@
                           name="input-payment"
                           placeholder="Payment Method"
                         >
-                          <CreditCardIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="credit-card" size="14" />
+                          </template>
                         </a-input>
                       </a-form-item>
                     </a-col>
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="input-phone" placeholder="Phone">
-                          <PhoneIcon slot="prefix" size="14" />
+                          <template v-slot:prefix>
+                            <sdFeatherIcon type="phone" size="14" />
+                          </template>
                         </a-input>
                       </a-form-item>
                     </a-col>
@@ -154,9 +168,9 @@
                   :multiple="true"
                   action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                   @change="handleChange"
-                  >
-                    <p className="ant-upload-text">Drop files here to upload</p>
-                  </a-upload-dragger>
+                >
+                  <p className="ant-upload-text">Drop files here to upload</p>
+                </a-upload-dragger>
               </div>
             </sdCards>
           </a-col>
@@ -167,29 +181,14 @@
 </template>
 
 <script>
-import { message } from 'ant-design-vue';
+import { message } from "ant-design-vue";
 import { Main, BasicFormWrapper } from "../styled";
 import { FormComponentsWrap, DropDownListComponents } from "./overview/Style";
-import {
-  PlusIcon,
-  UserIcon,
-  MailIcon,
-  LockIcon,
-  MapPinIcon,
-  CreditCardIcon,
-  PhoneIcon,
-} from "vue-feather-icons";
+
 export default {
   name: "FormComponent",
   components: {
-    PlusIcon,
     Main,
-    UserIcon,
-    MailIcon,
-    LockIcon,
-    MapPinIcon,
-    CreditCardIcon,
-    PhoneIcon,
     BasicFormWrapper,
     FormComponentsWrap,
     DropDownListComponents,

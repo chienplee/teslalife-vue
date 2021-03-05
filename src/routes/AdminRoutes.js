@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
-// import FeaturesRoutes from "./FeaturesRoutes";
+import FeaturesRoutes from "./FeaturesRoutes";
 // import PageRoutes from "./PageRoutes";
 
 
@@ -208,6 +208,7 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
     ...FeaturesRoutes,
     ...PageRoutes,
     */
+   ...FeaturesRoutes
   ]
 
 

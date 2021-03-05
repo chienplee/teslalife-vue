@@ -29,10 +29,11 @@ export default {
               item.name !== "createFromIconfontCN"
           )
           .map((icon, key) => {
+            const customTag = Icons[icon.name];
             return (
               <Col xl={6} md={12} xs={24} key={key + 1}>
-                <AnIcon className="icon-single">
-                  <a-icon type={icon.name} />
+                <AnIcon class="icon-single">
+                  <customTag />
                   <span> {icon.name}</span>
                 </AnIcon>
               </Col>

@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Horizontal Form">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -153,7 +155,6 @@
 <script>
 import { message } from "ant-design-vue";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import { CheckListWrap } from "./overview/Style";
 import GridForm from "./overview/GridForm";
 import SizedForm from "./overview/SizedForm";
@@ -161,7 +162,6 @@ import InputForm from "./overview/InputForm";
 export default {
   name: "FormElement",
   components: {
-    PlusIcon,
     Main,
     GridForm,
     SizedForm,
