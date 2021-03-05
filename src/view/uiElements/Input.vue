@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Input">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -23,19 +25,25 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Three sizes of Input">
-            <a-input size="large" placeholder="large size">
-              <a-icon slot="prefix" type="user" />
+            <template v-slot:prefix>
+              <sdFeatherIcons type="user" />
+            </template>
+            <br />
+            <br />
+            <a-input placeholder="default size">
+              <template v-slot:prefix>
+                <sdFeatherIcons type="user" />
+              </template>
+              /></a-input
+            >
+            <br />
+            <br />
+            <a-input size="small" placeholder="small size">
+              <template v-slot:prefix>
+                <sdFeatherIcons type="user" />
+              </template>
+              />
             </a-input>
-            <br />
-            <br />
-            <a-input placeholder="default size"
-              ><a-icon slot="prefix" type="user"
-            /></a-input>
-            <br />
-            <br />
-            <a-input size="small" placeholder="small size"
-              ><a-icon slot="prefix" type="user"
-            /></a-input>
           </sdCards>
         </a-col>
       </a-row>
@@ -44,13 +52,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 
 export default {
   name: "Input",
   components: {
-    PlusIcon,
     Main,
   },
   data() {

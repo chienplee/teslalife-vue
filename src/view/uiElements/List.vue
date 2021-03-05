@@ -1,30 +1,32 @@
 <template>
   <div>
     <sdPageHeader title="List">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Simple list">
-            <a-list bordered :data-source="data">
-              <a-list-item slot="renderItem" slot-scope="item">
-                {{ item }}
-              </a-list-item>
-              <div slot="header">
-                Header
-              </div>
-              <div slot="footer">
-                Footer
-              </div>
+            <a-list size="small" bordered :data-source="data">
+              <template #renderItem="{ item }">
+                <a-list-item>{{ item }}</a-list-item>
+              </template>
+              <template #header>
+                <div>Header</div>
+              </template>
+              <template #footer>
+                <div>Footer</div>
+              </template>
             </a-list>
           </sdCards>
         </a-col>
@@ -34,13 +36,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 
 export default {
   name: "List",
   components: {
-    PlusIcon,
     Main,
   },
   data() {
