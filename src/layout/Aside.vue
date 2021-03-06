@@ -136,11 +136,6 @@
             Empty
           </router-link>
         </a-menu-item>
-        <a-menu-item key="form">
-          <router-link click="toggleCollapsed" to="/components/form">
-            Form
-          </router-link>
-        </a-menu-item>
         <a-menu-item key="grid">
           <router-link click="toggleCollapsed" to="/components/grid">
             Grid

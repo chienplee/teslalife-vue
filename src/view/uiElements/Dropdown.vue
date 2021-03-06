@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Dropdown">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <DropdownStyle>
       <Main>
@@ -96,7 +98,7 @@
             <sdCards title="Button with dropdown menu">
               <DropdownIconStyleWrapper>
                 <sdButton
-                  @click.native="handleButtonClick"
+                  @click="handleButtonClick"
                   class="btn-outlined"
                   size="default"
                   :outlined="true"
@@ -105,7 +107,7 @@
                   Bottom Left Click
                   <sdDropdown placement="bottomLeft" :action="['click']">
                     <a to="#">
-                      <a-icon type="ellipsis" />
+                      <sdFeatherIcons type="more-horizontal" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -113,12 +115,12 @@
                   Top Left hover
                   <sdDropdown placement="topLeft">
                     <a to="#">
-                      <a-icon type="ellipsis" />
+                      <sdFeatherIcons type="more-horizontal" />
                     </a>
                   </sdDropdown>
                 </sdButton>
                 <sdButton
-                  @click.native="handleButtonClick"
+                  @click="handleButtonClick"
                   class="btn-outlined"
                   size="default"
                   :outlined="true"
@@ -127,7 +129,7 @@
                   Bottom Right hover
                   <sdDropdown placement="bottomRight" :action="['hover']">
                     <a to="#">
-                      <a-icon type="user" />
+                      <sdFeatherIcons type="user" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -135,7 +137,7 @@
                   Top Right hover
                   <sdDropdown placement="topRight">
                     <a to="#">
-                      <a-icon type="ellipsis" />
+                      <sdFeatherIcons type="more-horizontal" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -145,7 +147,7 @@
                   </a-tooltip>
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
-                      <a-icon type="ellipsis" />
+                      <sdFeatherIcons type="more-horizontal" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -153,7 +155,7 @@
                   Warning
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
-                      <a-icon type="ellipsis" />
+                      <sdFeatherIcons type="more-horizontal" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -161,7 +163,7 @@
                   Info
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
-                      <a-icon type="download" />
+                       <sdFeatherIcons type="download" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -175,14 +177,12 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { DropdownStyle, DropdownIconStyleWrapper } from "./ui-elements-styled";
 
 export default {
   name: "Dropdown",
   components: {
-    PlusIcon,
     Main,
     DropdownStyle,
     DropdownIconStyleWrapper,

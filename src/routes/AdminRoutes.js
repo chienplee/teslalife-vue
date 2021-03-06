@@ -69,28 +69,6 @@ import PageRoutes from "./PageRoutes";
       name: "datePicker",
       component: () => import("@/view/uiElements/DatePicker"),
     },
-    /*
-    {
-      path: "/components/autoComplete",
-      name: "autoComplete",
-      component: () => import("@/view/uiElements/AutoComplete"),
-    },
-    {
-      path: "/components/carousel",
-      name: "carousel",
-      component: () => import("@/view/uiElements/Carousel"),
-    },
-    {
-      path: "/components/cascader",
-      name: "cascader",
-      component: () => import("@/view/uiElements/Cascader"),
-    },
-   
-    {
-      path: "/components/dropdown",
-      name: "dropdown",
-      component: () => import("@/view/uiElements/Dropdown"),
-    },
     {
       path: "/components/drawer",
       name: "drawer",
@@ -102,14 +80,14 @@ import PageRoutes from "./PageRoutes";
       component: () => import("@/view/uiElements/Empty"),
     },
     {
-      path: "/components/form",
-      name: "form",
-      component: () => import("@/view/uiElements/Form"),
-    },
-    {
       path: "/components/grid",
       name: "grid",
       component: () => import("@/view/uiElements/Grid"),
+    },
+    {
+      path: "/components/dropdown",
+      name: "dropdown",
+      component: () => import("@/view/uiElements/Dropdown"),
     },
     {
       path: "/components/input",
@@ -125,6 +103,22 @@ import PageRoutes from "./PageRoutes";
       path: "/components/menu",
       name: "menu",
       component: () => import("@/view/uiElements/Menu"),
+    },
+    /*
+    {
+      path: "/components/autoComplete",
+      name: "autoComplete",
+      component: () => import("@/view/uiElements/AutoComplete"),
+    },
+    {
+      path: "/components/carousel",
+      name: "carousel",
+      component: () => import("@/view/uiElements/Carousel"),
+    },
+    {
+      path: "/components/cascader",
+      name: "cascader",
+      component: () => import("@/view/uiElements/Cascader"),
     },
     {
       path: "/components/message",

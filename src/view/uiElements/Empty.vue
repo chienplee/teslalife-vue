@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Empty">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -31,9 +33,9 @@
                 height: '60px',
               }"
             >
-              <span slot="description">
-                Customize <a href="#API">Description</a>
-              </span>
+              <template v-slot:description>
+                <span> Customize <a href="#API">Description</a> </span>
+              </template>
               <sdButton size="default" :outlined="true" type="primary">
                 Create Now
               </sdButton>
@@ -48,11 +50,9 @@
 <script>
 import { Empty } from "ant-design-vue";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 export default {
   name: "Empty",
   components: {
-    PlusIcon,
     Main,
   },
   beforeCreate() {
