@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Frequently Asked Questions">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -25,7 +27,7 @@
                     <li>
                       <router-link
                         class="active primary"
-                        @click.native="handleChange"
+                        @click="handleChange"
                         to="#"
                       >
                         Using Applications
@@ -34,45 +36,29 @@
                     <li>
                       <router-link
                         class="secondary"
-                        @click.native="handleChange"
+                        @click="handleChange"
                         to="#"
                       >
                         UI Elements
                       </router-link>
                     </li>
                     <li>
-                      <router-link
-                        class="success"
-                        @click.native="handleChange"
-                        to="#"
-                      >
+                      <router-link class="success" @click="handleChange" to="#">
                         Components
                       </router-link>
                     </li>
                     <li>
-                      <router-link
-                        class="warning"
-                        @click.native="handleChange"
-                        to="#"
-                      >
+                      <router-link class="warning" @click="handleChange" to="#">
                         Build Process
                       </router-link>
                     </li>
                     <li>
-                      <router-link
-                        class="info"
-                        @click.native="handleChange"
-                        to="#"
-                      >
+                      <router-link class="info" @click="handleChange" to="#">
                         Support Policy
                       </router-link>
                     </li>
                     <li>
-                      <router-link
-                        class="danger"
-                        @click.native="handleChange"
-                        to="#"
-                      >
+                      <router-link class="danger" @click="handleChange" to="#">
                         Accounts & Billing
                       </router-link>
                     </li>
@@ -108,8 +94,12 @@
             <sdCards headless title="Using Applications">
               <a-collapse :bordered="false" default-active-key="1">
                 <template #expandIcon="props">
-                  <PlusIcon v-if="props.isActive" size="14" />
-                  <MinusIcon v-else size="14" />
+                  <sdFeatherIcons
+                    type="plus"
+                    v-if="!props.isActive"
+                    size="14"
+                  />
+                  <sdFeatherIcons type="minus" v-else size="14" />
                 </template>
                 <a-collapse-panel
                   header="How long does it take to download updates?"
@@ -130,11 +120,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -158,11 +148,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -186,11 +176,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -214,11 +204,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -242,11 +232,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -270,11 +260,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      <SmileIcon size="14" />
+                      <sdFeatherIcons type="smile" size="14" />
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -301,7 +291,7 @@
                       Yes
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
-                      <FrownIcon size="14" />
+                      <sdFeatherIcons type="frown" size="14" />
                       No
                     </sdButton>
                   </div>
@@ -316,28 +306,17 @@
 </template>
 
 <script>
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon, MinusIcon, SmileIcon, FrownIcon } from "vue-feather-icons";
 import { Badge, FaqCategoryBox, FaqSupportBox, FaqWrapper } from "./style";
 
 export default {
   name: "Faqs",
   components: {
-    PlusIcon,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
     Badge,
     FaqCategoryBox,
     FaqWrapper,
     FaqSupportBox,
-    MinusIcon,
-    SmileIcon,
-    FrownIcon,
   },
   data() {
     return {

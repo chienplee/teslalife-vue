@@ -9,6 +9,16 @@ export default [
         name: "testimonials",
         component: () => import("@/view/pages/Testimonials.vue"),
     },
+    {
+        path: "/page/faqs",
+        name: "faq`s",
+        component: () => import("@/view/pages/Faq.vue"),
+    },
+    {
+        path: "/page/gallery",
+        name: "gallery",
+        component: () => import("@/view/pages/Gallery.vue"),
+    },
     /*
     {
         path: "/page/pricing",
@@ -52,16 +62,8 @@ export default [
             }
         ]
     },
-    {
-        path: "/page/gallery",
-        name: "gallery",
-        component: () => import("@/view/pages/Gallery.vue"),
-    },
-    {
-        path: "/page/faqs",
-        name: "faq`s",
-        component: () => import("@/view/pages/Faq.vue"),
-    },
+    
+    
     {
         path: "/page/404",
         name: "404",

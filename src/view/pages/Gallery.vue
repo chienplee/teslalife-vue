@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Gallery">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -19,7 +21,7 @@
               <li>
                 <router-link
                   :class="state.activeClass === '' ? 'active' : 'deactivate'"
-                  @click.native="() => handleChange('')"
+                  @click="() => handleChange('')"
                   to="#"
                 >
                   All
@@ -30,7 +32,7 @@
                   :class="
                     state.activeClass === 'webDesign' ? 'active' : 'deactivate'
                   "
-                  @click.native="() => handleChange('webDesign')"
+                  @click="() => handleChange('webDesign')"
                   to="#"
                 >
                   Web Design
@@ -41,7 +43,7 @@
                   :class="
                     state.activeClass === 'uiDesign' ? 'active' : 'deactivate'
                   "
-                  @click.native="() => handleChange('uiDesign')"
+                  @click="() => handleChange('uiDesign')"
                   to="#"
                 >
                   UI Design
@@ -52,7 +54,7 @@
                   :class="
                     state.activeClass === 'wireframe' ? 'active' : 'deactivate'
                   "
-                  @click.native="() => handleChange('wireframe')"
+                  @click="() => handleChange('wireframe')"
                   to="#"
                 >
                   Wireframe
@@ -65,7 +67,7 @@
                       ? 'active'
                       : 'deactivate'
                   "
-                  @click.native="() => handleChange('Presentation')"
+                  @click="() => handleChange('Presentation')"
                   to="#"
                 >
                   Presentation
@@ -81,14 +83,30 @@
         </a-col>
         <a-col
           v-else
-          v-for="item in gallery"
-          :key="item.id"
+          v-for="(item, index) in gallery"
+          :key="index + 1"
           :xxl="6"
           :lg="8"
           :sm="12"
           :xs="24"
         >
-          <GalleryCards :item="item" />
+          <GalleryCard :style="{ marginBottom: '25px' }">
+            <figure>
+              <img
+                :style="{ width: '100%' }"
+                :src="require(`../../${item.img}`)"
+                alt=""
+              />
+              <figcaption>
+                <div class="gallery-single-content">
+                  <sdHeading class="gallery-single-title" as="h4">
+                    {{ item.name }}
+                  </sdHeading>
+                  <p>{{ item.category }}</p>
+                </div>
+              </figcaption>
+            </figure>
+          </GalleryCard>
         </a-col>
       </a-row>
     </Main>
@@ -96,26 +114,15 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
-import { GalleryNav } from "./style";
-import GalleryCards from "./overview/GalleryCard";
+import { GalleryNav, GalleryCard } from "./style";
 
 export default {
-  name: "Sidebar",
+  name: "Gallery",
   components: {
-    PlusIcon,
-    Button,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
     GalleryNav,
-    GalleryCards,
+    GalleryCard,
   },
   data() {
     return {
