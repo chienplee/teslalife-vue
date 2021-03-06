@@ -80,10 +80,9 @@
                   <Swiper
                     v-bind="galleryParams"
                     :pagination="{
-                      el: '.swiper-pagination',
                       clickable: true,
-                      renderBullet(index, className) {
-                        return `<span class='${className} pagination-thumb'><img src='${require(`../../${users[index].img}`)}' alt='' /></span>`;
+                      renderBullet(index, customClass) {
+                        return `<span class='${customClass} pagination-thumb'><img src='${require(`../../${users[index].img}`)}' alt='' /></span>`;
                       },
                     }"
                   >
@@ -113,6 +112,34 @@
                     </SwiperSlide>
                   </Swiper>
                 </div>
+              </div>
+              <div class="testimonial-block theme-4">
+                <h2 class="testimonial-title">Testimonial 4</h2>
+                <Swiper v-bind="paramsThree" navigation>
+                  <SwiperSlide
+                    v-for="(user, index) in users"
+                    :key="index + 1"
+                    class="testimonial-block__single"
+                  >
+                    <div class="testimonial-block__inner">
+                      <div class="testimonial-block__author">
+                        <img :src="require(`../../${user.img}`)" alt="" />
+                      </div>
+                      <div class="testimonial-block__review">
+                        <p>
+                          It is a long established fact that a reader will page
+                          when looking at its was layout. The point of be
+                          distracted by the readable will page when looking at
+                          its was layout will page when looking.
+                        </p>
+                      </div>
+                      <div class="author-info">
+                        <h2 class="client-name">{{ user.name }}</h2>
+                        <p class="client-designation">{{ user.designation }}</p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </sdCards>
           </TestimonialStyleWrapper>
@@ -175,6 +202,11 @@ export default {
         },
       },
       galleryParams: {
+        slidesPerView: 1,
+        centeredSlides: true,
+        loop: true,
+      },
+      paramsThree: {
         slidesPerView: 1,
         centeredSlides: true,
         loop: true,
