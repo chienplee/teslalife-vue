@@ -5,6 +5,12 @@ export default [
         component: () => import("@/view/pages/BlankPage.vue"),
     },
     {
+        path: "/page/testimonials",
+        name: "testimonials",
+        component: () => import("@/view/pages/Testimonials.vue"),
+    },
+    /*
+    {
         path: "/page/pricing",
         name: "pricing",
         component: () => import("@/view/pages/PricingTable.vue"),
@@ -14,11 +20,7 @@ export default [
         name: "banners",
         component: () => import("@/view/pages/Banners.vue"),
     },
-    {
-        path: "/page/testimonials",
-        name: "testimonials",
-        component: () => import("@/view/pages/Testimonials.vue"),
-    },
+    
     {
         path: "/page/profile-settings",
         name: "profileSettings",
@@ -65,5 +67,6 @@ export default [
         name: "404",
         component: () => import("@/view/pages/404.vue"),
     },
+    */
   ];
   

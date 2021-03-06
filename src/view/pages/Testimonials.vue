@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Testimonials">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -18,42 +20,99 @@
             <sdCards headless>
               <div class="testimonial-block theme-1">
                 <h2 class="testimonial-title">Testimonial 1</h2>
-                <Swiper
-                  :active-index="3"
-                  loop
-                  pagination-visible
-                  pagination-clickable
-                  ref="switchDemo"
-                  :slides-per-view="3"
+                <swiper
+                  v-bind="paramsOne"
+                  navigation
+                  :pagination="{ clickable: true }"
+                  :scrollbar="{ draggable: true }"
                 >
-                  <div
-                    :key="n"
-                    v-for="n in 5"
+                  <SwiperSlide
+                    v-for="(user, index) in users"
+                    :key="index + 1"
                     class="testimonial-block__single"
                   >
                     <figure>
-                      <img
-                        :src="require(`../../static/img/users/5.png`)"
-                        alt=""
-                      />
+                      <img :src="require(`../../${user.img}`)" alt="" />
                       <figcaption>
-                        <h2 class="client-name">{{ n }}</h2>
-                        <p class="client-designation">{{ n }}</p>
-                        <p class="client-review">{{ n }}</p>
+                        <h2 class="client-name">{{ user.name }}</h2>
+                        <p class="client-designation">{{ user.designation }}</p>
+                        <p class="client-review">{{ user.content }}</p>
                       </figcaption>
                     </figure>
-                  </div>
+                  </SwiperSlide>
+                </swiper>
+              </div>
+              <div class="testimonial-block theme-2">
+                <h2 class="testimonial-title">Testimonial 2</h2>
+                <Swiper v-bind="paramsTwo" navigation>
+                  <SwiperSlide
+                    v-for="(user, index) in users"
+                    :key="index + 1"
+                    class="testimonial-block__single"
+                  >
+                    <span class="quotation">
+                      <img
+                        :src="require(`../../static/img/icon/quote.png`)"
+                        alt=""
+                      />
+                    </span>
+                    <div class="testimonial-block__author">
+                      <img :src="require(`../../${user.img}`)" alt="" />
+                      <div class="author-info">
+                        <h2 class="client-name">{{ user.name }}</h2>
+                        <p class="client-designation">{{ user.designation }}</p>
+                      </div>
+                    </div>
+                    <div class="testimonial-block__review">
+                      <p>
+                        It is a long established fact that a reader will page
+                        when looking at its was layout. The point of be
+                        distracted by the readable will page when looking at its
+                        was layout will page when looking.
+                      </p>
+                    </div>
+                  </SwiperSlide>
                 </Swiper>
-                <router-link
-                  to="#"
-                  class="swiper-button-prev"
-                  @click.native="prev"
-                ></router-link
-                ><router-link
-                  to="#"
-                  class="swiper-button-next"
-                  @click.native="next"
-                ></router-link>
+              </div>
+              <div class="testimonial-block theme-3">
+                <h2 class="testimonial-title">Testimonial 3</h2>
+                <div class="testimonial-wrapper">
+                  <Swiper
+                    v-bind="galleryParams"
+                    :pagination="{
+                      el: '.swiper-pagination',
+                      clickable: true,
+                      renderBullet(index, className) {
+                        return `<span class='${className} pagination-thumb'><img src='${require(`../../${users[index].img}`)}' alt='' /></span>`;
+                      },
+                    }"
+                  >
+                    <SwiperSlide
+                      v-for="(user, index) in users"
+                      :key="index + 1"
+                      class="testimonial-block__single"
+                    >
+                      <div class="testimonial-block__inner">
+                        <div class="testimonial-block__review">
+                          <p>
+                            It is a long established fact that a reader will
+                            page when looking at its was layout. The point of be
+                            distracted by the readable will page when looking at
+                            its was layout will page when looking.
+                          </p>
+                        </div>
+                        <div class="testimonial-block__author">
+                          <div class="author-info">
+                            <h2 class="author-name">{{ user.name }}</h2>
+                            <p class="author-designation">
+                              {{ user.designation }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
               </div>
             </sdCards>
           </TestimonialStyleWrapper>
@@ -64,42 +123,31 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
-import { Swiper } from "vue2-swiper";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
 import { TestimonialStyleWrapper } from "./style";
+
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
+SwiperCore.use([Navigation, Pagination]);
 
 export default {
   name: "Testimonials",
   components: {
-    PlusIcon,
-    Button,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
     Swiper,
+    SwiperSlide,
     TestimonialStyleWrapper,
   },
   data() {
     return {
+      users: this.$store.state.users.data,
       paramsOne: {
         slidesPerView: 3,
         spaceBetween: 30,
         centeredSlides: true,
         loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
         breakpoints: {
           992: {
             slidesPerView: 3,
@@ -111,15 +159,27 @@ export default {
           },
         },
       },
+      paramsTwo: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+        breakpoints: {
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        },
+      },
+      galleryParams: {
+        slidesPerView: 1,
+        centeredSlides: true,
+        loop: true,
+      },
     };
-  },
-  methods: {
-    prev() {
-      this.$refs.switchDemo.prev();
-    },
-    next() {
-      this.$refs.switchDemo.next();
-    },
   },
 };
 </script>

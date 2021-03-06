@@ -92,7 +92,7 @@
                     </a-tooltip>
                     <a-tag
                       v-else
-                      :key="tag"
+                      :key="index + 1"
                       :closable="index !== 0"
                       @close="() => handleClose(tag)"
                     >
