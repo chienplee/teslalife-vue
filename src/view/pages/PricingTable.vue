@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Pricing Table">
-      <div slot="buttons" class="page-header-actions">
-        <CalendarButton />
-        <ExportButton />
-        <ShareButton />
-        <Button size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </Button>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25" type="flex" justify="center">
@@ -199,23 +201,13 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import CalendarButton from "../../components/buttons/CalendarButton";
-import ExportButton from "../../components/buttons/ExportButton";
-import ShareButton from "../../components/buttons/ShareButton";
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import List from "../../components/pricing/pricing";
 import { PricingCard, ListGroup, Badge } from "./style";
 
 export default {
   name: "Sidebar",
   components: {
-    PlusIcon,
-    Button,
-    CalendarButton,
-    ExportButton,
-    ShareButton,
     Main,
     List,
     PricingCard,

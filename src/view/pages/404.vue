@@ -1,7 +1,7 @@
 <template>
   <div>
-    <sdPageHeader title="Pricing Table">
-       <template v-slot:buttons>
+    <sdPageHeader title="Page Not Found">
+      <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
           <sdExportButton />
@@ -33,13 +33,13 @@
 <script>
 import { Button } from "../../components/buttons/Buttons";
 import { Main } from "../styled";
-import { ErrorWrapper } from './style';
+import { ErrorWrapper } from "./style";
 export default {
   name: "Sidebar",
   components: {
     Button,
     Main,
-    ErrorWrapper
+    ErrorWrapper,
   },
   data() {
     return {};

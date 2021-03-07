@@ -19,7 +19,6 @@ export default [
         name: "gallery",
         component: () => import("@/view/pages/Gallery.vue"),
     },
-    /*
     {
         path: "/page/pricing",
         name: "pricing",
@@ -30,6 +29,16 @@ export default [
         name: "banners",
         component: () => import("@/view/pages/Banners.vue"),
     },
+    {
+        path: "/page/404",
+        name: "404",
+        component: () => import("@/view/pages/404.vue"),
+    },
+    {
+        path: "/:catchAll(.*)",
+        component: () => import("@/view/pages/404.vue"),
+      }
+    /*
     
     {
         path: "/page/profile-settings",
@@ -64,11 +73,7 @@ export default [
     },
     
     
-    {
-        path: "/page/404",
-        name: "404",
-        component: () => import("@/view/pages/404.vue"),
-    },
+    
     */
   ];
   

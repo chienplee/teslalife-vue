@@ -342,30 +342,7 @@
       <template v-slot:title>
         <p class="sidebar-nav-title">Pages</p>
       </template>
-      <a-menu-item key="testimonials">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link click="toggleCollapsed" to="/page/testimonials">
-            Testimonials
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item key="faq`s">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link click="toggleCollapsed" to="/page/faqs">
-            FAQs
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item key="gallery">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link click="toggleCollapsed" to="/page/gallery">
-            Gallery
-          </router-link>
-        </span>
-      </a-menu-item>
+
       <a-menu-item key="profile-settings">
         <sdFeatherIcons type="circle" />
         <span>
@@ -390,11 +367,43 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-menu-item key="banners">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/banners">
+            Banners
+          </router-link>
+        </span>
+      </a-menu-item>
       <a-menu-item key="404">
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/404">
             404
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="testimonials">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/testimonials">
+            Testimonials
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="faq`s">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/faqs">
+            FAQs
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="gallery">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/gallery">
+            Gallery
           </router-link>
         </span>
       </a-menu-item>
