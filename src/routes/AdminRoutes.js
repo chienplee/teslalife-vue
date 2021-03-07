@@ -104,6 +104,16 @@ import FeaturesRoutes from "./FeaturesRoutes";
       name: "menu",
       component: () => import("@/view/uiElements/Menu"),
     },
+    {
+      path: "/components/message",
+      name: "message",
+      component: () => import("@/view/uiElements/Message"),
+    },
+    {
+      path: "/components/modal",
+      name: "modal",
+      component: () => import("@/view/uiElements/Modal"),
+    }, 
     /*
     {
       path: "/components/autoComplete",
@@ -120,16 +130,7 @@ import FeaturesRoutes from "./FeaturesRoutes";
       name: "cascader",
       component: () => import("@/view/uiElements/Cascader"),
     },
-    {
-      path: "/components/message",
-      name: "message",
-      component: () => import("@/view/uiElements/Message"),
-    },
-    {
-      path: "/components/modal",
-      name: "modal",
-      component: () => import("@/view/uiElements/Modal"),
-    },
+
     {
       path: "/components/notification",
       name: "notification",

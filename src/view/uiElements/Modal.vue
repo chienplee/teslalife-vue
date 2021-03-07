@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Modals">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -38,7 +40,7 @@
             </sdModal>
             <a-space>
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showModal();
                     changeType('primary');
@@ -48,7 +50,7 @@
                 >Primary</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showModal();
                     changeType('success');
@@ -58,7 +60,7 @@
                 >Success</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showModal();
                     changeType('warning');
@@ -68,7 +70,7 @@
                 >Warning</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showModal();
                     changeType('error');
@@ -106,7 +108,7 @@
             </sdModal>
             <a-space>
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showColorModal();
                     changeType('primary');
@@ -116,7 +118,7 @@
                 >Primary</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showColorModal();
                     changeType('success');
@@ -126,7 +128,7 @@
                 >Success</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showColorModal();
                     changeType('warning');
@@ -136,7 +138,7 @@
                 >Warning</sdButton
               >
               <sdButton
-                @click.native="
+                @click="
                   () => {
                     showColorModal();
                     changeType('error');
@@ -173,16 +175,16 @@
               </p>
             </sdModal>
             <a-space>
-              <sdButton type="info" @click.native="info">
+              <sdButton type="info" @click="info">
                 Info
               </sdButton>
-              <sdButton type="success" @click.native="success">
+              <sdButton type="success" @click="success">
                 Success
               </sdButton>
-              <sdButton type="error" @click.native="error">
+              <sdButton type="error" @click="error">
                 Error
               </sdButton>
-              <sdButton type="warning" @click.native="warning">
+              <sdButton type="warning" @click="warning">
                 Warning
               </sdButton>
             </a-space>
@@ -194,14 +196,12 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { Modal } from "ant-design-vue";
 
 export default {
   name: "Modal",
   components: {
-    PlusIcon,
     Main,
   },
   data() {
@@ -245,7 +245,6 @@ export default {
         onOk() {},
       });
     },
-
     success() {
       Modal.success({
         title: "This is a success message",
@@ -257,7 +256,7 @@ export default {
           </div>
         ),
       });
-    },
+    }, 
 
     error() {
       Modal.error({

@@ -1,22 +1,24 @@
 <template>
   <div>
     <sdPageHeader title="Message">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Basic">
             <MessageStyleWrapper>
-              <sdButton type="primary" @click.native="info">
+              <sdButton type="primary" @click="info">
                 Display normal message
               </sdButton>
             </MessageStyleWrapper>
@@ -24,13 +26,13 @@
           <sdCards title="Other Message">
             <MessageStyleWrapper>
               <a-space>
-                <sdButton :outlined="true" type="white" @click.native="success">
+                <sdButton :outlined="true" type="white" @click="success">
                   Success
                 </sdButton>
-                <sdButton :outlined="true" type="white" @click.native="error">
+                <sdButton :outlined="true" type="white" @click="error">
                   Error
                 </sdButton>
-                <sdButton :outlined="true" type="white" @click.native="warning">
+                <sdButton :outlined="true" type="white" @click="warning">
                   Warning
                 </sdButton>
               </a-space>
@@ -40,14 +42,14 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Custom Message">
             <MessageStyleWrapper>
-              <sdButton type="primary" @click.native="displayDuration">
+              <sdButton type="primary" @click="displayDuration">
                 Customized display duration
               </sdButton>
             </MessageStyleWrapper>
           </sdCards>
           <sdCards title="Custom Message">
             <MessageStyleWrapper>
-              <sdButton type="white" :outlined="true" @click.native="loading">
+              <sdButton type="white" :outlined="true" @click="loading">
                 Display a loading indicator
               </sdButton>
             </MessageStyleWrapper>
@@ -59,13 +61,11 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main, MessageStyleWrapper } from "../styled";
 import { message } from "ant-design-vue";
 export default {
   name: "Message",
   components: {
-    PlusIcon,
     Main,
     MessageStyleWrapper,
   },
