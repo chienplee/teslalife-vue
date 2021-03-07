@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
 import FeaturesRoutes from "./FeaturesRoutes";
-// import PageRoutes from "./PageRoutes";
+import PageRoutes from "./PageRoutes";
 
 
   const routes = [
@@ -206,9 +206,8 @@ import FeaturesRoutes from "./FeaturesRoutes";
       name: "table",
       component: () => import("@/view/table/table.vue"),
     },
-    ...FeaturesRoutes,
+    */    
     ...PageRoutes,
-    */
    ...FeaturesRoutes
   ]
 
