@@ -9,12 +9,12 @@
     :width="width"
     :class="className"
   >
-    <template slot="footer">
+    <template v-slot:footer>
       <sdButton
         type="white"
         :outlined="color ? false : true"
         key="back"
-        @click.native="onCancel"
+        @click="onCancel"
       >
         Return
       </sdButton>
@@ -23,7 +23,7 @@
         :type="color ? 'white' : type"
         :outlined="type !== 'white' ? false : true"
         :loading="confirmLoading"
-        @click.native="handleOk"
+        @click="handleOk"
       >
         Submit
       </sdButton>

@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Notification">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+            <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -39,25 +41,25 @@
             <a-space>
               <sdButton
                 type="success"
-                @click.native="() => openNotificationWithIcon('success')"
+                @click="() => openNotificationWithIcon('success')"
               >
                 Success
               </sdButton>
               <sdButton
                 type="info"
-                @click.native="() => openNotificationWithIcon('info')"
+                @click="() => openNotificationWithIcon('info')"
               >
                 Info
               </sdButton>
               <sdButton
                 type="warning"
-                @click.native="() => openNotificationWithIcon('warning')"
+                @click="() => openNotificationWithIcon('warning')"
               >
                 Warning
               </sdButton>
               <sdButton
                 type="error"
-                @click.native="() => openNotificationWithIcon('error')"
+                @click="() => openNotificationWithIcon('error')"
               >
                 Error
               </sdButton>
@@ -107,14 +109,12 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { Notification } from "ant-design-vue";
 
 export default {
   name: "Notification",
   components: {
-    PlusIcon,
     Main,
   },
   data() {

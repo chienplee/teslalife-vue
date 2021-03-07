@@ -5,4 +5,4 @@
  Google Chart
 --------------
 1. Organization Chart.
-2. Color Info Modal Error Ase.
+2. Modal Error Ase.

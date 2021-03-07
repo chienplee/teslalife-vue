@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Auto Complete">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <AutoCompleteWrapper>
@@ -19,11 +21,11 @@
               <div class="auto-complete-input">
                 <sdAutoComplete
                   :dataSource="searchData"
-                  @onSearch.native="onSearch"
+                  @onSearch="onSearch"
                 />
                 <sdAutoComplete
                   :dataSource="searchData"
-                  @onSearch.native="onSearch"
+                  @onSearch="onSearch"
                 />
               </div>
             </sdCards>
@@ -36,12 +38,10 @@
 
 <script>
 import { Main, AutoCompleteWrapper } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 
 export default {
   name: "AutoComplete",
   components: {
-    PlusIcon,
     Main,
     AutoCompleteWrapper,
   },
