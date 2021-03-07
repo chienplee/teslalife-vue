@@ -109,11 +109,7 @@ import PageRoutes from "./PageRoutes";
       name: "message",
       component: () => import("@/view/uiElements/Message"),
     },
-    {
-      path: "/components/modal",
-      name: "modal",
-      component: () => import("@/view/uiElements/Modal"),
-    }, 
+     
     /*
     {
       path: "/components/autoComplete",
@@ -130,7 +126,11 @@ import PageRoutes from "./PageRoutes";
       name: "cascader",
       component: () => import("@/view/uiElements/Cascader"),
     },
-
+    {
+      path: "/components/modal",
+      name: "modal",
+      component: () => import("@/view/uiElements/Modal"),
+    },
     {
       path: "/components/notification",
       name: "notification",

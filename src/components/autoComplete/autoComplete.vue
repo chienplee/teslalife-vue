@@ -20,16 +20,17 @@
     @search="onSearching"
   >
     <a-input>
-      <Button
-        v-if="patternButtons"
-        slot="suffix"
-        class="search-btn"
-        :style="{ [rtl ? 'marginLeft' : 'marginRight']: -20 }"
-        type="primary"
-      >
-        <a-icon type="search" />
-      </Button>
-      <a-icon v-else type="search" />
+      <template v-slot:suffix>
+        <Button
+          v-if="patternButtons"
+          class="search-btn"
+          :style="{ [rtl ? 'marginLeft' : 'marginRight']: -20 }"
+          type="primary"
+        >
+          <a-icon type="search" />
+        </Button>
+        <a-icon v-else type="search" />
+      </template>
     </a-input>
   </AutoCompleteStyled>
   <AutoCompleteStyled
