@@ -9,6 +9,7 @@
     :bodypadding="bodypadding && bodypadding"
     :style="{ width: '100%' }"
   >
+    <slot name="title"></slot>
     <slot name="caption"></slot>
     <template v-slot:extra>
       <sdDropdown v-if="more" :action="['click']" placement="bottomCenter">

@@ -11,15 +11,14 @@
       :headers="headers"
       @change="onChange"
     >
-      <a to="#"> <CameraIcon size="16" /> Change Cover </a>
+      <a to="#"> <sdFeatherIcons type="camera" size="16" /> Change Cover </a>
     </a-upload>
   </div>
 </template>
 <script>
-import { CameraIcon } from "vue-feather-icons";
 const CoverSection = {
   name: "CoverSection",
-  components: { CameraIcon },
+  components: {},
   data() {
     return {
       headers: {

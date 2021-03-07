@@ -37,10 +37,8 @@ export default [
     {
         path: "/:catchAll(.*)",
         component: () => import("@/view/pages/404.vue"),
-      }
-    /*
-    
-    {
+      },
+      {
         path: "/page/profile-settings",
         name: "profileSettings",
         component: () => import("@/view/pages/settings/Settings.vue"),
@@ -71,9 +69,5 @@ export default [
             }
         ]
     },
-    
-    
-    
-    */
   ];
   

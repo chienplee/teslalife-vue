@@ -1,26 +1,27 @@
 <template>
   <AccountWrapper>
     <sdCards>
-      <div slot="caption" class="setting-card-title">
-        <sdHeading as="h4">Account Settings</sdHeading>
-        <span>Update your username and manage your account</span>
-      </div>
+      <template v-slot:title>
+        <div class="setting-card-title">
+          <sdHeading as="h4">Account Settings</sdHeading>
+          <span>Update your username and manage your account</span>
+        </div>
+      </template>
       <a-row>
         <a-col :xs="24">
           <BasicFormWrapper>
-            <a-form :form="form" :submit="handleSubmit">
+            <a-form
+              :model="formState"
+              @finish="handleFinish"
+              @finishFailed="handleFinishFailed"
+            >
               <div class="account-form-top">
                 <a-row type="flex" justify="center">
                   <a-col :xxl="10" :lg="16" :md="18" :xs="24">
                     <div class="account-form">
                       <a-form-item label="Username">
                         <a-input
-                          v-decorator="[
-                            'userName',
-                            {
-                              initialValue: name,
-                            },
-                          ]"
+                          v-model:value="formState.username"
                           @change="handleChange"
                         />
                       </a-form-item>
@@ -30,14 +31,7 @@
                         }}</span>
                       </p>
                       <a-form-item label="Email">
-                        <a-input
-                          v-decorator="[
-                            'email',
-                            {
-                              initialValue: 'contact@example',
-                            },
-                          ]"
-                        />
+                        <a-input v-model:value="formState.email" />
                       </a-form-item>
                     </div>
                   </a-col>
@@ -74,7 +68,7 @@
                         &nbsp; &nbsp;
                         <sdButton
                           size="default"
-                          @click.native="handleCancel"
+                          @click="handleCancel"
                           type="light"
                         >
                           Cancel
@@ -95,17 +89,36 @@
 <script>
 import { AccountWrapper } from "./style";
 import { BasicFormWrapper } from "../../../styled";
+import { reactive } from "vue";
 
 const Account = {
   name: "Account",
   components: { AccountWrapper, BasicFormWrapper },
   data() {
+    const name = "clayton";
+    const formState = reactive({
+      username: name,
+      email: "contact@example.com",
+    });
+
+    const handleFinish = (values) => {
+      this.values = { ...values };
+      console.log(values, formState);
+    };
+
+    const handleFinishFailed = (errors) => {
+      console.log(errors);
+    };
     return {
-      name: "clayton",
+      name,
       values: null,
-      form: this.$form.createForm(this, { name: "account" }),
+      formState,
+      handleFinish,
+      handleFinishFailed,
+      // form: this.$form.createForm(this, { name: "account" }),
     };
   },
+
   methods: {
     handleSubmit(e) {
       e.preventDefault();

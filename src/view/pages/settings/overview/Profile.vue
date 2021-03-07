@@ -1,44 +1,27 @@
 <template>
   <sdCards>
-    <div slot="caption" class="setting-card-title">
-      <sdHeading as="h4">Edit Profile</sdHeading>
-      <span>Set Up Your Personal Information</span>
-    </div>
+    <template v-slot:title>
+      <div class="setting-card-title">
+        <sdHeading as="h4">Edit Profile</sdHeading>
+        <span>Set Up Your Personal Information</span>
+      </div>
+    </template>
     <a-row type="flex" justify="center">
       <a-col :xl="12" :lg="16" :xs="24">
         <BasicFormWrapper>
-          <a-form :form="form" @submit="handleSubmit">
+          <a-form
+            :model="formState"
+            @finish="handleFinish"
+            @finishFailed="handleFinishFailed"
+          >
             <a-form-Item label="Name">
-              <a-input
-                v-decorator="[
-                  'name',
-                  {
-                    initialValue: 'Duran Clayton',
-                  },
-                ]"
-              />
+              <a-input v-model:value="formState.name" />
             </a-form-Item>
-
             <a-form-item label="Phone Number">
-              <a-input
-                v-decorator="[
-                  'phone',
-                  {
-                    initialValue: '01742920502',
-                  },
-                ]"
-              />
+              <a-input v-model:value="formState.phone" />
             </a-form-item>
             <a-form-item label="Country">
-              <a-select
-                v-decorator="[
-                  'country',
-                  {
-                    initialValue: '',
-                  },
-                ]"
-                style="width: 100%"
-              >
+              <a-select v-model:value="formState.country" style="width: 100%">
                 <a-select-option value="">Please Select</a-select-option>
                 <a-select-option value="bangladesh">Bangladesh</a-select-option>
                 <a-select-option value="india">India</a-select-option>
@@ -47,10 +30,7 @@
             </a-form-item>
 
             <a-form-item label="City">
-              <a-select
-                v-decorator="['city', { initialValue: '' }]"
-                style="width: 100%"
-              >
+              <a-select v-model:value="formState.city" style="width: 100%">
                 <a-select-option value="">Please Select</a-select-option>
                 <a-select-option value="dhaka">Dhaka</a-select-option>
                 <a-select-option value="mymensingh">Mymensingh</a-select-option>
@@ -58,24 +38,13 @@
               </a-select>
             </a-form-item>
             <a-form-item label="Company Name">
-              <a-input v-decorator="['company', { initialValue: 'Example' }]" />
+              <a-input v-model:value="formState.company" />
             </a-form-item>
             <a-form-item label="Website">
-              <a-input
-                v-decorator="['website', { initialValue: 'www.example.com' }]"
-              />
+              <a-input v-model:value="formState.website" />
             </a-form-item>
             <a-form-item label="User Bio">
-              <a-textarea
-                v-decorator="[
-                  'userBio',
-                  {
-                    initialValue:
-                      'Nam malesuada dolor tellus pretium amet was hendrerit facilisi id vitae enim sed ornare there suspendisse sed orci neque ac sed aliquet risus faucibus in pretium molestee.',
-                  },
-                ]"
-                :rows="3"
-              />
+              <a-textarea v-model:value="formState.userBio" :rows="3" />
             </a-form-item>
             <a-form-item name="skills" label="Skills">
               <TagInput>
@@ -116,7 +85,7 @@
                       style="background: #fff; borderStyle: dashed;"
                       @click="showInput"
                     >
-                      <a-icon type="plus" /> New Tag
+                      <sdFeatherIcons type="plus" size="14" /> New Tag
                     </a-tag>
                   </div>
                 </div>
@@ -125,7 +94,7 @@
 
             <div class="setting-form-actions">
               <sdButton
-                @click.native="handleSubmit"
+                @click="handleSubmit"
                 size="default"
                 htmlType="submit"
                 type="primary"
@@ -133,11 +102,7 @@
                 Update Profile
               </sdButton>
               &nbsp; &nbsp;
-              <sdButton
-                size="default"
-                @click.native="handleCancel"
-                type="light"
-              >
+              <sdButton size="default" @click="handleCancel" type="light">
                 Cancel
               </sdButton>
             </div>
@@ -149,30 +114,46 @@
 </template>
 <script>
 import { BasicFormWrapper, TagInput } from "../../../styled";
+import { defineComponent, reactive } from "vue";
 
-const Profile = {
+const Profile = defineComponent({
   name: "Profile",
   components: { BasicFormWrapper, TagInput },
-  data() {
+
+  setup() {
+    const formState = reactive({
+      name: "Duran Clayton",
+      phone: "01742920502",
+      country: "",
+      city: "",
+      company: "Example",
+      website: "www.example.com",
+      userBio:
+        "Nam malesuada dolor tellus pretium amet was hendrerit facilisi id vitae enim sed ornare there suspendisse sed orci neque ac sed aliquet risus faucibus in pretium molestee.",
+    });
+
+    const handleFinish = (values) => {
+      this.values = { ...values, tags: this.tags };
+      console.log(values, formState);
+    };
+
+    const handleFinishFailed = (errors) => {
+      console.log(errors);
+    };
+
     return {
+      formState,
+      handleFinish,
+      handleFinishFailed,
       tags: ["UI/UX", "Branding", "Product Design", "Web Design"],
       values: null,
-      form: this.$form.createForm(this, { name: "coordinated" }),
+      // form: this.$form.createForm(this, { name: "coordinated" }),
       inputVisible: false,
       inputValue: "",
     };
   },
-  methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          this.values = { ...values, tags: this.tags };
-          console.log(values);
-        }
-      });
-    },
 
+  methods: {
     handleCancel(e) {
       e.preventDefault();
       //form.resetFields();
@@ -208,7 +189,7 @@ const Profile = {
       });
     },
   },
-};
+});
 
 export default Profile;
 </script>
