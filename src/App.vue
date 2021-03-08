@@ -9,11 +9,9 @@
   >
     <Suspense>
       <template #default>
-        <!-- The component I want to render -->
         <WithAdminLayout />
       </template>
       <template #fallback>
-        <!-- Fallback component shown while my component is not ready -->
         <div class="spin">
           <a-spin />
         </div>

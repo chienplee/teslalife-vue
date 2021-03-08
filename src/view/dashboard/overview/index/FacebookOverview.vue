@@ -1,0 +1,343 @@
+<template>
+  <CardGroup>
+    <div class="forcast-overview">
+      <sdCards v-if="forcastOverviewState !== null" title="Facebook Overview">
+        <template #button>
+          <div class="card-radio">
+            <a-radio-group onChange="{forcastOverview}" defaultValue="today">
+              <a-radio-button value="today">Today</a-radio-button>
+              <a-radio-button value="week">Week</a-radio-button>
+              <a-radio-button value="month">Month</a-radio-button>
+              <a-radio-button value="year">Year</a-radio-button>
+            </a-radio-group>
+          </div>
+        </template>
+
+        <div v-if="foIsLoading" class="sd-spin">
+          <a-spin />
+        </div>
+
+        <a-row v-else :gutter="25">
+          <a-col :xl="12" :md="24">
+            <a-row class="focard-wrapper focard-divider">
+              <a-col :md="12" :sm="12" :xs="24">
+                <Focard>
+                  <div class="focard-details growth-upward">
+                    <sdHeading as="h1">{{
+                      forcastOverviewState.Engaged
+                    }}</sdHeading>
+                    <p class="subtitle">Engaged Users</p>
+                    <p class="focard-status">
+                      <span class="focard-status__percentage">
+                        <sdFeatherIcons icon="trending-up" />
+                        25%
+                      </span>
+                      <span> 20,641 (prev)</span>
+                    </p>
+                  </div>
+                  <div class="focard-chart">
+                    <sdChartContainer class="parentContainer">
+                      <Chart
+                        type="line"
+                        :labels="forcastOverviewState.EnLabels"
+                        :options="areaChartOption"
+                        :datasets="[
+                          {
+                            label: '',
+                            data: forcastOverviewState.EnData,
+                            borderColor: '#20C997',
+                            borderWidth: 3,
+                            fill: true,
+                            backgroundColor: () =>
+                              chartMethods('engaged', [
+                                '#20C99710',
+                                '#20C99701',
+                              ]),
+                            pointHoverRadius: 0,
+                            pointHoverBorderColor: 'transparent',
+                          },
+                        ]"
+                        :height="height"
+                        className="engaged"
+                        id="engaged"
+                      />
+                    </sdChartContainer>
+                  </div>
+                </Focard>
+              </a-col>
+              <a-col :md="12" :sm="12" :xs="24">
+                <Focard>
+                  <div class="focard-details growth-upward">
+                    <sdHeading as="h1">{{
+                      forcastOverviewState.Impressions
+                    }}</sdHeading>
+                    <p class="subtitle">Page Impressions</p>
+                    <p class="focard-status">
+                      <span class="focard-status__percentage">
+                        <sdFeatherIcons icon="trending-up" />
+                        14%
+                      </span>
+                      <span> 20,641 (prev)</span>
+                    </p>
+                  </div>
+                  <div class="focard-chart">
+                    <sdChartContainer class="parentContainer">
+                      <Chart
+                        type="line"
+                        id="impression"
+                        className="impression"
+                        :labels="forcastOverviewState.ImLabels"
+                        :options="areaChartOption"
+                        :datasets="[
+                          {
+                            label: '',
+                            data: forcastOverviewState.ImData,
+                            borderColor: '#FF69A5',
+
+                            borderWidth: 3,
+                            fill: true,
+                            backgroundColor: () =>
+                              chartMethods('impression', [
+                                '#FF69A510',
+                                '#FF69A501',
+                              ]),
+                            pointHoverRadius: 0,
+                            pointHoverBorderColor: 'transparent',
+                          },
+                        ]"
+                        :height="height"
+                      />
+                    </sdChartContainer>
+                  </div>
+                </Focard>
+              </a-col>
+            </a-row>
+          </a-col>
+          <a-col :xl="12" :xs="24">
+            <a-row class="focard-wrapper">
+              <a-col :md="12" :sm="12">
+                <Focard>
+                  <div class="focard-details growth-downward">
+                    <sdHeading as="h1">{{
+                      forcastOverviewState.Like
+                    }}</sdHeading>
+                    <p class="subtitle">Total Page Likes</p>
+                    <p class="focard-status">
+                      <span class="focard-status__percentage">
+                        <sdFeatherIcons icon="trending-down" />
+                        12%
+                      </span>
+                      <span> 20,641 (prev)</span>
+                    </p>
+                  </div>
+                  <div class="focard-chart">
+                    <sdChartContainer class="parentContainer">
+                      <Chart
+                        type="line"
+                        :labels="forcastOverviewState.LiLabels"
+                        id="likes"
+                        className="likes"
+                        :options="areaChartOption"
+                        :datasets="[
+                          {
+                            data: forcastOverviewState.LiData,
+                            label: '',
+                            borderColor: '#5F63F2',
+                            borderWidth: 3,
+                            fill: true,
+
+                            backgroundColor: () =>
+                              chartMethods('likes', ['#5F63F210', '#5F63F201']),
+                            pointHoverRadius: 0,
+                            pointHoverBorderColor: 'transparent',
+                          },
+                        ]"
+                        :height="height"
+                      />
+                    </sdChartContainer>
+                  </div>
+                </Focard>
+              </a-col>
+              <a-col :md="12" :sm="12" :xs="24">
+                <Focard>
+                  <div class="focard-details growth-upward">
+                    <sdHeading as="h1">{{
+                      forcastOverviewState.Impressions2
+                    }}</sdHeading>
+                    <p class="subtitle">Page Impressions</p>
+                    <p class="focard-status">
+                      <span class="focard-status__percentage">
+                        <sdFeatherIcons icon="trending-up" />
+                        14%
+                      </span>
+                      <span> 20,641 (prev)</span>
+                    </p>
+                  </div>
+                  <div class="focard-chart">
+                    <sdChartContainer class="parentContainer">
+                      <Chart
+                        type="line"
+                        :labels="forcastOverviewState.ImLabels2"
+                        id="impression2"
+                        className="impression2"
+                        :options="areaChartOption"
+                        :datasets="[
+                          {
+                            data: forcastOverviewState.ImData2,
+                            label: '',
+                            borderColor: '#FA8B0C',
+                            borderWidth: 3,
+                            fill: true,
+                            backgroundColor: () =>
+                              chartMethods('impression2', [
+                                '#FA8B0C10',
+                                '#FA8B0C01',
+                              ]),
+                            pointHoverRadius: 0,
+                            pointHoverBorderColor: 'transparent',
+                          },
+                        ]"
+                        :height="height"
+                      />
+                    </sdChartContainer>
+                  </div>
+                </Focard>
+              </a-col>
+            </a-row>
+          </a-col>
+        </a-row>
+      </sdCards>
+    </div>
+  </CardGroup>
+</template>
+
+<script>
+import { Focard, CardGroup } from "../../style";
+import Chart from "../../../../components/utilities/chartjs";
+// import { forcastOverviewGetData, forcastOverviewFilterData } from '../../../../redux/chartContent/actionCreator';
+import {
+  chartLinearGradient,
+  customTooltips,
+} from "../../../../components/utilities/utilities";
+// const forcastOverview = e => {
+//   dispatch(forcastOverviewFilterData(e.target.value));
+// };
+
+export default {
+  name: "FacebookOverview",
+  components: {
+    Focard,
+    CardGroup,
+    Chart,
+  },
+  data() {
+    return {
+      height: window.innerWidth <= 1199 ? 100 : 165,
+      areaChartOption: {
+        maintainAspectRatio: true,
+        responsive: true,
+        hover: {
+          mode: "nearest",
+          intersect: false,
+        },
+        layout: {
+          padding: {
+            left: -10,
+            right: 0,
+            top: 2,
+            bottom: -10,
+          },
+        },
+        legend: {
+          display: false,
+          labels: {
+            display: false,
+          },
+        },
+        elements: {
+          point: {
+            radius: 0,
+          },
+        },
+        scales: {
+          yAxes: [
+            {
+              stacked: true,
+              gridLines: {
+                display: false,
+                color: "#e5e9f2",
+              },
+              ticks: {
+                beginAtZero: true,
+                fontSize: 10,
+                display: false,
+                stepSize: 20,
+              },
+            },
+          ],
+          xAxes: [
+            {
+              stacked: true,
+              gridLines: {
+                display: false,
+              },
+
+              ticks: {
+                beginAtZero: true,
+                fontSize: 11,
+                display: false,
+              },
+            },
+          ],
+        },
+        tooltips: {
+          mode: "label",
+          intersect: false,
+          position: "average",
+          enabled: false,
+          custom: customTooltips,
+          callbacks: {
+            label(t, d) {
+              const dstLabel = d.datasets[t.datasetIndex].label;
+              const { yLabel } = t;
+              return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
+            },
+            labelColor(tooltipItem, chart) {
+              const dataset =
+                chart.config.data.datasets[tooltipItem.datasetIndex];
+              return {
+                backgroundColor: dataset.borderColor,
+                borderColor: "transparent",
+                usePointStyle: true,
+              };
+            },
+          },
+        },
+      },
+      forcastOverviewState: {
+        Engaged: "25,872",
+        EnLabels: ["0", "4", "8", "12", "16", "20", "24"],
+        EnData: [150, 100, 200, 250, 200, 300, 150],
+        Impressions: "98,534",
+        ImLabels: ["0", "4", "8", "12", "16", "20", "24"],
+        ImData: [200, 150, 200, 250, 100, 200, 150],
+        Like: "12,142",
+        LiLabels: ["0", "4", "8", "12", "16", "20", "24"],
+        LiData: [150, 100, 200, 250, 200, 300, 150],
+        Impressions2: "1,432",
+        ImLabels2: ["0", "4", "8", "12", "16", "20", "24"],
+        ImData2: [200, 150, 200, 250, 100, 200, 150],
+      },
+      foIsLoading: false,
+    };
+  },
+  methods: {
+    chartMethods(elementId, color) {
+      return chartLinearGradient(document.querySelector(`.${elementId}`), 165, {
+        start: color[0],
+        end: color[1],
+      });
+    },
+  },
+};
+</script>

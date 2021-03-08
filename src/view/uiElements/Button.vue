@@ -118,7 +118,7 @@
             <sdButton size="default" outlined type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton size="default" outlined type="white">
+            <sdButton size="default" type="white">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
             <sdButton size="default" type="light">
@@ -189,13 +189,28 @@
                     <sdButton size="small" type="primary">
                       Today
                     </sdButton>
-                    <sdButton size="small" :outlined="true" type="white">
+                    <sdButton
+                      size="small"
+                      rise
+                      type="white"
+                      class="btn-outlined"
+                    >
                       Week
                     </sdButton>
-                    <sdButton size="small" :outlined="true" type="white">
+                    <sdButton
+                      size="small"
+                      rise
+                      type="white"
+                      class="btn-outlined"
+                    >
                       Month
                     </sdButton>
-                    <sdButton size="small" :outlined="true" type="white">
+                    <sdButton
+                      size="small"
+                      rise
+                      type="white"
+                      class="btn-outlined"
+                    >
                       Year
                     </sdButton>
                   </sdBtnGroup>
@@ -508,7 +523,7 @@
               size="default"
               shape="circle"
               :outlined="true"
-              type="white"
+              type="light"
             >
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>

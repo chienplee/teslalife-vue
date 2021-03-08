@@ -27,6 +27,18 @@
             </template>
           </Suspense>
         </a-col>
+        <a-col :xxl="16" :xs="24">
+          <Suspense>
+            <template #default>
+              <FacebookOverview />
+            </template>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton active />
+              </sdCards>
+            </template>
+          </Suspense>
+        </a-col>
       </a-row>
     </Main>
   </div>
@@ -35,15 +47,21 @@
 <script>
 import { Main } from "../styled";
 import { defineAsyncComponent } from "vue";
+import FacebookOverview from "./overview/index/FacebookOverview";
+
 const SocialMediaOverview = defineAsyncComponent(() =>
   import("./overview/index/SocialMediaOverview")
 );
+// const FacebookOverview = defineAsyncComponent(() =>
+//   import("./overview/index/FacebookOverview")
+// );
 
 export default {
   name: "BlankPage",
   components: {
     Main,
     SocialMediaOverview,
+    FacebookOverview,
   },
   async setup() {},
 };
