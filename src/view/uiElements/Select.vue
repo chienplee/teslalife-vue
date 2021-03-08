@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Select">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -101,17 +103,19 @@
           </sdCards>
           <sdCards title="Custom">
             <a-select default-value="lucy" style="width: 120px">
-              <div slot="dropdownRender" slot-scope="menu">
-                <v-nodes :vnodes="menu" />
-                <a-divider style="margin: 4px 0" />
-                <div
-                  style="padding: 4px 8px; cursor: pointer"
-                  @mousedown="(e) => e.preventDefault()"
-                  @click="addItem"
-                >
-                  <a-icon type="plus" /> Add item
+              <template v-slot:dropdownRender:menu>
+                <div>
+                  <v-nodes :vnodes="menu" />
+                  <a-divider style="margin: 4px 0" />
+                  <div
+                    style="padding: 4px 8px; cursor: pointer"
+                    @mousedown="(e) => e.preventDefault()"
+                    @click="addItem"
+                  >
+                    <a-icon type="plus" /> Add item
+                  </div>
                 </div>
-              </div>
+              </template>
               <a-select-option v-for="item in items" :key="item" :value="item">
                 {{ item }}
               </a-select-option>
@@ -189,7 +193,9 @@
               @change="groupChange"
             >
               <a-select-opt-group>
-                <span slot="label"><a-icon type="user" />Manager</span>
+                <template v-slot:label>
+                  <span><a-icon type="user" />Manager</span>
+                </template>
                 <a-select-option value="jack"> Jack </a-select-option>
                 <a-select-option value="lucy"> Lucy </a-select-option>
               </a-select-opt-group>
@@ -218,7 +224,6 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import { SelectWrapperStyle, SelectRadioStyle } from "./ui-elements-styled";
 let index = 0;
 const OPTIONS = ["Apples", "Nails", "Bananas", "Helicopters"];
@@ -230,7 +235,6 @@ const cityData = {
 export default {
   name: "Select",
   components: {
-    PlusIcon,
     Main,
     SelectWrapperStyle,
     SelectRadioStyle,

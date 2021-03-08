@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="PageHeader">
-      <div slot="buttons" class="page-header-actions">
+      <template v-slot:buttons>
+      <div class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
         <sdShareButton />
         <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
+          <sdFeatherIcons type="plus" size="14" />
           Add New
         </sdButton>
       </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -28,7 +30,8 @@
           <sdCards title="Custom header">
             <PageHeaderWrapper>
               <sdPageHeader title="Title">
-                <div slot="buttons" class="page-header-actions">
+                <template v-slot:buttons>
+                <div class="page-header-actions">
                   <sdCalendarButton />
                   <sdExportButton />
                   <sdShareButton />
@@ -37,6 +40,7 @@
                     Add New
                   </sdButton>
                 </div>
+                 </template>
               </sdPageHeader>
             </PageHeaderWrapper>
           </sdCards>
@@ -62,7 +66,8 @@
                 subTitle="This is a subtitle"
                 :routes="{ props: { routes } }"
               >
-                <a-space slot="buttons">
+              <template v-slot:buttons>
+                <a-space>
                   <sdButton size="small" type="default">
                     Operation
                   </sdButton>
@@ -73,6 +78,7 @@
                     Primary
                   </sdButton>
                 </a-space>
+              </template>
               </sdPageHeader>
             </PageHeaderWrapper>
           </sdCards>
@@ -83,7 +89,6 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main, PageHeaderWrapper } from "../styled";
 const routes = [
   {
@@ -103,7 +108,6 @@ const routes = [
 export default {
   name: "PageHeader",
   components: {
-    PlusIcon,
     Main,
     PageHeaderWrapper,
   },

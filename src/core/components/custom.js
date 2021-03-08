@@ -20,12 +20,12 @@ import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 // } from "../../components/charts/googleChart.vue";
 
 import { ChartContainer } from "../../view/dashboard/style";
-// import Cascader from "../../components/cascader/Cascader";
+import Cascader from "../../components/cascader/Cascader";
 import Heading from "../../components/heading/Heading";
-// import AutoComplete from "../../components/autoComplete/autoComplete";
+import AutoComplete from "../../components/autoComplete/autoComplete";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Popover from "../../components/popup/Popup";
-// import Modal from "../../components/modals/Modals";
+import Modal from "../../components/modals/Modals";
 
 [
   Heading,
@@ -67,12 +67,12 @@ import Popover from "../../components/popup/Popup";
   ExportButton,
   ShareButton,
   { name: "PageHeader", ...PageHeader },
-  // Cascader,
-  // AutoComplete,
+  Cascader,
+  AutoComplete,
   Dropdown,
   Popover,
   FeatherIcons,
-  // Modal,
+  Modal,
 ].map((c) => {
   app.component(`sd${c.name}`, c);
 });

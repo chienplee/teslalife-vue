@@ -109,28 +109,6 @@ import PageRoutes from "./PageRoutes";
       name: "message",
       component: () => import("@/view/uiElements/Message"),
     },
-     
-    /*
-    {
-      path: "/components/autoComplete",
-      name: "autoComplete",
-      component: () => import("@/view/uiElements/AutoComplete"),
-    },
-    {
-      path: "/components/carousel",
-      name: "carousel",
-      component: () => import("@/view/uiElements/Carousel"),
-    },
-    {
-      path: "/components/cascader",
-      name: "cascader",
-      component: () => import("@/view/uiElements/Cascader"),
-    },
-    {
-      path: "/components/modal",
-      name: "modal",
-      component: () => import("@/view/uiElements/Modal"),
-    },
     {
       path: "/components/notification",
       name: "notification",
@@ -177,19 +155,9 @@ import PageRoutes from "./PageRoutes";
       component: () => import("@/view/uiElements/Result"),
     },
     {
-      path: "/components/select",
-      name: "select",
-      component: () => import("@/view/uiElements/Select"),
-    },
-    {
       path: "/components/skeleton",
       name: "skeleton",
       component: () => import("@/view/uiElements/Skeleton"),
-    },
-    {
-      path: "/components/slider",
-      name: "slider",
-      component: () => import("@/view/uiElements/Slider"),
     },
     {
       path: "/components/spiner",
@@ -200,7 +168,39 @@ import PageRoutes from "./PageRoutes";
       path: "/components/statistic",
       name: "statistic",
       component: () => import("@/view/uiElements/Statistic"),
-    },    
+    },
+    {
+      path: "/components/cascader",
+      name: "cascader",
+      component: () => import("@/view/uiElements/Cascader"),
+    },
+    {
+      path: "/components/modal",
+      name: "modal",
+      component: () => import("@/view/uiElements/Modal"),
+    },
+    {
+      path: "/components/autoComplete",
+      name: "autoComplete",
+      component: () => import("@/view/uiElements/AutoComplete"),
+    },
+    /*
+    
+    {
+      path: "/components/carousel",
+      name: "carousel",
+      component: () => import("@/view/uiElements/Carousel"),
+    },
+    {
+      path: "/components/select",
+      name: "select",
+      component: () => import("@/view/uiElements/Select"),
+    },
+    {
+      path: "/components/slider",
+      name: "slider",
+      component: () => import("@/view/uiElements/Slider"),
+    },   
     {
       path: "/tables/basic",
       name: "table",

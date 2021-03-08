@@ -32,7 +32,7 @@ export const PageHeader = {
             subTitle={this.subTitle}
             breadcrumb={this.routes && this.routes}
             ghost={this.ghost}
-            extra={this.$slots.buttons()}
+            extra={ this.$slots.buttons && this.$slots.buttons()}
           ></PageHeaderStyle>
         </div>
       </div>

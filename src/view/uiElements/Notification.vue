@@ -1,7 +1,7 @@
 <template>
   <div>
     <sdPageHeader title="Notification">
-            <template v-slot:buttons>
+      <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
           <sdExportButton />
@@ -73,14 +73,15 @@
                 type="primary"
                 @click="openNotificationPlacement('topLeft')"
               >
-                <a-icon type="radius-upleft" />
+                <RadiusUpleftOutlined />
+
                 topLeft
               </a-button>
               <a-button
                 type="primary"
                 @click="openNotificationPlacement('topRight')"
               >
-                <a-icon type="radius-upright" />
+                <RadiusUprightOutlined />
                 topRight
               </a-button>
             </a-space>
@@ -90,14 +91,14 @@
                 type="primary"
                 @click="openNotificationPlacement('bottomLeft')"
               >
-                <a-icon type="radius-bottomleft" />
+                <RadiusBottomleftOutlined />
                 bottomLeft
               </a-button>
               <a-button
                 type="primary"
                 @click="openNotificationPlacement('bottomRight')"
               >
-                <a-icon type="radius-bottomright" />
+                <RadiusBottomrightOutlined />
                 bottomRight
               </a-button>
             </a-space>
@@ -111,11 +112,21 @@
 <script>
 import { Main } from "../styled";
 import { Notification } from "ant-design-vue";
+import {
+  RadiusUpleftOutlined,
+  RadiusUprightOutlined,
+  RadiusBottomleftOutlined,
+  RadiusBottomrightOutlined,
+} from "@ant-design/icons-vue";
 
 export default {
   name: "Notification",
   components: {
     Main,
+    RadiusUpleftOutlined,
+    RadiusUprightOutlined,
+    RadiusBottomleftOutlined,
+    RadiusBottomrightOutlined,
   },
   data() {
     return {};
@@ -147,7 +158,7 @@ export default {
         message: "Notification Title",
         description:
           "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
-        icon: <a-icon type="smile" style="color: #108ee9" />,
+        icon: <sdFeatherIcons type="smile" size="14" style="color: #108ee9" />,
       });
     },
     openNotificationWithIcon(type) {

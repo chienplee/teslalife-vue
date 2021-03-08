@@ -19,22 +19,14 @@
           <sdCards title="Basic">
             <CarouselStyleWraper>
               <a-carousel :after-change="onChange">
-                <div>
-                  <h3>1</h3>
-                </div>
-                <div>
-                  <h3>2</h3>
-                </div>
-                <div>
-                  <h3>3</h3>
-                </div>
-                <div>
-                  <h3>4</h3>
-                </div>
+                <div><h3>1</h3></div>
+                <div><h3>2</h3></div>
+                <div><h3>3</h3></div>
+                <div><h3>4</h3></div>
               </a-carousel>
             </CarouselStyleWraper>
           </sdCards>
-          <sdCards title="Scroll automatically">
+           <sdCards title="Scroll automatically">
             <CarouselStyleWraper>
               <a-carousel autoplay>
                 <div><h3>1</h3></div>
@@ -110,3 +102,5 @@ export default {
   },
 };
 </script>
+
+

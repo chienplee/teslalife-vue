@@ -1,7 +1,8 @@
 <template>
   <div>
     <sdPageHeader title="Slider">
-      <div slot="buttons" class="page-header-actions">
+      <template v-slot:buttons>
+      <div class="page-header-actions">
         <sdCalendarButton />
         <sdExportButton />
         <sdShareButton />
@@ -10,6 +11,7 @@
           Add New
         </sdButton>
       </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -98,11 +100,9 @@
 <script>
 import { Main } from "../styled";
 import Slider from "../../components/slider/Slider";
-import { PlusIcon } from "vue-feather-icons";
 export default {
   name: "Sliders",
   components: {
-    PlusIcon,
     Main,
     Slider,
   },

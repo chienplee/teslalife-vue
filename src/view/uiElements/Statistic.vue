@@ -50,7 +50,7 @@
                   style="margin-right: 50px"
                 >
                   <template #prefix>
-                    <a-icon type="arrow-up" />
+                    <ArrowUpOutlined />
                   </template>
                 </a-statistic>
               </a-col>
@@ -64,7 +64,7 @@
                   :value-style="{ color: '#cf1322' }"
                 >
                   <template #prefix>
-                    <a-icon type="arrow-down" />
+                    <ArrowDownOutlined />
                   </template>
                 </a-statistic>
               </a-col>
@@ -81,7 +81,7 @@
                   style="margin-right: 50px"
                 >
                   <template #suffix>
-                    <a-icon type="like" />
+                    <LikeOutlined />
                   </template>
                 </a-statistic>
               </a-col>
@@ -122,10 +122,18 @@
 
 <script>
 import { Main } from "../styled";
+import {
+  LikeOutlined,
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+} from "@ant-design/icons-vue";
 export default {
   name: "Statistic",
   components: {
     Main,
+    ArrowDownOutlined,
+    ArrowUpOutlined,
+    LikeOutlined,
   },
   data() {
     return {

@@ -7,7 +7,7 @@
           <sdExportButton />
           <sdShareButton />
           <sdButton size="small" type="primary">
-            <PlusIcon size="14" />
+            <sdFeatherIcons type="plus" size="14" />
             Add New
           </sdButton>
         </div>
@@ -103,14 +103,12 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
 import { Main } from "../styled";
 import { DropdownStyle } from "./ui-elements-styled";
 
 export default {
   name: "Popover",
   components: {
-    PlusIcon,
     Main,
     DropdownStyle,
   },
