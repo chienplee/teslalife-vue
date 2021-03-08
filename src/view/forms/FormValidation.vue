@@ -20,235 +20,68 @@
             <FormValidationWrap>
               <VerticalFormStyleWrap>
                 <a-form
-                  :form="form"
-                  @submit="handleSubmit"
-                  name="sDash_validation-form"
-                  layout="vertical"
+                  name="custom-validation"
+                  ref="formRef"
+                  :model="formState"
+                  :rules="rules"
+                  :layout="formState.layout"
+                  @finish="handleFinish"
+                  @finishFailed="handleFinishFailed"
+                  v-bind="formItemLayout"
                 >
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
-                      <a-form-item label="First Name">
+                      <a-form-item label="Field A">
                         <a-input
-                          placeholder="First Name"
-                          name="fname"
-                          v-decorator="[
-                            'fname',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your first name!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="8" :xs="24">
-                      <a-form-item label="Last Name">
-                        <a-input
-                          placeholder="Last Name"
-                          name="lname"
-                          v-decorator="[
-                            'lname',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your last name!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="8" :xs="24">
-                      <a-form-item label="Username">
-                        <a-input
-                          placeholder="Username"
-                          name="username"
-                          v-decorator="[
-                            'username',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your username!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="12" :xs="24">
-                      <a-form-item label="City">
-                        <a-input
-                          name="city"
-                          placeholder="City"
-                          v-decorator="[
-                            'city',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your city!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="6" :xs="24">
-                      <a-form-item label="State">
-                        <a-input
-                          name="state"
-                          placeholder="State"
-                          v-decorator="[
-                            'state',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your state!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="6" :xs="24">
-                      <a-form-item label="Zip">
-                        <a-input
-                          name="zip-code"
-                          placeholder="Zip"
-                          v-decorator="[
-                            'zip-code',
-                            {
-                              rules: [
-                                {
-                                  required: true,
-                                  message: 'Please input your zip!',
-                                },
-                              ],
-                            },
-                          ]"
-                        />
-                      </a-form-item>
-                    </a-col>
-                  </a-row>
-                  <div class="sDash_agree-check">
-                    <a-form-item>
-                      <a-checkbox name="checkbox">
-                        Agree to terms and conditions
-                      </a-checkbox>
-                    </a-form-item>
-                  </div>
-                  <div class="sDash_form-action mt-20">
-                    <a-button type="primary" html-type="submit">
-                      Submit Form
-                    </a-button>
-                  </div>
-                </a-form>
-              </VerticalFormStyleWrap>
-            </FormValidationWrap>
-          </sdCards>
-        </a-col>
-
-        <a-col :xs="24">
-          <sdCards title="Server Side">
-            <FormValidationWrap>
-              <VerticalFormStyleWrap>
-                <a-form name="sDash_vertical-form" layout="vertical">
-                  <a-row :gutter="30">
-                    <a-col :md="8" :xs="24">
-                      <a-form-item
-                        label="First Name"
-                        validate-status="success"
-                        help="Looks good!"
-                      >
-                        <a-input
-                          placeholder="First Name"
-                          name="fname2"
-                          value="Duran"
+                          v-model:value="formState.fieldA"
+                          placeholder="input placeholder"
                         />
                       </a-form-item>
                     </a-col>
                     <a-col :md="8" :xs="24">
                       <a-form-item
-                        label="Last Name"
-                        validate-status="success"
-                        help="Looks good!"
+                        required
+                        has-feedback
+                        label="Password"
+                        name="pass"
                       >
                         <a-input
-                          placeholder="Last Name"
-                          name="lname"
-                          value="Clayton"
+                          v-model:value="formState.pass"
+                          type="password"
+                          autocomplete="off"
                         />
                       </a-form-item>
                     </a-col>
                     <a-col :md="8" :xs="24">
-                      <a-form-item label="Username" validate-status="error">
-                        <a-input placeholder="Username" name="username" />
+                      <a-form-item
+                        has-feedback
+                        label="Confirm"
+                        name="checkPass"
+                      >
+                        <a-input
+                          v-model:value="formState.checkPass"
+                          type="password"
+                          autocomplete="off"
+                        />
                       </a-form-item>
                     </a-col>
-                    <a-col :md="12" :xs="24">
-                      <a-form-item
-                        label="City"
-                        help="Please provide a valid city."
-                        validate-status="error"
-                      >
-                        <a-input name="city" placeholder="City" />
+                    <a-col :md="8" :xs="24">
+                      <a-form-item has-feedback label="Age" name="age">
+                        <a-input-number v-model:value="formState.age" />
                       </a-form-item>
                     </a-col>
-                    <a-col :md="6" :xs="24">
-                      <a-form-item
-                        label="State"
-                        help="Please provide a valid state."
-                        validate-status="error"
-                      >
-                        <a-input name="state" placeholder="State" />
-                      </a-form-item>
-                    </a-col>
-                    <a-col :md="6" :xs="24">
-                      <a-form-item
-                        label="Zip"
-                        help="Please provide a valid zip."
-                        validate-status="error"
-                      >
-                        <a-input name="zip-code" placeholder="Zip" />
-                      </a-form-item>
-                    </a-col>
-                  </a-row>
-                  <div class="sDash_agree-check">
-                    <a-form-item
-                      help="You must agree before submitting."
-                      validate-status="error"
-                    >
-                      <a-checkbox name="checkbox">
-                        Agree to terms and conditions
-                      </a-checkbox>
-                    </a-form-item>
-                  </div>
-                  <a-row>
-                    <a-col :xs="24">
-                      <a-form-item
-                        help="You must agree before submitting."
-                        validate-status="error"
-                      >
-                        <a-input-password name="password" />
-                      </a-form-item>
+                    <a-col :md="8" :xs="24">
+                      
                     </a-col>
                   </a-row>
                   <div class="sDash_form-action mt-20">
-                    <a-button type="primary" html-type="submit">
-                      Submit Form
-                    </a-button>
-                  </div>
+                        <sdButton type="primary" html-type="submit">
+                          Submit Form
+                        </sdButton>
+                        <sdButton @click="resetForm"
+                          >Reset</sdButton
+                        >
+                      </div>
                 </a-form>
               </VerticalFormStyleWrap>
             </FormValidationWrap>
@@ -263,35 +96,119 @@
 import { FormValidationWrap, VerticalFormStyleWrap } from "./overview/Style";
 import { Main } from "../styled";
 
-export default {
+import { defineComponent, reactive, ref, computed } from "vue";
+export default defineComponent({
   name: "Form",
   components: {
     Main,
     FormValidationWrap,
     VerticalFormStyleWrap,
   },
-    
-  data() {
+  setup() {
+    const formState = reactive({
+      layout: "vertical",
+      fieldA: "",
+      fieldB: "",
+      pass: "",
+      checkPass: "",
+      age: undefined,
+    });
+
+    const formItemLayout = computed(() => {
+      const { layout } = formState;
+      return layout === "horizontal"
+        ? {
+            labelCol: {
+              span: 4,
+            },
+            wrapperCol: {
+              span: 14,
+            },
+          }
+        : {};
+    });
+
+    const formRef = ref();
+
+    let checkAge = async (rule, value) => {
+      if (!value) {
+        return Promise.reject("Please input the age");
+      }
+
+      if (!Number.isInteger(value)) {
+        return Promise.reject("Please input digits");
+      } else {
+        if (value < 18) {
+          return Promise.reject("Age must be greater than 18");
+        } else {
+          return Promise.resolve();
+        }
+      }
+    };
+
+    let validatePass = async (rule, value) => {
+      if (value === "") {
+        return Promise.reject("Please input the password");
+      } else {
+        if (formState.checkPass !== "") {
+          formRef.value.validateField("checkPass");
+        }
+
+        return Promise.resolve();
+      }
+    };
+
+    let validatePass2 = async (rule, value) => {
+      if (value === "") {
+        return Promise.reject("Please input the password again");
+      } else if (value !== formState.pass) {
+        return Promise.reject("Two inputs don't match!");
+      } else {
+        return Promise.resolve();
+      }
+    };
+
+    const rules = {
+      pass: [
+        {
+          validator: validatePass,
+          trigger: "change",
+        },
+      ],
+      checkPass: [
+        {
+          validator: validatePass2,
+          trigger: "change",
+        },
+      ],
+      age: [
+        {
+          validator: checkAge,
+          trigger: "change",
+        },
+      ],
+    };
+    const handleFinish = (values) => {
+      console.log(values, formState);
+    };
+
+    const handleFinishFailed = (errors) => {
+      console.log(errors);
+    };
+
+    const resetForm = () => {
+      formRef.value.resetFields();
+    };
+
     return {
-      formLayout: "horizontal",
-      form: this.$form.createForm(this, { name: "coordinated" }),
+      formItemLayout,
+      formState,
+      formRef,
+      rules,
+      handleFinishFailed,
+      handleFinish,
+      resetForm,
     };
   },
-  methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          console.log("Received values of form: ", values);
-        }
-      });
-    },
-    handleSelectChange(value) {
-      console.log(value);
-      this.form.setFieldsValue({
-        note: `Hi, ${value === "male" ? "man" : "lady"}!`,
-      });
-    },
-  },
-};
+});
 </script>
