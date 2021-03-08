@@ -252,44 +252,43 @@ export default defineComponent({
       return attrs.vnodes;
     },
   },
-  methods: {
-    focus() {
-      console.log("focus");
-    },
-    handleChange(value) {
-      console.log(`selected ${value}`);
-    },
-    handleChangeMulti(value) {
-      console.log(`selected ${value}`);
-    },
-    automaticChange(value) {
-      console.log(`selected ${value}`);
-    },
-    popupScroll() {
-      console.log("popupScroll");
-    },
-    tagChange(value) {
-      console.log(`selected ${value}`);
-    },
-    groupChange(value) {
-      console.log(`selected ${value}`);
-    },
-  },
   setup() {
+    const focus = () => {
+      console.log("focus");
+    };
+
+    const handleChange = (value) => {
+      console.log(`selected ${value}`);
+    };
+    const handleChangeMulti = (value) => {
+      console.log(`selected ${value}`);
+    };
+    const automaticChange = (value) => {
+      console.log(`selected ${value}`);
+    };
+
+    const popupScroll = () => {
+      console.log("popupScroll");
+    };
+
     const items = ref(["jack", "lucy"]);
     const value = ref("lucy");
+
     const addItem = () => {
       console.log("addItem");
       items.value.push(`New item ${index++}`);
     };
+
     const valueCountry = ref(["china"]);
     watch(valueCountry, (val) => {
       console.log(`selected:`, val);
     });
+
     const selectedItems = ref([]);
     const filteredOptions = computed(() =>
       OPTIONS.filter((o) => !selectedItems.value.includes(o))
     );
+
     const province = provinceData[0];
     const state = reactive({
       province,
@@ -300,16 +299,30 @@ export default defineComponent({
     const cities = computed(() => {
       return cityData[state.province];
     });
+
     watch(
       () => state.province,
       (val) => {
         state.secondCity = state.cityData[val][0];
       }
     );
+    const tagChange = (value) => {
+      console.log(`selected ${value}`);
+    };
+    const groupChange = (value) => {
+      console.log(`selected ${value}`);
+    };
     return {
+      focus,
+      handleChange,
+      handleChangeMulti,
+      tagChange,
+      groupChange,
+      automaticChange,
       value1: ref("lucy"),
       value2: ref("lucy"),
       value3: ref("lucy"),
+      popupScroll,
       size: ref("default"),
       value4: ref("a1"),
       value5: ref(["a1", "b2"]),
