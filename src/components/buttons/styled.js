@@ -124,8 +124,8 @@ const ButtonStyled = Styled(Button, props)`
     font-weight: 500 !important;
     box-shadow: 0 0 !important;
     &:hover, &:focus {
-        background: ${({ type, theme }) => type !== 'default' && theme[`${type}-hover`]+ " !important"};
-        color: ${({ type }) => (type !== 'default' ? '#ffffff' : '#5A5F7D')} !important;
+        background: ${({ type, theme }) => (type !== 'default' && type !=='white') && theme[`${type}-hover`]+ " !important"};
+        color: ${({ type }) => type !== 'default' && type !=='white' ? '#ffffff !important' : '#5A5F7D !important'};
     }
     i,
     svg,

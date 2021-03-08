@@ -4,7 +4,7 @@
       <sdCards v-if="forcastOverviewState !== null" title="Facebook Overview">
         <template #button>
           <div class="card-radio">
-            <a-radio-group onChange="{forcastOverview}" defaultValue="today">
+            <a-radio-group onChange="{forcastOverview}" v-model:value="value">
               <a-radio-button value="today">Today</a-radio-button>
               <a-radio-button value="week">Week</a-radio-button>
               <a-radio-button value="month">Month</a-radio-button>
@@ -232,6 +232,7 @@ export default {
   },
   data() {
     return {
+      value: "today",
       height: window.innerWidth <= 1199 ? 100 : 165,
       areaChartOption: {
         maintainAspectRatio: true,
