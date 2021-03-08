@@ -44,6 +44,11 @@ export default [
     name: "leaflet",
     component: () => import(/* webpackChunkName: "Leaflet" */"@/view/maps/Leaflet.vue"),
   },
+  {
+    path: "/forms/form-validation",
+    name: "formValidation",
+    component: () => import("@/view/forms/FormValidation.vue"),
+  },
   /*
   {
     path: "/maps/vector",
@@ -55,7 +60,6 @@ export default [
     name: "formValidation",
     component: () => import("@/view/forms/FormValidation.vue"),
   },
-  
   {
     path: "/chart/google-chart",
     name: "googleChart",

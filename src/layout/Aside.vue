@@ -379,7 +379,7 @@
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/404">
-            404
+             404
           </router-link>
         </span>
       </a-menu-item>

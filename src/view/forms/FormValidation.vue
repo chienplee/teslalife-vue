@@ -270,7 +270,7 @@ export default {
     FormValidationWrap,
     VerticalFormStyleWrap,
   },
-
+    
   data() {
     return {
       formLayout: "horizontal",
