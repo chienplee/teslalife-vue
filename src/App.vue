@@ -7,13 +7,28 @@
       darkMode,
     }"
   >
-    <WithAdminLayout />
+    <Suspense>
+      <template #default>
+        <!-- The component I want to render -->
+        <WithAdminLayout />
+      </template>
+      <template #fallback>
+        <!-- Fallback component shown while my component is not ready -->
+        <div class="spin">
+          <a-spin />
+        </div>
+      </template>
+    </Suspense>
   </ThemeProvider>
 </template>
 <script>
 import { ThemeProvider } from "vue3-styled-components";
 import { theme } from "./config/theme/themeVariables";
-import WithAdminLayout from "./layout/withAdminLayout";
+import { defineAsyncComponent } from "vue";
+
+const WithAdminLayout = defineAsyncComponent(() =>
+  import("./layout/withAdminLayout")
+);
 
 export default {
   name: "App",

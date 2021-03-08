@@ -1,194 +1,202 @@
 import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from "vue-router";
 import FeaturesRoutes from "./FeaturesRoutes";
 import PageRoutes from "./PageRoutes";
-import {defineAsyncComponent  } from 'vue';
-
 
   const routes = [
     {
       path: "/",
       name: "dashboard",
-      component: defineAsyncComponent(() => import("@/view/dashboard")),
+      component: () => import(/* webpackChunkName: "Home" */"@/view/dashboard"),
     },    
     {
       path: "/components/alerts",
       name: "alerts",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Alerts.vue")),
+      component: () => import(/* webpackChunkName: "Alerts" */"@/view/uiElements/Alerts.vue"),
     },
     {
       path: "/components/avatar",
       name: "avatar",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Avatar.vue")),
+      component: () => import(/* webpackChunkName: "Avatar" */"@/view/uiElements/Avatar.vue"),
     },
     {
       path: "/components/badge",
       name: "badge",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Badge.vue")),
+      component: () => import(/* webpackChunkName: "Badge" */"@/view/uiElements/Badge.vue"),
     },
     {
       path: "/components/breadcrumb",
       name: "breadcrumb",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Breadcrumb.vue")),
+      component: () => import(/* webpackChunkName: "Breadcrumb" */"@/view/uiElements/Breadcrumb.vue"),
     },
     {
       path: "/components/calendar",
       name: "calendar",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Calendar")),
+      component: () => import(/* webpackChunkName: "Calendar" */"@/view/uiElements/Calendar"),
     },
     {
       path: "/components/cards",
       name: "cards",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Cards")),
+      component: () => import(/* webpackChunkName: "Cards" */"@/view/uiElements/Cards"),
     },    
     {
       path: "/components/button",
       name: "button",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Button.vue")),
+      component: () => import(/* webpackChunkName: "Button" */"@/view/uiElements/Button.vue"),
     },
     {
       path: "/components/checkbox",
       name: "checkbox",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Checkbox")),
+      component: () => import(/* webpackChunkName: "checkbox" */"@/view/uiElements/Checkbox"),
     },
     {
       path: "/components/collapse",
       name: "collapse",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Collapse")),
+      component: () => import(/* webpackChunkName: "Collapse" */"@/view/uiElements/Collapse"),
     },
     {
       path: "/components/comments",
       name: "comments",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Comments")),
+      component: () => import(/* webpackChunkName: "Comments" */"@/view/uiElements/Comments"),
     },
     {
       path: "/components/dash-base",
       name: "dash-base",
-      component: defineAsyncComponent(() => import("@/view/uiElements/DashboardBase")),
+      component: () => import(/* webpackChunkName: "DashboardBase" */"@/view/uiElements/DashboardBase"),
     },
     {
       path: "/components/datePicker",
       name: "datePicker",
-      component: defineAsyncComponent(() => import("@/view/uiElements/DatePicker")),
+      component: () => import(/* webpackChunkName: "DatePicker" */"@/view/uiElements/DatePicker"),
     },
     {
       path: "/components/drawer",
       name: "drawer",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Drawer")),
+      component: () => import(/* webpackChunkName: "Drawer" */"@/view/uiElements/Drawer"),
     },
     {
       path: "/components/empty",
       name: "empty",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Empty")),
+      component: () => import(/* webpackChunkName: "Empty" */"@/view/uiElements/Empty"),
     },
     {
       path: "/components/grid",
       name: "grid",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Grid")),
+      component: () => import(/* webpackChunkName: "Grid" */"@/view/uiElements/Grid"),
     },
     {
       path: "/components/dropdown",
       name: "dropdown",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Dropdown")),
+      component: () => import(/* webpackChunkName: "Dropdown" */"@/view/uiElements/Dropdown"),
     },
     {
       path: "/components/input",
       name: "input",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Input")),
+      component: () => import(/* webpackChunkName: "Input" */"@/view/uiElements/Input"),
     },
     {
       path: "/components/list",
       name: "list",
-      component: defineAsyncComponent(() => import("@/view/uiElements/List")),
+      component: () => import(/* webpackChunkName: "List" */"@/view/uiElements/List"),
     },
     {
       path: "/components/menu",
       name: "menu",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Menu")),
+      component: () => import(/* webpackChunkName: "Menu" */"@/view/uiElements/Menu"),
     },
     {
       path: "/components/message",
       name: "message",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Message")),
+      component: () => import(/* webpackChunkName: "Message" */"@/view/uiElements/Message"),
     },
     {
       path: "/components/autoComplete",
       name: "autoComplete",
-      component: defineAsyncComponent(() => import("@/view/uiElements/AutoComplete")),
+      component: () => import(/* webpackChunkName: "auto-complete" */"@/view/uiElements/AutoComplete"),
+    },
+    {
+      path: "/components/carousel",
+      name: "carousel",
+      component: () => import(/* webpackChunkName: "carousel" */"@/view/uiElements/Carousel"),
     },
     {
       path: "/components/cascader",
       name: "cascader",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Cascader")),
+      component: () => import(/* webpackChunkName: "cascader" */"@/view/uiElements/Cascader"),
     },
     {
       path: "/components/modal",
       name: "modal",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Modal")),
+      component: () => import(/* webpackChunkName: "Modal" */"@/view/uiElements/Modal"),
     },
     {
       path: "/components/notification",
       name: "notification",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Notification")),
+      component: () => import(/* webpackChunkName: "Notification" */"@/view/uiElements/Notification"),
     },
     {
       path: "/components/pageHeader",
       name: "pageHeader",
-      component: defineAsyncComponent(() => import("@/view/uiElements/PageHeader")),
+      component: () => import(/* webpackChunkName: "Page-header" */"@/view/uiElements/PageHeader"),
     },
     {
       path: "/components/pagination",
       name: "pagination",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Pagination")),
+      component: () => import(/* webpackChunkName: "Pagination" */"@/view/uiElements/Pagination"),
     },
     {
       path: "/components/popConfirm",
       name: "popConfirm",
-      component: defineAsyncComponent(() => import("@/view/uiElements/PopConfirm")),
+      component: () => import(/* webpackChunkName: "PopConfirm" */"@/view/uiElements/PopConfirm"),
     },
     {
       path: "/components/popover",
       name: "popover",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Popover")),
+      component: () => import(/* webpackChunkName: "Popover" */"@/view/uiElements/Popover"),
     },
     {
       path: "/components/progressbar",
       name: "progressbar",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Progressbar")),
+      component: () => import(/* webpackChunkName: "ProgressBar" */"@/view/uiElements/Progressbar"),
     },
     {
       path: "/components/radio",
       name: "radio",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Radio")),
+      component: () => import(/* webpackChunkName: "Radio" */"@/view/uiElements/Radio"),
     },
     {
       path: "/components/rate",
       name: "rate",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Rate")),
+      component: () => import(/* webpackChunkName: "Rate" */"@/view/uiElements/Rate"),
     },
     {
       path: "/components/result",
       name: "result",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Result")),
+      component: () => import(/* webpackChunkName: "Result" */"@/view/uiElements/Result"),
     },
     {
       path: "/components/select",
       name: "select",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Select")),
+      component: () => import(/* webpackChunkName: "Select" */"@/view/uiElements/Select"),
     },
     {
       path: "/components/skeleton",
       name: "skeleton",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Skeleton")),
+      component: () => import(/* webpackChunkName: "Skeleton" */"@/view/uiElements/Skeleton"),
+    },
+    {
+      path: "/components/slider",
+      name: "slider",
+      component: () => import(/* webpackChunkName: "Slider" */"@/view/uiElements/Slider"),
     },
     {
       path: "/components/spiner",
       name: "spiner",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Spiner")),
+      component: () => import(/* webpackChunkName: "Spiner" */"@/view/uiElements/Spiner"),
     },
     {
       path: "/components/statistic",
       name: "statistic",
-      component: defineAsyncComponent(() => import("@/view/uiElements/Statistic")),
+      component: () => import(/* webpackChunkName: "Statistic" */"@/view/uiElements/Statistic"),
     },    
      
     /*
@@ -205,7 +213,7 @@ import {defineAsyncComponent  } from 'vue';
     {
       path: "/tables/basic",
       name: "table",
-      component: defineAsyncComponent(() => import("@/view/table/table.vue")),
+      component: () => import("@/view/table/table.vue"),
     },
     */    
     ...PageRoutes,

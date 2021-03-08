@@ -2,47 +2,47 @@ export default [
   {
     path: "/forms/form-layout",
     name: "formLayout",
-    component: () => import("@/view/forms/FormLayout.vue"),
+    component: () => import(/* webpackChunkName: "FormLayout" */"@/view/forms/FormLayout.vue"),
   },
   {
     path: "/forms/form-elements",
     name: "formElements",
-    component: () => import("@/view/forms/FormElements.vue"),
+    component: () => import(/* webpackChunkName: "FormElements" */"@/view/forms/FormElements.vue"),
   },
   {
     path: "/forms/form-components",
     name: "formComponents",
-    component: () => import("@/view/forms/FormComponents.vue"),
+    component: () => import(/* webpackChunkName: "FormComponents" */"@/view/forms/FormComponents.vue"),
   },
   {
     path: "/chart/chart-js",
     name: "chartJs",
-    component: () => import("@/view/charts/ChartJs.vue"),
+    component: () => import(/* webpackChunkName: "ChartJs" */"@/view/charts/ChartJs.vue"),
   },
   {
     path: "/icons/featherIcons",
     name: "featherIcons",
-    component: () => import("@/view/icons/FeatherIcons.vue"),
+    component: () => import(/* webpackChunkName: "FeatherIcons" */"@/view/icons/FeatherIcons.vue"),
   },
   {
     path: "/icons/antdIcons",
     name: "antdIcons",
-    component: () => import("@/view/icons/AntdIcons.vue"),
+    component: () => import(/* webpackChunkName: "AntdIcons" */"@/view/icons/AntdIcons.vue"),
   },
   {
     path: "/icons/fa",
     name: "fa",
-    component: () => import("@/view/icons/FaIcons.vue"),
+    component: () => import(/* webpackChunkName: "FaIcons" */"@/view/icons/FaIcons.vue"),
   },
   {
     path: "/maps/google",
     name: "google",
-    component: () => import("@/view/maps/GoogleMaps.vue"),
+    component: () => import(/* webpackChunkName: "GoogleMaps" */"@/view/maps/GoogleMaps.vue"),
   },
   {
     path: "/maps/leaflet",
     name: "leaflet",
-    component: () => import("@/view/maps/Leaflet.vue"),
+    component: () => import(/* webpackChunkName: "Leaflet" */"@/view/maps/Leaflet.vue"),
   },
   /*
   {

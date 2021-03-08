@@ -151,17 +151,18 @@
         <Layout class="atbd-main-layout">
           <Content>
             <Suspense>
-              <template v-slot:fallback>
-                <div class="spin">
-                  <sdCards headless :body="{ height: '100vh' }">
-                    <a-spin />
-                  </sdCards>
-                </div>
-              </template>
-              <template v-slot:default>
+              <template #default>
+                <!-- The component I want to render -->
                 <router-view></router-view>
               </template>
+              <template #fallback>
+                <!-- Fallback component shown while my component is not ready -->
+                <div class="spin">
+                  <a-spin />
+                </div>
+              </template>
             </Suspense>
+
             <Footer
               class="admin-footer"
               :style="{
