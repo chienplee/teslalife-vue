@@ -205,7 +205,6 @@ import PageRoutes from "./PageRoutes";
       name: "carousel",
       component: defineAsyncComponent(() => import("@/view/uiElements/Carousel")),
     },
-   
     {
       path: "/components/slider",
       name: "slider",

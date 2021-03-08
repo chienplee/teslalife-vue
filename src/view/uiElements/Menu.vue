@@ -19,15 +19,15 @@
           <sdCards title="Top Navigation">
             <a-menu v-model="current" mode="horizontal">
               <a-menu-item key="mail">
-                <sdFeatherIcons type="mail" size="14" />
+                <MailOutlined />
                 Navigation One
               </a-menu-item>
               <a-menu-item key="app" disabled>
-                <sdFeatherIcons type="grid" size="14" />
+                <AppstoreOutlined />
               </a-menu-item>
               <a-sub-menu>
                 <span class="submenu-title-wrapper">
-                  <sdFeatherIcons type="settings" size="14" />
+                  <SettingOutlined />
                   Navigation Three - Submenu</span
                 >
                 <a-menu-item-group title="Item 1">
@@ -54,7 +54,7 @@
           <sdCards title="Vertical Menu">
             <a-menu style="width: 256px" mode="vertical" @click="handleClick">
               <a-menu-item key="1">
-                <sdFeatherIcons type="mail" size="14" />
+                <MailOutlined />
                 Navigation One
               </a-menu-item>
               <a-menu-item key="2">
@@ -63,11 +63,7 @@
               </a-menu-item>
               <a-sub-menu key="sub1">
                 <template v-slot:title>
-                  <span
-                    ><sdFeatherIcons type="grid" size="14" /><span
-                      >Navigation Three</span
-                    ></span
-                  >
+                  <span><AppstoreOutlined /><span>Navigation Three</span></span>
                 </template>
                 <a-menu-item key="3"> Option 3 </a-menu-item>
                 <a-menu-item key="4"> Option 4 </a-menu-item>
@@ -78,11 +74,7 @@
               </a-sub-menu>
               <a-sub-menu key="sub2">
                 <template v-slot:title>
-                  <span
-                    ><sdFeatherIcons type="settings" size="14" /><span
-                      >Navigation Four</span
-                    ></span
-                  >
+                  <span><SettingOutlined /><span>Navigation Four</span></span>
                 </template>
                 <a-menu-item key="7"> Option 7 </a-menu-item>
                 <a-menu-item key="8"> Option 8 </a-menu-item>
@@ -102,11 +94,7 @@
             >
               <a-sub-menu key="sub1">
                 <template v-slot:title>
-                  <span
-                    ><sdFeatherIcons type="mail" size="14" /><span
-                      >Navigation One</span
-                    ></span
-                  >
+                  <span><MailOutlined /><span>Navigation One</span></span>
                 </template>
                 <a-menu-item key="1"> Option 1 </a-menu-item>
                 <a-menu-item key="2"> Option 2 </a-menu-item>
@@ -115,11 +103,7 @@
               </a-sub-menu>
               <a-sub-menu key="sub2">
                 <template v-slot:title>
-                  <span
-                    ><sdFeatherIcons type="grid" size="14" /><span
-                      >Navigation Two</span
-                    ></span
-                  >
+                  <span><AppstoreOutlined /><span>Navigation Two</span></span>
                 </template>
                 <a-menu-item key="5"> Option 5 </a-menu-item>
                 <a-menu-item key="6"> Option 6 </a-menu-item>
@@ -130,11 +114,7 @@
               </a-sub-menu>
               <a-sub-menu key="sub4">
                 <template v-slot:title>
-                  <span
-                    ><sdFeatherIcons type="settings" size="14" /><span
-                      >Navigation Three</span
-                    ></span
-                  >
+                  <span><SettingOutlined /><span>Navigation Three</span></span>
                 </template>
                 <a-menu-item key="9"> Option 9 </a-menu-item>
                 <a-menu-item key="10"> Option 10 </a-menu-item>
@@ -150,12 +130,20 @@
 </template>
 
 <script>
+import {
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from "@ant-design/icons-vue";
 import { Main } from "../styled";
 
 export default {
   name: "Menu",
   components: {
     Main,
+    MailOutlined,
+    AppstoreOutlined,
+    SettingOutlined,
   },
   data() {
     return {
