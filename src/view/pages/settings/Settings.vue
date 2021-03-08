@@ -23,7 +23,16 @@
         <a-col :xxl="18" :lg="16" :md="14" :xs="24">
           <SettingWrapper>
             <CoverSection />
-            <router-view></router-view>
+            <Suspense>
+              <template #default>
+                <router-view></router-view>
+              </template>
+              <template #fallback>
+                <div class="spin">
+                  <a-spin />
+                </div>
+              </template>
+            </Suspense>
           </SettingWrapper>
         </a-col>
       </a-row>

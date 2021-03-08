@@ -150,7 +150,18 @@
         </template>
         <Layout class="atbd-main-layout">
           <Content>
-            <router-view></router-view>
+            <Suspense>
+              <template v-slot:fallback>
+                <div class="spin">
+                  <sdCards headless :body="{ height: '100vh' }">
+                    <a-spin />
+                  </sdCards>
+                </div>
+              </template>
+              <template v-slot:default>
+                <router-view></router-view>
+              </template>
+            </Suspense>
             <Footer
               class="admin-footer"
               :style="{

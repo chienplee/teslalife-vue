@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Blank Page">
+    <sdPageHeader title="Social Media Dashboard">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -14,11 +14,9 @@
       </template>
     </sdPageHeader>
     <Main>
-      <a-row :gutter="25">
-        <a-col :sm="24" :xs="24">
-          <sdCards headless>
-            <sdHeading as="h3">Skeleton Page</sdHeading>
-          </sdCards>
+      <a-row justify="center" :gutter="25">
+        <a-col :xxl="8" :lg="24" :xs="24">
+          <SocialMediaOverview />
         </a-col>
       </a-row>
     </Main>
@@ -27,11 +25,13 @@
 
 <script>
 import { Main } from "../styled";
+import SocialMediaOverview from "./overview/index/SocialMediaOverview";
 
 export default {
   name: "BlankPage",
   components: {
     Main,
+    SocialMediaOverview,
   },
 };
 </script>
