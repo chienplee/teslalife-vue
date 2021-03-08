@@ -175,18 +175,10 @@
               </p>
             </sdModal>
             <a-space>
-              <sdButton type="info" @click="info">
-                Info
-              </sdButton>
-              <sdButton type="success" @click="success">
-                Success
-              </sdButton>
-              <sdButton type="error" @click="error">
-                Error
-              </sdButton>
-              <sdButton type="warning" @click="warning">
-                Warning
-              </sdButton>
+              <sdButton type="info" @click="info"> Info </sdButton>
+              <sdButton type="success" @click="success"> Success </sdButton>
+              <sdButton type="error" @click="error"> Error </sdButton>
+              <sdButton type="warning" @click="warning"> Warning </sdButton>
             </a-space>
           </sdCards>
         </a-col>
@@ -198,6 +190,7 @@
 <script>
 import { Main } from "../styled";
 import { Modal } from "ant-design-vue";
+import { h } from "vue";
 
 export default {
   name: "Modal",
@@ -235,14 +228,16 @@ export default {
       this.modalType = type;
     },
     info() {
-      const h = this.$createElement;
+      //const h = this.$createElement;
       Modal.info({
         title: "This is a notification message",
         content: h("div", {}, [
           h("p", "some messages...some messages..."),
           h("p", "some messages...some messages..."),
         ]),
-        onOk() {},
+        onOk() {
+          console.log("ok");
+        },
       });
     },
     success() {
@@ -256,7 +251,7 @@ export default {
           </div>
         ),
       });
-    }, 
+    },
 
     error() {
       Modal.error({

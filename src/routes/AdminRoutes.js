@@ -2,7 +2,6 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
 import FeaturesRoutes from "./FeaturesRoutes";
 import PageRoutes from "./PageRoutes";
 
-
   const routes = [
     {
       path: "/",
@@ -109,98 +108,109 @@ import PageRoutes from "./PageRoutes";
       name: "message",
       component: () => import(/* webpackChunkName: "Message" */"@/view/uiElements/Message"),
     },
-     
-    /*
     {
       path: "/components/autoComplete",
       name: "autoComplete",
-      component: () => import("@/view/uiElements/AutoComplete"),
+      component: () => import(/* webpackChunkName: "auto-complete" */"@/view/uiElements/AutoComplete"),
     },
     {
       path: "/components/carousel",
       name: "carousel",
-      component: () => import("@/view/uiElements/Carousel"),
+      component: () => import(/* webpackChunkName: "carousel" */"@/view/uiElements/Carousel"),
     },
     {
       path: "/components/cascader",
       name: "cascader",
-      component: () => import("@/view/uiElements/Cascader"),
+      component: () => import(/* webpackChunkName: "cascader" */"@/view/uiElements/Cascader"),
     },
     {
       path: "/components/modal",
       name: "modal",
-      component: () => import("@/view/uiElements/Modal"),
+      component: () => import(/* webpackChunkName: "Modal" */"@/view/uiElements/Modal"),
     },
     {
       path: "/components/notification",
       name: "notification",
-      component: () => import("@/view/uiElements/Notification"),
+      component: () => import(/* webpackChunkName: "Notification" */"@/view/uiElements/Notification"),
     },
     {
       path: "/components/pageHeader",
       name: "pageHeader",
-      component: () => import("@/view/uiElements/PageHeader"),
+      component: () => import(/* webpackChunkName: "Page-header" */"@/view/uiElements/PageHeader"),
     },
     {
       path: "/components/pagination",
       name: "pagination",
-      component: () => import("@/view/uiElements/Pagination"),
+      component: () => import(/* webpackChunkName: "Pagination" */"@/view/uiElements/Pagination"),
     },
     {
       path: "/components/popConfirm",
       name: "popConfirm",
-      component: () => import("@/view/uiElements/PopConfirm"),
+      component: () => import(/* webpackChunkName: "PopConfirm" */"@/view/uiElements/PopConfirm"),
     },
     {
       path: "/components/popover",
       name: "popover",
-      component: () => import("@/view/uiElements/Popover"),
+      component: () => import(/* webpackChunkName: "Popover" */"@/view/uiElements/Popover"),
     },
     {
       path: "/components/progressbar",
       name: "progressbar",
-      component: () => import("@/view/uiElements/Progressbar"),
+      component: () => import(/* webpackChunkName: "ProgressBar" */"@/view/uiElements/Progressbar"),
     },
     {
       path: "/components/radio",
       name: "radio",
-      component: () => import("@/view/uiElements/Radio"),
+      component: () => import(/* webpackChunkName: "Radio" */"@/view/uiElements/Radio"),
     },
     {
       path: "/components/rate",
       name: "rate",
-      component: () => import("@/view/uiElements/Rate"),
+      component: () => import(/* webpackChunkName: "Rate" */"@/view/uiElements/Rate"),
     },
     {
       path: "/components/result",
       name: "result",
-      component: () => import("@/view/uiElements/Result"),
+      component: () => import(/* webpackChunkName: "Result" */"@/view/uiElements/Result"),
     },
     {
       path: "/components/select",
       name: "select",
-      component: () => import("@/view/uiElements/Select"),
+      component: () => import(/* webpackChunkName: "Select" */"@/view/uiElements/Select"),
     },
     {
       path: "/components/skeleton",
       name: "skeleton",
-      component: () => import("@/view/uiElements/Skeleton"),
+      component: () => import(/* webpackChunkName: "Skeleton" */"@/view/uiElements/Skeleton"),
     },
     {
       path: "/components/slider",
       name: "slider",
-      component: () => import("@/view/uiElements/Slider"),
+      component: () => import(/* webpackChunkName: "Slider" */"@/view/uiElements/Slider"),
     },
     {
       path: "/components/spiner",
       name: "spiner",
-      component: () => import("@/view/uiElements/Spiner"),
+      component: () => import(/* webpackChunkName: "Spiner" */"@/view/uiElements/Spiner"),
     },
     {
       path: "/components/statistic",
       name: "statistic",
-      component: () => import("@/view/uiElements/Statistic"),
+      component: () => import(/* webpackChunkName: "Statistic" */"@/view/uiElements/Statistic"),
     },    
+     
+    /*
+    {
+      path: "/components/carousel",
+      name: "carousel",
+      component: defineAsyncComponent(() => import("@/view/uiElements/Carousel")),
+    },
+   
+    {
+      path: "/components/slider",
+      name: "slider",
+      component: defineAsyncComponent(() => import("@/view/uiElements/Slider")),
+    },
     {
       path: "/tables/basic",
       name: "table",

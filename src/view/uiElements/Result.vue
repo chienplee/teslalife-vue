@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Results">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -65,13 +67,13 @@
                   >
                 </p>
                 <p>
-                  <a-icon :style="{ color: 'red' }" type="close-circle" /> Your
-                  account has been frozen
+                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account
+                  has been frozen
                   <a>Thaw immediately &gt;</a>
                 </p>
                 <p>
-                  <a-icon :style="{ color: 'red' }" type="close-circle" /> Your
-                  account is not yet eligible to apply <a>Apply Unlock &gt;</a>
+                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account
+                  is not yet eligible to apply <a>Apply Unlock &gt;</a>
                 </p>
               </div>
             </a-result>
@@ -115,13 +117,13 @@
 
 <script>
 import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
 import { mapGetters } from "vuex";
+import { CloseCircleOutlined } from "@ant-design/icons-vue";
 export default {
   name: "Result",
   components: {
-    PlusIcon,
     Main,
+    CloseCircleOutlined,
   },
   computed: {
     ...mapGetters(["rtl"]),

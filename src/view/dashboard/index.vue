@@ -16,7 +16,16 @@
     <Main>
       <a-row justify="center" :gutter="25">
         <a-col :xxl="8" :lg="24" :xs="24">
-          <SocialMediaOverview />
+          <Suspense>
+            <template #default>
+              <SocialMediaOverview />
+            </template>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton active />
+              </sdCards>
+            </template>
+          </Suspense>
         </a-col>
       </a-row>
     </Main>
@@ -25,7 +34,10 @@
 
 <script>
 import { Main } from "../styled";
-import SocialMediaOverview from "./overview/index/SocialMediaOverview";
+import { defineAsyncComponent } from "vue";
+const SocialMediaOverview = defineAsyncComponent(() =>
+  import("./overview/index/SocialMediaOverview")
+);
 
 export default {
   name: "BlankPage",
