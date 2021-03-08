@@ -33,5 +33,6 @@ export default {
     Main,
     SocialMediaOverview,
   },
+  async setup() {},
 };
 </script>

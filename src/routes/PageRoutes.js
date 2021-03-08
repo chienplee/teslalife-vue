@@ -2,70 +2,70 @@ export default [
     {
         path: "/starter",
         name: "starter",
-        component: () => import("@/view/pages/BlankPage.vue"),
+        component: () => import(/* webpackChunkName: "Blank" */"@/view/pages/BlankPage.vue"),
     },
     {
         path: "/page/testimonials",
         name: "testimonials",
-        component: () => import("@/view/pages/Testimonials.vue"),
+        component: () => import(/* webpackChunkName: "Testimonials" */"@/view/pages/Testimonials.vue"),
     },
     {
         path: "/page/faqs",
         name: "faq`s",
-        component: () => import("@/view/pages/Faq.vue"),
+        component: () => import(/* webpackChunkName: "Faq" */"@/view/pages/Faq.vue"),
     },
     {
         path: "/page/gallery",
         name: "gallery",
-        component: () => import("@/view/pages/Gallery.vue"),
+        component: () => import(/* webpackChunkName: "Gallery" */"@/view/pages/Gallery.vue"),
     },
     {
         path: "/page/pricing",
         name: "pricing",
-        component: () => import("@/view/pages/PricingTable.vue"),
+        component: () => import(/* webpackChunkName: "PricingTable" */"@/view/pages/PricingTable.vue"),
     },
     {
         path: "/page/banners",
         name: "banners",
-        component: () => import("@/view/pages/Banners.vue"),
+        component: () => import(/* webpackChunkName: "Banners" */"@/view/pages/Banners.vue"),
     },
     {
         path: "/page/404",
         name: "404",
-        component: () => import("@/view/pages/404.vue"),
+        component: () => import(/* webpackChunkName: "404" */"@/view/pages/404.vue"),
     },
     {
         path: "/:catchAll(.*)",
-        component: () => import("@/view/pages/404.vue"),
+        component: () => import(/* webpackChunkName: "404" */"@/view/pages/404.vue"),
       },
       {
         path: "/page/profile-settings",
         name: "profileSettings",
-        component: () => import("@/view/pages/settings/Settings.vue"),
+        component: () => import(/* webpackChunkName: "Settings" */"@/view/pages/settings/Settings.vue"),
         children: [
             {
                 path: "/page/profile-settings",
-                component: () => import("@/view/pages/settings/overview/Profile.vue")
+                component: () => import(/* webpackChunkName: "Profile" */"@/view/pages/settings/overview/Profile.vue")
             },
             {
                 path: "/page/profile-settings/profile",
-                component: () => import("@/view/pages/settings/overview/Profile.vue")
+                component: () => import(/* webpackChunkName: "Profile" */"@/view/pages/settings/overview/Profile.vue")
             },
             {
                 path: "/page/profile-settings/account",
-                component: () => import("@/view/pages/settings/overview/Account.vue")
+                component: () => import(/* webpackChunkName: "Account" */"@/view/pages/settings/overview/Account.vue")
             },
             {
                 path: "/page/profile-settings/password",
-                component: () => import("@/view/pages/settings/overview/Password.vue")
+                component: () => import(/* webpackChunkName: "Password" */"@/view/pages/settings/overview/Password.vue")
             },
             {
                 path: "/page/profile-settings/social",
-                component: () => import("@/view/pages/settings/overview/SocialProfile.vue")
+                component: () => import(/* webpackChunkName: "Social" */"@/view/pages/settings/overview/SocialProfile.vue")
             },
             {
                 path: "/page/profile-settings/notification",
-                component: () => import("@/view/pages/settings/overview/Notification.vue")
+                component: () => import(/* webpackChunkName: "Notification" */"@/view/pages/settings/overview/Notification.vue")
             }
         ]
     },
