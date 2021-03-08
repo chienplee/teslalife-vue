@@ -1,10 +1,12 @@
 <template>
   <NotificationWrapper>
     <sdCards>
-      <div slot="caption" class="setting-card-title">
-        <sdHeading as="h4">Notifications</sdHeading>
-        <span>Choose What Notification you will Receive</span>
-      </div>
+      <template v-slot:title>
+        <div class="setting-card-title">
+          <sdHeading as="h4">Notifications</sdHeading>
+          <span>Choose What Notification you will Receive</span>
+        </div>
+      </template>
       <a-row :gutter="15">
         <a-col :xs="24">
           <div class="notification-box-single">
