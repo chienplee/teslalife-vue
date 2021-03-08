@@ -19,56 +19,38 @@
           <sdCards title="Basic">
             <SelectWrapperStyle>
               <a-select
-                default-value="lucy"
+                v-model:value="value1"
                 style="width: 120px"
+                @focus="focus"
+                ref="select"
                 @change="handleChange"
               >
-                <a-select-option value="jack"> Jack </a-select-option>
-                <a-select-option value="lucy"> Lucy </a-select-option>
-                <a-select-option value="disabled" disabled>
-                  Disabled
-                </a-select-option>
-                <a-select-option value="Yiminghe"> yiminghe </a-select-option>
+                <a-select-option value="jack">Jack</a-select-option>
+                <a-select-option value="lucy">Lucy</a-select-option>
+                <a-select-option value="disabled" disabled
+                  >Disabled</a-select-option
+                >
+                <a-select-option value="Yiminghe">yiminghe</a-select-option>
               </a-select>
-              <a-select default-value="lucy" style="width: 120px" disabled>
-                <a-select-option value="lucy"> Lucy </a-select-option>
+              <a-select v-model:value="value2" style="width: 120px" disabled>
+                <a-select-option value="lucy">Lucy</a-select-option>
               </a-select>
-              <a-select default-value="lucy" style="width: 120px" loading>
-                <a-select-option value="lucy"> Lucy </a-select-option>
+              <a-select v-model:value="value3" style="width: 120px" loading>
+                <a-select-option value="lucy">Lucy</a-select-option>
               </a-select>
             </SelectWrapperStyle>
           </sdCards>
-          <sdCards title="Search and select">
-            <a-select
-              show-search
-              placeholder="Select a person"
-              option-filter-prop="children"
-              style="width: 200px"
-              :filter-option="filterOption"
-              @focus="handleFocus"
-              @blur="handleBlur"
-              @change="SearchChange"
-            >
-              <a-select-option value="jack"> Jack </a-select-option>
-              <a-select-option value="lucy"> Lucy </a-select-option>
-              <a-select-option value="tom"> Tom </a-select-option>
-            </a-select>
-          </sdCards>
           <sdCards title="Select Size">
             <SelectRadioStyle>
-              <a-radio-group v-model="size">
-                <a-radio-button value="large"> Large </a-radio-button>
-                <a-radio-button value="default"> Default </a-radio-button>
-                <a-radio-button value="small"> Small </a-radio-button>
+              <a-radio-group v-model:value="size">
+                <a-radio-button value="large">Large</a-radio-button>
+                <a-radio-button value="default">Default</a-radio-button>
+                <a-radio-button value="small">Small</a-radio-button>
               </a-radio-group>
             </SelectRadioStyle>
-            <br /><br />
-            <a-select
-              :size="size"
-              default-value="a1"
-              style="width: 200px"
-              @change="sizeChange"
-            >
+            <br />
+            <br />
+            <a-select :size="size" v-model:value="value4" style="width: 200px">
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
               </a-select-option>
@@ -78,9 +60,8 @@
               mode="multiple"
               :size="size"
               placeholder="Please select"
-              :default-value="['a1', 'b2']"
+              v-model:value="value5"
               style="width: 200px"
-              @change="sizeChange"
               @popupScroll="popupScroll"
             >
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
@@ -92,9 +73,8 @@
               mode="tags"
               :size="size"
               placeholder="Please select"
-              :default-value="['a1', 'b2']"
+              v-model:value="value6"
               style="width: 200px"
-              @change="sizeChange"
             >
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
@@ -102,22 +82,47 @@
             </a-select>
           </sdCards>
           <sdCards title="Custom">
-            <a-select default-value="lucy" style="width: 120px">
-              <template v-slot:dropdownRender:menu>
-                <div>
-                  <v-nodes :vnodes="menu" />
-                  <a-divider style="margin: 4px 0" />
-                  <div
-                    style="padding: 4px 8px; cursor: pointer"
-                    @mousedown="(e) => e.preventDefault()"
-                    @click="addItem"
-                  >
-                    <a-icon type="plus" /> Add item
-                  </div>
+            <a-select v-model:value="value" style="width: 100%">
+              <template #dropdownRender="{ menuNode: menu }">
+                <v-nodes :vnodes="menu" />
+                <a-divider style="margin: 4px 0" />
+                <div
+                  style="padding: 4px 8px; cursor: pointer"
+                  @mousedown="(e) => e.preventDefault()"
+                  @click="addItem"
+                >
+                  <plus-outlined />
+                  Add item
                 </div>
               </template>
               <a-select-option v-for="item in items" :key="item" :value="item">
                 {{ item }}
+              </a-select-option>
+            </a-select>
+            <br />
+            <br />
+            <a-select
+              v-model:value="valueCountry"
+              mode="multiple"
+              style="width: 100%"
+              placeholder="select one country"
+              option-label-prop="label"
+            >
+              <a-select-option value="china" label="China">
+                <span role="img" aria-label="China">🇨🇳</span>
+                China
+              </a-select-option>
+              <a-select-option value="usa" label="USA">
+                <span role="img" aria-label="USA">🇺🇸</span>
+                USA
+              </a-select-option>
+              <a-select-option value="japan" label="Japan">
+                <span role="img" aria-label="Japan">🇯🇵</span>
+                Japan
+              </a-select-option>
+              <a-select-option value="korea" label="Korea">
+                <span role="img" aria-label="Korea">🇰🇷</span>
+                Korea
               </a-select-option>
             </a-select>
           </sdCards>
@@ -125,9 +130,8 @@
             <a-select
               mode="multiple"
               placeholder="Inserted are removed"
-              :value="selectedItems"
+              v-model:value="selectedItems"
               style="width: 100%"
-              @change="alreadyChange"
             >
               <a-select-option
                 v-for="item in filteredOptions"
@@ -142,19 +146,12 @@
         <a-col :md="12" xs="24">
           <sdCards title="Select Coordinate">
             <SelectWrapperStyle>
-              <a-select
-                :default-value="provinceData[0]"
-                style="width: 120px"
-                @change="handleProvinceChange"
-              >
-                <a-select-option
-                  v-for="province in provinceData"
-                  :key="province"
-                >
-                  {{ province }}
+              <a-select v-model:value="province" style="width: 120px">
+                <a-select-option v-for="pro in provinceData" :key="pro">
+                  {{ pro }}
                 </a-select-option>
               </a-select>
-              <a-select v-model="secondCity" style="width: 120px">
+              <a-select v-model:value="secondCity" style="width: 120px">
                 <a-select-option v-for="city in cities" :key="city">
                   {{ city }}
                 </a-select-option>
@@ -164,18 +161,20 @@
           <sdCards title="Multiple select">
             <a-select
               mode="multiple"
-              :default-value="['a1', 'b2']"
+              v-model:value="value8"
               style="width: 100%"
               placeholder="Please select"
-              @change="multipleChange"
+              @change="handleChangeMulti"
             >
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
               </a-select-option>
             </a-select>
           </sdCards>
+
           <sdCards title="Tags select">
             <a-select
+              v-model:value="tag"
               mode="tags"
               style="width: 100%"
               placeholder="Tags Mode"
@@ -186,26 +185,33 @@
               </a-select-option>
             </a-select>
           </sdCards>
+
           <sdCards title="Group">
             <a-select
-              default-value="lucy"
-              style="width: 200px"
+              v-model:value="groupValue"
+              style="width: 100%"
               @change="groupChange"
             >
               <a-select-opt-group>
-                <template v-slot:label>
-                  <span><a-icon type="user" />Manager</span>
+                <template #label>
+                  <span>
+                    <user-outlined />
+                    Manager
+                  </span>
                 </template>
-                <a-select-option value="jack"> Jack </a-select-option>
-                <a-select-option value="lucy"> Lucy </a-select-option>
+                <a-select-option value="jack">Jack</a-select-option>
+                <a-select-option value="lucy">Lucy</a-select-option>
               </a-select-opt-group>
               <a-select-opt-group label="Engineer">
-                <a-select-option value="Yiminghe"> yiminghe </a-select-option>
+                <a-select-option value="Yiminghe">yiminghe</a-select-option>
+                <a-select-option value="Yiminghe1">yiminghe1</a-select-option>
               </a-select-opt-group>
             </a-select>
           </sdCards>
+
           <sdCards title="Automatic Completion">
             <a-select
+              v-model:value="automaticValue"
               mode="tags"
               style="width: 100%"
               :token-separators="[',']"
@@ -223,79 +229,44 @@
 </template>
 
 <script>
+import { PlusOutlined, UserOutlined } from "@ant-design/icons-vue";
+import { reactive, toRefs, computed, defineComponent, ref, watch } from "vue";
 import { Main } from "../styled";
 import { SelectWrapperStyle, SelectRadioStyle } from "./ui-elements-styled";
-let index = 0;
 const OPTIONS = ["Apples", "Nails", "Bananas", "Helicopters"];
+let index = 0;
 const provinceData = ["Zhejiang", "Jiangsu"];
 const cityData = {
   Zhejiang: ["Hangzhou", "Ningbo", "Wenzhou"],
   Jiangsu: ["Nanjing", "Suzhou", "Zhenjiang"],
 };
-export default {
+export default defineComponent({
   name: "Select",
   components: {
     Main,
     SelectWrapperStyle,
     SelectRadioStyle,
-    VNodes: {
-      functional: true,
-      render: (h, ctx) => ctx.props.vnodes,
-    },
-  },
-  data: () => ({
-    items: ["jack", "lucy"],
-    size: "default",
-    selectedItems: [],
-    provinceData,
-    cityData,
-    cities: cityData[provinceData[0]],
-    secondCity: cityData[provinceData[0]][0],
-  }),
-  computed: {
-    filteredOptions() {
-      return OPTIONS.filter((o) => !this.selectedItems.includes(o));
+    PlusOutlined,
+    UserOutlined,
+    VNodes: (_, { attrs }) => {
+      return attrs.vnodes;
     },
   },
   methods: {
+    focus() {
+      console.log("focus");
+    },
     handleChange(value) {
       console.log(`selected ${value}`);
     },
-    SearchChange(value) {
+    handleChangeMulti(value) {
       console.log(`selected ${value}`);
     },
-    handleBlur() {
-      console.log("blur");
-    },
-    handleFocus() {
-      console.log("focus");
-    },
-    filterOption(input, option) {
-      return (
-        option.componentOptions.children[0].text
-          .toLowerCase()
-          .indexOf(input.toLowerCase()) >= 0
-      );
-    },
-    sizeChange(value) {
-      console.log(`Selected: ${value}`);
+    automaticChange(value) {
+      console.log(`selected ${value}`);
     },
     popupScroll() {
       console.log("popupScroll");
-    },
-    addItem() {
-      console.log("addItem");
-      this.items.push(`New item ${index++}`);
-    },
-    alreadyChange(selectedItems) {
-      this.selectedItems = selectedItems;
-    },
-    handleProvinceChange(value) {
-      this.cities = cityData[value];
-      this.secondCity = cityData[value][0];
-    },
-    multipleChange(value) {
-      console.log(`selected ${value}`);
     },
     tagChange(value) {
       console.log(`selected ${value}`);
@@ -303,9 +274,59 @@ export default {
     groupChange(value) {
       console.log(`selected ${value}`);
     },
-    automaticChange(value) {
-      console.log(`selected ${value}`);
-    },
   },
-};
+  setup() {
+    const items = ref(["jack", "lucy"]);
+    const value = ref("lucy");
+    const addItem = () => {
+      console.log("addItem");
+      items.value.push(`New item ${index++}`);
+    };
+    const valueCountry = ref(["china"]);
+    watch(valueCountry, (val) => {
+      console.log(`selected:`, val);
+    });
+    const selectedItems = ref([]);
+    const filteredOptions = computed(() =>
+      OPTIONS.filter((o) => !selectedItems.value.includes(o))
+    );
+    const province = provinceData[0];
+    const state = reactive({
+      province,
+      provinceData,
+      cityData,
+      secondCity: cityData[province][0],
+    });
+    const cities = computed(() => {
+      return cityData[state.province];
+    });
+    watch(
+      () => state.province,
+      (val) => {
+        state.secondCity = state.cityData[val][0];
+      }
+    );
+    return {
+      value1: ref("lucy"),
+      value2: ref("lucy"),
+      value3: ref("lucy"),
+      size: ref("default"),
+      value4: ref("a1"),
+      value5: ref(["a1", "b2"]),
+      value6: ref(["a1", "b2"]),
+      value8: ref(["a1", "b2"]),
+      groupValue: ref(["lucy"]),
+      tag: ref([]),
+      automaticValue: ref([]),
+      items,
+      value,
+      addItem,
+      valueCountry,
+      selectedItems,
+      filteredOptions,
+      ...toRefs(state),
+      cities,
+    };
+  },
+});
 </script>
