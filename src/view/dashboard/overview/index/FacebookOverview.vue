@@ -4,7 +4,7 @@
       <sdCards v-if="forcastOverviewState !== null" title="Facebook Overview">
         <template #button>
           <div class="card-radio">
-            <a-radio-group onChange="{forcastOverview}" v-model:value="value">
+            <a-radio-group @change="forcastOverview" v-model:value="value">
               <a-radio-button value="today">Today</a-radio-button>
               <a-radio-button value="week">Week</a-radio-button>
               <a-radio-button value="month">Month</a-radio-button>
@@ -206,6 +206,7 @@
             </a-row>
           </a-col>
         </a-row>
+        {{ forcastOverviewStates }}
       </sdCards>
     </div>
   </CardGroup>
@@ -315,21 +316,6 @@ export default {
           },
         },
       },
-      forcastOverviewState: {
-        Engaged: "25,872",
-        EnLabels: ["0", "4", "8", "12", "16", "20", "24"],
-        EnData: [150, 100, 200, 250, 200, 300, 150],
-        Impressions: "98,534",
-        ImLabels: ["0", "4", "8", "12", "16", "20", "24"],
-        ImData: [200, 150, 200, 250, 100, 200, 150],
-        Like: "12,142",
-        LiLabels: ["0", "4", "8", "12", "16", "20", "24"],
-        LiData: [150, 100, 200, 250, 200, 300, 150],
-        Impressions2: "1,432",
-        ImLabels2: ["0", "4", "8", "12", "16", "20", "24"],
-        ImData2: [200, 150, 200, 250, 100, 200, 150],
-      },
-      foIsLoading: false,
     };
   },
   methods: {
@@ -339,6 +325,20 @@ export default {
         end: color[1],
       });
     },
+    forcastOverview(e) {
+      this.$store.dispatch("forcastOverviewFilterData", e.target.value);
+    },
+  },
+  computed: {
+    forcastOverviewState() {
+      return this.$store.state.chartContent.forcastOverviewState;
+    },
+    foIsLoading() {
+      return this.$store.state.chartContent.foLoading;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("forcastOverviewGetData");
   },
 };
 </script>
