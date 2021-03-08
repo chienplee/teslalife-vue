@@ -39,6 +39,18 @@
             </template>
           </Suspense>
         </a-col>
+        <a-col :xxl="8" :xs="24">
+          <Suspense>
+            <template #default>
+              <YoutubeSubscribers />
+            </template>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton active />
+              </sdCards>
+            </template>
+          </Suspense>
+        </a-col>
       </a-row>
     </Main>
   </div>
@@ -47,14 +59,16 @@
 <script>
 import { Main } from "../styled";
 import { defineAsyncComponent } from "vue";
-import FacebookOverview from "./overview/index/FacebookOverview";
 
 const SocialMediaOverview = defineAsyncComponent(() =>
   import("./overview/index/SocialMediaOverview")
 );
-// const FacebookOverview = defineAsyncComponent(() =>
-//   import("./overview/index/FacebookOverview")
-// );
+const FacebookOverview = defineAsyncComponent(() =>
+  import("./overview/index/FacebookOverview")
+);
+const YoutubeSubscribers = defineAsyncComponent(() =>
+  import("./overview/index/YoutubeSubscribers")
+);
 
 export default {
   name: "BlankPage",
@@ -62,6 +76,7 @@ export default {
     Main,
     SocialMediaOverview,
     FacebookOverview,
+    YoutubeSubscribers,
   },
   async setup() {},
 };

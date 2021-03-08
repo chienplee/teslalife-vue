@@ -152,11 +152,9 @@
           <Content>
             <Suspense>
               <template #default>
-                <!-- The component I want to render -->
                 <router-view></router-view>
               </template>
               <template #fallback>
-                <!-- Fallback component shown while my component is not ready -->
                 <div class="spin">
                   <a-spin />
                 </div>

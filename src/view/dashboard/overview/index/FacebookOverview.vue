@@ -215,14 +215,10 @@
 <script>
 import { Focard, CardGroup } from "../../style";
 import Chart from "../../../../components/utilities/chartjs";
-// import { forcastOverviewGetData, forcastOverviewFilterData } from '../../../../redux/chartContent/actionCreator';
 import {
   chartLinearGradient,
   customTooltips,
 } from "../../../../components/utilities/utilities";
-// const forcastOverview = e => {
-//   dispatch(forcastOverviewFilterData(e.target.value));
-// };
 
 export default {
   name: "FacebookOverview",
@@ -234,10 +230,10 @@ export default {
   data() {
     return {
       value: "today",
-      height: window.innerWidth <= 1199 ? 100 : 165,
+      height: null,
       areaChartOption: {
         maintainAspectRatio: true,
-        responsive: true,
+        responsive: false,
         hover: {
           mode: "nearest",
           intersect: false,
@@ -338,6 +334,7 @@ export default {
     },
   },
   mounted() {
+    this.height = window.innerWidth <= 1199 ? 100 : 115;
     this.$store.dispatch("forcastOverviewGetData");
   },
 };
