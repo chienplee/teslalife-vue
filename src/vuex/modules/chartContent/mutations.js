@@ -89,7 +89,7 @@ export default {
 
   forcastOverviewSuccess(state, data) {
     state.foLoading = false;
-    state.forcastOverviewState = data;
+    state.forcastData = data;
   },
 
   forcastOverviewErr(state, err) {
