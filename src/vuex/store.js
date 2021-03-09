@@ -1,15 +1,14 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 import themeLayout from './modules/themeLayout';
 import gallery from './modules/gallery';
 import users from './modules/users';
-import chartContent from './modules/chartContent';
+import chartContent from './modules/chartContent/actionCreator';
 
 export default createStore({
-    modules: {
-        themeLayout,
-        gallery,
-        users,
-        chartContent   
-    },
-    
+  modules: {
+    themeLayout,
+    gallery,
+    users,
+    chartContent,
+  },
 });

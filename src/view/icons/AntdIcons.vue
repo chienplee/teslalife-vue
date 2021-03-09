@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import AntdIcon from "../../components/icons/AntdIcons";
-import { IconWrapper } from "./IconStyled";
+import { Main } from '../styled';
+import AntdIcon from '../../components/icons/AntdIcons';
+import { IconWrapper } from './IconStyled';
 
 export default {
-  name: "AntdIcons",
+  name: 'AntdIcons',
   components: {
     Main,
     AntdIcon,

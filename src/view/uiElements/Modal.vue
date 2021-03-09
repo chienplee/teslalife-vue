@@ -18,24 +18,15 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Basic">
             <p>
-              When requiring users to interact with the application, but without
-              jumping to a new page and interrupting the user's workflow, you
-              can use Modal to create a new floating layer over the current page
-              to get user feedback or display information. Additionally
+              When requiring users to interact with the application, but without jumping to a new page and interrupting
+              the user's workflow, you can use Modal to create a new floating layer over the current page to get user
+              feedback or display information. Additionally
             </p>
-            <sdModal
-              title="Basic Modal"
-              :type="modalType"
-              :onOk="handleOk"
-              :visible="visible"
-              :onCancel="handleCancel"
-            >
+            <sdModal title="Basic Modal" :type="modalType" :onOk="handleOk" :visible="visible" :onCancel="handleCancel">
               <p>
-                When requiring users to interact with the application, but
-                without jumping to a new page and interrupting the user's
-                workflow, you can use Modal to create a new floating layer over
-                the current page to get user feedback or display information.
-                Additionally
+                When requiring users to interact with the application, but without jumping to a new page and
+                interrupting the user's workflow, you can use Modal to create a new floating layer over the current page
+                to get user feedback or display information. Additionally
               </p>
             </sdModal>
             <a-space>
@@ -85,10 +76,9 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Color Modal">
             <p>
-              When requiring users to interact with the application, but without
-              jumping to a new page and interrupting the user's workflow, you
-              can use Modal to create a new floating layer over the current page
-              to get user feedback or display information. Additionally
+              When requiring users to interact with the application, but without jumping to a new page and interrupting
+              the user's workflow, you can use Modal to create a new floating layer over the current page to get user
+              feedback or display information. Additionally
             </p>
             <sdModal
               title="Color Modal"
@@ -99,11 +89,9 @@
               :onCancel="handleCancel"
             >
               <p>
-                When requiring users to interact with the application, but
-                without jumping to a new page and interrupting the user's
-                workflow, you can use Modal to create a new floating layer over
-                the current page to get user feedback or display information.
-                Additionally
+                When requiring users to interact with the application, but without jumping to a new page and
+                interrupting the user's workflow, you can use Modal to create a new floating layer over the current page
+                to get user feedback or display information. Additionally
               </p>
             </sdModal>
             <a-space>
@@ -153,10 +141,9 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Color Modal">
             <p>
-              When requiring users to interact with the application, but without
-              jumping to a new page and interrupting the user's workflow, you
-              can use Modal to create a new floating layer over the current page
-              to get user feedback or display information. Additionally
+              When requiring users to interact with the application, but without jumping to a new page and interrupting
+              the user's workflow, you can use Modal to create a new floating layer over the current page to get user
+              feedback or display information. Additionally
             </p>
             <sdModal
               title="Color Modal"
@@ -167,11 +154,9 @@
               :onCancel="handleCancel"
             >
               <p>
-                When requiring users to interact with the application, but
-                without jumping to a new page and interrupting the user's
-                workflow, you can use Modal to create a new floating layer over
-                the current page to get user feedback or display information.
-                Additionally
+                When requiring users to interact with the application, but without jumping to a new page and
+                interrupting the user's workflow, you can use Modal to create a new floating layer over the current page
+                to get user feedback or display information. Additionally
               </p>
             </sdModal>
             <a-space>
@@ -188,12 +173,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { Modal } from "ant-design-vue";
-import { h } from "vue";
+import { Main } from '../styled';
+import { Modal } from 'ant-design-vue';
+import { h } from 'vue';
 
 export default {
-  name: "Modal",
+  name: 'Modal',
   components: {
     Main,
   },
@@ -201,7 +186,7 @@ export default {
     return {
       visible: false,
       confirmLoading: false,
-      modalType: "primary",
+      modalType: 'primary',
       colorVisible: false,
     };
   },
@@ -230,19 +215,16 @@ export default {
     info() {
       //const h = this.$createElement;
       Modal.info({
-        title: "This is a notification message",
-        content: h("div", {}, [
-          h("p", "some messages...some messages..."),
-          h("p", "some messages...some messages..."),
-        ]),
+        title: 'This is a notification message',
+        content: h('div', {}, [h('p', 'some messages...some messages...'), h('p', 'some messages...some messages...')]),
         onOk() {
-          console.log("ok");
+          console.log('ok');
         },
       });
     },
     success() {
       Modal.success({
-        title: "This is a success message",
+        title: 'This is a success message',
         // JSX support
         content: (
           <div>
@@ -255,15 +237,15 @@ export default {
 
     error() {
       Modal.error({
-        title: "This is an error message",
-        content: "some messages...some messages...",
+        title: 'This is an error message',
+        content: 'some messages...some messages...',
       });
     },
 
     warning() {
       Modal.warning({
-        title: "This is a warning message",
-        content: "some messages...some messages...",
+        title: 'This is a warning message',
+        content: 'some messages...some messages...',
       });
     },
   },

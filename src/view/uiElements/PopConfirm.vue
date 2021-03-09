@@ -37,36 +37,21 @@
                   whiteSpace: 'nowrap',
                 }"
               >
-                <a-popconfirm
-                  placement="topLeft"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="topLeft" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>TL</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="top"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="top" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>Top</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="topRight"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="topRight" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
@@ -80,36 +65,21 @@
                   float: !rtl ? 'left' : 'right',
                 }"
               >
-                <a-popconfirm
-                  placement="leftTop"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="leftTop" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>LT</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="left"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="left" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>Left</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="leftBottom"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="leftBottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
@@ -120,40 +90,24 @@
               <div
                 :style="{
                   width: `${buttonWidth}px`,
-                  [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth * 4 +
-                    24}px`,
+                  [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth * 4 + 24}px`,
                 }"
               >
-                <a-popconfirm
-                  placement="rightTop"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="rightTop" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>RT</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="right"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="right" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>Right</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="rightBottom"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="rightBottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
@@ -168,36 +122,21 @@
                   whiteSpace: 'nowrap',
                 }"
               >
-                <a-popconfirm
-                  placement="bottomLeft"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="bottomLeft" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>BL</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="bottom"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="bottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
                   <a-button>Bottom</a-button>
                 </a-popconfirm>
-                <a-popconfirm
-                  placement="bottomRight"
-                  ok-text="Yes"
-                  cancel-text="No"
-                  @confirm="confirm"
-                >
+                <a-popconfirm placement="bottomRight" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
@@ -214,32 +153,32 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { message } from "ant-design-vue";
-import { mapGetters } from "vuex";
+import { Main } from '../styled';
+import { message } from 'ant-design-vue';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "PopConfirm",
+  name: 'PopConfirm',
   components: {
     Main,
   },
   data() {
     return {
       buttonWidth: 70,
-      text: "Are you sure to delete this task?",
+      text: 'Are you sure to delete this task?',
     };
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
   methods: {
     confirm(e) {
       console.log(e);
-      message.success("Click on Yes");
+      message.success('Click on Yes');
     },
     cancel(e) {
       console.log(e);
-      message.error("Click on No");
+      message.error('Click on No');
     },
   },
 };

@@ -9,31 +9,19 @@
         <template v-slot:overlay>
           <NavAuth>
             <router-link @click="() => onFlagChangeHandle('english')" to="#">
-              <img
-                :src="require('../../../static/img/flag/english.png')"
-                alt=""
-              />
+              <img :src="require('../../../static/img/flag/english.png')" alt="" />
               <span>English</span>
             </router-link>
             <router-link @click="() => onFlagChangeHandle('germany')" to="#">
-              <img
-                :src="require('../../../static/img/flag/germany.png')"
-                alt=""
-              />
+              <img :src="require('../../../static/img/flag/germany.png')" alt="" />
               <span>Germany</span>
             </router-link>
             <router-link @click="() => onFlagChangeHandle('spain')" to="#">
-              <img
-                :src="require('../../../static/img/flag/spain.png')"
-                alt=""
-              />
+              <img :src="require('../../../static/img/flag/spain.png')" alt="" />
               <span>Spain</span>
             </router-link>
             <router-link @click="() => onFlagChangeHandle('turky')" to="#">
-              <img
-                :src="require('../../../static/img/flag/turky.png')"
-                alt=""
-              />
+              <img :src="require('../../../static/img/flag/turky.png')" alt="" />
               <span>Turky</span>
             </router-link>
           </NavAuth>
@@ -50,10 +38,7 @@
           <UserDropDwon>
             <div class="user-dropdwon">
               <figure class="user-dropdwon__info">
-                <img
-                  :src="require('../../../static/img/avatar/chat-auth.png')"
-                  alt=""
-                />
+                <img :src="require('../../../static/img/avatar/chat-auth.png')" alt="" />
                 <figcaption>
                   <sdHeading as="h5">Abdullah Bin Talha</sdHeading>
                   <p>UI Expert</p>
@@ -76,16 +61,12 @@
                   <a to="#"> <sdFeatherIcons type="bell" /> Help </a>
                 </li>
               </ul>
-              <router-link class="user-dropdwon__bottomAction" to="#">
-                <LogoutOutlined /> Sign Out
-              </router-link>
+              <router-link class="user-dropdwon__bottomAction" to="#"> <LogoutOutlined /> Sign Out </router-link>
             </div>
           </UserDropDwon>
         </template>
         <a to="#" class="head-example">
-          <a-avatar
-            src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman1-512.png"
-          />
+          <a-avatar src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman1-512.png" />
         </a>
       </sdPopover>
     </div>
@@ -93,14 +74,14 @@
 </template>
 
 <script>
-import { InfoWraper, NavAuth, UserDropDwon } from "./auth-info-style";
-import Support from "./Support";
-import Settings from "./Settings";
-import Notification from "./Notification";
-import Message from "./Message";
+import { InfoWraper, NavAuth, UserDropDwon } from './auth-info-style';
+import Support from './Support';
+import Settings from './Settings';
+import Notification from './Notification';
+import Message from './Message';
 
 export default {
-  name: "AuthInfo",
+  name: 'AuthInfo',
   components: {
     InfoWraper,
     NavAuth,
@@ -112,7 +93,7 @@ export default {
   },
   data() {
     return {
-      flag: "english",
+      flag: 'english',
     };
   },
   methods: {

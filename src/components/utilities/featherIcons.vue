@@ -3,19 +3,19 @@
 </template>
 
 <script>
-import { icons } from "feather-icons";
-import VueTypes from "vue-types";
+import { icons } from 'feather-icons';
+import VueTypes from 'vue-types';
 export default {
-  name: "FeatherIcons",
+  name: 'FeatherIcons',
   props: {
-    type: VueTypes.string.def("activity"),
+    type: VueTypes.string.def('activity'),
     size: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(16),
     stroke: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(2),
   },
   data() {
     return {
       activity: icons[this.type].toSvg({
-        "stroke-width": this.stroke,
+        'stroke-width': this.stroke,
         width: this.size,
         height: this.size,
       }),

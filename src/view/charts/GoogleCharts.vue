@@ -45,19 +45,10 @@
             />
           </sdCards>
           <sdCards title="Multiple Line Chart">
-            <sdGoogleMultiLineChart
-              :data="MultilineChartData"
-              width="100%"
-              :height="300"
-            />
+            <sdGoogleMultiLineChart :data="MultilineChartData" width="100%" :height="300" />
           </sdCards>
           <sdCards title="Basic Pie Chart">
-            <sdGoogle3dPieChart
-              :data="pieChartData"
-              width="100%"
-              :height="300"
-              chartArea="100%"
-            />
+            <sdGoogle3dPieChart :data="pieChartData" width="100%" :height="300" chartArea="100%" />
           </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
@@ -83,19 +74,10 @@
             />
           </sdCards>
           <sdCards title="Line Chart">
-            <sdGoogleLineChart
-              :data="lineChartData"
-              width="100%"
-              :height="300"
-            />
+            <sdGoogleLineChart :data="lineChartData" width="100%" :height="300" />
           </sdCards>
           <sdCards title="3d Pie Chart">
-            <sdGoogleBasicPieChart
-              :data="pieChartData"
-              width="100%"
-              :height="300"
-              chartArea="100%"
-            />
+            <sdGoogleBasicPieChart :data="pieChartData" width="100%" :height="300" chartArea="100%" />
           </sdCards>
         </a-col>
       </a-row>
@@ -104,8 +86,8 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { PageHeader } from "../../components/pageHeaders/PageHeaders";
+import { Main } from '../styled';
+import { PageHeader } from '../../components/pageHeaders/PageHeaders';
 
 import {
   barChartData,
@@ -114,10 +96,10 @@ import {
   lineChartData,
   MultilineChartData,
   pieChartData,
-} from "../../demoData/google-charts.json";
+} from '../../demoData/google-charts.json';
 
 export default {
-  name: "GoogleCharts",
+  name: 'GoogleCharts',
   components: {
     Main,
     PageHeader,

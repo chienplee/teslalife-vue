@@ -19,10 +19,10 @@
   </div>
 </template>
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Badge",
+  name: 'Badge',
   components: {
     Main,
   },

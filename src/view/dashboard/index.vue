@@ -57,21 +57,15 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { defineAsyncComponent } from "vue";
+import { Main } from '../styled';
+import { defineAsyncComponent } from 'vue';
 
-const SocialMediaOverview = defineAsyncComponent(() =>
-  import("./overview/index/SocialMediaOverview")
-);
-const FacebookOverview = defineAsyncComponent(() =>
-  import("./overview/index/FacebookOverview")
-);
-const YoutubeSubscribers = defineAsyncComponent(() =>
-  import("./overview/index/YoutubeSubscribers")
-);
+const SocialMediaOverview = defineAsyncComponent(() => import('./overview/index/SocialMediaOverview'));
+const FacebookOverview = defineAsyncComponent(() => import('./overview/index/FacebookOverview'));
+const YoutubeSubscribers = defineAsyncComponent(() => import('./overview/index/YoutubeSubscribers'));
 
 export default {
-  name: "BlankPage",
+  name: 'BlankPage',
   components: {
     Main,
     SocialMediaOverview,

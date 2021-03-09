@@ -9,11 +9,7 @@
     <a-row type="flex" justify="center">
       <a-col :xl="12" :lg="16" :xs="24">
         <BasicFormWrapper>
-          <a-form
-            :model="formState"
-            @finish="handleFinish"
-            @finishFailed="handleFinishFailed"
-          >
+          <a-form :model="formState" @finish="handleFinish" @finishFailed="handleFinishFailed">
             <a-form-Item label="Name">
               <a-input v-model:value="formState.name" />
             </a-form-Item>
@@ -51,20 +47,11 @@
                 <div>
                   <template v-for="(tag, index) in tags">
                     <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
-                      <a-tag
-                        :key="tag"
-                        :closable="index !== 0"
-                        @close="() => handleClose(tag)"
-                      >
+                      <a-tag :key="tag" :closable="index !== 0" @close="() => handleClose(tag)">
                         {{ `${tag.slice(0, 20)}...` }}
                       </a-tag>
                     </a-tooltip>
-                    <a-tag
-                      v-else
-                      :key="index + 1"
-                      :closable="index !== 0"
-                      @close="() => handleClose(tag)"
-                    >
+                    <a-tag v-else :key="index + 1" :closable="index !== 0" @close="() => handleClose(tag)">
                       {{ tag }}
                     </a-tag>
                   </template>
@@ -80,11 +67,7 @@
                       @blur="handleInputConfirm"
                       @keyup.enter="handleInputConfirm"
                     />
-                    <a-tag
-                      v-else
-                      style="background: #fff; borderStyle: dashed;"
-                      @click="showInput"
-                    >
+                    <a-tag v-else style="background: #fff; borderStyle: dashed;" @click="showInput">
                       <sdFeatherIcons type="plus" size="14" /> New Tag
                     </a-tag>
                   </div>
@@ -93,12 +76,7 @@
             </a-form-item>
 
             <div class="setting-form-actions">
-              <sdButton
-                @click="handleSubmit"
-                size="default"
-                htmlType="submit"
-                type="primary"
-              >
+              <sdButton @click="handleSubmit" size="default" htmlType="submit" type="primary">
                 Update Profile
               </sdButton>
               &nbsp; &nbsp;
@@ -113,31 +91,31 @@
   </sdCards>
 </template>
 <script>
-import { BasicFormWrapper, TagInput } from "../../../styled";
-import { defineComponent, reactive } from "vue";
+import { BasicFormWrapper, TagInput } from '../../../styled';
+import { defineComponent, reactive } from 'vue';
 
 const Profile = defineComponent({
-  name: "Profile",
+  name: 'Profile',
   components: { BasicFormWrapper, TagInput },
 
   setup() {
     const formState = reactive({
-      name: "Duran Clayton",
-      phone: "01742920502",
-      country: "",
-      city: "",
-      company: "Example",
-      website: "www.example.com",
+      name: 'Duran Clayton',
+      phone: '01742920502',
+      country: '',
+      city: '',
+      company: 'Example',
+      website: 'www.example.com',
       userBio:
-        "Nam malesuada dolor tellus pretium amet was hendrerit facilisi id vitae enim sed ornare there suspendisse sed orci neque ac sed aliquet risus faucibus in pretium molestee.",
+        'Nam malesuada dolor tellus pretium amet was hendrerit facilisi id vitae enim sed ornare there suspendisse sed orci neque ac sed aliquet risus faucibus in pretium molestee.',
     });
 
-    const handleFinish = (values) => {
+    const handleFinish = values => {
       this.values = { ...values, tags: this.tags };
       console.log(values, formState);
     };
 
-    const handleFinishFailed = (errors) => {
+    const handleFinishFailed = errors => {
       console.log(errors);
     };
 
@@ -145,11 +123,11 @@ const Profile = defineComponent({
       formState,
       handleFinish,
       handleFinishFailed,
-      tags: ["UI/UX", "Branding", "Product Design", "Web Design"],
+      tags: ['UI/UX', 'Branding', 'Product Design', 'Web Design'],
       values: null,
       // form: this.$form.createForm(this, { name: "coordinated" }),
       inputVisible: false,
-      inputValue: "",
+      inputValue: '',
     };
   },
 
@@ -159,7 +137,7 @@ const Profile = defineComponent({
       //form.resetFields();
     },
     handleClose(removedTag) {
-      const tags = this.tags.filter((tag) => tag !== removedTag);
+      const tags = this.tags.filter(tag => tag !== removedTag);
       console.log(tags);
       this.tags = tags;
     },
@@ -185,7 +163,7 @@ const Profile = defineComponent({
       Object.assign(this, {
         tags,
         inputVisible: false,
-        inputValue: "",
+        inputValue: '',
       });
     },
   },

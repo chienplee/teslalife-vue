@@ -1,11 +1,11 @@
 <script>
-import { Row, Col } from "ant-design-vue";
-import { Icon, IconWrapper } from "./IconStyled";
-import { faIcons } from "../../config/icon/icon.json";
-import * as FontAwesomeIcon from "@fortawesome/free-solid-svg-icons";
+import { Row, Col } from 'ant-design-vue';
+import { Icon, IconWrapper } from './IconStyled';
+import { faIcons } from '../../config/icon/icon.json';
+import * as FontAwesomeIcon from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  name: "FontAwesome",
+  name: 'FontAwesome',
   components: {
     Icon,
     IconWrapper,
@@ -17,7 +17,7 @@ export default {
     return (
       <Row gutter={15}>
         {Object.keys(FontAwesomeIcon)
-          .filter((item) => item !== undefined && item !== "fas")
+          .filter(item => item !== undefined && item !== 'fas')
           .map((icon, key) => {
             return (
               <Col xl={6} md={12} xs={24} key={key + 1}>
@@ -25,7 +25,7 @@ export default {
                   <font-awesome-icon
                     icon={FontAwesomeIcon[icon]}
                     size="1x"
-                    style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                   />
                   <span> {icon}</span>
                 </Icon>

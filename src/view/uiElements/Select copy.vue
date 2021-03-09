@@ -18,11 +18,7 @@
         <a-col :md="12" xs="24">
           <sdCards title="Basic">
             <SelectWrapperStyle>
-              <a-select
-                default-value="lucy"
-                style="width: 120px"
-                @change="handleChange"
-              >
+              <a-select default-value="lucy" style="width: 120px" @change="handleChange">
                 <a-select-option value="jack"> Jack </a-select-option>
                 <a-select-option value="lucy"> Lucy </a-select-option>
                 <a-select-option value="disabled" disabled>
@@ -63,12 +59,7 @@
               </a-radio-group>
             </SelectRadioStyle>
             <br /><br />
-            <a-select
-              :size="size"
-              default-value="a1"
-              style="width: 200px"
-              @change="sizeChange"
-            >
+            <a-select :size="size" default-value="a1" style="width: 200px" @change="sizeChange">
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
               </a-select-option>
@@ -107,11 +98,7 @@
                 <div>
                   <v-nodes :vnodes="menu" />
                   <a-divider style="margin: 4px 0" />
-                  <div
-                    style="padding: 4px 8px; cursor: pointer"
-                    @mousedown="(e) => e.preventDefault()"
-                    @click="addItem"
-                  >
+                  <div style="padding: 4px 8px; cursor: pointer" @mousedown="e => e.preventDefault()" @click="addItem">
                     <a-icon type="plus" /> Add item
                   </div>
                 </div>
@@ -129,11 +116,7 @@
               style="width: 100%"
               @change="alreadyChange"
             >
-              <a-select-option
-                v-for="item in filteredOptions"
-                :key="item"
-                :value="item"
-              >
+              <a-select-option v-for="item in filteredOptions" :key="item" :value="item">
                 {{ item }}
               </a-select-option>
             </a-select>
@@ -142,15 +125,8 @@
         <a-col :md="12" xs="24">
           <sdCards title="Select Coordinate">
             <SelectWrapperStyle>
-              <a-select
-                :default-value="provinceData[0]"
-                style="width: 120px"
-                @change="handleProvinceChange"
-              >
-                <a-select-option
-                  v-for="province in provinceData"
-                  :key="province"
-                >
+              <a-select :default-value="provinceData[0]" style="width: 120px" @change="handleProvinceChange">
+                <a-select-option v-for="province in provinceData" :key="province">
                   {{ province }}
                 </a-select-option>
               </a-select>
@@ -175,23 +151,14 @@
             </a-select>
           </sdCards>
           <sdCards title="Tags select">
-            <a-select
-              mode="tags"
-              style="width: 100%"
-              placeholder="Tags Mode"
-              @change="tagChange"
-            >
+            <a-select mode="tags" style="width: 100%" placeholder="Tags Mode" @change="tagChange">
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
               </a-select-option>
             </a-select>
           </sdCards>
           <sdCards title="Group">
-            <a-select
-              default-value="lucy"
-              style="width: 200px"
-              @change="groupChange"
-            >
+            <a-select default-value="lucy" style="width: 200px" @change="groupChange">
               <a-select-opt-group>
                 <template v-slot:label>
                   <span><a-icon type="user" />Manager</span>
@@ -205,12 +172,7 @@
             </a-select>
           </sdCards>
           <sdCards title="Automatic Completion">
-            <a-select
-              mode="tags"
-              style="width: 100%"
-              :token-separators="[',']"
-              @change="automaticChange"
-            >
+            <a-select mode="tags" style="width: 100%" :token-separators="[',']" @change="automaticChange">
               <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
                 {{ (i + 9).toString(36) + i }}
               </a-select-option>
@@ -223,17 +185,17 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { SelectWrapperStyle, SelectRadioStyle } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { SelectWrapperStyle, SelectRadioStyle } from './ui-elements-styled';
 let index = 0;
-const OPTIONS = ["Apples", "Nails", "Bananas", "Helicopters"];
-const provinceData = ["Zhejiang", "Jiangsu"];
+const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters'];
+const provinceData = ['Zhejiang', 'Jiangsu'];
 const cityData = {
-  Zhejiang: ["Hangzhou", "Ningbo", "Wenzhou"],
-  Jiangsu: ["Nanjing", "Suzhou", "Zhenjiang"],
+  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou'],
+  Jiangsu: ['Nanjing', 'Suzhou', 'Zhenjiang'],
 };
 export default {
-  name: "Select",
+  name: 'Select',
   components: {
     Main,
     SelectWrapperStyle,
@@ -244,8 +206,8 @@ export default {
     },
   },
   data: () => ({
-    items: ["jack", "lucy"],
-    size: "default",
+    items: ['jack', 'lucy'],
+    size: 'default',
     selectedItems: [],
     provinceData,
     cityData,
@@ -254,7 +216,7 @@ export default {
   }),
   computed: {
     filteredOptions() {
-      return OPTIONS.filter((o) => !this.selectedItems.includes(o));
+      return OPTIONS.filter(o => !this.selectedItems.includes(o));
     },
   },
   methods: {
@@ -265,26 +227,22 @@ export default {
       console.log(`selected ${value}`);
     },
     handleBlur() {
-      console.log("blur");
+      console.log('blur');
     },
     handleFocus() {
-      console.log("focus");
+      console.log('focus');
     },
     filterOption(input, option) {
-      return (
-        option.componentOptions.children[0].text
-          .toLowerCase()
-          .indexOf(input.toLowerCase()) >= 0
-      );
+      return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     },
     sizeChange(value) {
       console.log(`Selected: ${value}`);
     },
     popupScroll() {
-      console.log("popupScroll");
+      console.log('popupScroll');
     },
     addItem() {
-      console.log("addItem");
+      console.log('addItem');
       this.items.push(`New item ${index++}`);
     },
     alreadyChange(selectedItems) {

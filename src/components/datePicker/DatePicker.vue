@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import DateRangePicker from "vue2-daterange-picker";
-import "vue2-daterange-picker/dist/vue2-daterange-picker.css";
-import { ItemWraper } from "./style";
+import DateRangePicker from 'vue2-daterange-picker';
+import 'vue2-daterange-picker/dist/vue2-daterange-picker.css';
+import { ItemWraper } from './style';
 
 export default {
-  name: "DateRangePickerOne",
+  name: 'DateRangePickerOne',
   components: {
     DateRangePicker,
     ItemWraper,
@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       dateRange: {
-        startDate: "2019-12-26",
-        endDate: "2019-12-28",
+        startDate: '2019-12-26',
+        endDate: '2019-12-28',
       },
     };
   },

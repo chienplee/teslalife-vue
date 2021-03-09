@@ -1,9 +1,5 @@
 <template>
-  <Div
-    class="certain-category-search-wrapper"
-    :style="{ width: '100%' }"
-    :darkMode="darkMode"
-  >
+  <Div class="certain-category-search-wrapper" :style="{ width: '100%' }" :darkMode="darkMode">
     <a-row class="ant-row-middle">
       <a-col :md="2" :xs="1" :class="rtl ? 'text-left' : 'text-right'">
         <span class="certain-category-icon">
@@ -21,19 +17,14 @@
             <div>
               <router-link v-for="item in filteredData" :key="item.id" to="#">
                 {{ item.title }}
-                <span class="certain-search-item-count"
-                  >{{ item.count }} people</span
-                >
+                <span class="certain-search-item-count">{{ item.count }} people</span>
               </router-link>
               <router-link v-if="filteredData.length === 0" to="#">
                 Data Not Found.....
               </router-link>
             </div>
           </template>
-          <a-input
-            placeholder="Search..."
-            @input="(e) => search(e, searchData)"
-          />
+          <a-input placeholder="Search..." @input="e => search(e, searchData)" />
         </sdPopover>
       </a-col>
     </a-row>
@@ -41,12 +32,12 @@
 </template>
 
 <script>
-import { Div } from "./header-search-style";
-import { mapGetters } from "vuex";
+import { Div } from './header-search-style';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "HeaderSearch",
-  props: ["darkMode"],
+  name: 'HeaderSearch',
+  props: ['darkMode'],
   components: {
     Div,
   },
@@ -55,58 +46,58 @@ export default {
       searchData: [
         {
           id: 1,
-          title: "AntDesign",
+          title: 'AntDesign',
           count: 10000,
         },
         {
           id: 2,
-          title: "Design UI",
+          title: 'Design UI',
           count: 10600,
         },
 
         {
           id: 3,
-          title: "Bootstrap Design UI",
+          title: 'Bootstrap Design UI',
           count: 60100,
         },
         {
           id: 4,
-          title: "Meterial design",
+          title: 'Meterial design',
           count: 30010,
         },
 
         {
           id: 5,
-          title: "AntDesign design language",
+          title: 'AntDesign design language',
           count: 100000,
         },
       ],
       filteredData: [
         {
           id: 1,
-          title: "AntDesign",
+          title: 'AntDesign',
           count: 10000,
         },
         {
           id: 2,
-          title: "Design UI",
+          title: 'Design UI',
           count: 10600,
         },
 
         {
           id: 3,
-          title: "Bootstrap Design UI",
+          title: 'Bootstrap Design UI',
           count: 60100,
         },
         {
           id: 4,
-          title: "Meterial design",
+          title: 'Meterial design',
           count: 30010,
         },
 
         {
           id: 5,
-          title: "AntDesign design language",
+          title: 'AntDesign design language',
           count: 100000,
         },
       ],
@@ -114,11 +105,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
   methods: {
     search: function(e, searchDatas) {
-      const data = searchDatas.filter((item) => {
+      const data = searchDatas.filter(item => {
         return item.title.startsWith(e.target.value);
       });
       this.filteredData = data;

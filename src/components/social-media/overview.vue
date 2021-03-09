@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import { MainWraper, SocialIcon } from "./overview-style";
-import VueTypes from "vue-types";
+import { MainWraper, SocialIcon } from './overview-style';
+import VueTypes from 'vue-types';
 
 const SocialMediaContent = {
-  name: "SocialMediaContent",
+  name: 'SocialMediaContent',
   props: {
     icon: VueTypes.object,
     bgColor: VueTypes.string.isRequired,

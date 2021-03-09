@@ -12,18 +12,11 @@
               <li>
                 <a to="#">
                   <figure class="atbd-top-dropdwon__content">
-                    <img
-                      :src="require('../../../static/img/avatar/NoPath.png')"
-                      alt=""
-                    />
+                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
                     <figcaption>
-                      <sdHeading as="h5">
-                        Software <span class="color-success">3 hrs ago</span>
-                      </sdHeading>
+                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
                       <div>
-                        <span class="atbd-top-dropdwonText"
-                          >Lorem ipsum dolor amet cosec...</span
-                        >
+                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
                         <span>
                           <a-badge class="badge-success" count="3" />
                         </span>
@@ -35,18 +28,11 @@
               <li>
                 <a to="#">
                   <figure class="atbd-top-dropdwon__content">
-                    <img
-                      :src="require('../../../static/img/avatar/NoPath.png')"
-                      alt=""
-                    />
+                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
                     <figcaption>
-                      <sdHeading as="h5">
-                        Software <span class="color-success">3 hrs ago</span>
-                      </sdHeading>
+                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
                       <div>
-                        <span class="atbd-top-dropdwonText"
-                          >Lorem ipsum dolor amet cosec...</span
-                        >
+                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
                         <span>
                           <a-badge class="badge-success" count="3" />
                         </span>
@@ -58,18 +44,11 @@
               <li>
                 <a to="#">
                   <figure class="atbd-top-dropdwon__content">
-                    <img
-                      :src="require('../../../static/img/avatar/NoPath.png')"
-                      alt=""
-                    />
+                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
                     <figcaption>
-                      <sdHeading as="h5">
-                        Software <span class="color-success">3 hrs ago</span>
-                      </sdHeading>
+                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
                       <div>
-                        <span class="atbd-top-dropdwonText"
-                          >Lorem ipsum dolor amet cosec...</span
-                        >
+                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
                         <span>
                           <a-badge class="badge-success" count="3" />
                         </span>
@@ -81,18 +60,11 @@
               <li>
                 <a to="#">
                   <figure class="atbd-top-dropdwon__content">
-                    <img
-                      :src="require('../../../static/img/avatar/NoPath.png')"
-                      alt=""
-                    />
+                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
                     <figcaption>
-                      <sdHeading as="h5">
-                        Software <span class="color-success">3 hrs ago</span>
-                      </sdHeading>
+                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
                       <div>
-                        <span class="atbd-top-dropdwonText"
-                          >Lorem ipsum dolor amet cosec...</span
-                        >
+                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
                         <span>
                           <a-badge class="badge-success" count="3" />
                         </span>
@@ -104,18 +76,11 @@
               <li>
                 <a to="#">
                   <figure class="atbd-top-dropdwon__content">
-                    <img
-                      :src="require('../../../static/img/avatar/NoPath.png')"
-                      alt=""
-                    />
+                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
                     <figcaption>
-                      <sdHeading as="h5">
-                        Software <span class="color-success">3 hrs ago</span>
-                      </sdHeading>
+                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
                       <div>
-                        <span class="atbd-top-dropdwonText"
-                          >Lorem ipsum dolor amet cosec...</span
-                        >
+                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
                         <span>
                           <a-badge class="badge-success" count="3" />
                         </span>
@@ -142,10 +107,10 @@
 </template>
 
 <script>
-import { AtbdTopDropdwon } from "./auth-info-style";
+import { AtbdTopDropdwon } from './auth-info-style';
 
 export default {
-  name: "MessageBox",
+  name: 'MessageBox',
   components: {
     AtbdTopDropdwon,
   },

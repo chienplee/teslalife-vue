@@ -3,20 +3,10 @@
     <sdCards title="Social Media Overview">
       <a-row :gutter="25">
         <a-col :xxl="8" :md="4" :xs="8">
-          <SocialMediaContent
-            :icon="faFacebookF"
-            bgColor="#2366B8"
-            title="5,461"
-            subTitle="Likes"
-          />
+          <SocialMediaContent :icon="faFacebookF" bgColor="#2366B8" title="5,461" subTitle="Likes" />
         </a-col>
         <a-col :xxl="8" :md="4" :xs="8">
-          <SocialMediaContent
-            :icon="faTwitter"
-            bgColor="#00ABE4"
-            title="5,461"
-            subTitle="Followers"
-          />
+          <SocialMediaContent :icon="faTwitter" bgColor="#00ABE4" title="5,461" subTitle="Followers" />
         </a-col>
         <a-col :xxl="8" :md="4" :xs="8">
           <SocialMediaContent
@@ -27,36 +17,21 @@
           />
         </a-col>
         <a-col :xxl="8" :md="4" :xs="8">
-          <SocialMediaContent
-            :icon="faYoutube"
-            bgColor="#E32212"
-            title="5,461"
-            subTitle="Subscribers"
-          />
+          <SocialMediaContent :icon="faYoutube" bgColor="#E32212" title="5,461" subTitle="Subscribers" />
         </a-col>
         <a-col :xxl="8" :md="4" :xs="8">
-          <SocialMediaContent
-            :icon="faPinterest"
-            bgColor="#E32212"
-            title="5,461"
-            subTitle="Followers"
-          />
+          <SocialMediaContent :icon="faPinterest" bgColor="#E32212" title="5,461" subTitle="Followers" />
         </a-col>
         <a-col :xxl="8" :md="4" :xs="8">
-          <SocialMediaContent
-            :icon="faLinkedinIn"
-            bgColor="#007CBC"
-            title="5,461"
-            subTitle="Followers"
-          />
+          <SocialMediaContent :icon="faLinkedinIn" bgColor="#007CBC" title="5,461" subTitle="Followers" />
         </a-col>
       </a-row>
     </sdCards>
   </SocialMediaWrapper>
 </template>
 <script>
-import { SocialMediaWrapper } from "../../style";
-import SocialMediaContent from "../../../../components/social-media/overview.vue";
+import { SocialMediaWrapper } from '../../style';
+import SocialMediaContent from '../../../../components/social-media/overview.vue';
 import {
   faFacebookF,
   faTwitter,
@@ -64,10 +39,10 @@ import {
   faLinkedinIn,
   faYoutube,
   faPinterest,
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 
 const SocialMediaOverview = {
-  name: "SocialMediaOverview",
+  name: 'SocialMediaOverview',
   components: { SocialMediaWrapper, SocialMediaContent },
   data() {
     return {

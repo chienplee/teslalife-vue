@@ -86,11 +86,7 @@
           <sdCards title="Basic card" size="default">
             <a-col :lg="8" :md="10" :xs="24" :style="{ padding: 0 }">
               <CardStyleWrapper>
-                <sdCards
-                  :headless="true"
-                  :border="true"
-                  :style="{ width: 400 }"
-                >
+                <sdCards :headless="true" :border="true" :style="{ width: 400 }">
                   <p>Card content</p>
                   <p>Card content</p>
                   <p>Card content</p>
@@ -131,38 +127,14 @@
         <a-col :xs="24">
           <div class="card-grid-wrap">
             <sdCards title="Grid Card" size="default">
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
-              <a-card-grid
-                :style="{ width: '25%', textAlign: 'center', padding: 24 }"
-                >Content</a-card-grid
-              >
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
             </sdCards>
           </div>
         </a-col>
@@ -172,8 +144,8 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { CardStyleWrapper } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { CardStyleWrapper } from './ui-elements-styled';
 
 const MoreContent = () => {
   return (
@@ -203,7 +175,7 @@ const MoreContent = () => {
 };
 
 export default {
-  name: "Cards",
+  name: 'Cards',
   components: {
     Main,
     CardStyleWrapper,
@@ -221,28 +193,28 @@ export default {
       switch (value.date()) {
         case 8:
           listData = [
-            { type: "warning", content: "This is warning event." },
-            { type: "success", content: "This is usual event." },
+            { type: 'warning', content: 'This is warning event.' },
+            { type: 'success', content: 'This is usual event.' },
           ];
           break;
         case 10:
           listData = [
-            { type: "warning", content: "This is warning event." },
-            { type: "success", content: "This is usual event." },
-            { type: "error", content: "This is error event." },
+            { type: 'warning', content: 'This is warning event.' },
+            { type: 'success', content: 'This is usual event.' },
+            { type: 'error', content: 'This is error event.' },
           ];
           break;
         case 15:
           listData = [
-            { type: "warning", content: "This is warning event" },
+            { type: 'warning', content: 'This is warning event' },
             {
-              type: "success",
-              content: "This is very long usual event。。....",
+              type: 'success',
+              content: 'This is very long usual event。。....',
             },
-            { type: "error", content: "This is error event 1." },
-            { type: "error", content: "This is error event 2." },
-            { type: "error", content: "This is error event 3." },
-            { type: "error", content: "This is error event 4." },
+            { type: 'error', content: 'This is error event 1.' },
+            { type: 'error', content: 'This is error event 2.' },
+            { type: 'error', content: 'This is error event 3.' },
+            { type: 'error', content: 'This is error event 4.' },
           ];
           break;
         default:

@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Progress Bar">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
 
     <Main>
@@ -120,22 +122,14 @@
           </sdCards>
           <sdCards title="Circular progress bar">
             <ProgressBarStyle>
-              <a-progress
-                :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }"
-                type="circle"
-                :percent="75"
-              />
+              <a-progress :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }" type="circle" :percent="75" />
               <a-progress
                 :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }"
                 type="circle"
                 :percent="70"
                 status="exception"
               />
-              <a-progress
-                :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }"
-                type="circle"
-                :percent="100"
-              />
+              <a-progress :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }" type="circle" :percent="100" />
             </ProgressBarStyle>
           </sdCards>
           <sdCards title="Mini size progress bar">
@@ -152,15 +146,13 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
-import { Main } from "../styled";
-import { ProgressBarStyle } from "./ui-elements-styled";
-import { mapGetters } from "vuex";
+import { Main } from '../styled';
+import { ProgressBarStyle } from './ui-elements-styled';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "Progressbar",
+  name: 'Progressbar',
   components: {
-    PlusIcon,
     Main,
     ProgressBarStyle,
   },
@@ -170,7 +162,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
   methods: {
     increase() {

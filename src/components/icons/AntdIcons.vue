@@ -1,10 +1,10 @@
 <script>
-import { Row, Col } from "ant-design-vue";
-import { AnIcon, IconWrapper } from "./IconStyled";
-import * as Icons from "@ant-design/icons-vue";
+import { Row, Col } from 'ant-design-vue';
+import { AnIcon, IconWrapper } from './IconStyled';
+import * as Icons from '@ant-design/icons-vue';
 
 export default {
-  name: "AntdIcon",
+  name: 'AntdIcon',
   components: {
     AnIcon,
     IconWrapper,
@@ -19,14 +19,14 @@ export default {
       <Row gutter={15}>
         {Object.values(Icons)
           .filter(
-            (item) =>
-              item.name !== "default" &&
-              item.name !== "setTwoToneColor" &&
-              item.name !== "getTwoToneColor" &&
-              item.name !== "canlendar" &&
-              item.name !== "interation" &&
-              item.name !== "colum-height" &&
-              item.name !== "createFromIconfontCN"
+            item =>
+              item.name !== 'default' &&
+              item.name !== 'setTwoToneColor' &&
+              item.name !== 'getTwoToneColor' &&
+              item.name !== 'canlendar' &&
+              item.name !== 'interation' &&
+              item.name !== 'colum-height' &&
+              item.name !== 'createFromIconfontCN',
           )
           .map((icon, key) => {
             const customTag = Icons[icon.name];

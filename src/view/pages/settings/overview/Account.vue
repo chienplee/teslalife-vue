@@ -10,25 +10,16 @@
       <a-row>
         <a-col :xs="24">
           <BasicFormWrapper>
-            <a-form
-              :model="formState"
-              @finish="handleFinish"
-              @finishFailed="handleFinishFailed"
-            >
+            <a-form :model="formState" @finish="handleFinish" @finishFailed="handleFinishFailed">
               <div class="account-form-top">
                 <a-row type="flex" justify="center">
                   <a-col :xxl="10" :lg="16" :md="18" :xs="24">
                     <div class="account-form">
                       <a-form-item label="Username">
-                        <a-input
-                          v-model:value="formState.username"
-                          @change="handleChange"
-                        />
+                        <a-input v-model:value="formState.username" @change="handleChange" />
                       </a-form-item>
                       <p>
-                        Your Dashboard URL: http://dashboard.com/<span>{{
-                          name
-                        }}</span>
+                        Your Dashboard URL: http://dashboard.com/<span>{{ name }}</span>
                       </p>
                       <a-form-item label="Email">
                         <a-input v-model:value="formState.email" />
@@ -58,19 +49,11 @@
                     </div>
                     <div class="account-action">
                       <div class="setting-form-actions">
-                        <sdButton
-                          size="default"
-                          htmlType="submit"
-                          type="primary"
-                        >
+                        <sdButton size="default" htmlType="submit" type="primary">
                           Save Change
                         </sdButton>
                         &nbsp; &nbsp;
-                        <sdButton
-                          size="default"
-                          @click="handleCancel"
-                          type="light"
-                        >
+                        <sdButton size="default" @click="handleCancel" type="light">
                           Cancel
                         </sdButton>
                       </div>
@@ -87,26 +70,26 @@
 </template>
 
 <script>
-import { AccountWrapper } from "./style";
-import { BasicFormWrapper } from "../../../styled";
-import { reactive } from "vue";
+import { AccountWrapper } from './style';
+import { BasicFormWrapper } from '../../../styled';
+import { reactive } from 'vue';
 
 const Account = {
-  name: "Account",
+  name: 'Account',
   components: { AccountWrapper, BasicFormWrapper },
   data() {
-    const name = "clayton";
+    const name = 'clayton';
     const formState = reactive({
       username: name,
-      email: "contact@example.com",
+      email: 'contact@example.com',
     });
 
-    const handleFinish = (values) => {
+    const handleFinish = values => {
       this.values = { ...values };
       console.log(values, formState);
     };
 
-    const handleFinishFailed = (errors) => {
+    const handleFinishFailed = errors => {
       console.log(errors);
     };
     return {

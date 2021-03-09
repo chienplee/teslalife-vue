@@ -22,17 +22,8 @@
                 <a-statistic title="Active Users" :value="112893" />
               </a-col>
               <a-col :span="12">
-                <a-statistic
-                  title="Account Balance (CNY)"
-                  :value="112893"
-                  :precision="2"
-                />
-                <sdButton
-                  :style="{ marginTop: 16, fontSize: 14 }"
-                  size="large"
-                  type="primary"
-                  raised
-                >
+                <a-statistic title="Account Balance (CNY)" :value="112893" :precision="2" />
+                <sdButton :style="{ marginTop: 16, fontSize: 14 }" size="large" type="primary" raised>
                   Recharge
                 </sdButton>
               </a-col>
@@ -75,11 +66,7 @@
           <sdCards title="Unit" caption="The simplest use of Statistic">
             <a-row :gutter="16">
               <a-col :span="12">
-                <a-statistic
-                  title="Feedback"
-                  :value="1128"
-                  style="margin-right: 50px"
-                >
+                <a-statistic title="Feedback" :value="1128" style="margin-right: 50px">
                   <template #suffix>
                     <LikeOutlined />
                   </template>
@@ -121,14 +108,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import {
-  LikeOutlined,
-  ArrowDownOutlined,
-  ArrowUpOutlined,
-} from "@ant-design/icons-vue";
+import { Main } from '../styled';
+import { LikeOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons-vue';
 export default {
-  name: "Statistic",
+  name: 'Statistic',
   components: {
     Main,
     ArrowDownOutlined,
@@ -142,7 +125,7 @@ export default {
   },
   methods: {
     onFinish() {
-      console.log("finished!");
+      console.log('finished!');
     },
   },
 };

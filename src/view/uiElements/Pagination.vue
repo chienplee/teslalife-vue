@@ -27,23 +27,12 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Page Size">
-            <a-pagination
-              show-size-changer
-              :default-current="3"
-              :total="500"
-              @showSizeChange="onShowSizeChange"
-            />
+            <a-pagination show-size-changer :default-current="3" :total="500" @showSizeChange="onShowSizeChange" />
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Quick Jump">
-            <a-pagination
-              show-size-changer
-              show-quick-jumper
-              :default-current="2"
-              :total="500"
-              @change="onChange"
-            />
+            <a-pagination show-size-changer show-quick-jumper :default-current="2" :total="500" @change="onChange" />
           </sdCards>
         </a-col>
       </a-row>
@@ -52,10 +41,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Pagination",
+  name: 'Pagination',
   components: {
     Main,
   },
@@ -67,10 +56,10 @@ export default {
   },
   watch: {
     pageSize(val) {
-      console.log("pageSize", val);
+      console.log('pageSize', val);
     },
     current(val) {
-      console.log("current", val);
+      console.log('current', val);
     },
   },
   methods: {
@@ -78,7 +67,7 @@ export default {
       console.log(current, pageSize);
     },
     onChange(pageNumber) {
-      console.log("Page: ", pageNumber);
+      console.log('Page: ', pageNumber);
     },
   },
 };

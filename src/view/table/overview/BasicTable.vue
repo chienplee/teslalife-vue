@@ -1,7 +1,9 @@
 <template>
   <div>
     <a-table :columns="columns" :data-source="data">
-      <a slot="name" slot-scope="text">{{ text }}</a>
+      <template v-slot:name:text>
+        <a>{{ text }}</a>
+      </template>
     </a-table>
   </div>
 </template>
@@ -9,38 +11,38 @@
 <script>
 const data = [
   {
-    key: "1",
-    name: "Mike",
+    key: '1',
+    name: 'Mike',
     age: 32,
-    address: "10 Downing Street",
+    address: '10 Downing Street',
   },
   {
-    key: "2",
-    name: "John",
+    key: '2',
+    name: 'John',
     age: 42,
-    address: "10 Downing Street",
+    address: '10 Downing Street',
   },
 ];
 
 const columns = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
   },
 ];
 export default {
-  name: "basicTable",
+  name: 'basicTable',
   data() {
     return {
       data,

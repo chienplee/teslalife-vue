@@ -33,10 +33,7 @@
           <sdCards title="Autoset Font Size">
             <AvatarWraperStyle>
               <div>
-                <a-avatar
-                  :style="{ backgroundColor: color, verticalAlign: 'middle' }"
-                  size="large"
-                >
+                <a-avatar :style="{ backgroundColor: color, verticalAlign: 'middle' }" size="large">
                   {{ user }}
                 </a-avatar>
                 <sdButton
@@ -64,13 +61,8 @@
               <a-avatar icon="user" />
               <a-avatar>U</a-avatar>
               <a-avatar>USER</a-avatar>
-              <a-avatar
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-              />
-              <a-avatar
-                :style="{ color: '#f56a00', backgroundColor: '#fde3cf' }"
-                >U</a-avatar
-              >
+              <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+              <a-avatar :style="{ color: '#f56a00', backgroundColor: '#fde3cf' }">U</a-avatar>
               <a-avatar :style="{ backgroundColor: '#20C997' }" icon="user" />
             </AvatarWraperStyle>
           </sdCards>
@@ -95,18 +87,18 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
-import config from "../../config/config";
-import { AvatarWraperStyle } from "./ui-elements-styled";
-import { mapGetters } from "vuex";
+import config from '../../config/config';
+import { AvatarWraperStyle } from './ui-elements-styled';
+import { mapGetters } from 'vuex';
 
 const { theme } = config;
-const UserList = ["U", "Lucy", "Tom", "Edward"];
-const ColorList = ["#f56a00", "#7265e6", "#ffbf00", "#00a2ae"];
+const UserList = ['U', 'Lucy', 'Tom', 'Edward'];
+const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
 
 export default {
-  name: "Avatar",
+  name: 'Avatar',
   components: {
     Main,
     AvatarWraperStyle,
@@ -121,14 +113,12 @@ export default {
   methods: {
     changeUser() {
       const index = UserList.indexOf(this.user);
-      this.user =
-        index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
-      this.color =
-        index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0];
+      this.user = index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
+      this.color = index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0];
     },
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
 };
 </script>

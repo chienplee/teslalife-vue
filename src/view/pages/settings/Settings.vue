@@ -41,16 +41,16 @@
 </template>
 
 <script>
-import { Main } from "../../styled";
-import { SettingWrapper } from "./overview/style";
-import CoverSection from "./overview/CoverSection";
-import AuthorBox from "./overview/ProfileAuthorBox";
-import { ProfileAuthorBox } from "./overview/style";
+import { Main } from '../../styled';
+import { SettingWrapper } from './overview/style';
+import CoverSection from './overview/CoverSection';
+import AuthorBox from './overview/ProfileAuthorBox';
+import { ProfileAuthorBox } from './overview/style';
 // const AuthorBox = () =>
 //   import(/* webpackChunkName: "author-box" */ "./overview/ProfileAuthorBox");
 
 export default {
-  name: "Settings",
+  name: 'Settings',
   components: {
     Main,
     SettingWrapper,

@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import VueTypes from "vue-types";
-import { CascaderStyle } from "./style";
+import VueTypes from 'vue-types';
+import { CascaderStyle } from './style';
 
 export default {
-  name: "Cascader",
+  name: 'Cascader',
   components: {
     CascaderStyle,
   },
@@ -30,15 +30,10 @@ export default {
   },
   methods: {
     onChangeEvent(value, selectedOptions) {
-      !this.loading
-        ? this.onChange(value)
-        : this.onChange(value, selectedOptions);
+      !this.loading ? this.onChange(value) : this.onChange(value, selectedOptions);
     },
     filter(inputValue, path) {
-      return path.some(
-        (option) =>
-          option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
-      );
+      return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
     },
     loadData(selectedOptions) {
       const targetOption = selectedOptions[selectedOptions.length - 1];
@@ -50,11 +45,11 @@ export default {
         targetOption.children = [
           {
             label: `${targetOption.label} Dynamic 1`,
-            value: "dynamic1",
+            value: 'dynamic1',
           },
           {
             label: `${targetOption.label} Dynamic 2`,
-            value: "dynamic2",
+            value: 'dynamic2',
           },
         ];
         this.options = [...this.options];
@@ -64,32 +59,32 @@ export default {
   props: {
     data: VueTypes.arrayOf(VueTypes.object).def([
       {
-        value: "zhejiang",
-        label: "Zhejiang",
+        value: 'zhejiang',
+        label: 'Zhejiang',
         children: [
           {
-            value: "hangzhou",
-            label: "Hangzhou",
+            value: 'hangzhou',
+            label: 'Hangzhou',
             children: [
               {
-                value: "xihu",
-                label: "West Lake",
+                value: 'xihu',
+                label: 'West Lake',
               },
             ],
           },
         ],
       },
       {
-        value: "jiangsu",
-        label: "Jiangsu",
+        value: 'jiangsu',
+        label: 'Jiangsu',
         children: [
           {
-            value: "nanjing",
-            label: "Nanjing",
+            value: 'nanjing',
+            label: 'Nanjing',
             children: [
               {
-                value: "zhonghuamen",
-                label: "Zhong Hua Men",
+                value: 'zhonghuamen',
+                label: 'Zhong Hua Men',
               },
             ],
           },
@@ -97,12 +92,12 @@ export default {
       },
     ]),
     defaultValue: VueTypes.arrayOf(VueTypes.string).def([]),
-    trigger: VueTypes.string.def("click"),
-    placeholder: VueTypes.string.def("Please select"),
+    trigger: VueTypes.string.def('click'),
+    placeholder: VueTypes.string.def('Please select'),
     onChange: VueTypes.func,
     isShowSearch: VueTypes.bool.def(false),
     loading: VueTypes.bool.def(false),
-    size: VueTypes.oneOf(["large", "default", "small"]).def("default"),
+    size: VueTypes.oneOf(['large', 'default', 'small']).def('default'),
   },
 };
 </script>

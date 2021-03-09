@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 import {
   Banner1,
@@ -80,10 +80,10 @@ import {
   BannerCard2,
   BannerCta,
   BannerCta2,
-} from "../../components/banners/Banners";
+} from '../../components/banners/Banners';
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   components: {
     Main,
     Banner1,

@@ -70,12 +70,7 @@
             <sdButton size="default" :transparented="true" type="dark">
               Dark
             </sdButton>
-            <sdButton
-              class="btn-transparent"
-              size="default"
-              :transparented="true"
-              type="light"
-            >
+            <sdButton class="btn-transparent" size="default" :transparented="true" type="light">
               Light
             </sdButton>
           </sdCards>
@@ -109,24 +104,16 @@
             </sdButton>
           </sdCards>
           <sdCards title="Icon" size="default">
-            <sdButton size="default" type="primary">
-              <sdFeatherIcons type="layers" size="14" /> Default
-            </sdButton>
+            <sdButton size="default" type="primary"> <sdFeatherIcons type="layers" size="14" /> Default </sdButton>
             <sdButton size="default" transparented type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
             <sdButton size="default" outlined type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton size="default" type="white">
-              <sdFeatherIcons type="layers" size="14" /> Default
-            </sdButton>
-            <sdButton size="default" type="light">
-              <sdFeatherIcons type="layers" size="14" /> Default
-            </sdButton>
-            <sdButton size="default" raised type="white">
-              <sdFeatherIcons type="layers" size="14" /> Default
-            </sdButton>
+            <sdButton size="default" type="white"> <sdFeatherIcons type="layers" size="14" /> Default </sdButton>
+            <sdButton size="default" type="light"> <sdFeatherIcons type="layers" size="14" /> Default </sdButton>
+            <sdButton size="default" raised type="white"> <sdFeatherIcons type="layers" size="14" /> Default </sdButton>
             <sdButton class="btn-icon" size="default" type="primary">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
@@ -136,12 +123,7 @@
             <sdButton class="btn-icon" size="default" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon btn-outlined"
-              size="default"
-              :outlined="true"
-              type="light"
-            >
+            <sdButton class="btn-icon btn-outlined" size="default" :outlined="true" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
           </sdCards>
@@ -189,28 +171,13 @@
                     <sdButton size="small" type="primary">
                       Today
                     </sdButton>
-                    <sdButton
-                      size="small"
-                      rise
-                      type="white"
-                      class="btn-outlined"
-                    >
+                    <sdButton size="small" rise type="white" class="btn-outlined">
                       Week
                     </sdButton>
-                    <sdButton
-                      size="small"
-                      rise
-                      type="white"
-                      class="btn-outlined"
-                    >
+                    <sdButton size="small" rise type="white" class="btn-outlined">
                       Month
                     </sdButton>
-                    <sdButton
-                      size="small"
-                      rise
-                      type="white"
-                      class="btn-outlined"
-                    >
+                    <sdButton size="small" rise type="white" class="btn-outlined">
                       Year
                     </sdButton>
                   </sdBtnGroup>
@@ -293,12 +260,7 @@
             <sdButton size="default" :outlined="true" type="dark">
               Dark
             </sdButton>
-            <sdButton
-              class="btn-outlined"
-              size="default"
-              :outlined="true"
-              type="light"
-            >
+            <sdButton class="btn-outlined" size="default" :outlined="true" type="light">
               Light
             </sdButton>
             <sdButton size="default" :outlined="true" type="dashed">
@@ -334,77 +296,31 @@
           </sdCards>
 
           <sdCards title="Rounded Outline" size="default">
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="primary"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="primary">
               Primary
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="secondary"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="secondary">
               Secondary
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="success"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="success">
               Success
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="info"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="info">
               Info
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="warning"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="warning">
               Warning
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="danger"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="danger">
               Danger
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="dark"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="dark">
               Dark
             </sdButton>
-            <sdButton
-              class="btn-outlined"
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="light"
-            >
+            <sdButton class="btn-outlined" size="default" :outlined="true" shape="circle" type="light">
               Light
             </sdButton>
-            <sdButton
-              size="default"
-              :outlined="true"
-              shape="circle"
-              type="dashed"
-            >
+            <sdButton size="default" :outlined="true" shape="circle" type="dashed">
               Dashed
             </sdButton>
           </sdCards>
@@ -413,29 +329,13 @@
             <sdButton size="default" shape="circle" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              size="default"
-              shape="circle"
-              :transparented="true"
-              type="primary"
-            >
+            <sdButton size="default" shape="circle" :transparented="true" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              size="default"
-              shape="circle"
-              :outlined="true"
-              type="primary"
-            >
+            <sdButton size="default" shape="circle" :outlined="true" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              class="btn-outlined"
-              size="default"
-              shape="circle"
-              :outlined="true"
-              type="light"
-            >
+            <sdButton class="btn-outlined" size="default" shape="circle" :outlined="true" type="light">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
             <sdButton size="default" shape="circle" type="light">
@@ -444,38 +344,16 @@
             <sdButton size="default" shape="circle" :raised="true" type="white">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              shape="round"
-              type="primary"
-            >
+            <sdButton class="btn-icon" size="default" shape="round" type="primary">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              :outlined="true"
-              shape="round"
-              type="primary"
-            >
+            <sdButton class="btn-icon" size="default" :outlined="true" shape="round" type="primary">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon btn-outlined"
-              size="default"
-              :outlined="true"
-              shape="round"
-              type="light"
-            >
+            <sdButton class="btn-icon btn-outlined" size="default" :outlined="true" shape="round" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              shape="round"
-              type="light"
-            >
+            <sdButton class="btn-icon" size="default" shape="round" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
           </sdCards>
@@ -503,28 +381,13 @@
             <sdButton size="default" shape="circle" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              size="default"
-              shape="circle"
-              :transparented="true"
-              type="primary"
-            >
+            <sdButton size="default" shape="circle" :transparented="true" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              size="default"
-              shape="circle"
-              :outlined="true"
-              type="primary"
-            >
+            <sdButton size="default" shape="circle" :outlined="true" type="primary">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              size="default"
-              shape="circle"
-              :outlined="true"
-              type="light"
-            >
+            <sdButton size="default" shape="circle" :outlined="true" type="light">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
             <sdButton size="default" shape="circle" type="light">
@@ -533,38 +396,16 @@
             <sdButton size="default" shape="circle" :raised="true" type="white">
               <sdFeatherIcons type="layers" size="14" /> Default
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              shape="round"
-              type="primary"
-            >
+            <sdButton class="btn-icon" size="default" shape="round" type="primary">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              :outlined="true"
-              shape="round"
-              type="primary"
-            >
+            <sdButton class="btn-icon" size="default" :outlined="true" shape="round" type="primary">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon btn-outlined"
-              size="default"
-              :outlined="true"
-              shape="round"
-              type="light"
-            >
+            <sdButton class="btn-icon btn-outlined" size="default" :outlined="true" shape="round" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
-            <sdButton
-              class="btn-icon"
-              size="default"
-              shape="round"
-              type="light"
-            >
+            <sdButton class="btn-icon" size="default" shape="round" type="light">
               <sdFeatherIcons type="layers" size="14" />
             </sdButton>
           </sdCards>
@@ -594,20 +435,14 @@
 </template>
 
 <script>
-import {
-  Main,
-  ButtonsGroupWrapper,
-  BlockButtonsWrapper,
-  ButtonSizeWrapper,
-  BtnWithIcon,
-} from "../styled";
+import { Main, ButtonsGroupWrapper, BlockButtonsWrapper, ButtonSizeWrapper, BtnWithIcon } from '../styled';
 
-import config from "../../config/config";
+import config from '../../config/config';
 
 const { theme } = config;
 
 export default {
-  name: "Buttons",
+  name: 'Buttons',
   components: {
     Main,
     ButtonsGroupWrapper,

@@ -27,17 +27,17 @@
               </a-form-item>
             </a-col>
           </a-row>
-            <a-row>
-                <a-col :sm="12" :xs="24">
-                    <div class="sDash_form-action">
-                        <sdButton class="btn-signin" html-type="submit" type="light">
-                        Cancel
-                        </sdButton>
-                        <sdButton class="btn-signin" type="primary">
-                        Save
-                        </sdButton>
-                    </div>
-                </a-col>
+          <a-row>
+            <a-col :sm="12" :xs="24">
+              <div class="sDash_form-action">
+                <sdButton class="btn-signin" html-type="submit" type="light">
+                  Cancel
+                </sdButton>
+                <sdButton class="btn-signin" type="primary">
+                  Save
+                </sdButton>
+              </div>
+            </a-col>
           </a-row>
         </a-form>
       </sdCards>
@@ -46,12 +46,11 @@
 </template>
 
 <script>
-import { BasicFormWrapper } from "../../styled";
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "MultiColumnForm",
+  name: 'MultiColumnForm',
   components: {
     BasicFormWrapper,
   },
 };
 </script>
-

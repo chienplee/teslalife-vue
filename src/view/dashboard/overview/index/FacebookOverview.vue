@@ -23,9 +23,7 @@
               <a-col :md="12" :sm="12" :xs="24">
                 <Focard>
                   <div class="focard-details growth-upward">
-                    <sdHeading as="h1">{{
-                      forcastOverviewState.Engaged
-                    }}</sdHeading>
+                    <sdHeading as="h1">{{ forcastOverviewState.Engaged }}</sdHeading>
                     <p class="subtitle">Engaged Users</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
@@ -48,11 +46,7 @@
                             borderColor: '#20C997',
                             borderWidth: 3,
                             fill: true,
-                            backgroundColor: () =>
-                              chartMethods('engaged', [
-                                '#20C99710',
-                                '#20C99701',
-                              ]),
+                            backgroundColor: () => chartMethods('engaged', ['#20C99710', '#20C99701']),
                             pointHoverRadius: 0,
                             pointHoverBorderColor: 'transparent',
                           },
@@ -68,9 +62,7 @@
               <a-col :md="12" :sm="12" :xs="24">
                 <Focard>
                   <div class="focard-details growth-upward">
-                    <sdHeading as="h1">{{
-                      forcastOverviewState.Impressions
-                    }}</sdHeading>
+                    <sdHeading as="h1">{{ forcastOverviewState.Impressions }}</sdHeading>
                     <p class="subtitle">Page Impressions</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
@@ -96,11 +88,7 @@
 
                             borderWidth: 3,
                             fill: true,
-                            backgroundColor: () =>
-                              chartMethods('impression', [
-                                '#FF69A510',
-                                '#FF69A501',
-                              ]),
+                            backgroundColor: () => chartMethods('impression', ['#FF69A510', '#FF69A501']),
                             pointHoverRadius: 0,
                             pointHoverBorderColor: 'transparent',
                           },
@@ -118,9 +106,7 @@
               <a-col :md="12" :sm="12">
                 <Focard>
                   <div class="focard-details growth-downward">
-                    <sdHeading as="h1">{{
-                      forcastOverviewState.Like
-                    }}</sdHeading>
+                    <sdHeading as="h1">{{ forcastOverviewState.Like }}</sdHeading>
                     <p class="subtitle">Total Page Likes</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
@@ -146,8 +132,7 @@
                             borderWidth: 3,
                             fill: true,
 
-                            backgroundColor: () =>
-                              chartMethods('likes', ['#5F63F210', '#5F63F201']),
+                            backgroundColor: () => chartMethods('likes', ['#5F63F210', '#5F63F201']),
                             pointHoverRadius: 0,
                             pointHoverBorderColor: 'transparent',
                           },
@@ -161,9 +146,7 @@
               <a-col :md="12" :sm="12" :xs="24">
                 <Focard>
                   <div class="focard-details growth-upward">
-                    <sdHeading as="h1">{{
-                      forcastOverviewState.Impressions2
-                    }}</sdHeading>
+                    <sdHeading as="h1">{{ forcastOverviewState.Impressions2 }}</sdHeading>
                     <p class="subtitle">Page Impressions</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
@@ -188,11 +171,7 @@
                             borderColor: '#FA8B0C',
                             borderWidth: 3,
                             fill: true,
-                            backgroundColor: () =>
-                              chartMethods('impression2', [
-                                '#FA8B0C10',
-                                '#FA8B0C01',
-                              ]),
+                            backgroundColor: () => chartMethods('impression2', ['#FA8B0C10', '#FA8B0C01']),
                             pointHoverRadius: 0,
                             pointHoverBorderColor: 'transparent',
                           },
@@ -213,15 +192,12 @@
 </template>
 
 <script>
-import { Focard, CardGroup } from "../../style";
-import Chart from "../../../../components/utilities/chartjs";
-import {
-  chartLinearGradient,
-  customTooltips,
-} from "../../../../components/utilities/utilities";
+import { Focard, CardGroup } from '../../style';
+import Chart from '../../../../components/utilities/chartjs';
+import { chartLinearGradient, customTooltips } from '../../../../components/utilities/utilities';
 
 export default {
-  name: "FacebookOverview",
+  name: 'FacebookOverview',
   components: {
     Focard,
     CardGroup,
@@ -229,13 +205,13 @@ export default {
   },
   data() {
     return {
-      value: "today",
+      value: 'today',
       height: null,
       areaChartOption: {
         maintainAspectRatio: true,
         responsive: false,
         hover: {
-          mode: "nearest",
+          mode: 'nearest',
           intersect: false,
         },
         layout: {
@@ -263,7 +239,7 @@ export default {
               stacked: true,
               gridLines: {
                 display: false,
-                color: "#e5e9f2",
+                color: '#e5e9f2',
               },
               ticks: {
                 beginAtZero: true,
@@ -289,9 +265,9 @@ export default {
           ],
         },
         tooltips: {
-          mode: "label",
+          mode: 'label',
           intersect: false,
-          position: "average",
+          position: 'average',
           enabled: false,
           custom: customTooltips,
           callbacks: {
@@ -301,11 +277,10 @@ export default {
               return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
             },
             labelColor(tooltipItem, chart) {
-              const dataset =
-                chart.config.data.datasets[tooltipItem.datasetIndex];
+              const dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
               return {
                 backgroundColor: dataset.borderColor,
-                borderColor: "transparent",
+                borderColor: 'transparent',
                 usePointStyle: true,
               };
             },
@@ -322,7 +297,7 @@ export default {
       });
     },
     forcastOverview(e) {
-      this.$store.dispatch("forcastOverviewFilterData", e.target.value);
+      this.$store.dispatch('forcastOverviewFilterData', e.target.value);
     },
   },
   computed: {
@@ -335,7 +310,7 @@ export default {
   },
   mounted() {
     this.height = window.innerWidth <= 1199 ? 100 : 115;
-    this.$store.dispatch("forcastOverviewGetData");
+    this.$store.dispatch('forcastOverviewGetData');
   },
 };
 </script>

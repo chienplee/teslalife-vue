@@ -1,4 +1,3 @@
-
 import Styled from 'vue3-styled-components';
 import propTypes from 'prop-types';
 

@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import { ColorPalette } from "./style";
-import VueTypes from "vue-types";
+import { ColorPalette } from './style';
+import VueTypes from 'vue-types';
 
 export default {
-  name: "Palette",
+  name: 'Palette',
   components: {
     ColorPalette,
   },
@@ -31,11 +31,7 @@ export default {
     bg: VueTypes.bool.def(false),
     gradient: VueTypes.bool.def(false),
     direction: VueTypes.string,
-    children: VueTypes.oneOfType([
-      VueTypes.object,
-      VueTypes.string,
-      VueTypes.node,
-    ]),
+    children: VueTypes.oneOfType([VueTypes.object, VueTypes.string, VueTypes.node]),
   },
 };
 </script>

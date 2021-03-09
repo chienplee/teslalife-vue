@@ -8,26 +8,14 @@
               <a-input value="Duran Clayton" placeholder="input placeholder" />
             </a-form-item>
             <a-form-item label="Email Address">
-              <a-input
-                name="email"
-                value="username@email.com"
-                placeholder="input placeholder"
-              />
+              <a-input name="email" value="username@email.com" placeholder="input placeholder" />
             </a-form-item>
 
             <a-form-item label="Password">
-              <a-input-password
-                name="password"
-                value="12345678"
-                placeholder="with input password"
-              />
+              <a-input-password name="password" value="12345678" placeholder="with input password" />
             </a-form-item>
             <div class="sDash_form-action">
-              <sdButton
-                className="btn-signin"
-                htmlType="submit"
-                type="light"
-              >
+              <sdButton className="btn-signin" htmlType="submit" type="light">
                 Cancel
               </sdButton>
               <sdButton class="btn-signin" type="primary">
@@ -42,14 +30,13 @@
 </template>
 
 <script>
-import { VerticalFormStyleWrap } from "./Style";
-import { BasicFormWrapper } from "../../styled";
+import { VerticalFormStyleWrap } from './Style';
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "VerticalForm",
+  name: 'VerticalForm',
   components: {
     BasicFormWrapper,
     VerticalFormStyleWrap,
   },
 };
 </script>
-

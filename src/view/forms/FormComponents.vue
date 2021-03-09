@@ -50,11 +50,7 @@
                     </a-col>
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
-                        <a-input-password
-                          name="password"
-                          value="12345678"
-                          placeholder="with input password"
-                        >
+                        <a-input-password name="password" value="12345678" placeholder="with input password">
                           <template v-slot:prefix>
                             <sdFeatherIcon type="lock" size="14" />
                           </template>
@@ -63,10 +59,7 @@
                     </a-col>
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
-                        <a-input
-                          name="input-payment"
-                          placeholder="Payment Method"
-                        >
+                        <a-input name="input-payment" placeholder="Payment Method">
                           <template v-slot:prefix>
                             <sdFeatherIcon type="credit-card" size="14" />
                           </template>
@@ -90,20 +83,12 @@
               <DropDownListComponents>
                 <div class="sDash_dropdown-list">
                   <sdDropdown placement="bottomLeft">
-                    <sdButton
-                      class="btn-outlined"
-                      :outlined="true"
-                      type="light"
-                    >
+                    <sdButton class="btn-outlined" :outlined="true" type="light">
                       Alerts
                     </sdButton>
                   </sdDropdown>
                   <sdDropdown placement="bottomLeft">
-                    <sdButton
-                      class="btn-outlined"
-                      :outlined="true"
-                      type="light"
-                    >
+                    <sdButton class="btn-outlined" :outlined="true" type="light">
                       Select an option...
                     </sdButton>
                   </sdDropdown>
@@ -181,12 +166,12 @@
 </template>
 
 <script>
-import { message } from "ant-design-vue";
-import { Main, BasicFormWrapper } from "../styled";
-import { FormComponentsWrap, DropDownListComponents } from "./overview/Style";
+import { message } from 'ant-design-vue';
+import { Main, BasicFormWrapper } from '../styled';
+import { FormComponentsWrap, DropDownListComponents } from './overview/Style';
 
 export default {
-  name: "FormComponent",
+  name: 'FormComponent',
   components: {
     Main,
     BasicFormWrapper,
@@ -201,12 +186,12 @@ export default {
   methods: {
     handleChange(info) {
       const status = info.file.status;
-      if (status !== "uploading") {
+      if (status !== 'uploading') {
         //console.log(info.file, info.fileList);
       }
-      if (status === "done") {
+      if (status === 'done') {
         message.success(`${info.file.name} file uploaded successfully.`);
-      } else if (status === "error") {
+      } else if (status === 'error') {
         message.error(`${info.file.name} file upload failed.`);
       }
     },

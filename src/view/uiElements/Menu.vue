@@ -40,12 +40,7 @@
                 </a-menu-item-group>
               </a-sub-menu>
               <a-menu-item key="alipay">
-                <a
-                  href="https://antdv.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Navigation Four - Link</a
-                >
+                <a href="https://antdv.com" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
               </a-menu-item>
             </a-menu>
           </sdCards>
@@ -86,12 +81,7 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Vertical Menu">
-            <a-menu
-              mode="inline"
-              :open-keys="openKeys"
-              style="width: 256px"
-              @openChange="onOpenChange"
-            >
+            <a-menu mode="inline" :open-keys="openKeys" style="width: 256px" @openChange="onOpenChange">
               <a-sub-menu key="sub1">
                 <template v-slot:title>
                   <span><MailOutlined /><span>Navigation One</span></span>
@@ -130,15 +120,11 @@
 </template>
 
 <script>
-import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from "@ant-design/icons-vue";
-import { Main } from "../styled";
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { Main } from '../styled';
 
 export default {
-  name: "Menu",
+  name: 'Menu',
   components: {
     Main,
     MailOutlined,
@@ -147,16 +133,14 @@ export default {
   },
   data() {
     return {
-      current: ["mail"],
-      rootSubmenuKeys: ["sub1", "sub2", "sub4"],
-      openKeys: ["sub1"],
+      current: ['mail'],
+      rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
+      openKeys: ['sub1'],
     };
   },
   methods: {
     onOpenChange(openKeys) {
-      const latestOpenKey = openKeys.find(
-        (key) => this.openKeys.indexOf(key) === -1
-      );
+      const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
       if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
         this.openKeys = openKeys;
       } else {

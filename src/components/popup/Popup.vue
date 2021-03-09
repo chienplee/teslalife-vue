@@ -1,10 +1,5 @@
 <template>
-  <a-popover
-    v-model="visible"
-    :placement="placement"
-    :title="title && title"
-    :trigger="action"
-  >
+  <a-popover v-model="visible" :placement="placement" :title="title && title" :trigger="action">
     <template v-if="title" v-slot:title>
       <Title>{{ title }}</Title>
     </template>
@@ -31,15 +26,15 @@
 </template>
 
 <script>
-import { Content, Title } from "./style";
-import VueTypes from "vue-types";
+import { Content, Title } from './style';
+import VueTypes from 'vue-types';
 
 export default {
-  name: "Popover",
+  name: 'Popover',
   props: {
-    placement: VueTypes.string.def("bottom"),
+    placement: VueTypes.string.def('bottom'),
     title: VueTypes.string,
-    action: VueTypes.string.def("hover"),
+    action: VueTypes.string.def('hover'),
   },
   data() {
     return {
@@ -53,5 +48,5 @@ export default {
 };
 </script>
 <style>
-@import "./style.css";
+@import './style.css';
 </style>

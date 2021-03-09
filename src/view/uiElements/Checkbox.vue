@@ -22,20 +22,12 @@
           <sdCards title="Check all">
             <div>
               <div :style="{ borderBottom: '1px solid #E9E9E9' }">
-                <a-checkbox
-                  :indeterminate="indeterminate"
-                  :checked="checkAll"
-                  @change="onCheckAllChange"
-                >
+                <a-checkbox :indeterminate="indeterminate" :checked="checkAll" @change="onCheckAllChange">
                   Check all
                 </a-checkbox>
               </div>
               <br />
-              <a-checkbox-group
-                v-model="checkedList"
-                :options="plainOptions"
-                @change="onChanges"
-              />
+              <a-checkbox-group v-model="checkedList" :options="plainOptions" @change="onChanges" />
             </div>
           </sdCards>
         </a-col>
@@ -50,13 +42,13 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
-const plainOptions = ["Apple", "Pear", "Orange"];
-const defaultCheckedList = ["Apple", "Orange"];
+const plainOptions = ['Apple', 'Pear', 'Orange'];
+const defaultCheckedList = ['Apple', 'Orange'];
 
 export default {
-  name: "Checkbox",
+  name: 'Checkbox',
   components: {
     Main,
   },
@@ -73,8 +65,7 @@ export default {
       // console.log(`checked = ${e.target.checked}`);
     },
     onChanges(checkedList) {
-      this.indeterminate =
-        !!checkedList.length && checkedList.length < plainOptions.length;
+      this.indeterminate = !!checkedList.length && checkedList.length < plainOptions.length;
       this.checkAll = checkedList.length === plainOptions.length;
     },
     onCheckAllChange(e) {

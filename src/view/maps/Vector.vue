@@ -17,13 +17,7 @@
       <a-row :gutter="25">
         <a-col :md="24" :xs="24">
           <sdCards title="Leaflet Basic Map">
-            <Map
-              class="map-wrapper"
-              v-if="mapData"
-              :data="mapData"
-              :projection="projection"
-              :key="1"
-            >
+            <Map class="map-wrapper" v-if="mapData" :data="mapData" :projection="projection" :key="1">
               <MapFeatures
                 fill="#DBE1E8"
                 stroke="#FFF"
@@ -53,11 +47,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { geoEqualEarth } from "d3-geo";
+import { Main } from '../styled';
+import { geoEqualEarth } from 'd3-geo';
 
 export default {
-  name: "vector",
+  name: 'vector',
   components: {
     Main,
   },
@@ -66,11 +60,9 @@ export default {
     projection: geoEqualEarth,
   }),
   mounted() {
-    fetch(
-      "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json"
-    )
-      .then((r) => r.json())
-      .then((d) => (this.mapData = d));
+    fetch('https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json')
+      .then(r => r.json())
+      .then(d => (this.mapData = d));
   },
 };
 </script>

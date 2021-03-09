@@ -45,12 +45,12 @@
 </template>
 
 <script>
-import { AutoCompleteStyled } from "./style";
-import VueTypes from "vue-types";
-import { mapGetters } from "vuex";
+import { AutoCompleteStyled } from './style';
+import VueTypes from 'vue-types';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "AutoComplete",
+  name: 'AutoComplete',
   components: {
     AutoCompleteStyled,
   },
@@ -58,14 +58,14 @@ export default {
     customComponent: VueTypes.bool.def(false),
     patterns: VueTypes.bool.def(false),
     patternButtons: VueTypes.bool.def(false),
-    width: VueTypes.string.def("350px"),
+    width: VueTypes.string.def('350px'),
     onSearch: VueTypes.func,
     dataSource: VueTypes.array,
-    placeholder: VueTypes.string.def("Input here"),
+    placeholder: VueTypes.string.def('Input here'),
   },
   data() {
     return {
-      value: "",
+      value: '',
       state: {
         dataSource: [],
         notData: this.dataSource,
@@ -73,20 +73,18 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
   methods: {
     onSearching(searchText) {
       this.value = searchText;
-      this.$emit("onSearch", searchText);
+      this.$emit('onSearch', searchText);
       let arrayData = [];
-      const data = this.dataSource.filter((item) =>
-        item.title.toUpperCase().startsWith(searchText.toUpperCase())
-      );
+      const data = this.dataSource.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
       if (data.length) {
-        data.map((item) => arrayData.push(item.title));
+        data.map(item => arrayData.push(item.title));
       } else {
-        arrayData = ["Data Not Found!"];
+        arrayData = ['Data Not Found!'];
       }
       this.state.dataSource = !searchText ? [] : arrayData;
     },

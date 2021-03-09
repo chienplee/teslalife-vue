@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import { Empty } from "ant-design-vue";
-import { Main } from "../styled";
+import { Empty } from 'ant-design-vue';
+import { Main } from '../styled';
 export default {
-  name: "Empty",
+  name: 'Empty',
   components: {
     Main,
   },

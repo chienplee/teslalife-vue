@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import FontAwesomeIcon from "../../components/icons/FaIcons";
-import { IconWrapper } from "./IconStyled";
+import { Main } from '../styled';
+import FontAwesomeIcon from '../../components/icons/FaIcons';
+import { IconWrapper } from './IconStyled';
 
 export default {
-  name: "FontAwesome",
+  name: 'FontAwesome',
   components: {
     Main,
     FontAwesomeIcon,

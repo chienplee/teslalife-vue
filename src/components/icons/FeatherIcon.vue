@@ -1,10 +1,10 @@
 <script>
-import * as Icons from "feather-icons";
-import { Row, Col } from "ant-design-vue";
-import { Icon, IconWrapper } from "./IconStyled";
+import * as Icons from 'feather-icons';
+import { Row, Col } from 'ant-design-vue';
+import { Icon, IconWrapper } from './IconStyled';
 
 export default {
-  name: "FeatherIcon",
+  name: 'FeatherIcon',
   components: {
     Icon,
     IconWrapper,
@@ -17,7 +17,7 @@ export default {
   render() {
     return (
       <Row gutter={15}>
-        {Object.keys(Icons.icons).map((icon) => {
+        {Object.keys(Icons.icons).map(icon => {
           return (
             <Col xl={6} md={12} xs={24} key={icon}>
               <Icon class="icon-single">

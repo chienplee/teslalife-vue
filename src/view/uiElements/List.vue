@@ -36,21 +36,21 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "List",
+  name: 'List',
   components: {
     Main,
   },
   data() {
     return {
       data: [
-        "Racing car sprays burning fuel into crowd.",
-        "Japanese princess to wed commoner.",
-        "Australian walks 100km after outback crash.",
-        "Man charged over missing wedding girl.",
-        "Los Angeles battles huge wildfires.",
+        'Racing car sprays burning fuel into crowd.',
+        'Japanese princess to wed commoner.',
+        'Australian walks 100km after outback crash.',
+        'Man charged over missing wedding girl.',
+        'Los Angeles battles huge wildfires.',
       ],
     };
   },

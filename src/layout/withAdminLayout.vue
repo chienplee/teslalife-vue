@@ -10,40 +10,13 @@
         }"
       >
         <a-row>
-          <a-col
-            :lg="!topMenu ? 4 : 3"
-            :sm="6"
-            :xs="12"
-            class="align-center-v navbar-brand"
-          >
-            <sdButton
-              v-if="!topMenu || innerWidth <= 991"
-              @click="toggleCollapsed(collapsed)"
-              type="white"
-            >
-              <img
-                :src="
-                  require(`../static/img/icon/${
-                    collapsed ? 'right.svg' : 'left.svg'
-                  }`)
-                "
-                alt="menu"
-              />
+          <a-col :lg="!topMenu ? 4 : 3" :sm="6" :xs="12" class="align-center-v navbar-brand">
+            <sdButton v-if="!topMenu || innerWidth <= 991" @click="toggleCollapsed(collapsed)" type="white">
+              <img :src="require(`../static/img/icon/${collapsed ? 'right.svg' : 'left.svg'}`)" alt="menu" />
             </sdButton>
-            <router-link
-              :class="
-                topMenu && innerWidth > 991
-                  ? 'striking-logo top-menu'
-                  : 'striking-logo'
-              "
-              to="/admin"
-            >
+            <router-link :class="topMenu && innerWidth > 991 ? 'striking-logo top-menu' : 'striking-logo'" to="/admin">
               <img
-                :src="
-                  !darkMode
-                    ? require(`../static/img/Logo_Dark.svg`)
-                    : require(`../static/img/Logo_white.png`)
-                "
+                :src="!darkMode ? require(`../static/img/Logo_Dark.svg`) : require(`../static/img/Logo_white.png`)"
                 alt="logo"
               />
             </router-link>
@@ -57,9 +30,7 @@
             <TopMenuSearch v-if="topMenu && innerWidth > 991">
               <div class="top-right-wrap d-flex">
                 <router-link
-                  :class="
-                    `${activeSearch ? 'search-toggle active' : 'search-toggle'}`
-                  "
+                  :class="`${activeSearch ? 'search-toggle active' : 'search-toggle'}`"
                   @click="
                     () => {
                       toggleSearch();
@@ -70,15 +41,7 @@
                   <sdFeatherIcons type="search" />
                   <sdFeatherIcons type="x" />
                 </router-link>
-                <div
-                  :class="
-                    `${
-                      activeSearch
-                        ? 'topMenu-search-form show'
-                        : 'topMenu-search-form'
-                    }`
-                  "
-                >
+                <div :class="`${activeSearch ? 'topMenu-search-form show' : 'topMenu-search-form'}`">
                   <form action="">
                     <span class="search-icon">
                       <sdFeatherIcons type="search" />
@@ -93,19 +56,11 @@
           </a-col>
           <a-col :style="{ position: 'static' }" :md="0" :sm="18" :xs="12">
             <div class="mobile-action">
-              <router-link
-                class="btn-search"
-                @click="(e) => handleSearchHide(e, searchHide)"
-                to="#"
-              >
+              <router-link class="btn-search" @click="e => handleSearchHide(e, searchHide)" to="#">
                 <sdFeatherIcons type="search" v-if="searchHide" />
                 <sdFeatherIcons type="x" v-else />
               </router-link>
-              <router-link
-                class="btn-auth"
-                @click="() => onShowHide(hide)"
-                to="#"
-              >
+              <router-link class="btn-auth" @click="() => onShowHide(hide)" to="#">
                 <sdFeatherIcons type="more-vertical" />
               </router-link>
             </div>
@@ -143,9 +98,7 @@
             :theme="!darkMode ? 'light' : 'dark'"
           >
             <p class="sidebar-nav-title">MAIN MENU</p>
-            <AsideItems
-              :toggleCollapsed="() => toggleCollapsedMobile(collapsed)"
-            />
+            <AsideItems :toggleCollapsed="() => toggleCollapsedMobile(collapsed)" />
           </Sider>
         </template>
         <Layout class="atbd-main-layout">
@@ -192,23 +145,18 @@
   </Div>
 </template>
 <script>
-import { Layout } from "ant-design-vue";
-import {
-  Div,
-  SmallScreenSearch,
-  SmallScreenAuthInfo,
-  TopMenuSearch,
-} from "./style";
-import HeaderSearch from "../components/header-search/HeaderSearch";
+import { Layout } from 'ant-design-vue';
+import { Div, SmallScreenSearch, SmallScreenAuthInfo, TopMenuSearch } from './style';
+import HeaderSearch from '../components/header-search/HeaderSearch';
 
-import AuthInfo from "../components/utilities/auth-info/info";
-import AsideItems from "./Aside";
-import TopMenu from "./TopMenuItems";
+import AuthInfo from '../components/utilities/auth-info/info';
+import AsideItems from './Aside';
+import TopMenu from './TopMenuItems';
 
 const { Header, Footer, Sider, Content } = Layout;
 
 export default {
-  name: "WithAdminLayout",
+  name: 'WithAdminLayout',
   components: {
     Div,
     Header,
@@ -263,7 +211,7 @@ export default {
       this.searchHide = true;
     },
     toggleCollapsedMobile: function(collapsed) {
-      console.log("hello");
+      console.log('hello');
       if (innerWidth <= 990) {
         this.collapsed = !collapsed;
       }

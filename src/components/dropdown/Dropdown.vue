@@ -1,10 +1,5 @@
 <template>
-  <a-dropdown
-    :overlayClassName="className"
-    :placement="placement"
-    :title="title"
-    :trigger="action"
-  >
+  <a-dropdown :overlayClassName="className" :placement="placement" :title="title" :trigger="action">
     <template v-slot:overlay>
       <Content>
         <slot name="overlay">
@@ -25,18 +20,18 @@
 </template>
 
 <script>
-import VueTypes from "vue-types";
-import { Content } from "./dropdown-style";
+import VueTypes from 'vue-types';
+import { Content } from './dropdown-style';
 export default {
-  name: "Dropdown",
+  name: 'Dropdown',
   components: {
     Content,
   },
   props: {
-    placement: VueTypes.string.def("bottomRight"),
+    placement: VueTypes.string.def('bottomRight'),
     title: VueTypes.string,
-    action: VueTypes.array.def(["hover"]),
-    className: VueTypes.string.def("strikingDash-dropdown"),
+    action: VueTypes.array.def(['hover']),
+    className: VueTypes.string.def('strikingDash-dropdown'),
   },
 };
 </script>

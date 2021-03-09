@@ -20,16 +20,14 @@
   </ThemeProvider>
 </template>
 <script>
-import { ThemeProvider } from "vue3-styled-components";
-import { theme } from "./config/theme/themeVariables";
-import { defineAsyncComponent } from "vue";
+import { ThemeProvider } from 'vue3-styled-components';
+import { theme } from './config/theme/themeVariables';
+import { defineAsyncComponent } from 'vue';
 
-const WithAdminLayout = defineAsyncComponent(() =>
-  import("./layout/withAdminLayout")
-);
+const WithAdminLayout = defineAsyncComponent(() => import('./layout/withAdminLayout'));
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     ThemeProvider,
     WithAdminLayout,

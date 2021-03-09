@@ -12,11 +12,7 @@
           <BasicFormWrapper>
             <a-form @submit="handleSubmit">
               <a-form-item label="Facebook">
-                <a-input
-                  :value="formState.facebook"
-                  class="facebook"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.facebook" class="facebook" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -28,11 +24,7 @@
                 </a-input>
               </a-form-item>
               <a-form-item label="Twitter">
-                <a-input
-                  :value="formState.twitter"
-                  class="twitter"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.twitter" class="twitter" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -44,11 +36,7 @@
                 </a-input>
               </a-form-item>
               <a-form-item label="Dribbble">
-                <a-input
-                  :value="formState.dribble"
-                  class="dribbble"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.dribble" class="dribbble" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -60,11 +48,7 @@
                 </a-input>
               </a-form-item>
               <a-form-item label="Instagram">
-                <a-input
-                  :value="formState.instagram"
-                  class="instagram"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.instagram" class="instagram" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -77,11 +61,7 @@
               </a-form-item>
 
               <a-form-item label="Github">
-                <a-input
-                  :value="formState.github"
-                  class="github"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.github" class="github" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -94,11 +74,7 @@
               </a-form-item>
 
               <a-form-item label="Medium">
-                <a-input
-                  :value="formState.medium"
-                  class="medium"
-                  placeholder="URL"
-                >
+                <a-input :value="formState.medium" class="medium" placeholder="URL">
                   <template #prefix>
                     <font-awesome-icon
                       class="super-crazy-colors"
@@ -111,12 +87,7 @@
               </a-form-item>
 
               <div class="setting-form-actions">
-                <sdButton
-                  @click="handleSubmit"
-                  size="default"
-                  htmlType="submit"
-                  type="primary"
-                >
+                <sdButton @click="handleSubmit" size="default" htmlType="submit" type="primary">
                   Update Social Profile
                 </sdButton>
                 &nbsp; &nbsp;
@@ -133,8 +104,8 @@
 </template>
 
 <script>
-import { SocialProfileForm } from "./style";
-import { BasicFormWrapper } from "../../../styled";
+import { SocialProfileForm } from './style';
+import { BasicFormWrapper } from '../../../styled';
 import {
   faFacebookF,
   faDribbble,
@@ -142,28 +113,28 @@ import {
   faInstagram,
   faGithub,
   faMediumM,
-} from "@fortawesome/free-brands-svg-icons";
-import { reactive } from "vue";
+} from '@fortawesome/free-brands-svg-icons';
+import { reactive } from 'vue';
 
 const SocialProfile = {
-  name: "SocialProfile",
+  name: 'SocialProfile',
   data() {
-    const name = "clayton";
+    const name = 'clayton';
     const formState = reactive({
-      facebook: "",
-      twitter: "",
-      instagram: "",
-      dribble: "",
-      medium: "",
-      github: "",
+      facebook: '',
+      twitter: '',
+      instagram: '',
+      dribble: '',
+      medium: '',
+      github: '',
     });
 
-    const handleFinish = (values) => {
+    const handleFinish = values => {
       this.values = { ...values };
       console.log(values, formState);
     };
 
-    const handleFinishFailed = (errors) => {
+    const handleFinishFailed = errors => {
       console.log(errors);
     };
     return {

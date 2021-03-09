@@ -45,10 +45,10 @@
 </template>
 
 <script>
-import { NestedDropdwon } from "./auth-info-style";
+import { NestedDropdwon } from './auth-info-style';
 
 export default {
-  name: "Support",
+  name: 'Support',
   components: {
     NestedDropdwon,
   },

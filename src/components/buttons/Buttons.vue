@@ -1,6 +1,6 @@
 <script>
-import { ButtonStyled, ButtonStyledGroup } from "./styled";
-import VueTypes from "vue-types";
+import { ButtonStyled, ButtonStyledGroup } from './styled';
+import VueTypes from 'vue-types';
 export const Button = {
   components: {
     ButtonStyled,
@@ -17,23 +17,23 @@ export const Button = {
   },
   props: {
     type: VueTypes.oneOf([
-      "primary",
-      "secondary",
-      "success",
-      "info",
-      "warning",
-      "danger",
-      "link",
-      "dark",
-      "light",
-      "white",
-      "dashed",
-      "error",
-      "default",
-    ]).def("default"),
+      'primary',
+      'secondary',
+      'success',
+      'info',
+      'warning',
+      'danger',
+      'link',
+      'dark',
+      'light',
+      'white',
+      'dashed',
+      'error',
+      'default',
+    ]).def('default'),
     shape: VueTypes.string,
     icon: VueTypes.string,
-    size: VueTypes.oneOf(["large", "default", "small"]),
+    size: VueTypes.oneOf(['large', 'default', 'small']),
     color: VueTypes.string,
     outlined: VueTypes.bool.def(false),
     block: VueTypes.bool.def(false),

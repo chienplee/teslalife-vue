@@ -59,7 +59,7 @@ const BtnWraper = theme => `
       padding-top: 8px !important;
   }
 `;
-const props = ["isbutton", "bodypadding"];
+const props = ['isbutton', 'bodypadding'];
 
 const CardFrame = Styled(Card, props)`
   ${({ isbutton, theme }) => isbutton && BtnWraper(theme)}

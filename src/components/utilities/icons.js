@@ -1,4 +1,3 @@
-
 import propTypes from 'prop-types';
 
 const SwRocket = ({ size, color, stroke, strokeWidth }) => {

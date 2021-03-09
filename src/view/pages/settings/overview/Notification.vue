@@ -10,10 +10,7 @@
       <a-row :gutter="15">
         <a-col :xs="24">
           <div class="notification-box-single">
-            <sdCards
-              headless
-              :bodyStyle="{ backgroundColor: '#F7F8FA', borderRadius: 10 }"
-            >
+            <sdCards headless :bodyStyle="{ backgroundColor: '#F7F8FA', borderRadius: 10 }">
               <div
                 :style="{
                   height: '50px',
@@ -41,10 +38,7 @@
                     >
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Company News
                           </sdHeading>
                           <p>
@@ -55,10 +49,7 @@
                       </li>
                       <li style="{listStyle}">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Meetups Near you
                           </sdHeading>
                           <p>
@@ -69,10 +60,7 @@
                       </li>
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Opportunities
                           </sdHeading>
                           <p>
@@ -83,10 +71,7 @@
                       </li>
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Weekly News Letters
                           </sdHeading>
                           <p>
@@ -105,10 +90,7 @@
 
         <a-col :xs="24">
           <div class="notification-box-single">
-            <sdCards
-              headless
-              :bodyStyle="{ backgroundColor: '#F7F8FA', borderRadius: 10 }"
-            >
+            <sdCards headless :bodyStyle="{ backgroundColor: '#F7F8FA', borderRadius: 10 }">
               <div
                 :style="{
                   height: '50px',
@@ -136,10 +118,7 @@
                     >
                       <li style="{listStyle}">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Company News
                           </sdHeading>
                           <p>
@@ -150,10 +129,7 @@
                       </li>
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Meetups Near you
                           </sdHeading>
                           <p>
@@ -164,10 +140,7 @@
                       </li>
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Opportunities
                           </sdHeading>
                           <p>
@@ -178,10 +151,7 @@
                       </li>
                       <li :style="listStyle">
                         <div class="notification-list-single">
-                          <sdHeading
-                            class="notification-list-single__title"
-                            as="h4"
-                          >
+                          <sdHeading class="notification-list-single__title" as="h4">
                             Weekly News Letters
                           </sdHeading>
                           <p>
@@ -211,18 +181,18 @@
   </NotificationWrapper>
 </template>
 <script>
-import { NotificationWrapper } from "./style";
+import { NotificationWrapper } from './style';
 
 const listStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   margin: 0,
   padding: 0,
 };
 
 const Notification = {
-  name: "Notification",
+  name: 'Notification',
   components: { NotificationWrapper },
   data() {
     return {

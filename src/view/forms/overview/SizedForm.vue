@@ -6,26 +6,14 @@
           <a-row :gutter="30">
             <a-col :xs="24">
               <a-form-item label="Large Input">
-                <a-input
-                  name="size-large"
-                  size="large"
-                  placeholder="size='large'"
-                />
+                <a-input name="size-large" size="large" placeholder="size='large'" />
               </a-form-item>
               <a-form-item class="small-input" label="Default Input">
-                <a-input
-                  name="size-default"
-                  size="default"
-                  placeholder="size='Default'"
-                />
+                <a-input name="size-default" size="default" placeholder="size='Default'" />
               </a-form-item>
 
               <a-form-item class="mb-25" label="Small Input">
-                <a-input
-                  name="size-small"
-                  size="small"
-                  placeholder="size='small'"
-                />
+                <a-input name="size-small" size="small" placeholder="size='small'" />
               </a-form-item>
             </a-col>
           </a-row>
@@ -36,12 +24,11 @@
 </template>
 
 <script>
-import { BasicFormWrapper } from "../../styled";
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "SizedForm",
+  name: 'SizedForm',
   components: {
     BasicFormWrapper,
   },
 };
 </script>
-

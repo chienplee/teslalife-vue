@@ -34,63 +34,33 @@
           <a-col :md="12" :xs="24">
             <sdCards title="Placement">
               <sdPopover placement="bottomLeft">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Left
                 </sdButton>
               </sdPopover>
               <sdPopover placement="bottom">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Center
                 </sdButton>
               </sdPopover>
               <sdPopover placement="bottomRight">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Right
                 </sdButton>
               </sdPopover>
               <br />
               <sdPopover placement="topLeft">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Left
                 </sdButton>
               </sdPopover>
               <sdPopover placement="top">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Center
                 </sdButton>
               </sdPopover>
               <sdPopover placement="topRight">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Right
                 </sdButton>
               </sdPopover>
@@ -103,11 +73,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { DropdownStyle } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { DropdownStyle } from './ui-elements-styled';
 
 export default {
-  name: "Popover",
+  name: 'Popover',
   components: {
     Main,
     DropdownStyle,

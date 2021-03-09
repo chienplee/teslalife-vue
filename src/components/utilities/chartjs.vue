@@ -1,37 +1,37 @@
 <script>
-import Chart from "chart.js";
-import VueTypes from "vue-types";
+import Chart from 'chart.js';
+import VueTypes from 'vue-types';
 
 export default {
-  name: "ChartJs",
+  name: 'ChartJs',
   props: {
-    type: VueTypes.string.def("bar"),
-    className: VueTypes.string.isRequired.def("bar"),
-    style: VueTypes.object.def({ marginBottom: "20px" }),
+    type: VueTypes.string.def('bar'),
+    className: VueTypes.string.isRequired.def('bar'),
+    style: VueTypes.object.def({ marginBottom: '20px' }),
     labels: VueTypes.arrayOf(VueTypes.string).def([
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
     ]),
     height: VueTypes.number.def(190),
     datasets: VueTypes.arrayOf(VueTypes.object).def([
       {
         data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
-        backgroundColor: "#001737",
+        backgroundColor: '#001737',
         barPercentage: 0.6,
       },
       {
         data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
-        backgroundColor: "#1ce1ac",
+        backgroundColor: '#1ce1ac',
         barPercentage: 0.6,
       },
     ]),
@@ -48,12 +48,12 @@ export default {
         yAxes: [
           {
             gridLines: {
-              color: "#e5e9f2",
+              color: '#e5e9f2',
             },
             ticks: {
               beginAtZero: true,
               fontSize: 10,
-              fontColor: "#182b49",
+              fontColor: '#182b49',
               max: 80,
             },
           },
@@ -66,7 +66,7 @@ export default {
             ticks: {
               beginAtZero: true,
               fontSize: 11,
-              fontColor: "#182b49",
+              fontColor: '#182b49',
             },
           },
         ],
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     chartConstructor(chartType, chartData, chartOptions) {
-      const chartElement = document.querySelector("." + this.className);
+      const chartElement = document.querySelector('.' + this.className);
       new Chart(chartElement, {
         type: chartType,
         data: chartData,
@@ -98,13 +98,7 @@ export default {
     this.chartConstructor(chartType, chartData, chartOptions);
   },
   render() {
-    return (
-      <canvas
-        class={this.className}
-        style={this.style}
-        height={this.height}
-      ></canvas>
-    );
+    return <canvas class={this.className} style={this.style} height={this.height}></canvas>;
   },
 };
 </script>

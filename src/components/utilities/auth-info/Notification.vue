@@ -16,9 +16,7 @@
                   </div>
                   <div class="notification-content d-flex">
                     <div class="notification-text">
-                      <sdHeading as="h5">
-                        <span>James</span> sent you a message
-                      </sdHeading>
+                      <sdHeading as="h5"> <span>James</span> sent you a message </sdHeading>
                       <p>5 hours ago</p>
                     </div>
                     <div class="notification-status">
@@ -36,9 +34,7 @@
                   </div>
                   <div class="notification-content d-flex">
                     <div class="notification-text">
-                      <sdHeading as="h5">
-                        <span>James</span> sent you a message
-                      </sdHeading>
+                      <sdHeading as="h5"> <span>James</span> sent you a message </sdHeading>
                       <p>5 hours ago</p>
                     </div>
 
@@ -57,9 +53,7 @@
                   </div>
                   <div class="notification-content d-flex">
                     <div class="notification-text">
-                      <sdHeading as="h5">
-                        <span>James</span> sent you a message
-                      </sdHeading>
+                      <sdHeading as="h5"> <span>James</span> sent you a message </sdHeading>
                       <p>5 hours ago</p>
                     </div>
 
@@ -78,9 +72,7 @@
                   </div>
                   <div class="notification-content d-flex">
                     <div class="notification-text">
-                      <sdHeading as="h5">
-                        <span>James</span> sent you a message
-                      </sdHeading>
+                      <sdHeading as="h5"> <span>James</span> sent you a message </sdHeading>
                       <p>5 hours ago</p>
                     </div>
 
@@ -99,9 +91,7 @@
                   </div>
                   <div class="notification-content d-flex">
                     <div class="notification-text">
-                      <sdHeading as="h5">
-                        <span>James</span> sent you a message
-                      </sdHeading>
+                      <sdHeading as="h5"> <span>James</span> sent you a message </sdHeading>
                       <p>5 hours ago</p>
                     </div>
 
@@ -127,10 +117,10 @@
   </div>
 </template>
 <script>
-import { AtbdTopDropdwon } from "./auth-info-style";
+import { AtbdTopDropdwon } from './auth-info-style';
 
 export default {
-  name: "Notification",
+  name: 'Notification',
   components: {
     AtbdTopDropdwon,
   },
