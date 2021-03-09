@@ -393,6 +393,14 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-menu-item key="comingSoon">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/comingSoon">
+            Coming Soon
+          </router-link>
+        </span>
+      </a-menu-item>
     </a-menu-item-group>
   </a-menu>
 </template>
