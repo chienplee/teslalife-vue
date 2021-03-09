@@ -1,18 +1,5 @@
 <template>
   <div>
-    <sdPageHeader title="Page Not Found">
-      <template v-slot:buttons>
-        <div class="page-header-actions">
-          <sdCalendarButton />
-          <sdExportButton />
-          <sdShareButton />
-          <sdButton size="small" type="primary">
-            <sdFeatherIcons type="plus" size="14" />
-            Add New
-          </sdButton>
-        </div>
-      </template>
-    </sdPageHeader>
     <Main>
       <ErrorWrapper>
         <img :src="require(`../../static/img/pages/404.svg`)" alt="404" />
@@ -21,9 +8,9 @@
         </sdHeading>
         <p>Sorry! the page you are looking for doesn't exist.</p>
         <router-link to="/admin">
-          <Button size="default" type="primary" to="/admin">
+          <sdButton size="default" type="primary" to="/admin">
             Return Home
-          </Button>
+          </sdButton>
         </router-link>
       </ErrorWrapper>
     </Main>
@@ -31,13 +18,11 @@
 </template>
 
 <script>
-import { Button } from '../../components/buttons/Buttons';
 import { Main } from '../styled';
 import { ErrorWrapper } from './style';
 export default {
-  name: 'Sidebar',
+  name: '404',
   components: {
-    Button,
     Main,
     ErrorWrapper,
   },

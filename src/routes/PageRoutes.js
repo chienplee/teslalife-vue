@@ -35,6 +35,11 @@ export default [
     component: () => import(/* webpackChunkName: "404" */ '@/view/pages/404.vue'),
   },
   {
+    path: '/page/comingSoon',
+    name: 'comingSoon',
+    component: () => import(/* webpackChunkName: "comingSoon" */ '@/view/pages/ComingSoon.vue'),
+  },
+  {
     path: '/:catchAll(.*)',
     component: () => import(/* webpackChunkName: "404" */ '@/view/pages/404.vue'),
   },
