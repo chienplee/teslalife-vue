@@ -19,12 +19,7 @@
           <sdCards title="Custom Styles" caption="The simplest use of Form">
             <FormValidationWrap>
               <VerticalFormStyleWrap>
-                <a-form
-                  :form="form"
-                  @submit="handleSubmit"
-                  name="sDash_validation-form"
-                  layout="vertical"
-                >
+                <a-form :form="form" @submit="handleSubmit" name="sDash_validation-form" layout="vertical">
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
                       <a-form-item label="First Name">
@@ -166,29 +161,13 @@
                 <a-form name="sDash_vertical-form" layout="vertical">
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
-                      <a-form-item
-                        label="First Name"
-                        validate-status="success"
-                        help="Looks good!"
-                      >
-                        <a-input
-                          placeholder="First Name"
-                          name="fname2"
-                          value="Duran"
-                        />
+                      <a-form-item label="First Name" validate-status="success" help="Looks good!">
+                        <a-input placeholder="First Name" name="fname2" value="Duran" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="8" :xs="24">
-                      <a-form-item
-                        label="Last Name"
-                        validate-status="success"
-                        help="Looks good!"
-                      >
-                        <a-input
-                          placeholder="Last Name"
-                          name="lname"
-                          value="Clayton"
-                        />
+                      <a-form-item label="Last Name" validate-status="success" help="Looks good!">
+                        <a-input placeholder="Last Name" name="lname" value="Clayton" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="8" :xs="24">
@@ -197,38 +176,23 @@
                       </a-form-item>
                     </a-col>
                     <a-col :md="12" :xs="24">
-                      <a-form-item
-                        label="City"
-                        help="Please provide a valid city."
-                        validate-status="error"
-                      >
+                      <a-form-item label="City" help="Please provide a valid city." validate-status="error">
                         <a-input name="city" placeholder="City" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="6" :xs="24">
-                      <a-form-item
-                        label="State"
-                        help="Please provide a valid state."
-                        validate-status="error"
-                      >
+                      <a-form-item label="State" help="Please provide a valid state." validate-status="error">
                         <a-input name="state" placeholder="State" />
                       </a-form-item>
                     </a-col>
                     <a-col :md="6" :xs="24">
-                      <a-form-item
-                        label="Zip"
-                        help="Please provide a valid zip."
-                        validate-status="error"
-                      >
+                      <a-form-item label="Zip" help="Please provide a valid zip." validate-status="error">
                         <a-input name="zip-code" placeholder="Zip" />
                       </a-form-item>
                     </a-col>
                   </a-row>
                   <div class="sDash_agree-check">
-                    <a-form-item
-                      help="You must agree before submitting."
-                      validate-status="error"
-                    >
+                    <a-form-item help="You must agree before submitting." validate-status="error">
                       <a-checkbox name="checkbox">
                         Agree to terms and conditions
                       </a-checkbox>
@@ -236,10 +200,7 @@
                   </div>
                   <a-row>
                     <a-col :xs="24">
-                      <a-form-item
-                        help="You must agree before submitting."
-                        validate-status="error"
-                      >
+                      <a-form-item help="You must agree before submitting." validate-status="error">
                         <a-input-password name="password" />
                       </a-form-item>
                     </a-col>
@@ -260,21 +221,21 @@
 </template>
 
 <script>
-import { FormValidationWrap, VerticalFormStyleWrap } from "./overview/Style";
-import { Main } from "../styled";
+import { FormValidationWrap, VerticalFormStyleWrap } from './overview/Style';
+import { Main } from '../styled';
 
 export default {
-  name: "Form",
+  name: 'Form',
   components: {
     Main,
     FormValidationWrap,
     VerticalFormStyleWrap,
   },
-    
+
   data() {
     return {
-      formLayout: "horizontal",
-      form: this.$form.createForm(this, { name: "coordinated" }),
+      formLayout: 'horizontal',
+      form: this.$form.createForm(this, { name: 'coordinated' }),
     };
   },
   methods: {
@@ -282,14 +243,14 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
+          console.log('Received values of form: ', values);
         }
       });
     },
     handleSelectChange(value) {
       console.log(value);
       this.form.setFieldsValue({
-        note: `Hi, ${value === "male" ? "man" : "lady"}!`,
+        note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
       });
     },
   },
