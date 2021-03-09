@@ -236,15 +236,15 @@ const Div = Styled('div', props)`
     
     .navbar-brand{
         button{
-            padding: ${({ theme }) => (theme.rtl ? '0 15px 0 25px' : '0 25px 0 15px')};
+            padding: ${({ theme }) => (theme.rtl ? '0 15px 0 25px !important' : '0 25px 0 15px !important')};
             line-height: 0;
             margin-top: 4px;
             color: ${({ theme }) => theme['extra-light-color']};
             @media only screen and (max-width: 875px){
-                padding: ${({ theme }) => (theme.rtl ? '0 10px 0 25px' : '0 25px 0 10px')};
+                padding: ${({ theme }) => (theme.rtl ? '0 10px 0 25px !important' : '0 25px 0 10px !important')};
             }
             @media only screen and (max-width: 767px){
-                padding: ${({ theme }) => (theme.rtl ? '0 0px 0 15px' : '0 15px 0 0px')};
+                padding: ${({ theme }) => (theme.rtl ? '0 0px 0 15px !important' : '0 15px 0 0px !important')};
             }
         }
     }
