@@ -10,20 +10,17 @@ import {
   BannerLongWrap,
   BannerCardWrap,
   BannerCtaWrap,
-} from "./Style";
-import { defineComponent } from "vue";
+} from './Style';
+import { defineComponent } from 'vue';
 
 export const Banner1 = {
-  name: "Banner1",
+  name: 'Banner1',
   render() {
     return (
       <BannerNormal>
-        <sdCards headless bodyStyle={{ minHeight: "270px" }}>
+        <sdCards headless bodyStyle={{ minHeight: '270px' }}>
           <h2>15 Days Free Trail</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut
-          </p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
           <sdButton class="btn-outlined" size="small" outlined type="primary">
             Start
           </sdButton>
@@ -39,14 +36,14 @@ export const Banner2 = () => {
       <sdCards
         class="mb-70"
         bodyStyle={{
-          background: "#5F63F2",
-          borderRadius: "10px",
-          minHeight: "270px",
+          background: '#5F63F2',
+          borderRadius: '10px',
+          minHeight: '270px',
         }}
         headless
       >
         <Figure2>
-          <img src={require("../../static/img/banner/1.png")} alt="" />
+          <img src={require('../../static/img/banner/1.png')} alt="" />
           <figcaption>
             <h2>Upgrade your plan</h2>
             <p>Lorem ipsum dolor sit amet</p>
@@ -65,14 +62,14 @@ export const Banner3 = () => {
     <BannerWrapper>
       <sdCards
         bodyStyle={{
-          borderRadius: "10px",
-          minHeight: "270px",
-          background: "#5F63F2",
+          borderRadius: '10px',
+          minHeight: '270px',
+          background: '#5F63F2',
         }}
         headless
       >
         <Figure3>
-          <img src={require("../../static/img/banner/2.png")} alt="" />
+          <img src={require('../../static/img/banner/2.png')} alt="" />
           <figcaption>
             <h2>Earn More Money</h2>
             <sdButton size="large" type="white">
@@ -90,14 +87,14 @@ export const Banner4 = () => {
     <BannerWrapper>
       <sdCards
         bodyStyle={{
-          background: "#272B41",
-          borderRadius: "10px",
-          minHeight: "270px",
+          background: '#272B41',
+          borderRadius: '10px',
+          minHeight: '270px',
         }}
         headless
       >
         <Figure3 class="theme-3">
-          <img src={require("../../static/img/banner/3.png")} alt="" />
+          <img src={require('../../static/img/banner/3.png')} alt="" />
           <figcaption>
             <h2>Win Your Bonus</h2>
             <p>Weekly performance bonus</p>
@@ -116,16 +113,16 @@ export const Banner5 = () => {
     <BannerWrapper>
       <sdCards
         bodyStyle={{
-          background: "#5F63F2",
-          borderRadius: "10px",
-          minHeight: "265px",
-          display: "flex",
-          alignItems: "center",
+          background: '#5F63F2',
+          borderRadius: '10px',
+          minHeight: '265px',
+          display: 'flex',
+          alignItems: 'center',
         }}
         headless
       >
         <Figure3 class="theme-wide">
-          <img src={require("../../static/img/banner/4.png")} alt="" />
+          <img src={require('../../static/img/banner/4.png')} alt="" />
           <figcaption>
             <h2>Congratulations Jhon!</h2>
             <p>Best Seller on the last month.</p>
@@ -144,18 +141,18 @@ export const Banner6 = () => {
     <BannerWrapper>
       <sdCards
         bodyStyle={{
-          background: `url(${require("../../static/img/banner/5.png")})`,
-          backgroundSize: "cover",
-          borderRadius: "10px",
-          minHeight: "265px",
-          display: "flex",
-          direction: "ltr",
-          alignItems: "center",
+          background: `url(${require('../../static/img/banner/5.png')})`,
+          backgroundSize: 'cover',
+          borderRadius: '10px',
+          minHeight: '265px',
+          display: 'flex',
+          direction: 'ltr',
+          alignItems: 'center',
         }}
         headless
       >
         <Figure6>
-          <img src={require("../../static/img/banner/badge.svg")} alt="" />
+          <img src={require('../../static/img/banner/badge.svg')} alt="" />
           <figcaption>
             <h2>Up to 50 OFF</h2>
             <sdButton class="btn-outlined" size="small" outlined type="danger">
@@ -173,7 +170,7 @@ export const Banner7 = () => {
     <BannerNormal class="theme-wide">
       <sdCards headless>
         <Figure7>
-          <img src={require("../../static/img/banner/6.png")} alt="" />
+          <img src={require('../../static/img/banner/6.png')} alt="" />
           <figcaption>
             <h2>Subscribe to our newsletter</h2>
             <p>Lorem ipsum dolor sit amet, consetetur </p>
@@ -188,14 +185,14 @@ export const Banner7 = () => {
 };
 
 export const BannerCarousel = defineComponent({
-  name: "BannerCarousel",
+  name: 'BannerCarousel',
   render() {
     return (
       <BannerCarouselWrap>
         <a-carousel>
           <div class="banner-signle">
             <div class="banner-single__img">
-              <img src={require("../../static/img/banner/8.png")} alt="" />
+              <img src={require('../../static/img/banner/8.png')} alt="" />
             </div>
             <div class="banner-single__content">
               <h3>Achievements</h3>
@@ -205,7 +202,7 @@ export const BannerCarousel = defineComponent({
           {/* End of /.banner-signle */}
           <div class="banner-signle">
             <div class="banner-single__img">
-              <img src={require("../../static/img/banner/8.png")} alt="" />
+              <img src={require('../../static/img/banner/8.png')} alt="" />
             </div>
             <div class="banner-single__content">
               <h3>Achievements</h3>
@@ -215,7 +212,7 @@ export const BannerCarousel = defineComponent({
           {/* End of /.banner-signle */}
           <div class="banner-signle">
             <div class="banner-single__img">
-              <img src={require("../../static/img/banner/8.png")} alt="" />
+              <img src={require('../../static/img/banner/8.png')} alt="" />
             </div>
             <div class="banner-single__content">
               <h3>Achievements</h3>
@@ -234,7 +231,7 @@ export const BannerLong = () => {
     <BannerLongWrap>
       <div class="banner-long-inner">
         <h2>Up To Date </h2>
-        <img src={require("../../static/img/banner/9.png")} alt="" />
+        <img src={require('../../static/img/banner/9.png')} alt="" />
       </div>
     </BannerLongWrap>
   );
@@ -246,7 +243,7 @@ export const BannerCard = () => {
       <div
         class="banner-card-inner"
         style={{
-          backgroundImage: `url("${require("../../static/img/banner/card-banner-1.png")}")`,
+          backgroundImage: `url("${require('../../static/img/banner/card-banner-1.png')}")`,
         }}
       >
         <h2>Need More Space?</h2>
@@ -264,14 +261,11 @@ export const BannerCard2 = () => {
       <div
         class="banner-card-inner theme-2"
         style={{
-          backgroundImage: `url("${require("../../static/img/banner/card-banner-2.png")}")`,
+          backgroundImage: `url("${require('../../static/img/banner/card-banner-2.png')}")`,
         }}
       >
         <h2>Create Sale Report</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy
-        </p>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
         <sdButton size="large" type="white">
           Learn More
         </sdButton>
@@ -286,7 +280,7 @@ export const BannerCta = () => {
       <div
         class="banner-cta align-center-v"
         style={{
-          backgroundImage: `url("${require("../../static/img/banner/cta-banner-1.png")}")`,
+          backgroundImage: `url("${require('../../static/img/banner/cta-banner-1.png')}")`,
         }}
       >
         <div class="banner-cta__content">
@@ -306,7 +300,7 @@ export const BannerCta2 = () => {
       <div
         class="banner-cta align-center-v theme-2"
         style={{
-          backgroundImage: `url("${require("../../static/img/banner/cta-banner-2.png")}")`,
+          backgroundImage: `url("${require('../../static/img/banner/cta-banner-2.png')}")`,
         }}
       >
         <div class="banner-cta__content">

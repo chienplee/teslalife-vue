@@ -233,12 +233,12 @@
 </template>
 
 <script>
-import config from "../../config/config";
-import { Main, AlertList } from "../styled";
+import config from '../../config/config';
+import { Main, AlertList } from '../styled';
 const { theme } = config;
 
 export default {
-  name: "Alerts",
+  name: 'Alerts',
   components: {
     Main,
     AlertList,

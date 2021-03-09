@@ -46,10 +46,7 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Default Value">
             <CasCaderStyleWrapper>
-              <sdCascader
-                :defaultValue="['zhejiang', 'hangzhou', 'xihu']"
-                :onChange="onChange"
-              />
+              <sdCascader :defaultValue="['zhejiang', 'hangzhou', 'xihu']" :onChange="onChange" />
             </CasCaderStyleWrapper>
           </sdCards>
           <sdCards title="Hover">
@@ -89,38 +86,38 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { CasCaderStyleWrapper } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { CasCaderStyleWrapper } from './ui-elements-styled';
 
 const disabledData = [
   {
-    value: "zhejiang",
-    label: "Zhejiang",
+    value: 'zhejiang',
+    label: 'Zhejiang',
     children: [
       {
-        value: "hangzhou",
-        label: "Hangzhou",
+        value: 'hangzhou',
+        label: 'Hangzhou',
         children: [
           {
-            value: "xihu",
-            label: "West Lake",
+            value: 'xihu',
+            label: 'West Lake',
           },
         ],
       },
     ],
   },
   {
-    value: "jiangsu",
-    label: "Jiangsu",
+    value: 'jiangsu',
+    label: 'Jiangsu',
     disabled: true,
     children: [
       {
-        value: "nanjing",
-        label: "Nanjing",
+        value: 'nanjing',
+        label: 'Nanjing',
         children: [
           {
-            value: "zhonghuamen",
-            label: "Zhong Hua Men",
+            value: 'zhonghuamen',
+            label: 'Zhong Hua Men',
           },
         ],
       },
@@ -129,7 +126,7 @@ const disabledData = [
 ];
 
 export default {
-  name: "Cascader",
+  name: 'Cascader',
   components: {
     Main,
     CasCaderStyleWrapper,

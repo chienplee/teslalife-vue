@@ -45,35 +45,20 @@
           <sdCards title="Select" class="mb-25">
             <a-form name="sDash_Select" layout="vertical">
               <a-form-item label="Basic Select">
-                <a-select
-                  size="large"
-                  name="basic-select"
-                  class="sDash_fullwidth-select"
-                >
+                <a-select size="large" name="basic-select" class="sDash_fullwidth-select">
                   <a-select-option value="1">1</a-select-option>
-                  <a-select-option default-value="2" value="2"
-                    >2</a-select-option
-                  >
+                  <a-select-option default-value="2" value="2">2</a-select-option>
                   <a-select-option value="3">3</a-select-option>
                   <a-select-option value="4">4</a-select-option>
                 </a-select>
               </a-form-item>
               <a-form-item label="Disabled Basic Select">
-                <a-select
-                  size="large"
-                  name="disabled-select"
-                  class="sDash_fullwidth-select"
-                  disabled
-                >
+                <a-select size="large" name="disabled-select" class="sDash_fullwidth-select" disabled>
                   <a-select-option value="1">1</a-select-option>
                 </a-select>
               </a-form-item>
               <a-form-item label="Multiple Select">
-                <a-select
-                  mode="multiple"
-                  :default-value="['1', '2']"
-                  placeholder="Please select"
-                >
+                <a-select mode="multiple" :default-value="['1', '2']" placeholder="Please select">
                   <a-select-option value="1">1</a-select-option>
                   <a-select-option value="2">2</a-select-option>
                   <a-select-option value="3">3</a-select-option>
@@ -81,12 +66,7 @@
                 </a-select>
               </a-form-item>
               <a-form-item label="Disabled Multiple Select">
-                <a-select
-                  mode="multiple"
-                  :default-value="['1', '2']"
-                  placeholder="Please select"
-                  disabled
-                >
+                <a-select mode="multiple" :default-value="['1', '2']" placeholder="Please select" disabled>
                   <a-select-option value="1">1</a-select-option>
                   <a-select-option value="2">2</a-select-option>
                   <a-select-option value="3">3</a-select-option>
@@ -153,14 +133,14 @@
 </template>
 
 <script>
-import { message } from "ant-design-vue";
-import { Main } from "../styled";
-import { CheckListWrap } from "./overview/Style";
-import GridForm from "./overview/GridForm";
-import SizedForm from "./overview/SizedForm";
-import InputForm from "./overview/InputForm";
+import { message } from 'ant-design-vue';
+import { Main } from '../styled';
+import { CheckListWrap } from './overview/Style';
+import GridForm from './overview/GridForm';
+import SizedForm from './overview/SizedForm';
+import InputForm from './overview/InputForm';
 export default {
-  name: "FormElement",
+  name: 'FormElement',
   components: {
     Main,
     GridForm,
@@ -171,18 +151,18 @@ export default {
   data() {
     return {
       headers: {
-        authorization: "authorization-text",
+        authorization: 'authorization-text',
       },
     };
   },
   methods: {
     handleChange(info) {
-      if (info.file.status !== "uploading") {
+      if (info.file.status !== 'uploading') {
         //console.log(info.file, info.fileList);
       }
-      if (info.file.status === "done") {
+      if (info.file.status === 'done') {
         message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === "error") {
+      } else if (info.file.status === 'error') {
         message.error(`${info.file.name} file upload failed.`);
       }
     },

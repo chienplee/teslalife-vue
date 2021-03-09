@@ -1,6 +1,6 @@
 <script>
-import { PageHeaderStyle } from "./style";
-import VueTypes from "vue-types";
+import { PageHeaderStyle } from './style';
+import VueTypes from 'vue-types';
 export const PageHeader = {
   components: {
     PageHeaderStyle,
@@ -20,19 +20,19 @@ export const PageHeader = {
       <div>
         <div
           style={{
-            backgroundColor: this.bgColor || "#F4F5F7",
+            backgroundColor: this.bgColor || '#F4F5F7',
           }}
         >
           <PageHeaderStyle
             style={{
-              backgroundColor: "rgb(244, 245, 247)",
+              backgroundColor: 'rgb(244, 245, 247)',
             }}
             class={this.classes}
             title={this.title}
             subTitle={this.subTitle}
             breadcrumb={this.routes && this.routes}
             ghost={this.ghost}
-            extra={ this.$slots.buttons && this.$slots.buttons()}
+            extra={this.$slots.buttons && this.$slots.buttons()}
           ></PageHeaderStyle>
         </div>
       </div>

@@ -3,39 +3,18 @@
     <template #button>
       <div class="card-nav">
         <ul>
-          <li
-            :class="
-              youtubeSubscribeTabActive === 'week' ? 'active' : 'deactivate'
-            "
-          >
-            <router-link
-              @click="(e) => handleActiveChangeYoutube(e, 'week')"
-              to="#"
-            >
+          <li :class="youtubeSubscribeTabActive === 'week' ? 'active' : 'deactivate'">
+            <router-link @click="e => handleActiveChangeYoutube(e, 'week')" to="#">
               Week
             </router-link>
           </li>
-          <li
-            :class="
-              youtubeSubscribeTabActive === 'month' ? 'active' : 'deactivate'
-            "
-          >
-            <router-link
-              @click="(e) => handleActiveChangeYoutube(e, 'month')"
-              to="#"
-            >
+          <li :class="youtubeSubscribeTabActive === 'month' ? 'active' : 'deactivate'">
+            <router-link @click="e => handleActiveChangeYoutube(e, 'month')" to="#">
               Month
             </router-link>
           </li>
-          <li
-            :class="
-              youtubeSubscribeTabActive === 'year' ? 'active' : 'deactivate'
-            "
-          >
-            <router-link
-              @click="(e) => handleActiveChangeYoutube(e, 'year')"
-              to="#"
-            >
+          <li :class="youtubeSubscribeTabActive === 'year' ? 'active' : 'deactivate'">
+            <router-link @click="e => handleActiveChangeYoutube(e, 'year')" to="#">
               Year
             </router-link>
           </li>
@@ -66,11 +45,7 @@
           </sdHeading>
         </div>
         <ul v-if="youtubeSubscribeDatasets">
-          <li
-            v-for="(item, key) in youtubeSubscribeDatasets"
-            :key="key + 1"
-            class="custom-label"
-          >
+          <li v-for="(item, key) in youtubeSubscribeDatasets" :key="key + 1" class="custom-label">
             <span
               :style="{
                 backgroundColor: item.hoverBackgroundColor,
@@ -93,19 +68,19 @@
   </sdCards>
 </template>
 <script>
-import { CardBarChart } from "../../style";
-import Chart from "../../../../components/utilities/chartjs";
-import { customTooltips } from "../../../../components/utilities/utilities";
+import { CardBarChart } from '../../style';
+import Chart from '../../../../components/utilities/chartjs';
+import { customTooltips } from '../../../../components/utilities/utilities';
 
 const YoutubeSubscribers = {
-  name: "YoutubeSubscribers",
+  name: 'YoutubeSubscribers',
   components: {
     CardBarChart,
     Chart,
   },
   data() {
     return {
-      youtubeSubscribeTabActive: "year",
+      youtubeSubscribeTabActive: 'year',
     };
   },
   computed: {
@@ -119,17 +94,17 @@ const YoutubeSubscribers = {
       return [
         {
           data: this.$store.state.chartContent.youtubeSubscribeData.gained,
-          backgroundColor: "#5F63F280",
-          hoverBackgroundColor: "#5F63F2",
-          label: "Gained",
+          backgroundColor: '#5F63F280',
+          hoverBackgroundColor: '#5F63F2',
+          label: 'Gained',
           maxBarThickness: 10,
           barThickness: 12,
         },
         {
           data: this.$store.state.chartContent.youtubeSubscribeData.lost,
-          backgroundColor: "#FF4D4F80",
-          hoverBackgroundColor: "#FF4D4F",
-          label: "Lost",
+          backgroundColor: '#FF4D4F80',
+          hoverBackgroundColor: '#FF4D4F',
+          label: 'Lost',
           maxBarThickness: 10,
           barThickness: 12,
         },
@@ -146,8 +121,8 @@ const YoutubeSubscribers = {
         },
         legend: {
           display: false,
-          position: "top",
-          align: "end",
+          position: 'top',
+          align: 'end',
           labels: {
             boxWidth: 6,
             display: true,
@@ -159,24 +134,18 @@ const YoutubeSubscribers = {
           yAxes: [
             {
               gridLines: {
-                color: "#e5e9f2",
+                color: '#e5e9f2',
                 borderDash: [3, 3],
-                zeroLineColor: "#e5e9f2",
+                zeroLineColor: '#e5e9f2',
                 zeroLineWidth: 1,
                 zeroLineBorderDash: [3, 3],
               },
               ticks: {
                 beginAtZero: true,
                 fontSize: 12,
-                fontColor: "#182b49",
-                max: Math.max(
-                  ...this.$store.state.chartContent.youtubeSubscribeData.gained
-                ),
-                stepSize:
-                  Math.max(
-                    ...this.$store.state.chartContent.youtubeSubscribeData
-                      .gained
-                  ) / 5,
+                fontColor: '#182b49',
+                max: Math.max(...this.$store.state.chartContent.youtubeSubscribeData.gained),
+                stepSize: Math.max(...this.$store.state.chartContent.youtubeSubscribeData.gained) / 5,
                 display: true,
                 min: 0,
                 padding: 10,
@@ -188,23 +157,23 @@ const YoutubeSubscribers = {
               gridLines: {
                 display: true,
                 zeroLineWidth: 2,
-                zeroLineColor: "#fff",
-                color: "transparent",
+                zeroLineColor: '#fff',
+                color: 'transparent',
                 z: 1,
               },
               ticks: {
                 beginAtZero: true,
                 fontSize: 12,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
                 min: 0,
               },
             },
           ],
         },
         tooltips: {
-          mode: "label",
+          mode: 'label',
           intersect: false,
-          position: "average",
+          position: 'average',
           enabled: false,
           custom: customTooltips,
           callbacks: {
@@ -214,11 +183,10 @@ const YoutubeSubscribers = {
               return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
             },
             labelColor(tooltipItem, chart) {
-              const dataset =
-                chart.config.data.datasets[tooltipItem.datasetIndex];
+              const dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
               return {
                 backgroundColor: dataset.backgroundColor,
-                borderColor: "transparent",
+                borderColor: 'transparent',
                 usePointStyle: true,
               };
             },
@@ -228,13 +196,13 @@ const YoutubeSubscribers = {
     },
   },
   mounted() {
-    this.$store.dispatch("youtubeSubscribeGetData");
+    this.$store.dispatch('youtubeSubscribeGetData');
   },
   methods: {
     handleActiveChangeYoutube(e, value) {
       e.preventDefault();
       this.youtubeSubscribeTabActive = value;
-      this.$store.dispatch("youtubeSubscribeFilterData", value);
+      this.$store.dispatch('youtubeSubscribeFilterData', value);
     },
   },
 };

@@ -2,15 +2,15 @@
   <div>
     <sdPageHeader title="Slider">
       <template v-slot:buttons>
-      <div class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <PlusIcon size="14" />
+            Add New
+          </sdButton>
+        </div>
       </template>
     </sdPageHeader>
     <Main>
@@ -18,11 +18,7 @@
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
             <Slider :min="0" :max="100" :defaultValue="30" />
-            <Slider
-              :onChange="onChange"
-              :range="true"
-              :defaultValues="[20, 50]"
-            />
+            <Slider :onChange="onChange" :range="true" :defaultValues="[20, 50]" />
           </sdCards>
           <sdCards title="With Input" caption="The simplest use of slider">
             <div class="slider-with-input">
@@ -98,10 +94,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import Slider from "../../components/slider/Slider";
+import { Main } from '../styled';
+import Slider from '../../components/slider/Slider';
 export default {
-  name: "Sliders",
+  name: 'Sliders',
   components: {
     Main,
     Slider,
@@ -111,17 +107,17 @@ export default {
       onChangeValue: null,
       afterChangeValue: null,
       style: {
-        display: "inline-block",
+        display: 'inline-block',
         height: 300,
         marginLeft: 70,
       },
       marks: {
-        0: "0°C",
-        26: "26°C",
-        37: "37°C",
+        0: '0°C',
+        26: '26°C',
+        37: '37°C',
         100: {
           style: {
-            color: "#f50",
+            color: '#f50',
           },
           label: <strong>100°C</strong>,
         },

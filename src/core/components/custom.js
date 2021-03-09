@@ -1,12 +1,12 @@
-import app from "../../config/configApp";
-import Cards from "../../components/cards/frame/CardsFrame.vue";
-import FeatherIcons from '../../components/utilities/featherIcons.vue'
-import Alerts from "../../components/alerts/Alerts.vue";
-import { Button, BtnGroup } from "../../components/buttons/Buttons.vue";
-import CalendarButton from "../../components/buttons/CalendarButton.vue";
-import ExportButton from "../../components/buttons/ExportButton.vue";
-import ShareButton from "../../components/buttons/ShareButton.vue";
-import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
+import app from '../../config/configApp';
+import Cards from '../../components/cards/frame/CardsFrame.vue';
+import FeatherIcons from '../../components/utilities/featherIcons.vue';
+import Alerts from '../../components/alerts/Alerts.vue';
+import { Button, BtnGroup } from '../../components/buttons/Buttons.vue';
+import CalendarButton from '../../components/buttons/CalendarButton.vue';
+import ExportButton from '../../components/buttons/ExportButton.vue';
+import ShareButton from '../../components/buttons/ShareButton.vue';
+import { PageHeader } from '../../components/pageHeaders/PageHeaders.vue';
 // import {
 //   GoogleBasicBarChart,
 //   GoogleMaterialBarChart,
@@ -19,26 +19,26 @@ import { PageHeader } from "../../components/pageHeaders/PageHeaders.vue";
 //   Google3dPieChart,
 // } from "../../components/charts/googleChart.vue";
 
-import { ChartContainer } from "../../view/dashboard/style";
-import Cascader from "../../components/cascader/Cascader";
-import Heading from "../../components/heading/Heading";
-import AutoComplete from "../../components/autoComplete/autoComplete";
-import Dropdown from "../../components/dropdown/Dropdown";
-import Popover from "../../components/popup/Popup";
-import Modal from "../../components/modals/Modals";
+import { ChartContainer } from '../../view/dashboard/style';
+import Cascader from '../../components/cascader/Cascader';
+import Heading from '../../components/heading/Heading';
+import AutoComplete from '../../components/autoComplete/autoComplete';
+import Dropdown from '../../components/dropdown/Dropdown';
+import Popover from '../../components/popup/Popup';
+import Modal from '../../components/modals/Modals';
 
 [
   Heading,
-  Cards,  
+  Cards,
   {
-    name: "ChartContainer",
+    name: 'ChartContainer',
     ...ChartContainer,
   },
-  
+
   // {
   //   name: "GoogleMaterialBarChart",
   //   ...GoogleMaterialBarChart,
-  // }, 
+  // },
   // {
   //   name: "GoogleBasicBarChart",
   //   ...GoogleBasicBarChart,
@@ -56,23 +56,23 @@ import Modal from "../../components/modals/Modals";
   // },
   Alerts,
   {
-    name: "Button",
+    name: 'Button',
     ...Button,
   },
   {
-    name: "BtnGroup",
+    name: 'BtnGroup',
     ...BtnGroup,
   },
   CalendarButton,
   ExportButton,
   ShareButton,
-  { name: "PageHeader", ...PageHeader },
+  { name: 'PageHeader', ...PageHeader },
   Cascader,
   AutoComplete,
   Dropdown,
   Popover,
   FeatherIcons,
   Modal,
-].map((c) => {
+].map(c => {
   app.component(`sd${c.name}`, c);
 });

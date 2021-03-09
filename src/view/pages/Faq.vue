@@ -25,20 +25,12 @@
                   </Badge>
                   <ul>
                     <li>
-                      <router-link
-                        class="active primary"
-                        @click="handleChange"
-                        to="#"
-                      >
+                      <router-link class="active primary" @click="handleChange" to="#">
                         Using Applications
                       </router-link>
                     </li>
                     <li>
-                      <router-link
-                        class="secondary"
-                        @click="handleChange"
-                        to="#"
-                      >
+                      <router-link class="secondary" @click="handleChange" to="#">
                         UI Elements
                       </router-link>
                     </li>
@@ -71,15 +63,10 @@
               <FaqSupportBox>
                 <sdCards headless>
                   <figure>
-                    <img
-                      :src="require('../../static/img/pages/support.svg')"
-                      alt=""
-                    />
+                    <img :src="require('../../static/img/pages/support.svg')" alt="" />
                   </figure>
                   <figcaption>
-                    <sdHeading as="h5"
-                      >Not finding the help you need?</sdHeading
-                    >
+                    <sdHeading as="h5">Not finding the help you need?</sdHeading>
                     <sdButton size="default" type="primary">
                       Contact Support
                     </sdButton>
@@ -94,28 +81,16 @@
             <sdCards headless title="Using Applications">
               <a-collapse :bordered="false" default-active-key="1">
                 <template #expandIcon="props">
-                  <sdFeatherIcons
-                    type="plus"
-                    v-if="!props.isActive"
-                    size="14"
-                  />
+                  <sdFeatherIcons type="plus" v-if="!props.isActive" size="14" />
                   <sdFeatherIcons type="minus" v-else size="14" />
                 </template>
-                <a-collapse-panel
-                  header="How long does it take to download updates?"
-                  key="1"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="How long does it take to download updates?" key="1" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -135,15 +110,11 @@
                   :style="customPanelStyle"
                 >
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -157,21 +128,13 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="How long does it take to download updates?"
-                  key="3"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="How long does it take to download updates?" key="3" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -185,21 +148,13 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="What is the flex layout?"
-                  key="4"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="What is the flex layout?" key="4" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -213,21 +168,13 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="How long does it take to download updates?"
-                  key="5"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="How long does it take to download updates?" key="5" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -241,21 +188,13 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="Where to buy this UI dashboard?"
-                  key="6"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="Where to buy this UI dashboard?" key="6" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -269,21 +208,13 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="How long does it take to download updates?"
-                  key="7"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="How long does it take to download updates?" key="7" :style="customPanelStyle">
                   <p>
-                    Many support queries and technical questions will already be
-                    answered in supporting documentation such as FAQ&rsquo;s and
-                    comments from previous buyers. Anim pariatur cliche
-                    reprehenderit, enim eiusmod high life accusamus terry
-                    richardson ad squid. 3 wolf moon officia aute, non cupidatat
-                    skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                    on it squid single-origin coffee nulla assumenda shoreditch
-                    et.
+                    Many support queries and technical questions will already be answered in supporting documentation
+                    such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
+                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                    skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                   </p>
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
@@ -306,11 +237,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { Badge, FaqCategoryBox, FaqSupportBox, FaqWrapper } from "./style";
+import { Main } from '../styled';
+import { Badge, FaqCategoryBox, FaqSupportBox, FaqWrapper } from './style';
 
 export default {
-  name: "Faqs",
+  name: 'Faqs',
   components: {
     Main,
     Badge,
@@ -321,10 +252,10 @@ export default {
   data() {
     return {
       customPanelStyle: {
-        background: "#ffffff",
+        background: '#ffffff',
         borderRadius: 5,
         marginBottom: 5,
-        border: "1px solid #F1F2F6",
+        border: '1px solid #F1F2F6',
       },
     };
   },
@@ -332,10 +263,10 @@ export default {
     handleChange(e) {
       e.preventDefault();
       e.target
-        .closest("ul")
-        .querySelector("a.active")
-        .classList.remove("active");
-      e.target.classList.add("active");
+        .closest('ul')
+        .querySelector('a.active')
+        .classList.remove('active');
+      e.target.classList.add('active');
     },
   },
 };

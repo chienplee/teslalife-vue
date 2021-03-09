@@ -1,8 +1,8 @@
-import Styled from "vue3-styled-components";
+import Styled from 'vue3-styled-components';
 
 const DropdownStyle = Styled.div`
   .ant-card-body .ant-btn {
-    ${({ theme }) => (theme.rtl ? "margin-left" : "margin-right")}: 10px;
+    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
       margin-bottom: 10px;
       height: 36px;
       font-weight: 400;
@@ -16,7 +16,7 @@ const DropdownIconStyleWrapper = Styled.div`
   button{
     padding: 0 !important;
     >span{
-      padding: ${({ theme }) => (theme.rtl ? "0 16px 0 10px" : "0 10px 0 16px")}
+      padding: ${({ theme }) => (theme.rtl ? '0 16px 0 10px' : '0 10px 0 16px')}
     }
   }
   .ant-dropdown-trigger{
@@ -24,9 +24,8 @@ const DropdownIconStyleWrapper = Styled.div`
     display: inline-flex;
     align-items: center;
     padding: 0 8px;
-    ${({ theme }) =>
-      !theme.rtl ? "border-left" : "border-right"}: 1px solid ${({ theme }) =>
-  theme["border-color-normal"]};
+    ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
+  theme['border-color-normal']};
   }
 `;
 
@@ -60,7 +59,7 @@ const CarouselStyleWraper = Styled.div`
     height: 38px !important;
     line-height: 36px !important;
     font-weight: 600;
-    color: ${({ theme }) => theme["light-color"]}
+    color: ${({ theme }) => theme['light-color']}
   }
   .ant-carousel .slick-slide h3 {
     color: #fff;
@@ -77,7 +76,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? "left" : "right")}: 10px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
     padding: 0 4px;
     font-size: 10px;
     font-weight: 600;
@@ -86,7 +85,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-dot{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? "left" : "right")}: 10px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
     width: 10px;
     height: 10px;
     border: 2px solid #fff;
@@ -107,7 +106,7 @@ const BadgeWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? "left" : "right")}: 15px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
     font-size: 10px;
     font-weight: 600;
     min-width: 20px;
@@ -118,32 +117,30 @@ const BadgeWraperStyle = Styled.div`
   }
   .ant-scroll-number-custom-component{
     top: 10px !important;
-    ${({ theme }) => (theme.rtl ? "left" : "right")}: 15px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
   }
   .ant-badge-dot{
     top: 0;
-    ${({ theme }) => (theme.rtl ? "left" : "right")}: -1px !important;
+    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: -1px !important;
     border: 1px solid #fff;
     width: 10px;
     height: 10px;
   }
   .ant-badge-status-text{
-    ${({ theme }) =>
-      !theme.rtl ? "margin-left" : "margin-right"}: 10px !important;
+    ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 10px !important;
     color: #9299B8;
   }
 `;
 
 const BadgeRedStyle = Styled.div`
   .ant-badge:not(:last-child){
-    ${({ theme }) =>
-      theme.rtl ? "margin-left" : "margin-right"}: 20px !important;
+    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px !important;
   }
 `;
 
 const BadgeStandAloneStyle = Styled.div`
   .ant-badge-count{
-    ${({ theme }) => (!theme.rtl ? "left" : "right")}: 0 !important;
+    ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: 0 !important;
     border: 0;
     font-size: 12px !important;
     font-weight: 500;
@@ -167,8 +164,7 @@ const BreadcrumbWrapperStyle = Styled.div`
     color: #5A5F7D;
     .ant-breadcrumb-link{
       .anticon{
-        ${({ theme }) =>
-          theme.rtl ? "margin-left" : "margin-right"}: 2px !important;
+        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 2px !important;
       }
     }
   }
@@ -187,7 +183,7 @@ const BreadcrumbWrapperStyle = Styled.div`
     .ant-breadcrumb{
       .ant-breadcrumb-link{
         font-size: 12px;
-        color: ${({ theme }) => theme["gray-color"]} !important;
+        color: ${({ theme }) => theme['gray-color']} !important;
       }
     }
   }
@@ -196,7 +192,7 @@ const BreadcrumbWrapperStyle = Styled.div`
     line-height: 48px;
     padding: 0 10px;
     border-radius: 4px;
-    background: ${({ theme }) => theme["bg-color-light"]};
+    background: ${({ theme }) => theme['bg-color-light']};
   }
   .demo-nav a{
     padding: 0 12px;
@@ -204,12 +200,12 @@ const BreadcrumbWrapperStyle = Styled.div`
   }
   .ant-alert{
     &.ant-alert-info{
-      background-color: ${({ theme }) => theme["primary-color"]}15;
-      border: 1px solid ${({ theme }) => theme["info-color"]}15;
+      background-color: ${({ theme }) => theme['primary-color']}15;
+      border: 1px solid ${({ theme }) => theme['info-color']}15;
     }
     .ant-alert-message{
       font-size: 12px;
-      color: ${({ theme }) => theme["primary-color"]};
+      color: ${({ theme }) => theme['primary-color']};
     }
   }
 `;
@@ -218,36 +214,34 @@ const BadgeDynamicStyle = Styled.div`
 .badge-dynamic{
   .ant-btn-group{
     padding-top: 4px;
-    margin: ${({ theme }) => (theme.rtl ? "6px 12px 0 0" : "6px 0 0 12px")};
-    border: 1px solid ${({ theme }) => theme["border-color-normal"]};
+    margin: ${({ theme }) => (theme.rtl ? '6px 12px 0 0' : '6px 0 0 12px')};
+    border: 1px solid ${({ theme }) => theme['border-color-normal']};
     border-radius: 5px;
     padding: 0;
     .ant-btn {
       z-index: 2;
       &:first-child{
         z-index: 22;
-        ${({ theme }) =>
-          theme.rtl ? "border-left" : "border-right"}: 1px solid ${({
-  theme,
-}) => theme["border-color-normal"]};
+        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
+  theme['border-color-normal']};
       }
     }
 
   }
 }
 .ant-badge-dot{
-  ${({ theme }) => (theme.rtl ? "left" : "right")}: 16px !important;
+  ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 16px !important;
   top: 8px;
 }
 .ant-switch{
   min-width: 44px;
   height: 22px;
-  ${({ theme }) => (!theme.rtl ? "margin-left" : "margin-right")}: 15px;
+  ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
   .ant-switch-handle{
     top: 4px;
   }
   .ant-switch-checked .ant-switch-handle{
-    ${({ theme }) => (!theme.rtl ? "left" : "right")}: calc(100% - 14px - 5px);
+    ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: calc(100% - 14px - 5px);
   }
 }
 `;
@@ -281,7 +275,7 @@ const CardStyleWrapper = Styled.div`
 }
 .ant-card-body p{
   margin-bottom: 4px;
-  color: ${({ theme }) => theme["gray-color"]};
+  color: ${({ theme }) => theme['gray-color']};
 }
 .ant-card.ant-card-bordered {
   border-radius: 5px;
@@ -315,7 +309,7 @@ const SelectWrapperStyle = Styled.div`
     margin: 5px;
   }
   .ant-select-selector{
-    border-color: ${({ theme }) => theme["border-color-light"]};
+    border-color: ${({ theme }) => theme['border-color-light']};
   }
   .ant-select-multiple.ant-select-sm{
     .ant-select-selection-item{
@@ -401,13 +395,12 @@ const TimeLinePointerIconWrap = Styled.div`
       }
     }
     .ant-timeline-item-content{
-      margin: ${({ theme }) =>
-        theme.rtl ? "-38px 42px 0 0" : "-38px 0 0 42px"};
+      margin: ${({ theme }) => (theme.rtl ? '-38px 42px 0 0' : '-38px 0 0 42px')};
       h3{
         font-size: 14px;
         font-weight: 500;
         margin-bottom: 30px;
-        color: ${({ theme }) => theme["dark-color"]};
+        color: ${({ theme }) => theme['dark-color']};
       }
       p{
         font-size: 14px;
@@ -417,7 +410,7 @@ const TimeLinePointerIconWrap = Styled.div`
       }
       .tags{
         font-size: 14px;
-        color: ${({ theme }) => theme["light-gray-color"]};
+        color: ${({ theme }) => theme['light-gray-color']};
       }
     }
   }
@@ -443,18 +436,18 @@ const TimelineNormalWrap = Styled.div`
     &.active{
       .timeline-content-text{
         p{
-          color: ${({ theme }) => theme["primary-color"]};
+          color: ${({ theme }) => theme['primary-color']};
         }
       }
     }
     .ant-timeline-item-content{
-      margin: ${({ theme }) => (theme.rtl ? "0 32px 0 0" : "0 0 0 32px")};
+      margin: ${({ theme }) => (theme.rtl ? '0 32px 0 0' : '0 0 0 32px')};
       font-size: 14px !important;
       .timeline-content-inner{
         .timeline-content-time{
           min-width: 65px;
           font-weight: 600;
-          color: ${({ theme }) => theme["light-gray-color"]};
+          color: ${({ theme }) => theme['light-gray-color']};
         }
       }
       p{
@@ -473,7 +466,7 @@ const TimelineBoxWrap = Styled.div`
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background-color: ${({ theme }) => theme["bg-color-light"]};
+      background-color: ${({ theme }) => theme['bg-color-light']};
     }
     &.ant-timeline-item-left{
       .ant-timeline-item-content{
@@ -483,30 +476,28 @@ const TimelineBoxWrap = Styled.div`
           width: 0;
           height: 0;
           border-top: 8px solid transparent;
-          ${({ theme }) =>
-            theme.rtl ? "border-left" : "border-right"}: 16px solid #EFF0F3;
+          ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 16px solid #EFF0F3;
           border-bottom: 8px solid transparent;
           top: 40%;
           transform: translateY(-50%);
-          ${({ theme }) => (theme.rtl ? "right" : "left")}: -16px;
+          ${({ theme }) => (theme.rtl ? 'right' : 'left')}: -16px;
         }
       }
     }
     &.ant-timeline-item-right{
       .ant-timeline-item-content{
-        ${({ theme }) => (theme.rtl ? "left" : "right")}: 6px;
+        ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 6px;
         &:after{
           position: absolute;
           content: '';
           width: 0;
           height: 0;
           border-top: 8px solid transparent;
-          ${({ theme }) =>
-            theme.rtl ? "border-right" : "border-left"}: 16px solid #EFF0F3;
+          ${({ theme }) => (theme.rtl ? 'border-right' : 'border-left')}: 16px solid #EFF0F3;
           border-bottom: 8px solid transparent;
           top: 40%;
           transform: translateY(-50%);
-          ${({ theme }) => (theme.rtl ? "left" : "right")}: -16px;
+          ${({ theme }) => (theme.rtl ? 'left' : 'right')}: -16px;
         }
         .content-box{
           text-align: left !important;
@@ -516,7 +507,7 @@ const TimelineBoxWrap = Styled.div`
     .ant-timeline-item-content{
       h2{
         font-size: 14px;
-        color: ${({ theme }) => theme["extra-light-color"]};
+        color: ${({ theme }) => theme['extra-light-color']};
       }
       .content-box{
         padding: 18px 20px;

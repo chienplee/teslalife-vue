@@ -34,76 +34,40 @@
           <a-col :md="12" :xs="24">
             <sdCards title="Placement">
               <sdDropdown placement="bottomLeft">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Left
                 </sdButton>
               </sdDropdown>
               <sdDropdown placement="bottomCenter">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Center
                 </sdButton>
               </sdDropdown>
               <sdDropdown placement="bottomRight">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Bottom Right
                 </sdButton>
               </sdDropdown>
               <br />
               <sdDropdown placement="topLeft">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Left
                 </sdButton>
               </sdDropdown>
               <sdDropdown placement="topCenter">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Center
                 </sdButton>
               </sdDropdown>
               <sdDropdown placement="topRight">
-                <sdButton
-                  class="btn-outlined"
-                  size="small"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
                   Top Right
                 </sdButton>
               </sdDropdown>
             </sdCards>
             <sdCards title="Button with dropdown menu">
               <DropdownIconStyleWrapper>
-                <sdButton
-                  @click="handleButtonClick"
-                  class="btn-outlined"
-                  size="default"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton @click="handleButtonClick" class="btn-outlined" size="default" :outlined="true" type="light">
                   Bottom Left Click
                   <sdDropdown placement="bottomLeft" :action="['click']">
                     <a to="#">
@@ -119,13 +83,7 @@
                     </a>
                   </sdDropdown>
                 </sdButton>
-                <sdButton
-                  @click="handleButtonClick"
-                  class="btn-outlined"
-                  size="default"
-                  :outlined="true"
-                  type="light"
-                >
+                <sdButton @click="handleButtonClick" class="btn-outlined" size="default" :outlined="true" type="light">
                   Bottom Right hover
                   <sdDropdown placement="bottomRight" :action="['hover']">
                     <a to="#">
@@ -163,7 +121,7 @@
                   Info
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
-                       <sdFeatherIcons type="download" />
+                      <sdFeatherIcons type="download" />
                     </a>
                   </sdDropdown>
                 </sdButton>
@@ -177,11 +135,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { DropdownStyle, DropdownIconStyleWrapper } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { DropdownStyle, DropdownIconStyleWrapper } from './ui-elements-styled';
 
 export default {
-  name: "Dropdown",
+  name: 'Dropdown',
   components: {
     Main,
     DropdownStyle,

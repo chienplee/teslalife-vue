@@ -8,9 +8,7 @@
     @openChange="onOpenChange"
   >
     <a-sub-menu key="dashboard">
-      <template v-slot:title
-        ><sdFeatherIcons type="home" /><span>Dashboard</span></template
-      >
+      <template v-slot:title><sdFeatherIcons type="home" /><span>Dashboard</span></template>
       <a-menu-item key="home">
         <router-link click="toggleCollapsed" to="/">
           Social Media
@@ -48,9 +46,7 @@
         <p class="sidebar-nav-title">FEATURES</p>
       </template>
       <a-sub-menu key="components">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>UI Elements</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>UI Elements</span></template>
         <a-menu-item key="alerts">
           <router-link click="toggleCollapsed" to="/components/alerts">
             Alerts
@@ -244,9 +240,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="chart">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>Charts</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Charts</span></template>
         <a-menu-item key="chartJs">
           <router-link click="toggleCollapsed" to="/chart/chart-js">
             Chart js
@@ -260,9 +254,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="forms">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>Forms</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Forms</span></template>
         <a-menu-item key="alerts">
           <router-link click="toggleCollapsed" to="/forms/form-layout">
             Form Layout
@@ -286,9 +278,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="icons">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>Icons</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Icons</span></template>
         <a-menu-item key="featherIcons">
           <router-link click="toggleCollapsed" to="/icons/featherIcons">
             FeatherIcons
@@ -307,9 +297,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="maps">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>Maps</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Maps</span></template>
         <a-menu-item key="google">
           <router-link click="toggleCollapsed" to="/maps/google">
             Google Maps
@@ -328,9 +316,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="tables">
-        <template v-slot:title
-          ><sdFeatherIcons type="circle" /><span>Table</span></template
-        >
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Table</span></template>
         <a-menu-item key="table">
           <router-link click="toggleCollapsed" to="/tables/basic">
             Basic Table
@@ -379,7 +365,7 @@
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/404">
-             404
+            404
           </router-link>
         </span>
       </a-menu-item>
@@ -411,29 +397,27 @@
   </a-menu>
 </template>
 <script>
-import VueTypes from "vue-types";
-import { mapGetters } from "vuex";
+import VueTypes from 'vue-types';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "AsideItems",
+  name: 'AsideItems',
   props: {
     toggleCollapsed: VueTypes.func,
   },
   data() {
     return {
-      mode: "inline",
-      rootSubmenuKeys: ["sub1", "sub2", "sub4"],
-      openKeys: ["sub1"],
+      mode: 'inline',
+      rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
+      openKeys: ['sub1'],
     };
   },
   computed: {
-    ...mapGetters(["darkMode"]),
+    ...mapGetters(['darkMode']),
   },
   methods: {
     onOpenChange(openKeys) {
-      const latestOpenKey = openKeys.find(
-        (key) => this.openKeys.indexOf(key) === -1
-      );
+      const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
       if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
         this.openKeys = openKeys;
       } else {

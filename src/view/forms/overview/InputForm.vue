@@ -14,8 +14,7 @@
             </a-row>
             <a-row align="middle">
               <a-col :md="6" :xs="24">
-                <a-form-item label="Email Address" html-for="input-email">
-                </a-form-item>
+                <a-form-item label="Email Address" html-for="input-email"> </a-form-item>
               </a-col>
               <a-col :md="18" :xs="24">
                 <a-input name="input-email" placeholder="username@email.com" />
@@ -26,16 +25,12 @@
                 <a-form-item label="URL" html-for="input-url"> </a-form-item>
               </a-col>
               <a-col :md="18" :xs="24">
-                <a-input
-                  name="input-url"
-                  placeholder="https://strikingdash-vue-admin-dashboard-template"
-                />
+                <a-input name="input-url" placeholder="https://strikingdash-vue-admin-dashboard-template" />
               </a-col>
             </a-row>
             <a-row align="middle">
               <a-col :md="6" :xs="24">
-                <a-form-item label="Phone" html-for="input-phone">
-                </a-form-item>
+                <a-form-item label="Phone" html-for="input-phone"> </a-form-item>
               </a-col>
               <a-col :md="18" :xs="24">
                 <a-input name="input-phone" placeholder="017123456789" />
@@ -43,20 +38,15 @@
             </a-row>
             <a-row align="middle">
               <a-col :md="6" :xs="24">
-                <a-form-item label="Password" html-for="input-pass">
-                </a-form-item>
+                <a-form-item label="Password" html-for="input-pass"> </a-form-item>
               </a-col>
               <a-col :md="18" :xs="24">
-                <a-input-password
-                  name="input-pass"
-                  placeholder="Enter Password"
-                />
+                <a-input-password name="input-pass" placeholder="Enter Password" />
               </a-col>
             </a-row>
             <a-row align="middle">
               <a-col :md="6" :xs="24">
-                <a-form-item label="Number" html-for="input-number">
-                </a-form-item>
+                <a-form-item label="Number" html-for="input-number"> </a-form-item>
               </a-col>
               <a-col :md="18" :xs="24">
                 <a-input name="input-number" placeholder="12457485" />
@@ -106,11 +96,11 @@
 </template>
 
 <script>
-import { HorizontalFormStyleWrap } from "./Style";
-import { BasicFormWrapper } from "../../styled";
+import { HorizontalFormStyleWrap } from './Style';
+import { BasicFormWrapper } from '../../styled';
 import moment from 'moment';
 export default {
-  name: "InputForm",
+  name: 'InputForm',
   components: {
     BasicFormWrapper,
     HorizontalFormStyleWrap,
@@ -120,4 +110,3 @@ export default {
   },
 };
 </script>
-

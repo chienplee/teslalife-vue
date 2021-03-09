@@ -3,28 +3,31 @@ import { Button } from 'ant-design-vue';
 
 const ButtonGroup = Button.Group;
 const props = [
-    "type",
-    "shape",
-    "icon",
-    "size",
-    "outlined",
-    "ghost",
-    "transparent",
-    "raised",
-    "squared",
-    "color",
-    "social",
-    "loading",
-  ];
+  'type',
+  'shape',
+  'icon',
+  'size',
+  'outlined',
+  'ghost',
+  'transparent',
+  'raised',
+  'squared',
+  'color',
+  'social',
+  'loading',
+];
 const outline = (theme, type) => {
   return `
         background: transparent !important;
-        border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'light' ? theme[`${type}-color`] : theme['border-color-normal']} !important;
+        border: 1px ${type !== 'dash' ? 'solid' : 'dashed'} ${
+    type !== 'light' ? theme[`${type}-color`] : theme['border-color-normal']
+  } !important;
         color: ${type !== 'default' && theme[`${type}-color`]} !important;
   
         &:hover, &:focus {
           background: transparent !important;
-          border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'default' && theme[`${type}-hover`]} !important;
+          border: 1px ${type !== 'dash' ? 'solid' : 'dashed'} ${type !== 'default' &&
+    theme[`${type}-hover`]} !important;
           color: ${type !== 'default' && theme[`${type}-hover`]} !important;
         }
     `;
@@ -44,7 +47,7 @@ const ghosts = theme => {
       `;
 };
 
-const transparents = (theme, type) => {    
+const transparents = (theme, type) => {
   return `
         background: ${type !== 'default' && theme[`${type}-color`]}15 !important;
         border-width: 0px !important;
@@ -79,7 +82,9 @@ const square = (theme, type) => `
 
 const squareOutline = (theme, type) => `
       background: transparent !important;
-      border: 1px ${type !== 'dash' ? "solid" : "dashed"} ${type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']} !important;
+      border: 1px ${type !== 'dash' ? 'solid' : 'dashed'} ${
+  type !== 'default' ? theme[`${type}-color`] : theme['disabled-color']
+} !important;
       color: ${type !== 'default' && theme[`${type}-color`]} !important;
       border-radius: 0px !important;
       padding: 0px 15px !important;
@@ -111,10 +116,10 @@ const socialButton = (color, shape) => `
 
 const ButtonStyled = Styled(Button, props)`
 
-    background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`]+ " !important"};
+    background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`] + ' !important'};
     border-width: 0px !important;
     border-style: ${({ type }) => (type !== 'dash' ? 'solid' : 'dashed !important')};
-    color: ${({ type }) => (type !== 'default' && type !== 'white') ? '#ffffff !important' : '#5A5F7D !important'};
+    color: ${({ type }) => (type !== 'default' && type !== 'white' ? '#ffffff !important' : '#5A5F7D !important')};
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -124,8 +129,9 @@ const ButtonStyled = Styled(Button, props)`
     font-weight: 500 !important;
     box-shadow: 0 0 !important;
     &:hover, &:focus {
-        background: ${({ type, theme }) => (type !== 'default' && type !=='white') && theme[`${type}-hover`]+ " !important"};
-        color: ${({ type }) => type !== 'default' && type !=='white' ? '#ffffff !important' : '#5A5F7D !important'};
+        background: ${({ type, theme }) =>
+          type !== 'default' && type !== 'white' && theme[`${type}-hover`] + ' !important'};
+        color: ${({ type }) => (type !== 'default' && type !== 'white' ? '#ffffff !important' : '#5A5F7D !important')};
     }
     i,
     svg,

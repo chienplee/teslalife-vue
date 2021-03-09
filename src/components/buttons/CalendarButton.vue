@@ -12,7 +12,7 @@
 // import DateRangePickerOne from "../datePicker/DatePicker";
 
 export default {
-  name: "CalendarButton",
+  name: 'CalendarButton',
   components: {
     // DateRangePickerOne,
   },

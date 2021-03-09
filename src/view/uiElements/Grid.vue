@@ -169,22 +169,13 @@
           <sdCards headless title="More Responsive" size="default">
             <GridStyle>
               <a-row>
-                <a-col
-                  :xs="{ span: 5, offset: 1 }"
-                  :lg="{ span: 6, offset: 2 }"
-                >
+                <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
                   Col
                 </a-col>
-                <a-col
-                  :xs="{ span: 11, offset: 1 }"
-                  :lg="{ span: 6, offset: 2 }"
-                >
+                <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 6, offset: 2 }">
                   Col
                 </a-col>
-                <a-col
-                  :xs="{ span: 5, offset: 1 }"
-                  :lg="{ span: 6, offset: 2 }"
-                >
+                <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
                   Col
                 </a-col>
               </a-row>
@@ -197,10 +188,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { GridStyle, GridStyleGutter, GridStyleOffset } from "./GridStyled";
+import { Main } from '../styled';
+import { GridStyle, GridStyleGutter, GridStyleOffset } from './GridStyled';
 export default {
-  name: "Grid",
+  name: 'Grid',
   components: {
     Main,
     GridStyle,

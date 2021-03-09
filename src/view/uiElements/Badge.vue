@@ -89,10 +89,7 @@
                     boxShadow: '0 0 0 1px #d9d9d9 inset',
                   }"
                 />
-                <a-badge
-                  count="109"
-                  :number-style="{ backgroundColor: '#52c41a' }"
-                />
+                <a-badge count="109" :number-style="{ backgroundColor: '#52c41a' }" />
               </BadgeStandAloneStyle>
             </BadgeWraperStyle>
           </sdCards>
@@ -116,10 +113,7 @@
           <sdCards title="Dynamic">
             <BadgeWraperStyle>
               <BadgeDynamicStyle>
-                <div
-                  class="badge-dynamic"
-                  :style="{ display: 'flex', alignItems: 'flex-start' }"
-                >
+                <div class="badge-dynamic" :style="{ display: 'flex', alignItems: 'flex-start' }">
                   <a-badge :count="count">
                     <a to="#" class="head-example" />
                   </a-badge>
@@ -154,17 +148,17 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 import {
   BadgeWraperStyle,
   BadgeStandAloneStyle,
   BadgeOverflowStyle,
   BadgeRedStyle,
   BadgeDynamicStyle,
-} from "./ui-elements-styled";
-import { mapGetters } from "vuex";
+} from './ui-elements-styled';
+import { mapGetters } from 'vuex';
 export default {
-  name: "Badge",
+  name: 'Badge',
   components: {
     Main,
     BadgeWraperStyle,
@@ -176,19 +170,19 @@ export default {
   data() {
     return {
       colors: [
-        "pink",
-        "red",
-        "yellow",
-        "orange",
-        "cyan",
-        "green",
-        "blue",
-        "purple",
-        "geekblue",
-        "magenta",
-        "volcano",
-        "gold",
-        "lime",
+        'pink',
+        'red',
+        'yellow',
+        'orange',
+        'cyan',
+        'green',
+        'blue',
+        'purple',
+        'geekblue',
+        'magenta',
+        'volcano',
+        'gold',
+        'lime',
       ],
       count: 5,
       show: true,
@@ -211,7 +205,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
 };
 </script>

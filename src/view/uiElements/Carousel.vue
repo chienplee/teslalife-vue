@@ -26,7 +26,7 @@
               </a-carousel>
             </CarouselStyleWraper>
           </sdCards>
-           <sdCards title="Scroll automatically">
+          <sdCards title="Scroll automatically">
             <CarouselStyleWraper>
               <a-carousel autoplay>
                 <div><h3>1</h3></div>
@@ -81,18 +81,18 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { CarouselStyleWraper } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { CarouselStyleWraper } from './ui-elements-styled';
 
 export default {
-  name: "Carousel",
+  name: 'Carousel',
   components: {
     Main,
     CarouselStyleWraper,
   },
   data() {
     return {
-      dotPosition: "top",
+      dotPosition: 'top',
     };
   },
   methods: {
@@ -102,5 +102,3 @@ export default {
   },
 };
 </script>
-
-

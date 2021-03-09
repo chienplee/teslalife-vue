@@ -10,11 +10,7 @@
       <a-row type="flex" justify="center">
         <a-col :lg="12" :sm="20" :xs="24">
           <BasicFormWrapper>
-            <a-form
-              :model="formState"
-              @finish="handleFinish"
-              @finishFailed="handleFinishFailed"
-            >
+            <a-form :model="formState" @finish="handleFinish" @finishFailed="handleFinishFailed">
               <a-form-item label="Old Password">
                 <a-input v-model:value="formState.old" />
               </a-form-item>
@@ -24,11 +20,7 @@
               <p class="input-message">Minimum 6 characters</p>
               <a-form-item>
                 <div class="setting-form-actions">
-                  <sdButton
-                    @click="handleFinish"
-                    htmlType="submit"
-                    type="primary"
-                  >
+                  <sdButton @click="handleFinish" htmlType="submit" type="primary">
                     Change Password
                   </sdButton>
                   &nbsp; &nbsp;
@@ -46,24 +38,24 @@
 </template>
 
 <script>
-import { ChangePasswordWrapper } from "./style";
-import { BasicFormWrapper } from "../../../styled";
-import { reactive } from "vue";
+import { ChangePasswordWrapper } from './style';
+import { BasicFormWrapper } from '../../../styled';
+import { reactive } from 'vue';
 
 const Password = {
-  name: "Password",
+  name: 'Password',
   data() {
     const formState = reactive({
-      old: "",
-      new: "",
+      old: '',
+      new: '',
     });
 
-    const handleFinish = (values) => {
+    const handleFinish = values => {
       this.values = { ...values };
       console.log(values, formState);
     };
 
-    const handleFinishFailed = (errors) => {
+    const handleFinishFailed = errors => {
       console.log(errors);
     };
     return {

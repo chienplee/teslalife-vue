@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "BlankPage",
+  name: 'BlankPage',
   components: {
     Main,
   },

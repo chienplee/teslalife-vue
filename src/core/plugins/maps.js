@@ -1,6 +1,6 @@
-import app from "../../config/configApp";
+import app from '../../config/configApp';
 // import VueGoogleMap from 'vuejs-google-maps';
-import { LMap, LTileLayer, LMarker, LWMSTileLayer, LControlLayers  } from '@vue-leaflet/vue-leaflet';
+import { LMap, LTileLayer, LMarker, LWMSTileLayer, LControlLayers } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 import VueSimpleMaps from 'vue-simple-maps';
 

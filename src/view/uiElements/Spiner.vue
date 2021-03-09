@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Empty">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -26,10 +28,7 @@
           </sdCards>
         </a-col>
         <a-col :md="12" xs="24">
-          <sdCards
-            title="Inside a container"
-            caption="The simplest use of Spin"
-          >
+          <sdCards title="Inside a container" caption="The simplest use of Spin">
             <SpinerWraperStyle>
               <a-spin />
             </SpinerWraperStyle>
@@ -48,13 +47,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { SpinerWraperStyle } from "./ui-elements-styled";
-import { PlusIcon } from "vue-feather-icons";
+import { Main } from '../styled';
+import { SpinerWraperStyle } from './ui-elements-styled';
+
 export default {
-  name: "Spiner",
+  name: 'Spiner',
   components: {
-    PlusIcon,
     Main,
     SpinerWraperStyle,
   },

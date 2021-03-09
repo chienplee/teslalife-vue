@@ -56,29 +56,17 @@
                   <template v-slot:overlay>
                     <a-menu>
                       <a-menu-item>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="http://www.alipay.com/"
-                        >
+                        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
                           General
                         </a>
                       </a-menu-item>
                       <a-menu-item>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="http://www.taobao.com/"
-                        >
+                        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
                           Layout
                         </a>
                       </a-menu-item>
                       <a-menu-item>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="http://www.tmall.com/"
-                        >
+                        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
                           Navigation
                         </a>
                       </a-menu-item>
@@ -149,43 +137,43 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { BreadcrumbWrapperStyle } from "./ui-elements-styled";
+import { Main } from '../styled';
+import { BreadcrumbWrapperStyle } from './ui-elements-styled';
 export default {
-  name: "Badge",
+  name: 'Badge',
   components: {
     Main,
     BreadcrumbWrapperStyle,
   },
   data() {
     return {
-      basePath: "/components/breadcrumb",
+      basePath: '/components/breadcrumb',
       routes: [
         {
-          path: "index",
-          breadcrumbName: "home",
+          path: 'index',
+          breadcrumbName: 'home',
         },
         {
-          path: "first",
-          breadcrumbName: "first",
+          path: 'first',
+          breadcrumbName: 'first',
           children: [
             {
-              path: "/general",
-              breadcrumbName: "General",
+              path: '/general',
+              breadcrumbName: 'General',
             },
             {
-              path: "/layout",
-              breadcrumbName: "Layout",
+              path: '/layout',
+              breadcrumbName: 'Layout',
             },
             {
-              path: "/navigation",
-              breadcrumbName: "Navigation",
+              path: '/navigation',
+              breadcrumbName: 'Navigation',
             },
           ],
         },
         {
-          path: "second",
-          breadcrumbName: "second",
+          path: 'second',
+          breadcrumbName: 'second',
         },
       ],
     };

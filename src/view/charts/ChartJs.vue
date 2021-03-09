@@ -24,12 +24,7 @@
           </sdCards>
           <sdCards title="Area Chart">
             <sdChartContainer class="parentContainer">
-              <Chart
-                type="line"
-                :options="areaChartOption"
-                :datasets="areaChartData"
-                className="areaChart"
-              />
+              <Chart type="line" :options="areaChartOption" :datasets="areaChartData" className="areaChart" />
             </sdChartContainer>
           </sdCards>
           <sdCards title="Donut Chart">
@@ -53,13 +48,7 @@
                 :datasets="[
                   {
                     data: [20, 20, 30, 5, 25],
-                    backgroundColor: [
-                      '#560bd0',
-                      '#007bff',
-                      '#00cccc',
-                      '#cbe0e3',
-                      '#74de00',
-                    ],
+                    backgroundColor: ['#560bd0', '#007bff', '#00cccc', '#cbe0e3', '#74de00'],
                   },
                 ]"
                 className="donutChart"
@@ -69,20 +58,11 @@
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Horizontal Chart">
-            <Chart
-              type="horizontalBar"
-              className="horizontalChart"
-              :options="horizontalOption"
-            />
+            <Chart type="horizontalBar" className="horizontalChart" :options="horizontalOption" />
           </sdCards>
           <sdCards title="Line Chart">
             <sdChartContainer class="parentContainer">
-              <Chart
-                type="line"
-                className="lineChart"
-                :options="lineChartOption"
-                :datasets="lineChartData"
-              />
+              <Chart type="line" className="lineChart" :options="lineChartOption" :datasets="lineChartData" />
             </sdChartContainer>
           </sdCards>
           <sdCards title="Transparent Chart">
@@ -114,13 +94,7 @@
                 :datasets="[
                   {
                     data: [20, 20, 30, 5, 25],
-                    backgroundColor: [
-                      '#560bd0',
-                      '#007bff',
-                      '#00cccc',
-                      '#cbe0e3',
-                      '#74de00',
-                    ],
+                    backgroundColor: ['#560bd0', '#007bff', '#00cccc', '#cbe0e3', '#74de00'],
                   },
                 ]"
                 className="pieChart"
@@ -134,12 +108,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import Chart from "../../components/utilities/chartjs";
-import { customTooltips } from "../../components/utilities/utilities";
+import { Main } from '../styled';
+import Chart from '../../components/utilities/chartjs';
+import { customTooltips } from '../../components/utilities/utilities';
 
 export default {
-  name: "Chartjs",
+  name: 'Chartjs',
   components: {
     Main,
     Chart,
@@ -160,12 +134,12 @@ export default {
             {
               stacked: true,
               gridLines: {
-                color: "#e5e9f2",
+                color: '#e5e9f2',
               },
               ticks: {
                 beginAtZero: true,
                 fontSize: 10,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
               },
             },
           ],
@@ -179,7 +153,7 @@ export default {
               ticks: {
                 beginAtZero: true,
                 fontSize: 11,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
               },
             },
           ],
@@ -203,20 +177,20 @@ export default {
               ticks: {
                 beginAtZero: true,
                 fontSize: 10,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
               },
             },
           ],
           xAxes: [
             {
               gridLines: {
-                color: "#e5e9f2",
+                color: '#e5e9f2',
               },
 
               ticks: {
                 beginAtZero: true,
                 fontSize: 11,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
                 max: 100,
               },
             },
@@ -228,10 +202,10 @@ export default {
         maintainAspectRatio: true,
         layout: {
           padding: {
-            left: "-10",
+            left: '-10',
             right: 0,
             top: 0,
-            bottom: "-10",
+            bottom: '-10',
           },
         },
         legend: {
@@ -241,9 +215,9 @@ export default {
           },
         },
         tooltips: {
-          mode: "label",
+          mode: 'label',
           intersect: false,
-          position: "average",
+          position: 'average',
           enabled: false,
           custom: customTooltips,
           callbacks: {
@@ -253,11 +227,10 @@ export default {
               return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
             },
             labelColor(tooltipItem, chart) {
-              const dataset =
-                chart.config.data.datasets[tooltipItem.datasetIndex];
+              const dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
               return {
                 backgroundColor: dataset.borderColor,
-                borderColor: "transparent",
+                borderColor: 'transparent',
                 usePointStyle: true,
               };
             },
@@ -267,43 +240,43 @@ export default {
       lineChartData: [
         {
           data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
-          borderColor: "#001737",
+          borderColor: '#001737',
           borderWidth: 1,
           fill: false,
-          label: "Lose",
+          label: 'Lose',
         },
         {
           data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
-          borderColor: "#1ce1ac",
+          borderColor: '#1ce1ac',
           borderWidth: 1,
           fill: false,
-          label: "Profit",
+          label: 'Profit',
         },
       ],
       areaChartData: [
         {
           data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
-          borderColor: "#001737",
+          borderColor: '#001737',
           borderWidth: 1,
           fill: true,
-          label: "Lose",
-          backgroundColor: "#00173750",
-          pointHoverBorderColor: "transparent",
+          label: 'Lose',
+          backgroundColor: '#00173750',
+          pointHoverBorderColor: 'transparent',
         },
         {
           data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
-          borderColor: "#1ce1ac",
+          borderColor: '#1ce1ac',
           borderWidth: 1,
           fill: true,
-          label: "Profit",
-          backgroundColor: "#1ce1ac50",
-          pointHoverBorderColor: "transparent",
+          label: 'Profit',
+          backgroundColor: '#1ce1ac50',
+          pointHoverBorderColor: 'transparent',
         },
       ],
       areaChartOption: {
         maintainAspectRatio: true,
         hover: {
-          mode: "nearest",
+          mode: 'nearest',
           intersect: false,
         },
         layout: {
@@ -331,7 +304,7 @@ export default {
               stacked: true,
               gridLines: {
                 display: false,
-                color: "#e5e9f2",
+                color: '#e5e9f2',
               },
               ticks: {
                 beginAtZero: true,
@@ -357,9 +330,9 @@ export default {
           ],
         },
         tooltips: {
-          mode: "label",
+          mode: 'label',
           intersect: false,
-          position: "average",
+          position: 'average',
           enabled: false,
           custom: customTooltips,
           callbacks: {
@@ -369,11 +342,10 @@ export default {
               return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
             },
             labelColor(tooltipItem, chart) {
-              const dataset =
-                chart.config.data.datasets[tooltipItem.datasetIndex];
+              const dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
               return {
                 backgroundColor: dataset.borderColor,
-                borderColor: "transparent",
+                borderColor: 'transparent',
                 usePointStyle: true,
               };
             },
@@ -383,13 +355,13 @@ export default {
       transparentChartData: [
         {
           data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
-          backgroundColor: "rgba(0,23,55, .5)",
-          label: "Profit",
+          backgroundColor: 'rgba(0,23,55, .5)',
+          label: 'Profit',
         },
         {
           data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
-          backgroundColor: "rgba(28,225,172, .5)",
-          label: "Lose",
+          backgroundColor: 'rgba(28,225,172, .5)',
+          label: 'Lose',
         },
       ],
       transparentChartOption: {
@@ -397,8 +369,8 @@ export default {
         responsive: true,
         legend: {
           display: true,
-          position: "bottom",
-          align: "start",
+          position: 'bottom',
+          align: 'start',
           labels: {
             boxWidth: 6,
             display: true,
@@ -407,22 +379,22 @@ export default {
         },
         layout: {
           padding: {
-            left: "0",
+            left: '0',
             right: 0,
             top: 0,
-            bottom: "0",
+            bottom: '0',
           },
         },
         scales: {
           yAxes: [
             {
               gridLines: {
-                color: "#e5e9f2",
+                color: '#e5e9f2',
               },
               ticks: {
                 beginAtZero: true,
                 fontSize: 13,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
                 max: 80,
                 stepSize: 20,
                 callback(value) {
@@ -440,15 +412,15 @@ export default {
               ticks: {
                 beginAtZero: true,
                 fontSize: 13,
-                fontColor: "#182b49",
+                fontColor: '#182b49',
               },
             },
           ],
         },
         tooltips: {
-          mode: "label",
+          mode: 'label',
           intersect: false,
-          position: "average",
+          position: 'average',
           enabled: false,
           custom: customTooltips,
           callbacks: {
@@ -458,11 +430,10 @@ export default {
               return `<span class="chart-data">${yLabel}</span> <span class="data-label">${dstLabel}</span>`;
             },
             labelColor(tooltipItem, chart) {
-              const dataset =
-                chart.config.data.datasets[tooltipItem.datasetIndex];
+              const dataset = chart.config.data.datasets[tooltipItem.datasetIndex];
               return {
                 backgroundColor: dataset.backgroundColor,
-                borderColor: "transparent",
+                borderColor: 'transparent',
                 usePointStyle: true,
               };
             },

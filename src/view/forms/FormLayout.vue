@@ -36,14 +36,14 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import HorizontalForm from "./overview/HorizontalForm";
-import HorizontalIconForm from "./overview/HorizontalIconForm";
-import VerticalForm from "./overview/VerticalForm";
-import VerticalIconForm from "./overview/VerticalIconForm";
-import MultiColumnForm from "./overview/MultiColumnForm";
+import { Main } from '../styled';
+import HorizontalForm from './overview/HorizontalForm';
+import HorizontalIconForm from './overview/HorizontalIconForm';
+import VerticalForm from './overview/VerticalForm';
+import VerticalIconForm from './overview/VerticalIconForm';
+import MultiColumnForm from './overview/MultiColumnForm';
 export default {
-  name: "Form",
+  name: 'Form',
   components: {
     Main,
     HorizontalForm,

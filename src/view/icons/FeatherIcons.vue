@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import FeatherIcon from "../../components/icons/FeatherIcon";
-import { IconWrapper } from "./IconStyled";
+import { Main } from '../styled';
+import FeatherIcon from '../../components/icons/FeatherIcon';
+import { IconWrapper } from './IconStyled';
 
 export default {
-  name: "FeatherIcons",
+  name: 'FeatherIcons',
   components: {
     Main,
     FeatherIcon,

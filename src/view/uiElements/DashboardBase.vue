@@ -17,20 +17,13 @@
       <a-row :gutter="25">
         <a-col :xs="24">
           <DashboardBaseStyleWrap>
-            <sdCards
-              :border="false"
-              headless
-              title="Theme Colors"
-              size="default"
-            >
+            <sdCards :border="false" headless title="Theme Colors" size="default">
               <a-row :gutter="15">
                 <a-col :lg="2">
                   <Palette :colorCode="theme['primary-color']">Primary</Palette>
                 </a-col>
                 <a-col :lg="2">
-                  <Palette :colorCode="theme['secondary-color']"
-                    >Secondary</Palette
-                  >
+                  <Palette :colorCode="theme['secondary-color']">Secondary</Palette>
                 </a-col>
                 <a-col :lg="2">
                   <Palette :colorCode="theme['success-color']">Success</Palette>
@@ -54,9 +47,7 @@
                   <Palette :colorCode="theme['light-color']">Light</Palette>
                 </a-col>
                 <a-col :lg="2">
-                  <Palette :colorCode="theme['extra-light-color']"
-                    >Extra Light</Palette
-                  >
+                  <Palette :colorCode="theme['extra-light-color']">Extra Light</Palette>
                 </a-col>
               </a-row>
             </sdCards>
@@ -64,20 +55,13 @@
         </a-col>
         <a-col :xs="24">
           <DashboardBaseStyleWrap>
-            <sdCards
-              :border="false"
-              headless
-              title="Hover Colors"
-              size="default"
-            >
+            <sdCards :border="false" headless title="Hover Colors" size="default">
               <a-row :gutter="15">
                 <a-col :lg="2">
                   <Palette :colorCode="theme['primary-hover']">Primary</Palette>
                 </a-col>
                 <a-col :lg="2">
-                  <Palette :colorCode="theme['secondary-hover']"
-                    >Secondary</Palette
-                  >
+                  <Palette :colorCode="theme['secondary-hover']">Secondary</Palette>
                 </a-col>
                 <a-col :lg="2">
                   <Palette :colorCode="theme['success-hover']">Success</Palette>
@@ -103,24 +87,16 @@
         </a-col>
         <a-col :xs="24">
           <DashboardBaseStyleWrap>
-            <sdCards
-              :border="false"
-              headless
-              title="Gradient Colors"
-              size="default"
-            >
+            <sdCards :border="false" headless title="Gradient Colors" size="default">
               <a-row :gutter="15">
                 <a-col :md="5">
                   <Palette
                     gradient
                     content
                     direction="90deg"
-                    :colorCode="[
-                      theme['primary-color'],
-                      theme['secondary-color'],
-                    ]"
+                    :colorCode="[theme['primary-color'], theme['secondary-color']]"
                   >
-                    {{ theme["primary-color"] }}
+                    {{ theme['primary-color'] }}
                   </Palette>
                 </a-col>
                 <a-col :md="5">
@@ -128,12 +104,9 @@
                     gradient
                     content
                     direction="90deg"
-                    :colorCode="[
-                      theme['secondary-color'],
-                      theme['warning-color'],
-                    ]"
+                    :colorCode="[theme['secondary-color'], theme['warning-color']]"
                   >
-                    {{ theme["secondary-color"] }}
+                    {{ theme['secondary-color'] }}
                   </Palette>
                 </a-col>
                 <a-col :md="5">
@@ -143,7 +116,7 @@
                     direction="90deg"
                     :colorCode="[theme['primary-color'], theme['info-color']]"
                   >
-                    {{ theme["primary-color"] }}
+                    {{ theme['primary-color'] }}
                   </Palette>
                 </a-col>
               </a-row>
@@ -152,37 +125,20 @@
         </a-col>
         <a-col :xs="24">
           <DashboardBaseStyleWrap>
-            <sdCards
-              :border="false"
-              headless
-              title="Border Colors"
-              size="default"
-            >
+            <sdCards :border="false" headless title="Border Colors" size="default">
               <a-row :gutter="15">
                 <a-col :md="6">
-                  <Palette
-                    :bordered="true"
-                    :content="true"
-                    :colorCode="theme['border-color-light']"
-                  >
+                  <Palette :bordered="true" :content="true" :colorCode="theme['border-color-light']">
                     Border Color 1
                   </Palette>
                 </a-col>
                 <a-col :md="6">
-                  <Palette
-                    :bordered="true"
-                    :content="true"
-                    :colorCode="theme['border-color-normal']"
-                  >
+                  <Palette :bordered="true" :content="true" :colorCode="theme['border-color-normal']">
                     Border Color 2
                   </Palette>
                 </a-col>
                 <a-col :md="6">
-                  <Palette
-                    :bordered="true"
-                    :content="true"
-                    :colorCode="theme['border-color-deep']"
-                  >
+                  <Palette :bordered="true" :content="true" :colorCode="theme['border-color-deep']">
                     Border Color 3
                   </Palette>
                 </a-col>
@@ -192,12 +148,7 @@
         </a-col>
         <a-col :xs="24">
           <DashboardBaseStyleWrap>
-            <sdCards
-              :border="false"
-              headless
-              title="Background Gray Colors"
-              size="default"
-            >
+            <sdCards :border="false" headless title="Background Gray Colors" size="default">
               <a-row :gutter="15">
                 <a-col :md="6">
                   <Palette bg content :colorCode="theme['bg-color-light']">
@@ -223,60 +174,28 @@
             <sdCards headless title="Buttons">
               <a-row :gutter="15">
                 <a-col :md="6">
-                  <sdButton
-                    type="primary"
-                    size="small"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton type="primary" size="small" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Small
                   </sdButton>
-                  <sdButton
-                    type="primary"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton type="primary" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Normal
                   </sdButton>
-                  <sdButton
-                    type="primary"
-                    size="large"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton type="primary" size="large" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Large Button
                   </sdButton>
-                  <sdButton
-                    outlined
-                    type="primary"
-                    size="small"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton outlined type="primary" size="small" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Small
                   </sdButton>
-                  <sdButton
-                    outlined
-                    type="primary"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton outlined type="primary" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Normal
                   </sdButton>
-                  <sdButton
-                    outlined
-                    type="primary"
-                    size="large"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton outlined type="primary" size="large" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Large Button
                   </sdButton>
-                  <sdButton
-                    type="secondary"
-                    size="small"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton type="secondary" size="small" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Small
                   </sdButton>
-                  <sdButton
-                    type="secondary"
-                    :style="{ marginRight: '10px', marginBottom: '10px' }"
-                  >
+                  <sdButton type="secondary" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Normal
                   </sdButton>
                   <sdButton type="secondary" size="large">
@@ -397,12 +316,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { DashboardBaseStyleWrap } from "./ui-elements-styled";
-import Palette from "../../components/color-palette/palette";
-import config from "../../config/config";
+import { Main } from '../styled';
+import { DashboardBaseStyleWrap } from './ui-elements-styled';
+import Palette from '../../components/color-palette/palette';
+import config from '../../config/config';
 export default {
-  name: "ThemeConfiguration",
+  name: 'ThemeConfiguration',
   components: {
     Main,
     DashboardBaseStyleWrap,

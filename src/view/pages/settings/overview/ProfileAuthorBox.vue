@@ -68,7 +68,7 @@
 </template>
 <script>
 export default {
-  name: "AuthorBox",
+  name: 'AuthorBox',
   components: {},
   data() {
     return {

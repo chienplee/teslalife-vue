@@ -28,12 +28,7 @@
               <List text="Limited Boards" />
               <List text="Basic Project Management" />
             </ListGroup>
-            <sdButton
-              class="btn-outlined"
-              size="default"
-              :outlined="true"
-              type="light"
-            >
+            <sdButton class="btn-outlined" size="default" :outlined="true" type="light">
               Current Plan
             </sdButton>
           </PricingCard>
@@ -119,12 +114,7 @@
                     <List text="Limited Boards" />
                     <List text="Basic Project Management" />
                   </ListGroup>
-                  <sdButton
-                    class="btn-outlined"
-                    size="default"
-                    :outlined="true"
-                    type="light"
-                  >
+                  <sdButton class="btn-outlined" size="default" :outlined="true" type="light">
                     Current Plan
                   </sdButton>
                 </PricingCard>
@@ -201,12 +191,12 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import List from "../../components/pricing/pricing";
-import { PricingCard, ListGroup, Badge } from "./style";
+import { Main } from '../styled';
+import List from '../../components/pricing/pricing';
+import { PricingCard, ListGroup, Badge } from './style';
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   components: {
     Main,
     List,

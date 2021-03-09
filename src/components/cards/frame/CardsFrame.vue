@@ -16,9 +16,7 @@
         <template v-slot:overlay>
           <slot name="more"></slot>
         </template>
-        <router-link v-if="!moreText" to="#"
-          ><sdFeatherIcons type="more-horizontal"
-        /></router-link>
+        <router-link v-if="!moreText" to="#"><sdFeatherIcons type="more-horizontal"/></router-link>
         <router-link v-else to="#">More</router-link>
       </sdDropdown>
       <slot name="button"></slot>
@@ -41,20 +39,16 @@
 </template>
 
 <script>
-import { CardFrame } from "./style";
-import VueTypes from "vue-types";
+import { CardFrame } from './style';
+import VueTypes from 'vue-types';
 export default {
-  name: "Cards",
+  name: 'Cards',
   components: {
     CardFrame,
   },
   props: {
-    title: VueTypes.oneOfType([
-      VueTypes.string,
-      VueTypes.object,
-      VueTypes.node,
-    ]),
-    size: VueTypes.oneOf(["default", "small"]).def("default"),
+    title: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
+    size: VueTypes.oneOf(['default', 'small']).def('default'),
     more: VueTypes.bool.def(false),
     bodyStyle: VueTypes.object,
     headStyle: VueTypes.object,

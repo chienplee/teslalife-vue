@@ -29,21 +29,14 @@
             </a-result>
           </sdCards>
           <sdCards title="Warning" caption="The simplest use of Results">
-            <a-result
-              status="warning"
-              title="There are some problems with your operation."
-            >
+            <a-result status="warning" title="There are some problems with your operation.">
               <template #extra>
                 <a-button key="console" type="primary"> Go Console </a-button>
               </template>
             </a-result>
           </sdCards>
           <sdCards title="404" caption="The simplest use of Results">
-            <a-result
-              status="404"
-              title="404"
-              sub-title="Sorry, the page you visited does not exist."
-            >
+            <a-result status="404" title="404" sub-title="Sorry, the page you visited does not exist.">
               <template #extra>
                 <a-button type="primary"> Back Home </a-button>
               </template>
@@ -62,18 +55,15 @@
 
               <div class="desc">
                 <p style="font-size: 16px">
-                  <strong
-                    >The content you submitted has the following error:</strong
-                  >
+                  <strong>The content you submitted has the following error:</strong>
                 </p>
                 <p>
-                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account
-                  has been frozen
+                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account has been frozen
                   <a>Thaw immediately &gt;</a>
                 </p>
                 <p>
-                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account
-                  is not yet eligible to apply <a>Apply Unlock &gt;</a>
+                  <CloseCircleOutlined :style="{ color: 'red' }" /> Your account is not yet eligible to apply
+                  <a>Apply Unlock &gt;</a>
                 </p>
               </div>
             </a-result>
@@ -88,22 +78,14 @@
             </a-result>
           </sdCards>
           <sdCards title="403" caption="The simplest use of Results">
-            <a-result
-              status="403"
-              title="403"
-              sub-title="Sorry, you are not authorized to access this page."
-            >
+            <a-result status="403" title="403" sub-title="Sorry, you are not authorized to access this page.">
               <template #extra>
                 <a-button type="primary"> Back Home </a-button>
               </template>
             </a-result>
           </sdCards>
           <sdCards title="500" caption="The simplest use of Results">
-            <a-result
-              status="500"
-              title="500"
-              sub-title="Sorry, the server is wrong."
-            >
+            <a-result status="500" title="500" sub-title="Sorry, the server is wrong.">
               <template #extra>
                 <a-button type="primary"> Back Home </a-button>
               </template>
@@ -116,17 +98,17 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { mapGetters } from "vuex";
-import { CloseCircleOutlined } from "@ant-design/icons-vue";
+import { Main } from '../styled';
+import { mapGetters } from 'vuex';
+import { CloseCircleOutlined } from '@ant-design/icons-vue';
 export default {
-  name: "Result",
+  name: 'Result',
   components: {
     Main,
     CloseCircleOutlined,
   },
   computed: {
-    ...mapGetters(["rtl"]),
+    ...mapGetters(['rtl']),
   },
 };
 </script>

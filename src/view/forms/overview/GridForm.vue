@@ -61,12 +61,11 @@
 </template>
 
 <script>
-import { BasicFormWrapper } from "../../styled";
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "GridForm",
+  name: 'GridForm',
   components: {
     BasicFormWrapper,
   },
 };
 </script>
-

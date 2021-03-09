@@ -1,7 +1,7 @@
 <template>
   <div>
     <sdPageHeader title="DatePicker">
-            <template v-slot:buttons>
+      <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
           <sdExportButton />
@@ -29,37 +29,21 @@
           </sdCards>
           <sdCards title="Date Formate">
             <DatePickerWrapper>
-              <a-date-picker
-                :default-value="moment('2015/01/01', dateFormat)"
-                :format="dateFormat"
-              />
+              <a-date-picker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
               <br />
-              <a-date-picker
-                :default-value="moment('01/01/2015', dateFormatList[0])"
-                :format="dateFormatList"
-              />
+              <a-date-picker :default-value="moment('01/01/2015', dateFormatList[0])" :format="dateFormatList" />
               <br />
-              <a-month-picker
-                :default-value="moment('2015/01', monthFormat)"
-                :format="monthFormat"
-              />
+              <a-month-picker :default-value="moment('2015/01', monthFormat)" :format="monthFormat" />
               <br />
               <a-range-picker
-                :default-value="[
-                  moment('2015/01/01', dateFormat),
-                  moment('2015/01/01', dateFormat),
-                ]"
+                :default-value="[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]"
                 :format="dateFormat"
               />
             </DatePickerWrapper>
           </sdCards>
           <sdCards title="Disabled">
             <DatePickerWrapper>
-              <a-date-picker
-                :default-value="moment('2015/01/01', dateFormat)"
-                :format="dateFormat"
-                disabled
-              />
+              <a-date-picker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" disabled />
               <br />
               <a-date-picker
                 :default-value="moment('01/01/2015', dateFormatList[0])"
@@ -67,17 +51,10 @@
                 disabled
               />
               <br />
-              <a-month-picker
-                :default-value="moment('2015/01', monthFormat)"
-                :format="monthFormat"
-                disabled
-              />
+              <a-month-picker :default-value="moment('2015/01', monthFormat)" :format="monthFormat" disabled />
               <br />
               <a-range-picker
-                :default-value="[
-                  moment('2015/01/01', dateFormat),
-                  moment('2015/01/01', dateFormat),
-                ]"
+                :default-value="[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]"
                 :format="dateFormat"
                 disabled
               />
@@ -142,19 +119,19 @@
 </template>
 
 <script>
-import { Main, DatePickerWrapper } from "../styled";
-import moment from "moment";
+import { Main, DatePickerWrapper } from '../styled';
+import moment from 'moment';
 export default {
-  name: "DatePicker",
+  name: 'DatePicker',
   components: {
     Main,
     DatePickerWrapper,
   },
   data() {
     return {
-      dateFormat: "YYYY/MM/DD",
-      monthFormat: "YYYY/MM",
-      dateFormatList: ["DD/MM/YYYY", "DD/MM/YY"],
+      dateFormat: 'YYYY/MM/DD',
+      monthFormat: 'YYYY/MM',
+      dateFormatList: ['DD/MM/YYYY', 'DD/MM/YY'],
     };
   },
   methods: {

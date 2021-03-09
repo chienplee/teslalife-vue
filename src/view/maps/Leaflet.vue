@@ -17,64 +17,31 @@
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Leaflet Basic Map">
-            <l-map
-              :center="[50.797897, -1.077641]"
-              :zoom="15"
-              class="map-wrapper"
-            >
-              <l-tile-layer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              >
-              </l-tile-layer>
+            <l-map :center="[50.797897, -1.077641]" :zoom="15" class="map-wrapper">
+              <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"> </l-tile-layer>
               <l-marker :lat-lng="[50.797897, -1.077641]"></l-marker>
             </l-map>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Leaflet MultipleIcon Map">
-            <l-map
-              :center="[50.797897, -1.077641]"
-              :zoom="12"
-              class="map-wrapper"
-            >
-              <l-tile-layer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              >
-              </l-tile-layer>
-              <l-marker
-                v-for="item in place"
-                :key="item.id"
-                :lat-lng="item.position"
-              ></l-marker>
+            <l-map :center="[50.797897, -1.077641]" :zoom="12" class="map-wrapper">
+              <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"> </l-tile-layer>
+              <l-marker v-for="item in place" :key="item.id" :lat-lng="item.position"></l-marker>
             </l-map>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Leaflet Custom Icon Map">
-            <l-map
-              :center="[50.797897, -1.077641]"
-              :zoom="12"
-              class="map-wrapper"
-            >
-              <l-tile-layer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              >
-              </l-tile-layer>
-              <l-marker
-                :icon="fontAwesomeIcon"
-                :lat-lng="[50.797897, -1.077641]"
-              ></l-marker>
+            <l-map :center="[50.797897, -1.077641]" :zoom="12" class="map-wrapper">
+              <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"> </l-tile-layer>
+              <l-marker :icon="fontAwesomeIcon" :lat-lng="[50.797897, -1.077641]"></l-marker>
             </l-map>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Leaflet WMS Layer">
-            <l-map
-              :zoom="5"
-              :center="[40.797897, -110.077641]"
-              class="map-wrapper"
-              style="width: 100%"
-            >
+            <l-map :zoom="5" :center="[40.797897, -110.077641]" class="map-wrapper" style="width: 100%">
               <l-control-layer />
               <l-wms-tile-layer
                 v-for="layer in layers"
@@ -94,24 +61,24 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import L, { Icon, latLng } from "leaflet";
+import { Main } from '../styled';
+import L, { Icon, latLng } from 'leaflet';
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
 const fontAwesomeIcon = L.divIcon({
   html: `<i style="color: #2880CA" class="fa fa-thumb-tack fa-3x"></i>`,
   iconSize: [20, 20],
-  className: "myDivIcon",
+  className: 'myDivIcon',
 });
 
 export default {
-  name: "Leaflet",
+  name: 'Leaflet',
   components: {
     Main,
   },
@@ -120,15 +87,15 @@ export default {
       center: latLng(50.797897, -1.077641),
       latLng: latLng(50.797897, -1.077641),
       fontAwesomeIcon,
-      baseUrl: "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
+      baseUrl: 'http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
       layers: [
         {
-          name: "Weather Data",
+          name: 'Weather Data',
           visible: true,
-          format: "image/png",
-          layers: "nexrad-n0r-900913",
+          format: 'image/png',
+          layers: 'nexrad-n0r-900913',
           transparent: true,
-          attribution: "Weather data © 2012 IEM Nexrad",
+          attribution: 'Weather data © 2012 IEM Nexrad',
         },
       ],
       place: [

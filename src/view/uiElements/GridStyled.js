@@ -1,4 +1,4 @@
-import Styled from "vue3-styled-components";
+import Styled from 'vue3-styled-components';
 import config from '../../config/config';
 
 const { theme } = config;

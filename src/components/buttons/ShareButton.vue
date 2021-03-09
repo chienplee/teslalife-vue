@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "ShareButton",
+  name: 'ShareButton',
   components: {},
 };
 </script>

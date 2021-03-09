@@ -21,11 +21,7 @@
                 <a-form-item label="Email Address"> </a-form-item>
               </a-col>
               <a-col :lg="16" :md="15" :xs="24">
-                <a-input
-                  name="email"
-                  value="username@email.com"
-                  placeholder="input placeholder"
-                >
+                <a-input name="email" value="username@email.com" placeholder="input placeholder">
                   <template v-slot:prefix>
                     <sdFeatherIcon type="mail" size="14" />
                   </template>
@@ -37,11 +33,7 @@
                 <a-form-item label="Password"> </a-form-item>
               </a-col>
               <a-col :lg="16" :md="15" :xs="24">
-                <a-input-password
-                  name="password"
-                  value="12345678"
-                  placeholder="with input password"
-                >
+                <a-input-password name="password" value="12345678" placeholder="with input password">
                   <template v-slot:prefix>
                     <sdFeatherIcon type="lock" size="14" />
                   </template>
@@ -49,11 +41,7 @@
               </a-col>
             </a-row>
             <a-row>
-              <a-col
-                :lg="{ span: 16, offset: 8 }"
-                :md="{ span: 15, offset: 9 }"
-                :xs="{ span: 24, offset: 0 }"
-              >
+              <a-col :lg="{ span: 16, offset: 8 }" :md="{ span: 15, offset: 9 }" :xs="{ span: 24, offset: 0 }">
                 <div class="sDash_form-action">
                   <sdButton class="btn-signin" html-type="submit" type="light">
                     Cancel
@@ -72,10 +60,10 @@
 </template>
 
 <script>
-import { HorizontalFormStyleWrap } from "./Style";
-import { BasicFormWrapper } from "../../styled";
+import { HorizontalFormStyleWrap } from './Style';
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "HorizontalIconForm",
+  name: 'HorizontalIconForm',
   components: {
     BasicFormWrapper,
     HorizontalFormStyleWrap,

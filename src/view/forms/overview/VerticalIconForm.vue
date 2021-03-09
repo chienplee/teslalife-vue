@@ -12,11 +12,7 @@
               </a-input>
             </a-form-item>
             <a-form-item label="Email Address">
-              <a-input
-                name="email"
-                value="username@email.com"
-                placeholder="input placeholder"
-              >
+              <a-input name="email" value="username@email.com" placeholder="input placeholder">
                 <template v-slot:prefix>
                   <sdFeatherIcon type="mail" size="14" />
                 </template>
@@ -24,11 +20,7 @@
             </a-form-item>
 
             <a-form-item label="Password">
-              <a-input-password
-                name="password"
-                value="12345678"
-                placeholder="with input password"
-              >
+              <a-input-password name="password" value="12345678" placeholder="with input password">
                 <template v-slot:prefix>
                   <sdFeatherIcon type="lock" size="14" />
                 </template>
@@ -50,10 +42,10 @@
 </template>
 
 <script>
-import { VerticalFormStyleWrap } from "./Style";
-import { BasicFormWrapper } from "../../styled";
+import { VerticalFormStyleWrap } from './Style';
+import { BasicFormWrapper } from '../../styled';
 export default {
-  name: "VerticalIconForm",
+  name: 'VerticalIconForm',
   components: {
     BasicFormWrapper,
     VerticalFormStyleWrap,

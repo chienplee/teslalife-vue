@@ -1,5 +1,4 @@
-/* eslint-disable vue/require-v-for-key */ /* eslint-disable
-vue/require-v-for-key */
+/* eslint-disable vue/require-v-for-key */ /* eslint-disable vue/require-v-for-key */
 <template>
   <div>
     <sdPageHeader title="Comments">
@@ -54,17 +53,12 @@ vue/require-v-for-key */
               </template>
 
               <template v-slot:avatar>
-                <a-avatar
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                  alt="Han Solo"
-                />
+                <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
               </template>
               <template v-slot:content>
                 <p>
-                  We supply a series of design principles, practical patterns
-                  and high quality design resources (Sketch and Axure), to help
-                  people create their product prototypes beautifully and
-                  efficiently.
+                  We supply a series of design principles, practical patterns and high quality design resources (Sketch
+                  and Axure), to help people create their product prototypes beautifully and efficiently.
                 </p>
               </template>
               <template v-slot:datetime>
@@ -87,11 +81,7 @@ vue/require-v-for-key */
                 <a-list-item>
                   <a-comment :author="item.author" :avatar="item.avatar">
                     <template #actions>
-                      <span
-                        v-for="(action, index) in item.actions"
-                        :key="index"
-                        >{{ action }}</span
-                      >
+                      <span v-for="(action, index) in item.actions" :key="index">{{ action }}</span>
                     </template>
                     <template #content>
                       <p>
@@ -99,9 +89,7 @@ vue/require-v-for-key */
                       </p>
                     </template>
                     <template #datetime>
-                      <a-tooltip
-                        :title="item.datetime.format('YYYY-MM-DD HH:mm:ss')"
-                      >
+                      <a-tooltip :title="item.datetime.format('YYYY-MM-DD HH:mm:ss')">
                         <span>{{ item.datetime.fromNow() }}</span>
                       </a-tooltip>
                     </template>
@@ -122,15 +110,12 @@ vue/require-v-for-key */
                 <a>Han Solo</a>
               </template>
               <template v-slot:avatar>
-                <a-avatar
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                  alt="Han Solo"
-                />
+                <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
               </template>
               <template v-slot:content>
                 <p>
-                  We supply a series of design principles, practical patterns
-                  and high quality design resources (Sketch and Axure).
+                  We supply a series of design principles, practical patterns and high quality design resources (Sketch
+                  and Axure).
                 </p>
               </template>
               <a-comment>
@@ -141,15 +126,12 @@ vue/require-v-for-key */
                   <a>Han Solo</a>
                 </template>
                 <template v-slot:avatar>
-                  <a-avatar
-                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                    alt="Han Solo"
-                  />
+                  <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
                 </template>
                 <template v-slot:content>
                   <p>
-                    We supply a series of design principles, practical patterns
-                    and high quality design resources (Sketch and Axure).
+                    We supply a series of design principles, practical patterns and high quality design resources
+                    (Sketch and Axure).
                   </p>
                 </template>
                 <a-comment>
@@ -160,16 +142,12 @@ vue/require-v-for-key */
                     <a>Han Solo</a>
                   </template>
                   <template v-slot:avatar>
-                    <a-avatar
-                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                      alt="Han Solo"
-                    />
+                    <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
                   </template>
                   <template v-slot:content>
                     <p>
-                      We supply a series of design principles, practical
-                      patterns and high quality design resources (Sketch and
-                      Axure).
+                      We supply a series of design principles, practical patterns and high quality design resources
+                      (Sketch and Axure).
                     </p>
                   </template>
                 </a-comment>
@@ -181,16 +159,12 @@ vue/require-v-for-key */
                     <a>Han Solo</a>
                   </template>
                   <template v-slot:avatar>
-                    <a-avatar
-                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                      alt="Han Solo"
-                    />
+                    <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
                   </template>
                   <template v-slot:content>
                     <p>
-                      We supply a series of design principles, practical
-                      patterns and high quality design resources (Sketch and
-                      Axure).
+                      We supply a series of design principles, practical patterns and high quality design resources
+                      (Sketch and Axure).
                     </p>
                   </template>
                 </a-comment>
@@ -204,9 +178,7 @@ vue/require-v-for-key */
             <a-list
               v-if="comments.length"
               :data-source="comments"
-              :header="`${comments.length} ${
-                comments.length > 1 ? 'replies' : 'reply'
-              }`"
+              :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
               item-layout="horizontal"
             >
               <template v-slot:renderItem:iteam>
@@ -222,21 +194,13 @@ vue/require-v-for-key */
             </a-list>
             <a-comment>
               <template v-slot:avatar>
-                <a-avatar
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                  alt="Han Solo"
-                />
+                <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Han Solo" />
               </template>
               <template v-slot:content>
                 <a-textarea :rows="4" :value="value" @change="handleChange" />
                 <br />
                 <br />
-                <sdButton
-                  html-type="submit"
-                  :load="true"
-                  type="primary"
-                  @click="handleSubmit"
-                >
+                <sdButton html-type="submit" :load="true" type="primary" @click="handleSubmit">
                   Add Comment
                 </sdButton>
               </template>
@@ -249,11 +213,11 @@ vue/require-v-for-key */
 </template>
 
 <script>
-import { Main } from "../styled";
-import moment from "moment";
+import { Main } from '../styled';
+import moment from 'moment';
 
 export default {
-  name: "Comments",
+  name: 'Comments',
   components: {
     Main,
   },
@@ -261,29 +225,27 @@ export default {
     return {
       comments: [],
       submitting: false,
-      value: "",
+      value: '',
       likes: 0,
       dislikes: 0,
       action: null,
       moment,
       data: [
         {
-          actions: ["Reply to"],
-          author: "Han Solo",
-          avatar:
-            "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          actions: ['Reply to'],
+          author: 'Han Solo',
+          avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
           content:
-            "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-          datetime: moment().subtract(1, "days"),
+            'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+          datetime: moment().subtract(1, 'days'),
         },
         {
-          actions: ["Reply to"],
-          author: "Han Solo",
-          avatar:
-            "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          actions: ['Reply to'],
+          author: 'Han Solo',
+          avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
           content:
-            "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-          datetime: moment().subtract(2, "days"),
+            'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+          datetime: moment().subtract(2, 'days'),
         },
       ],
     };
@@ -292,12 +254,12 @@ export default {
     like() {
       this.likes = 1;
       this.dislikes = 0;
-      this.action = "liked";
+      this.action = 'liked';
     },
     dislike() {
       this.likes = 0;
       this.dislikes = 1;
-      this.action = "disliked";
+      this.action = 'disliked';
     },
     handleSubmit() {
       if (!this.value) {
@@ -310,15 +272,14 @@ export default {
         this.submitting = false;
         this.comments = [
           {
-            author: "Han Solo",
-            avatar:
-              "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+            author: 'Han Solo',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
             content: this.value,
             datetime: moment().fromNow(),
           },
           ...this.comments,
         ];
-        this.value = "";
+        this.value = '';
       }, 1000);
     },
     handleChange(e) {

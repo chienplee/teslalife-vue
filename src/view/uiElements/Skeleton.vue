@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Skeleton">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
@@ -34,12 +36,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { PlusIcon } from "vue-feather-icons";
+import { Main } from '../styled';
+
 export default {
-  name: "Skeleton",
+  name: 'Skeleton',
   components: {
-    PlusIcon,
     Main,
   },
 };

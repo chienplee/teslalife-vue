@@ -1,7 +1,7 @@
 import Styled from 'vue3-styled-components';
 import { AutoComplete } from 'ant-design-vue';
 
-const props = ['customComponent', 'patterns', 'patternButtons', 'width', 'onSearch', 'dataSource', 'placeholder']
+const props = ['customComponent', 'patterns', 'patternButtons', 'width', 'onSearch', 'dataSource', 'placeholder'];
 
 const AutoCompleteStyled = Styled(AutoComplete, props)`
     display: block !important;

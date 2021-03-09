@@ -44,9 +44,9 @@
   </TopMenuStyle>
 </template>
 <script>
-import { TopMenuStyle } from "./style";
+import { TopMenuStyle } from './style';
 export default {
-  name: "TopMenu",
+  name: 'TopMenu',
   data() {
     return {};
   },

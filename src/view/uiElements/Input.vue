@@ -52,10 +52,10 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Input",
+  name: 'Input',
   components: {
     Main,
   },

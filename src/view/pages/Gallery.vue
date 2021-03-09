@@ -29,9 +29,7 @@
               </li>
               <li>
                 <router-link
-                  :class="
-                    state.activeClass === 'webDesign' ? 'active' : 'deactivate'
-                  "
+                  :class="state.activeClass === 'webDesign' ? 'active' : 'deactivate'"
                   @click="() => handleChange('webDesign')"
                   to="#"
                 >
@@ -40,9 +38,7 @@
               </li>
               <li>
                 <router-link
-                  :class="
-                    state.activeClass === 'uiDesign' ? 'active' : 'deactivate'
-                  "
+                  :class="state.activeClass === 'uiDesign' ? 'active' : 'deactivate'"
                   @click="() => handleChange('uiDesign')"
                   to="#"
                 >
@@ -51,9 +47,7 @@
               </li>
               <li>
                 <router-link
-                  :class="
-                    state.activeClass === 'wireframe' ? 'active' : 'deactivate'
-                  "
+                  :class="state.activeClass === 'wireframe' ? 'active' : 'deactivate'"
                   @click="() => handleChange('wireframe')"
                   to="#"
                 >
@@ -62,11 +56,7 @@
               </li>
               <li>
                 <router-link
-                  :class="
-                    state.activeClass === 'Presentation'
-                      ? 'active'
-                      : 'deactivate'
-                  "
+                  :class="state.activeClass === 'Presentation' ? 'active' : 'deactivate'"
                   @click="() => handleChange('Presentation')"
                   to="#"
                 >
@@ -81,22 +71,10 @@
             <a-spin />
           </div>
         </a-col>
-        <a-col
-          v-else
-          v-for="(item, index) in gallery"
-          :key="index + 1"
-          :xxl="6"
-          :lg="8"
-          :sm="12"
-          :xs="24"
-        >
+        <a-col v-else v-for="(item, index) in gallery" :key="index + 1" :xxl="6" :lg="8" :sm="12" :xs="24">
           <GalleryCard :style="{ marginBottom: '25px' }">
             <figure>
-              <img
-                :style="{ width: '100%' }"
-                :src="require(`../../${item.img}`)"
-                alt=""
-              />
+              <img :style="{ width: '100%' }" :src="require(`../../${item.img}`)" alt="" />
               <figcaption>
                 <div class="gallery-single-content">
                   <sdHeading class="gallery-single-title" as="h4">
@@ -114,11 +92,11 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import { GalleryNav, GalleryCard } from "./style";
+import { Main } from '../styled';
+import { GalleryNav, GalleryCard } from './style';
 
 export default {
-  name: "Gallery",
+  name: 'Gallery',
   components: {
     Main,
     GalleryNav,
@@ -127,7 +105,7 @@ export default {
   data() {
     return {
       state: {
-        activeClass: "",
+        activeClass: '',
       },
     };
   },
@@ -145,8 +123,8 @@ export default {
         ...this.state,
         activeClass: value,
       };
-      this.$store.dispatch("galleryFilter", {
-        column: "category",
+      this.$store.dispatch('galleryFilter', {
+        column: 'category',
         value,
       });
     },

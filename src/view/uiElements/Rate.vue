@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Rate">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
 
     <Main>
@@ -46,19 +48,17 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Rate",
+  name: 'Rate',
   components: {
-    PlusIcon,
     Main,
   },
   data() {
     return {
       value: 2,
-      desc: ["terrible", "bad", "normal", "good", "wonderful"],
+      desc: ['terrible', 'bad', 'normal', 'good', 'wonderful'],
     };
   },
   methods: {},

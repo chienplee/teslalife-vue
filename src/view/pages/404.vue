@@ -31,11 +31,11 @@
 </template>
 
 <script>
-import { Button } from "../../components/buttons/Buttons";
-import { Main } from "../styled";
-import { ErrorWrapper } from "./style";
+import { Button } from '../../components/buttons/Buttons';
+import { Main } from '../styled';
+import { ErrorWrapper } from './style';
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   components: {
     Button,
     Main,

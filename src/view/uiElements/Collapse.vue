@@ -21,18 +21,10 @@
               <a-collapse-panel key="1" header="This is panel header 1">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="2"
-                header="This is panel header 2"
-                :disabled="false"
-              >
+              <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="3"
-                header="This is panel header 3"
-                disabled
-              >
+              <a-collapse-panel key="3" header="This is panel header 3" disabled>
                 <p>{{ text }}</p>
               </a-collapse-panel>
             </a-collapse>
@@ -46,11 +38,7 @@
                   </a-collapse-panel>
                 </a-collapse>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="2"
-                header="This is panel header 2"
-                :disabled="false"
-              >
+              <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
                 <p>{{ text }}</p>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3">
@@ -60,27 +48,13 @@
           </sdCards>
           <sdCards title="No arrow">
             <a-collapse v-model="activeKey">
-              <a-collapse-panel
-                :showArrow="false"
-                key="1"
-                header="This is panel header 1"
-              >
+              <a-collapse-panel :showArrow="false" key="1" header="This is panel header 1">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                :showArrow="false"
-                key="2"
-                header="This is panel header 2"
-                :disabled="false"
-              >
+              <a-collapse-panel :showArrow="false" key="2" header="This is panel header 2" :disabled="false">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                :showArrow="false"
-                key="3"
-                header="This is panel header 3"
-                disabled
-              >
+              <a-collapse-panel :showArrow="false" key="3" header="This is panel header 3" disabled>
                 <p>{{ text }}</p>
               </a-collapse-panel>
             </a-collapse>
@@ -92,11 +66,7 @@
               <a-collapse-panel key="1" header="This is panel header 1">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="2"
-                header="This is panel header 2"
-                :disabled="false"
-              >
+              <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
                 <p>{{ text }}</p>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3">
@@ -109,11 +79,7 @@
               <a-collapse-panel key="1" header="This is panel header 1">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="2"
-                header="This is panel header 2"
-                :disabled="false"
-              >
+              <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
                 <p>{{ text }}</p>
               </a-collapse-panel>
               <a-collapse-panel key="3" header="This is panel header 3">
@@ -124,30 +90,15 @@
           <sdCards title="Custom Panel">
             <a-collapse default-active-key="1" :bordered="false">
               <template #expandIcon="props">
-                <sdFeatherIcons
-                  :type="props.isActive ? 'chevron-down' : 'chevron-right'"
-                  size="14"
-                />
+                <sdFeatherIcons :type="props.isActive ? 'chevron-down' : 'chevron-right'" size="14" />
               </template>
-              <a-collapse-panel
-                key="1"
-                header="This is panel header 1"
-                :style="customStyle"
-              >
+              <a-collapse-panel key="1" header="This is panel header 1" :style="customStyle">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="2"
-                header="This is panel header 2"
-                :style="customStyle"
-              >
+              <a-collapse-panel key="2" header="This is panel header 2" :style="customStyle">
                 <p>{{ text }}</p>
               </a-collapse-panel>
-              <a-collapse-panel
-                key="3"
-                header="This is panel header 3"
-                :style="customStyle"
-              >
+              <a-collapse-panel key="3" header="This is panel header 3" :style="customStyle">
                 <p>{{ text }}</p>
               </a-collapse-panel>
             </a-collapse>
@@ -159,19 +110,18 @@
 </template>
 
 <script>
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Collapse",
+  name: 'Collapse',
   components: {
     Main,
   },
   data() {
     return {
       text: `A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.`,
-      activeKey: ["1"],
-      customStyle:
-        "background: #f7f7f7;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden",
+      activeKey: ['1'],
+      customStyle: 'background: #f7f7f7;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden',
     };
   },
   watch: {

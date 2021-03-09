@@ -10,12 +10,7 @@
     :class="className"
   >
     <template v-slot:footer>
-      <sdButton
-        type="white"
-        :outlined="color ? false : true"
-        key="back"
-        @click="onCancel"
-      >
+      <sdButton type="white" :outlined="color ? false : true" key="back" @click="onCancel">
         Return
       </sdButton>
       <sdButton
@@ -33,10 +28,10 @@
 </template>
 
 <script>
-import { ModalStyled } from "./styled";
-import VueTypes, { object } from "vue-types";
+import { ModalStyled } from './styled';
+import VueTypes, { object } from 'vue-types';
 export default {
-  name: "Modal",
+  name: 'Modal',
   components: {
     ModalStyled,
   },
@@ -46,17 +41,10 @@ export default {
     visible: VueTypes.bool.def(false),
     confirmLoading: VueTypes.bool.def(false),
     title: VueTypes.string,
-    className: VueTypes.string.def("atbd-modal"),
-    type: VueTypes.oneOf([
-      "primary",
-      "secondary",
-      "success",
-      "error",
-      "danger",
-      "info",
-      "white",
-      "warning",
-    ]).def("white"),
+    className: VueTypes.string.def('atbd-modal'),
+    type: VueTypes.oneOf(['primary', 'secondary', 'success', 'error', 'danger', 'info', 'white', 'warning']).def(
+      'white',
+    ),
     footer: VueTypes.arrayOf(object),
     width: VueTypes.number.def(620),
     color: VueTypes.oneOfType([VueTypes.bool, VueTypes.string]).def(false),

@@ -1,9 +1,9 @@
 <script>
-import { ListStyle } from "./style";
-import VueTypes from "vue-types";
+import { ListStyle } from './style';
+import VueTypes from 'vue-types';
 
 export default {
-  name: "List",
+  name: 'List',
   props: {
     text: VueTypes.oneOfType([VueTypes.string, VueTypes.object, VueTypes.node]),
   },

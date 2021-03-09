@@ -17,12 +17,7 @@
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Google Map Basic">
-            <GoogleMap
-              :api-key="apiKey"
-              style="width: 100%; height: 500px"
-              :center="position"
-              :zoom="15"
-            >
+            <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="position" :zoom="15">
               <Marker :options="{ position }" />
             </GoogleMap>
           </sdCards>
@@ -30,12 +25,7 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Google Map Custom Marker with info window">
             <div>
-              <GoogleMap
-                :api-key="apiKey"
-                style="width: 100%; height: 500px"
-                :center="position"
-                :zoom="15"
-              >
+              <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="position" :zoom="15">
                 <Marker :options="{ position }" />
               </GoogleMap>
 
@@ -69,13 +59,13 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import mapData from "../../config/map/google-maps-styles";
-import { GoogleMap, Marker } from "vue3-google-map";
-import { defineComponent } from "vue";
+import { Main } from '../styled';
+import mapData from '../../config/map/google-maps-styles';
+import { GoogleMap, Marker } from 'vue3-google-map';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "GoogleMaps",
+  name: 'GoogleMaps',
   components: {
     Main,
     GoogleMap,
@@ -87,7 +77,7 @@ export default defineComponent({
   },
   data() {
     return {
-      apiKey: "AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08",
+      apiKey: 'AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08',
       showInfo: false,
       position: {
         lat: 50.797897,

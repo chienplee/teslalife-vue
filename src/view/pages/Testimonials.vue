@@ -26,11 +26,7 @@
                   :pagination="{ clickable: true }"
                   :scrollbar="{ draggable: true }"
                 >
-                  <SwiperSlide
-                    v-for="(user, index) in users"
-                    :key="index + 1"
-                    class="testimonial-block__single"
-                  >
+                  <SwiperSlide v-for="(user, index) in users" :key="index + 1" class="testimonial-block__single">
                     <figure>
                       <img :src="require(`../../${user.img}`)" alt="" />
                       <figcaption>
@@ -45,16 +41,9 @@
               <div class="testimonial-block theme-2">
                 <h2 class="testimonial-title">Testimonial 2</h2>
                 <Swiper v-bind="paramsTwo" navigation>
-                  <SwiperSlide
-                    v-for="(user, index) in users"
-                    :key="index + 1"
-                    class="testimonial-block__single"
-                  >
+                  <SwiperSlide v-for="(user, index) in users" :key="index + 1" class="testimonial-block__single">
                     <span class="quotation">
-                      <img
-                        :src="require(`../../static/img/icon/quote.png`)"
-                        alt=""
-                      />
+                      <img :src="require(`../../static/img/icon/quote.png`)" alt="" />
                     </span>
                     <div class="testimonial-block__author">
                       <img :src="require(`../../${user.img}`)" alt="" />
@@ -65,10 +54,9 @@
                     </div>
                     <div class="testimonial-block__review">
                       <p>
-                        It is a long established fact that a reader will page
-                        when looking at its was layout. The point of be
-                        distracted by the readable will page when looking at its
-                        was layout will page when looking.
+                        It is a long established fact that a reader will page when looking at its was layout. The point
+                        of be distracted by the readable will page when looking at its was layout will page when
+                        looking.
                       </p>
                     </div>
                   </SwiperSlide>
@@ -86,18 +74,13 @@
                       },
                     }"
                   >
-                    <SwiperSlide
-                      v-for="(user, index) in users"
-                      :key="index + 1"
-                      class="testimonial-block__single"
-                    >
+                    <SwiperSlide v-for="(user, index) in users" :key="index + 1" class="testimonial-block__single">
                       <div class="testimonial-block__inner">
                         <div class="testimonial-block__review">
                           <p>
-                            It is a long established fact that a reader will
-                            page when looking at its was layout. The point of be
-                            distracted by the readable will page when looking at
-                            its was layout will page when looking.
+                            It is a long established fact that a reader will page when looking at its was layout. The
+                            point of be distracted by the readable will page when looking at its was layout will page
+                            when looking.
                           </p>
                         </div>
                         <div class="testimonial-block__author">
@@ -116,21 +99,16 @@
               <div class="testimonial-block theme-4">
                 <h2 class="testimonial-title">Testimonial 4</h2>
                 <Swiper v-bind="paramsThree" navigation>
-                  <SwiperSlide
-                    v-for="(user, index) in users"
-                    :key="index + 1"
-                    class="testimonial-block__single"
-                  >
+                  <SwiperSlide v-for="(user, index) in users" :key="index + 1" class="testimonial-block__single">
                     <div class="testimonial-block__inner">
                       <div class="testimonial-block__author">
                         <img :src="require(`../../${user.img}`)" alt="" />
                       </div>
                       <div class="testimonial-block__review">
                         <p>
-                          It is a long established fact that a reader will page
-                          when looking at its was layout. The point of be
-                          distracted by the readable will page when looking at
-                          its was layout will page when looking.
+                          It is a long established fact that a reader will page when looking at its was layout. The
+                          point of be distracted by the readable will page when looking at its was layout will page when
+                          looking.
                         </p>
                       </div>
                       <div class="author-info">
@@ -150,17 +128,17 @@
 </template>
 
 <script>
-import { Main } from "../styled";
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { TestimonialStyleWrapper } from "./style";
+import { Main } from '../styled';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { TestimonialStyleWrapper } from './style';
 
-import "swiper/swiper.scss";
-import "swiper/components/pagination/pagination.scss";
+import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.scss';
 SwiperCore.use([Navigation, Pagination]);
 
 export default {
-  name: "Testimonials",
+  name: 'Testimonials',
   components: {
     Main,
     Swiper,

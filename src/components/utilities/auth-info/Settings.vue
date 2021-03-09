@@ -7,10 +7,7 @@
             <a-row :gutter="10">
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="require('../../../static/img/icon/014-document.png')"
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/014-document.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">All Features</sdHeading>
                     <p>Introducing Increment subscriptions</p>
@@ -19,12 +16,7 @@
               </a-col>
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="
-                      require('../../../static/img/icon/015-color-palette.png')
-                    "
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/015-color-palette.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">Themes</sdHeading>
                     <p>Third party themes that are compatible</p>
@@ -33,10 +25,7 @@
               </a-col>
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="require('../../../static/img/icon/010-home.png')"
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/010-home.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">Payments</sdHeading>
                     <p>We handle billions of dollars</p>
@@ -45,12 +34,7 @@
               </a-col>
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="
-                      require('../../../static/img/icon/017-video-camera.png')
-                    "
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/017-video-camera.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">Design Mockups</sdHeading>
                     <p>Share planning visuals with clients</p>
@@ -59,12 +43,7 @@
               </a-col>
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="
-                      require('../../../static/img/icon/013-document-1.png')
-                    "
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/013-document-1.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">Content Planner</sdHeading>
                     <p>Centralize content gathering and editing</p>
@@ -73,12 +52,7 @@
               </a-col>
               <a-col :sm="12">
                 <figure class="setting-dropdwon__single d-flex">
-                  <img
-                    :src="
-                      require('../../../static/img/icon/007-microphone-1.png')
-                    "
-                    alt=""
-                  />
+                  <img :src="require('../../../static/img/icon/007-microphone-1.png')" alt="" />
                   <figcaption>
                     <sdHeading as="h5">Diagram Maker</sdHeading>
                     <p>Plan user flows & test scenarios</p>
@@ -97,10 +71,10 @@
 </template>
 
 <script>
-import { SettingDropdwon } from "./auth-info-style";
+import { SettingDropdwon } from './auth-info-style';
 
 export default {
-  name: "Settings",
+  name: 'Settings',
   components: {
     SettingDropdwon,
   },

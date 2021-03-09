@@ -17,21 +17,17 @@
 </template>
 
 <script>
-import { Style } from "./styled";
-import VueTypes from "vue-types";
+import { Style } from './styled';
+import VueTypes from 'vue-types';
 
 export default {
-  name: "Alerts",
+  name: 'Alerts',
   components: {
     Style,
   },
   props: {
-    type: VueTypes.oneOf(["success", "info", "warning", "error"]).def(
-      "success"
-    ),
-    message: VueTypes.string.def(
-      "Hello there! A simple success alert—check it out!"
-    ),
+    type: VueTypes.oneOf(['success', 'info', 'warning', 'error']).def('success'),
+    message: VueTypes.string.def('Hello there! A simple success alert—check it out!'),
     description: VueTypes.oneOfType([VueTypes.string]),
     showIcon: VueTypes.bool.def(false),
     outlined: VueTypes.bool.def(false),

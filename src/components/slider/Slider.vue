@@ -11,13 +11,7 @@
         />
       </a-col>
       <a-col :xl="4" :xs="24">
-        <a-input-number
-          :min="min"
-          :max="max"
-          :v-model="inputValue"
-          @change="onChanges"
-          :step="step"
-        />
+        <a-input-number :min="min" :max="max" :v-model="inputValue" @change="onChanges" :step="step" />
       </a-col>
     </a-row>
     <IconWrapper v-else-if="icon">
@@ -25,21 +19,15 @@
     <a-slider :min="mini" :max="maxi" @change="handleChange" :v-model="value" />
     <a-icon type="frown" :style="{ color: nextColor }" /> -->
     </IconWrapper>
-    <a-slider
-      :range="range"
-      v-else
-      id="test"
-      :default-value="defaultValue || defaultValues"
-      @change="onChanges"
-    />
+    <a-slider :range="range" v-else id="test" :default-value="defaultValue || defaultValues" @change="onChanges" />
   </div>
 </template>
 
 <script>
-import VueTypes from "vue-types";
-import { IconWrapper } from "./style";
+import VueTypes from 'vue-types';
+import { IconWrapper } from './style';
 export default {
-  name: "Slider",
+  name: 'Slider',
   components: {
     IconWrapper,
   },
@@ -62,10 +50,10 @@ export default {
       inputValue: 1,
       mini: this.min,
       maxi: this.max,
-      value: "",
+      value: '',
       mid: ((this.maxi - this.mini) / 2).toFixed(5),
-      preColor: this.value >= this.mid ? "" : "rgba(0, 0, 0, .45)",
-      nextColor: this.value >= this.mid ? "rgba(0, 0, 0, .45)" : "",
+      preColor: this.value >= this.mid ? '' : 'rgba(0, 0, 0, .45)',
+      nextColor: this.value >= this.mid ? 'rgba(0, 0, 0, .45)' : '',
     };
   },
   methods: {

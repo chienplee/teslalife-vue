@@ -1,15 +1,17 @@
 <template>
   <div>
     <sdPageHeader title="Radio">
-      <div slot="buttons" class="page-header-actions">
-        <sdCalendarButton />
-        <sdExportButton />
-        <sdShareButton />
-        <sdButton size="small" type="primary">
-          <PlusIcon size="14" />
-          Add New
-        </sdButton>
-      </div>
+      <template v-slot:buttons>
+        <div class="page-header-actions">
+          <sdCalendarButton />
+          <sdExportButton />
+          <sdShareButton />
+          <sdButton size="small" type="primary">
+            <sdFeatherIcons type="plus" size="14" />
+            Add New
+          </sdButton>
+        </div>
+      </template>
     </sdPageHeader>
 
     <Main>
@@ -40,10 +42,7 @@
               </a-radio>
               <a-radio :style="radioStyle" :value="4">
                 More...
-                <a-input
-                  v-if="value === 4"
-                  :style="{ width: 100, marginLeft: 10 }"
-                />
+                <a-input v-if="value === 4" :style="{ width: 100, marginLeft: 10 }" />
               </a-radio>
             </a-radio-group>
           </sdCards>
@@ -172,28 +171,26 @@
 </template>
 
 <script>
-import { PlusIcon } from "vue-feather-icons";
-import { Main } from "../styled";
+import { Main } from '../styled';
 
 export default {
-  name: "Radio",
+  name: 'Radio',
   components: {
-    PlusIcon,
     Main,
   },
   data() {
     return {
       value: 1,
       radioStyle: {
-        display: "block",
-        height: "30px",
-        lineHeight: "30px",
+        display: 'block',
+        height: '30px',
+        lineHeight: '30px',
       },
     };
   },
   methods: {
     onChange(e) {
-      console.log("radio checked", e.target.value);
+      console.log('radio checked', e.target.value);
     },
   },
 };
