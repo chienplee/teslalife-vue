@@ -1,4 +1,32 @@
 export default {
+  incomeBegin(state) {
+    state.icLoading = true;
+  },
+
+  incomeSuccess(state, data) {
+    state.icLoading = false;
+    state.incomeData = data;
+  },
+
+  incomeErr(state, err) {
+    state.icLoading = false;
+    state.error = err;
+  },
+
+  cashFlowBegin(state) {
+    state.cfLoading = true;
+  },
+
+  cashFlowSuccess(state, data) {
+    state.cfLoading = false;
+    state.cashFlowData = data;
+  },
+
+  cashFlowErr(state, err) {
+    state.cfLoading = false;
+    state.error = err;
+  },
+
   socialTrafficBegin(state) {
     state.soLoading = true;
   },

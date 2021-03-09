@@ -5,30 +5,90 @@ import {
   instagramOverview,
   linkdinOverview,
   SocialTrafficMetrics,
+  cashFlow,
+  income,
 } from '../../../demoData/dashboardChartContent.json';
-import Mutations from './mutations';
+import mutations from './mutations';
 
 const state = () => ({
-  forcastOverviewState: null,
+  forcastData: null,
   foLoading: false,
   youtubeSubscribeData: null,
   yuLoading: false,
+  closeDealData: null,
+  cdLoading: false,
+  recentDealData: null,
+  recLoading: false,
+  socialTrafficData: null,
+  soLoading: false,
   twitterOverviewData: null,
   twLoading: false,
   instagramOverviewData: null,
   inLoading: false,
   linkdinOverviewData: null,
   liLoading: false,
-  socialTrafficData: null,
-  soLoading: false,
+  cashFlowData: null,
+  cfLoading: false,
+  incomeData: null,
+  icLoading: false,
+  performanceData: null,
+  perLoading: false,
+  trafficChanelData: null,
+  tcLoading: false,
+  deviceData: null,
+  dvLoading: false,
+  landingPageData: null,
+  lpLoading: false,
+  regionData: null,
+  reLoading: false,
+  generatedData: null,
+  geLoading: false,
+  topSaleData: null,
+  tsLoading: false,
+  locationData: null,
+  loLoading: false,
   error: null,
 });
 
-const mutations = {
-  ...Mutations,
-};
-
 const actions = {
+  async incomeGetData({ commit }) {
+    const { year } = income;
+    try {
+      commit('incomeBegin');
+      commit('incomeSuccess', year);
+    } catch (err) {
+      commit('incomeErr', err);
+    }
+  },
+  async incomeFilterData({ commit }, value) {
+    try {
+      commit('incomeBegin');
+      setTimeout(() => {
+        commit('incomeSuccess', income[value]);
+      }, 100);
+    } catch (err) {
+      commit('incomeErr', err);
+    }
+  },
+  async cashFlowGetData({ commit }) {
+    const { year } = cashFlow;
+    try {
+      commit('cashFlowBegin');
+      commit('cashFlowSuccess', year);
+    } catch (err) {
+      commit('cashFlowErr', err);
+    }
+  },
+  async cashFlowFilterData({ commit }, value) {
+    try {
+      commit('cashFlowBegin');
+      setTimeout(() => {
+        commit('cashFlowSuccess', cashFlow[value]);
+      }, 100);
+    } catch (err) {
+      commit('cashFlowErr', err);
+    }
+  },
   async socialTrafficGetData({ commit }) {
     const { today } = SocialTrafficMetrics;
     try {
