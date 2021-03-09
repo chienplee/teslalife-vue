@@ -20,21 +20,20 @@
             <FormValidationWrap>
               <VerticalFormStyleWrap>
                 <a-form
-                  name="custom-validation"
+                  name="sDash_validation-form"
                   ref="formRef"
                   :model="formState"
                   :rules="rules"
                   :layout="formState.layout"
                   @finish="handleFinish"
                   @finishFailed="handleFinishFailed"
-                  v-bind="formItemLayout"
                 >
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">
-                      <a-form-item label="Field A">
+                      <a-form-item label="First Name">
                         <a-input
-                          v-model:value="formState.fieldA"
-                          placeholder="input placeholder"
+                          v-model:value="formState.firstName"
+                          placeholder="First Name"
                         />
                       </a-form-item>
                     </a-col>
@@ -70,9 +69,6 @@
                         <a-input-number v-model:value="formState.age" />
                       </a-form-item>
                     </a-col>
-                    <a-col :md="8" :xs="24">
-                      
-                    </a-col>
                   </a-row>
                   <div class="sDash_form-action mt-20">
                         <sdButton type="primary" html-type="submit">
@@ -96,7 +92,7 @@
 import { FormValidationWrap, VerticalFormStyleWrap } from "./overview/Style";
 import { Main } from "../styled";
 
-import { defineComponent, reactive, ref, computed } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 export default defineComponent({
   name: "Form",
   components: {
@@ -107,27 +103,13 @@ export default defineComponent({
   setup() {
     const formState = reactive({
       layout: "vertical",
-      fieldA: "",
+      firstName: "",
       fieldB: "",
       pass: "",
       checkPass: "",
       age: undefined,
     });
-
-    const formItemLayout = computed(() => {
-      const { layout } = formState;
-      return layout === "horizontal"
-        ? {
-            labelCol: {
-              span: 4,
-            },
-            wrapperCol: {
-              span: 14,
-            },
-          }
-        : {};
-    });
-
+    
     const formRef = ref();
 
     let checkAge = async (rule, value) => {
@@ -201,7 +183,6 @@ export default defineComponent({
     };
 
     return {
-      formItemLayout,
       formState,
       formRef,
       rules,
