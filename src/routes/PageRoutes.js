@@ -30,6 +30,16 @@ export default [
     component: () => import(/* webpackChunkName: "Banners" */ '@/view/pages/Banners.vue'),
   },
   {
+    path: '/page/support',
+    name: 'support',
+    component: () => import(/* webpackChunkName: "support" */ '@/view/pages/Support.vue'),
+  },
+  {
+    path: '/page/maintenance',
+    name: 'maintenance',
+    component: () => import(/* webpackChunkName: "maintenance" */ '@/view/pages/Maintenance.vue'),
+  },
+  {
     path: '/page/404',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */ '@/view/pages/404.vue'),

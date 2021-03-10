@@ -345,6 +345,14 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-menu-item key="support">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/support">
+            Support
+          </router-link>
+        </span>
+      </a-menu-item>
       <a-menu-item key="pricing">
         <sdFeatherIcons type="circle" />
         <span>
@@ -353,19 +361,19 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-menu-item key="maintenance">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/maintenance">
+            Maintenance
+          </router-link>
+        </span>
+      </a-menu-item>
       <a-menu-item key="banners">
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/banners">
             Banners
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item key="404">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link click="toggleCollapsed" to="/page/404">
-            404
           </router-link>
         </span>
       </a-menu-item>
@@ -390,6 +398,14 @@
         <span>
           <router-link click="toggleCollapsed" to="/page/gallery">
             Gallery
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="404">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/404">
+            404
           </router-link>
         </span>
       </a-menu-item>
