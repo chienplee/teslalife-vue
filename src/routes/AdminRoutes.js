@@ -9,6 +9,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Home" */ '@/view/dashboard'),
   },
   {
+    path: '/business',
+    name: 'business',
+    component: () => import(/* webpackChunkName: "Business" */ '@/view/dashboard/Business.vue'),
+  },
+  {
     path: '/components/alerts',
     name: 'alerts',
     component: () => import(/* webpackChunkName: "Alerts" */ '@/view/uiElements/Alerts.vue'),

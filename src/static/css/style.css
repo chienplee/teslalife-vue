@@ -296,6 +296,7 @@ ul {
 .ant-progress > div {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .ant-progress .ant-progress-outer {

@@ -9,7 +9,9 @@
     :bodypadding="bodypadding && bodypadding"
     :style="{ width: '100%' }"
   >
-    <slot name="title"></slot>
+    <template #title>
+      <slot name="title"></slot>
+    </template>
     <slot name="caption"></slot>
     <template v-slot:extra>
       <sdDropdown v-if="more" :action="['click']" placement="bottomCenter">
@@ -33,6 +35,9 @@
     v-else
   >
     <sdHeading v-if="title" as="h4">{{ title }}</sdHeading>
+    <template #title>
+      <slot name="title"></slot>
+    </template>
     <p v-if="caption">{{ caption }}</p>
     <slot></slot>
   </CardFrame>

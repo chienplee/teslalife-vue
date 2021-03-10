@@ -117,7 +117,7 @@ const LinkedinKeyMetrics = defineAsyncComponent(() => import('./overview/index/L
 const SocialTrafficMetrics = defineAsyncComponent(() => import('./overview/index/SocialTrafficMetrics'));
 
 export default {
-  name: 'BlankPage',
+  name: 'SocialMedia',
   components: {
     Main,
     SocialMediaOverview,

@@ -302,7 +302,7 @@ export default {
   },
   computed: {
     forcastOverviewState() {
-      return this.$store.state.chartContent.forcastOverviewState;
+      return this.$store.state.chartContent.forcastData;
     },
     foIsLoading() {
       return this.$store.state.chartContent.foLoading;
