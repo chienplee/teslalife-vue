@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Banners">
+    <sdPageHeader title="Coming Soon">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -29,7 +29,15 @@
                 </p>
               </div>
               <div class="strikingDash-countdown">
-                <!-- <Countdown date={Date.now() + 1606546460} renderer={renderer} /> -->
+                <template>
+                  <vue-countdown
+                    :time="2 * 24 * 60 * 60 * 1000"
+                    :transform="transformSlotProps"
+                    v-slot="{ days, hours, minutes, seconds }"
+                  >
+                    Time Remaining：{{ days }} days, {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
+                  </vue-countdown>
+                </template>
               </div>
               <div class="subscription-form">
                 <a-form name="basic">
@@ -79,12 +87,14 @@
 <script>
 import { Main } from '../styled';
 import { ComingsoonStyleWrapper } from './style';
+import VueCountdown from '@chenfengyuan/vue-countdown';
 import { faFacebookF, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 export default {
   name: '404',
   components: {
     Main,
     ComingsoonStyleWrapper,
+    VueCountdown,
   },
   data() {
     return {
@@ -92,6 +102,17 @@ export default {
       faTwitter,
       faGithub,
     };
+  },
+  methods: {
+    transformSlotProps(props) {
+      const formattedProps = {};
+
+      Object.entries(props).forEach(([key, value]) => {
+        formattedProps[key] = value < 10 ? `0${value}` : String(value);
+      });
+
+      return formattedProps;
+    },
   },
 };
 </script>
