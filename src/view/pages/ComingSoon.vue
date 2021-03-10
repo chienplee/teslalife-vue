@@ -29,15 +29,10 @@
                 </p>
               </div>
               <div class="strikingDash-countdown">
-                <template>
-                  <vue-countdown
-                    :time="2 * 24 * 60 * 60 * 1000"
-                    :transform="transformSlotProps"
-                    v-slot="{ days, hours, minutes, seconds }"
-                  >
-                    Time Remaining：{{ days }} days, {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
-                  </vue-countdown>
-                </template>
+                <p v-if="!isFinished">
+                  Time Remaining：{{ days }} days, {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
+                </p>
+                <p v-else>Event Has Been Successfully Completed</p>
               </div>
               <div class="subscription-form">
                 <a-form name="basic">
@@ -87,14 +82,46 @@
 <script>
 import { Main } from '../styled';
 import { ComingsoonStyleWrapper } from './style';
-import VueCountdown from '@chenfengyuan/vue-countdown';
 import { faFacebookF, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import Countdown from 'countdown-js';
+import { ref } from 'vue';
+
 export default {
   name: '404',
   components: {
     Main,
     ComingsoonStyleWrapper,
-    VueCountdown,
+  },
+  setup() {
+    const ten_days = 1000 * 60 * 60 * 24 * 10;
+    const end = new Date(new Date().getTime() + ten_days);
+
+    const days = ref(0);
+    const hours = ref(0);
+    const minutes = ref(0);
+    const seconds = ref(0);
+    const isFinished = ref(false);
+
+    const timer = Countdown.timer(
+      end,
+      function(timeLeft) {
+        days.value = timeLeft.days;
+        hours.value = timeLeft.hours;
+        minutes.value = timeLeft.minutes;
+        seconds.value = timeLeft.seconds;
+      },
+      function() {
+        isFinished.value = true;
+      },
+    );
+    return {
+      timer,
+      days,
+      hours,
+      minutes,
+      seconds,
+      isFinished,
+    };
   },
   data() {
     return {

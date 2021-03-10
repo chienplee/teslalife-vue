@@ -1,4 +1,74 @@
 export default {
+  performanceBegin(state) {
+    state.perLoading = true;
+  },
+
+  performanceSuccess(state, data) {
+    state.perLoading = false;
+    state.performanceData = data;
+  },
+
+  performanceErr(state, err) {
+    state.perLoading = false;
+    state.error = err;
+  },
+
+  trafficChanelBegin(state) {
+    state.tcLoading = true;
+  },
+
+  trafficChanelSuccess(state, data) {
+    state.tcLoading = false;
+    state.trafficChanelData = data;
+  },
+
+  trafficChanelErr(state, err) {
+    state.tcLoading = false;
+    state.error = err;
+  },
+
+  landingPageBegin(state) {
+    state.lpLoading = true;
+  },
+
+  landingPageSuccess(state, data) {
+    state.lpLoading = false;
+    state.landingPageData = data;
+  },
+
+  landingPageErr(state, err) {
+    state.lpLoading = false;
+    state.error = err;
+  },
+
+  regionBegin(state) {
+    state.reLoading = true;
+  },
+
+  regionSuccess(state, data) {
+    state.reLoading = false;
+    state.regionData = data;
+  },
+
+  regionErr(state, err) {
+    state.reLoading = false;
+    state.error = err;
+  },
+
+  deviceBegin(state) {
+    state.dvLoading = true;
+  },
+
+  deviceSuccess(state, data) {
+    state.dvLoading = false;
+    state.deviceData = data;
+  },
+
+  deviceErr(state, err) {
+    state.dvLoading = false;
+    state.error = err;
+  },
+
   incomeBegin(state) {
     state.icLoading = true;
   },

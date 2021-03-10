@@ -7,6 +7,10 @@ import {
   SocialTrafficMetrics,
   cashFlow,
   income,
+  device,
+  region,
+  trafficChanel,
+  performance,
 } from '../../../demoData/dashboardChartContent.json';
 import mutations from './mutations';
 
@@ -51,6 +55,101 @@ const state = () => ({
 });
 
 const actions = {
+  async performanceGetData({ commit }) {
+    const { year } = performance;
+    try {
+      commit('performanceBegin');
+      commit('performanceSuccess', year);
+    } catch (err) {
+      commit('performanceErr', err);
+    }
+  },
+  async performanceFilterData({ commit }, value) {
+    try {
+      commit('performanceBegin');
+      setTimeout(() => {
+        commit('performanceSuccess', performance[value]);
+      }, 100);
+    } catch (err) {
+      commit('performanceErr', err);
+    }
+  },
+  async trafficChanelGetData({ commit }) {
+    const { year } = trafficChanel;
+    try {
+      commit('trafficChanelBegin');
+      commit('trafficChanelSuccess', year);
+    } catch (err) {
+      commit('trafficChanelErr', err);
+    }
+  },
+  async trafficChanelFilterData({ commit }, value) {
+    try {
+      commit('trafficChanelBegin');
+      setTimeout(() => {
+        commit('trafficChanelSuccess', trafficChanel[value]);
+      }, 100);
+    } catch (err) {
+      commit('trafficChanelErr', err);
+    }
+  },
+  async landingPageGetData({ commit }) {
+    const { year } = trafficChanel;
+    try {
+      commit('landingPageBegin');
+      commit('landingPageSuccess', year);
+    } catch (err) {
+      commit('landingPageErr', err);
+    }
+  },
+  async landingPageFilterData({ commit }, value) {
+    try {
+      commit('landingPageBegin');
+      setTimeout(() => {
+        commit('landingPageSuccess', trafficChanel[value]);
+      }, 100);
+    } catch (err) {
+      commit('landingPageErr', err);
+    }
+  },
+  async regionGetData({ commit }) {
+    const { year } = region;
+    try {
+      commit('regionBegin');
+      commit('regionSuccess', year);
+    } catch (err) {
+      commit('regionErr', err);
+    }
+  },
+  async regionFilterData({ commit }, value) {
+    try {
+      commit('regionBegin');
+      setTimeout(() => {
+        commit('regionSuccess', region[value]);
+      }, 100);
+    } catch (err) {
+      commit('regionErr', err);
+    }
+  },
+  async deviceGetData({ commit }) {
+    const { year } = device;
+    try {
+      commit('deviceBegin');
+      commit('deviceSuccess', year);
+    } catch (err) {
+      commit('deviceErr', err);
+    }
+  },
+  async deviceFilterData({ commit }, value) {
+    try {
+      commit('deviceBegin');
+      setTimeout(() => {
+        commit('deviceSuccess', device[value]);
+      }, 100);
+    } catch (err) {
+      commit('deviceErr', err);
+    }
+  },
   async incomeGetData({ commit }) {
     const { year } = income;
     try {
