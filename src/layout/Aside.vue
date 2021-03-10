@@ -349,7 +349,7 @@
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/support">
-            Support
+            Support Center
           </router-link>
         </span>
       </a-menu-item>
@@ -390,6 +390,14 @@
         <span>
           <router-link click="toggleCollapsed" to="/page/faqs">
             FAQs
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="search">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/search">
+            Search
           </router-link>
         </span>
       </a-menu-item>
