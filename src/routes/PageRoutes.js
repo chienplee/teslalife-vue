@@ -90,4 +90,26 @@ export default [
       },
     ],
   },
+  {
+    path: '/page/knowledgebase',
+    name: 'knowledgebase',
+    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/Index.vue'),
+    children: [
+      {
+        path: '/page/knowledgebase/plugins',
+        component: () =>
+          import(/* webpackChunkName: "Plugins" */ '@/view/pages/knowledgebase/overview/ArticlePlugin.vue'),
+      },
+      {
+        path: '/page/knowledgebase/themes',
+        component: () =>
+          import(/* webpackChunkName: "Themes" */ '@/view/pages/knowledgebase/overview/ArticleTheme.vue'),
+      },
+      {
+        path: '/page/knowledgebase/extensions',
+        component: () =>
+          import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
+      },
+    ],
+  },
 ];

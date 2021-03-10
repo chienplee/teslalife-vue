@@ -345,6 +345,14 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-sub-menu key="knowledgebase">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Knowledge Base</span></template>
+        <a-menu-item key="knowledge">
+          <router-link click="toggleCollapsed" to="/page/knowledgebase/plugins">
+            Knowledge Base
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
       <a-menu-item key="support">
         <sdFeatherIcons type="circle" />
         <span>
