@@ -1,4 +1,32 @@
 export default {
+  topSaleBegin(state) {
+    state.tsLoading = true;
+  },
+
+  topSaleSuccess(state, data) {
+    state.tsLoading = false;
+    state.topSaleData = data;
+  },
+
+  topSaleErr(state, err) {
+    state.tsLoading = false;
+    state.error = err;
+  },
+
+  generatedBegin(state) {
+    state.geLoading = true;
+  },
+
+  generatedSuccess(state, data) {
+    state.geLoading = false;
+    state.generatedData = data;
+  },
+
+  generatedErr(state, err) {
+    state.geLoading = false;
+    state.error = err;
+  },
+
   performanceBegin(state) {
     state.perLoading = true;
   },

@@ -14,6 +14,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Business" */ '@/view/dashboard/Business.vue'),
   },
   {
+    path: '/eco',
+    name: 'ecommerce',
+    component: () => import(/* webpackChunkName: "Business" */ '@/view/dashboard/Ecommerce.vue'),
+  },
+  {
     path: '/performance',
     name: 'performance',
     component: () => import(/* webpackChunkName: "Performance" */ '@/view/dashboard/Performance.vue'),

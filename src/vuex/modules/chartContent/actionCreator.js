@@ -11,6 +11,8 @@ import {
   region,
   trafficChanel,
   performance,
+  generated,
+  topSale,
 } from '../../../demoData/dashboardChartContent.json';
 import mutations from './mutations';
 
@@ -55,6 +57,44 @@ const state = () => ({
 });
 
 const actions = {
+  async topSaleGetData({ commit }) {
+    const { year } = topSale;
+    try {
+      commit('topSaleBegin');
+      commit('topSaleSuccess', year);
+    } catch (err) {
+      commit('topSaleErr', err);
+    }
+  },
+  async topSaleFilterData({ commit }, value) {
+    try {
+      commit('topSaleBegin');
+      setTimeout(() => {
+        commit('topSaleSuccess', topSale[value]);
+      }, 100);
+    } catch (err) {
+      commit('topSaleErr', err);
+    }
+  },
+  async generatedGetData({ commit }) {
+    const { year } = generated;
+    try {
+      commit('generatedBegin');
+      commit('generatedSuccess', year);
+    } catch (err) {
+      commit('generatedErr', err);
+    }
+  },
+  async generatedFilterData({ commit }, value) {
+    try {
+      commit('generatedBegin');
+      setTimeout(() => {
+        commit('generatedSuccess', generated[value]);
+      }, 100);
+    } catch (err) {
+      commit('generatedErr', err);
+    }
+  },
   async performanceGetData({ commit }) {
     const { year } = performance;
     try {
@@ -226,7 +266,6 @@ const actions = {
       commit('linkdinOverviewErr', err);
     }
   },
-
   async linkdinOverviewFilterData({ commit }, value) {
     try {
       commit('linkdinOverviewBegin');
@@ -237,7 +276,6 @@ const actions = {
       commit('linkdinOverviewErr', err);
     }
   },
-
   async instagramOverviewGetData({ commit }) {
     const { month } = instagramOverview;
     try {
@@ -247,7 +285,6 @@ const actions = {
       commit('instagramOverviewErr', err);
     }
   },
-
   async instagramOverviewFilterData({ commit }, value) {
     try {
       commit('instagramOverviewBegin');
@@ -258,7 +295,6 @@ const actions = {
       commit('instagramOverviewErr', err);
     }
   },
-
   async forcastOverviewGetData({ commit }) {
     const { today } = forcastOverview;
     try {
@@ -268,7 +304,6 @@ const actions = {
       commit('forcastOverviewErr', err);
     }
   },
-
   async forcastOverviewFilterData({ commit }, value) {
     try {
       commit('forcastOverviewBegin');
@@ -279,7 +314,6 @@ const actions = {
       commit('forcastOverviewErr', err);
     }
   },
-
   async youtubeSubscribeGetData({ commit }) {
     const { year } = youtubeSubscribe;
 
@@ -290,7 +324,6 @@ const actions = {
       commit('youtubeSubscribeErr', err);
     }
   },
-
   async youtubeSubscribeFilterData({ commit }, value) {
     try {
       commit('youtubeSubscribeBegin');
@@ -310,7 +343,6 @@ const actions = {
       commit('twitterOverviewErr', err);
     }
   },
-
   async twitterOverviewFilterData({ commit }, value) {
     try {
       commit('twitterOverviewBegin');
