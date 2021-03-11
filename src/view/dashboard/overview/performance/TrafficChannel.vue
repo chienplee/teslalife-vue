@@ -5,17 +5,17 @@
         <div class="card-nav">
           <ul>
             <li :class="traffic === 'week' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangeTraffic('week')" to="#">
+              <router-link @click="e => handleActiveChangeTraffic(e, 'week')" to="#">
                 Week
               </router-link>
             </li>
             <li :class="traffic === 'month' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangeTraffic('month')" to="#">
+              <router-link @click="e => handleActiveChangeTraffic(e, 'month')" to="#">
                 Month
               </router-link>
             </li>
             <li :class="traffic === 'year' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangeTraffic('year')" to="#">
+              <router-link @click="e => handleActiveChangeTraffic(e, 'year')" to="#">
                 Year
               </router-link>
             </li>
@@ -102,7 +102,8 @@ const TrafficChannel = {
 
     const locationData = ref([]);
 
-    const handleActiveChangeTraffic = value => {
+    const handleActiveChangeTraffic = (event, value) => {
+      event.preventDefault();
       traffic.value = value;
       return store.dispatch('trafficChanelFilterData', value);
     };

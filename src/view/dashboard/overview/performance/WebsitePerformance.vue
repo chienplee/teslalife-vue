@@ -5,17 +5,17 @@
         <div class="card-nav">
           <ul>
             <li :class="performance === 'week' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangePerformance('week')" to="#">
+              <router-link @click="e => handleActiveChangePerformance(e, 'week')" to="#">
                 Week
               </router-link>
             </li>
             <li :class="performance === 'month' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangePerformance('month')" to="#">
+              <router-link @click="e => handleActiveChangePerformance(e, 'month')" to="#">
                 Month
               </router-link>
             </li>
             <li :class="performance === 'year' ? 'active' : 'deactivate'">
-              <router-link @click="() => handleActiveChangePerformance('year')" to="#">
+              <router-link @click="e => handleActiveChangePerformance(e, 'year')" to="#">
                 Year
               </router-link>
             </li>
@@ -150,7 +150,9 @@ const WebsitePerformance = {
 
     const performanceDatasets = ref([]);
 
-    const handleActiveChangePerformance = value => {
+    const handleActiveChangePerformance = (event, value) => {
+      event.preventDefault();
+
       performance.value = value;
       return store.dispatch('performanceFilterData', value);
     };
@@ -219,7 +221,7 @@ const WebsitePerformance = {
         custom: customTooltips,
         callbacks: {
           title() {
-            return performanceTab;
+            return performanceTab.value;
           },
           label(t, d) {
             const { yLabel, datasetIndex } = t;
