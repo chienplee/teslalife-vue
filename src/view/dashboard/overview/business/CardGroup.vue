@@ -7,7 +7,7 @@
             <div class="focard-details growth-downward">
               <sdHeading as="h1">$25.3k</sdHeading>
               <p class="focard-status">
-                <span class="focard-status__percentage"> <sdFeatherIcons icon="arrow-down" /> 25% </span>
+                <span class="focard-status__percentage"> <sdFeatherIcons type="arrow-down" /> 25% </span>
                 <span>Since last month</span>
               </p>
             </div>
@@ -44,7 +44,7 @@
             <div class="focard-details growth-upward">
               <sdHeading as="h1">$82.24k</sdHeading>
               <p class="focard-status">
-                <span class="focard-status__percentage"> <sdFeatherIcons icon="arrow-up" /> 25% </span>
+                <span class="focard-status__percentage"> <sdFeatherIcons type="arrow-up" /> 25% </span>
                 <span>Since last month</span>
               </p>
             </div>

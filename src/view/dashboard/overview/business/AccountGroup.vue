@@ -4,23 +4,23 @@
       <sdCards title="Account Receivable" more>
         <template #more>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="printer" />
+            <sdFeatherIcons :size="16" type="printer" />
             <span>Printer</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="book-open" />
+            <sdFeatherIcons :size="16" type="book-open" />
             <span>PDF</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons :size="16" icon="file-text" />
+            <sdFeatherIcons :size="16" type="file-text" />
             <span>Google Sheets</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="x" />
+            <sdFeatherIcons :size="16" type="x" />
             <span>Excel (XLSX)</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="file" />
+            <sdFeatherIcons :size="16" type="file" />
             <span>CSV</span>
           </router-link>
         </template>
@@ -100,23 +100,23 @@
       <sdCards title="Account Payable" more>
         <template #more>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="printer" />
+            <sdFeatherIcons :size="16" type="printer" />
             <span>Printer</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="book-open" />
+            <sdFeatherIcons :size="16" type="book-open" />
             <span>PDF</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons :size="16" icon="file-text" />
+            <sdFeatherIcons :size="16" type="file-text" />
             <span>Google Sheets</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="x" />
+            <sdFeatherIcons :size="16" type="x" />
             <span>Excel (XLSX)</span>
           </router-link>
           <router-link to="#">
-            <sdFeatherIcons size="16" icon="file" />
+            <sdFeatherIcons :size="16" type="file" />
             <span>CSV</span>
           </router-link>
         </template>

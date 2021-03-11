@@ -74,6 +74,16 @@ const actions = {
       commit('performanceErr', err);
     }
   },
+  async setIsLoading({ commit }) {
+    try {
+      commit('updateLoadingBegin');
+      setTimeout(() => {
+        commit('updateLoadingSuccess');
+      }, 100);
+    } catch (err) {
+      commit('updateLoadingErr');
+    }
+  },
   async trafficChanelGetData({ commit }) {
     const { year } = trafficChanel;
     try {

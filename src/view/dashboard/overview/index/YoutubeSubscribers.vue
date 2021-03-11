@@ -39,7 +39,7 @@
           <sdHeading as="h3">
             {{ youtubeSubscribeState.Subscribe }}
             <sub>
-              <sdFeatherIcons icon="arrow-up" size="14" />
+              <sdFeatherIcons type="arrow-up" size="14" />
               {{ youtubeSubscribeState.percent }}%
             </sub>
           </sdHeading>

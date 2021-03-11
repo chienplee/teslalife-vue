@@ -26,6 +26,30 @@
           </template>
         </Suspense>
       </a-col>
+      <a-col :xxl="16" :xs="24">
+        <Suspense>
+          <template #default>
+            <WebsitePerformance />
+          </template>
+          <template #fallback>
+            <sdCards headless>
+              <a-skeleton active />
+            </sdCards>
+          </template>
+        </Suspense>
+      </a-col>
+      <a-col :xxl="16" :xs="24">
+        <Suspense>
+          <template #default>
+            <TrafficChannel />
+          </template>
+          <template #fallback>
+            <sdCards headless>
+              <a-skeleton active />
+            </sdCards>
+          </template>
+        </Suspense>
+      </a-col>
     </a-row>
   </Main>
 </template>
@@ -34,15 +58,15 @@ import { Main } from '../styled';
 import { defineAsyncComponent } from 'vue';
 
 const DailyOverview = defineAsyncComponent(() => import('./overview/performance/DailyOverview'));
-// const WebsitePerformance = defineAsyncComponent(() => import('./overview/performance/WebsitePerformance'));
-// const TrafficChannel = defineAsyncComponent(() => import('./overview/performance/TrafficChannel'));
+const WebsitePerformance = defineAsyncComponent(() => import('./overview/performance/WebsitePerformance'));
+const TrafficChannel = defineAsyncComponent(() => import('./overview/performance/TrafficChannel'));
 // const SessionsByDevice = defineAsyncComponent(() => import('./overview/performance/SessionsByDevice'));
 // const TopLandingPages = defineAsyncComponent(() => import('./overview/performance/TopLandingPages'));
 // const SessionsbyRegion = defineAsyncComponent(() => import('./overview/performance/SessionsbyRegion'));
 
 const Performance = {
   name: 'Performance',
-  components: { Main, DailyOverview },
+  components: { Main, DailyOverview, WebsitePerformance, TrafficChannel },
 };
 
 export default Performance;

@@ -13,6 +13,18 @@ export default {
     state.error = err;
   },
 
+  updateLoadingBegin(state) {
+    state.perLoading = true;
+  },
+
+  updateLoadingSuccess(state) {
+    state.perLoading = false;
+  },
+
+  updateLoadingErr(state) {
+    state.perLoading = false;
+  },
+
   trafficChanelBegin(state) {
     state.tcLoading = true;
   },

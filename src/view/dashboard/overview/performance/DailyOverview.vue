@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-between overview-head">
       <sdHeading as="h4">Daily Overview</sdHeading>
       <sdDropdown>
-        <sdButton> Export <sdFeatherIcons icon="chevron-down" size="14" /> </sdButton>
+        <sdButton type="default"> Export <sdFeatherIcons type="chevron-down" size="14" /> </sdButton>
       </sdDropdown>
     </div>
     <div class="overview-box">
@@ -25,7 +25,7 @@
 
         <p>
           <span class="growth-upward">
-            <sdFeatherIcons icon="arrow-up" size="14" />
+            <sdFeatherIcons type="arrow-up" size="14" />
             25% <span>Since yesterday</span>
           </span>
           <span class="overview-box-percentage" :style="{ float: !rtl ? 'right' : 'left' }">
@@ -52,7 +52,7 @@
         <a-progress :percent="70" :showInfo="false" />
         <p>
           <span class="growth-downward">
-            <sdFeatherIcons icon="arrow-down" size="14" />
+            <sdFeatherIcons type="arrow-down" size="14" />
             25% <span>Since yesterday</span>
           </span>
           <span class="overview-box-percentage" :style="{ float: !rtl ? 'right' : 'left' }">
@@ -64,17 +64,19 @@
   </OverviewCard>
 </template>
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 import { OverviewCard } from '../../style';
 
 const DailyOverview = {
   name: 'DailyOverview',
   components: { OverviewCard },
   setup() {
-    // const { rtl } = useSelector(state => {
-    //   return {
-    //     rtl: state.ChangeLayoutMode.rtlData,
-    //   };
-    // });
+    const store = useStore();
+    const rtl = computed(() => store.state.themeLayout.rtl);
+    return {
+      rtl,
+    };
   },
 };
 

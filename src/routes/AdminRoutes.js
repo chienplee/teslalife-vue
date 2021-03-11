@@ -14,6 +14,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Business" */ '@/view/dashboard/Business.vue'),
   },
   {
+    path: '/performance',
+    name: 'performance',
+    component: () => import(/* webpackChunkName: "Performance" */ '@/view/dashboard/Performance.vue'),
+  },
+  {
     path: '/components/alerts',
     name: 'alerts',
     component: () => import(/* webpackChunkName: "Alerts" */ '@/view/uiElements/Alerts.vue'),

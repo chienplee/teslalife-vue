@@ -27,7 +27,7 @@
                     <p class="subtitle">Engaged Users</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
-                        <sdFeatherIcons icon="trending-up" />
+                        <sdFeatherIcons type="trending-up" />
                         25%
                       </span>
                       <span> 20,641 (prev)</span>
@@ -66,7 +66,7 @@
                     <p class="subtitle">Page Impressions</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
-                        <sdFeatherIcons icon="trending-up" />
+                        <sdFeatherIcons type="trending-up" />
                         14%
                       </span>
                       <span> 20,641 (prev)</span>
@@ -110,7 +110,7 @@
                     <p class="subtitle">Total Page Likes</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
-                        <sdFeatherIcons icon="trending-down" />
+                        <sdFeatherIcons type="trending-down" />
                         12%
                       </span>
                       <span> 20,641 (prev)</span>
@@ -150,7 +150,7 @@
                     <p class="subtitle">Page Impressions</p>
                     <p class="focard-status">
                       <span class="focard-status__percentage">
-                        <sdFeatherIcons icon="trending-up" />
+                        <sdFeatherIcons type="trending-up" />
                         14%
                       </span>
                       <span> 20,641 (prev)</span>

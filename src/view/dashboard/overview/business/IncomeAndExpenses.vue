@@ -6,23 +6,23 @@
       >
       <template #more>
         <router-link to="#">
-          <sdFeatherIcons size="16" icon="printer" />
+          <sdFeatherIcons :size="16" type="printer" />
           <span>Printer</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcons size="16" icon="book-open" />
+          <sdFeatherIcons :size="16" type="book-open" />
           <span>PDF</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcons size="16" icon="file-text" />
+          <sdFeatherIcons :size="16" type="file-text" />
           <span>Google Sheets</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcons size="16" icon="x" />
+          <sdFeatherIcons :size="16" type="x" />
           <span>Excel (XLSX)</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcons size="16" icon="file" />
+          <sdFeatherIcons :size="16" type="file" />
           <span>CSV</span>
         </router-link>
       </template>
@@ -60,7 +60,7 @@
               <sdHeading as="h1">
                 <span>${{ incomeState.total[0] }}</span>
                 <sub>
-                  <span> <sdFeatherIcons icon="arrow-up" /> 37% </span>
+                  <span> <sdFeatherIcons type="arrow-up" /> 37% </span>
                   Since last month
                 </sub>
               </sdHeading>
@@ -70,7 +70,7 @@
               <sdHeading as="h1">
                 <span>${{ incomeState.sale[0] }}</span>
                 <sub class="growth-downward">
-                  <span> <sdFeatherIcons icon="arrow-down" /> 25% </span>
+                  <span> <sdFeatherIcons type="arrow-down" /> 25% </span>
                   Since last month
                 </sub>
               </sdHeading>
@@ -80,7 +80,7 @@
               <sdHeading as="h1">
                 <span>${{ incomeState.expense[0] }}</span>
                 <sub>
-                  <span> <sdFeatherIcons icon="arrow-up" /> 25% </span>
+                  <span> <sdFeatherIcons type="arrow-up" /> 25% </span>
                   Since last month
                 </sub>
               </sdHeading>

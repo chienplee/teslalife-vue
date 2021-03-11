@@ -671,7 +671,7 @@ const OverviewCard = Styled.div`
             background: rgba(255,255,255,0.1);
             padding: 0px 11px;
             border: 0 none;
-            color: #fff;
+            color: #fff !important;
             svg,
             img,
             i{

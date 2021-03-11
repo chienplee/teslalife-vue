@@ -35,7 +35,7 @@
               <sdHeading as="h4">
                 {{ instagramOverviewState.post.data }}
                 <sub>
-                  <sdFeatherIcons icon="arrow-down" :size="14" />
+                  <sdFeatherIcons type="arrow-down" :size="14" />
                   25%
                 </sub>
               </sdHeading>
@@ -67,7 +67,7 @@
               <sdHeading as="h4">
                 {{ instagramOverviewState.like.data }}
                 <sub>
-                  <sdFeatherIcons icon="arrow-up" size="14" />
+                  <sdFeatherIcons type="arrow-up" size="14" />
                   108%
                 </sub>
               </sdHeading>
@@ -131,7 +131,7 @@
               <sdHeading as="h4">
                 {{ instagramOverviewState.rate.data }}
                 <sub>
-                  <sdFeatherIcons icon="arrow-up" size="14" />
+                  <sdFeatherIcons type="arrow-up" size="14" />
                   34%
                 </sub>
               </sdHeading>
@@ -163,7 +163,7 @@
               <sdHeading as="h4">
                 {{ instagramOverviewState.followers.data }}
                 <sub>
-                  <sdFeatherIcons icon="arrow-up" size="14" />
+                  <sdFeatherIcons type="arrow-up" size="14" />
                   27%
                 </sub>
               </sdHeading>
