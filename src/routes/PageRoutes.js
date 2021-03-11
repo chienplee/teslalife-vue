@@ -15,6 +15,11 @@ export default [
     component: () => import(/* webpackChunkName: "Faq" */ '@/view/pages/Faq.vue'),
   },
   {
+    path: '/page/search',
+    name: 'search',
+    component: () => import(/* webpackChunkName: "Search" */ '@/view/pages/Search.vue'),
+  },
+  {
     path: '/page/gallery',
     name: 'gallery',
     component: () => import(/* webpackChunkName: "Gallery" */ '@/view/pages/Gallery.vue'),
@@ -82,6 +87,28 @@ export default [
         path: '/page/profile-settings/notification',
         component: () =>
           import(/* webpackChunkName: "Notification" */ '@/view/pages/settings/overview/Notification.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page/knowledgebase',
+    name: 'knowledgebase',
+    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/Index.vue'),
+    children: [
+      {
+        path: '/page/knowledgebase/plugins',
+        component: () =>
+          import(/* webpackChunkName: "Plugins" */ '@/view/pages/knowledgebase/overview/ArticlePlugin.vue'),
+      },
+      {
+        path: '/page/knowledgebase/themes',
+        component: () =>
+          import(/* webpackChunkName: "Themes" */ '@/view/pages/knowledgebase/overview/ArticleTheme.vue'),
+      },
+      {
+        path: '/page/knowledgebase/extensions',
+        component: () =>
+          import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
       },
     ],
   },

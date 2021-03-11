@@ -345,11 +345,19 @@
           </router-link>
         </span>
       </a-menu-item>
+      <a-sub-menu key="knowledgebase">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Knowledge Base</span></template>
+        <a-menu-item key="knowledge">
+          <router-link click="toggleCollapsed" to="/page/knowledgebase/plugins">
+            Knowledge Base
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
       <a-menu-item key="support">
         <sdFeatherIcons type="circle" />
         <span>
           <router-link click="toggleCollapsed" to="/page/support">
-            Support
+            Support Center
           </router-link>
         </span>
       </a-menu-item>
@@ -390,6 +398,14 @@
         <span>
           <router-link click="toggleCollapsed" to="/page/faqs">
             FAQs
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item key="search">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/page/search">
+            Search
           </router-link>
         </span>
       </a-menu-item>

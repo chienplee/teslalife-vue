@@ -29,16 +29,30 @@
                 </p>
               </div>
               <div class="strikingDash-countdown">
-                <p v-if="!isFinished">
-                  Time Remaining：{{ days }} days, {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
-                </p>
-                <p v-else>Event Has Been Successfully Completed</p>
+                <div class="countdwon-data" v-if="!isFinished">
+                  <span>
+                    <span class="countdown-time">{{ days }}</span> <span class="countdown-title">Days</span>
+                  </span>
+                  <span>
+                    <div class="countdown-time">{{ hours }}</div>
+                    <span class="countdown-title">Hours</span>
+                  </span>
+                  <span>
+                    <div class="countdown-time">{{ minutes }}</div>
+                    <span class="countdown-title">Minutes</span>
+                  </span>
+                  <span>
+                    <div class="countdown-time">{{ seconds }}</div>
+                    <span class="countdown-title">Seconds</span>
+                  </span>
+                </div>
+                <div class="coming-soon-content" v-else><p>Event Has Been Successfully Completed</p></div>
               </div>
               <div class="subscription-form">
                 <a-form name="basic">
                   <div class="subscription-form-inner">
                     <a-form-item>
-                      <a-input name="email" value="username@email.com" placeholder="input placeholder" />
+                      <a-input type="email" name="email" value="username@email.com" placeholder="input placeholder" />
                     </a-form-item>
                     <sdButton size="large" type="primary" html-type="submit">
                       Subscribe
@@ -87,7 +101,7 @@ import Countdown from 'countdown-js';
 import { ref } from 'vue';
 
 export default {
-  name: '404',
+  name: 'ComingSoon',
   components: {
     Main,
     ComingsoonStyleWrapper,
@@ -121,25 +135,10 @@ export default {
       minutes,
       seconds,
       isFinished,
-    };
-  },
-  data() {
-    return {
       faFacebookF,
       faTwitter,
       faGithub,
     };
-  },
-  methods: {
-    transformSlotProps(props) {
-      const formattedProps = {};
-
-      Object.entries(props).forEach(([key, value]) => {
-        formattedProps[key] = value < 10 ? `0${value}` : String(value);
-      });
-
-      return formattedProps;
-    },
   },
 };
 </script>
