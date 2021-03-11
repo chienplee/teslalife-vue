@@ -42,15 +42,17 @@
               <h2 class="sDash_popular-article__title">Popular articles</h2>
               <ResponsiveMasonry columnsCountBreakPoints="{ 350: 1, 767: 2, 900: 3 }">
                 <Masonry class="sDash_popular-article__box" :gutter="15">
-                  <div v-for="article in articles" :key="article.id">
-                    <div class="sDash_popular-article__single" :class="`theme-` + article.type">
-                      <h4 class="single-article-title">{{ article.title }}</h4>
-                      <p>{{ article.text }}</p>
-                      <router-link class="btn-link" to="/admin/knowledgebaseSingle/1">
-                        Read more
-                        <ArrowRightOutlined />
-                      </router-link>
-                    </div>
+                  <div
+                    v-for="article in articles"
+                    :key="article.id"
+                    :class="`sDash_popular-article__single theme-` + article.type"
+                  >
+                    <h4 class="single-article-title">{{ article.title }}</h4>
+                    <p>{{ article.text }}</p>
+                    <router-link class="btn-link" to="/admin/knowledgebaseSingle/1">
+                      Read more
+                      <ArrowRightOutlined />
+                    </router-link>
                   </div>
                 </Masonry>
               </ResponsiveMasonry>
