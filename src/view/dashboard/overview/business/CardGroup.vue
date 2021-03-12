@@ -20,6 +20,7 @@
                 :datasets="[
                   {
                     data: [30, 10, 20, 25, 20, 30, 15, 25, 15, 10],
+                    label: 'Net',
                     borderColor: '#5F63F2',
                     borderWidth: 3,
                     fill: true,
@@ -57,6 +58,7 @@
                 :datasets="[
                   {
                     data: [30, 10, 20, 25, 20, 30, 15, 25, 15, 10],
+                    label: 'Gross',
                     borderColor: '#20C997',
                     borderWidth: 3,
                     fill: true,

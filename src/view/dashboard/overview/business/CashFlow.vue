@@ -120,24 +120,27 @@
 import { CardBarChart } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 const CashFlow = {
   name: 'CashFlow',
   components: { CardBarChart, Chart },
-  data() {
-    return {
-      cashFlowActive: 'year',
-      customTooltips,
+  setup() {
+    const { state, dispatch } = useStore();
+    const cashFlowActive = ref('year');
+
+    onMounted(() => dispatch('cashFlowGetData'));
+
+    const handleActiveChangeCash = (event, value) => {
+      event.preventDefault();
+      cashFlowActive.value = value;
+      dispatch('cashFlowFilterData', value);
     };
-  },
-  computed: {
-    cashFlowState() {
-      return this.$store.state.chartContent.cashFlowData;
-    },
-    cfIsLoading() {
-      return this.$store.state.chartContent.cfLoading;
-    },
-    chartOptions() {
+
+    const cashFlowState = computed(() => state.chartContent.cashFlowData);
+    const cfIsLoading = computed(() => state.chartContent.cfLoading);
+    const chartOptions = computed(() => {
       return {
         maintainAspectRatio: true,
         responsive: true,
@@ -171,8 +174,8 @@ const CashFlow = {
                 beginAtZero: true,
                 fontSize: 12,
                 fontColor: '#182b49',
-                max: Math.max(...this.$store.state.chartContent.cashFlowData.dataIn),
-                stepSize: Math.floor(Math.max(...this.$store.state.chartContent.cashFlowData.dataIn) / 5),
+                max: Math.max(...state.chartContent.cashFlowData.dataIn),
+                stepSize: Math.floor(Math.max(...state.chartContent.cashFlowData.dataIn) / 5),
                 callback(label) {
                   return `${label}k`;
                 },
@@ -219,16 +222,16 @@ const CashFlow = {
           },
         },
       };
-    },
-  },
-  mounted() {
-    this.$store.dispatch('cashFlowGetData');
-  },
-  methods: {
-    handleActiveChangeCash(value) {
-      this.cashFlowActive = value;
-      return this.$store.dispatch('cashFlowFilterData', value);
-    },
+    });
+
+    return {
+      cashFlowState,
+      cfIsLoading,
+      cashFlowActive,
+      customTooltips,
+      chartOptions,
+      handleActiveChangeCash,
+    };
   },
 };
 

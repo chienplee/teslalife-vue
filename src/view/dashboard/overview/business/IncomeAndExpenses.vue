@@ -197,13 +197,59 @@
 import { ExList, IncomeExpenseWrapper } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 const IncomeAndExpenses = {
   name: 'IncomeAndExpenses',
   components: { ExList, IncomeExpenseWrapper, Chart },
-  data() {
+  setup() {
+    const { state, dispatch } = useStore();
+    const incomeFlowActive = ref('year');
+    onMounted(() => dispatch('incomeGetData'));
+    const handleActiveChangeIncome = value => {
+      incomeFlowActive.value = value;
+      return dispatch('incomeFilterData', value);
+    };
+    const incomeState = computed(() => state.chartContent.incomeData);
+    const isIcLoading = computed(() => state.chartContent.icLoading);
+    const incomeDataset = computed(() => [
+      {
+        data: state.chartContent.incomeData.total[1],
+        backgroundColor: '#5F63F250',
+        hoverBackgroundColor: '#5F63F2',
+        label: 'Total Income',
+        barPercentage: 0.6,
+      },
+      {
+        data: state.chartContent.incomeData.sale[1],
+        backgroundColor: '#FF69A550',
+        hoverBackgroundColor: '#FF69A5',
+        label: 'Cost of goods sold',
+        barPercentage: 0.6,
+      },
+      {
+        data: state.chartContent.incomeData.expense[1],
+        backgroundColor: '#FA8B0C40',
+        hoverBackgroundColor: '#FA8B0C',
+        label: 'Total expenses',
+        barPercentage: 0.6,
+      },
+      {
+        data: state.chartContent.incomeData.profit[1],
+        backgroundColor: '#20C99740',
+        hoverBackgroundColor: '#20C997',
+        label: 'Net profit',
+        barPercentage: 0.6,
+      },
+    ]);
+
     return {
-      incomeFlowActive: 'year',
+      incomeState,
+      isIcLoading,
+      incomeFlowActive,
+      incomeDataset,
+      handleActiveChangeIncome,
       toolTips: {
         tooltips: {
           mode: 'label',
@@ -229,55 +275,6 @@ const IncomeAndExpenses = {
         },
       },
     };
-  },
-  computed: {
-    incomeState() {
-      return this.$store.state.chartContent.incomeData;
-    },
-    isIcLoading() {
-      this.$store.state.chartContent.icLoading;
-    },
-    incomeDataset() {
-      return [
-        {
-          data: this.$store.state.chartContent.incomeData.total[1],
-          backgroundColor: '#5F63F250',
-          hoverBackgroundColor: '#5F63F2',
-          label: 'Total Income',
-          barPercentage: 0.6,
-        },
-        {
-          data: this.$store.state.chartContent.incomeData.sale[1],
-          backgroundColor: '#FF69A550',
-          hoverBackgroundColor: '#FF69A5',
-          label: 'Cost of goods sold',
-          barPercentage: 0.6,
-        },
-        {
-          data: this.$store.state.chartContent.incomeData.expense[1],
-          backgroundColor: '#FA8B0C40',
-          hoverBackgroundColor: '#FA8B0C',
-          label: 'Total expenses',
-          barPercentage: 0.6,
-        },
-        {
-          data: this.$store.state.chartContent.incomeData.profit[1],
-          backgroundColor: '#20C99740',
-          hoverBackgroundColor: '#20C997',
-          label: 'Net profit',
-          barPercentage: 0.6,
-        },
-      ];
-    },
-  },
-  mounted() {
-    this.$store.dispatch('incomeGetData');
-  },
-  methods: {
-    handleActiveChangeIncome(value) {
-      this.incomeFlowActive = value;
-      return this.$store.dispatch('incomeFilterData', value);
-    },
   },
 };
 

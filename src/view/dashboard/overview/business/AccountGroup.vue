@@ -41,6 +41,7 @@
               pointHoverBorderWidth: 3,
               pointHoverRadius: 5,
               z: 5,
+              label: 'Net',
             },
           ]"
           :height="height"
@@ -137,6 +138,7 @@
               pointHoverBorderWidth: 3,
               pointHoverRadius: 5,
               z: 5,
+              label: 'Gross',
             },
           ]"
           :height="height"
@@ -196,12 +198,13 @@
 </template>
 <script>
 import Chart from '../../../../components/utilities/chartjs';
+import { ref } from 'vue';
 
-// import { customTooltips } from '../../../../components/utilities/utilities';
 const AccountGroup = {
   name: 'AccountGroup',
   components: { Chart },
-  data() {
+  setup() {
+    const height = ref(window.innerWidth <= 575 ? 230 : 100);
     return {
       tooltips: {
         mode: 'label',
@@ -239,7 +242,7 @@ const AccountGroup = {
           },
         },
       },
-      height: window.innerWidth <= 575 ? 230 : 100,
+      height,
     };
   },
 };
