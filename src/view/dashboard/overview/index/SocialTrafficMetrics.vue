@@ -31,7 +31,9 @@
   </CardGroup>
 </template>
 <script>
+import { useStore } from 'vuex';
 import { CardGroup } from '../../style';
+import { computed, onMounted, ref } from 'vue';
 
 const trafficTableColumns = [
   {
@@ -69,12 +71,14 @@ const trafficTableColumns = [
 const SocialTrafficMetrics = {
   name: 'SocialTrafficMetrics',
   components: { CardGroup },
-  computed: {
-    socialTrafficState() {
-      return this.$store.state.chartContent.socialTrafficData;
-    },
-    trafficTableData() {
-      return this.socialTrafficState !== null
+  setup() {
+    const { state, dispatch } = useStore();
+    const initValue = ref('today');
+    onMounted(() => dispatch('socialTrafficGetData'));
+
+    const socialTrafficState = computed(() => state.chartContent.socialTrafficData);
+    const trafficTableData = computed(() =>
+      socialTrafficState.value !== null
         ? [
             {
               key: '1',
@@ -93,12 +97,12 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Facebook</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.facebook.users,
-              newUsers: this.socialTrafficState.facebook.newUsers,
-              sessions: this.socialTrafficState.facebook.session,
-              bounceRate: this.socialTrafficState.facebook.bounceRate,
-              pages: this.socialTrafficState.facebook.pagesSession,
-              avg: this.socialTrafficState.facebook.avg,
+              users: socialTrafficState.value.facebook.users,
+              newUsers: socialTrafficState.value.facebook.newUsers,
+              sessions: socialTrafficState.value.facebook.session,
+              bounceRate: socialTrafficState.value.facebook.bounceRate,
+              pages: socialTrafficState.value.facebook.pagesSession,
+              avg: socialTrafficState.value.facebook.avg,
             },
             {
               key: '3',
@@ -107,12 +111,12 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Twitter</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.twitter.users,
-              newUsers: this.socialTrafficState.twitter.newUsers,
-              sessions: this.socialTrafficState.twitter.session,
-              bounceRate: this.socialTrafficState.twitter.bounceRate,
-              pages: this.socialTrafficState.twitter.pagesSession,
-              avg: this.socialTrafficState.twitter.avg,
+              users: socialTrafficState.value.twitter.users,
+              newUsers: socialTrafficState.value.twitter.newUsers,
+              sessions: socialTrafficState.value.twitter.session,
+              bounceRate: socialTrafficState.value.twitter.bounceRate,
+              pages: socialTrafficState.value.twitter.pagesSession,
+              avg: socialTrafficState.value.twitter.avg,
             },
             {
               key: '4',
@@ -121,12 +125,12 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Linkdin</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.linkdin.users,
-              newUsers: this.socialTrafficState.linkdin.newUsers,
-              sessions: this.socialTrafficState.linkdin.session,
-              bounceRate: this.socialTrafficState.linkdin.bounceRate,
-              pages: this.socialTrafficState.linkdin.pagesSession,
-              avg: this.socialTrafficState.linkdin.avg,
+              users: socialTrafficState.value.linkdin.users,
+              newUsers: socialTrafficState.value.linkdin.newUsers,
+              sessions: socialTrafficState.value.linkdin.session,
+              bounceRate: socialTrafficState.value.linkdin.bounceRate,
+              pages: socialTrafficState.value.linkdin.pagesSession,
+              avg: socialTrafficState.value.linkdin.avg,
             },
             {
               key: '5',
@@ -135,12 +139,12 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Youtube</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.youtube.users,
-              newUsers: this.socialTrafficState.youtube.newUsers,
-              sessions: this.socialTrafficState.youtube.session,
-              bounceRate: this.socialTrafficState.youtube.bounceRate,
-              pages: this.socialTrafficState.youtube.pagesSession,
-              avg: this.socialTrafficState.youtube.avg,
+              users: socialTrafficState.value.youtube.users,
+              newUsers: socialTrafficState.value.youtube.newUsers,
+              sessions: socialTrafficState.value.youtube.session,
+              bounceRate: socialTrafficState.value.youtube.bounceRate,
+              pages: socialTrafficState.value.youtube.pagesSession,
+              avg: socialTrafficState.value.youtube.avg,
             },
             {
               key: '6',
@@ -149,12 +153,12 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Pinterest</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.pinterest.users,
-              newUsers: this.socialTrafficState.pinterest.newUsers,
-              sessions: this.socialTrafficState.pinterest.session,
-              bounceRate: this.socialTrafficState.pinterest.bounceRate,
-              pages: this.socialTrafficState.pinterest.pagesSession,
-              avg: this.socialTrafficState.pinterest.avg,
+              users: socialTrafficState.value.pinterest.users,
+              newUsers: socialTrafficState.value.pinterest.newUsers,
+              sessions: socialTrafficState.value.pinterest.session,
+              bounceRate: socialTrafficState.value.pinterest.bounceRate,
+              pages: socialTrafficState.value.pinterest.pagesSession,
+              avg: socialTrafficState.value.pinterest.avg,
             },
             {
               key: '7',
@@ -163,31 +167,28 @@ const SocialTrafficMetrics = {
                   <span class="social-name">Google+</span>
                 </router-view>
               ),
-              users: this.socialTrafficState.google.users,
-              newUsers: this.socialTrafficState.google.newUsers,
-              sessions: this.socialTrafficState.google.session,
-              bounceRate: this.socialTrafficState.google.bounceRate,
-              pages: this.socialTrafficState.google.pagesSession,
-              avg: this.socialTrafficState.google.avg,
+              users: socialTrafficState.value.google.users,
+              newUsers: socialTrafficState.value.google.newUsers,
+              sessions: socialTrafficState.value.google.session,
+              bounceRate: socialTrafficState.value.google.bounceRate,
+              pages: socialTrafficState.value.google.pagesSession,
+              avg: socialTrafficState.value.google.avg,
             },
           ]
-        : [];
-    },
-  },
-  mounted() {
-    this.$store.dispatch('socialTrafficGetData');
-  },
-  data() {
-    return {
-      initValue: 'today',
-      trafficTableColumns,
-    };
-  },
-  methods: {
-    socialTraffic(e) {
+        : [],
+    );
+
+    const socialTraffic = e => {
       e.preventDefault();
-      return this.$store.dispatch('socialTrafficFilterData', e.target.value);
-    },
+      return dispatch('socialTrafficFilterData', e.target.value);
+    };
+
+    return {
+      initValue,
+      trafficTableColumns,
+      trafficTableData,
+      socialTraffic,
+    };
   },
 };
 

@@ -4,17 +4,17 @@
       <template #button>
         <div class="card-nav">
           <ul>
-            <li :class="state.linkdinOverviewTabActive === 'week' ? 'active' : 'deactivate'">
+            <li :class="linkdinOverviewTabActive === 'week' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeLinkdin(e, 'week')" to="#">
                 Week
               </router-link>
             </li>
-            <li :class="state.linkdinOverviewTabActive === 'month' ? 'active' : 'deactivate'">
+            <li :class="linkdinOverviewTabActive === 'month' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeLinkdin(e, 'month')" to="#">
                 Month
               </router-link>
             </li>
-            <li :class="state.linkdinOverviewTabActive === 'year' ? 'active' : 'deactivate'">
+            <li :class="linkdinOverviewTabActive === 'year' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeLinkdin(e, 'year')" to="#">
                 Year
               </router-link>
@@ -196,6 +196,8 @@
 import { LineChartWrapper, ChartContainer } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 const lineChartPointStyle = {
   borderColor: '#C6D0DC',
@@ -298,38 +300,40 @@ const chartOptions = {
 
 const LinkedinKeyMetrics = {
   name: 'LinkedinKeyMetrics',
-  data() {
-    return {
-      chartOptions,
-      lineChartPointStyle,
-      state: {
-        linkdinOverviewTabActive: 'month',
-      },
-    };
-  },
   components: {
     Chart,
     LineChartWrapper,
     ChartContainer,
   },
-  computed: {
-    linkdinOverviewState() {
-      return this.$store.state.chartContent.linkdinOverviewData;
-    },
-    liIsLoading() {
-      return this.$store.state.chartContent.liLoading;
-    },
-  },
-  mounted() {
-    this.$store.dispatch('linkdinOverviewGetData');
-  },
+  setup() {
+    const { state, dispatch } = useStore();
+    const linkdinOverviewTabActive = ref('month');
 
-  methods: {
-    handleActiveChangeLinkdin(event, value) {
+    const linkdinOverviewState = computed(function() {
+      return state.chartContent.linkdinOverviewData;
+    });
+    const liIsLoading = computed(function() {
+      return state.chartContent.liLoading;
+    });
+
+    onMounted(function() {
+      dispatch('linkdinOverviewGetData');
+    });
+
+    function handleActiveChangeLinkdin(event, value) {
       event.preventDefault();
-      this.state.linkdinOverviewTabActive = value;
-      return this.$store.dispatch('linkdinOverviewFilterData', value);
-    },
+      linkdinOverviewTabActive.value = value;
+      return dispatch('linkdinOverviewFilterData', value);
+    }
+
+    return {
+      chartOptions,
+      lineChartPointStyle,
+      linkdinOverviewTabActive,
+      linkdinOverviewState,
+      liIsLoading,
+      handleActiveChangeLinkdin,
+    };
   },
 };
 

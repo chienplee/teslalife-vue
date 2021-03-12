@@ -4,17 +4,17 @@
       <template #button>
         <div class="card-nav">
           <ul>
-            <li :class="state.instagramOverviewTabActive === 'week' ? 'active' : 'deactivate'">
+            <li :class="instagramOverviewTabActive === 'week' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeInstagram(e, 'week')" to="#">
                 Week
               </router-link>
             </li>
-            <li :class="state.instagramOverviewTabActive === 'month' ? 'active' : 'deactivate'">
+            <li :class="instagramOverviewTabActive === 'month' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeInstagram(e, 'month')" to="#">
                 Month
               </router-link>
             </li>
-            <li :class="state.instagramOverviewTabActive === 'year' ? 'active' : 'deactivate'">
+            <li :class="instagramOverviewTabActive === 'year' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeInstagram(e, 'year')" to="#">
                 Year
               </router-link>
@@ -196,6 +196,8 @@
 import { LineChartWrapper, ChartContainer } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { ref, onMounted, computed } from 'vue';
+import { useStore } from 'vuex';
 
 const lineChartPointStyle = {
   borderColor: '#C6D0DC',
@@ -298,38 +300,34 @@ const chartOptions = {
 
 const InstagramOverview = {
   name: 'InstagramOverview',
-  data() {
-    return {
-      chartOptions,
-      lineChartPointStyle,
-      state: {
-        instagramOverviewTabActive: 'month',
-      },
-    };
-  },
   components: {
     Chart,
     LineChartWrapper,
     ChartContainer,
   },
-  computed: {
-    instagramOverviewState() {
-      return this.$store.state.chartContent.instagramOverviewData;
-    },
-    inIsLoading() {
-      return this.$store.state.chartContent.inLoading;
-    },
-  },
-  mounted() {
-    this.$store.dispatch('instagramOverviewGetData');
-  },
+  setup() {
+    const { state, dispatch } = useStore();
+    const instagramOverviewTabActive = ref('month');
 
-  methods: {
-    handleActiveChangeInstagram(event, value) {
+    onMounted(() => dispatch('instagramOverviewGetData'));
+
+    const handleActiveChangeInstagram = (event, value) => {
       event.preventDefault();
-      this.state.instagramOverviewTabActive = value;
-      return this.$store.dispatch('instagramOverviewFilterData', value);
-    },
+      instagramOverviewTabActive.value = value;
+      return dispatch('instagramOverviewFilterData', value);
+    };
+
+    const instagramOverviewState = computed(() => state.chartContent.instagramOverviewData);
+    const inIsLoading = computed(() => state.chartContent.inLoading);
+
+    return {
+      instagramOverviewTabActive,
+      handleActiveChangeInstagram,
+      instagramOverviewState,
+      inIsLoading,
+      chartOptions,
+      lineChartPointStyle,
+    };
   },
 };
 
