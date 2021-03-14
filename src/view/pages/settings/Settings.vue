@@ -46,8 +46,6 @@ import { SettingWrapper } from './overview/style';
 import CoverSection from './overview/CoverSection';
 import AuthorBox from './overview/ProfileAuthorBox';
 import { ProfileAuthorBox } from './overview/style';
-// const AuthorBox = () =>
-//   import(/* webpackChunkName: "author-box" */ "./overview/ProfileAuthorBox");
 
 export default {
   name: 'Settings',

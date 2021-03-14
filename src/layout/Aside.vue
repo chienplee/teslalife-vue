@@ -41,6 +41,26 @@
       </a-menu-item>
     </a-sub-menu>
 
+    <a-menu-item-group key="applications">
+      <template v-slot:title>
+        <p class="sidebar-nav-title">APPLICATIONS</p>
+      </template>
+
+      <a-sub-menu key="mail">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Email</span></template>
+        <a-menu-item key="inbox">
+          <router-link click="toggleCollapsed" to="/app/mail">
+            Inbox
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="single">
+          <router-link click="toggleCollapsed" to="/app/mail-single/1585118055048">
+            Read Email
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+    </a-menu-item-group>
+
     <a-menu-item-group key="features">
       <template v-slot:title>
         <p class="sidebar-nav-title">FEATURES</p>

@@ -2,6 +2,7 @@ import { createWebHistory, createRouter, createWebHashHistory, createMemoryHisto
 import FeaturesRoutes from './FeaturesRoutes';
 import PageRoutes from './PageRoutes';
 import Components from './Components';
+import Apps from './Applications';
 
 const routes = [
   {
@@ -38,6 +39,7 @@ const routes = [
   ...PageRoutes,
   ...FeaturesRoutes,
   ...Components,
+  ...Apps,
 ];
 
 const router = createRouter({
