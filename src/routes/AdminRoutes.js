@@ -24,6 +24,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Performance" */ '@/view/dashboard/Performance.vue'),
   },
   {
+    path: '/crm',
+    name: 'crm',
+    component: () => import(/* webpackChunkName: "CRM" */ '@/view/dashboard/CRM.vue'),
+  },
+  {
     path: '/components/alerts',
     name: 'alerts',
     component: () => import(/* webpackChunkName: "Alerts" */ '@/view/uiElements/Alerts.vue'),

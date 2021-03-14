@@ -1,4 +1,32 @@
 export default {
+  recentDealBegin(state) {
+    state.reLoading = true;
+  },
+
+  recentDealSuccess(state, data) {
+    state.reLoading = false;
+    state.recentDealData = data;
+  },
+
+  recentDealErr(state, err) {
+    state.reLoading = false;
+    state.error = err;
+  },
+
+  closeDealBegin(state) {
+    state.cdLoading = true;
+  },
+
+  closeDealSuccess(state, data) {
+    state.cdLoading = false;
+    state.closeDealData = data;
+  },
+
+  closeDealErr(state, err) {
+    state.cdLoading = false;
+    state.error = err;
+  },
+
   topSaleBegin(state) {
     state.tsLoading = true;
   },

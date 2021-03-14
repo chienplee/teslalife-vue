@@ -13,6 +13,8 @@ import {
   performance,
   generated,
   topSale,
+  closedDeals,
+  recentDeal,
 } from '../../../demoData/dashboardChartContent.json';
 import mutations from './mutations';
 
@@ -57,6 +59,44 @@ const state = () => ({
 });
 
 const actions = {
+  async recentDealGetData({ commit }) {
+    const { year } = recentDeal;
+    try {
+      commit('recentDealBegin');
+      commit('recentDealSuccess', year);
+    } catch (err) {
+      commit('recentDealErr', err);
+    }
+  },
+  async recentDealFilterData({ commit }, value) {
+    try {
+      commit('recentDealBegin');
+      setTimeout(() => {
+        commit('recentDealSuccess', recentDeal[value]);
+      }, 100);
+    } catch (err) {
+      commit('recentDealErr', err);
+    }
+  },
+  async closeDealGetData({ commit }) {
+    const { year } = closedDeals;
+    try {
+      commit('closeDealBegin');
+      commit('closeDealSuccess', year);
+    } catch (err) {
+      commit('closeDealErr', err);
+    }
+  },
+  async closeDealFilterData({ commit }, value) {
+    try {
+      commit('closeDealBegin');
+      setTimeout(() => {
+        commit('closeDealSuccess', closedDeals[value]);
+      }, 100);
+    } catch (err) {
+      commit('closeDealErr', err);
+    }
+  },
   async topSaleGetData({ commit }) {
     const { year } = topSale;
     try {

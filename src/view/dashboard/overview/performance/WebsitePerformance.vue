@@ -148,11 +148,36 @@ const WebsitePerformance = {
     const performanceState = computed(() => store.state.chartContent.performanceData);
     const preIsLoading = computed(() => store.state.chartContent.perLoading);
 
-    const performanceDatasets = ref([]);
+    const performanceDatasets = computed(() => [
+      {
+        data: performanceState.value[performanceTab.value][1],
+        borderColor: '#5F63F2',
+        borderWidth: 4,
+        fill: true,
+        backgroundColor: () => chartMethods('performance', ['#5F63F230', '#ffffff05']),
+        label: 'Current period',
+        pointStyle: 'circle',
+        pointRadius: '0',
+        hoverRadius: '9',
+        pointBorderColor: '#fff',
+        pointBackgroundColor: '#5F63F2',
+        hoverBorderWidth: 5,
+      },
+      {
+        data: performanceState.value[performanceTab.value][2],
+        borderColor: '#C6D0DC',
+        borderWidth: 2,
+        fill: false,
+        backgroundColor: '#00173750',
+        label: 'Previous period',
+        borderDash: [3, 3],
+        pointRadius: '0',
+        hoverRadius: '0',
+      },
+    ]);
 
     const handleActiveChangePerformance = (event, value) => {
       event.preventDefault();
-
       performance.value = value;
       return store.dispatch('performanceFilterData', value);
     };
@@ -171,33 +196,6 @@ const WebsitePerformance = {
 
     onMounted(() => {
       store.dispatch('performanceGetData');
-      return (performanceDatasets.value = performanceState.value && [
-        {
-          data: performanceState.value[performanceTab.value][1],
-          borderColor: '#5F63F2',
-          borderWidth: 4,
-          fill: true,
-          backgroundColor: () => chartMethods('performance', ['#5F63F230', '#ffffff05']),
-          label: 'Current period',
-          pointStyle: 'circle',
-          pointRadius: '0',
-          hoverRadius: '9',
-          pointBorderColor: '#fff',
-          pointBackgroundColor: '#5F63F2',
-          hoverBorderWidth: 5,
-        },
-        {
-          data: performanceState.value[performanceTab.value][2],
-          borderColor: '#C6D0DC',
-          borderWidth: 2,
-          fill: false,
-          backgroundColor: '#00173750',
-          label: 'Previous period',
-          borderDash: [3, 3],
-          pointRadius: '0',
-          hoverRadius: '0',
-        },
-      ]);
     });
 
     const chartOptions = {
