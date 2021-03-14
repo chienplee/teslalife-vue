@@ -20,6 +20,21 @@ export default [
     component: () => import(/* webpackChunkName: "ChartJs" */ '@/view/charts/ChartJs.vue'),
   },
   {
+    path: '/chart/line-chart',
+    name: 'lineChart',
+    component: () => import(/* webpackChunkName: "LineChart" */ '@/view/charts/apexcharts/LineCharts.vue'),
+  },
+  {
+    path: '/chart/area-chart',
+    name: 'areaChart',
+    component: () => import(/* webpackChunkName: "AreaChart" */ '@/view/charts/apexcharts/AreaCharts.vue'),
+  },
+  {
+    path: '/chart/column-chart',
+    name: 'columChart',
+    component: () => import(/* webpackChunkName: "ColumChart" */ '@/view/charts/apexcharts/ColumnCharts.vue'),
+  },
+  {
     path: '/icons/featherIcons',
     name: 'featherIcons',
     component: () => import(/* webpackChunkName: "FeatherIcons" */ '@/view/icons/FeatherIcons.vue'),
