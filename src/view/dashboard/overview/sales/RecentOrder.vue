@@ -1,6 +1,17 @@
 <template>
   <div class="full-width-table">
-    <sdCards title="Top Selling Products" bodypadding="0px">
+    <sdCards title="Recent Orders" bodypadding="0px" more>
+      <template #more>
+        <router-link to="#">
+          <span>2 years</span>
+        </router-link>
+        <router-link to="#">
+          <span>3 years</span>
+        </router-link>
+        <router-link to="#">
+          <span>4 years</span>
+        </router-link>
+      </template>
       <template #button>
         <div class="card-nav">
           <ul>
@@ -36,7 +47,6 @@
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
-
 const sellingColumns = [
   {
     title: 'Product Name',
@@ -60,17 +70,18 @@ const sellingColumns = [
   },
 ];
 
-const TopSellingProduct = {
-  name: 'TopSellingProduct',
-  components: {},
+const RecentOrder = {
+  name: 'RecentOrder',
   setup() {
     const { state, dispatch } = useStore();
     const topSaleState = computed(() => state.chartContent.topSaleData);
     const products = ref('year');
 
+    onMounted(() => dispatch('topSaleGetData'));
     const handleActiveChangeProducts = (event, value) => {
       event.preventDefault();
       products.value = value;
+
       dispatch('topSaleFilterData', value);
     };
 
@@ -89,17 +100,15 @@ const TopSellingProduct = {
         : [],
     );
 
-    onMounted(() => dispatch('topSaleGetData'));
-
     return {
-      topSaleState,
-      handleActiveChangeProducts,
-      sellingColumns,
       sellingData,
       products,
+      handleActiveChangeProducts,
+      topSaleState,
+      sellingColumns,
     };
   },
 };
 
-export default TopSellingProduct;
+export default RecentOrder;
 </script>

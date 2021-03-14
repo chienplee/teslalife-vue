@@ -29,6 +29,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "CRM" */ '@/view/dashboard/CRM.vue'),
   },
   {
+    path: '/sales',
+    name: 'sales',
+    component: () => import(/* webpackChunkName: "sales" */ '@/view/dashboard/Sales.vue'),
+  },
+  {
     path: '/components/alerts',
     name: 'alerts',
     component: () => import(/* webpackChunkName: "Alerts" */ '@/view/uiElements/Alerts.vue'),

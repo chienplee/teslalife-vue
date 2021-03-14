@@ -1,6 +1,6 @@
 <template>
   <div class="full-width-table">
-    <sdCards title="Top Selling Products" bodypadding="0px">
+    <sdCards title="Top Selling Products" bodypadding="0px" more>
       <template #button>
         <div class="card-nav">
           <ul>
@@ -27,15 +27,29 @@
           </ul>
         </div>
       </template>
-      <div class="table-bordered top-seller-table table-responsive">
-        <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
-      </div>
+      <template #more>
+        <router-link to="#">
+          <span>2 years</span>
+        </router-link>
+        <router-link to="#">
+          <span>3 years</span>
+        </router-link>
+        <router-link to="#">
+          <span>4 years</span>
+        </router-link>
+      </template>
+      <TopSellerWrap>
+        <div class="table-bordered top-seller-table table-responsive">
+          <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
+        </div>
+      </TopSellerWrap>
     </sdCards>
   </div>
 </template>
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
+import { TopSellerWrap } from '../../style';
 
 const sellingColumns = [
   {
@@ -62,12 +76,12 @@ const sellingColumns = [
 
 const TopSellingProduct = {
   name: 'TopSellingProduct',
-  components: {},
+  components: { TopSellerWrap },
   setup() {
     const { state, dispatch } = useStore();
     const topSaleState = computed(() => state.chartContent.topSaleData);
     const products = ref('year');
-
+    onMounted(() => dispatch('topSaleGetData'));
     const handleActiveChangeProducts = (event, value) => {
       event.preventDefault();
       products.value = value;
@@ -77,10 +91,17 @@ const TopSellingProduct = {
     const sellingData = computed(() =>
       topSaleState.value
         ? topSaleState.value.map(value => {
-            const { key, name, price, sold, revenue } = value;
+            const { key, name, img, price, sold, revenue } = value;
             return {
               key,
-              name,
+              name: (
+                <div class="product-info align-center-v">
+                  <div class="product-img">
+                    <img src={require(`../../../../static/img/products/electronics/${img}`)} alt="" />
+                  </div>
+                  <span class="product-name">{name}</span>
+                </div>
+              ),
               price,
               sold,
               revenue,
@@ -89,14 +110,12 @@ const TopSellingProduct = {
         : [],
     );
 
-    onMounted(() => dispatch('topSaleGetData'));
-
     return {
       topSaleState,
-      handleActiveChangeProducts,
-      sellingColumns,
-      sellingData,
       products,
+      handleActiveChangeProducts,
+      sellingData,
+      sellingColumns,
     };
   },
 };
