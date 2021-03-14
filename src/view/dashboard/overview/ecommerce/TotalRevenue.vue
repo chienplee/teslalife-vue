@@ -105,52 +105,51 @@ const TotalRevenue = {
       revenue.value = value;
       return store.dispatch('performanceFilterData', value);
     };
-
-    const performanceDatasets = ref([]);
-
     function chartMethods(elementId, color) {
       return chartLinearGradient(document.querySelector(`.${elementId}`), 300, {
         start: color[0],
         end: color[1],
       });
     }
+
+    const performanceDatasets = computed(() => [
+      {
+        data: performanceState.value.users[1],
+        borderColor: '#5F63F2',
+        borderWidth: 4,
+        fill: true,
+        backgroundColor: () => chartMethods('perform', ['#5F63F230', '#ffffff05']),
+        label: 'Current period',
+        pointStyle: 'circle',
+        pointRadius: '0',
+        hoverRadius: '9',
+        pointBorderColor: '#fff',
+        pointBackgroundColor: '#5F63F2',
+        hoverBorderWidth: 5,
+        amount: '$7,596',
+        amountClass: 'current-amount',
+      },
+      {
+        data: performanceState.value.users[2],
+        borderColor: '#C6D0DC',
+        borderWidth: 2,
+        fill: false,
+        backgroundColor: '#00173750',
+        label: 'Previous period',
+
+        pointStyle: 'circle',
+        pointRadius: '0',
+        hoverRadius: '9',
+        pointBorderColor: '#fff',
+        pointBackgroundColor: '#5F63F2',
+        hoverBorderWidth: 5,
+        amount: '$7,596',
+        amountClass: 'current-amount',
+      },
+    ]);
+
     onMounted(() => {
       store.dispatch('performanceGetData');
-      return (performanceDatasets.value = performanceState.value && [
-        {
-          data: performanceState.value.users[1],
-          borderColor: '#5F63F2',
-          borderWidth: 4,
-          fill: true,
-          backgroundColor: () => chartMethods('perform', ['#5F63F230', '#ffffff05']),
-          label: 'Current period',
-          pointStyle: 'circle',
-          pointRadius: '0',
-          hoverRadius: '9',
-          pointBorderColor: '#fff',
-          pointBackgroundColor: '#5F63F2',
-          hoverBorderWidth: 5,
-          amount: '$7,596',
-          amountClass: 'current-amount',
-        },
-        {
-          data: performanceState.value.users[2],
-          borderColor: '#C6D0DC',
-          borderWidth: 2,
-          fill: false,
-          backgroundColor: '#00173750',
-          label: 'Previous period',
-
-          pointStyle: 'circle',
-          pointRadius: '0',
-          hoverRadius: '9',
-          pointBorderColor: '#fff',
-          pointBackgroundColor: '#5F63F2',
-          hoverBorderWidth: 5,
-          amount: '$7,596',
-          amountClass: 'current-amount',
-        },
-      ]);
     });
 
     const chartOptions = {

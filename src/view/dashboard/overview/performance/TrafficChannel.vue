@@ -100,7 +100,114 @@ const TrafficChannel = {
     const traffic = ref('year');
     const trafficState = computed(() => store.state.chartContent.trafficChanelData);
 
-    const locationData = ref([]);
+    const locationData = computed(() =>
+      trafficState.value
+        ? [
+            {
+              key: '1',
+              channel: 'Direct',
+              sessions: trafficState.value.direct.sessions,
+              rate: `${trafficState.value.direct.rate}%`,
+              completions: trafficState.value.direct.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.direct.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-dt progress-primary"
+                />
+              ),
+              value: `${trafficState.value.direct.value}%`,
+            },
+            {
+              key: '2',
+              channel: 'Email',
+              sessions: trafficState.value.email.sessions,
+              rate: `${trafficState.value.email.rate}%`,
+              completions: trafficState.value.email.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.email.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-et progress-secondary"
+                />
+              ),
+              value: `${trafficState.value.email.value}%`,
+            },
+            {
+              key: '3',
+              channel: 'Organic Search',
+              sessions: trafficState.value.search.sessions,
+              rate: `${trafficState.value.search.rate}%`,
+              completions: trafficState.value.search.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.search.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-ost progress-success"
+                />
+              ),
+              value: `${trafficState.value.search.value}%`,
+            },
+            {
+              key: '4',
+              channel: 'Referral',
+              sessions: trafficState.value.referral.sessions,
+              rate: `${trafficState.value.referral.rate}%`,
+              completions: trafficState.value.referral.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.referral.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-rt progress-info"
+                />
+              ),
+              value: `${trafficState.value.referral.value}%`,
+            },
+            {
+              key: '5',
+              channel: 'Social Media',
+              sessions: trafficState.value.media.sessions,
+              rate: `${trafficState.value.media.rate}%`,
+              completions: trafficState.value.media.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.media.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-smt progress-warning"
+                />
+              ),
+              value: `${trafficState.value.media.value}%`,
+            },
+            {
+              key: '6',
+              channel: 'Other',
+              sessions: trafficState.value.other.sessions,
+              rate: `${trafficState.value.other.rate}%`,
+              completions: trafficState.value.other.goals,
+              percentage: (
+                <a-progress
+                  percent={trafficState.value.other.percent}
+                  strokeWidth={5}
+                  status="active"
+                  showInfo={false}
+                  class="progress-ot progress-danger"
+                />
+              ),
+              value: `${trafficState.value.other.value}%`,
+            },
+          ]
+        : [],
+    );
 
     const handleActiveChangeTraffic = (event, value) => {
       event.preventDefault();
@@ -110,110 +217,6 @@ const TrafficChannel = {
 
     onMounted(() => {
       store.dispatch('trafficChanelGetData');
-      locationData.value = trafficState.value && [
-        {
-          key: '1',
-          channel: 'Direct',
-          sessions: trafficState.value.direct.sessions,
-          rate: `${trafficState.value.direct.rate}%`,
-          completions: trafficState.value.direct.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.direct.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-dt progress-primary"
-            />
-          ),
-          value: `${trafficState.value.direct.value}%`,
-        },
-        {
-          key: '2',
-          channel: 'Email',
-          sessions: trafficState.value.email.sessions,
-          rate: `${trafficState.value.email.rate}%`,
-          completions: trafficState.value.email.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.email.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-et progress-secondary"
-            />
-          ),
-          value: `${trafficState.value.email.value}%`,
-        },
-        {
-          key: '3',
-          channel: 'Organic Search',
-          sessions: trafficState.value.search.sessions,
-          rate: `${trafficState.value.search.rate}%`,
-          completions: trafficState.value.search.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.search.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-ost progress-success"
-            />
-          ),
-          value: `${trafficState.value.search.value}%`,
-        },
-        {
-          key: '4',
-          channel: 'Referral',
-          sessions: trafficState.value.referral.sessions,
-          rate: `${trafficState.value.referral.rate}%`,
-          completions: trafficState.value.referral.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.referral.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-rt progress-info"
-            />
-          ),
-          value: `${trafficState.value.referral.value}%`,
-        },
-        {
-          key: '5',
-          channel: 'Social Media',
-          sessions: trafficState.value.media.sessions,
-          rate: `${trafficState.value.media.rate}%`,
-          completions: trafficState.value.media.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.media.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-smt progress-warning"
-            />
-          ),
-          value: `${trafficState.value.media.value}%`,
-        },
-        {
-          key: '6',
-          channel: 'Other',
-          sessions: trafficState.value.other.sessions,
-          rate: `${trafficState.value.other.rate}%`,
-          completions: trafficState.value.other.goals,
-          percentage: (
-            <a-progress
-              percent={trafficState.value.other.percent}
-              strokeWidth={5}
-              status="active"
-              showInfo={false}
-              class="progress-ot progress-danger"
-            />
-          ),
-          value: `${trafficState.value.other.value}%`,
-        },
-      ];
     });
     return {
       trafficState,

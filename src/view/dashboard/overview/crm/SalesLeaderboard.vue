@@ -1,6 +1,6 @@
 <template>
   <div class="full-width-table">
-    <sdCards title="Top Selling Products" bodypadding="0px">
+    <sdCards title="Sales Leaderboard" bodypadding="0px">
       <template #button>
         <div class="card-nav">
           <ul>
@@ -27,8 +27,8 @@
           </ul>
         </div>
       </template>
-      <div class="table-bordered top-seller-table table-responsive">
-        <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
+      <div class="table-bordered leaderboard-table table-responsive">
+        <a-table :columns="sellingColumns" :dataSource="[...sellingData]" :pagination="false" />
       </div>
     </sdCards>
   </div>
@@ -44,62 +44,53 @@ const sellingColumns = [
     key: 'name',
   },
   {
-    title: 'Price',
-    dataIndex: 'price',
-    key: 'price',
+    title: 'Deals',
+    dataIndex: 'deals',
+    key: 'deals',
   },
   {
-    title: 'Sold',
-    dataIndex: 'sold',
-    key: 'sold',
-  },
-  {
-    title: 'Revenue',
-    dataIndex: 'revenue',
-    key: 'revenue',
+    title: 'Amount',
+    dataIndex: 'amount',
+    key: 'amount',
   },
 ];
-
-const TopSellingProduct = {
-  name: 'TopSellingProduct',
+const SalesLeaderBoard = {
+  name: 'SalesLeaderBoard',
   components: {},
   setup() {
     const { state, dispatch } = useStore();
     const topSaleState = computed(() => state.chartContent.topSaleData);
     const products = ref('year');
+    onMounted(() => dispatch('topSaleGetData'));
+
+    const sellingData = computed(() =>
+      topSaleState.value
+        ? topSaleState.value.map(value => {
+            const { key, name, sold, revenue } = value;
+            return {
+              key,
+              name,
+              deals: sold,
+              amount: revenue,
+            };
+          })
+        : [],
+    );
 
     const handleActiveChangeProducts = (event, value) => {
       event.preventDefault();
       products.value = value;
       dispatch('topSaleFilterData', value);
     };
-
-    const sellingData = computed(() =>
-      topSaleState.value
-        ? topSaleState.value.map(value => {
-            const { key, name, price, sold, revenue } = value;
-            return {
-              key,
-              name,
-              price,
-              sold,
-              revenue,
-            };
-          })
-        : [],
-    );
-
-    onMounted(() => dispatch('topSaleGetData'));
-
     return {
+      products,
       topSaleState,
       handleActiveChangeProducts,
-      sellingColumns,
       sellingData,
-      products,
+      sellingColumns,
     };
   },
 };
 
-export default TopSellingProduct;
+export default SalesLeaderBoard;
 </script>

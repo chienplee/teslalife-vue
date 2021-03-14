@@ -9,7 +9,7 @@ export const PageHeader = {
     title: VueTypes.oneOfType([VueTypes.string, VueTypes.object]),
     subTitle: VueTypes.oneOfType([VueTypes.string, VueTypes.object]),
     bgColor: VueTypes.string,
-    classes: VueTypes.string,
+    class: VueTypes.string,
     routes: VueTypes.object,
     buttons: VueTypes.array,
     ghost: VueTypes.bool,
@@ -27,7 +27,7 @@ export const PageHeader = {
             style={{
               backgroundColor: 'rgb(244, 245, 247)',
             }}
-            class={this.classes}
+            class={this.class}
             title={this.title}
             subTitle={this.subTitle}
             breadcrumb={this.routes && this.routes}

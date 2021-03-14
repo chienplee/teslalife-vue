@@ -93,7 +93,72 @@ const TopLandingPages = {
     const landing = ref('year');
     const landingState = computed(() => store.state.chartContent.landingPageData);
 
-    const landingData = ref([]);
+    const landingData = computed(() =>
+      landingState.value !== null
+        ? [
+            {
+              key: '1',
+              pages: (
+                <router-link to="#" class="page-title">
+                  Homepage
+                </router-link>
+              ),
+              sessions: landingState.value.direct.sessions,
+              rate: `${landingState.value.direct.rate}%`,
+              ctr: landingState.value.direct.goals,
+              percentage: `${landingState.value.direct.percent}%`,
+            },
+            {
+              key: '2',
+              pages: (
+                <router-link to="#" class="page-title">
+                  Our Service
+                </router-link>
+              ),
+              sessions: landingState.value.email.sessions,
+              rate: `${landingState.value.email.rate}%`,
+              ctr: landingState.value.email.goals,
+              percentage: `${landingState.value.email.percent}%`,
+            },
+            {
+              key: '3',
+              pages: (
+                <router-link to="#" class="page-title">
+                  List of Products
+                </router-link>
+              ),
+              sessions: landingState.value.search.sessions,
+              rate: `${landingState.value.search.rate}%`,
+              ctr: landingState.value.search.goals,
+              percentage: `${landingState.value.search.percent}%`,
+            },
+            {
+              key: '4',
+              pages: (
+                <router-link to="#" class="page-title">
+                  Contact us
+                </router-link>
+              ),
+              sessions: landingState.value.media.sessions,
+              rate: `${landingState.value.media.rate}%`,
+              ctr: landingState.value.media.goals,
+              percentage: `${landingState.value.media.percent}%`,
+            },
+            {
+              key: '5',
+              pages: (
+                <router-link to="#" class="page-title">
+                  Products
+                </router-link>
+              ),
+              sessions: landingState.value.other.sessions,
+              rate: `${landingState.value.other.rate}%`,
+              ctr: landingState.value.other.goals,
+              percentage: `${landingState.value.other.percent}%`,
+            },
+          ]
+        : [],
+    );
 
     const handleActiveChangeLanding = (event, value) => {
       event.preventDefault();
@@ -103,68 +168,6 @@ const TopLandingPages = {
 
     onMounted(() => {
       store.dispatch('landingPageGetData');
-      landingData.value = landingState.value !== null && [
-        {
-          key: '1',
-          pages: (
-            <router-link to="#" class="page-title">
-              Homepage
-            </router-link>
-          ),
-          sessions: landingState.value.direct.sessions,
-          rate: `${landingState.value.direct.rate}%`,
-          ctr: landingState.value.direct.goals,
-          percentage: `${landingState.value.direct.percent}%`,
-        },
-        {
-          key: '2',
-          pages: (
-            <router-link to="#" class="page-title">
-              Our Service
-            </router-link>
-          ),
-          sessions: landingState.value.email.sessions,
-          rate: `${landingState.value.email.rate}%`,
-          ctr: landingState.value.email.goals,
-          percentage: `${landingState.value.email.percent}%`,
-        },
-        {
-          key: '3',
-          pages: (
-            <router-link to="#" class="page-title">
-              List of Products
-            </router-link>
-          ),
-          sessions: landingState.value.search.sessions,
-          rate: `${landingState.value.search.rate}%`,
-          ctr: landingState.value.search.goals,
-          percentage: `${landingState.value.search.percent}%`,
-        },
-        {
-          key: '4',
-          pages: (
-            <router-link to="#" class="page-title">
-              Contact us
-            </router-link>
-          ),
-          sessions: landingState.value.media.sessions,
-          rate: `${landingState.value.media.rate}%`,
-          ctr: landingState.value.media.goals,
-          percentage: `${landingState.value.media.percent}%`,
-        },
-        {
-          key: '5',
-          pages: (
-            <router-link to="#" class="page-title">
-              Products
-            </router-link>
-          ),
-          sessions: landingState.value.other.sessions,
-          rate: `${landingState.value.other.rate}%`,
-          ctr: landingState.value.other.goals,
-          percentage: `${landingState.value.other.percent}%`,
-        },
-      ];
     });
     return {
       landingState,

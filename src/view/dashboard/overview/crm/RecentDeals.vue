@@ -1,6 +1,6 @@
 <template>
   <div class="full-width-table">
-    <sdCards title="Top Selling Products" bodypadding="0px">
+    <sdCards title="Recent Deals" bodypadding="0px">
       <template #button>
         <div class="card-nav">
           <ul>
@@ -27,79 +27,77 @@
           </ul>
         </div>
       </template>
-      <div class="table-bordered top-seller-table table-responsive">
-        <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
-      </div>
+      <RecentDealsWrapper>
+        <div class="table-bordered recent-deals-table table-responsive">
+          <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" :showHeader="false" />
+        </div>
+      </RecentDealsWrapper>
     </sdCards>
   </div>
 </template>
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
+import { RecentDealsWrapper } from '../../style';
 
 const sellingColumns = [
   {
-    title: 'Product Name',
+    title: '',
     dataIndex: 'name',
     key: 'name',
   },
   {
-    title: 'Price',
-    dataIndex: 'price',
-    key: 'price',
-  },
-  {
-    title: 'Sold',
-    dataIndex: 'sold',
-    key: 'sold',
-  },
-  {
-    title: 'Revenue',
-    dataIndex: 'revenue',
-    key: 'revenue',
+    title: '',
+    dataIndex: 'amount',
+    key: 'amount',
   },
 ];
 
-const TopSellingProduct = {
-  name: 'TopSellingProduct',
-  components: {},
+const RecentDeals = {
+  name: 'RecentDeals',
+  components: { RecentDealsWrapper },
   setup() {
     const { state, dispatch } = useStore();
-    const topSaleState = computed(() => state.chartContent.topSaleData);
     const products = ref('year');
+    const recentDealState = computed(() => state.chartContent.recentDealData);
+    onMounted(() => dispatch('recentDealGetData'));
 
     const handleActiveChangeProducts = (event, value) => {
       event.preventDefault();
       products.value = value;
-      dispatch('topSaleFilterData', value);
+      dispatch('recentDealFilterData', value);
     };
 
     const sellingData = computed(() =>
-      topSaleState.value
-        ? topSaleState.value.map(value => {
-            const { key, name, price, sold, revenue } = value;
+      recentDealState.value
+        ? recentDealState.value.map(value => {
+            const { key, name, date, price, img } = value;
             return {
               key,
-              name,
-              price,
-              sold,
-              revenue,
+              name: (
+                <div class="dealing-author">
+                  <img src={require(`../../../../${img}`)} alt="" />
+                  <div class="dealing-author-info">
+                    <h4>{name}</h4>
+                    <p>{date}</p>
+                  </div>
+                </div>
+              ),
+              amount: <span class="deal-amount">{price}</span>,
             };
           })
         : [],
     );
 
-    onMounted(() => dispatch('topSaleGetData'));
-
     return {
-      topSaleState,
+      recentDealState,
+      products,
       handleActiveChangeProducts,
       sellingColumns,
       sellingData,
-      products,
     };
   },
 };
 
-export default TopSellingProduct;
+export default RecentDeals;
 </script>

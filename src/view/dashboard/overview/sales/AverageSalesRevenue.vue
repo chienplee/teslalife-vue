@@ -1,27 +1,6 @@
 <template>
   <PerformanceChartWrapper>
-    <sdCards v-if="performanceState !== null" more title="Website Performance">
-      <template #button>
-        <div class="card-nav">
-          <ul>
-            <li :class="performance === 'week' ? 'active' : 'deactivate'">
-              <router-link @click="e => handleActiveChangePerformance(e, 'week')" to="#">
-                Week
-              </router-link>
-            </li>
-            <li :class="performance === 'month' ? 'active' : 'deactivate'">
-              <router-link @click="e => handleActiveChangePerformance(e, 'month')" to="#">
-                Month
-              </router-link>
-            </li>
-            <li :class="performance === 'year' ? 'active' : 'deactivate'">
-              <router-link @click="e => handleActiveChangePerformance(e, 'year')" to="#">
-                Year
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </template>
+    <sdCards v-if="performanceState" more title="Average Sales Revenue">
       <template #more>
         <router-link to="#">
           <sdFeatherIcons size="16" type="printer" />
@@ -44,13 +23,34 @@
           <span>CSV</span>
         </router-link>
       </template>
+      <template #button>
+        <div class="card-nav">
+          <ul>
+            <li :class="performance === 'week' ? 'active' : 'deactivate'">
+              <router-link @click="e => handleActiveChangePerformance(e, 'week')" to="#">
+                Week
+              </router-link>
+            </li>
+            <li :class="performance === 'month' ? 'active' : 'deactivate'">
+              <router-link @click="e => handleActiveChangePerformance(e, 'month')" to="#">
+                Month
+              </router-link>
+            </li>
+            <li :class="performance === 'year' ? 'active' : 'deactivate'">
+              <router-link @click="e => handleActiveChangePerformance(e, 'year')" to="#">
+                Year
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </template>
       <Pstates>
         <div
-          @click="() => onPerformanceTab('users')"
+          @click="e => onPerformanceTab(e, 'users')"
           :class="`growth-upward ${performanceTab === 'users' && 'active'}`"
           role="button"
         >
-          <p>Users</p>
+          <p>This Month Revenue</p>
           <sdHeading as="h1">
             {{ performanceState.users[0] }}
             <sub>
@@ -59,41 +59,15 @@
           </sdHeading>
         </div>
         <div
-          @click="() => onPerformanceTab('sessions')"
+          @click="e => onPerformanceTab(e, 'sessions')"
           :class="`growth-upward ${performanceTab === 'sessions' && 'active'}`"
           role="button"
         >
-          <p>Sessions</p>
+          <p>Last Month Revenue</p>
           <sdHeading as="h1">
             {{ performanceState.sessions[0] }}
             <sub>
               <span> <sdFeatherIcons type="arrow-up" size="14" /> 47% </span>
-            </sub>
-          </sdHeading>
-        </div>
-        <div
-          @click="() => onPerformanceTab('bounce')"
-          :class="`growth-downward ${performanceTab === 'bounce' && 'active'}`"
-          role="button"
-        >
-          <p>Bounce Rate</p>
-          <sdHeading as="h1">
-            {{ performanceState.bounce[0] }}
-            <sub>
-              <span> <sdFeatherIcon type="arrow-down" size="14" /> 28% </span>
-            </sub>
-          </sdHeading>
-        </div>
-        <div
-          @click="() => onPerformanceTab('duration')"
-          :class="`growth-upward ${performanceTab === 'duration' && 'active'}`"
-          role="button"
-        >
-          <p>Session Duration</p>
-          <sdHeading as="h1">
-            {{ performanceState.duration[0] }}
-            <sub>
-              <span> <sdFeatherIcons icon="arrow-up" size="14" /> 13% </span>
             </sub>
           </sdHeading>
         </div>
@@ -104,18 +78,17 @@
       </div>
       <div v-else class="performance-lineChart">
         <sdChartContainer class="parentContainer">
-          <Chart
-            v-if="performanceState"
+          <Chartjs
             className="performance"
-            type="line"
             id="performance"
+            type="line"
             :labels="performanceState.labels"
             :datasets="performanceDatasets"
             :options="chartOptions"
             :height="height"
           />
         </sdChartContainer>
-        <ul>
+        <ul v-if="performanceDatasets">
           <li v-for="(item, index) in performanceDatasets" :key="index + 1" class="custom-label">
             <span
               :style="{
@@ -130,74 +103,73 @@
   </PerformanceChartWrapper>
 </template>
 <script>
-import { useStore } from 'vuex';
-import { computed, ref, onMounted } from 'vue';
 import { PerformanceChartWrapper, Pstates } from '../../style';
 import { chartLinearGradient, customTooltips } from '../../../../components/utilities/utilities';
-import Chart from '../../../../components/utilities/chartjs';
+import Chartjs from '../../../../components/utilities/chartjs';
+import { useStore } from 'vuex';
+import { computed, onMounted, ref } from 'vue';
 
-const WebsitePerformance = {
-  components: { PerformanceChartWrapper, Pstates, Chart },
-
+const AverageSalesRevenue = {
+  name: 'AverageSalesRevenue',
+  components: { PerformanceChartWrapper, Pstates, Chartjs },
   setup() {
-    const store = useStore();
+    const { state, dispatch } = useStore();
+
+    const performanceState = computed(() => state.chartContent.performanceData);
+    const preIsLoading = computed(() => state.chartContent.perLoading);
     const performance = ref('year');
     const performanceTab = ref('users');
-    const height = ref(window.innerWidth <= 575 ? 200 : 95);
 
-    const performanceState = computed(() => store.state.chartContent.performanceData);
-    const preIsLoading = computed(() => store.state.chartContent.perLoading);
+    const height = ref(window.innerWidth <= 575 ? 200 : 100);
 
-    const performanceDatasets = computed(() => [
-      {
-        data: performanceState.value[performanceTab.value][1],
-        borderColor: '#5F63F2',
-        borderWidth: 4,
-        fill: true,
-        backgroundColor: () => chartMethods('performance', ['#5F63F230', '#ffffff05']),
-        label: 'Current period',
-        pointStyle: 'circle',
-        pointRadius: '0',
-        hoverRadius: '9',
-        pointBorderColor: '#fff',
-        pointBackgroundColor: '#5F63F2',
-        hoverBorderWidth: 5,
-      },
-      {
-        data: performanceState.value[performanceTab.value][2],
-        borderColor: '#C6D0DC',
-        borderWidth: 2,
-        fill: false,
-        backgroundColor: '#00173750',
-        label: 'Previous period',
-        borderDash: [3, 3],
-        pointRadius: '0',
-        hoverRadius: '0',
-      },
-    ]);
-
+    onMounted(() => dispatch('performanceGetData'));
     const handleActiveChangePerformance = (event, value) => {
       event.preventDefault();
       performance.value = value;
-      return store.dispatch('performanceFilterData', value);
+      dispatch('performanceFilterData', value);
     };
 
-    function chartMethods(elementId, color) {
-      return chartLinearGradient(document.querySelector(`.${elementId}`), 300, {
-        start: color[0],
-        end: color[1],
-      });
-    }
-
-    const onPerformanceTab = value => {
+    const onPerformanceTab = (event, value) => {
+      event.preventDefault();
       performanceTab.value = value;
-      return store.dispatch('setIsLoading');
+      return dispatch('setIsLoading');
     };
 
-    onMounted(() => {
-      store.dispatch('performanceGetData');
-    });
-
+    const performanceDatasets = computed(() =>
+      performanceState.value
+        ? [
+            {
+              data: performanceState.value[performanceTab.value][1],
+              borderColor: '#5F63F2',
+              borderWidth: 4,
+              fill: true,
+              backgroundColor: () =>
+                chartLinearGradient(document.getElementById('performance'), 300, {
+                  start: '#5F63F230',
+                  end: '#ffffff05',
+                }),
+              label: 'Current period',
+              pointStyle: 'circle',
+              pointRadius: '0',
+              hoverRadius: '9',
+              pointBorderColor: '#fff',
+              pointBackgroundColor: '#5F63F2',
+              hoverBorderWidth: 5,
+            },
+            {
+              data: performanceState.value[performanceTab.value][2],
+              borderColor: '#C6D0DC',
+              borderWidth: 2,
+              fill: false,
+              backgroundColor: '#00173750',
+              label: 'Previous period',
+              borderDash: [3, 3],
+              pointRadius: '0',
+              hoverRadius: '0',
+            },
+          ]
+        : [],
+    );
     const chartOptions = {
       maintainAspectRatio: true,
       elements: {
@@ -266,22 +238,19 @@ const WebsitePerformance = {
         ],
       },
     };
-
     return {
-      performanceState,
+      performanceDatasets,
+      onPerformanceTab,
+      handleActiveChangePerformance,
       preIsLoading,
       performance,
       performanceTab,
-      handleActiveChangePerformance,
-      onPerformanceTab,
+      performanceState,
       height,
       chartOptions,
-      chartLinearGradient,
-      chartMethods,
-      performanceDatasets,
     };
   },
 };
 
-export default WebsitePerformance;
+export default AverageSalesRevenue;
 </script>

@@ -54,7 +54,7 @@
   </RevenueTableWrapper>
 </template>
 <script>
-import { computed, onMounted, ref, watchEffect } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import { RevenueTableWrapper } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
@@ -93,86 +93,80 @@ const RevenueGenerated = {
   components: { RevenueTableWrapper, Chart },
   setup() {
     const store = useStore();
-    const revenueData = ref([]);
+    const revenueData = computed(() =>
+      generatedState.value
+        ? generatedState.value.map(value => {
+            const { key, name, visitors, page_View, revenue, trend } = value;
+            return {
+              key,
+              name,
+              visitors,
+              page_View,
+              revenue,
+              trend: (
+                <Chart
+                  className={'generate' + key}
+                  type="line"
+                  labels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
+                  datasets={[
+                    {
+                      data: trend.data,
+                      borderColor: trend.borderColor,
+                      borderWidth: 2,
+                      fill: false,
+                    },
+                  ]}
+                  height={30}
+                  width={120}
+                  options={{
+                    legend: {
+                      display: false,
+                      labels: {
+                        display: false,
+                      },
+                    },
+                    scales: {
+                      yAxes: [
+                        {
+                          stacked: true,
+                          gridLines: {
+                            display: false,
+                          },
+                          ticks: {
+                            display: false,
+                          },
+                        },
+                      ],
+                      xAxes: [
+                        {
+                          stacked: true,
+                          barPercentage: 1,
+                          gridLines: {
+                            display: false,
+                          },
+                          ticks: {
+                            display: false,
+                          },
+                        },
+                      ],
+                    },
+                    elements: {
+                      point: {
+                        radius: 0,
+                      },
+                    },
+                  }}
+                />
+              ),
+            };
+          })
+        : [],
+    );
     const generatedState = computed(() => store.state.chartContent.generatedData);
     const generated = ref('year');
 
-    const dataMounted = () => {
-      revenueData.value = [];
-      generatedState.value &&
-        generatedState.value.map(value => {
-          const { key, name, visitors, page_View, revenue, trend } = value;
-          return revenueData.value.push({
-            key,
-            name,
-            visitors,
-            page_View,
-            revenue,
-            trend: (
-              <Chart
-                className={'generate' + key}
-                type="line"
-                labels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
-                datasets={[
-                  {
-                    data: trend.data,
-                    borderColor: trend.borderColor,
-                    borderWidth: 2,
-                    fill: false,
-                  },
-                ]}
-                height={30}
-                width={120}
-                options={{
-                  legend: {
-                    display: false,
-                    labels: {
-                      display: false,
-                    },
-                  },
-                  scales: {
-                    yAxes: [
-                      {
-                        stacked: true,
-                        gridLines: {
-                          display: false,
-                        },
-                        ticks: {
-                          display: false,
-                        },
-                      },
-                    ],
-                    xAxes: [
-                      {
-                        stacked: true,
-                        barPercentage: 1,
-                        gridLines: {
-                          display: false,
-                        },
-                        ticks: {
-                          display: false,
-                        },
-                      },
-                    ],
-                  },
-                  elements: {
-                    point: {
-                      radius: 0,
-                    },
-                  },
-                }}
-              />
-            ),
-          });
-        });
-    };
-
     onMounted(() => {
       store.dispatch('generatedGetData');
-      dataMounted();
-    });
-    watchEffect(() => {
-      dataMounted();
     });
 
     const handleActiveChangeGenerated = (event, value) => {
