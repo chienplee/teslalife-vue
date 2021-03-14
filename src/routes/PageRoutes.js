@@ -112,4 +112,14 @@ export default [
       },
     ],
   },
+  {
+    path: '/page/knowledgebase/all-articles',
+    name: 'all-articles',
+    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
+  },
+  {
+    path: '/page/knowledgebase/single',
+    name: 'knowledge-base-singale',
+    component: () => import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
+  },
 ];

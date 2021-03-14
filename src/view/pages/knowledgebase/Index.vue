@@ -49,7 +49,7 @@
                   >
                     <h4 class="single-article-title">{{ article.title }}</h4>
                     <p>{{ article.text }}</p>
-                    <router-link class="btn-link" to="/admin/knowledgebaseSingle/1">
+                    <router-link class="btn-link" to="/page/knowledgebase/single">
                       Read more
                       <ArrowRightOutlined />
                     </router-link>
@@ -80,7 +80,7 @@ import KnowledgeBaseTop from './overview/knowledgebase/KnowledgeTop';
 import { KnowledgebaseArticleWrap, ArticleTabWrap, PopularArticleWrap, CtaWrap } from './style';
 import articles from '../../../demoData/article.json';
 export default {
-  name: 'ComingSoon',
+  name: 'KnowledgeBase',
   components: {
     Main,
     ArrowRightOutlined,

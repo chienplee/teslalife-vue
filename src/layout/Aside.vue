@@ -352,6 +352,16 @@
             Knowledge Base
           </router-link>
         </a-menu-item>
+        <a-menu-item key="all-articles">
+          <router-link click="toggleCollapsed" to="/page/knowledgebase/all-articles">
+            All Articles
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="knowledge-base-singale">
+          <router-link click="toggleCollapsed" to="/page/knowledgebase/single">
+            Single Article
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
       <a-menu-item key="support">
         <sdFeatherIcons type="circle" />

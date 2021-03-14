@@ -7,7 +7,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -19,7 +19,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
@@ -29,7 +29,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -41,7 +41,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
@@ -51,7 +51,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -63,7 +63,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
@@ -73,7 +73,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -85,7 +85,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
@@ -95,7 +95,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -107,7 +107,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
@@ -117,7 +117,7 @@
             <h2 class="sDash_article-tab-signle__title">Introduction to Plugin</h2>
             <ul class="sDash_article-tab-signle__list">
               <li>
-                <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                <router-link to="/page/knowledgebase/single">Log in and out of Plugins</router-link>
               </li>
               <li>
                 <router-link to="#">Switch between accounts</router-link>
@@ -129,7 +129,7 @@
                 <router-link to="#">Reactivate your account</router-link>
               </li>
             </ul>
-            <router-link to="/admin/knowledgebaseSingle/1" class="btn-link">
+            <router-link to="/page/knowledgebase/single" class="btn-link">
               See more <ArrowRightOutlined />
             </router-link>
           </div>
