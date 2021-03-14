@@ -4,17 +4,17 @@
       <template #button>
         <div class="card-nav">
           <ul>
-            <li :class="state.twitterOverviewTabActive === 'week' ? 'active' : 'deactivate'">
+            <li :class="twitterOverviewTabActive === 'week' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeTwitter(e, 'week')" to="#">
                 Week
               </router-link>
             </li>
-            <li :class="state.twitterOverviewTabActive === 'month' ? 'active' : 'deactivate'">
+            <li :class="twitterOverviewTabActive === 'month' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeTwitter(e, 'month')" to="#">
                 Month
               </router-link>
             </li>
-            <li :class="state.twitterOverviewTabActive === 'year' ? 'active' : 'deactivate'">
+            <li :class="twitterOverviewTabActive === 'year' ? 'active' : 'deactivate'">
               <router-link @click="e => handleActiveChangeTwitter(e, 'year')" to="#">
                 Year
               </router-link>
@@ -196,6 +196,8 @@
 import { LineChartWrapper, ChartContainer } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 const lineChartPointStyle = {
   borderColor: '#C6D0DC',
@@ -298,41 +300,33 @@ const chartOptions = {
 
 const TwitterOverview = {
   name: 'TwitterOverview',
-  data() {
-    return {
-      chartOptions,
-      lineChartPointStyle,
-      state: {
-        youtubeSubscribeTabActive: 'year',
-        twitterOverviewTabActive: 'month',
-        instagramOverviewTabActive: 'month',
-        linkdinOverviewTabActive: 'month',
-      },
-    };
-  },
   components: {
     Chart,
     LineChartWrapper,
     ChartContainer,
   },
-  computed: {
-    twitterOverviewState() {
-      return this.$store.state.chartContent.twitterOverviewData;
-    },
-    twIsLoading() {
-      return this.$store.state.chartContent.twLoading;
-    },
-  },
-  mounted() {
-    this.$store.dispatch('twitterOverviewGetData');
-  },
+  setup() {
+    const { state, dispatch } = useStore();
+    const twitterOverviewTabActive = ref('month');
+    onMounted(() => dispatch('twitterOverviewGetData'));
 
-  methods: {
-    handleActiveChangeTwitter(event, value) {
+    const twitterOverviewState = computed(() => state.chartContent.twitterOverviewData);
+    const twIsLoading = computed(() => state.chartContent.twLoading);
+
+    const handleActiveChangeTwitter = (event, value) => {
       event.preventDefault();
-      this.state.twitterOverviewTabActive = value;
-      return this.$store.dispatch('twitterOverviewFilterData', value);
-    },
+      twitterOverviewTabActive.value = value;
+      return dispatch('twitterOverviewFilterData', value);
+    };
+
+    return {
+      twitterOverviewTabActive,
+      twitterOverviewState,
+      twIsLoading,
+      chartOptions,
+      lineChartPointStyle,
+      handleActiveChangeTwitter,
+    };
   },
 };
 

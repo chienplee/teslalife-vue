@@ -195,6 +195,8 @@
 import { Focard, CardGroup } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { chartLinearGradient, customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   name: 'FacebookOverview',
@@ -203,10 +205,37 @@ export default {
     CardGroup,
     Chart,
   },
-  data() {
+  setup() {
+    const value = ref('today');
+    const height = ref(null);
+    const { dispatch, state } = useStore();
+
+    onMounted(() => {
+      height.value = window.innerWidth <= 1199 ? 100 : 115;
+      dispatch('forcastOverviewGetData');
+    });
+
+    const forcastOverviewState = computed(() => state.chartContent.forcastData);
+    const foIsLoading = computed(() => state.chartContent.foLoading);
+
+    const chartMethods = (elementId, color) => {
+      return chartLinearGradient(document.querySelector(`.${elementId}`), 165, {
+        start: color[0],
+        end: color[1],
+      });
+    };
+
+    const forcastOverview = e => {
+      dispatch('forcastOverviewFilterData', e.target.value);
+    };
+
     return {
-      value: 'today',
-      height: null,
+      value,
+      height,
+      forcastOverviewState,
+      foIsLoading,
+      chartMethods,
+      forcastOverview,
       areaChartOption: {
         maintainAspectRatio: true,
         responsive: false,
@@ -288,29 +317,6 @@ export default {
         },
       },
     };
-  },
-  methods: {
-    chartMethods(elementId, color) {
-      return chartLinearGradient(document.querySelector(`.${elementId}`), 165, {
-        start: color[0],
-        end: color[1],
-      });
-    },
-    forcastOverview(e) {
-      this.$store.dispatch('forcastOverviewFilterData', e.target.value);
-    },
-  },
-  computed: {
-    forcastOverviewState() {
-      return this.$store.state.chartContent.forcastData;
-    },
-    foIsLoading() {
-      return this.$store.state.chartContent.foLoading;
-    },
-  },
-  mounted() {
-    this.height = window.innerWidth <= 1199 ? 100 : 115;
-    this.$store.dispatch('forcastOverviewGetData');
   },
 };
 </script>

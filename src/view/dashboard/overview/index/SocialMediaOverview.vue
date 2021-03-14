@@ -44,7 +44,7 @@ import {
 const SocialMediaOverview = {
   name: 'SocialMediaOverview',
   components: { SocialMediaWrapper, SocialMediaContent },
-  data() {
+  setup() {
     return {
       faFacebookF,
       faTwitter,

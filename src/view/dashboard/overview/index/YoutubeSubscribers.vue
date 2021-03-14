@@ -71,6 +71,8 @@
 import { CardBarChart } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips } from '../../../../components/utilities/utilities';
+import { computed, onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 const YoutubeSubscribers = {
   name: 'YoutubeSubscribers',
@@ -78,39 +80,33 @@ const YoutubeSubscribers = {
     CardBarChart,
     Chart,
   },
-  data() {
-    return {
-      youtubeSubscribeTabActive: 'year',
-    };
-  },
-  computed: {
-    youtubeSubscribeState() {
-      return this.$store.state.chartContent.youtubeSubscribeData;
-    },
-    yuIsLoading() {
-      return this.$store.state.chartContent.yuLoading;
-    },
-    youtubeSubscribeDatasets() {
-      return [
-        {
-          data: this.$store.state.chartContent.youtubeSubscribeData.gained,
-          backgroundColor: '#5F63F280',
-          hoverBackgroundColor: '#5F63F2',
-          label: 'Gained',
-          maxBarThickness: 10,
-          barThickness: 12,
-        },
-        {
-          data: this.$store.state.chartContent.youtubeSubscribeData.lost,
-          backgroundColor: '#FF4D4F80',
-          hoverBackgroundColor: '#FF4D4F',
-          label: 'Lost',
-          maxBarThickness: 10,
-          barThickness: 12,
-        },
-      ];
-    },
-    chartOptions() {
+  setup() {
+    const { state, dispatch } = useStore();
+    const youtubeSubscribeTabActive = ref('year');
+
+    onMounted(() => dispatch('youtubeSubscribeGetData'));
+
+    const youtubeSubscribeState = computed(() => state.chartContent.youtubeSubscribeData);
+    const yuIsLoading = computed(() => state.chartContent.yuLoading);
+    const youtubeSubscribeDatasets = computed(() => [
+      {
+        data: state.chartContent.youtubeSubscribeData.gained,
+        backgroundColor: '#5F63F280',
+        hoverBackgroundColor: '#5F63F2',
+        label: 'Gained',
+        maxBarThickness: 10,
+        barThickness: 12,
+      },
+      {
+        data: state.chartContent.youtubeSubscribeData.lost,
+        backgroundColor: '#FF4D4F80',
+        hoverBackgroundColor: '#FF4D4F',
+        label: 'Lost',
+        maxBarThickness: 10,
+        barThickness: 12,
+      },
+    ]);
+    const chartOptions = computed(() => {
       return {
         maintainAspectRatio: true,
         responsive: true,
@@ -144,8 +140,8 @@ const YoutubeSubscribers = {
                 beginAtZero: true,
                 fontSize: 12,
                 fontColor: '#182b49',
-                max: Math.max(...this.$store.state.chartContent.youtubeSubscribeData.gained),
-                stepSize: Math.max(...this.$store.state.chartContent.youtubeSubscribeData.gained) / 5,
+                max: Math.max(...state.chartContent.youtubeSubscribeData.gained),
+                stepSize: Math.max(...state.chartContent.youtubeSubscribeData.gained) / 5,
                 display: true,
                 min: 0,
                 padding: 10,
@@ -193,17 +189,20 @@ const YoutubeSubscribers = {
           },
         },
       };
-    },
-  },
-  mounted() {
-    this.$store.dispatch('youtubeSubscribeGetData');
-  },
-  methods: {
-    handleActiveChangeYoutube(e, value) {
+    });
+    const handleActiveChangeYoutube = (e, value) => {
       e.preventDefault();
-      this.youtubeSubscribeTabActive = value;
-      this.$store.dispatch('youtubeSubscribeFilterData', value);
-    },
+      youtubeSubscribeTabActive.value = value;
+      dispatch('youtubeSubscribeFilterData', value);
+    };
+    return {
+      handleActiveChangeYoutube,
+      youtubeSubscribeState,
+      yuIsLoading,
+      youtubeSubscribeDatasets,
+      chartOptions,
+      youtubeSubscribeTabActive,
+    };
   },
 };
 
