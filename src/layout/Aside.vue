@@ -271,6 +271,24 @@
             Google Chart
           </router-link>
         </a-menu-item>
+        <a-sub-menu key="apexchart">
+          <template v-slot:title><sdFeatherIcons type="bar-chart" /><span>Apex Charts</span></template>
+          <a-menu-item key="columnChart">
+            <router-link click="toggleCollapsed" to="/chart/column-chart">
+              Column Charts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="lineChart">
+            <router-link click="toggleCollapsed" to="/chart/line-chart">
+              Line Charts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="areaChart">
+            <router-link click="toggleCollapsed" to="/chart/area-chart">
+              Area Charts
+            </router-link>
+          </a-menu-item>
+        </a-sub-menu>
       </a-sub-menu>
 
       <a-sub-menu key="forms">
