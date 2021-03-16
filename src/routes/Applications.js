@@ -2,7 +2,7 @@ export default [
   {
     path: '/app/mail',
     name: 'mail',
-    component: () => import('../view/apps/email/Email'),
+    component: () => import(/* webpackChunkName: "mail" */ '../view/apps/email/Email'),
     children: [
       {
         path: '/app/mail',
@@ -31,6 +31,21 @@ export default [
       {
         path: '/app/mail/trash',
         component: () => import(/* webpackChunkName: "Trash" */ '@/view/apps/email/overview/Trash.vue'),
+      },
+      {
+        path: '/app/mail-single/:id',
+        name: 'singleMail',
+        component: () => import(/* webpackChunkName: "singleMail" */ '@/view/apps/email/overview/MailDetailView.vue'),
+        children: [
+          {
+            path: '/app/mail-single/:id/replay',
+            component: () => <h1>Hello replay</h1>,
+          },
+          {
+            path: '/app/mail-single/:id/forward',
+            component: () => <h1>Hello forward</h1>,
+          },
+        ],
       },
     ],
   },
