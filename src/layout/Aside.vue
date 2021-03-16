@@ -297,6 +297,26 @@
               Area Charts
             </router-link>
           </a-menu-item>
+          <a-menu-item key="barChart">
+            <router-link click="toggleCollapsed" to="/chart/bar-chart">
+              Bar Charts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="pieChart">
+            <router-link click="toggleCollapsed" to="/chart/pie-chart">
+              Pie Charts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="radialbarChart">
+            <router-link click="toggleCollapsed" to="/chart/radialbar-chart">
+              Radialbar Charts
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="radarChart">
+            <router-link click="toggleCollapsed" to="/chart/radar-charts">
+              Radar Charts
+            </router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-sub-menu>
 
