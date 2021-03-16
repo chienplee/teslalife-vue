@@ -19,13 +19,13 @@
           <sdCards title="Basic Radialbar Chart">
             <basic />
           </sdCards>
-          <sdCards title="Custom Angle Circle Chart">
+          <sdCards title="Radar Multiple Series Chart">
             <radar-multiple-series />
           </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Gradient Circle Chart">
-            <!-- <gradient /> -->
+          <sdCards title="Radar With Polygon Fill Chart">
+            <radar-with-polygon-fill />
           </sdCards>
         </a-col>
       </a-row>
@@ -36,11 +36,13 @@
 <script>
 import Basic from '../../../components/apexcharts/radar-charts/Basic';
 import RadarMultipleSeries from '../../../components/apexcharts/radar-charts/RadarMultipleSeries';
+import RadarWithPolygonFill from '../../../components/apexcharts/radar-charts/RadarWithPolygonFill';
 export default {
   name: 'RadarCharts',
   components: {
     Basic,
     RadarMultipleSeries,
+    RadarWithPolygonFill,
   },
 };
 </script>
