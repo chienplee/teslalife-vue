@@ -141,7 +141,7 @@ const Content = {
           content: (
             <EmailHeader>
               <sdHeading as="h5">
-                <router-link to={`/admin/email/single/${id}`}>{subject}</router-link>
+                <router-link to={`/app/mail-single/${id}`}>{subject}</router-link>
                 <span class={`mail-badge ${key <= 1 ? 'primary' : ''}`}>{type}</span>
               </sdHeading>
               <p>{textRefactor(body, 10)}</p>

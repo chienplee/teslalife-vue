@@ -449,7 +449,7 @@ const EmailNav = Styled.nav`
           ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 20px;
           color: ${({ theme }) => theme['extra-light-color']};
         }
-        &.router-link-active{
+        &.router-link-exact-active{
           background: rgba(95,99,242,0.1);
           color: ${({ theme }) => theme['primary-color']};
           svg,
