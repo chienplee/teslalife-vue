@@ -35,6 +35,26 @@ export default [
     component: () => import(/* webpackChunkName: "ColumChart" */ '@/view/charts/apexcharts/ColumnCharts.vue'),
   },
   {
+    path: '/chart/bar-chart',
+    name: 'barChart',
+    component: () => import(/* webpackChunkName: "BarCharts" */ '@/view/charts/apexcharts/BarCharts.vue'),
+  },
+  {
+    path: '/chart/pie-chart',
+    name: 'pieChart',
+    component: () => import(/* webpackChunkName: "PieCharts" */ '@/view/charts/apexcharts/PicCharts.vue'),
+  },
+  {
+    path: '/chart/radialbar-chart',
+    name: 'radialbarChart',
+    component: () => import(/* webpackChunkName: "RadialbarCharts" */ '@/view/charts/apexcharts/RadialbarCharts.vue'),
+  },
+  {
+    path: '/chart/radar-charts',
+    name: 'radarChart',
+    component: () => import(/* webpackChunkName: "RadarCharts" */ '@/view/charts/apexcharts/RadarCharts.vue'),
+  },
+  {
     path: '/icons/featherIcons',
     name: 'featherIcons',
     component: () => import(/* webpackChunkName: "FeatherIcons" */ '@/view/icons/FeatherIcons.vue'),
