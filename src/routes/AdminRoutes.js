@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter, createWebHashHistory, createMemoryHistory } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router';
 import FeaturesRoutes from './FeaturesRoutes';
 import PageRoutes from './PageRoutes';
 import Components from './Components';
@@ -44,8 +44,6 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  hash: createWebHashHistory(),
-  abstract: createMemoryHistory(),
   routes,
 });
 

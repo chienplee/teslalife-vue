@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader title="Email"
+  <sdPageHeader :title="pageTitle"
     ><template v-slot:buttons>
       <div class="page-header-actions">
         <sdCalendarButton />
@@ -14,6 +14,7 @@
   </sdPageHeader>
   <ComposeMail v-if="isMailEditorOpen" :close="closeMailCompose" />
   <Main>
+    <!-- {{ params }} -->
     <EmailWrapper>
       <a-row class="justify-content-center" :gutter="25">
         <a-col class="trigger-col" :xxl="5" :xl="7" :lg="8" :xs="24">
@@ -72,9 +73,9 @@
 import EmailNavbar from './overview/Navbar';
 import ComposeMail from './overview/Compose';
 import { EmailWrapper, MailSideBar } from './overview/style';
-// import { useStore } from 'vuex';
 import { Main } from '../../styled';
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
 
 const Email = {
   name: 'Email',
@@ -85,11 +86,10 @@ const Email = {
     };
   },
   setup() {
-    // const {state, dispatch} = useStore();
     const responsive = ref(0);
     const collapsed = ref(false);
     const isMailEditorOpen = ref(false);
-
+    const pageTitle = computed(() => useRoute().matched[1].name);
     const toggleMailComposer = () => {
       isMailEditorOpen.value = !isMailEditorOpen.value;
     };
@@ -111,7 +111,15 @@ const Email = {
       window.addEventListener('resize', updateSize);
     });
 
-    return { responsive, toggleCollapsed, collapsed, toggleMailComposer, isMailEditorOpen, closeMailCompose };
+    return {
+      responsive,
+      pageTitle,
+      toggleCollapsed,
+      collapsed,
+      toggleMailComposer,
+      isMailEditorOpen,
+      closeMailCompose,
+    };
   },
 };
 

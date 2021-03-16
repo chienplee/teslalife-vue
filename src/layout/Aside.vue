@@ -59,6 +59,15 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+
+      <a-menu-item key="chat">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/app/chat">
+            Chat
+          </router-link>
+        </span>
+      </a-menu-item>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

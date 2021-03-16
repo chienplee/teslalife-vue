@@ -285,10 +285,11 @@ const Single = {
     const { params, matched } = useRoute();
     const email = computed(() => state.email.data[0]);
     const replyMessage = ref(0);
+
     onMounted(() => {
-      console.log(useRoute());
       dispatch('filterSinglePage', parseInt(params.id));
     });
+
     const replyMail = async replyMessage => {
       replyMessage.value = replyMessage;
     };
