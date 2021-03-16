@@ -11,10 +11,3 @@ app.component('l-tile-layer', LTileLayer);
 app.component('l-marker', LMarker);
 app.component('l-wms-tile-layer', LWMSTileLayer);
 app.component('l-control-layer', LControlLayers);
-
-// app.use(VueGoogleMap, {
-//   load: {
-//     apiKey: 'AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08',
-//     libraries: ['...']
-//   }
-// });

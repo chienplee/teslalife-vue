@@ -2543,7 +2543,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 }
 
 .starActive svg {
-  color: red;
+  color: rgb(255, 157, 0) !important;
 }
 
 /* vectormap zoom in / zoom out */

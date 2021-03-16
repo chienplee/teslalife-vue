@@ -12,7 +12,7 @@
       </div>
     </template>
   </sdPageHeader>
-
+  <ComposeMail v-if="isMailEditorOpen" :close="closeMailCompose" />
   <Main>
     <EmailWrapper>
       <a-row class="justify-content-center" :gutter="25">
@@ -57,28 +57,28 @@
               </div>
 
               <div class="mail-sidebar-bottom">
-                <!-- <EmailNavbar path={pathName} toggleCollapsed={toggleCollapsed} /> -->
+                <EmailNavbar :path="path + '/'" :toggleCollapsed="toggleCollapsed" />
               </div>
             </sdCards>
           </MailSideBar>
         </a-col>
 
-        <a-col :xxl="19" :xl="17" :lg="16"> </a-col>
+        <a-col :xxl="19" :xl="17" :lg="16"> <router-view></router-view> </a-col>
       </a-row>
     </EmailWrapper>
   </Main>
 </template>
 <script>
 import EmailNavbar from './overview/Navbar';
-// import ComposeMail from './overview/Compose';
-import { /*EmailWrapper, */ MailSideBar } from './overview/style';
+import ComposeMail from './overview/Compose';
+import { EmailWrapper, MailSideBar } from './overview/style';
 // import { useStore } from 'vuex';
 import { Main } from '../../styled';
 import { onMounted, ref } from 'vue';
 
 const Email = {
   name: 'Email',
-  components: { Main, MailSideBar, EmailNavbar },
+  components: { Main, MailSideBar, EmailNavbar, ComposeMail, EmailWrapper },
   data() {
     return {
       path: this.$route.matched[0].path,
@@ -88,6 +88,15 @@ const Email = {
     // const {state, dispatch} = useStore();
     const responsive = ref(0);
     const collapsed = ref(false);
+    const isMailEditorOpen = ref(false);
+
+    const toggleMailComposer = () => {
+      isMailEditorOpen.value = !isMailEditorOpen.value;
+    };
+
+    const closeMailCompose = () => {
+      isMailEditorOpen.value = false;
+    };
 
     const toggleCollapsed = () => {
       collapsed.value = !collapsed.value;
@@ -102,7 +111,7 @@ const Email = {
       window.addEventListener('resize', updateSize);
     });
 
-    return { responsive, toggleCollapsed, collapsed };
+    return { responsive, toggleCollapsed, collapsed, toggleMailComposer, isMailEditorOpen, closeMailCompose };
   },
 };
 

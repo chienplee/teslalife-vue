@@ -393,6 +393,20 @@ const MailBox = Styled.div`
       }
     }
   }
+  .tagsinput-tag{
+    padding: 5px 16px;
+    border: 0px none;
+    border-radius: 16px;
+    color: rgb(90, 95, 125);
+    background: rgb(244, 245, 247);
+    .tagsinput-remove{
+      padding-left: 8px;
+      color: rgb(146, 153, 184);
+    }
+  }
+  .tags-input input{
+    outline: none;
+  }
 `;
 
 const EmailNav = Styled.nav`
@@ -435,7 +449,7 @@ const EmailNav = Styled.nav`
           ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 20px;
           color: ${({ theme }) => theme['extra-light-color']};
         }
-        &.active{
+        &.router-link-active{
           background: rgba(95,99,242,0.1);
           color: ${({ theme }) => theme['primary-color']};
           svg,
@@ -811,8 +825,8 @@ const MessageDetails = Styled.div`
           content: "\f31b";
         }
       }
-      &.starActive{
-        color: ${({ theme }) => theme['warning-color']};
+      &.starActive {
+        color: ${({ theme }) => theme['warning-color']} !important;       
         i:before,
         span.fa:before{
           content: "\f005";

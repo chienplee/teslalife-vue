@@ -56,7 +56,7 @@
       <p>Labels</p>
       <ul>
         <li v-for="label in labels" :key="label">
-          <router-link to="#"> <sdFeatherIcons type="list" size="18" /> {{ label }} </router-link>
+          <a to="#"> <sdFeatherIcons type="list" size="18" /> {{ label }} </a>
         </li>
 
         <li class="add-label-btn" @click="addNewLabels" role="menuitem">

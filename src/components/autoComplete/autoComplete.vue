@@ -10,6 +10,7 @@
   </AutoCompleteStyled>
   <AutoCompleteStyled
     v-else-if="patterns"
+    v-model:value="value"
     class="certain-category-search"
     dropdownClassName="certain-category-search-dropdown"
     :dropdownMatchSelectWidth="false"
@@ -19,20 +20,16 @@
     :placeholder="placeholder"
     @search="onSearching"
   >
+    <template v-if="myData.length" #dataSource>
+      <a-select-opt-group v-for="item in myData" :key="item.title">
+        {{ item.title }}
+      </a-select-opt-group>
+    </template>
     <a-input>
-      <template v-slot:suffix>
-        <Button
-          v-if="patternButtons"
-          class="search-btn"
-          :style="{ [rtl ? 'marginLeft' : 'marginRight']: -20 }"
-          type="primary"
-        >
-          <a-icon type="search" />
-        </Button>
-        <a-icon v-else type="search" />
-      </template>
+      <template #suffix><sdFeatherIcons type="search"/></template>
     </a-input>
   </AutoCompleteStyled>
+
   <AutoCompleteStyled
     :data-source="state.dataSource"
     :style="{ width }"
@@ -47,7 +44,6 @@
 <script>
 import { AutoCompleteStyled } from './style';
 import VueTypes from 'vue-types';
-import { mapGetters } from 'vuex';
 
 export default {
   name: 'AutoComplete',
@@ -66,27 +62,19 @@ export default {
   data() {
     return {
       value: '',
-      state: {
-        dataSource: [],
-        notData: this.dataSource,
-      },
+      myData: [],
     };
   },
   computed: {
-    ...mapGetters(['rtl']),
+    rtl() {
+      return this.$store.state.themeLayout.rtlData;
+    },
   },
   methods: {
     onSearching(searchText) {
       this.value = searchText;
-      this.$emit('onSearch', searchText);
-      let arrayData = [];
       const data = this.dataSource.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
-      if (data.length) {
-        data.map(item => arrayData.push(item.title));
-      } else {
-        arrayData = ['Data Not Found!'];
-      }
-      this.state.dataSource = !searchText ? [] : arrayData;
+      this.myData = !searchText ? [] : data;
     },
     onSelect() {},
   },
