@@ -26,6 +26,7 @@ export const GoogleBasicBarChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('BarChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -33,10 +34,35 @@ export const GoogleBasicBarChart = {
     chartArea: VueTypes.string.def('50%'),
   },
   render() {
-    return <GChart type="BarChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '1' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '1' }} />;
   },
 };
-
+export const BubbleChart = {
+  name: 'BubbleChart',
+  components: {
+    GChart,
+  },
+  data() {
+    return {
+      chartOptions: {
+        width: this.width,
+        height: this.height,
+        colorAxis: { colors: this.colors },
+      },
+    };
+  },
+  methods: {},
+  props: {
+    type: VueTypes.string.def('BubbleChart'),
+    width: VueTypes.string.def('100%'),
+    height: VueTypes.number.def(300),
+    data: VueTypes.array,
+    colors: VueTypes.array.def(['#b0120a', '#ffab91']),
+  },
+  render() {
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} />;
+  },
+};
 export const GoogleMaterialBarChart = {
   name: 'GoogleMaterialBarChart',
   components: {
@@ -57,6 +83,7 @@ export const GoogleMaterialBarChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('ColumnChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -67,7 +94,7 @@ export const GoogleMaterialBarChart = {
   render() {
     return (
       <GChart
-        type="ColumnChart"
+        type={this.type}
         data={this.data}
         options={this.chartOptions}
         rootProps={{ 'data-testid': '2' }}
@@ -104,6 +131,7 @@ export const GoogleStackedChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('BarChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -113,7 +141,7 @@ export const GoogleStackedChart = {
   render() {
     return (
       <GChart
-        type="BarChart"
+        type={this.type}
         data={this.data}
         options={this.chartOptions}
         rootProps={{ 'data-testid': '3' }}
@@ -148,6 +176,7 @@ export const GoogleCustomColorChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('BarChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -156,7 +185,7 @@ export const GoogleCustomColorChart = {
     colors: VueTypes.array,
   },
   render() {
-    return <GChart type="BarChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '4' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '4' }} />;
   },
 };
 
@@ -180,6 +209,7 @@ export const GoogleComboChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('ComboChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -188,7 +218,7 @@ export const GoogleComboChart = {
     colors: VueTypes.array,
   },
   render() {
-    return <GChart type="ComboChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '5' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '5' }} />;
   },
 };
 
@@ -213,12 +243,13 @@ export const GoogleLineChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('LineChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
   },
   render() {
-    return <GChart type="LineChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '6' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '6' }} />;
   },
 };
 
@@ -247,12 +278,13 @@ export const GoogleMultiLineChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('LineChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
   },
   render() {
-    return <GChart type="LineChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '7' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '7' }} />;
   },
 };
 
@@ -273,6 +305,7 @@ export const GoogleBasicPieChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('PieChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -280,7 +313,7 @@ export const GoogleBasicPieChart = {
     chartArea: VueTypes.string.def('50%'),
   },
   render() {
-    return <GChart type="PieChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '9' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '9' }} />;
   },
 };
 
@@ -302,6 +335,7 @@ export const Google3dPieChart = {
   },
   methods: {},
   props: {
+    type: VueTypes.string.def('PieChart'),
     width: VueTypes.string.def('100%'),
     height: VueTypes.number.def(300),
     data: VueTypes.array,
@@ -309,7 +343,7 @@ export const Google3dPieChart = {
     chartArea: VueTypes.string.def('50%'),
   },
   render() {
-    return <GChart type="PieChart" data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '9' }} />;
+    return <GChart type={this.type} data={this.data} options={this.chartOptions} rootProps={{ 'data-testid': '9' }} />;
   },
 };
 

@@ -17,6 +17,7 @@ import {
   GoogleMultiLineChart,
   GoogleBasicPieChart,
   Google3dPieChart,
+  BubbleChart,
 } from '../../components/charts/googleChart.vue';
 
 import { ChartContainer } from '../../view/dashboard/style';
@@ -50,6 +51,7 @@ import Modal from '../../components/modals/Modals';
   { name: 'GoogleMultiLineChart', ...GoogleMultiLineChart },
   { name: 'GoogleBasicPieChart', ...GoogleBasicPieChart },
   { name: 'Google3dPieChart', ...Google3dPieChart },
+  { name: 'BubbleChart', ...BubbleChart },
   // {
   //   name: "ChartjsStackedChart",
   //   ...ChartjsStackedChart,
