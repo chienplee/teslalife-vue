@@ -16,15 +16,6 @@
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Bar Chart">
-            <sdGoogleBasicBarChart
-              :data="barChartData"
-              width="100%"
-              :height="300"
-              title="Population of Largest U.S. Cities"
-              chartArea="50%"
-            />
-          </sdCards>
           <sdCards title="Stacked bar chart with multiple series">
             <sdGoogleStackedChart
               :data="barChartData"
@@ -52,7 +43,7 @@
           </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Bar Chart">
+          <sdCards title="Material Design">
             <sdGoogleMaterialBarChart
               :data="materialDesignChart"
               width="100%"

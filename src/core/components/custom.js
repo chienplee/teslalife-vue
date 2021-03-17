@@ -7,17 +7,17 @@ import CalendarButton from '../../components/buttons/CalendarButton.vue';
 import ExportButton from '../../components/buttons/ExportButton.vue';
 import ShareButton from '../../components/buttons/ShareButton.vue';
 import { PageHeader } from '../../components/pageHeaders/PageHeaders.vue';
-// import {
-//   GoogleBasicBarChart,
-//   GoogleMaterialBarChart,
-//   GoogleStackedChart,
-//   GoogleCustomColorChart,
-//   GoogleComboChart,
-//   GoogleLineChart,
-//   GoogleMultiLineChart,
-//   GoogleBasicPieChart,
-//   Google3dPieChart,
-// } from "../../components/charts/googleChart.vue";
+import {
+  GoogleBasicBarChart,
+  GoogleMaterialBarChart,
+  GoogleStackedChart,
+  GoogleCustomColorChart,
+  GoogleComboChart,
+  GoogleLineChart,
+  GoogleMultiLineChart,
+  GoogleBasicPieChart,
+  Google3dPieChart,
+} from '../../components/charts/googleChart.vue';
 
 import { ChartContainer } from '../../view/dashboard/style';
 import Cascader from '../../components/cascader/Cascader';
@@ -35,21 +35,21 @@ import Modal from '../../components/modals/Modals';
     ...ChartContainer,
   },
 
-  // {
-  //   name: "GoogleMaterialBarChart",
-  //   ...GoogleMaterialBarChart,
-  // },
-  // {
-  //   name: "GoogleBasicBarChart",
-  //   ...GoogleBasicBarChart,
-  // },
-  // { name: "GoogleStackedChart", ...GoogleStackedChart },
-  // { name: "GoogleCustomColorChart", ...GoogleCustomColorChart },
-  // { name: "GoogleComboChart", ...GoogleComboChart },
-  // { name: "GoogleLineChart", ...GoogleLineChart },
-  // { name: "GoogleMultiLineChart", ...GoogleMultiLineChart },
-  // { name: "GoogleBasicPieChart", ...GoogleBasicPieChart },
-  // { name: "Google3dPieChart", ...Google3dPieChart },
+  {
+    name: 'GoogleMaterialBarChart',
+    ...GoogleMaterialBarChart,
+  },
+  {
+    name: 'GoogleBasicBarChart',
+    ...GoogleBasicBarChart,
+  },
+  { name: 'GoogleStackedChart', ...GoogleStackedChart },
+  { name: 'GoogleCustomColorChart', ...GoogleCustomColorChart },
+  { name: 'GoogleComboChart', ...GoogleComboChart },
+  { name: 'GoogleLineChart', ...GoogleLineChart },
+  { name: 'GoogleMultiLineChart', ...GoogleMultiLineChart },
+  { name: 'GoogleBasicPieChart', ...GoogleBasicPieChart },
+  { name: 'Google3dPieChart', ...Google3dPieChart },
   // {
   //   name: "ChartjsStackedChart",
   //   ...ChartjsStackedChart,
