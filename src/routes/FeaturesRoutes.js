@@ -15,6 +15,11 @@ export default [
     component: () => import(/* webpackChunkName: "FormComponents" */ '@/view/forms/FormComponents.vue'),
   },
   {
+    path: '/chart/google-chart',
+    name: 'googleChart',
+    component: () => import('@/view/charts/GoogleCharts.vue'),
+  },
+  {
     path: '/chart/chart-js',
     name: 'chartJs',
     component: () => import(/* webpackChunkName: "ChartJs" */ '@/view/charts/ChartJs.vue'),
@@ -95,10 +100,6 @@ export default [
     name: "formValidation",
     component: () => import("@/view/forms/FormValidation.vue"),
   },
-  {
-    path: "/chart/google-chart",
-    name: "googleChart",
-    component: () => import("@/view/charts/GoogleCharts.vue"),
-  },
+ 
   */
 ];
