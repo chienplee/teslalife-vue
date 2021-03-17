@@ -89,7 +89,7 @@ const Email = {
     const responsive = ref(0);
     const collapsed = ref(false);
     const isMailEditorOpen = ref(false);
-    const pageTitle = computed(() => useRoute().matched[1].name);
+    const pageTitle = computed(() => (useRoute().matched[1] ? useRoute().matched[1].name : 'Inbox'));
     const toggleMailComposer = () => {
       isMailEditorOpen.value = !isMailEditorOpen.value;
     };

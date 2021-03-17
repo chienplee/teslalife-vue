@@ -1,7 +1,7 @@
 <template>
   <ul v-if="chatData">
     <li v-for="(user, key) in chatData" :key="key + 1" class="chat-link-signle">
-      <router-link @click="() => dataFiltering(user.email)" :to="`${match.path}/${user.email}`">
+      <router-link @click="e => dataFiltering(e, user.email)" :to="`${match.path}/private/${user.email}`">
         <div class="author-figure">
           <img :src="require(`../../../../static/img/chat-author/${user.img}`)" alt="" />
           <span :class="active ? 'active' : 'inactive'" />
@@ -38,13 +38,14 @@ const PrivateChat = {
   components: { BlockSpan },
   setup() {
     const { state, dispatch } = useStore();
-    const match = computed(() => useRoute());
+    const match = computed(() => useRoute().matched[0]);
     const chatData = computed(() =>
-      state.chat.privetData.data.sort((a, b) => {
+      state.chat.privetChat.data.sort((a, b) => {
         return b.time - a.time;
       }),
     );
-    const dataFiltering = email => {
+    const dataFiltering = (e, email) => {
+      e.preventDefault();
       dispatch('filterSinglePage', email);
     };
 

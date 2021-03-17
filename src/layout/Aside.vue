@@ -63,7 +63,7 @@
       <a-menu-item key="chat">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/chat">
+          <router-link click="toggleCollapsed" to="/app/chat/private/rofiq@gmail.com">
             Chat
           </router-link>
         </span>

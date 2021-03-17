@@ -24,18 +24,18 @@
             <nav>
               <UL>
                 <li>
-                  <router-link activeclass="active" :to="`${match.path}/private/rofiq@gmail.com`">
+                  <router-link :to="`${match.path}/private/rofiq@gmail.com`">
                     Private Chat
                   </router-link>
                 </li>
                 <li>
-                  <router-link activeclass="active" :to="`${match.path}/group/1`">
+                  <router-link :to="`${match.path}/group/1`">
                     Group Chat
                     <a-badge class="badge-error" :count="3" />
                   </router-link>
                 </li>
                 <li>
-                  <router-link activeclass="active" :to="`${match.path}/all/rofiq@gmail.com`">
+                  <router-link :to="`${match.path}/all/rofiq@gmail.com`">
                     All Contacts
                   </router-link>
                 </li>
@@ -45,7 +45,9 @@
           </sdCards>
         </ChatSidebar>
       </a-col>
-      <a-col :xxl="17" :lg="14" :xs="24"> </a-col>
+      <a-col :xxl="17" :lg="14" :xs="24">
+        <router-view name="child"></router-view>
+      </a-col>
     </a-row>
   </Main>
 </template>
@@ -61,7 +63,7 @@ const ChatApp = {
   components: { Main, UL, Content, ChatSidebar },
   setup() {
     const { state } = useStore();
-    const match = computed(() => useRoute());
+    const match = computed(() => useRoute().matched[0]);
     const rtl = computed(() => state.themeLayout.rtlData);
     const searchData = computed(() => state.headerSearchData);
     const left = computed(() => (!rtl.value ? 'left' : 'right'));

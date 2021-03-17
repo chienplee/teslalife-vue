@@ -5,37 +5,37 @@ export default [
     component: () => import(/* webpackChunkName: "mail" */ '../view/apps/email/Email'),
     children: [
       {
-        path: '/app/mail',
+        path: '',
         name: 'Inbox',
         component: () => import(/* webpackChunkName: "Inbox" */ '@/view/apps/email/overview/Inbox.vue'),
       },
       {
-        path: '/app/mail/inbox',
+        path: 'inbox',
         name: 'Inbox',
         component: () => import(/* webpackChunkName: "Inbox" */ '@/view/apps/email/overview/Inbox.vue'),
       },
       {
-        path: '/app/mail/starred',
+        path: 'starred',
         name: 'Starred',
         component: () => import(/* webpackChunkName: "starred" */ '@/view/apps/email/overview/Starred.vue'),
       },
       {
-        path: '/app/mail/sent',
+        path: 'sent',
         name: 'Sent',
         component: () => import(/* webpackChunkName: "Sent" */ '@/view/apps/email/overview/Sent.vue'),
       },
       {
-        path: '/app/mail/drafts',
+        path: 'drafts',
         name: 'Drafts',
         component: () => import(/* webpackChunkName: "Draft" */ '@/view/apps/email/overview/Draft.vue'),
       },
       {
-        path: '/app/mail/spam',
+        path: 'spam',
         name: 'Spam',
         component: () => import(/* webpackChunkName: "Spam" */ '@/view/apps/email/overview/Spam.vue'),
       },
       {
-        path: '/app/mail/trash',
+        path: 'trash',
         name: 'Trash',
         component: () => import(/* webpackChunkName: "Trash" */ '@/view/apps/email/overview/Trash.vue'),
       },
@@ -45,12 +45,12 @@ export default [
         component: () => import(/* webpackChunkName: "singleMail" */ '@/view/apps/email/overview/MailDetailView.vue'),
         children: [
           {
-            path: '/app/mail-single/:id/replay',
+            path: 'replay',
             name: 'Replay',
             component: () => <h1>Hello replay</h1>,
           },
           {
-            path: '/app/mail-single/:id/forward',
+            path: 'forward',
             name: 'Forward',
             component: () => <h1>Hello forward</h1>,
           },
@@ -64,9 +64,43 @@ export default [
     component: () => import(/* webpackChunkName: "chat" */ '../view/apps/chat/ChatApp.vue'),
     children: [
       {
-        name: 'privet',
-        path: '/app/chat',
-        component: () => import(/* webpackChunkName: "privet" */ '../view/apps/chat/overview/PrivetChat.vue'),
+        name: 'private',
+        path: 'private',
+        component: () => import(/* webpackChunkName: "private" */ '../view/apps/chat/overview/PrivetChat.vue'),
+      },
+      {
+        name: 'privateSingle',
+        path: 'private/:id',
+        components: {
+          default: () => import(/* webpackChunkName: "private" */ '../view/apps/chat/overview/PrivetChat.vue'),
+          child: () => import(/* webpackChunkName: "privateSingle" */ '../view/apps/chat/overview/SingleChat.vue'),
+        },
+      },
+      {
+        name: 'group',
+        path: 'group',
+        component: () => import(/* webpackChunkName: "group" */ '../view/apps/chat/overview/GroupChat.vue'),
+      },
+      {
+        name: 'groupSingle',
+        path: 'group/:id',
+        components: {
+          default: () => import(/* webpackChunkName: "private" */ '../view/apps/chat/overview/GroupChat.vue'),
+          child: () => import(/* webpackChunkName: "privateSingle" */ '../view/apps/chat/overview/SingleGroupChat.vue'),
+        },
+      },
+      {
+        name: 'all',
+        path: 'all',
+        component: () => import(/* webpackChunkName: "all" */ '../view/apps/chat/overview/AllContacts.vue'),
+      },
+      {
+        name: 'allSingle',
+        path: 'all/:id',
+        components: {
+          default: () => import(/* webpackChunkName: "private" */ '../view/apps/chat/overview/AllContacts.vue'),
+          child: () => import(/* webpackChunkName: "privateSingle" */ '../view/apps/chat/overview/SingleChat.vue'),
+        },
       },
     ],
   },

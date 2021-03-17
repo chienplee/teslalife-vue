@@ -1,0 +1,72 @@
+<template>
+  <ChatWrapper>
+    <div class="create-action">
+      <Button class="btn-add" size="default" type="default" shape="circle" block>
+        <sdFeatherIcons type="user-plus" size="14" />
+        Add New Contact
+      </Button>
+    </div>
+    <ul v-if="chatData">
+      <li v-for="({ userName, content, email, active, img }, key) in chatData" :key="key + 1" class="chat-link-signle">
+        <router-link @click="dataFiltering" :data-email="email" :to="`${match.path}/${email}`">
+          <div class="author-figure">
+            <img :src="require(`../../../../static/img/chat-author/${img}`)" alt="" />
+            <span :class="active ? 'active' : 'inactive'" />
+          </div>
+          <div class="author-info">
+            <BlockSpan class="author-name">{{ userName }}</BlockSpan>
+
+            <BlockSpan class="author-chatText">
+              {{ textRefactor(content[content.length - 1].content, 5) }}
+            </BlockSpan>
+          </div>
+          <div class="author-chatMeta">
+            <BlockSpan>{{
+              moment(content[content.length - 1].time).format('MM-DD-YYYY') === moment().format('MM-DD-YYYY')
+                ? moment(id).format('hh:mm A')
+                : moment(id).format('dddd')
+            }}</BlockSpan>
+            <a-badge v-if="key <= 1" class="badge-success" :count="3" />
+          </div>
+        </router-link>
+      </li>
+    </ul>
+  </ChatWrapper>
+</template>
+<script>
+import moment from 'moment';
+import { BlockSpan, ChatWrapper } from '../style';
+import { textRefactor } from '../../../../components/utilities/utilities';
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
+const AllContact = {
+  name: 'AllContact',
+  components: { BlockSpan, ChatWrapper },
+  setup() {
+    const { state, dispatch } = useStore();
+    const match = computed(() => useRoute());
+    const chatData = computed(() =>
+      state.chat.privetChat.data.sort((a, b) => {
+        return b.time - a.time;
+      }),
+    );
+    const dataFiltering = e => {
+      e.preventDefault();
+
+      dispatch('filterSinglePage', e.currentTarget.getAttribute('data-email'));
+    };
+
+    return {
+      match,
+      chatData,
+      dataFiltering,
+      moment,
+      textRefactor,
+    };
+  },
+};
+
+export default AllContact;
+</script>
