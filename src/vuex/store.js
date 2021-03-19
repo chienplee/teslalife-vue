@@ -6,6 +6,7 @@ import chartContent from './modules/chartContent/actionCreator';
 import email from './modules/email/actionCreator';
 import headerSearchData from './modules/headerSearch/actionCreator';
 import chat from './modules/chat/actionCreator';
+import ecommerce from './modules/ecommerce/product/actionCreator';
 
 export default createStore({
   modules: {
@@ -16,5 +17,6 @@ export default createStore({
     email,
     headerSearchData,
     chat,
+    ecommerce,
   },
 });

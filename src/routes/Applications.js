@@ -104,4 +104,37 @@ export default [
       },
     ],
   },
+  {
+    path: '/app/ecommerce',
+    name: 'ecommerce',
+    component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+    children: [
+      {
+        name: 'product',
+        path: 'product',
+        component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+      },
+      {
+        name: 'grid',
+        path: 'product/grid',
+        components: {
+          default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+          grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/Grid.vue'),
+        },
+      },
+      {
+        name: 'list',
+        path: 'product/list',
+        components: {
+          default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+          grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/List.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'detail',
+    path: '/app/ecommerce/productDetails/:id',
+    component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
+  },
 ];

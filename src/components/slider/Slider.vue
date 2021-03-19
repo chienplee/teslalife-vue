@@ -19,7 +19,15 @@
     <a-slider :min="mini" :max="maxi" @change="handleChange" :v-model="value" />
     <a-icon type="frown" :style="{ color: nextColor }" /> -->
     </IconWrapper>
-    <a-slider :range="range" v-else id="test" :default-value="defaultValue || defaultValues" @change="onChanges" />
+    <a-slider
+      :range="range"
+      :step="10"
+      v-else
+      id="test"
+      :default-value="defaultValue || defaultValues"
+      :max="defaultValue || defaultValues[1]"
+      @change="onChanges"
+    />
   </div>
 </template>
 
@@ -43,8 +51,8 @@ export default {
     min: VueTypes.number.def(0),
     max: VueTypes.number.def(100),
     onAfterChange: VueTypes.func,
-    onChange: VueTypes.func,
   },
+
   data() {
     return {
       inputValue: 1,
@@ -58,22 +66,15 @@ export default {
   },
   methods: {
     onChanges(value) {
-      // eslint-disable-next-line no-restricted-globals
-      if (isNaN(value)) {
-        return;
-      }
       this.inputValue = this.value;
-      if (this.onChange) {
-        this.onChange(value);
-        // console.log(value);
-      }
+      this.$emit('onChange', value);
     },
     handleChange(value) {
       this.value = value;
       if (this.onChange) this.onChange(value);
     },
     onAfterChanges(values) {
-      if (this.nAfterChange) this.onAfterChange(values);
+      this.$emit('onAfterChange', values);
     },
   },
 };

@@ -68,6 +68,15 @@
           </router-link>
         </span>
       </a-menu-item>
+
+      <a-sub-menu key="ecommerce">
+        <template v-slot:title><sdFeatherIcons type="shopping-cart" /><span>eCommerce</span></template>
+        <a-menu-item key="product">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/product/grid">
+            Products
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

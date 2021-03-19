@@ -19,7 +19,7 @@
         <ChatSidebar>
           <sdCards headless>
             <div class="chatbox-search">
-              <!-- <AutoComplete onSearch={patternSearch} dataSource={notData} width="100%" patterns /> -->
+              <sdAutoComplete :dataSource="searchData" width="100%" patterns />
             </div>
             <nav>
               <UL>
@@ -67,22 +67,14 @@ const ChatApp = {
     const rtl = computed(() => state.themeLayout.rtlData);
     const searchData = computed(() => state.headerSearchData);
     const left = computed(() => (!rtl.value ? 'left' : 'right'));
-    const search = computed(() => searchData.value);
 
     const me = ref('woadud@gmail.com');
-
-    const patternSearch = searchText => {
-      const data = searchData.value.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
-      search.value = data;
-    };
 
     return {
       rtl,
       searchData,
       left,
-      search,
       me,
-      patternSearch,
       match,
     };
   },
