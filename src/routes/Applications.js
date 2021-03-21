@@ -135,6 +135,31 @@ export default [
   {
     name: 'detail',
     path: '/app/ecommerce/productDetails/:id',
-    component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
+    component: () => import(/* webpackChunkName: "detail" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
+  },
+  {
+    name: 'add-product',
+    path: '/app/ecommerce/add-product',
+    component: () => import(/* webpackChunkName: "addProduct" */ '../view/apps/ecommerce/product/AddProduct.vue'),
+  },
+  {
+    name: 'edit-product',
+    path: '/app/ecommerce/edit-product',
+    component: () => import(/* webpackChunkName: "editProduct" */ '../view/apps/ecommerce/product/EditProduct.vue'),
+  },
+  {
+    name: 'orders',
+    path: '/app/ecommerce/orders',
+    component: () => import(/* webpackChunkName: "Orders" */ '../view/apps/ecommerce/Orders.vue'),
+  },
+  {
+    name: 'sellers',
+    path: '/app/ecommerce/sellers',
+    component: () => import(/* webpackChunkName: "sellers" */ '../view/apps/ecommerce/Sellers.vue'),
+  },
+  {
+    name: 'invoice',
+    path: '/app/ecommerce/invoice',
+    component: () => import(/* webpackChunkName: "invoice" */ '../view/apps/ecommerce/Invoice.vue'),
   },
 ];

@@ -76,6 +76,41 @@
             Products
           </router-link>
         </a-menu-item>
+        <a-menu-item key="detail">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/productDetails/5">
+            Product Detail
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="add-product">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/add-product">
+            Product Add
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="edit-product">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/edit-product">
+            Product Update
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="orders">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/orders">
+            Orders
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="sellers">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/sellers">
+            Sellers
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="invoice">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/invoice">
+            Invoice
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="cart">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/cart">
+            Cart
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
     </a-menu-item-group>
 

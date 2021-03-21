@@ -7,6 +7,8 @@ import email from './modules/email/actionCreator';
 import headerSearchData from './modules/headerSearch/actionCreator';
 import chat from './modules/chat/actionCreator';
 import ecommerce from './modules/ecommerce/product/actionCreator';
+import orders from './modules/ecommerce/orders/actionCreator';
+import cart from './modules/ecommerce/cart/actionCreator';
 
 export default createStore({
   modules: {
@@ -18,5 +20,7 @@ export default createStore({
     headerSearchData,
     chat,
     ecommerce,
+    orders,
+    cart,
   },
 });
