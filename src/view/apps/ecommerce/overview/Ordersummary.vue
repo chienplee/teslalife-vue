@@ -34,7 +34,7 @@
           </ul>
           <a-form :onFinish="submitPromo">
             <a-form-item name="couponType" label="">
-              <a-select v-model="formState.couponType" :style="{ width: '100%' }">
+              <a-select v-model="formcouponType" :style="{ width: '100%' }">
                 <a-select-option value="">
                   <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Select Coupon
                 </a-select-option>
@@ -48,7 +48,7 @@
             </a-form-item>
             <div class="promo-apply-form">
               <a-form-item name="promoCode" label="Promo Code">
-                <a-input v-model="formState.promoCode" placeholder="Promo Code" />
+                <a-input v-model="formpromoCode" placeholder="Promo Code" />
               </a-form-item>
               <a-form-item>
                 <sdButton htmlType="submit" size="default" type="success" outlined>
@@ -69,7 +69,7 @@
             </router-link>
           </sdButton>
 
-          <sdButton v-if="state.current === 3" @click="onSubmit" class="btn-proceed" type="secondary" size="large">
+          <sdButton v-if="current === 3" @click="onSubmit" class="btn-proceed" type="secondary" size="large">
             <a to="#">Place Order</a>
           </sdButton>
         </div>

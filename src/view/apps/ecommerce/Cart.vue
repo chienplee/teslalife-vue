@@ -1,0 +1,87 @@
+<template>
+  <sdPageHeader title="Shopping Cart"
+    ><template v-slot:buttons>
+      <div class="page-header-actions">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
+          <sdFeatherIcons type="plus" size="14" />
+          Add New
+        </sdButton>
+      </div>
+    </template>
+  </sdPageHeader>
+  <Main>
+    <div :class="isExact ? 'cartWraper' : 'checkoutWraper'">
+      <a-row :gutter="15">
+        <a-col :md="24">
+          <sdCards headless>
+            <a-row :gutter="30">
+              <a-col :xxl="17" :xs="24"> <CartTable /> </a-col>
+              <a-col :xxl="7" :xs="24">
+                <Ordersummary :subtotal="subtotal" :path="path" />
+              </a-col>
+            </a-row>
+          </sdCards>
+        </a-col>
+      </a-row>
+    </div>
+  </Main>
+</template>
+<script>
+import { computed, onMounted, ref, watchEffect } from 'vue';
+import { useRoute } from 'vue-router';
+import { useStore } from 'vuex';
+import { Main } from '../../styled';
+import Ordersummary from './overview/Ordersummary';
+import CartTable from './overview/CartTable';
+
+// const Checkout = lazy(() => import('./overview/CheckOut'));
+
+const ShoppingCart = {
+  name: 'ShoppingCart',
+  components: { Main, Ordersummary, CartTable },
+  setup() {
+    const { state, dispatch } = useStore();
+    const cartData = computed(() => state.cart.data);
+    const rtl = computed(() => state.themeLayout.rtlData);
+    const coupon = ref(0);
+    const promo = ref(0);
+    const current = ref(0);
+    let subtotal = ref(0);
+
+    onMounted(() => dispatch('cartGetData'));
+    const route = useRoute();
+
+    console.log(route);
+
+    watchEffect(() => {
+      if (cartData.value !== null) {
+        cartData.value.map(data => {
+          const { quantity, price } = data;
+          subtotal.value += parseInt(quantity, 10) * parseInt(price, 10);
+          return subtotal;
+        });
+      }
+    });
+
+    const onHandleCurrent = current => {
+      current.value = current;
+    };
+
+    return {
+      cartData,
+      rtl,
+      coupon,
+      promo,
+      current,
+      subtotal,
+      onHandleCurrent,
+      path: route.path,
+    };
+  },
+};
+
+export default ShoppingCart;
+</script>

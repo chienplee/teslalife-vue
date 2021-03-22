@@ -162,4 +162,9 @@ export default [
     path: '/app/ecommerce/invoice',
     component: () => import(/* webpackChunkName: "invoice" */ '../view/apps/ecommerce/Invoice.vue'),
   },
+  {
+    name: 'cart',
+    path: '/app/ecommerce/cart',
+    component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+  },
 ];

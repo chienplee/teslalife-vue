@@ -47,6 +47,7 @@ import {
   Table,
   Upload,
   Tag,
+  Steps,
 } from 'ant-design-vue';
 
 // app.prototype.$message = message;
@@ -99,3 +100,4 @@ app.use(Popconfirm);
 app.use(Progress);
 app.use(Result);
 app.use(Tag);
+app.use(Steps);
