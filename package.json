@@ -76,9 +76,12 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/no-use-v-if-with-v-for": ["error", {
-        "allowUsingIterationVar": true
-      }]
+      "vue/no-use-v-if-with-v-for": [
+        "error",
+        {
+          "allowUsingIterationVar": true
+        }
+      ]
     }
   },
   "browserslist": [

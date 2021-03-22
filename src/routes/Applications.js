@@ -167,4 +167,9 @@ export default [
     path: '/app/ecommerce/cart',
     component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
   },
+  {
+    name: 'social',
+    path: '/app/social/profile',
+    component: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+  },
 ];

@@ -112,6 +112,14 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="social">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Social App</span></template>
+        <a-menu-item key="profile">
+          <router-link click="toggleCollapsed" to="/app/social/profile">
+            My Profile
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">
