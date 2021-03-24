@@ -171,5 +171,31 @@ export default [
     name: 'social',
     path: '/app/social/profile',
     component: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+    children: [
+      {
+        path: 'overview',
+        name: 'overview',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "overview" */ '../view/apps/myProfile/overview/Overview.vue'),
+        },
+      },
+      {
+        path: 'timeline',
+        name: 'timeline',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "timeline" */ '../view/apps/myProfile/overview/Timeline.vue'),
+        },
+      },
+      {
+        path: 'activity',
+        name: 'activity',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "activity" */ '../view/apps/myProfile/overview/Activity.vue'),
+        },
+      },
+    ],
   },
 ];

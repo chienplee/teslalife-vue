@@ -9,6 +9,7 @@ import chat from './modules/chat/actionCreator';
 import ecommerce from './modules/ecommerce/product/actionCreator';
 import orders from './modules/ecommerce/orders/actionCreator';
 import cart from './modules/ecommerce/cart/actionCreator';
+import profile from './modules/profile/actionCreator';
 
 export default createStore({
   modules: {
@@ -22,5 +23,6 @@ export default createStore({
     ecommerce,
     orders,
     cart,
+    profile,
   },
 });

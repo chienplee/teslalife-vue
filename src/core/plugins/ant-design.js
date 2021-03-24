@@ -48,9 +48,11 @@ import {
   Upload,
   Tag,
   Steps,
+  message,
 } from 'ant-design-vue';
 
 // app.prototype.$message = message;
+app.config.globalProperties.$message = message;
 
 app.use(Rate);
 app.use(Button);

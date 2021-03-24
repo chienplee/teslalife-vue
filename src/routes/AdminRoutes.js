@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: '/eco',
-    name: 'ecommerce',
+    name: 'eco',
     component: () => import(/* webpackChunkName: "Business" */ '@/view/dashboard/Ecommerce.vue'),
   },
   {

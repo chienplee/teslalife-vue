@@ -7,7 +7,7 @@ import CalendarButton from '../../components/buttons/CalendarButton.vue';
 import ExportButton from '../../components/buttons/ExportButton.vue';
 import ShareButton from '../../components/buttons/ShareButton.vue';
 import { PageHeader } from '../../components/pageHeaders/PageHeaders.vue';
-import { UserCard } from '../../view/pages/style.js';
+
 import {
   GoogleBasicBarChart,
   GoogleMaterialBarChart,
@@ -36,10 +36,7 @@ import Modal from '../../components/modals/Modals';
     name: 'ChartContainer',
     ...ChartContainer,
   },
-  {
-    name: 'UserCard',
-    ...UserCard,
-  },
+
   {
     name: 'GoogleMaterialBarChart',
     ...GoogleMaterialBarChart,

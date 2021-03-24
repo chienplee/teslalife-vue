@@ -38,17 +38,46 @@
         </Suspense>
       </a-col>
       <a-col :xxl="18" :lg="16" :md="14" :xs="24">
-        <SettingWrapper> </SettingWrapper>
+        <SettingWrapper>
+          <Suspense>
+            <template #default>
+              <div class="coverWrapper">
+                <CoverSection />
+                <nav class="profileTab-menu">
+                  <ul>
+                    <li>
+                      <router-link :to="`${path}/overview`">Overview</router-link>
+                    </li>
+                    <li>
+                      <router-link :to="`${path}/timeline`">Timeline</router-link>
+                    </li>
+                    <li>
+                      <router-link :to="`${path}/activity`">Activity</router-link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </template>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton active />
+              </sdCards>
+            </template>
+          </Suspense>
+          <router-view name="child"></router-view>
+        </SettingWrapper>
       </a-col>
     </a-row>
   </Main>
 </template>
 <script>
 import { defineAsyncComponent } from 'vue';
+import { useRoute } from 'vue-router';
 import { Main } from '../../styled';
+import { SettingWrapper } from './overview/style';
 
 const UserCards = defineAsyncComponent(() => import('../../pages/overview/UserCard'));
-// const CoverSection = lazy(() => import('../overview/CoverSection'));
+const CoverSection = defineAsyncComponent(() => import('./overview/CoverSection'));
 const UserBio = defineAsyncComponent(() => import('./overview/UserBio'));
 // const Overview = lazy(() => import('./overview/Overview'));
 // const Timeline = lazy(() => import('./overview/Timeline'));
@@ -57,7 +86,14 @@ const UserBio = defineAsyncComponent(() => import('./overview/UserBio'));
 
 const MyProfile = {
   name: 'MyProfile',
-  components: { Main, UserCards, UserBio },
+  components: { Main, UserCards, UserBio, CoverSection, SettingWrapper },
+  setup() {
+    const { matched } = useRoute();
+    const { path } = matched[0];
+    return {
+      path,
+    };
+  },
 };
 
 export default MyProfile;
