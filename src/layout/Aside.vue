@@ -143,6 +143,15 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+
+      <a-menu-item key="calender">
+        <sdFeatherIcons type="mail" />
+        <span>
+          <router-link click="toggleCollapsed" to="/app/calendar">
+            Calender
+          </router-link>
+        </span>
+      </a-menu-item>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

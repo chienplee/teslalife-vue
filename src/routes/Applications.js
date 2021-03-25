@@ -267,4 +267,9 @@ export default [
       },
     ],
   },
+  {
+    name: 'calendar',
+    path: '/app/calendar',
+    component: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
+  },
 ];
