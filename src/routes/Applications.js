@@ -230,7 +230,7 @@ export default [
         path: 'grid',
         name: 'grid',
         components: {
-          default: () => import(/* webpackChunkName: "createProject" */ '../view/apps/project/CreateProject.vue'),
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/CreateProject.vue'),
           child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
         },
       },

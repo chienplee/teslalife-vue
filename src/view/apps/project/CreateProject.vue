@@ -73,7 +73,7 @@
         </div>
       </a-col>
     </a-row>
-    <CreateProject :onCancel="onCancel" :visible="visible" />
+    <sdCreateProject :onCancel="onCancel" :visible="visible" />
   </Main>
 </template>
 <script>
@@ -82,11 +82,10 @@ import { Main } from '../../styled';
 import { useStore } from 'vuex';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import CreateProject from './overview/CreateProject';
 
 const Project = {
   name: 'Project',
-  components: { ProjectHeader, ProjectSorting, Main, CreateProject },
+  components: { ProjectHeader, ProjectSorting, Main },
   setup() {
     const { state, dispatch } = useStore();
     const searchData = computed(() => state.headerSearchData);
