@@ -10,6 +10,7 @@ import ecommerce from './modules/ecommerce/product/actionCreator';
 import orders from './modules/ecommerce/orders/actionCreator';
 import cart from './modules/ecommerce/cart/actionCreator';
 import profile from './modules/profile/actionCreator';
+import project from './modules/project/actionCreator';
 
 export default createStore({
   modules: {
@@ -24,5 +25,6 @@ export default createStore({
     orders,
     cart,
     profile,
+    project,
   },
 });

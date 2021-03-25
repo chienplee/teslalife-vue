@@ -10,18 +10,20 @@
     :class="className"
   >
     <template v-slot:footer>
-      <sdButton type="white" :outlined="color ? false : true" key="back" @click="onCancel">
-        Return
-      </sdButton>
-      <sdButton
-        key="submit"
-        :type="color ? 'white' : type"
-        :outlined="type !== 'white' ? false : true"
-        :loading="confirmLoading"
-        @click="handleOk"
-      >
-        Submit
-      </sdButton>
+      <slot name="footer">
+        <sdButton type="white" :outlined="color ? false : true" key="back" @click="onCancel">
+          Return
+        </sdButton>
+        <sdButton
+          key="submit"
+          :type="color ? 'white' : type"
+          :outlined="type !== 'white' ? false : true"
+          :loading="confirmLoading"
+          @click="handleOk"
+        >
+          Submit
+        </sdButton>
+      </slot>
     </template>
     <slot></slot>
   </ModalStyled>

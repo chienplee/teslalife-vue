@@ -198,4 +198,73 @@ export default [
       },
     ],
   },
+  {
+    name: 'project',
+    path: '/app/project',
+    component: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+    children: [
+      {
+        path: 'grid',
+        name: 'grid',
+        components: {
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+          child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
+        },
+      },
+      {
+        path: 'list',
+        name: 'list',
+        components: {
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+          child: () => import(/* webpackChunkName: "list" */ '../view/apps/project/overview/List.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'createProject',
+    path: '/app/createProject',
+    component: () => import(/* webpackChunkName: "createProject" */ '../view/apps/project/CreateProject.vue'),
+    children: [
+      {
+        path: 'grid',
+        name: 'grid',
+        components: {
+          default: () => import(/* webpackChunkName: "createProject" */ '../view/apps/project/CreateProject.vue'),
+          child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'projectDetails',
+    path: '/app/project/projectDetails/:id',
+    component: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+    children: [
+      {
+        path: '',
+        name: '',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "tasklist" */ '../view/apps/project/overview/TaskList.vue'),
+        },
+      },
+      {
+        path: 'tasklist',
+        name: 'tasklist',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "tasklist" */ '../view/apps/project/overview/TaskList.vue'),
+        },
+      },
+      {
+        path: 'activities',
+        name: 'activities',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "activities" */ '../view/apps/project/overview/Activities.vue'),
+        },
+      },
+    ],
+  },
 ];

@@ -120,6 +120,29 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="project">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Projects</span></template>
+        <a-menu-item key="grid">
+          <router-link click="toggleCollapsed" to="/app/project/grid">
+            Project Grid
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="list">
+          <router-link click="toggleCollapsed" to="/app/project/list">
+            Project List
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="createProject">
+          <router-link click="toggleCollapsed" to="/app/createProject/grid">
+            Project Create
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="projectDetails">
+          <router-link click="toggleCollapsed" to="/app/project/projectDetails/1">
+            Project Details
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">
