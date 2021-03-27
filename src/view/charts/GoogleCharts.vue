@@ -94,7 +94,6 @@ import {
   pieChartData,
   bubbleChart,
 } from '../../demoData/google-charts.json';
-import { GChart } from 'vue-google-charts';
 
 export default {
   name: 'GoogleCharts',
@@ -111,7 +110,6 @@ export default {
       MultilineChartData,
       pieChartData,
       bubbleChart,
-      GChart,
     };
   },
 };

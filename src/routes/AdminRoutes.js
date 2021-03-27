@@ -35,7 +35,6 @@ const routes = [
     name: 'sales',
     component: () => import(/* webpackChunkName: "sales" */ '@/view/dashboard/Sales.vue'),
   },
-
   ...PageRoutes,
   ...FeaturesRoutes,
   ...Components,

@@ -41,6 +41,15 @@
       </a-menu-item>
     </a-sub-menu>
 
+    <a-menu-item key="changelog">
+      <sdFeatherIcons type="circle" />
+      <span>
+        <router-link click="toggleCollapsed" to="/changelog">
+          Changelog
+        </router-link>
+      </span>
+    </a-menu-item>
+
     <a-menu-item-group key="applications">
       <template v-slot:title>
         <p class="sidebar-nav-title">APPLICATIONS</p>
