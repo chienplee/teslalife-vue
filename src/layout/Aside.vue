@@ -85,7 +85,82 @@
             Products
           </router-link>
         </a-menu-item>
+        <a-menu-item key="detail">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/productDetails/5">
+            Product Detail
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="add-product">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/add-product">
+            Product Add
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="edit-product">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/edit-product">
+            Product Update
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="orders">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/orders">
+            Orders
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="sellers">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/sellers">
+            Sellers
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="invoice">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/invoice">
+            Invoice
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="cart">
+          <router-link click="toggleCollapsed" to="/app/ecommerce/cart">
+            Cart
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="social">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Social App</span></template>
+        <a-menu-item key="profile">
+          <router-link click="toggleCollapsed" to="/app/social/profile">
+            My Profile
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+      <a-sub-menu key="project">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Projects</span></template>
+        <a-menu-item key="grid">
+          <router-link click="toggleCollapsed" to="/app/project/grid">
+            Project Grid
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="list">
+          <router-link click="toggleCollapsed" to="/app/project/list">
+            Project List
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="createProject">
+          <router-link click="toggleCollapsed" to="/app/createProject/grid">
+            Project Create
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="projectDetails">
+          <router-link click="toggleCollapsed" to="/app/project/projectDetails/1">
+            Project Details
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+
+      <a-menu-item key="calender">
+        <sdFeatherIcons type="mail" />
+        <span>
+          <router-link click="toggleCollapsed" to="/app/calendar">
+            Calender
+          </router-link>
+        </span>
+      </a-menu-item>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

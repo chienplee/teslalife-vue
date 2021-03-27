@@ -28,7 +28,7 @@ export const PageHeader = {
               backgroundColor: 'rgb(244, 245, 247)',
             }}
             class={this.class}
-            title={this.title}
+            title={this.title || this.$slots.title()}
             subTitle={this.subTitle}
             breadcrumb={this.routes && this.routes}
             ghost={this.ghost}

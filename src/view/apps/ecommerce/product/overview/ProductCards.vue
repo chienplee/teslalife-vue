@@ -25,7 +25,7 @@
         </template>
       </p>
       <div class="product-single-rating">
-        <a-rate allow-half :default-value="rate" disabled /> 4.9
+        <a-rate allow-half :default-value="renderData.rate" disabled /> 4.9
         <span class="total-reviews"> 778 Reviews</span>
       </div>
 

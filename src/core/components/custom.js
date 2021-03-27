@@ -7,6 +7,8 @@ import CalendarButton from '../../components/buttons/CalendarButton.vue';
 import ExportButton from '../../components/buttons/ExportButton.vue';
 import ShareButton from '../../components/buttons/ShareButton.vue';
 import { PageHeader } from '../../components/pageHeaders/PageHeaders.vue';
+import CreateProject from '../../view/apps/project/overview/CreateProject';
+
 import {
   GoogleBasicBarChart,
   GoogleMaterialBarChart,
@@ -57,6 +59,7 @@ import Modal from '../../components/modals/Modals';
   //   ...ChartjsStackedChart,
   // },
   Alerts,
+  CreateProject,
   {
     name: 'Button',
     ...Button,

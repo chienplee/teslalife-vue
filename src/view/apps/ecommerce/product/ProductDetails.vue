@@ -20,14 +20,14 @@
             <a-col :xs="24" :lg="10">
               <div class="product-details-box__left pdbl">
                 <figure>
-                  <img :style="{ width: '100%' }" :src="require(`../../../../${img}`)" alt="" />
+                  <img :style="{ width: '100%' }" :src="product && require(`../../../../${product[0].img}`)" alt="" />
                 </figure>
                 <div class="pdbl__slider pdbs">
-                  <a-row v-if="products.length" :gutter="5">
-                    <a-col v-for="value in products" :md="4" :key="value.id">
-                      <div class="pdbl__image">
+                  <a-row v-if="filterData.length" :gutter="5">
+                    <a-col v-for="(value, index) in filterData" :md="4" :key="value.id">
+                      <div class="pdbl__image" v-if="index <= 3">
                         <figure>
-                          <router-link :to="`/admin/ecommerce/productDetails/${value.id}`">
+                          <router-link target="_blank" :to="`/app/ecommerce/productDetails/${value.id}`">
                             <img :style="{ width: '100%' }" :src="require(`../../../../${value.img}`)" alt="" />
                           </router-link>
                         </figure>
@@ -37,7 +37,9 @@
                 </div>
               </div>
             </a-col>
-            <a-col :xs="24" :lg="14"> </a-col>
+            <a-col :xs="24" :lg="14">
+              <DetailsRight :product="product[0]" />
+            </a-col>
           </a-row>
         </div>
       </ProductDetailsWrapper>
@@ -50,25 +52,28 @@ import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import { Main } from '../../../styled';
 import { ProductDetailsWrapper } from '../Style';
-
-// const DetailsRight = lazy(() => import('./overview/DetailsRight'));
+import DetailsRight from './overview/DetailsRight';
 
 const ProductDetails = {
   name: 'ProductDetails',
-  components: { Main, ProductDetailsWrapper },
+  components: { Main, ProductDetailsWrapper, DetailsRight },
   setup() {
     const { state, dispatch } = useStore();
     const product = computed(() => state.ecommerce.product);
-    const products = computed(() => state.ecommerce.products);
-    const { params } = useRoute();
-    const { img, category } = product.value[0];
+    const products = computed(() => product.value && state.ecommerce.products);
+    const filterData = computed(() =>
+      products.value.filter(value => {
+        return value.category === product.value[0].category;
+      }),
+    );
+    const { params, matched } = useRoute();
+    const { path } = matched;
     onMounted(() => dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }));
 
     return {
       product,
-      products,
-      img,
-      category,
+      path,
+      filterData,
     };
   },
 };

@@ -135,6 +135,141 @@ export default [
   {
     name: 'detail',
     path: '/app/ecommerce/productDetails/:id',
-    component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
+    component: () => import(/* webpackChunkName: "detail" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
+  },
+  {
+    name: 'add-product',
+    path: '/app/ecommerce/add-product',
+    component: () => import(/* webpackChunkName: "addProduct" */ '../view/apps/ecommerce/product/AddProduct.vue'),
+  },
+  {
+    name: 'edit-product',
+    path: '/app/ecommerce/edit-product',
+    component: () => import(/* webpackChunkName: "editProduct" */ '../view/apps/ecommerce/product/EditProduct.vue'),
+  },
+  {
+    name: 'orders',
+    path: '/app/ecommerce/orders',
+    component: () => import(/* webpackChunkName: "Orders" */ '../view/apps/ecommerce/Orders.vue'),
+  },
+  {
+    name: 'sellers',
+    path: '/app/ecommerce/sellers',
+    component: () => import(/* webpackChunkName: "sellers" */ '../view/apps/ecommerce/Sellers.vue'),
+  },
+  {
+    name: 'invoice',
+    path: '/app/ecommerce/invoice',
+    component: () => import(/* webpackChunkName: "invoice" */ '../view/apps/ecommerce/Invoice.vue'),
+  },
+  {
+    name: 'cart',
+    path: '/app/ecommerce/cart',
+    component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+  },
+  {
+    name: 'social',
+    path: '/app/social/profile',
+    component: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+    children: [
+      {
+        path: 'overview',
+        name: 'overview',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "overview" */ '../view/apps/myProfile/overview/Overview.vue'),
+        },
+      },
+      {
+        path: 'timeline',
+        name: 'timeline',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "timeline" */ '../view/apps/myProfile/overview/Timeline.vue'),
+        },
+      },
+      {
+        path: 'activity',
+        name: 'activity',
+        components: {
+          default: () => import(/* webpackChunkName: "social" */ '../view/apps/myProfile/Index.vue'),
+          child: () => import(/* webpackChunkName: "activity" */ '../view/apps/myProfile/overview/Activity.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'project',
+    path: '/app/project',
+    component: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+    children: [
+      {
+        path: 'grid',
+        name: 'grid',
+        components: {
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+          child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
+        },
+      },
+      {
+        path: 'list',
+        name: 'list',
+        components: {
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/Project.vue'),
+          child: () => import(/* webpackChunkName: "list" */ '../view/apps/project/overview/List.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'createProject',
+    path: '/app/createProject',
+    component: () => import(/* webpackChunkName: "createProject" */ '../view/apps/project/CreateProject.vue'),
+    children: [
+      {
+        path: 'grid',
+        name: 'grid',
+        components: {
+          default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/CreateProject.vue'),
+          child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'projectDetails',
+    path: '/app/project/projectDetails/:id',
+    component: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+    children: [
+      {
+        path: '',
+        name: '',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "tasklist" */ '../view/apps/project/overview/TaskList.vue'),
+        },
+      },
+      {
+        path: 'tasklist',
+        name: 'tasklist',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "tasklist" */ '../view/apps/project/overview/TaskList.vue'),
+        },
+      },
+      {
+        path: 'activities',
+        name: 'activities',
+        components: {
+          default: () => import(/* webpackChunkName: "projectDetail" */ '../view/apps/project/ProjectDetails.vue'),
+          child: () => import(/* webpackChunkName: "activities" */ '../view/apps/project/overview/Activities.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'calendar',
+    path: '/app/calendar',
+    component: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
   },
 ];

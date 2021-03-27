@@ -8,8 +8,9 @@ import '@/core/plugins/ant-design';
 import '@/core/plugins/fonts';
 import '@/core/plugins/maps';
 import '@/core/plugins/apexcharts';
+import '@/core/components/custom';
+import '@/core/components/style';
 import '@/core/plugins/fusioncharts';
-import './core/components/custom';
 
 app.config.productionTip = false;
 app.use(router);
