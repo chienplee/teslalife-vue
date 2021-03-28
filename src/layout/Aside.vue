@@ -152,6 +152,54 @@
           </router-link>
         </span>
       </a-menu-item>
+
+      <a-sub-menu key="users">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Users</span></template>
+        <a-menu-item key="team">
+          <router-link click="toggleCollapsed" to="/app/users/team">
+            Team
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="users-grid">
+          <router-link click="toggleCollapsed" to="/app/users/users/user-grid">
+            Users Grid
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="users-list">
+          <router-link click="toggleCollapsed" to="/app/users/users/user-list">
+            Users List
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="grid-style">
+          <router-link click="toggleCollapsed" to="/app/users/users/grid-style">
+            Users Grid Style
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="grid-group">
+          <router-link click="toggleCollapsed" to="/app/users/users/grid-group">
+            Users Grid Group
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="dataTable">
+          <router-link click="toggleCollapsed" to="/app/users/dataTable">
+            Users table
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="add-user">
+          <router-link click="toggleCollapsed" to="/app/users/add-user/info">
+            Add Users
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+
+      <a-sub-menu key="contact">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Contact</span></template>
+        <a-menu-item key="grid">
+          <router-link click="toggleCollapsed" to="/app/contact/grid">
+            Contact Grid
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

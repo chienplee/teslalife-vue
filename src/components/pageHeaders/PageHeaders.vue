@@ -29,7 +29,7 @@ export const PageHeader = {
             }}
             class={this.class}
             title={this.title || this.$slots.title()}
-            subTitle={this.subTitle}
+            subTitle={this.subTitle || (this.$slots.subTitle ? this.$slots.subTitle() : null)}
             breadcrumb={this.routes && this.routes}
             ghost={this.ghost}
             extra={this.$slots.buttons && this.$slots.buttons()}

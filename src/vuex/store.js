@@ -12,6 +12,8 @@ import cart from './modules/ecommerce/cart/actionCreator';
 import profile from './modules/profile/actionCreator';
 import project from './modules/project/actionCreator';
 import calendar from './modules/calendar/actionCreator';
+import team from './modules/team/actionCreator';
+import contact from './modules/contact/actionCreator';
 
 export default createStore({
   modules: {
@@ -28,5 +30,7 @@ export default createStore({
     profile,
     project,
     calendar,
+    team,
+    contact,
   },
 });
