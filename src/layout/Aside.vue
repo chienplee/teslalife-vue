@@ -174,19 +174,14 @@
             Alerts
           </router-link>
         </a-menu-item>
-        <a-menu-item key="avatar">
-          <router-link click="toggleCollapsed" to="/components/avatar">
-            Avatar
-          </router-link>
-        </a-menu-item>
         <a-menu-item key="autoComplete">
           <router-link click="toggleCollapsed" to="/components/autoComplete">
             AutoComplete
           </router-link>
         </a-menu-item>
-        <a-menu-item key="button">
-          <router-link click="toggleCollapsed" to="/components/button">
-            Buttons
+        <a-menu-item key="avatar">
+          <router-link click="toggleCollapsed" to="/components/avatar">
+            Avatar
           </router-link>
         </a-menu-item>
         <a-menu-item key="badge">
@@ -199,6 +194,12 @@
             Breadcrumb
           </router-link>
         </a-menu-item>
+        <a-menu-item key="button">
+          <router-link click="toggleCollapsed" to="/components/button">
+            Buttons
+          </router-link>
+        </a-menu-item>
+
         <a-menu-item key="calendar">
           <router-link click="toggleCollapsed" to="/components/calendar">
             Calendar
@@ -244,9 +245,19 @@
             DatePicker
           </router-link>
         </a-menu-item>
+        <a-menu-item key="drag">
+          <router-link click="toggleCollapsed" to="">
+            Drag & Drop
+          </router-link>
+        </a-menu-item>
         <a-menu-item key="drawer">
           <router-link click="toggleCollapsed" to="/components/drawer">
             Drawer
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="dropdown">
+          <router-link click="toggleCollapsed" to="/components/dropdown">
+            Dropdown
           </router-link>
         </a-menu-item>
         <a-menu-item key="empty">
@@ -257,11 +268,6 @@
         <a-menu-item key="grid">
           <router-link click="toggleCollapsed" to="/components/grid">
             Grid
-          </router-link>
-        </a-menu-item>
-        <a-menu-item key="dropdown">
-          <router-link click="toggleCollapsed" to="/components/dropdown">
-            Dropdown
           </router-link>
         </a-menu-item>
         <a-menu-item key="input">
