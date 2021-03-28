@@ -265,7 +265,7 @@
             Empty
           </router-link>
         </a-menu-item>
-        <a-menu-item key="grid">
+        <a-menu-item key="grids">
           <router-link click="toggleCollapsed" to="/components/grid">
             Grid
           </router-link>
@@ -363,6 +363,16 @@
         <a-menu-item key="statistic">
           <router-link click="toggleCollapsed" to="/components/statistic">
             Statistic
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="steps">
+          <router-link click="toggleCollapsed" to="/components/steps">
+            Steps
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="switch">
+          <router-link click="toggleCollapsed" to="/components/switch">
+            Switch
           </router-link>
         </a-menu-item>
       </a-sub-menu>

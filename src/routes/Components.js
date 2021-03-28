@@ -71,8 +71,8 @@ export default [
   },
   {
     path: '/components/grid',
-    name: 'grid',
-    component: () => import(/* webpackChunkName: "Grid" */ '@/view/uiElements/Grid'),
+    name: 'grid-list',
+    component: () => import(/* webpackChunkName: "GridList" */ '@/view/uiElements/Grid'),
   },
   {
     path: '/components/dropdown',
@@ -188,6 +188,16 @@ export default [
     path: '/components/statistic',
     name: 'statistic',
     component: () => import(/* webpackChunkName: "Statistic" */ '@/view/uiElements/Statistic'),
+  },
+  {
+    path: '/components/steps',
+    name: 'steps',
+    component: () => import(/* webpackChunkName: "Steps" */ '@/view/uiElements/Steps'),
+  },
+  {
+    path: '/components/switch',
+    name: 'switch',
+    component: () => import(/* webpackChunkName: "Switch" */ '@/view/uiElements/Switch'),
   },
   /*
     {

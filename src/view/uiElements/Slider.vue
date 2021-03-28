@@ -17,24 +17,24 @@
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
-            <Slider :min="0" :max="100" :defaultValue="30" />
-            <Slider :onChange="onChange" :range="true" :defaultValues="[20, 50]" />
+            <Sliders :min="0" :max="100" :defaultValue="30" />
+            <Sliders :onChange="onChange" :range="true" :defaultValues="[20, 50]" />
           </sdCards>
           <sdCards title="With Input" caption="The simplest use of slider">
             <div class="slider-with-input">
               <div class="slider-with-input__single">
                 <h3>With integer</h3>
-                <Slider input :min="1" :max="100" />
+                <Sliders input :min="1" :max="100" />
               </div>
               <div class="slider-with-input__single">
                 <h3>With Decimal</h3>
-                <Slider input :min="0" :max="1" :step="0.01" />
+                <Sliders input :min="0" :max="1" :step="0.01" />
               </div>
             </div>
           </sdCards>
           <!-- 
           <sdCards title="Range" caption="The simplest use of slider">
-            <Slider
+            <Sliders
               range
               :step="10"
               :default-values="[20, 50]"
@@ -48,13 +48,13 @@
           >
             <div>
               <div :style="style">
-                <Slider vertical :default-value="30" />
+                <Sliders vertical :default-value="30" />
               </div>
               <div :style="style">
-                <Slider vertical range :step="10" :default-values="[20, 50]" />
+                <Sliders vertical range :step="10" :default-values="[20, 50]" />
               </div>
               <div :style="style">
-                <Slider
+                <Sliders
                   vertical
                   range
                   :marks="marks"
@@ -66,7 +66,7 @@
         </a-col>
         <!-- <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="with Icon" caption="The simplest use of slider">
-            <Slider :onChange="onChange" icon :min="1" :max="100" />
+            <Sliders :onChange="onChange" icon :min="1" :max="100" />
           </sdCards>
           <sdCards
             title="Graduated slider"
@@ -74,17 +74,17 @@
           >
             <div>
               <h4>included=true</h4>
-              <Slider :marks="marks" :default-value="37" />
-              <Slider range :marks="marks" :default-values="[26, 37]" />
+              <Sliders :marks="marks" :default-value="37" />
+              <Sliders range :marks="marks" :default-values="[26, 37]" />
 
               <h4>included=false</h4>
-              <Slider :marks="marks" :included="false" :default-value="37" />
+              <Sliders :marks="marks" :included="false" :default-value="37" />
 
               <h4>marks & step</h4>
-              <Slider :marks="marks" :step="10" :default-value="37" />
+              <Sliders :marks="marks" :step="10" :default-value="37" />
 
               <h4>step=null</h4>
-              <Slider :marks="marks" :step="null" :default-value="37" />
+              <Sliders :marks="marks" :step="null" :default-value="37" />
             </div>
           </sdCards>
         </a-col> -->
@@ -95,12 +95,12 @@
 
 <script>
 import { Main } from '../styled';
-import Slider from '../../components/slider/Slider';
+import Sliders from '../../components/slider/Slider';
 export default {
-  name: 'Sliders',
+  name: 'Slider',
   components: {
     Main,
-    Slider,
+    Sliders,
   },
   data() {
     return {
