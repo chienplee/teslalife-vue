@@ -49,6 +49,7 @@ import {
   Tag,
   Steps,
   message,
+  Tabs,
 } from 'ant-design-vue';
 
 // app.prototype.$message = message;
@@ -103,3 +104,4 @@ app.use(Progress);
 app.use(Result);
 app.use(Tag);
 app.use(Steps);
+app.use(Tabs);

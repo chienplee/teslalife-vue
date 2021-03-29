@@ -11,7 +11,7 @@
               <a-col :lg="16" :md="15" :xs="24">
                 <a-input value="Duran Clayton" placeholder="input placeholder">
                   <template v-slot:prefix>
-                    <sdFeatherIcon type="user" size="14" />
+                    <sdFeatherIcons type="user" size="14" />
                   </template>
                 </a-input>
               </a-col>
@@ -23,7 +23,7 @@
               <a-col :lg="16" :md="15" :xs="24">
                 <a-input name="email" value="username@email.com" placeholder="input placeholder">
                   <template v-slot:prefix>
-                    <sdFeatherIcon type="mail" size="14" />
+                    <sdFeatherIcons type="mail" size="14" />
                   </template>
                 </a-input>
               </a-col>
@@ -35,7 +35,7 @@
               <a-col :lg="16" :md="15" :xs="24">
                 <a-input-password name="password" value="12345678" placeholder="with input password">
                   <template v-slot:prefix>
-                    <sdFeatherIcon type="lock" size="14" />
+                    <sdFeatherIcons type="lock" size="14" />
                   </template>
                 </a-input-password>
               </a-col>

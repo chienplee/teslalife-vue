@@ -199,6 +199,11 @@ export default [
     name: 'switch',
     component: () => import(/* webpackChunkName: "Switch" */ '@/view/uiElements/Switch'),
   },
+  {
+    path: '/components/tabs',
+    name: 'tab',
+    component: () => import(/* webpackChunkName: "Tabs" */ '@/view/uiElements/Tab'),
+  },
   /*
     {
       path: "/components/carousel",
