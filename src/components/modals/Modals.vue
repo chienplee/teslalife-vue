@@ -8,9 +8,10 @@
     :type="color ? this.type : false"
     :width="width"
     :class="className"
+    :footer="null"
   >
     <template v-slot:footer>
-      <slot name="footer">
+      <slot v-if="footer !== null" name="footer">
         <sdButton type="white" :outlined="color ? false : true" key="back" @click="onCancel">
           Return
         </sdButton>
@@ -31,7 +32,7 @@
 
 <script>
 import { ModalStyled } from './styled';
-import VueTypes, { object } from 'vue-types';
+import VueTypes from 'vue-types';
 export default {
   name: 'Modal',
   components: {
@@ -47,7 +48,7 @@ export default {
     type: VueTypes.oneOf(['primary', 'secondary', 'success', 'error', 'danger', 'info', 'white', 'warning']).def(
       'white',
     ),
-    footer: VueTypes.arrayOf(object),
+    footer: VueTypes.oneOf([null]),
     width: VueTypes.number.def(620),
     color: VueTypes.oneOfType([VueTypes.bool, VueTypes.string]).def(false),
   },

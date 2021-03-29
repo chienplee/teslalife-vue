@@ -272,4 +272,144 @@ export default [
     path: '/app/calendar',
     component: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
   },
+  {
+    name: 'users',
+    path: '/app/users',
+    component: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+    children: [
+      {
+        path: 'dataTable',
+        name: 'dataTable',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "dataTable" */ '../view/apps/users/UserListDataTable.vue'),
+        },
+      },
+      {
+        path: 'team',
+        name: 'team',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "team" */ '../view/apps/users/Team.vue'),
+        },
+      },
+      {
+        path: 'users',
+        name: 'users-1',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "users-1" */ '../view/apps/users/Users.vue'),
+        },
+        children: [
+          {
+            path: 'user-grid',
+            name: 'user-grid',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () => import(/* webpackChunkName: "user-grid" */ '../view/apps/users/overview/UserCard.vue'),
+            },
+          },
+          {
+            path: 'user-list',
+            name: 'user-list',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () =>
+                import(/* webpackChunkName: "user-list" */ '../view/apps/users/overview/UserCardList.vue'),
+            },
+          },
+          {
+            path: 'grid-style',
+            name: 'grid-style',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () =>
+                import(/* webpackChunkName: "user-style" */ '../view/apps/users/overview/UserCardStyle.vue'),
+            },
+          },
+          {
+            path: 'grid-group',
+            name: 'grid-group',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () =>
+                import(/* webpackChunkName: "user-group" */ '../view/apps/users/overview/UserCardGroup.vue'),
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'users',
+    path: '/app/users',
+    component: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+    children: [
+      {
+        path: 'dataTable',
+        name: 'dataTable',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "dataTable" */ '../view/apps/users/UserListDataTable.vue'),
+        },
+      },
+      {
+        path: 'team',
+        name: 'team',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "team" */ '../view/apps/users/Team.vue'),
+        },
+      },
+      {
+        path: 'add-user',
+        name: 'add-user',
+        components: {
+          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+          child: () => import(/* webpackChunkName: "addUser" */ '../view/apps/users/AddUsers.vue'),
+        },
+        children: [
+          {
+            path: 'info',
+            name: 'info',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () => import(/* webpackChunkName: "info" */ '../view/apps/users/overview/Info.vue'),
+            },
+          },
+          {
+            path: 'work',
+            name: 'work',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () => import(/* webpackChunkName: "work" */ '../view/apps/users/overview/work.vue'),
+            },
+          },
+          {
+            path: 'social',
+            name: 'social',
+            components: {
+              default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
+              descendant: () => import(/* webpackChunkName: "social" */ '../view/apps/users/overview/Social.vue'),
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'contact-grid',
+    path: '/app/contact/grid',
+    component: () => import(/* webpackChunkName: "contact-grid" */ '../view/apps/contact/ContactGrid.vue'),
+  },
+  {
+    name: 'contact-list',
+    path: '/app/contact/list',
+    component: () => import(/* webpackChunkName: "contact-list" */ '../view/apps/contact/Contact.vue'),
+  },
+  {
+    name: 'contact-create',
+    path: '/app/contact/create',
+    component: () => import(/* webpackChunkName: "contact-create" */ '../view/apps/contact/ContactCreate.vue'),
+  },
 ];
