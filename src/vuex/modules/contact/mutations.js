@@ -4,7 +4,6 @@ export default {
   },
 
   readSuccess(state, data) {
-    console.log(data);
     state.loading = false;
     state.data = data;
   },

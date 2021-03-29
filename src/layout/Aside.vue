@@ -208,7 +208,26 @@
             Contact Grid
           </router-link>
         </a-menu-item>
+        <a-menu-item key="list">
+          <router-link click="toggleCollapsed" to="/app/contact/list">
+            Contact List
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="create">
+          <router-link click="toggleCollapsed" to="/app/contact/create">
+            Contact Create
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
+
+      <a-menu-item key="note">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/app/note">
+            Note
+          </router-link>
+        </span>
+      </a-menu-item>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

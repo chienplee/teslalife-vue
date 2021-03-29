@@ -402,4 +402,14 @@ export default [
     path: '/app/contact/grid',
     component: () => import(/* webpackChunkName: "contact-grid" */ '../view/apps/contact/ContactGrid.vue'),
   },
+  {
+    name: 'contact-list',
+    path: '/app/contact/list',
+    component: () => import(/* webpackChunkName: "contact-list" */ '../view/apps/contact/Contact.vue'),
+  },
+  {
+    name: 'contact-create',
+    path: '/app/contact/create',
+    component: () => import(/* webpackChunkName: "contact-create" */ '../view/apps/contact/ContactCreate.vue'),
+  },
 ];

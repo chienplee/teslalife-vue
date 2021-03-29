@@ -20,9 +20,24 @@
 
   <Main>
     <a-row :gutter="25">
-      <a-col v-for="user in users" :key="user.id" :md="6">
+      <a-col :md="24">
         <sdCards headless>
-          <ContactCard :showEditModal="showEditModal" :user="user" />
+          <UserTableStyleWrapper>
+            <div class="contact-table">
+              <TableWrapper class="table-responsive">
+                <a-table
+                  :rowSelection="rowSelection"
+                  :dataSource="usersTableData"
+                  :columns="usersTableColumns"
+                  :pagination="{
+                    defaultPageSize: 7,
+                    total: usersTableData.length,
+                    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+                  }"
+                />
+              </TableWrapper>
+            </div>
+          </UserTableStyleWrapper>
         </sdCards>
       </a-col>
       <sdModal
@@ -105,16 +120,26 @@
   </Main>
 </template>
 <script>
-import { ContactPageheaderStyle } from './style';
+import { ContactPageheaderStyle, Action } from './style';
 import ContactCard from './overview/ContactCard';
-import { Main, CardToolbox, BasicFormWrapper } from '../../styled';
-import { AddUser } from '../../pages/style';
+import { Main, CardToolbox, BasicFormWrapper, TableWrapper } from '../../styled';
+import { AddUser, UserTableStyleWrapper } from '../../pages/style';
 import { useStore } from 'vuex';
 import { computed, reactive, ref } from 'vue';
 
 const ContactGrid = {
   name: 'ContactGrid',
-  components: { Main, CardToolbox, BasicFormWrapper, AddUser, ContactPageheaderStyle, ContactCard },
+  components: {
+    Main,
+    CardToolbox,
+    BasicFormWrapper,
+    AddUser,
+    TableWrapper,
+    UserTableStyleWrapper,
+    ContactPageheaderStyle,
+    ContactCard,
+    Action,
+  },
   setup() {
     const { state, dispatch } = useStore();
     const users = computed(() => state.contact.data);
@@ -228,7 +253,122 @@ const ContactGrid = {
       onCancel();
     };
 
+    const onHandleDelete = id => {
+      const value = users.value.filter(item => item.id !== id);
+      dispatch('contactDeleteData', value);
+    };
+
+    const usersTableData = computed(() =>
+      state.contact.data
+        .sort((a, b) => {
+          return b.time - a.time;
+        })
+        .map(user => {
+          const { id, name, designation, img, stared, email, phone, company } = user;
+
+          return {
+            key: id,
+            user: (
+              <div class="user-info">
+                <figure>
+                  <img style={{ width: '40px' }} src={require(`../../../${img}`)} alt="" />
+                </figure>
+                <figcaption>
+                  <sdHeading class="user-name" as="h6">
+                    {name}
+                  </sdHeading>
+                  <span class="user-designation">San Francisco, CA</span>
+                </figcaption>
+              </div>
+            ),
+            email,
+            company,
+            position: designation,
+            phone,
+            action: (
+              <Action class="table-actions">
+                <sdButton
+                  onClick={() => dispatch('onStarUpdate', { data: users.value, id })}
+                  class="btn-icon"
+                  type="primary"
+                  to="#"
+                  shape="circle"
+                >
+                  <sdFeatherIcons class={stared ? 'active' : 'deactivate'} type="star" size={16} />
+                </sdButton>
+                <sdDropdown
+                  class="wide-dropdwon"
+                  overlay={
+                    <>
+                      <a onClick={() => showEditModal(user, id)} to="#">
+                        <span>Edit</span>
+                      </a>
+                      <a onClick={() => onHandleDelete(id)} to="#">
+                        <span>Delete</span>
+                      </a>
+                    </>
+                  }
+                  action={['click']}
+                >
+                  <sdButton class="btn-icon" type="info" to="#" shape="circle">
+                    <sdFeatherIcons type="more-vertical" size={16} />
+                  </sdButton>
+                </sdDropdown>
+              </Action>
+            ),
+          };
+        }),
+    );
+
+    const usersTableColumns = [
+      {
+        title: 'User',
+        dataIndex: 'user',
+        key: 'user',
+      },
+      {
+        title: 'Email',
+        dataIndex: 'email',
+        key: 'email',
+      },
+      {
+        title: 'Company',
+        dataIndex: 'company',
+        key: 'company',
+      },
+      {
+        title: 'Position',
+        dataIndex: 'position',
+        key: 'position',
+      },
+      {
+        title: 'Phone',
+        dataIndex: 'phone',
+        key: 'phone',
+      },
+      {
+        title: '',
+        dataIndex: 'action',
+        key: 'action',
+        width: '90px',
+      },
+    ];
+
+    const rowSelection = {
+      onChange: (selectedRowKeys, selectedRows) => {
+        selectedRowKeys.value = selectedRowKeys;
+        selectedRows.value = selectedRows;
+      },
+      getCheckboxProps: record => ({
+        disabled: record.name === 'Disabled User', // Column configuration not to be checked
+        name: record.name,
+      }),
+    };
+
     return {
+      rowSelection,
+      usersTableColumns,
+      usersTableData,
       handleCancel,
       handleEditOk,
       handleOk,
