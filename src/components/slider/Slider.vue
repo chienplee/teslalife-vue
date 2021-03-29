@@ -52,7 +52,6 @@ export default {
     max: VueTypes.number.def(100),
     onAfterChange: VueTypes.func,
   },
-
   data() {
     return {
       inputValue: 1,

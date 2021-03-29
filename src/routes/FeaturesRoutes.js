@@ -89,12 +89,12 @@ export default [
     name: 'formValidation',
     component: () => import('@/view/forms/FormValidation.vue'),
   },
-  /*
   {
-    path: "/maps/vector",
-    name: "vector",
-    component: () => import("@/view/maps/Vector.vue"),
-  }
+    path: '/maps/vector',
+    name: 'vector',
+    component: () => import('@/view/maps/Vector.vue'),
+  },
+  /*
   {
     path: "/forms/form-validation",
     name: "formValidation",

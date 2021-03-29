@@ -122,4 +122,9 @@ export default [
     name: 'knowledge-base-singale',
     component: () => import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
   },
+  {
+    path: '/changelog',
+    name: 'changelog',
+    component: () => import(/* webpackChunkName: "changelog" */ '@/view/pages/Changelog.vue'),
+  },
 ];

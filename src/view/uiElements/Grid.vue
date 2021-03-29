@@ -155,10 +155,27 @@
         <a-col :xs="24">
           <sdCards headless title="Responsive" size="default">
             <GridStyle>
-              <a-row>
-                <a-col xs="2" sm="4" md="6" lg="8" xl="{10}"> Col </a-col>
-                <a-col xs="20" sm="16" md="12" lg="8" xl="4"> Col </a-col>
-                <a-col xs="2" sm="4" md="6" lg="8" xl="{10}"> Col </a-col>
+              <a-divider orientation="left">Normal</a-divider>
+              <a-row type="flex">
+                <a-col :span="6" :order="4">1 col-order-4</a-col>
+                <a-col :span="6" :order="3">2 col-order-3</a-col>
+                <a-col :span="6" :order="2">3 col-order-2</a-col>
+                <a-col :span="6" :order="1">4 col-order-1</a-col>
+              </a-row>
+              <a-divider orientation="left">Responsive</a-divider>
+              <a-row type="flex">
+                <a-col :span="6" :xs="{ order: 1 }" :sm="{ order: 2 }" :md="{ order: 3 }" :lg="{ order: 4 }">
+                  1 col-order-responsive
+                </a-col>
+                <a-col :span="6" :xs="{ order: 2 }" :sm="{ order: 1 }" :md="{ order: 4 }" :lg="{ order: 3 }">
+                  2 col-order-responsive
+                </a-col>
+                <a-col :span="6" :xs="{ order: 3 }" :sm="{ order: 4 }" :md="{ order: 2 }" :lg="{ order: 2 }">
+                  3 col-order-responsive
+                </a-col>
+                <a-col :span="6" :xs="{ order: 4 }" :sm="{ order: 3 }" :md="{ order: 1 }" :lg="{ order: 1 }">
+                  4 col-order-responsive
+                </a-col>
               </a-row>
             </GridStyle>
           </sdCards>

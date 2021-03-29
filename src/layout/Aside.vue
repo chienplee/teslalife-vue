@@ -41,6 +41,15 @@
       </a-menu-item>
     </a-sub-menu>
 
+    <a-menu-item key="changelog">
+      <sdFeatherIcons type="circle" />
+      <span>
+        <router-link click="toggleCollapsed" to="/changelog">
+          Changelog
+        </router-link>
+      </span>
+    </a-menu-item>
+
     <a-menu-item-group key="applications">
       <template v-slot:title>
         <p class="sidebar-nav-title">APPLICATIONS</p>
@@ -213,19 +222,14 @@
             Alerts
           </router-link>
         </a-menu-item>
-        <a-menu-item key="avatar">
-          <router-link click="toggleCollapsed" to="/components/avatar">
-            Avatar
-          </router-link>
-        </a-menu-item>
         <a-menu-item key="autoComplete">
           <router-link click="toggleCollapsed" to="/components/autoComplete">
             AutoComplete
           </router-link>
         </a-menu-item>
-        <a-menu-item key="button">
-          <router-link click="toggleCollapsed" to="/components/button">
-            Buttons
+        <a-menu-item key="avatar">
+          <router-link click="toggleCollapsed" to="/components/avatar">
+            Avatar
           </router-link>
         </a-menu-item>
         <a-menu-item key="badge">
@@ -238,6 +242,12 @@
             Breadcrumb
           </router-link>
         </a-menu-item>
+        <a-menu-item key="button">
+          <router-link click="toggleCollapsed" to="/components/button">
+            Buttons
+          </router-link>
+        </a-menu-item>
+
         <a-menu-item key="calendar">
           <router-link click="toggleCollapsed" to="/components/calendar">
             Calendar
@@ -283,9 +293,19 @@
             DatePicker
           </router-link>
         </a-menu-item>
+        <a-menu-item key="drag">
+          <router-link click="toggleCollapsed" to="">
+            Drag & Drop
+          </router-link>
+        </a-menu-item>
         <a-menu-item key="drawer">
           <router-link click="toggleCollapsed" to="/components/drawer">
             Drawer
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="dropdown">
+          <router-link click="toggleCollapsed" to="/components/dropdown">
+            Dropdown
           </router-link>
         </a-menu-item>
         <a-menu-item key="empty">
@@ -293,14 +313,9 @@
             Empty
           </router-link>
         </a-menu-item>
-        <a-menu-item key="grid">
+        <a-menu-item key="grids">
           <router-link click="toggleCollapsed" to="/components/grid">
             Grid
-          </router-link>
-        </a-menu-item>
-        <a-menu-item key="dropdown">
-          <router-link click="toggleCollapsed" to="/components/dropdown">
-            Dropdown
           </router-link>
         </a-menu-item>
         <a-menu-item key="input">
@@ -396,6 +411,16 @@
         <a-menu-item key="statistic">
           <router-link click="toggleCollapsed" to="/components/statistic">
             Statistic
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="steps">
+          <router-link click="toggleCollapsed" to="/components/steps">
+            Steps
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="switch">
+          <router-link click="toggleCollapsed" to="/components/switch">
+            Switch
           </router-link>
         </a-menu-item>
       </a-sub-menu>

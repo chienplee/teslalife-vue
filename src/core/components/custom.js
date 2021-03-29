@@ -8,6 +8,7 @@ import ExportButton from '../../components/buttons/ExportButton.vue';
 import ShareButton from '../../components/buttons/ShareButton.vue';
 import { PageHeader } from '../../components/pageHeaders/PageHeaders.vue';
 import CreateProject from '../../view/apps/project/overview/CreateProject';
+import Drawer from '../../components/drawer/Drawer.vue';
 
 import {
   GoogleBasicBarChart,
@@ -68,6 +69,7 @@ import Modal from '../../components/modals/Modals';
     name: 'BtnGroup',
     ...BtnGroup,
   },
+  Drawer,
   CalendarButton,
   ExportButton,
   ShareButton,
