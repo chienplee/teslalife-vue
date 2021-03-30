@@ -465,6 +465,11 @@
             Switch
           </router-link>
         </a-menu-item>
+        <a-menu-item key="tabs">
+          <router-link click="toggleCollapsed" to="/components/tabs">
+            Tabs
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="chart">
