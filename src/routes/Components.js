@@ -209,6 +209,11 @@ export default [
     name: 'tag',
     component: () => import(/* webpackChunkName: "Tags" */ '@/view/uiElements/Tags'),
   },
+  {
+    path: '/components/timeline',
+    name: 'timelines',
+    component: () => import(/* webpackChunkName: "Timeline" */ '@/view/uiElements/Timeline'),
+  },
   /*
     {
       path: "/components/carousel",

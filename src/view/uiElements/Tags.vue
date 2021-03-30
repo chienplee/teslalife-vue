@@ -39,8 +39,8 @@
               <Tag v-for="color in customColors" :key="color" tagType="colorful" :color="color" />
             </div>
           </sdCards>
-          <sdCards title="Add & Remove Dynamically">
-            <div class="taglist-wrap"><Tag tagType="dynamicTag" :data="data" /></div
+          <sdCards title="Animated Tag">
+            <div class="taglist-wrap"><Tag tagType="dynamicTag" :data="['Movies', 'Books', 'Music', 'Sports']" /></div
           ></sdCards>
         </a-col>
       </a-row>
@@ -83,12 +83,9 @@ export default {
       '#87d068',
       '#f50',
     ];
-    const data = ['Unremovable', 'Tag 2', 'Tag 3Tag 3Tag 3Tag 3Tag 3Tag 3Tag 3'];
-
     return {
       colors,
       customColors,
-      data,
     };
   },
 };

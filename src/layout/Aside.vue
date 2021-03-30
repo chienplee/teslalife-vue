@@ -475,6 +475,11 @@
             Tags
           </router-link>
         </a-menu-item>
+        <a-menu-item key="timeline">
+          <router-link click="toggleCollapsed" to="/components/timeline">
+            Timeline
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="chart">
