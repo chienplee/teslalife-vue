@@ -482,4 +482,35 @@ export default [
     path: '/app/export',
     component: () => import(/* webpackChunkName: "export" */ '../view/apps/importExport/Export.vue'),
   },
+  {
+    name: 'task',
+    path: '/app/task',
+    component: () => import(/* webpackChunkName: "task" */ '../view/apps/task/Index.vue'),
+    children: [
+      {
+        name: 'all',
+        path: 'all',
+        components: {
+          default: () => import(/* webpackChunkName: "task" */ '../view/apps/task/Index.vue'),
+          child: () => import(/* webpackChunkName: "all" */ '../view/apps/task/overview/all.vue'),
+        },
+      },
+      {
+        name: 'favorites',
+        path: 'favorites',
+        components: {
+          default: () => import(/* webpackChunkName: "task" */ '../view/apps/task/Index.vue'),
+          child: () => import(/* webpackChunkName: "favorites" */ '../view/apps/task/overview/favorites.vue'),
+        },
+      },
+      {
+        name: 'completed',
+        path: 'completed',
+        components: {
+          default: () => import(/* webpackChunkName: "task" */ '../view/apps/task/Index.vue'),
+          child: () => import(/* webpackChunkName: "completed" */ '../view/apps/task/overview/completed.vue'),
+        },
+      },
+    ],
+  },
 ];

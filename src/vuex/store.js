@@ -16,6 +16,7 @@ import team from './modules/team/actionCreator';
 import contact from './modules/contact/actionCreator';
 import note from './modules/note/actionCreator';
 import todo from './modules/todo/actionCreator';
+import task from './modules/task/actionCreator';
 
 export default createStore({
   modules: {
@@ -36,5 +37,6 @@ export default createStore({
     contact,
     note,
     todo,
+    task,
   },
 });
