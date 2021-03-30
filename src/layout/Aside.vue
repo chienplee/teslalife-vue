@@ -447,6 +447,11 @@
             Tabs
           </router-link>
         </a-menu-item>
+        <a-menu-item key="tags">
+          <router-link click="toggleCollapsed" to="/components/tags">
+            Tags
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="chart">

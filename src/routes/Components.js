@@ -204,6 +204,11 @@ export default [
     name: 'tab',
     component: () => import(/* webpackChunkName: "Tabs" */ '@/view/uiElements/Tab'),
   },
+  {
+    path: '/components/tags',
+    name: 'tag',
+    component: () => import(/* webpackChunkName: "Tags" */ '@/view/uiElements/Tags'),
+  },
   /*
     {
       path: "/components/carousel",
