@@ -37,6 +37,7 @@ import {
   Col,
   DatePicker,
   TimePicker,
+  Timeline,
   Input,
   AutoComplete,
   Popover,
@@ -82,6 +83,7 @@ app.use(Statistic);
 app.use(Slider);
 app.use(DatePicker);
 app.use(TimePicker);
+app.use(Timeline);
 app.use(PageHeader);
 app.use(Calendar);
 app.use(Card);
