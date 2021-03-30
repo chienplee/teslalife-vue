@@ -412,4 +412,74 @@ export default [
     path: '/app/contact/create',
     component: () => import(/* webpackChunkName: "contact-create" */ '../view/apps/contact/ContactCreate.vue'),
   },
+  {
+    name: 'note',
+    path: '/app/note',
+    component: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+    children: [
+      {
+        path: 'all',
+        name: 'all',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "all" */ '../view/apps/note/overview/all.vue'),
+        },
+      },
+      {
+        path: 'favorite',
+        name: 'favorite',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "favorite" */ '../view/apps/note/overview/favorite.vue'),
+        },
+      },
+      {
+        path: 'personal',
+        name: 'personal',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "personal" */ '../view/apps/note/overview/personal.vue'),
+        },
+      },
+      {
+        path: 'work',
+        name: 'work',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "work" */ '../view/apps/note/overview/work.vue'),
+        },
+      },
+      {
+        path: 'social',
+        name: 'social',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "social" */ '../view/apps/note/overview/social.vue'),
+        },
+      },
+      {
+        path: 'important',
+        name: 'important',
+        components: {
+          default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
+          child: () => import(/* webpackChunkName: "important" */ '../view/apps/note/overview/important.vue'),
+        },
+      },
+    ],
+  },
+  {
+    name: 'to-do',
+    path: '/app/to-do',
+    component: () => import(/* webpackChunkName: "to-do" */ '../view/apps/todo/Todo.vue'),
+  },
+  {
+    name: 'import',
+    path: '/app/import',
+    component: () => import(/* webpackChunkName: "import" */ '../view/apps/importExport/Import.vue'),
+  },
+  {
+    name: 'export',
+    path: '/app/export',
+    component: () => import(/* webpackChunkName: "export" */ '../view/apps/importExport/Export.vue'),
+  },
 ];
