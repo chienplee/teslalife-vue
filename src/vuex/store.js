@@ -14,6 +14,8 @@ import project from './modules/project/actionCreator';
 import calendar from './modules/calendar/actionCreator';
 import team from './modules/team/actionCreator';
 import contact from './modules/contact/actionCreator';
+import note from './modules/note/actionCreator';
+import todo from './modules/todo/actionCreator';
 
 export default createStore({
   modules: {
@@ -32,5 +34,7 @@ export default createStore({
     calendar,
     team,
     contact,
+    note,
+    todo,
   },
 });

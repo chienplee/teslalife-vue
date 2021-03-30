@@ -223,11 +223,34 @@
       <a-menu-item key="note">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/note">
+          <router-link click="toggleCollapsed" to="/app/note/all">
             Note
           </router-link>
         </span>
       </a-menu-item>
+
+      <a-menu-item key="to-do">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link click="toggleCollapsed" to="/app/to-do">
+            To Do
+          </router-link>
+        </span>
+      </a-menu-item>
+
+      <a-sub-menu key="import-export">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Import Export</span></template>
+        <a-menu-item key="import">
+          <router-link click="toggleCollapsed" to="/app/import">
+            Import
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="export">
+          <router-link click="toggleCollapsed" to="/app/export">
+            Export
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">

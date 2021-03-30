@@ -79,10 +79,6 @@ import { SettingWrapper } from './overview/style';
 const UserCards = defineAsyncComponent(() => import('../../pages/overview/UserCard'));
 const CoverSection = defineAsyncComponent(() => import('./overview/CoverSection'));
 const UserBio = defineAsyncComponent(() => import('./overview/UserBio'));
-// const Overview = lazy(() => import('./overview/Overview'));
-// const Timeline = lazy(() => import('./overview/Timeline'));
-// const Activity = lazy(() => import('./overview/Activity'));
-// const { path } = useRouteMatch();
 
 const MyProfile = {
   name: 'MyProfile',
