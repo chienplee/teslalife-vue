@@ -214,6 +214,11 @@ export default [
     name: 'timelines',
     component: () => import(/* webpackChunkName: "Timeline" */ '@/view/uiElements/Timeline'),
   },
+  {
+    path: '/components/time-picker',
+    name: 'time-picker',
+    component: () => import(/* webpackChunkName: "TimePicker" */ '@/view/uiElements/TimePicker'),
+  },
   /*
     {
       path: "/components/carousel",

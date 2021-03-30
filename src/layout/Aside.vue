@@ -489,6 +489,11 @@
             Timeline
           </router-link>
         </a-menu-item>
+        <a-menu-item key="time-picker">
+          <router-link click="toggleCollapsed" to="/components/time-picker">
+            TimePicker
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="chart">

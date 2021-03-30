@@ -16,7 +16,7 @@
     <Main>
       <a-row :gutter="25">
         <a-col :lg="12" :xs="24">
-          <sdCards title="Basic" caption="The simplest use of Timelines">
+          <sdCards title="Basic">
             <TimeLinePointerIconWrap>
               <a-timeline>
                 <a-timeline-item class="primary">
@@ -72,7 +72,7 @@
               </a-timeline>
             </TimeLinePointerIconWrap>
           </sdCards>
-          <sdCards title="Basic" caption="The simplest use of Timelines">
+          <sdCards title="Basic">
             <TimelineNormalWrap>
               <a-timeline>
                 <a-timeline-item>Create a services site 2015-09-01</a-timeline-item>
@@ -83,7 +83,7 @@
             </TimelineNormalWrap>
           </sdCards>
           <TimelineNormalWrap>
-            <sdCards title="Alternate" caption="The simplest use of Timelines">
+            <sdCards title="Alternate">
               <a-timeline mode="alternate">
                 <a-timeline-item>Create a services site 2015-09-01</a-timeline-item>
                 <a-timeline-item color="green">Solve initial network problems 2015-09-01</a-timeline-item>
@@ -103,7 +103,7 @@
             </sdCards>
           </TimelineNormalWrap>
           <TimelineNormalWrap>
-            <sdCards title="Custom" caption="The simplest use of Timelines">
+            <sdCards title="Custom">
               <a-timeline>
                 <a-timeline-item>Create a services site 2015-09-01</a-timeline-item>
                 <a-timeline-item>Solve initial network problems 2015-09-01</a-timeline-item>
@@ -118,7 +118,7 @@
         </a-col>
         <a-col :lg="12" :xs="24">
           <TimelineNormalWrap>
-            <sdCards title="Timeline 1" caption="The simplest use of Timelines">
+            <sdCards title="Timeline 1">
               <a-timeline>
                 <a-timeline-item class="active">
                   <template #dot>
@@ -180,7 +180,7 @@
           </TimelineNormalWrap>
 
           <TimelineBoxWrap>
-            <sdCards title="Timeline 2" caption="The simplest use of Timelines">
+            <sdCards title="Timeline 2">
               <a-timeline mode="alternate">
                 <a-timeline-item>
                   <template #dot>
@@ -246,7 +246,7 @@
             </sdCards>
           </TimelineBoxWrap>
           <TimelineNormalWrap>
-            <sdCards title="Color" caption="The simplest use of Timelines">
+            <sdCards title="Color">
               <a-timeline>
                 <a-timeline-item color="green">Create a services site 2015-09-01</a-timeline-item>
                 <a-timeline-item color="green">Create a services site 2015-09-01</a-timeline-item>
@@ -275,7 +275,7 @@
           </TimelineNormalWrap>
 
           <TimelineNormalWrap>
-            <sdCards title="Right alternate" caption="The simplest use of Timelines">
+            <sdCards title="Right alternate">
               <a-timeline mode="right">
                 <a-timeline-item>Create a services site 2015-09-01</a-timeline-item>
                 <a-timeline-item>Solve initial network problems 2015-09-01</a-timeline-item>
