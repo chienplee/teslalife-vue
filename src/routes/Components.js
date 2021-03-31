@@ -224,6 +224,11 @@ export default [
     name: 'tree-select',
     component: () => import(/* webpackChunkName: "TreeSelect" */ '@/view/uiElements/TreeSelect'),
   },
+  {
+    path: '/components/upload',
+    name: 'upload',
+    component: () => import(/* webpackChunkName: "Upload" */ '@/view/uiElements/Upload'),
+  },
   /*
     {
       path: "/components/carousel",
