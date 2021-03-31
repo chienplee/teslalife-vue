@@ -51,6 +51,8 @@ import {
   Steps,
   message,
   Tabs,
+  Tree,
+  TreeSelect,
 } from 'ant-design-vue';
 
 // app.prototype.$message = message;
@@ -107,3 +109,5 @@ app.use(Result);
 app.use(Tag);
 app.use(Steps);
 app.use(Tabs);
+app.use(Tree);
+app.use(TreeSelect);

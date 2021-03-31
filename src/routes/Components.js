@@ -219,6 +219,11 @@ export default [
     name: 'time-picker',
     component: () => import(/* webpackChunkName: "TimePicker" */ '@/view/uiElements/TimePicker'),
   },
+  {
+    path: '/components/tree-select',
+    name: 'tree-select',
+    component: () => import(/* webpackChunkName: "TreeSelect" */ '@/view/uiElements/TreeSelect'),
+  },
   /*
     {
       path: "/components/carousel",
