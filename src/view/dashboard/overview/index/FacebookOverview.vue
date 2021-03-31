@@ -52,7 +52,7 @@
                           },
                         ]"
                         :height="height"
-                        className="engaged"
+                        class="engaged"
                         id="engaged"
                       />
                     </sdChartContainer>
@@ -77,7 +77,7 @@
                       <Chart
                         type="line"
                         id="impression"
-                        className="impression"
+                        class="impression"
                         :labels="forcastOverviewState.ImLabels"
                         :options="areaChartOption"
                         :datasets="[
@@ -122,7 +122,7 @@
                         type="line"
                         :labels="forcastOverviewState.LiLabels"
                         id="likes"
-                        className="likes"
+                        class="likes"
                         :options="areaChartOption"
                         :datasets="[
                           {
@@ -162,7 +162,7 @@
                         type="line"
                         :labels="forcastOverviewState.ImLabels2"
                         id="impression2"
-                        className="impression2"
+                        class="impression2"
                         :options="areaChartOption"
                         :datasets="[
                           {

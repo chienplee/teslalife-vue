@@ -42,7 +42,7 @@
             Total visitors
           </p>
           <Chart
-            className="device"
+            class="device"
             type="doughnut"
             :labels="['Desktop', 'Mobiles', 'Tablets']"
             :datasets="[

@@ -16,7 +16,7 @@
           <div class="card-chunk">
             <Chart
               :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
-              className="card-chunk4"
+              class="card-chunk4"
               :datasets="[
                 {
                   data: [20, 60, 50, 45, 50, 60, 70],
@@ -47,7 +47,7 @@
           </div>
           <div class="card-chunk">
             <Chart
-              className="cardChunk2"
+              class="cardChunk2"
               :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
               :datasets="[
                 {
@@ -79,7 +79,7 @@
           </div>
           <div class="card-chunk">
             <Chart
-              className="card-chunk3"
+              class="card-chunk3"
               :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
               :datasets="[
                 {
@@ -126,7 +126,7 @@
               <Chart
                 type="line"
                 id="performance"
-                className="performance"
+                class="performance"
                 :labels="performanceState.labels"
                 :datasets="performanceDatasets"
                 :options="performanceOption"

@@ -26,7 +26,7 @@
         </template>
         <Chart
           type="line"
-          className="account"
+          class="account"
           :labels="['Current', '1-30', '30-60', '60-90', '91+']"
           :datasets="[
             {
@@ -123,7 +123,7 @@
         </template>
         <Chart
           type="line"
-          className="payable"
+          class="payable"
           :labels="['Current', '1-30', '30-60', '60-90', '91+']"
           :datasets="[
             {

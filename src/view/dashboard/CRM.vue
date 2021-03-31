@@ -21,7 +21,7 @@
             </div>
             <div class="card-chunk">
               <Chart
-                className="growth"
+                class="growth"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
                 :datasets="[
                   {
@@ -53,7 +53,7 @@
             </div>
             <div class="card-chunk">
               <Chart
-                className="downward"
+                class="downward"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
                 :datasets="[
                   {
@@ -86,7 +86,7 @@
             </div>
             <div class="card-chunk">
               <Chart
-                className="upward"
+                class="upward"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
                 :datasets="[
                   {
@@ -118,7 +118,7 @@
             </div>
             <div class="card-chunk">
               <Chart
-                className="visitors"
+                class="visitors"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
                 :datasets="[
                   {

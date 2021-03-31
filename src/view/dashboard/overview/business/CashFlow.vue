@@ -69,7 +69,7 @@
       </div>
       <sdChartContainer class="parentContainer">
         <Chart
-          className="cashFlow"
+          class="cashFlow"
           type="bar"
           :labels="cashFlowState.labels"
           :datasets="[

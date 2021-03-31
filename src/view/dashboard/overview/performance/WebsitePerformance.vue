@@ -106,7 +106,7 @@
         <sdChartContainer class="parentContainer">
           <Chart
             v-if="performanceState"
-            className="performance"
+            class="performance"
             type="line"
             id="performance"
             :labels="performanceState.labels"

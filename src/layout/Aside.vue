@@ -124,7 +124,7 @@
       <a-sub-menu key="social">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Social App</span></template>
         <a-menu-item key="profile">
-          <router-link click="toggleCollapsed" to="/app/social/profile">
+          <router-link click="toggleCollapsed" to="/app/social/profile/overview">
             My Profile
           </router-link>
         </a-menu-item>
@@ -255,7 +255,7 @@
       <a-menu-item key="task">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/task">
+          <router-link click="toggleCollapsed" to="/app/task/all">
             Task
           </router-link>
         </span>
