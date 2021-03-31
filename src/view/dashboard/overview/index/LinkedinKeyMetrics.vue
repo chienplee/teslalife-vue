@@ -54,7 +54,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="Clicks"
+                  class="Clicks"
                 />
               </sdChartContainer>
             </div>
@@ -86,7 +86,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="liLike"
+                  class="liLike"
                 />
               </sdChartContainer>
             </div>
@@ -118,7 +118,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="liRetweet"
+                  class="liRetweet"
                 />
               </sdChartContainer>
             </div>
@@ -150,7 +150,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="liRates"
+                  class="liRates"
                 />
               </sdChartContainer>
             </div>
@@ -182,7 +182,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="liFollower"
+                  class="liFollower"
                 />
               </sdChartContainer>
             </div>

@@ -101,7 +101,7 @@
           <sdChartContainer class="parentContainer">
             <Chart
               type="bar"
-              className="incomeExpanse"
+              class="incomeExpanse"
               :labels="incomeState.labels"
               :datasets="incomeDataset"
               :height="88"

@@ -54,7 +54,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="post"
+                  class="post"
                 />
               </sdChartContainer>
             </div>
@@ -86,7 +86,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="like"
+                  class="like"
                 />
               </sdChartContainer>
             </div>
@@ -118,7 +118,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="retweet"
+                  class="retweet"
                 />
               </sdChartContainer>
             </div>
@@ -150,7 +150,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="rates"
+                  class="rates"
                 />
               </sdChartContainer>
             </div>
@@ -182,7 +182,7 @@
                     },
                   ]"
                   :options="chartOptions"
-                  className="follower"
+                  class="follower"
                 />
               </sdChartContainer>
             </div>

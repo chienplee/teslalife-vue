@@ -6,7 +6,7 @@ export default {
   name: 'ChartJs',
   props: {
     type: VueTypes.string.def('bar'),
-    className: VueTypes.string.isRequired.def('bar'),
+    class: VueTypes.string.isRequired.def('bar'),
     style: VueTypes.object.def({ marginBottom: '20px' }),
     labels: VueTypes.arrayOf(VueTypes.string).def([
       'Jan',
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     chartConstructor(chartType, chartData, chartOptions) {
-      const chartElement = document.querySelector('.' + this.className);
+      const chartElement = document.querySelector('.' + this.class);
       new Chart(chartElement, {
         type: chartType,
         data: chartData,
@@ -98,7 +98,7 @@ export default {
     this.chartConstructor(chartType, chartData, chartOptions);
   },
   render() {
-    return <canvas class={this.className} style={this.style} height={this.height}></canvas>;
+    return <canvas class={this.class} style={this.style} height={this.height}></canvas>;
   },
 };
 </script>

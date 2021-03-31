@@ -58,7 +58,7 @@
       <sdChartContainer class="parentContainer">
         <Chart
           type="bar"
-          className="youtubeSubscribe"
+          class="youtubeSubscribe"
           :labels="youtubeSubscribeState.labels"
           :datasets="youtubeSubscribeDatasets"
           :options="chartOptions"

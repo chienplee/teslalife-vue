@@ -387,10 +387,10 @@ export default [
           },
           {
             path: 'social',
-            name: 'social',
+            name: 'social-user',
             components: {
               default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
-              descendant: () => import(/* webpackChunkName: "social" */ '../view/apps/users/overview/Social.vue'),
+              descendant: () => import(/* webpackChunkName: "social-user" */ '../view/apps/users/overview/Social.vue'),
             },
           },
         ],
@@ -451,10 +451,10 @@ export default [
       },
       {
         path: 'social',
-        name: 'social',
+        name: 'social-note',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
-          child: () => import(/* webpackChunkName: "social" */ '../view/apps/note/overview/social.vue'),
+          child: () => import(/* webpackChunkName: "social-note" */ '../view/apps/note/overview/social.vue'),
         },
       },
       {

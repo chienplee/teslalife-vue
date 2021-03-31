@@ -105,7 +105,7 @@ const RevenueGenerated = {
               revenue,
               trend: (
                 <Chart
-                  className={'generate' + key}
+                  class={'generate' + key}
                   type="line"
                   labels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
                   datasets={[

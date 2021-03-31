@@ -65,7 +65,7 @@
         </ul>
         <sdChartContainer class="parentContainer">
           <Chart
-            className="perform"
+            class="perform"
             type="line"
             id="perform"
             :labels="performanceState.labels"

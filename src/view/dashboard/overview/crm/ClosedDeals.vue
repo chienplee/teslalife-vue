@@ -43,7 +43,7 @@
       </div>
 
       <Chartjs
-        className="closeDeal"
+        class="closeDeal"
         :labels="closeDealState.labels"
         :datasets="closeDealDatasets"
         :options="{

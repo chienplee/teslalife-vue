@@ -14,7 +14,7 @@
             <sdChartContainer class="parentContainer">
               <chartjs
                 type="line"
-                className="netProfit"
+                class="netProfit"
                 id="netProfit"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'july', 'Aug', 'Sep', 'Oct']"
                 :datasets="[
@@ -52,7 +52,7 @@
             <sdChartContainer class="parentContainer">
               <chartjs
                 id="grossProfit"
-                className="grossProfit"
+                class="grossProfit"
                 type="line"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'july', 'Aug', 'Sep', 'Oct']"
                 :datasets="[

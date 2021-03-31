@@ -79,7 +79,7 @@
       <div v-else class="performance-lineChart">
         <sdChartContainer class="parentContainer">
           <Chartjs
-            className="performance"
+            class="performance"
             id="performance"
             type="line"
             :labels="performanceState.labels"

@@ -48,7 +48,7 @@
             },
           }"
           type="doughnut"
-          className="sentMail"
+          class="sentMail"
           :labels="labels"
           :datasets="datasets"
           :height="180"

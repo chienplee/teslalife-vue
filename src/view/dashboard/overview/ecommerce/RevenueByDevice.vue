@@ -36,7 +36,7 @@
         <div>
           <Chartjs
             type="doughnut"
-            className="revenue"
+            class="revenue"
             :options="{
               cutoutPercentage: 60,
               maintainAspectRatio: false,

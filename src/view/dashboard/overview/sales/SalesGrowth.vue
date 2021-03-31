@@ -15,7 +15,7 @@
           </div>
           <div class="growth-chart-wrap">
             <Chartjs
-              className="growth"
+              class="growth"
               type="bar"
               :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']"
               :datasets="[
