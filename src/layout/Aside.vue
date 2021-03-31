@@ -255,7 +255,7 @@
       <a-menu-item key="task">
         <sdFeatherIcons type="circle" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/task">
+          <router-link click="toggleCollapsed" to="/app/task/all">
             Task
           </router-link>
         </span>

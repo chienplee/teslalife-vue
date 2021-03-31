@@ -17,14 +17,14 @@
       <a-row :gutter="25">
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Bar Chart">
-            <Chart class="bar" />
+            <Chart className="bar" />
           </sdCards>
           <sdCards title="Stacked Chart">
-            <Chart class="stacked" :options="stackedOption" />
+            <Chart className="stacked" :options="stackedOption" />
           </sdCards>
           <sdCards title="Area Chart">
             <sdChartContainer class="parentContainer">
-              <Chart type="line" :options="areaChartOption" :datasets="areaChartData" class="areaChart" />
+              <Chart type="line" :options="areaChartOption" :datasets="areaChartData" className="areaChart" />
             </sdChartContainer>
           </sdCards>
           <sdCards title="Donut Chart">
@@ -51,25 +51,25 @@
                     backgroundColor: ['#560bd0', '#007bff', '#00cccc', '#cbe0e3', '#74de00'],
                   },
                 ]"
-                class="donutChart"
+                className="donutChart"
               />
             </sdChartContainer>
           </sdCards>
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Horizontal Chart">
-            <Chart type="horizontalBar" class="horizontalChart" :options="horizontalOption" />
+            <Chart type="horizontalBar" className="horizontalChart" :options="horizontalOption" />
           </sdCards>
           <sdCards title="Line Chart">
             <sdChartContainer class="parentContainer">
-              <Chart type="line" class="lineChart" :options="lineChartOption" :datasets="lineChartData" />
+              <Chart type="line" className="lineChart" :options="lineChartOption" :datasets="lineChartData" />
             </sdChartContainer>
           </sdCards>
           <sdCards title="Transparent Chart">
             <sdChartContainer class="parentContainer">
               <Chart
                 type="bar"
-                class="transparentChart"
+                className="transparentChart"
                 :options="transparentChartOption"
                 :datasets="transparentChartData"
               />
@@ -97,7 +97,7 @@
                     backgroundColor: ['#560bd0', '#007bff', '#00cccc', '#cbe0e3', '#74de00'],
                   },
                 ]"
-                class="pieChart"
+                className="pieChart"
               />
             </sdChartContainer>
           </sdCards>
