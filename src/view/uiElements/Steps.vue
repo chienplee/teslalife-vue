@@ -7,7 +7,7 @@
           <sdExportButton />
           <sdShareButton />
           <sdButton size="small" type="primary">
-            <PlusIcon size="14" />
+            <sdFeatherIcons type="plus" size="14" />
             Add New
           </sdButton>
         </div>
@@ -15,8 +15,13 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="Basic" caption="The simplest use of slider"> </sdCards>
+        <a-col :xs="24">
+          <sdCards title="Basic">
+            <basic size="small" :title="['Finished', 'In Progress', 'Waiting']" :current="1" />
+          </sdCards>
+          <sdCards title="With Icon">
+            <basic step="withIcon" size="small" :data="data" />
+          </sdCards>
         </a-col>
       </a-row>
     </Main>
@@ -25,10 +30,16 @@
 
 <script>
 import { Main } from '../styled';
+import Basic from '../../components/steps/Basic';
+import { data } from '../../demoData/step-data.json';
 export default {
   name: 'Steps',
   components: {
     Main,
+    Basic,
+  },
+  setup() {
+    return { data };
   },
 };
 </script>

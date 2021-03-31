@@ -7,7 +7,7 @@
     :headers="headers"
     @change="handleChange"
   >
-    <a-button>
+    <a-button class="btn-outlined" type="light">
       <upload-outlined></upload-outlined>
       Click to Upload
     </a-button>
