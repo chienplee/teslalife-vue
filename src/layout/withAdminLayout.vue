@@ -97,8 +97,15 @@
             :collapsed="collapsed"
             :theme="!darkMode ? 'light' : 'dark'"
           >
-            <p class="sidebar-nav-title">MAIN MENU</p>
-            <AsideItems :toggleCollapsed="() => toggleCollapsedMobile(collapsed)" />
+            <perfect-scrollbar
+              :options="{
+                wheelSpeed: 1,
+                swipeEasing: true,
+              }"
+            >
+              <p class="sidebar-nav-title">MAIN MENU</p>
+              <AsideItems :toggleCollapsed="() => toggleCollapsedMobile(collapsed)" />
+            </perfect-scrollbar>
           </Sider>
         </template>
         <Layout class="atbd-main-layout">
@@ -152,7 +159,8 @@ import HeaderSearch from '../components/header-search/HeaderSearch';
 import AuthInfo from '../components/utilities/auth-info/info';
 import AsideItems from './Aside';
 import TopMenu from './TopMenuItems';
-
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 const { Header, Footer, Sider, Content } = Layout;
 
 export default {
@@ -171,6 +179,7 @@ export default {
     AuthInfo,
     AsideItems,
     TopMenu,
+    PerfectScrollbar,
   },
   data() {
     return {
@@ -219,3 +228,8 @@ export default {
   },
 };
 </script>
+<style>
+.ps {
+  height: calc(100vh - 100px);
+}
+</style>

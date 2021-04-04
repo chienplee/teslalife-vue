@@ -10,6 +10,7 @@ import '@/core/plugins/maps';
 import '@/core/plugins/apexcharts';
 import '@/core/components/custom';
 import '@/core/components/style';
+// import '@/core/plugins/custom-scroll-bar';
 
 app.config.productionTip = false;
 app.use(router);
