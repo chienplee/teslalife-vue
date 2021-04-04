@@ -494,6 +494,16 @@
             TimePicker
           </router-link>
         </a-menu-item>
+        <a-menu-item key="tree-select">
+          <router-link click="toggleCollapsed" to="/components/tree-select">
+            Tree Select
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="upload">
+          <router-link click="toggleCollapsed" to="/components/upload">
+            Upload
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="chart">

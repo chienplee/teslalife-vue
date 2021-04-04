@@ -1,6 +1,6 @@
 import Styled from 'vue3-styled-components';
-
-const StepsStyle = Styled('a-steps')`
+import { Steps } from 'ant-design-vue';
+const StepsStyle = Styled(Steps)`
     .steps-action{
         margin-top: 40px;
         button{
