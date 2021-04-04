@@ -419,34 +419,34 @@ export default [
     children: [
       {
         path: 'all',
-        name: 'all',
+        name: 'note-all',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
-          child: () => import(/* webpackChunkName: "all" */ '../view/apps/note/overview/all.vue'),
+          child: () => import(/* webpackChunkName: "note-all" */ '../view/apps/note/overview/all.vue'),
         },
       },
       {
         path: 'favorite',
-        name: 'favorite',
+        name: 'note-favorite',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
-          child: () => import(/* webpackChunkName: "favorite" */ '../view/apps/note/overview/favorite.vue'),
+          child: () => import(/* webpackChunkName: "note-favorite" */ '../view/apps/note/overview/favorite.vue'),
         },
       },
       {
         path: 'personal',
-        name: 'personal',
+        name: 'note-personal',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
-          child: () => import(/* webpackChunkName: "personal" */ '../view/apps/note/overview/personal.vue'),
+          child: () => import(/* webpackChunkName: "note-personal" */ '../view/apps/note/overview/personal.vue'),
         },
       },
       {
         path: 'work',
-        name: 'work',
+        name: 'note-work',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
-          child: () => import(/* webpackChunkName: "work" */ '../view/apps/note/overview/work.vue'),
+          child: () => import(/* webpackChunkName: "note-work" */ '../view/apps/note/overview/work.vue'),
         },
       },
       {
