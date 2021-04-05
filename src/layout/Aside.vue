@@ -627,6 +627,11 @@
             Basic Table
           </router-link>
         </a-menu-item>
+        <a-menu-item key="DataTable">
+          <router-link click="toggleCollapsed" to="/tables/dataTable">
+            Data Table
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
     </a-menu-item-group>
     <a-menu-item-group key="pages">

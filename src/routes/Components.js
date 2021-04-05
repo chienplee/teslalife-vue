@@ -21,7 +21,7 @@ export default [
   },
   {
     path: '/components/calendar',
-    name: 'calendar',
+    name: 'calendars',
     component: () => import(/* webpackChunkName: "Calendar" */ '@/view/uiElements/Calendar'),
   },
   {
@@ -86,7 +86,7 @@ export default [
   },
   {
     path: '/components/list',
-    name: 'list',
+    name: 'lists',
     component: () => import(/* webpackChunkName: "List" */ '@/view/uiElements/List'),
   },
   {
@@ -229,6 +229,16 @@ export default [
     name: 'upload',
     component: () => import(/* webpackChunkName: "Upload" */ '@/view/uiElements/Upload'),
   },
+  {
+    path: '/tables/basic',
+    name: 'table',
+    component: () => import('@/view/table/Table'),
+  },
+  {
+    path: '/tables/dataTable',
+    name: 'datatable',
+    component: () => import('@/view/table/DataTable'),
+  },
   /*
     {
       path: "/components/carousel",
@@ -240,10 +250,6 @@ export default [
       name: "slider",
       component: defineAsyncComponent(() => import("@/view/uiElements/Slider")),
     },
-    {
-      path: "/tables/basic",
-      name: "table",
-      component: () => import("@/view/table/table.vue"),
-    },
+    
     */
 ];

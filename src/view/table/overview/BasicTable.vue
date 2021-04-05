@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-table :columns="columns" :data-source="data">
+    <a-table :columns="columns" :data-source="data" :pagination="false">
       <template v-slot:name:text>
         <a>{{ text }}</a>
       </template>
@@ -20,6 +20,18 @@ const data = [
     key: '2',
     name: 'John',
     age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '3',
+    name: 'Rocky',
+    age: 12,
+    address: '10 Downing Street',
+  },
+  {
+    key: '4',
+    name: 'Himu',
+    age: 44,
     address: '10 Downing Street',
   },
 ];
@@ -43,7 +55,7 @@ const columns = [
 ];
 export default {
   name: 'basicTable',
-  data() {
+  setup() {
     return {
       data,
       columns,

@@ -90,14 +90,14 @@ const UserListTable = {
           action: (
             <div class="table-actions">
               <>
-                <sdButton class="btn-icon" type="primary" to="#" shape="circle">
-                  <sdFeatherIcons type="eye" size={16} />
+                <sdButton class="btn-icon" type="default" to="#" shape="circle">
+                  <sdFeatherIcons type="eye" size="16" />
                 </sdButton>
-                <sdButton class="btn-icon" type="info" to="#" shape="circle">
-                  <sdFeatherIcons type="edit" size={16} />
+                <sdButton class="btn-icon" type="default" to="#" shape="circle">
+                  <sdFeatherIcons type="edit" size="16" />
                 </sdButton>
-                <sdButton class="btn-icon" type="danger" to="#" shape="circle">
-                  <sdFeatherIcons type="trash-2" size={16} />
+                <sdButton class="btn-icon" type="default" to="#" shape="circle">
+                  <sdFeatherIcons type="trash-2" size="16" />
                 </sdButton>
               </>
             </div>

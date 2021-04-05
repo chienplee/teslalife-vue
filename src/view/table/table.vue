@@ -8,21 +8,22 @@
             <BasicTable />
           </sdCards>
         </a-col>
-        <!-- <a-col :xs="24">
-            <SocialTrafficMetrics />
-          </a-col>
-          <a-col :xs="24">
-            <TrafficChannel />
-          </a-col>
-          <a-col :xs="24">
-            <TopLandingPages />
-          </a-col>
-          <a-col xs={12}>
-            <TopSellingProduct />
-          </a-col>
-          <a-col xs={12}>
-            <RevenueGenerated />
-          <a-coll>
+        <a-col :xs="24">
+          <SocialTrafficMetrics />
+        </a-col>
+        <a-col :xs="24">
+          <TrafficChannel />
+        </a-col>
+        <a-col :xs="24">
+          <TopLandingPages />
+        </a-col>
+        <a-col :xs="12">
+          <TopSellingProduct />
+        </a-col>
+        <a-col :xs="12">
+          <RevenueGenerated />
+        </a-col>
+        <!-- 
           <a-col :xs="24">
             <DragAndDropTable />
           </a-col> -->
@@ -34,11 +35,21 @@
 <script>
 import { Main } from '../styled';
 import BasicTable from './overview/BasicTable';
+import SocialTrafficMetrics from '../../view/dashboard/overview/index/SocialTrafficMetrics';
+import TrafficChannel from '../../view/dashboard/overview/performance/TrafficChannel';
+import TopLandingPages from '../../view/dashboard/overview/performance/TopLandingPages';
+import TopSellingProduct from '../../view/dashboard/overview/ecommerce/TopSellingProduct';
+import RevenueGenerated from '../../view/dashboard/overview/ecommerce/RevenueGenerated';
 export default {
   name: 'Tables',
   components: {
     Main,
     BasicTable,
+    SocialTrafficMetrics,
+    TrafficChannel,
+    TopLandingPages,
+    TopSellingProduct,
+    RevenueGenerated,
   },
 };
 </script>
