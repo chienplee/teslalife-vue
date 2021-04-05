@@ -23,6 +23,27 @@
                 <sdAutoComplete :dataSource="searchData" @onSearch="onSearch" />
               </div>
             </sdCards>
+            <sdCards title="Customize Input Component">
+              <div class="auto-complete-input">
+                <sdAutoComplete customComponent :dataSource="searchData" @onSearch="onSearch">
+                  <a-textarea placeholder="input here" class="custom" :style="{ height: 50 }" />
+                </sdAutoComplete>
+              </div>
+            </sdCards>
+            <sdCards title="Lookup-Patterns - Certain Category">
+              <sdAutoComplete @onSearch="patternSearch" :dataSource="searchData" width="100%" patterns />
+            </sdCards>
+          </a-col>
+          <a-col :md="12" :sm="24" :xs="24">
+            <div class="auto-complete-input">
+              <sdCards title="Customize">
+                <sdAutoComplete :dataSource="dataSource" @onSearch="onSearch" />
+              </sdCards>
+            </div>
+
+            <sdCards title="Lookup-Patterns - Uncertain Category">
+              <sdAutoComplete :dataSource="searchData" @onSearch="patternSearch" width="100%" patterns patternButtons />
+            </sdCards>
           </a-col>
         </a-row>
       </AutoCompleteWrapper>
@@ -32,6 +53,7 @@
 
 <script>
 import { Main, AutoCompleteWrapper } from '../styled';
+import { ref } from 'vue';
 
 export default {
   name: 'AutoComplete',
@@ -39,47 +61,50 @@ export default {
     Main,
     AutoCompleteWrapper,
   },
-  data() {
-    return {
-      searchData: [
-        {
-          id: 1,
-          title: 'AntDesign',
-          count: 10000,
-        },
-        {
-          id: 2,
-          title: 'Design UI',
-          count: 10600,
-        },
+  setup() {
+    const searchData = ref([
+      {
+        id: 1,
+        title: 'AntDesign',
+        count: 10000,
+      },
+      {
+        id: 2,
+        title: 'Design UI',
+        count: 10600,
+      },
 
-        {
-          id: 3,
-          title: 'Bootstrap Design UI',
-          count: 60100,
-        },
-        {
-          id: 4,
-          title: 'Meterial design',
-          count: 30010,
-        },
+      {
+        id: 3,
+        title: 'Bootstrap Design UI',
+        count: 60100,
+      },
+      {
+        id: 4,
+        title: 'Meterial design',
+        count: 30010,
+      },
 
-        {
-          id: 5,
-          title: 'AntDesign design language',
-          count: 100000,
-        },
-      ],
-    };
-  },
-  methods: {
-    onSearch(searchText) {
+      {
+        id: 5,
+        title: 'AntDesign design language',
+        count: 100000,
+      },
+    ]);
+    const onSearch = searchText => {
       console.log(searchText);
-    },
-    patternSearch(searchText) {
-      const data = this.searchData.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
-      this.state.notData = data;
-    },
+    };
+
+    const patternSearch = searchText => {
+      const data = searchData.value.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
+      console.log(data);
+    };
+
+    return {
+      searchData,
+      onSearch,
+      patternSearch,
+    };
   },
 };
 </script>

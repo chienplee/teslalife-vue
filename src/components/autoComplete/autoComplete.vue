@@ -1,11 +1,15 @@
 <template>
-  <AutoCompleteStyled
-    v-if="customComponent"
-    :dataSource="dataSource"
-    :style="{ width }"
-    @select="onSelect"
-    @search="onSearching"
-  >
+  <AutoCompleteStyled v-if="customComponent" :style="{ width }" @select="onSelect" @search="onSearching">
+    <template v-if="myData.length" #dataSource>
+      <a-select-option v-for="item in myData" :key="item.title">
+        {{ item.title }}
+      </a-select-option>
+    </template>
+    <template v-else #dataSource>
+      <a-select-option key="Data not found!">
+        Data not found!
+      </a-select-option>
+    </template>
     <slot></slot>
   </AutoCompleteStyled>
   <AutoCompleteStyled
@@ -21,9 +25,14 @@
     @search="onSearching"
   >
     <template v-if="myData.length" #dataSource>
-      <a-select-opt-group v-for="item in myData" :key="item.title">
+      <a-select-option v-for="item in myData" :key="item.title">
         {{ item.title }}
-      </a-select-opt-group>
+      </a-select-option>
+    </template>
+    <template v-else #dataSource>
+      <a-select-option key="Data not found!">
+        Data not found!
+      </a-select-option>
     </template>
     <a-input>
       <template #suffix><sdFeatherIcons type="search"/></template>
@@ -31,19 +40,31 @@
   </AutoCompleteStyled>
 
   <AutoCompleteStyled
-    :data-source="state.dataSource"
     :style="{ width }"
     @select="onSelect"
     @search="onSearching"
     :placeholder="placeholder"
     :value="value"
     v-else
-  />
+  >
+    <template v-if="myData.length" #dataSource>
+      <a-select-option v-for="item in myData" :key="item.title">
+        {{ item.title }}
+      </a-select-option>
+    </template>
+    <template v-else #dataSource>
+      <a-select-option key="Data not found!">
+        Data not found!
+      </a-select-option>
+    </template>
+  </AutoCompleteStyled>
 </template>
 
 <script>
 import { AutoCompleteStyled } from './style';
 import VueTypes from 'vue-types';
+import { toRefs, ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   name: 'AutoComplete',
@@ -55,28 +76,32 @@ export default {
     patterns: VueTypes.bool.def(false),
     patternButtons: VueTypes.bool.def(false),
     width: VueTypes.string.def('350px'),
-    onSearch: VueTypes.func,
     dataSource: VueTypes.array,
     placeholder: VueTypes.string.def('Input here'),
   },
-  data() {
-    return {
-      value: '',
-      myData: [],
+  setup(props, { emit }) {
+    const { dataSource } = toRefs(props);
+    const { state } = useStore();
+    const value = ref('');
+    const myData = ref(dataSource.value);
+    const rtl = computed(() => state.themeLayout.rtlData);
+
+    const onSearching = searchText => {
+      value.value = searchText;
+      const data = dataSource.value.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
+      emit('onSearch', searchText);
+      return (myData.value = !searchText ? dataSource.value : data);
     };
-  },
-  computed: {
-    rtl() {
-      return this.$store.state.themeLayout.rtlData;
-    },
-  },
-  methods: {
-    onSearching(searchText) {
-      this.value = searchText;
-      const data = this.dataSource.filter(item => item.title.toUpperCase().startsWith(searchText.toUpperCase()));
-      this.myData = !searchText ? [] : data;
-    },
-    onSelect() {},
+
+    const onSelect = () => {};
+
+    return {
+      value,
+      myData,
+      rtl,
+      onSearching,
+      onSelect,
+    };
   },
 };
 </script>
