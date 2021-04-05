@@ -18,7 +18,7 @@
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Basic" caption="The simplest use of slider">
             <Sliders :min="0" :max="100" :defaultValue="30" />
-            <Sliders :onChange="onChange" :range="true" :defaultValues="[20, 50]" />
+            <Sliders @onChange="onChange" range :defaultValues="[20, 50]" />
           </sdCards>
           <sdCards title="With Input" caption="The simplest use of slider">
             <div class="slider-with-input">
@@ -32,46 +32,30 @@
               </div>
             </div>
           </sdCards>
-          <!-- 
+
           <sdCards title="Range" caption="The simplest use of slider">
-            <Sliders
-              range
-              :step="10"
-              :default-values="[20, 50]"
-              :onChange="onChange"
-              :onAfterChange="onAfterChange"
-            />
+            <Sliders range :step="10" :defaultValues="[20, 500]" @onChange="onChange" @onAfterChange="onAfterChange" />
           </sdCards>
-          <sdCards
-            title="Graduated slider vertical"
-            caption="The simplest use of slider"
-          >
-            <div>
+          <sdCards title="Graduated slider vertical" caption="The simplest use of slider">
+            <div style="height: 300px">
+              <div style="display: inline-block; height: 300px; margin-left: 70px">
+                <Sliders vertical :defaultValue="30" />
+              </div>
+
               <div :style="style">
-                <Sliders vertical :default-value="30" />
+                <Sliders vertical :min="0" :max="100" range :step="10" :defaultValues="[20, 50]" />
               </div>
               <div :style="style">
-                <Sliders vertical range :step="10" :default-values="[20, 50]" />
-              </div>
-              <div :style="style">
-                <Sliders
-                  vertical
-                  range
-                  :marks="marks"
-                  :default-values="[26, 27]"
-                />
+                <Sliders vertical range :marks="marks" :defaultValues="[20, 50]" />
               </div>
             </div>
-          </sdCards> -->
-        </a-col>
-        <!-- <a-col :md="12" :sm="24" :xs="24">
-          <sdCards title="with Icon" caption="The simplest use of slider">
-            <Sliders :onChange="onChange" icon :min="1" :max="100" />
           </sdCards>
-          <sdCards
-            title="Graduated slider"
-            caption="The simplest use of slider"
-          >
+        </a-col>
+        <a-col :md="12" :sm="24" :xs="24">
+          <sdCards title="with Icon" caption="The simplest use of slider">
+            <Sliders @onChange="onChange" icon :min="1" :max="100" />
+          </sdCards>
+          <sdCards title="Graduated slider" caption="The simplest use of slider">
             <div>
               <h4>included=true</h4>
               <Sliders :marks="marks" :default-value="37" />
@@ -87,7 +71,7 @@
               <Sliders :marks="marks" :step="null" :default-value="37" />
             </div>
           </sdCards>
-        </a-col> -->
+        </a-col>
       </a-row>
     </Main>
   </div>
@@ -96,16 +80,28 @@
 <script>
 import { Main } from '../styled';
 import Sliders from '../../components/slider/Slider';
+import { ref } from 'vue';
 export default {
   name: 'Slider',
   components: {
     Main,
     Sliders,
   },
-  data() {
+  setup() {
+    const onChangeValue = ref(null);
+    const afterChangeValue = ref(null);
+    function onChange(value) {
+      onChangeValue.value = value;
+    }
+    function onAfterChange(value) {
+      afterChangeValue.value = value;
+    }
+
     return {
-      onChangeValue: null,
-      afterChangeValue: null,
+      onChange,
+      onAfterChange,
+      onChangeValue,
+      afterChangeValue,
       style: {
         display: 'inline-block',
         height: 300,
@@ -123,15 +119,6 @@ export default {
         },
       },
     };
-  },
-  methods: {
-    onChange(value) {
-      console.log(value);
-      this.onChangeValue = value;
-    },
-    onAfterChange(value) {
-      this.afterChangeValue = value;
-    },
   },
 };
 </script>

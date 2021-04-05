@@ -345,7 +345,7 @@
           </router-link>
         </a-menu-item>
         <a-menu-item key="drag">
-          <router-link click="toggleCollapsed" to="">
+          <router-link click="toggleCollapsed" to="/components/drag-drop">
             Drag & Drop
           </router-link>
         </a-menu-item>
