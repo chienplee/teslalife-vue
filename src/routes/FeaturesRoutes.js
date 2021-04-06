@@ -87,19 +87,21 @@ export default [
   {
     path: '/forms/form-validation',
     name: 'formValidation',
-    component: () => import('@/view/forms/FormValidation.vue'),
+    component: () => import(/* webpackChunkName: "FormValidation" */ '@/view/forms/FormValidation.vue'),
   },
   {
     path: '/maps/vector',
     name: 'vector',
-    component: () => import('@/view/maps/Vector.vue'),
+    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
   },
-  /*
   {
-    path: "/forms/form-validation",
-    name: "formValidation",
-    component: () => import("@/view/forms/FormValidation.vue"),
+    path: '/widgets/chart',
+    name: 'widgetCharts',
+    component: () => import(/* webpackChunkName: "widgetsChart" */ '@/view/widgets/Charts.vue'),
   },
- 
-  */
+  {
+    path: '/widgets/card',
+    name: 'widgetCards',
+    component: () => import(/* webpackChunkName: "widgetsCard" */ '@/view/widgets/Cards.vue'),
+  },
 ];

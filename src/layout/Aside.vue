@@ -633,6 +633,19 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="widgets">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Widgets</span></template>
+        <a-menu-item key="widgetsChart">
+          <router-link click="toggleCollapsed" to="/widgets/chart">
+            Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="widgetsCard">
+          <router-link click="toggleCollapsed" to="/widgets/card">
+            Card
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
     <a-menu-item-group key="pages">
       <template v-slot:title>
