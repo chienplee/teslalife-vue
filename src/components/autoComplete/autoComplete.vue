@@ -35,7 +35,16 @@
       </a-select-option>
     </template>
     <a-input>
-      <template #suffix><sdFeatherIcons type="search"/></template>
+      <template #suffix
+        ><sdButton
+          v-if="patternButtons"
+          class="search-btn"
+          :style="{ [rtl ? 'marginLeft' : 'marginRight']: -20 }"
+          type="primary"
+        >
+          <sdFeatherIcons type="search" /> </sdButton
+        ><sdFeatherIcons v-else type="search"
+      /></template>
     </a-input>
   </AutoCompleteStyled>
 

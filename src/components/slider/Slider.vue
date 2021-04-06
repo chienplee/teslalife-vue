@@ -2,42 +2,54 @@
   <div>
     <a-row v-if="input">
       <a-col :xl="20" :xs="24">
-        <a-slider
-          :min="min"
-          :max="max"
-          @change="onChanges"
-          :v-model="typeof inputValue === 'number' ? inputValue : 0"
-          :step="step"
-        />
+        <a-slider :marks="marks" :min="min" :max="max" @change="onChanges" v-model:value="inputValue" :step="step" />
       </a-col>
       <a-col :xl="4" :xs="24">
-        <a-input-number :min="min" :max="max" :v-model="inputValue" @change="onChanges" :step="step" />
+        <a-input-number :min="min" :max="max" v-model:value="inputValue" @change="onChanges" :step="step" />
       </a-col>
     </a-row>
     <IconWrapper v-else-if="icon">
-      <!-- <a-icon type="frown" :style="{ color: preColor }" />
-    <a-slider :min="mini" :max="maxi" @change="handleChange" :v-model="value" />
-    <a-icon type="frown" :style="{ color: nextColor }" /> -->
+      <FrownOutlined :style="{ color: preColor }" />
+      <a-slider :marks="marks" :min="mini" :max="maxi" @change="handleChange" :v-model="value" />
+      <FrownOutlined :style="{ color: nextColor }" />
     </IconWrapper>
+    <div v-else-if="vertical" style="display: inline-block; height: 300px; margin-left: 70px">
+      <a-slider
+        :range="range"
+        :marks="marks"
+        :step="step"
+        :max="maxi"
+        :min="mini"
+        @change="onChanges"
+        vertical
+        v-model:value="multipleValue"
+      />
+    </div>
+
     <a-slider
+      :marks="marks"
       :range="range"
-      :step="10"
+      :step="step"
       v-else
       id="test"
-      :default-value="defaultValue || defaultValues"
-      :max="defaultValue || defaultValues[1]"
+      v-model:value="multipleValue"
+      :max="maxi"
+      :min="mini"
       @change="onChanges"
     />
   </div>
 </template>
 
 <script>
+import { toRefs, ref } from 'vue';
 import VueTypes from 'vue-types';
 import { IconWrapper } from './style';
+import { FrownOutlined } from '@ant-design/icons-vue';
 export default {
   name: 'Slider',
   components: {
     IconWrapper,
+    FrownOutlined,
   },
   props: {
     defaultValue: VueTypes.number,
@@ -50,31 +62,46 @@ export default {
     vertical: VueTypes.bool.def(false),
     min: VueTypes.number.def(0),
     max: VueTypes.number.def(100),
-    onAfterChange: VueTypes.func,
   },
-  data() {
+  setup(props, { emit }) {
+    const { defaultValues, defaultValue, min, max } = toRefs(props);
+    const inputValue = ref(1);
+    const value = ref('');
+    const multipleValue = ref(defaultValue.value || defaultValues.value);
+    const mini = ref(min.value);
+    const maxi = ref(max.value);
+    const mid = ref(((maxi.value - mini.value) / 2).toFixed(5));
+    const preColor = ref(value.value >= mid.value ? '' : 'rgba(0, 0, 0, .45)');
+    const nextColor = ref(value.value >= mid.value ? 'rgba(0, 0, 0, .45)' : '');
+
+    function onChanges(v) {
+      inputValue.value = v;
+      emit('onChange', v);
+    }
+    function handleChange(v) {
+      inputValue.value = v;
+      value.value = v;
+      preColor.value = value.value >= mid.value ? '' : 'rgba(0, 0, 0, .45)';
+      nextColor.value = value.value >= mid.value ? 'rgba(0, 0, 0, .45)' : '';
+      emit('onChange', v);
+    }
+    function onAfterChanges(v) {
+      emit('onAfterChange', v);
+    }
+
     return {
-      inputValue: 1,
-      mini: this.min,
-      maxi: this.max,
-      value: '',
-      mid: ((this.maxi - this.mini) / 2).toFixed(5),
-      preColor: this.value >= this.mid ? '' : 'rgba(0, 0, 0, .45)',
-      nextColor: this.value >= this.mid ? 'rgba(0, 0, 0, .45)' : '',
+      onAfterChanges,
+      handleChange,
+      onChanges,
+      inputValue,
+      multipleValue,
+      mini,
+      maxi,
+      value,
+      mid,
+      preColor,
+      nextColor,
     };
-  },
-  methods: {
-    onChanges(value) {
-      this.inputValue = this.value;
-      this.$emit('onChange', value);
-    },
-    handleChange(value) {
-      this.value = value;
-      if (this.onChange) this.onChange(value);
-    },
-    onAfterChanges(values) {
-      this.$emit('onAfterChange', values);
-    },
   },
 };
 </script>

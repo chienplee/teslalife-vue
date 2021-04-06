@@ -1,5 +1,10 @@
 export default [
   {
+    path: '/components/drag-drop',
+    name: 'drag',
+    component: () => import(/* webpackChunkName: "DragAndDrop" */ '@/view/uiElements/DragAndDrop.vue'),
+  },
+  {
     path: '/components/alerts',
     name: 'alerts',
     component: () => import(/* webpackChunkName: "Alerts" */ '@/view/uiElements/Alerts.vue'),

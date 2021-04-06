@@ -115,7 +115,7 @@ export default [
         component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
       },
       {
-        name: 'grid',
+        name: 'pro-grid',
         path: 'product/grid',
         components: {
           default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
@@ -123,7 +123,7 @@ export default [
         },
       },
       {
-        name: 'list',
+        name: 'pro-list',
         path: 'product/list',
         components: {
           default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
