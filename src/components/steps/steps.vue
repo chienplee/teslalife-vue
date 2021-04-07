@@ -36,7 +36,7 @@
         class="steps-content"
         :style="{ minHeight: height, display: 'flex', justifyContent: 'center', marginTop: 100 }"
       >
-        {{ steps[currents].content }}
+        <slot :name="steps[currents].content"></slot>
       </div>
       <ActionWrapper v-if="!isFinished">
         <div class="step-action-wrap">
@@ -69,7 +69,7 @@
         class="steps-content"
         :style="{ minHeight: height, display: 'flex', justifyContent: 'center', marginTop: 100 }"
       >
-        {{ steps[currents].content }}
+        <slot :name="steps[currents].content"></slot>
       </div>
       <ActionWrapper v-if="!isFinished">
         <div class="step-action-wrap">
@@ -122,23 +122,20 @@ const Steps = {
     isFinished: PropTypes.bool.def(false),
     height: PropTypes.number.def(150),
   },
-  emits: {
-    onNext: null,
-    onPrev: null,
-    onChange: null,
-  },
+
   setup(props, { emit }) {
     const { current } = toRefs(props);
 
-    const currents = ref(current);
+    const currents = ref(current.value);
     const next = () => {
       currents.value = currents.value + 1;
-      emit('onNext', currents);
+      emit('onNext', currents.value);
+      console.log(currents.value);
     };
 
     const prev = () => {
       currents.value = currents.value - 1;
-      emit('onPrev', currents);
+      emit('onPrev', currents.value);
     };
     const onChanges = curr => {
       currents.value = curr;

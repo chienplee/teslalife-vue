@@ -18,7 +18,7 @@
         <a-col :md="24">
           <sdCards headless>
             <a-row :gutter="30">
-              <a-col :xxl="17" :xs="24"> <CartTable /> </a-col>
+              <a-col :xxl="17" :xs="24"> <router-view name="child"></router-view> </a-col>
               <a-col :xxl="7" :xs="24">
                 <Ordersummary :isExact="isExact" :subtotal="subtotal" :path="path" />
               </a-col>
@@ -67,6 +67,8 @@ const ShoppingCart = {
     const onHandleCurrent = current => {
       current.value = current;
     };
+    const isExact = ref(true);
+    onMounted(() => (isExact.value = matched[1].name === 'exact' ? true : false));
 
     return {
       cartData,
@@ -77,7 +79,7 @@ const ShoppingCart = {
       subtotal,
       onHandleCurrent,
       path: matched[0].path,
-      isExact: matched[1].name === 'exact' ? true : false,
+      isExact,
     };
   },
 };

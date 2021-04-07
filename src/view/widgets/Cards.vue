@@ -17,11 +17,6 @@
       <a-row :gutter="25">
         <a-col v-for="member in team" :key="member.id" :xxl="6" :md="12" :sm="12" :xs="24">
           <Suspense>
-            <template #fallback>
-              <sdCards headless>
-                <a-skeleton avatar active />
-              </sdCards>
-            </template>
             <template #default>
               <TeamCard :user="member">
                 <template #item>
@@ -39,6 +34,11 @@
                   </a>
                 </template>
               </TeamCard>
+            </template>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton avatar active />
+              </sdCards>
             </template>
           </Suspense>
         </a-col>
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { defineComponent, computed, defineAsyncComponent } from 'vue';
+import { computed, defineAsyncComponent } from 'vue';
 import { useStore } from 'vuex';
 import { Main } from '../styled';
 import SampleCardOne from '../../components/cards/sampleCard/SampleCardOne';
@@ -84,7 +84,7 @@ import { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven } from '../..
 //import TeamCard from '../pages/overview/TeamCard';
 const TeamCard = defineAsyncComponent(() => import('../pages/overview/TeamCard'));
 
-export default defineComponent({
+export default {
   name: 'WidgetCard',
   components: {
     Main,
@@ -102,5 +102,5 @@ export default defineComponent({
     const team = computed(() => state.team.data);
     return { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven, team };
   },
-});
+};
 </script>

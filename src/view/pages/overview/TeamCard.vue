@@ -3,10 +3,10 @@
     <div class="card team-card">
       <sdCards headless>
         <figure>
-          <img :src="require(`../../../${img}`)" alt="" />
+          <img :src="require(`@/${img}`)" alt="" />
           <figcaption>
             <div class="edit">
-              <sdDropdown action="['click']" class="wide-dropdwon">
+              <sdDropdown :action="['click']" class="wide-dropdwon">
                 <template #overlay>
                   <slot name="item"></slot>
                 </template>
@@ -41,20 +41,20 @@
 </template>
 
 <script>
-import { defineComponent, toRefs } from 'vue';
+import { toRefs } from 'vue';
 import VueTypes from 'vue-types';
 import { UserCard } from '../style';
 import { faFacebookF, faDribbble, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-export default defineComponent({
+export default {
   name: 'TeamCard',
   components: { UserCard },
   props: {
     user: VueTypes.object,
   },
-  setup(props) {
+  async setup(props) {
     const { user } = toRefs(props);
     const { name, designation, img } = user.value;
     return { name, designation, img, faFacebookF, faDribbble, faTwitter, faInstagram };
   },
-});
+};
 </script>
