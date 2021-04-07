@@ -3,7 +3,7 @@
     <div v-if="isLoading" class="sd-spin">
       <a-spin />
     </div>
-    <div v-else class="table-cart table-responsive">
+    <div class="table-cart table-responsive">
       <a-table :pagination="false" :dataSource="productTableData" :columns="productTableColumns" />
     </div>
   </ProductTable>
@@ -75,38 +75,39 @@ const CartTable = {
     const promo = ref(0);
     const current = ref(0);
 
-    onMounted(() => dispatch('cartGetData'));
-
     const incrementUpdate = (id, quantity) => {
       const data = parseInt(quantity, 10) + 1;
-      dispatch('cartUpdateQuantity', { id, quantity: data, cartData });
+      dispatch('cartUpdateQuantity', { id, quantity: data, cartData: cartData.value });
     };
 
     const decrementUpdate = (id, quantity) => {
       const data = parseInt(quantity, 10) >= 2 ? parseInt(quantity, 10) - 1 : 1;
-      dispatch('cartUpdateQuantity', { id, quantity: data, cartData });
+      dispatch('cartUpdateQuantity', { id, quantity: data, cartData: cartData.value });
     };
 
     const cartDeleted = id => {
       const confirm = window.confirm('Are you sure to delete this product?');
-      if (confirm) dispatch('cartDelete', { id, cartData });
+      if (confirm) dispatch('cartDelete', { id, cartData: cartData.value });
     };
+
+    onMounted(() => dispatch('cartGetData'));
+
+    // const productTableData = ref([]);
 
     const productTableData = computed(
       () =>
-        cartData.value.length &&
-        cartData.value.map(data => {
+        state.cart.data !== null &&
+        state.cart.data.map(data => {
           const { id, img, name, quantity, price, size, color } = data;
-
           return {
             key: id,
             product: (
               <div class="cart-single">
-                <figure>
+                <FigureCart>
                   <img style={{ width: 80 }} src={require(`@/${img}`)} alt="" />
                   <figcaption>
                     <div class="cart-single__info">
-                      <h6>{name}</h6>
+                      <sdHeading as="h6">{name}</sdHeading>
                       <ul class="info-list">
                         <li>
                           <span class="info-title">Size :</span>
@@ -119,29 +120,37 @@ const CartTable = {
                       </ul>
                     </div>
                   </figcaption>
-                </figure>
+                </FigureCart>
               </div>
             ),
             price: <span class="cart-single-price">${price}</span>,
             quantity: (
               <div class="cart-single-quantity">
-                <sButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec">
+                <sdButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
                   <sdFeatherIcons type="minus" size={12} />
-                </sButton>
+                </sdButton>
                 {quantity}
-                <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc">
+                <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
                   <sdFeatherIcons type="plus" size={12} />
                 </sdButton>
               </div>
             ),
             total: <span class="cart-single-t-price">${quantity * price}</span>,
-            // action: (
-            //   <div class="table-action">
-            //     <sdButton onClick={() => cartDeleted(id)} class="btn-icon" to="#" shape="circle" transparented>
-            //       <sdFeatherIcons type="trash-2" size={16} />
-            //     </sdButton>
-            //   </div>
-            // ),
+            action: (
+              <div class="table-action">
+                <sdButton
+                  onClick={() => cartDeleted(id)}
+                  class="btn-icon"
+                  to="#"
+                  size="default"
+                  type="danger"
+                  shape="circle"
+                  transparented
+                >
+                  <sdFeatherIcons type="trash-2" size={16} />
+                </sdButton>
+              </div>
+            ),
           };
         }),
     );

@@ -2,7 +2,7 @@ import products from '@/demoData/cart.json';
 import mutations from './mutations';
 
 const state = () => ({
-  data: [],
+  data: null,
   loading: false,
   error: null,
 });
@@ -28,13 +28,12 @@ const actions = {
       commit('cartUpdateErr', err);
     }
   },
-  async cartDelete({ commit }, { id, chartData }) {
+  async cartDelete({ commit }, { id, cartData }) {
     try {
       commit('cartDeleteBegin');
-      const data = chartData.filter(item => item.id !== id);
-      setTimeout(() => {
-        commit('cartDeleteSuccess', data);
-      }, 500);
+      const data = cartData.filter(item => item.id != id);
+
+      commit('cartDeleteSuccess', data);
     } catch (err) {
       commit('cartDeleteErr', err);
     }

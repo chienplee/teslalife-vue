@@ -166,6 +166,24 @@ export default [
     name: 'cart',
     path: '/app/ecommerce/cart',
     component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+    children: [
+      {
+        name: 'exact',
+        path: '',
+        components: {
+          default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+          child: () => import(/* webpackChunkName: "cartTable" */ '../view/apps/ecommerce/overview/CartTable.vue'),
+        },
+      },
+      {
+        name: 'checkout',
+        path: 'checkout',
+        components: {
+          default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+          child: () => import(/* webpackChunkName: "checkout" */ '../view/apps/ecommerce/overview/CheckOut.vue'),
+        },
+      },
+    ],
   },
   {
     name: 'social',

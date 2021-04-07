@@ -20,7 +20,7 @@
             <a-row :gutter="30">
               <a-col :xxl="17" :xs="24"> <CartTable /> </a-col>
               <a-col :xxl="7" :xs="24">
-                <Ordersummary :subtotal="subtotal" :path="path" />
+                <Ordersummary :isExact="isExact" :subtotal="subtotal" :path="path" />
               </a-col>
             </a-row>
           </sdCards>
@@ -44,6 +44,7 @@ const ShoppingCart = {
   components: { Main, Ordersummary, CartTable },
   setup() {
     const { state, dispatch } = useStore();
+    const { matched } = useRoute();
     const cartData = computed(() => state.cart.data);
     const rtl = computed(() => state.themeLayout.rtlData);
     const coupon = ref(0);
@@ -52,7 +53,6 @@ const ShoppingCart = {
     let subtotal = ref(0);
 
     onMounted(() => dispatch('cartGetData'));
-    const route = useRoute();
 
     watchEffect(() => {
       if (cartData.value !== null) {
@@ -76,7 +76,8 @@ const ShoppingCart = {
       current,
       subtotal,
       onHandleCurrent,
-      path: route.path,
+      path: matched[0].path,
+      isExact: matched[1].name === 'exact' ? true : false,
     };
   },
 };
