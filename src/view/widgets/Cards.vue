@@ -15,6 +15,33 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
+        <a-col v-for="member in team" :key="member.id" :xxl="6" :md="12" :sm="12" :xs="24">
+          <Suspense>
+            <template #fallback>
+              <sdCards headless>
+                <a-skeleton avatar active />
+              </sdCards>
+            </template>
+            <template #default>
+              <TeamCard :user="member">
+                <template #item>
+                  <a to="#">
+                    <sdFeatherIcons size="14" type="eye" />
+                    <span>View</span>
+                  </a>
+                  <a to="#">
+                    <sdFeatherIcons size="14" type="edit" />
+                    <span>Edit</span>
+                  </a>
+                  <a to="#">
+                    <sdFeatherIcons size="14" type="trash-2" />
+                    <span>Delete</span>
+                  </a>
+                </template>
+              </TeamCard>
+            </template>
+          </Suspense>
+        </a-col>
         <a-col v-for="item in cardOne" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24" class="mb-25">
           <SampleCardOne :item="item" />
         </a-col>
@@ -42,7 +69,8 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, defineAsyncComponent } from 'vue';
+import { useStore } from 'vuex';
 import { Main } from '../styled';
 import SampleCardOne from '../../components/cards/sampleCard/SampleCardOne';
 import SampleCardTwo from '../../components/cards/sampleCard/SampleCardTwo';
@@ -52,6 +80,10 @@ import SampleCardFive from '../../components/cards/sampleCard/SampleCardFive';
 import SampleCardSix from '../../components/cards/sampleCard/SampleCardSix';
 import SampleCardSeven from '../../components/cards/sampleCard/SampleCardSeven';
 import { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven } from '../../demoData/sampleCards.json';
+
+//import TeamCard from '../pages/overview/TeamCard';
+const TeamCard = defineAsyncComponent(() => import('../pages/overview/TeamCard'));
+
 export default defineComponent({
   name: 'WidgetCard',
   components: {
@@ -63,9 +95,12 @@ export default defineComponent({
     SampleCardFive,
     SampleCardSix,
     SampleCardSeven,
+    TeamCard,
   },
   setup() {
-    return { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven };
+    const { state } = useStore();
+    const team = computed(() => state.team.data);
+    return { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven, team };
   },
 });
 </script>
