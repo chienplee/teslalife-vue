@@ -40,10 +40,10 @@
 <script>
 import { defineComponent } from 'vue';
 import { Main } from '../styled';
-import UserListTable from '../../view/apps/users/overview/UserTable';
-import ProjectLists from '../../view/apps/project/overview/List';
-import TaskList from '../../view/apps/project/overview/TaskList';
-import { TaskLists } from '../../view/apps/project/style';
+import UserListTable from '@/view/apps/users/overview/UserTable';
+import ProjectLists from '@/view/apps/project/overview/List';
+import TaskList from '@/view/apps/project/overview/TaskList';
+import { TaskLists } from '@/view/apps/project/style';
 const columns = [
   {
     title: 'Name',

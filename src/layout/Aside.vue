@@ -633,6 +633,15 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
+
+      <a-sub-menu key="wizard">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Wizard</span></template>
+        <a-menu-item key="table">
+          <router-link click="toggleCollapsed" to="/wizard/wizard1">
+            Wizard1
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
     <a-menu-item-group key="pages">
       <template v-slot:title>

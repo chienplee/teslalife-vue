@@ -94,25 +94,58 @@ const CartTable = {
 
     const productTableData = computed(
       () =>
-        cartData.value &&
+        cartData.value.length &&
         cartData.value.map(data => {
-          const { id, price, img } = data;
+          const { id, img, name, quantity, price, size, color } = data;
+
           return {
             key: id,
             product: (
               <div class="cart-single">
                 <figure>
-                  <img style={{ width: 80 }} src={`../../../../${img}`} alt="" />
+                  <img style={{ width: 80 }} src={require(`@/${img}`)} alt="" />
+                  <figcaption>
+                    <div class="cart-single__info">
+                      <h6>{name}</h6>
+                      <ul class="info-list">
+                        <li>
+                          <span class="info-title">Size :</span>
+                          <span>{size}</span>
+                        </li>
+                        <li>
+                          <span class="info-title"> Color :</span>
+                          <span>{color}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </figcaption>
                 </figure>
               </div>
             ),
             price: <span class="cart-single-price">${price}</span>,
-            quantity: <div class="cart-single-quantity">fdfa</div>,
-            total: <span class="cart-single-t-price">$fafa</span>,
-            action: <div class="table-action">afdf</div>,
+            quantity: (
+              <div class="cart-single-quantity">
+                <sButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec">
+                  <sdFeatherIcons type="minus" size={12} />
+                </sButton>
+                {quantity}
+                <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc">
+                  <sdFeatherIcons type="plus" size={12} />
+                </sdButton>
+              </div>
+            ),
+            total: <span class="cart-single-t-price">${quantity * price}</span>,
+            // action: (
+            //   <div class="table-action">
+            //     <sdButton onClick={() => cartDeleted(id)} class="btn-icon" to="#" shape="circle" transparented>
+            //       <sdFeatherIcons type="trash-2" size={16} />
+            //     </sdButton>
+            //   </div>
+            // ),
           };
         }),
     );
+
     const submitCoupon = values => {
       coupon.value = values;
     };

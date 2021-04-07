@@ -2,7 +2,7 @@ import products from '@/demoData/cart.json';
 import mutations from './mutations';
 
 const state = () => ({
-  data: null,
+  data: [],
   loading: false,
   error: null,
 });

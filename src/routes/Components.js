@@ -237,7 +237,7 @@ export default [
   {
     path: '/tables/basic',
     name: 'table',
-    component: () => import('@/view/table/Table'),
+    component: () => import('@/view/table/table'),
   },
   {
     path: '/tables/dataTable',

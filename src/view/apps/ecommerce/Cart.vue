@@ -54,8 +54,6 @@ const ShoppingCart = {
     onMounted(() => dispatch('cartGetData'));
     const route = useRoute();
 
-    console.log(route);
-
     watchEffect(() => {
       if (cartData.value !== null) {
         cartData.value.map(data => {

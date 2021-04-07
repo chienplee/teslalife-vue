@@ -94,6 +94,11 @@ export default [
     name: 'vector',
     component: () => import('@/view/maps/Vector.vue'),
   },
+  {
+    path: '/wizard',
+    name: 'wizard',
+    component: () => import('@/view/wizards/Wizards.vue'),
+  },
   /*
   {
     path: "/forms/form-validation",
