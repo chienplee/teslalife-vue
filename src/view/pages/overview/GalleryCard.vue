@@ -15,11 +15,10 @@
 </template>
 <script>
 import { GalleryCard } from '../style';
-import VueType from 'vue-types';
-
+import VueTypes from 'vue-types';
 const GalleryCards = {
   name: 'GalleryCards',
-  props: { item: VueType.object },
+  props: { item: VueTypes.object },
   components: { GalleryCard },
 };
 
