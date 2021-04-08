@@ -31,7 +31,7 @@
 </template>
 <script>
 import { computed, onMounted, ref, watchEffect } from 'vue';
-import { useRoute } from 'vue-router';
+import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import { Main } from '../../styled';
 import Ordersummary from './overview/Ordersummary';
@@ -68,8 +68,10 @@ const ShoppingCart = {
       current.value = current;
     };
     const isExact = ref(true);
-    onMounted(() => (isExact.value = matched[1].name === 'exact' ? true : false));
-
+    isExact.value = matched[1].name === 'exact' ? true : false;
+    onBeforeRouteUpdate(async to => {
+      isExact.value = to.name === 'exact' ? true : false;
+    });
     return {
       cartData,
       rtl,

@@ -342,7 +342,7 @@ const CheckOut = {
     const { state, dispatch } = useStore();
     const cartData = computed(() => state.cart.data);
     const isLoading = computed(() => state.cart.loading);
-    const rtl = computed(() => state.ChangeLayoutMode.rtlData);
+    const rtl = computed(() => state.themeLayout.rtlData);
 
     const stateAccount = reactive({
       username: '',
@@ -377,17 +377,17 @@ const CheckOut = {
 
     const incrementUpdate = (id, quantity) => {
       const data = parseInt(quantity, 10) + 1;
-      dispatch('cartUpdateQuantity', { id, quantity: data, cartData });
+      dispatch('cartUpdateQuantity', { id, quantity: data, cartData: cartData.value });
     };
 
     const decrementUpdate = (id, quantity) => {
       const data = parseInt(quantity, 10) >= 2 ? parseInt(quantity, 10) - 1 : 1;
-      dispatch('cartUpdateQuantity', { id, quantity: data, cartData });
+      dispatch('cartUpdateQuantity', { id, quantity: data, cartData: cartData.value });
     };
 
     const cartDeleted = id => {
       const confirm = window.confirm('Are you sure to delete this product?');
-      if (confirm) dispatch('cartDelete', { id, cartData });
+      if (confirm) dispatch('cartDelete', { id, cartData: cartData.value });
     };
 
     const PlaceOrder = (
@@ -419,6 +419,7 @@ const CheckOut = {
     };
     const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     let subtotal = 0;
+
     const dataSource = computed(() =>
       cartData.value.map(data => {
         const { id, img, name, quantity, price, size, color } = data;
@@ -451,11 +452,11 @@ const CheckOut = {
           quantity: (
             <div class="cart-single-quantity">
               <sdButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
-                <FeatherIcon icon="minus" size={12} />
+                <sdFeatherIcons type="minus" size={12} />
               </sdButton>
               {quantity}
               <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
-                <FeatherIcon icon="plus" size={12} />
+                <sdFeatherIcons type="plus" size={12} />
               </sdButton>
             </div>
           ),

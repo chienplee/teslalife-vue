@@ -28,7 +28,8 @@
         :icon="item.icon && item.icon"
         :key="item.title"
         :title="item.title"
-      />
+      >
+      </a-step>
     </StepsStyle>
 
     <div v-if="isVertical" class="steps-wrapper">
@@ -113,7 +114,7 @@ const Steps = {
   props: {
     size: PropTypes.string,
     current: PropTypes.number.def(0),
-    direction: PropTypes.string,
+    direction: PropTypes.string.def('horizontal'),
     status: PropTypes.string,
     progressDot: PropTypes.func,
     steps: PropTypes.arrayOf(PropTypes.object),
@@ -130,12 +131,14 @@ const Steps = {
     const next = () => {
       currents.value = currents.value + 1;
       emit('onNext', currents.value);
-      console.log(currents.value);
     };
 
     const prev = () => {
       currents.value = currents.value - 1;
       emit('onPrev', currents.value);
+    };
+    const onDone = () => {
+      emit('onDone', currents.value);
     };
     const onChanges = curr => {
       currents.value = curr;
@@ -147,6 +150,7 @@ const Steps = {
       next,
       currents,
       stepStyle,
+      onDone,
     };
   },
 };
