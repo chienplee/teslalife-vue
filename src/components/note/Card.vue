@@ -6,7 +6,7 @@
           {{ data.title }}
           <span :class="`status-bullet ${data.label}`" />
         </span>
-        <sdFeatherIcons type="move" />
+        <sdFeatherIcons class="handle" type="move" />
         <!-- <Dragger /> -->
       </h4>
       <p>{{ data.description }}</p>

@@ -1,11 +1,19 @@
 <template>
   <sdCards title="Note Lists">
     <NoteCardWrap>
-      <a-row :gutter="24">
-        <a-col v-for="value in noteData" :xxl="8" :xl="12" :lg="12" :sm="12" :xs="24" :key="value.key">
-          <NoteCard :data="value" />
-        </a-col>
-      </a-row>
+      <draggable
+        v-model="dragAbleData"
+        tag="a-row"
+        :component-data="getComponentData()"
+        handle=".handle"
+        item-key="key"
+      >
+        <template #item="{element}">
+          <a-col :xxl="8" :xl="12" :lg="12" :sm="12" :xs="24">
+            <NoteCard :data="element" />
+          </a-col>
+        </template>
+      </draggable>
     </NoteCardWrap>
   </sdCards>
 </template>
@@ -13,16 +21,24 @@
 import { NoteCardWrap } from '../style';
 import NoteCard from '@/components/note/Card';
 import { useStore } from 'vuex';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import draggable from 'vuedraggable';
 
 const All = {
   name: 'All',
-  components: { NoteCardWrap, NoteCard },
+  components: { NoteCardWrap, NoteCard, draggable },
   setup() {
     const { state } = useStore();
     const noteData = computed(() => state.note.data);
+    const dragAbleData = ref(noteData.value);
+    function getComponentData() {
+      return {
+        gutter: 24,
+      };
+    }
     return {
-      noteData,
+      dragAbleData,
+      getComponentData,
     };
   },
 };
