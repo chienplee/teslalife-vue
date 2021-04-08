@@ -24,38 +24,29 @@
         <a-col v-for="product in products" :key="product.id" :xxl="6" :sm="12" :xs="24">
           <ProductCards v-if="product.id <= 4" :product="product" />
         </a-col>
-        <!-- <a-col v-for="item in gallery" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24">
+        <a-col v-for="item in gallery" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24">
           <GalleryCards :item="item" />
-        </a-col> -->
+        </a-col>
         <a-col v-for="user in contactUsers" :key="user.id" :xxl="6" :md="12" :sm="12" :xs="24">
           <sdCards headless v-if="user.id <= 4"> <ContactCard :user="user" /> </sdCards>
         </a-col>
         <a-col v-for="member in team" :key="member.id" :xxl="6" :md="12" :sm="12" :xs="24">
-          <Suspense>
-            <template #default>
-              <TeamCard v-if="member.id <= 4" :user="member">
-                <template #item>
-                  <a to="#">
-                    <sdFeatherIcons size="14" type="eye" />
-                    <span>View</span>
-                  </a>
-                  <a to="#">
-                    <sdFeatherIcons size="14" type="edit" />
-                    <span>Edit</span>
-                  </a>
-                  <a to="#">
-                    <sdFeatherIcons size="14" type="trash-2" />
-                    <span>Delete</span>
-                  </a>
-                </template>
-              </TeamCard>
+          <TeamCard v-if="member.id <= 4" :user="member">
+            <template #item>
+              <a to="#">
+                <sdFeatherIcons size="14" type="eye" />
+                <span>View</span>
+              </a>
+              <a to="#">
+                <sdFeatherIcons size="14" type="edit" />
+                <span>Edit</span>
+              </a>
+              <a to="#">
+                <sdFeatherIcons size="14" type="trash-2" />
+                <span>Delete</span>
+              </a>
             </template>
-            <template #fallback>
-              <sdCards headless>
-                <a-skeleton avatar active />
-              </sdCards>
-            </template>
-          </Suspense>
+          </TeamCard>
         </a-col>
         <a-col v-for="item in cardOne" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24" class="mb-25">
           <SampleCardOne :item="item" />
@@ -211,7 +202,7 @@
 </template>
 
 <script>
-import { computed, defineAsyncComponent } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import { Main, FileCardWrapper, BannerCardStyleWrap } from '../styled';
 import SampleCardOne from '../../components/cards/sampleCard/SampleCardOne';
@@ -224,11 +215,11 @@ import SampleCardSeven from '../../components/cards/sampleCard/SampleCardSeven';
 import BannerCard from '../../components/cards/BannerCard';
 import { cardOne, cardTwo, cardThree, cardFive, cardSix, cardSeven } from '../../demoData/sampleCards.json';
 import GridCard from '../apps/project/overview/GridCard';
-const TeamCard = defineAsyncComponent(() => import('../pages/overview/TeamCard'));
+import TeamCard from '../pages/overview/TeamCard';
 import UserCards from '../pages/overview/UserCard';
 import ProductCards from '../apps/ecommerce/product/overview/ProductCards';
 import ProductCardsList from '../apps/ecommerce/product/overview/ProductCardList';
-//import GalleryCards from '../pages/overview/GalleryCard';
+import GalleryCards from '../pages/overview/GalleryCards';
 import ContactCard from '../apps/contact/overview/ContactCard';
 import FileListCard from '../apps/project/overview/FileListCard';
 export default {
@@ -251,7 +242,7 @@ export default {
     UserCards,
     ProductCardsList,
     ProductCards,
-    //GalleryCards,
+    GalleryCards,
     ContactCard,
   },
   setup() {

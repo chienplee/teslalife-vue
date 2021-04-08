@@ -72,19 +72,7 @@
           </div>
         </a-col>
         <a-col v-else v-for="(item, index) in gallery" :key="index + 1" :xxl="6" :lg="8" :sm="12" :xs="24">
-          <GalleryCard :style="{ marginBottom: '25px' }">
-            <figure>
-              <img :style="{ width: '100%' }" :src="require(`../../${item.img}`)" alt="" />
-              <figcaption>
-                <div class="gallery-single-content">
-                  <sdHeading class="gallery-single-title" as="h4">
-                    {{ item.name }}
-                  </sdHeading>
-                  <p>{{ item.category }}</p>
-                </div>
-              </figcaption>
-            </figure>
-          </GalleryCard>
+          <GalleryCards :item="item" />
         </a-col>
       </a-row>
     </Main>
@@ -93,14 +81,15 @@
 
 <script>
 import { Main } from '../styled';
-import { GalleryNav, GalleryCard } from './style';
+import { GalleryNav } from './style';
+import GalleryCards from './overview/GalleryCards';
 
 export default {
   name: 'Gallery',
   components: {
     Main,
     GalleryNav,
-    GalleryCard,
+    GalleryCards,
   },
   data() {
     return {
