@@ -156,7 +156,7 @@
       <a-menu-item key="calender">
         <sdFeatherIcons type="mail" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/calendar">
+          <router-link click="toggleCollapsed" to="/app/calendar/year">
             Calender
           </router-link>
         </span>
@@ -636,9 +636,14 @@
 
       <a-sub-menu key="wizard">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Wizard</span></template>
-        <a-menu-item key="table">
+        <a-menu-item key="wizard1">
           <router-link click="toggleCollapsed" to="/wizard/wizard1">
             Wizard1
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="wizard2">
+          <router-link click="toggleCollapsed" to="/wizard/wizard2">
+            Wizard2
           </router-link>
         </a-menu-item>
       </a-sub-menu>

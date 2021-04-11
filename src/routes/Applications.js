@@ -289,6 +289,24 @@ export default [
     name: 'calendar',
     path: '/app/calendar',
     component: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
+    children: [
+      {
+        name: 'year',
+        path: 'year',
+        components: {
+          default: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
+          child: () => import(/* webpackChunkName: "year" */ '../view/apps/calendar/overview/Year.vue'),
+        },
+      },
+      {
+        name: 'month',
+        path: 'month',
+        components: {
+          default: () => import(/* webpackChunkName: "calendar" */ '../view/apps/calendar/Calendar.vue'),
+          child: () => import(/* webpackChunkName: "month" */ '../view/apps/calendar/overview/Month.vue'),
+        },
+      },
+    ],
   },
   {
     name: 'users',
