@@ -92,7 +92,7 @@ export default [
   {
     path: '/maps/vector',
     name: 'vector',
-    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
+    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector1.vue'),
   },
   {
     path: '/wizard',
@@ -127,5 +127,10 @@ export default [
     path: '/widgets/card',
     name: 'widgetCards',
     component: () => import(/* webpackChunkName: "widgetsCard" */ '@/view/widgets/Cards.vue'),
+  },
+  {
+    path: '/widgets/mixed',
+    name: 'widgetMixed',
+    component: () => import(/* webpackChunkName: "widgetsMixed" */ '@/view/widgets/Mixed.vue'),
   },
 ];
