@@ -202,7 +202,7 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
 import { Main, FileCardWrapper, BannerCardStyleWrap } from '../styled';
 import SampleCardOne from '../../components/cards/sampleCard/SampleCardOne';
@@ -222,7 +222,7 @@ import ProductCardsList from '../apps/ecommerce/product/overview/ProductCardList
 import GalleryCards from '../pages/overview/GalleryCards';
 import ContactCard from '../apps/contact/overview/ContactCard';
 import FileListCard from '../apps/project/overview/FileListCard';
-export default {
+export default defineComponent({
   name: 'WidgetCard',
   components: {
     Main,
@@ -268,5 +268,5 @@ export default {
       contactUsers,
     };
   },
-};
+});
 </script>

@@ -654,6 +654,11 @@
             Card
           </router-link>
         </a-menu-item>
+        <a-menu-item key="widgetsMixed">
+          <router-link click="toggleCollapsed" to="/widgets/mixed">
+            Mixed
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
     </a-menu-item-group>
     <a-menu-item-group key="pages">

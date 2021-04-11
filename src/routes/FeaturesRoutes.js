@@ -110,4 +110,9 @@ export default [
     name: 'widgetCards',
     component: () => import(/* webpackChunkName: "widgetsCard" */ '@/view/widgets/Cards.vue'),
   },
+  {
+    path: '/widgets/mixed',
+    name: 'widgetMixed',
+    component: () => import(/* webpackChunkName: "widgetsMixed" */ '@/view/widgets/Mixed.vue'),
+  },
 ];
