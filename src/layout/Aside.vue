@@ -156,7 +156,7 @@
       <a-menu-item key="calender">
         <sdFeatherIcons type="mail" />
         <span>
-          <router-link click="toggleCollapsed" to="/app/calendar/year">
+          <router-link click="toggleCollapsed" to="/app/calendar/month">
             Calender
           </router-link>
         </span>

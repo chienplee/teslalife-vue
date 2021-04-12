@@ -92,7 +92,7 @@ export default [
   {
     path: '/maps/vector',
     name: 'vector',
-    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector1.vue'),
+    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
   },
   {
     path: '/wizard',

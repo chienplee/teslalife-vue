@@ -12,7 +12,7 @@
     </sdModal>
     <div class="calendar-header">
       <div class="calendar-header__left">
-        <sdButton class="btn-today" type="light" outlined>
+        <sdButton class="btn-today" type="light" size="small" outlined>
           <router-link to="./day">Today</router-link>
         </sdButton>
         <sdButton @click="decrementYear" type="light" outlined><sdFeatherIcons type="chevron-left"/></sdButton>
@@ -20,11 +20,15 @@
           <template #overlay>
             <sdCards>
               <a-row>
-                <a-col v-for="item in months" :sm="8" :key="item.id"
-                  ><span @click="() => setMonth(item.id)" style="display: block; text-align: center; cursor: pointer">{{
-                    item.month
-                  }}</span></a-col
-                >
+                <a-col v-for="item in months" :sm="8" :key="item.id">
+                  <sdDropdown :action="['click']">
+                    <span
+                      @click="() => setMonth(item.id)"
+                      style="display: block; text-align: center; cursor: pointer"
+                      >{{ item.month }}</span
+                    >
+                  </sdDropdown>
+                </a-col>
               </a-row>
             </sdCards>
           </template>
@@ -56,61 +60,92 @@
         </router-link>
       </div>
     </div>
-    <BlockViewCalendarWrapper class="table-responsive">
-      <a-calendar
-        :headerRender="
-          () => {
-            return false;
-          }
-        "
-        mode="month"
-        v-model:value="defaultValue"
-        ><template #dateCellRender="{ current: value }">
-          <ul class="events">
-            <sdDropdown
-              v-for="item in getListData(value)"
-              class="event-dropdown"
-              :key="item.id"
-              :style="{ padding: 0 }"
-              placement="bottomLeft"
-              :action="['click']"
-            >
-              <template #overlay>
-                <ProjectUpdate :onEventDelete="onEventDelete" v-bind="item" />
-              </template>
-              <li ref="getInput">
-                <address :style="{ width: width * (item.totalDays + 1) + 'px !important' }" :class="item.label" to="#">
-                  {{ item.title }}
-                </address>
-              </li>
-            </sdDropdown>
-          </ul>
-        </template>
-      </a-calendar>
-    </BlockViewCalendarWrapper>
+    <table class="table-event" width="100%">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>
+            <p>{{ moment(defaultValue).format('dddd') }}</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(time, key) in eventTimes" :key="key + 1">
+          <td :style="{ width: '60px' }">{{ time }}</td>
+          <td :class="`ant-picker-calendar-date-content ${moment().format('h A') === time ? 'current-data' : null}`">
+            <span v-if="moment().format('h A') === time" class="currentTime secondary" />
+
+            <template v-for="event in events" :key="event.id">
+              <sdDropdown
+                v-if="
+                  moment(defaultValue).format('MM/DD/YYYY') === event.date[0] &&
+                    time === moment(event.time[0], 'h:mm a').format('h A')
+                "
+                class="event-dropdown"
+                style="padding: 0px;"
+                placement="bottomLeft"
+                :action="['click']"
+              >
+                <template #overlay>
+                  <ProjectUpdate :onEventDelete="onEventDelete" v-bind="event" />
+                </template>
+                <a to="#" :class="`${event.label} day-event-item`">
+                  <span class="event-title">{{ event.title }}</span>
+                  <span>{{ `${event.time[0]} - ${event.time[1]}` }}</span>
+                </a>
+              </sdDropdown>
+            </template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </sdCards>
 </template>
 <script>
-import ProjectUpdate from './ProjectUpdate';
-import AddNewEvent from './AddNewEvent';
-import { BlockViewCalendarWrapper } from '../Style';
-import './style.css';
+import moment from 'moment';
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
-import moment from 'moment';
+import AddNewEvent from './AddNewEvent';
+import ProjectUpdate from './ProjectUpdate';
+import './style.css';
 
-const MonthCalendar = {
-  name: 'MonthCalendar',
-  components: { AddNewEvent, BlockViewCalendarWrapper, ProjectUpdate },
+const eventTimes = [
+  '12 AM',
+  '1 AM',
+  '2 AM',
+  '3 AM',
+  '4 AM',
+  '5 AM',
+  '6 AM',
+  '7 AM',
+  '8 AM',
+  '9 AM',
+  '10 AM',
+  '11 AM',
+  '12 PM',
+  '1 PM',
+  '2 PM',
+  '3 PM',
+  '4 PM',
+  '5 PM',
+  '6 PM',
+  '7 PM',
+  '8 PM',
+  '9 PM',
+  '10 PM',
+  '11 PM',
+];
+
+const DayCalendar = {
+  name: 'DayCalendar',
+  components: { AddNewEvent, ProjectUpdate },
   setup() {
     const { state, dispatch } = useStore();
     const events = computed(() => state.calendar.events);
     const isVisible = computed(() => state.calendar.eventVisible);
-    const date = ref(moment().format('MMM YYYY'));
+    const date = ref(new Date());
     const container = ref(null);
-    const width = ref(0);
-    const defaultValue = ref();
-    const getInput = ref(null);
+    const defaultValue = ref(moment().format('YYYY-MM-DD'));
     const year = ref(new Date().getFullYear());
     const month = ref(parseInt(moment().format('M')));
     const currentLabel = ref(moment(`${month.value}-12-${year.value}`).format('MMMM YYYY'));
@@ -118,71 +153,6 @@ const MonthCalendar = {
     const setMonth = m => {
       month.value = m;
       currentLabel.value = moment(`${month.value}-12-${year.value}`).format('MMMM YYYY');
-    };
-
-    onMounted(() => {
-      const button = document.querySelector(
-        '.calendar-header__left .react-calendar__navigation .react-calendar__navigation__label',
-      );
-      const containers = document.querySelector('.calendar-header__left .react-calendar__viewContainer');
-      const calenderDom = document.querySelectorAll('.ant-fullcalendar-content');
-      calenderDom.forEach(element => {
-        element.addEventListener('click', e => {
-          if (e.target.classList[0] === 'ant-fullcalendar-content') {
-            const getDate = moment(e.currentTarget.closest('td').getAttribute('title')).format('YYYY-MM-DD');
-            container.value = containers;
-            width.value = getInput.value !== null ? getInput.value.clientWidth : 130;
-            defaultValue.value = getDate;
-
-            dispatch('eventVisible', true);
-          }
-        });
-      });
-      button && button.addEventListener('click', () => containers.classList.add('show'));
-      container.value = containers;
-      width.value = getInput.value !== null ? getInput.value.clientWidth : 130;
-    });
-
-    const onEventDelete = id => {
-      const data = events.value.filter(item => item.id !== id);
-      dispatch('calendarDeleteData', data);
-    };
-
-    function getListData(value) {
-      let listData;
-      const data = [];
-      events.value.map(event => {
-        if (moment(event.date[0]).format('MMMM YYYY') === currentLabel.value) {
-          const { label, title, id, description, time, date, type } = event;
-          const a = moment(moment(event.date[1]).format('DD MMMM YYYY'));
-          const b = moment(moment(event.date[0]).format('DD MMMM YYYY'));
-          const totalDays = a.diff(b, 'days');
-
-          switch (value.date()) {
-            case parseInt(moment(event.date[0]).format('DD'), 10):
-              data.push({ label, title, id, totalDays, description, time, date, type });
-              listData = data;
-              break;
-            default:
-          }
-        }
-        return listData;
-      });
-      return listData || [];
-    }
-
-    const handleCancel = () => {
-      dispatch('eventVisible', false);
-    };
-
-    const addNew = event => {
-      const arrayData = [];
-      events.value.map(data => {
-        return arrayData.push(data.id);
-      });
-      const max = Math.max(...arrayData);
-      dispatch('addNewEvents', [...events.value, { ...event, id: max + 1 }]);
-      dispatch('eventVisible', false);
     };
 
     const incrementYear = () => {
@@ -203,7 +173,53 @@ const MonthCalendar = {
       currentLabel.value = moment(`${month.value}-12-${year.value}`).format('MMMM YYYY');
     };
 
+    onMounted(() => {
+      const button = document.querySelector(
+        '.calendar-header__left .react-calendar__navigation .react-calendar__navigation__label',
+      );
+      const containers = document.querySelector('.calendar-header__left .react-calendar__viewContainer');
+      const calenderDom = document.querySelectorAll('.ant-picker-calendar-date-content');
+      calenderDom.forEach(element => {
+        element.addEventListener('click', e => {
+          if (e.target.classList[0] === 'ant-picker-calendar-date-content') {
+            container.value = containers;
+            dispatch('eventVisible', true);
+          }
+        });
+      });
+      button && button.addEventListener('click', () => containers.classList.add('show'));
+      container.value = containers;
+    });
+    const onEventDelete = id => {
+      const data = events.value.filter(item => item.id !== id);
+      dispatch('calendarDeleteData', data);
+    };
+
+    const handleCancel = () => {
+      dispatch('eventVisible', false);
+    };
+
+    const addNew = event => {
+      const arrayData = [];
+      events.value.map(data => {
+        return arrayData.push(data.id);
+      });
+      const max = Math.max(...arrayData);
+      dispatch('addNewEvents', [...events.value, { ...event, id: max + 1 }]);
+      dispatch('eventVisible', false);
+    };
     return {
+      events,
+      eventTimes,
+      isVisible,
+      date,
+      container,
+      currentLabel,
+      defaultValue,
+      onEventDelete,
+      handleCancel,
+      addNew,
+      moment,
       incrementYear,
       decrementYear,
       year,
@@ -222,23 +238,10 @@ const MonthCalendar = {
         { id: 11, month: 'November' },
         { id: 12, month: 'December' },
       ],
-      moment,
-      events,
-      isVisible,
-      getListData,
-      addNew,
-      handleCancel,
-      date,
-      container,
-      currentLabel,
-      width,
-      defaultValue,
-      getInput,
-      onEventDelete,
       setMonth,
     };
   },
 };
 
-export default MonthCalendar;
+export default DayCalendar;
 </script>
