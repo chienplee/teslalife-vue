@@ -1,5 +1,9 @@
 <template>
+  <div v-if="isLoading" class="spin">
+    <a-spin />
+  </div>
   <ThemeProvider
+    v-else
     :theme="{
       ...theme,
       rtl,
@@ -35,8 +39,9 @@ export default {
   },
   setup() {
     const { state } = useStore();
-    const rtl = computed(() => state.themeLayout.rtl);
-    const darkMode = computed(() => state.themeLayout.darkMode);
+    const rtl = computed(() => state.themeLayout.rtlData);
+    const isLoading = computed(() => state.themeLayout.loading);
+    const darkMode = computed(() => state.themeLayout.data);
     const topMenu = computed(() => state.themeLayout.topMenu);
 
     return {
@@ -44,6 +49,7 @@ export default {
       rtl,
       darkMode,
       topMenu,
+      isLoading,
     };
   },
 };

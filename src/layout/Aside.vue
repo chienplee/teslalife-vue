@@ -41,6 +41,94 @@
       </a-menu-item>
     </a-sub-menu>
 
+    <a-sub-menu key="layout">
+      <template v-slot:title><sdFeatherIcons type="home" /><span>Layout</span></template>
+      <a-menu-item @click="toggleCollapsed" key="light">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeLight();
+            }
+          "
+          to="#"
+        >
+          Light Mode
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="dark">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeDark();
+            }
+          "
+          to="#"
+        >
+          Dark Mode
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="topMenu">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeTopNav();
+            }
+          "
+          to="#"
+        >
+          Top Menu
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="sideMenu">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeSideNav();
+            }
+          "
+          to="#"
+        >
+          Side Menu
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="rtl">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              onRtlChange();
+            }
+          "
+          to="#"
+        >
+          RTL
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="ltr">
+        <a
+          @click="
+            e => {
+              e.preventDefault();
+              toggleCollapsed();
+              onLtrChange();
+            }
+          "
+          to="#"
+        >
+          LTR
+        </a>
+      </a-menu-item>
+    </a-sub-menu>
+
     <a-menu-item @click="toggleCollapsed" key="changelog">
       <sdFeatherIcons type="circle" />
       <span>
@@ -797,11 +885,22 @@ export default {
   name: 'AsideItems',
   props: {
     toggleCollapsed: VueTypes.func,
+    events: VueTypes.object,
   },
-  setup() {
+  setup(props) {
     const store = useStore();
-    const darkMode = computed(() => store.state.themeLayout.darkMode);
+    const darkMode = computed(() => store.state.themeLayout.data);
     const mode = ref('inline');
+    const { events } = toRefs(props);
+    const {
+      onRtlChange,
+      onLtrChange,
+      modeChangeDark,
+      modeChangeLight,
+      modeChangeTopNav,
+      modeChangeSideNav,
+    } = events.value;
+
     const state = reactive({
       rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
       openKeys: ['sub1'],
@@ -823,6 +922,12 @@ export default {
       ...toRefs(state),
       darkMode,
       onOpenChange,
+      onRtlChange,
+      onLtrChange,
+      modeChangeDark,
+      modeChangeLight,
+      modeChangeTopNav,
+      modeChangeSideNav,
     };
   },
 };

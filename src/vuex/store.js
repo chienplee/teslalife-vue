@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import themeLayout from './modules/themeLayout';
+import themeLayout from './modules/themeLayout/actionCreator';
 import gallery from './modules/gallery';
 import users from './modules/users';
 import chartContent from './modules/chartContent/actionCreator';

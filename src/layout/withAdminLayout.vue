@@ -104,7 +104,13 @@
               }"
             >
               <p class="sidebar-nav-title">MAIN MENU</p>
-              <AsideItems :toggleCollapsed="toggleCollapsedMobile" />
+              <AsideItems
+                :toggleCollapsed="toggleCollapsedMobile"
+                :topMenu="topMenu"
+                :rtl="rtl"
+                :darkMode="darkMode"
+                :events="onEventChange"
+              />
             </perfect-scrollbar>
           </Sider>
         </template>
@@ -190,11 +196,12 @@ export default {
     const customizerAction = ref(false);
     const activeSearch = ref(false);
 
-    const store = useStore();
+    // const store = useStore();
+    const { dispatch, state } = useStore();
 
-    const rtl = computed(() => store.state.themeLayout.rtl);
-    const darkMode = computed(() => store.state.themeLayout.darkMode);
-    const topMenu = computed(() => store.state.themeLayout.topMenu);
+    const rtl = computed(() => state.themeLayout.rtlData);
+    const darkMode = computed(() => state.themeLayout.data);
+    const topMenu = computed(() => state.themeLayout.topMenu);
 
     collapsed.value = window.innerWidth <= 1200 && true;
 
@@ -218,6 +225,43 @@ export default {
       }
     };
 
+    const onRtlChange = () => {
+      const html = document.querySelector('html');
+      html.setAttribute('dir', 'rtl');
+      dispatch('changeRtlMode', true);
+    };
+
+    const onLtrChange = () => {
+      const html = document.querySelector('html');
+      html.setAttribute('dir', 'ltr');
+      dispatch('changeRtlMode', false);
+    };
+
+    const modeChangeDark = () => {
+      dispatch('changeLayoutMode', true);
+    };
+
+    const modeChangeLight = () => {
+      dispatch('changeLayoutMode', false);
+    };
+
+    const modeChangeTopNav = () => {
+      dispatch('changeMenuMode', true);
+    };
+
+    const modeChangeSideNav = () => {
+      dispatch('changeMenuMode', false);
+    };
+
+    const onEventChange = {
+      onRtlChange,
+      onLtrChange,
+      modeChangeDark,
+      modeChangeLight,
+      modeChangeTopNav,
+      modeChangeSideNav,
+    };
+    console.log(topMenu.value);
     return {
       toggleCollapsed,
       handleSearchHide,
@@ -232,6 +276,7 @@ export default {
       rtl,
       darkMode,
       topMenu,
+      onEventChange,
     };
   },
 };

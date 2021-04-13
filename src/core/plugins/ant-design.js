@@ -53,11 +53,13 @@ import {
   Tabs,
   Tree,
   TreeSelect,
+  Alert,
 } from 'ant-design-vue';
 
 // app.prototype.$message = message;
 app.config.globalProperties.$message = message;
 
+app.use(Alert);
 app.use(Rate);
 app.use(Button);
 app.use(Menu);

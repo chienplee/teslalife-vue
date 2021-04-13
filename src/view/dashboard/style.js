@@ -366,7 +366,7 @@ const CardGroup = Styled.div`
         margin: 0 -12px;
         ${({ theme }) => (theme.rtl ? 'padding: 24px 24px 25px 0;' : 'padding: 24px 0 25px 24px;')};
         ${({ theme }) => (theme.topMenu ? 'padding-bottom: 0px' : 'padding-bottom: 25px')};
-        
+                
         @media only screen and (max-width: 1350px){
             padding: 24px 0 25px 10px;
         }

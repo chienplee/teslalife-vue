@@ -155,7 +155,7 @@
 <script>
 import { Main } from '../styled';
 import { message } from 'ant-design-vue';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'PopConfirm',
@@ -169,7 +169,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['rtl']),
+    ...mapState(['rtl']),
   },
   methods: {
     confirm(e) {
