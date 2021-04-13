@@ -17,6 +17,7 @@
               <a-col :sm="22" :xs="24">
                 <div class="create-account-form">
                   <sdHeading as="h4">1. Please Create Your Account</sdHeading>
+
                   <a-form :model="stateAccount" @finish="handleAccountSubmit" name="account">
                     <a-form-item name="username" label="Username">
                       <a-input v-model:value="stateAccount.username" placeholder="Username" />
@@ -307,9 +308,11 @@
 </template>
 <script>
 import { FigureWizards, WizardWrapper, ProductTable, OrderSummary } from '../Style';
+import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
 import { computed, onMounted, ref, watchEffect, reactive } from 'vue';
+import { PlusOutlined, MinusOutlined, DeleteOutlined } from '@ant-design/icons-vue';
 
 const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 const columns = [
@@ -337,7 +340,16 @@ const columns = [
 
 const WizardsOne = {
   name: 'WizardsOne',
-  components: { Steps, FigureWizards, WizardWrapper, ProductTable, OrderSummary },
+  components: {
+    Steps,
+    FigureWizards,
+    WizardWrapper,
+    BasicFormWrapper,
+    ProductTable,
+    OrderSummary,
+    PlusOutlined,
+    MinusOutlined,
+  },
   setup() {
     const { state, dispatch } = useStore();
     const cartData = computed(() => state.cart.data);
@@ -443,19 +455,19 @@ const WizardsOne = {
             price: <span class="cart-single-price">${price}</span>,
             quantity: (
               <div class="cart-single-quantity">
-                <Button onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
-                  <FeatherIcon icon="minus" size={12} />
-                </Button>
+                <sdButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
+                  <MinusOutlined />
+                </sdButton>
                 {quantity}
-                <Button onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
-                  <FeatherIcon icon="plus" size={12} />
-                </Button>
+                <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
+                  <PlusOutlined />
+                </sdButton>
               </div>
             ),
             total: <span class="cart-single-t-price">${quantity * price}</span>,
             action: (
               <div class="table-action">
-                <Button
+                <sdButton
                   onClick={() => cartDeleted(id)}
                   class="btn-icon"
                   to="#"
@@ -464,8 +476,8 @@ const WizardsOne = {
                   shape="circle"
                   transparented
                 >
-                  <FeatherIcon icon="trash-2" size={16} />
-                </Button>
+                  <DeleteOutlined />
+                </sdButton>
               </div>
             ),
           };
