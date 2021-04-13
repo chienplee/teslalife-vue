@@ -460,6 +460,7 @@ const CalendarWrapper = Styled.div`
         align-items: center;
         justify-content: center;
         color: ${({ theme }) => theme['light-color']};
+        display: flex;
     }
 
     .event-week{

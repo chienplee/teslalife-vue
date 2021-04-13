@@ -22,6 +22,8 @@
               <sdFeatherIcons type="plus" size="14" /> Create New Event
             </sdButton>
             <div class="calendar-display">
+              <v-calendar is-expanded v-model="date" />
+
               <!-- <CalenDar next2Label={null} prev2Label={null} onChange={onChange} value={state.date} /> -->
             </div>
             <br />
@@ -43,7 +45,7 @@
             </sdCards>
           </Aside>
         </a-col>
-        <a-col :xxl="18" :xl="15" :xs="24"> </a-col>
+        <a-col :xxl="18" :xl="15" :xs="24"> <router-view name="child"></router-view> </a-col>
       </a-row>
     </CalendarWrapper>
   </Main>
@@ -52,7 +54,9 @@
 import { Aside, CalendarWrapper } from './Style';
 import { Main } from '../../styled';
 import { useStore } from 'vuex';
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
+import './overview/style.css';
+
 // import 'react-calendar/dist/Calendar.css';
 
 // const YearCalendar = lazy(() => import('./overview/Year'));
@@ -75,6 +79,13 @@ const Calendars = {
     const onHandleVisible = () => {
       dispatch('eventVisible', !isVisible.value);
     };
+    const calendarData = reactive({});
+    const calendarConfigs = reactive({
+      sundayStart: false,
+      dateFormat: 'dd/mm/yyyy',
+      isDatePicker: false,
+      isDateRange: false,
+    });
     return {
       onHandleVisible,
       onChange,
@@ -82,6 +93,8 @@ const Calendars = {
       events,
       isVisible,
       visible,
+      calendarData,
+      calendarConfigs,
     };
   },
 };

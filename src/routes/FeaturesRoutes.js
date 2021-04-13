@@ -92,12 +92,30 @@ export default [
   {
     path: '/maps/vector',
     name: 'vector',
-    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector1.vue'),
+    component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
   },
   {
     path: '/wizard',
     name: 'wizard',
-    component: () => import('@/view/wizards/Wizards.vue'),
+    component: () => import(/* webpackChunkName: "wizard" */ '@/view/wizards/Wizards.vue'),
+    children: [
+      {
+        name: 'wizard1',
+        path: 'wizard1',
+        components: {
+          default: () => import(/* webpackChunkName: "wizard" */ '@/view/wizards/Wizards.vue'),
+          child: () => import(/* webpackChunkName: "wizard1" */ '@/view/wizards/overview/WizardsOne.vue'),
+        },
+      },
+      {
+        name: 'wizard2',
+        path: 'wizard2',
+        components: {
+          default: () => import(/* webpackChunkName: "wizard" */ '@/view/wizards/Wizards.vue'),
+          child: () => import(/* webpackChunkName: "wizard2" */ '@/view/wizards/overview/WizardsTwo.vue'),
+        },
+      },
+    ],
   },
   {
     path: '/widgets/chart',

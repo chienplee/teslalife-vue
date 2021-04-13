@@ -335,8 +335,8 @@ const columns = [
   },
 ];
 
-const WizardsOne = {
-  name: 'WizardsOne',
+const WizardsTwo = {
+  name: 'WizardsTwo',
   components: { Steps, FigureWizards, WizardWrapper, ProductTable, OrderSummary },
   setup() {
     const { state, dispatch } = useStore();
@@ -514,6 +514,7 @@ const WizardsOne = {
         {
           title: 'Create Account',
           content: 'account',
+          icon: <img src={require('@/static/img/icon/user.svg')} />,
         },
         {
           title: 'Shipping Address',
@@ -536,5 +537,5 @@ const WizardsOne = {
   },
 };
 
-export default WizardsOne;
+export default WizardsTwo;
 </script>
