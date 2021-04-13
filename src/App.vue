@@ -22,7 +22,8 @@
 <script>
 import { ThemeProvider } from 'vue3-styled-components';
 import { theme } from './config/theme/themeVariables';
-import { defineAsyncComponent } from 'vue';
+import { computed, defineAsyncComponent } from 'vue';
+import { useStore } from 'vuex';
 
 const WithAdminLayout = defineAsyncComponent(() => import('./layout/withAdminLayout'));
 
@@ -31,24 +32,19 @@ export default {
   components: {
     ThemeProvider,
     WithAdminLayout,
-    //AirplayIcon
   },
-  data() {
+  setup() {
+    const { state } = useStore();
+    const rtl = computed(() => state.themeLayout.rtl);
+    const darkMode = computed(() => state.themeLayout.darkMode);
+    const topMenu = computed(() => state.themeLayout.topMenu);
+
     return {
       theme,
+      rtl,
+      darkMode,
+      topMenu,
     };
-  },
-  computed: {
-    rtl() {
-      return this.$store.state.themeLayout.rtl;
-    },
-    darkMode() {
-      return this.$store.state.themeLayout.darkMode;
-    },
-
-    topMenu() {
-      return this.$store.state.themeLayout.topMenu;
-    },
   },
 };
 </script>

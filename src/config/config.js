@@ -6,7 +6,7 @@ const config = {
   rtl: false,
   theme,
   darkTheme,
-  auth0: true,
+  auth0: false,
 };
 
 export default config;
