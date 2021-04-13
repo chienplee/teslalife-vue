@@ -2,11 +2,11 @@ import { theme, darkTheme } from './theme/themeVariables';
 
 const config = {
   darkMode: false,
-  topMenu: false,
+  topMenu: true,
   rtl: false,
   theme,
   darkTheme,
-  auth0: true,
+  auth0: false,
 };
 
 export default config;

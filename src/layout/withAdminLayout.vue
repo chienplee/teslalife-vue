@@ -11,7 +11,7 @@
       >
         <a-row>
           <a-col :lg="!topMenu ? 4 : 3" :sm="6" :xs="12" class="align-center-v navbar-brand">
-            <sdButton v-if="!topMenu || innerWidth <= 991" @click="toggleCollapsed(collapsed)" type="white">
+            <sdButton v-if="!topMenu || innerWidth <= 991" @click="toggleCollapsed" type="white">
               <img :src="require(`../static/img/icon/${collapsed ? 'right.svg' : 'left.svg'}`)" alt="menu" />
             </sdButton>
             <router-link :class="topMenu && innerWidth > 991 ? 'striking-logo top-menu' : 'striking-logo'" to="/admin">
@@ -104,7 +104,7 @@
               }"
             >
               <p class="sidebar-nav-title">MAIN MENU</p>
-              <AsideItems :toggleCollapsed="() => toggleCollapsedMobile(collapsed)" />
+              <AsideItems :toggleCollapsed="toggleCollapsedMobile" />
             </perfect-scrollbar>
           </Sider>
         </template>
@@ -161,6 +161,8 @@ import AsideItems from './Aside';
 import TopMenu from './TopMenuItems';
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
 const { Header, Footer, Sider, Content } = Layout;
 
 export default {
@@ -181,50 +183,56 @@ export default {
     TopMenu,
     PerfectScrollbar,
   },
-  data() {
-    return {
-      collapsed: false,
-      hide: true,
-      searchHide: true,
-      customizerAction: false,
-      activeSearch: false,
-      innerWidth: window.innerWidth,
-    };
-  },
-  computed: {
-    rtl() {
-      return this.$store.state.themeLayout.rtl;
-    },
-    darkMode() {
-      return this.$store.state.themeLayout.darkMode;
-    },
+  setup() {
+    const collapsed = ref(false);
+    const hide = ref(true);
+    const searchHide = ref(true);
+    const customizerAction = ref(false);
+    const activeSearch = ref(false);
 
-    topMenu() {
-      return this.$store.state.themeLayout.topMenu;
-    },
-  },
-  created() {
-    this.collapsed = window.innerWidth <= 1200 && true;
-  },
-  methods: {
-    toggleCollapsed: function(collapsed) {
-      this.collapsed = !collapsed;
-    },
-    handleSearchHide: function(e, searchHide) {
+    const store = useStore();
+
+    const rtl = computed(() => store.state.themeLayout.rtl);
+    const darkMode = computed(() => store.state.themeLayout.darkMode);
+    const topMenu = computed(() => store.state.themeLayout.topMenu);
+
+    collapsed.value = window.innerWidth <= 1200 && true;
+
+    const toggleCollapsed = e => {
       e.preventDefault();
-      this.searchHide = !searchHide;
-      this.hide = true;
-    },
-    onShowHide: function(hide) {
-      this.hide = !hide;
-      this.searchHide = true;
-    },
-    toggleCollapsedMobile: function(collapsed) {
-      console.log('hello');
+      collapsed.value = !collapsed.value;
+    };
+    const handleSearchHide = (e, searchHide) => {
+      e.preventDefault();
+      searchHide.value = !searchHide.value;
+      hide.value = true;
+    };
+    const onShowHide = e => {
+      e.preventDefault();
+      hide.value = !hide.value;
+      searchHide.value = true;
+    };
+    const toggleCollapsedMobile = () => {
       if (innerWidth <= 990) {
-        this.collapsed = !collapsed;
+        collapsed.value = false;
       }
-    },
+    };
+
+    return {
+      toggleCollapsed,
+      handleSearchHide,
+      toggleCollapsedMobile,
+      onShowHide,
+      collapsed,
+      hide,
+      searchHide,
+      customizerAction,
+      activeSearch,
+      innerWidth: window.innerWidth,
+      rtl,
+      darkMode,
+      topMenu,
+    };
   },
 };
 </script>

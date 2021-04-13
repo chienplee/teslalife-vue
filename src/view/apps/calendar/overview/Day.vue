@@ -21,13 +21,9 @@
             <sdCards>
               <a-row>
                 <a-col v-for="item in months" :sm="8" :key="item.id">
-                  <sdDropdown :action="['click']">
-                    <span
-                      @click="() => setMonth(item.id)"
-                      style="display: block; text-align: center; cursor: pointer"
-                      >{{ item.month }}</span
-                    >
-                  </sdDropdown>
+                  <span @click="() => setMonth(item.id)" style="display: block; text-align: center; cursor: pointer">{{
+                    item.month
+                  }}</span>
                 </a-col>
               </a-row>
             </sdCards>
