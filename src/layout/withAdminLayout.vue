@@ -56,7 +56,7 @@
           </a-col>
           <a-col :style="{ position: 'static' }" :md="0" :sm="18" :xs="12">
             <div class="mobile-action">
-              <router-link class="btn-search" @click="e => handleSearchHide(e, searchHide)" to="#">
+              <router-link class="btn-search" @click="(e) => handleSearchHide(e, searchHide)" to="#">
                 <sdFeatherIcons type="search" v-if="searchHide" />
                 <sdFeatherIcons type="x" v-else />
               </router-link>
@@ -99,7 +99,7 @@
           >
             <perfect-scrollbar
               :options="{
-                wheelSpeed: 1,
+                wheelSpeed: 2,
                 swipeEasing: true,
               }"
             >
@@ -207,19 +207,19 @@ export default {
     this.collapsed = window.innerWidth <= 1200 && true;
   },
   methods: {
-    toggleCollapsed: function(collapsed) {
+    toggleCollapsed: function (collapsed) {
       this.collapsed = !collapsed;
     },
-    handleSearchHide: function(e, searchHide) {
+    handleSearchHide: function (e, searchHide) {
       e.preventDefault();
       this.searchHide = !searchHide;
       this.hide = true;
     },
-    onShowHide: function(hide) {
+    onShowHide: function (hide) {
       this.hide = !hide;
       this.searchHide = true;
     },
-    toggleCollapsedMobile: function(collapsed) {
+    toggleCollapsedMobile: function (collapsed) {
       console.log('hello');
       if (innerWidth <= 990) {
         this.collapsed = !collapsed;

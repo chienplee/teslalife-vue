@@ -66,7 +66,7 @@ const Div = Styled('div', props)`
                 }
             }
         }
-       
+
 
     }
     .header-more{
@@ -233,7 +233,7 @@ const Div = Styled('div', props)`
             }
         }
     }
-    
+
     .navbar-brand{
         button{
             padding: ${({ theme }) => (theme.rtl ? '0 15px 0 25px !important' : '0 25px 0 15px !important')};
@@ -270,7 +270,7 @@ const Div = Styled('div', props)`
                 }
             }
         }
-        
+
         .ant-layout-sider-children{
             padding-bottom: 15px;
             >.sidebar-nav-title{
@@ -281,6 +281,9 @@ const Div = Styled('div', props)`
                 overflow-x: hidden;
                 ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0 none;
                 .ant-menu-submenu, .ant-menu-item{
+                    i{
+                        line-height: normal;
+                    }
                     .feather,
                     img{
                         width: 16px;
@@ -293,6 +296,7 @@ const Div = Styled('div', props)`
                         transition: 0.3s ease;
                         a{
                             ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 20px;
+                            color: ${({ theme }) => theme['dark-color']};
                         }
                     }
                     .sDash_menu-item-icon{
@@ -321,7 +325,7 @@ const Div = Styled('div', props)`
                         }
                     }
                     .badge{
-                        position: absolute;                        
+                        position: absolute;
                         ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 30px;
                         top: 50%;
                         transform: translateY(-50%);
@@ -363,7 +367,7 @@ const Div = Styled('div', props)`
                             width: 16px;
                             height: 16px;
                         }
-                                                
+
                         .ant-menu-submenu-arrow{
                             right: auto;
                             ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 24px;
@@ -437,7 +441,7 @@ const Div = Styled('div', props)`
                 .ant-menu-submenu,
                 .ant-menu-item{
                     ${({ theme }) => theme.rtl && `padding-right: 5px;`}
-                    
+
                     &.ant-menu-item-selected{
                         border-radius: 4px;
                         &:after{
@@ -455,7 +459,7 @@ const Div = Styled('div', props)`
                 }
                 &.ant-menu-inline-collapsed{
                     .ant-menu-submenu{
-                        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};                        
+                        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};
                         .ant-menu-submenu-title{
                             padding: 0 20px;
                             justify-content: center;
@@ -493,6 +497,14 @@ const Div = Styled('div', props)`
                 color: #333;
                 .badge{
                     display: none;
+                }
+            }
+        }
+        .ant-menu-item-group{
+            .ant-menu-item-group-title{
+                padding: 0;
+                .sidebar-nav-title{
+                    padding-left: 0;
                 }
             }
         }
@@ -561,7 +573,7 @@ const Div = Styled('div', props)`
                 }
             }
         }
-    }    
+    }
 `;
 
 const SmallScreenAuthInfo = Styled('div', props)`
@@ -950,7 +962,7 @@ const TopMenuStyle = Styled('div', props)`
                                 font-weight: 400;
                                 transition: .3s;
                             }
-                            
+
                             &:after{
                                 width: 6px;
                                 height: 1px;
