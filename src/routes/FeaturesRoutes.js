@@ -117,7 +117,6 @@ export default [
       },
     ],
   },
-
   {
     path: '/widgets/chart',
     name: 'widgetCharts',
