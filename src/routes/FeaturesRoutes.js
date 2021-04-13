@@ -99,7 +99,6 @@ export default [
     name: 'wizard',
     component: () => import('@/view/wizards/Wizards.vue'),
   },
-
   {
     path: '/widgets/chart',
     name: 'widgetCharts',
