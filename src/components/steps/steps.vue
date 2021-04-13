@@ -14,14 +14,7 @@
   </StepsStyle>
 
   <template v-else>
-    <StepsStyle
-      v-if="steps !== undefined"
-      :current="currents"
-      :direction="direction"
-      :status="status"
-      :progressDot="progressDot"
-      :size="size"
-    >
+    <StepsStyle v-if="steps !== undefined" :current="currents" :direction="direction" :status="status" :size="size">
       <a-step
         v-for="item in steps"
         :class="item.class && item.class"
@@ -100,7 +93,7 @@
 </template>
 <script>
 import { toRefs, ref } from 'vue';
-import PropTypes from 'vue-types';
+import VueTypes from 'vue-types';
 import { StepsStyle, ActionWrapper } from './style';
 
 const stepStyle = {
@@ -112,16 +105,16 @@ const Steps = {
   name: 'Steps',
   components: { StepsStyle, ActionWrapper },
   props: {
-    size: PropTypes.string,
-    current: PropTypes.number.def(0),
-    direction: PropTypes.string.def('horizontal'),
-    status: PropTypes.string,
-    progressDot: PropTypes.func,
-    steps: PropTypes.arrayOf(PropTypes.object),
-    isSwitch: PropTypes.bool.def(false),
-    navigation: PropTypes.bool.def(false),
-    isFinished: PropTypes.bool.def(false),
-    height: PropTypes.number.def(150),
+    size: VueTypes.string,
+    current: VueTypes.number.def(0),
+    direction: VueTypes.string.def('horizontal'),
+    status: VueTypes.string,
+    //progressDot: VueTypes.func.def(() => 1),
+    steps: VueTypes.arrayOf(VueTypes.object),
+    isSwitch: VueTypes.bool.def(false),
+    navigation: VueTypes.bool.def(false),
+    isFinished: VueTypes.bool.def(false),
+    height: VueTypes.number.def(150),
   },
 
   setup(props, { emit }) {
