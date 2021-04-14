@@ -35,6 +35,21 @@ const routes = [
     name: 'sales',
     component: () => import(/* webpackChunkName: "sales" */ '@/view/dashboard/Sales.vue'),
   },
+  {
+    path: '/crud/axios-view',
+    name: 'axios-view',
+    component: () => import(/* webpackChunkName: "axios-view" */ '@/view/crud/axios/View.vue'),
+  },
+  {
+    path: '/crud/axios-edit/:id',
+    name: 'axios-edit',
+    component: () => import(/* webpackChunkName: "axios-edit" */ '@/view/crud/axios/edit.vue'),
+  },
+  {
+    path: '/crud/axios-add',
+    name: 'axios-add',
+    component: () => import(/* webpackChunkName: "axios-add" */ '@/view/crud/axios/addNew.vue'),
+  },
   ...PageRoutes,
   ...FeaturesRoutes,
   ...Components,

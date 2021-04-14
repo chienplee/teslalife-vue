@@ -138,6 +138,26 @@
       </span>
     </a-menu-item>
 
+    <a-menu-item-group key="crud">
+      <template v-slot:title>
+        <p class="sidebar-nav-title">CRUD</p>
+      </template>
+
+      <a-sub-menu key="axios">
+        <template v-slot:title><sdFeatherIcons type="database" /><span>Axios</span></template>
+        <a-menu-item @click="toggleCollapsed" key="axios-view">
+          <router-link to="/crud/axios-view">
+            View All
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="axios-add">
+          <router-link to="/crud/axios-add">
+            Add New
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+    </a-menu-item-group>
+
     <a-menu-item-group key="applications">
       <template v-slot:title>
         <p class="sidebar-nav-title">APPLICATIONS</p>
@@ -342,11 +362,11 @@
 
       <a-menu-item key="task">
         <sdFeatherIcons type="circle" />
-        <spa @click="toggleCollapsed" n>
+        <span @click="toggleCollapsed">
           <router-link to="/app/task/all">
             Task
           </router-link>
-        </spa>
+        </span>
       </a-menu-item>
     </a-menu-item-group>
 
