@@ -93,7 +93,7 @@ const Focard = Styled.div`
     }
     .focard-details{
         &.growth-downward{
-            h1{                
+            h1{
                 font-size: 30px;
                 @media only screen and (max-width: 767px){
                     font-size: 24px;
@@ -366,7 +366,7 @@ const CardGroup = Styled.div`
         margin: 0 -12px;
         ${({ theme }) => (theme.rtl ? 'padding: 24px 24px 25px 0;' : 'padding: 24px 0 25px 24px;')};
         ${({ theme }) => (theme.topMenu ? 'padding-bottom: 0px' : 'padding-bottom: 25px')};
-                
+
         @media only screen and (max-width: 1350px){
             padding: 24px 0 25px 10px;
         }
@@ -375,9 +375,9 @@ const CardGroup = Styled.div`
         }
         .ant-col-md-12{
             ${({ theme }) => (theme.rtl ? 'padding: 0 12px 0 18px;' : 'padding: 0 18px 0 12px;')}
-            
+
             @media only screen and (max-width: 1350px){
-                ${({ theme }) => (theme.rtl ? 'padding: 0 6px 0 14px;' : 'padding: 0 14px 0 6px;')}                
+                ${({ theme }) => (theme.rtl ? 'padding: 0 6px 0 14px;' : 'padding: 0 14px 0 6px;')}
             }
             @media only screen and (max-width: 575px){
                 &:not(:last-child){
@@ -450,7 +450,9 @@ const CardGroup = Styled.div`
             }
         }
     }
-
+    .ant-card-body{
+        padding: 0 !important;
+    }
     .traffic-table{
         min-height: 438px;
         .ant-table{
@@ -955,6 +957,7 @@ const RegionMap = Styled.div`
 `;
 
 const LadingPages = Styled.div`
+    margin: -25px;
     @media only screen and (max-width: 1599px){
         min-height: 380px;
     }
@@ -1315,13 +1318,16 @@ const RevenueWrapper = Styled.div`
         ul{
             margin: -25px -25px 20px;
         }
-        
+
         &.theme-2{
             .custom-label{
                 .current-amount{
                     color: ${({ theme }) => theme.pink};
                 }
             }
+        }
+        canvas{
+            margin-bottom: 0 !important;
         }
     }
     .custom-label{
@@ -1364,6 +1370,9 @@ const RevenueTableWrapper = Styled.div`
                 min-height: 100%;
             }
         }
+        .ant-card-body{
+            padding: 0 !important;
+        }
     }
     .revenue-table{
         .ant-table-content{
@@ -1388,6 +1397,10 @@ const RevenueTableWrapper = Styled.div`
             tbody{
                 td{
                     color: ${({ theme }) => theme['gray-color']};
+                    padding: 10px 20px;
+                    canvas{
+                        margin-bottom: 0 !important;
+                    }
                 }
             }
         }
@@ -1432,12 +1445,16 @@ const RevenueChartWrapper = Styled.div`
 
 const TrafficTableWrapper = Styled.div`
     min-height: 450px;
+    margin: -25px;
     ${({ theme }) => (theme.topMenu ? 'min-height: 515px' : 'min-height: 450px')};
     @media only screen and (max-width: 1599px){
         min-height: 400px;
     }
     @media only screen and (max-width: 1199px){
         min-height: 100%;
+    }
+    .ant-card-body{
+        padding: 0 !important;
     }
     .ant-table-content{
         .ant-table-cell{
@@ -1453,7 +1470,7 @@ const TrafficTableWrapper = Styled.div`
                 th{
                     background: #fff;
                     border-top: 1px solid ${({ theme }) => theme['border-color-light']};
-                    color: ${({ theme }) => theme['dark-color']}
+                    color: ${({ theme }) => theme['dark-color']};
                     padding: 16px 25px;
                     text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
                     &:first-child, &:nth-child(5){
@@ -1768,7 +1785,7 @@ const TopSellerWrap = Styled.div`
         .ant-table-row {
             .ant-table-cell{
                 padding: 15px 15px;
-                &:not(first-child){ 
+                &:not(first-child){
                     text-align: right;
                 }
             }

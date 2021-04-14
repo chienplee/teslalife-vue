@@ -84,7 +84,7 @@ import { RevenueWrapper } from '../../style';
 import Chart from '../../../../components/utilities/chartjs';
 import { customTooltips, chartLinearGradient } from '../../../../components/utilities/utilities';
 import { useStore } from 'vuex';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, toRefs } from 'vue';
 import VueTypes from 'vue-types';
 
 const TotalRevenue = {
@@ -92,13 +92,15 @@ const TotalRevenue = {
   components: { RevenueWrapper, Chart },
   props: {
     title: VueTypes.string.def('Total Revenue'),
+    chartHeight: VueTypes.number.def(120),
   },
-  setup() {
+  setup(props) {
+    const { chartHeight } = toRefs(props);
     const store = useStore();
     const performanceState = computed(() => store.state.chartContent.performanceData);
     const preIsLoading = computed(() => store.state.chartContent.perLoading);
     const revenue = ref('year');
-    const height = ref(window.innerWidth <= 575 ? 200 : 120);
+    const height = ref(window.innerWidth <= 575 ? 200 : chartHeight);
 
     const handleActiveChangeRevenue = (event, value) => {
       event.preventDefault();

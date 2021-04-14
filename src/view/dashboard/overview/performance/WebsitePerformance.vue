@@ -143,7 +143,7 @@ const WebsitePerformance = {
     const store = useStore();
     const performance = ref('year');
     const performanceTab = ref('users');
-    const height = ref(window.innerWidth <= 575 ? 200 : 95);
+    const height = ref(window.innerWidth <= 575 ? 200 : 85);
 
     const performanceState = computed(() => store.state.chartContent.performanceData);
     const preIsLoading = computed(() => store.state.chartContent.perLoading);

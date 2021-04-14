@@ -1258,7 +1258,7 @@ ul {
 .add-file-dropdown a{
   font-size: 14px;
   font-weight: 400;
-} 
+}
 .add-file-dropdown a svg{
   width: 14px;
 }
@@ -2048,7 +2048,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 
 .sDash_task-details .ant-modal-body .sDash_checklist-item .sDash_checklist-tasks-wrap button{
   padding: 0px 35px;
-} 
+}
 
 .sDash_task-details .ant-modal-body{
   max-height: 800px;
@@ -2181,6 +2181,10 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   z-index: 999;
   opacity: 1;
   visibility: visible;
+}
+
+.ant-page-header-heading-extra{
+  margin: 4px 0;
 }
 
 /* Responsive CSS */

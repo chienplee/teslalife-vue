@@ -101,6 +101,7 @@
               :options="{
                 wheelSpeed: 1,
                 swipeEasing: true,
+                suppressScrollX: true,
               }"
             >
               <p class="sidebar-nav-title">MAIN MENU</p>

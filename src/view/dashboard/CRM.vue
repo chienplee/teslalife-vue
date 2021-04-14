@@ -1,8 +1,16 @@
 <template>
-  <sdPageHeader
-    title="CRM Dashboard
-"
-  >
+  <sdPageHeader title="CRM Dashboard">
+    <template v-slot:buttons>
+      <div class="page-header-actions">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
+          <sdFeatherIcons type="plus" size="14" />
+          Add New
+        </sdButton>
+      </div>
+    </template>
   </sdPageHeader>
   <Main>
     <a-row :gutter="25">
@@ -140,7 +148,7 @@
       <a-col :xxl="16" :xs="24"
         ><Suspense>
           <template #default>
-            <TotalRevenue title="Revenue" />
+            <TotalRevenue title="Revenue" :chartHeight="88" />
           </template>
           <template #fallback>
             <sdCards headless>
