@@ -1,315 +1,319 @@
 <template>
   <WizardWrapper>
-    <Steps
-      isSwitch
-      :current="0"
-      :status="status"
-      :steps="steps"
-      @onNext="next"
-      @onPrev="prev"
-      @onDone="done"
-      :isFinished="isFinished"
-    >
-      <template #account>
-        <BasicFormWrapper class="basic-form-inner">
-          <div class="atbd-form-checkout">
-            <a-row justify="center">
-              <a-col :sm="22" :xs="24">
-                <div class="create-account-form">
-                  <sdHeading as="h4">1. Please Create Your Account</sdHeading>
-                  <a-form :model="stateAccount" @finish="handleAccountSubmit" name="account">
-                    <a-form-item name="username" label="Username">
-                      <a-input v-model:value="stateAccount.username" placeholder="Username" />
-                    </a-form-item>
-                    <a-form-item name="email" label="Email Address">
-                      <a-input type="email" v-model:value="stateAccount.email" placeholder="name@gmail.com" />
-                    </a-form-item>
-                    <a-form-item name="password" label="Password">
-                      <a-input type="password" v-model:value="stateAccount.password" placeholder="Password" />
-                      <span class="input-message">Enter a valid password. Min 6 characters long</span>
-                    </a-form-item>
-                  </a-form>
-                </div>
-              </a-col>
-            </a-row>
-          </div>
-        </BasicFormWrapper>
-      </template>
-      <template #address>
-        <BasicFormWrapper class="basic-form-inner">
-          <div class="atbd-form-checkout">
-            <a-row justify="center">
-              <a-col :sm="22" :xs="24">
-                <div class="create-account-form">
-                  <sdHeading as="h4">2. Please Fill in Your Shipping Address</sdHeading>
-                  <a-form @finish="handleAddressSubmit" :model="stateAddress" name="address">
-                    <a-form-item name="name" label="Contact Name">
-                      <a-input v-model:value="stateAddress.name" placeholder="Ibn adam" />
-                    </a-form-item>
-                    <a-form-item name="company">
-                      <template #label
-                        ><span> Company Name <span>(Optional)</span> </span></template
-                      >
-                      <a-input v-model:value="stateAddress.company" placeholder="adam" />
-                    </a-form-item>
-                    <a-form-item name="phone" label="Phone Number">
-                      <a-input v-model:value="stateAddress.phone" placeholder="+880" />
-                    </a-form-item>
-                    <a-form-item name="country" label="Country/Region">
-                      <a-select v-model:value="stateAddress.country" :style="{ width: '100%' }">
-                        <a-select-option value="">Please Select</a-select-option>
-                        <a-select-option value="bangladesh">Bangladesh</a-select-option>
-                        <a-select-option value="india">India</a-select-option>
-                      </a-select>
-                    </a-form-item>
-                    <a-form-item name="street" label="Street Address">
-                      <a-input v-model:value="stateAddress.street" placeholder="House Number and Street Name" />
-                    </a-form-item>
-                    <a-form-item name="street2" label="">
-                      <a-input v-model:value="stateAddress.street2" placeholder="Apartment, Suite, Unit etc." />
-                    </a-form-item>
-                    <a-form-item name="city" label="City">
-                      <a-input v-model:value="stateAddress.city" placeholder="Enter City" />
-                    </a-form-item>
-                    <a-form-item name="zip" label="Zip/Postal Code">
-                      <a-input v-model:value="stateAddress.zip" placeholder="Enter Zip" />
-                    </a-form-item>
-                  </a-form>
-                </div>
-              </a-col>
-            </a-row>
-          </div>
-        </BasicFormWrapper>
-      </template>
-      <template #method>
-        <BasicFormWrapper class="basic-form-inner">
-          <div class="atbd-form-checkout">
-            <a-row justify="center">
-              <a-col :sm="22" :xs="24">
-                <div class="payment-method-form">
-                  <sdHeading as="h4">3. Please Please Select Your Payment Method</sdHeading>
-                  <div class="shipping-selection">
-                    <a-radio-group :style="{ width: '100%' }">
-                      <div class="shipping-selection__card">
-                        <a-radio :style="{ width: '100%' }" value="card">
-                          <sdCards
-                            headless
-                            :bodyStyle="{
-                              backgroundColor: '#F8F9FB',
-                              borderRadius: '20px',
-                              border: '1px solid #F1F2F6',
-                            }"
-                          >
-                            <div class="supported-card d-flex">
-                              <span>Credit/Debit Card</span>
-                              <div class="supported-card_logos">
-                                <img
-                                  :style="{ width: '50px' }"
-                                  :src="require('@/static/img/cards-logo/ms.png')"
-                                  alt=""
-                                />
-                                <img
-                                  :style="{ width: '50px' }"
-                                  :src="require('@/static/img/cards-logo/american-express.png')"
-                                  alt=""
-                                />
-                                <img
-                                  :style="{ width: '50px' }"
-                                  :src="require('@/static/img/cards-logo/visa.png')"
-                                  alt=""
-                                />
+    <WizardTwo>
+      <Steps
+        isSwitch
+        :current="0"
+        :status="status"
+        :steps="steps"
+        @onNext="next"
+        @onPrev="prev"
+        @onDone="done"
+        :isFinished="isFinished"
+      >
+        <template #account>
+          <BasicFormWrapper class="basic-form-inner">
+            <div class="atbd-form-checkout">
+              <a-row justify="center">
+                <a-col :sm="22" :xs="24">
+                  <div class="create-account-form">
+                    <sdHeading as="h4">1. Please Create Your Account</sdHeading>
+                    <a-form :model="stateAccount" @finish="handleAccountSubmit" name="account">
+                      <a-form-item name="username" label="Username">
+                        <a-input v-model:value="stateAccount.username" placeholder="Username" />
+                      </a-form-item>
+                      <a-form-item name="email" label="Email Address">
+                        <a-input type="email" v-model:value="stateAccount.email" placeholder="name@gmail.com" />
+                      </a-form-item>
+                      <a-form-item name="password" label="Password">
+                        <a-input type="password" v-model:value="stateAccount.password" placeholder="Password" />
+                        <span class="input-message">Enter a valid password. Min 6 characters long</span>
+                      </a-form-item>
+                    </a-form>
+                  </div>
+                </a-col>
+              </a-row>
+            </div>
+          </BasicFormWrapper>
+        </template>
+        <template #address>
+          <BasicFormWrapper class="basic-form-inner">
+            <div class="atbd-form-checkout">
+              <a-row justify="center">
+                <a-col :sm="22" :xs="24">
+                  <div class="create-account-form">
+                    <sdHeading as="h4">2. Please Fill in Your Shipping Address</sdHeading>
+                    <a-form @finish="handleAddressSubmit" :model="stateAddress" name="address">
+                      <a-form-item name="name" label="Contact Name">
+                        <a-input v-model:value="stateAddress.name" placeholder="Ibn adam" />
+                      </a-form-item>
+                      <a-form-item name="company">
+                        <template #label
+                          ><span> Company Name <span>(Optional)</span> </span></template
+                        >
+                        <a-input v-model:value="stateAddress.company" placeholder="adam" />
+                      </a-form-item>
+                      <a-form-item name="phone" label="Phone Number">
+                        <a-input v-model:value="stateAddress.phone" placeholder="+880" />
+                      </a-form-item>
+                      <a-form-item name="country" label="Country/Region">
+                        <a-select v-model:value="stateAddress.country" :style="{ width: '100%' }">
+                          <a-select-option value="">Please Select</a-select-option>
+                          <a-select-option value="bangladesh">Bangladesh</a-select-option>
+                          <a-select-option value="india">India</a-select-option>
+                        </a-select>
+                      </a-form-item>
+                      <a-form-item name="street" label="Street Address">
+                        <a-input v-model:value="stateAddress.street" placeholder="House Number and Street Name" />
+                      </a-form-item>
+                      <a-form-item name="street2" label="">
+                        <a-input v-model:value="stateAddress.street2" placeholder="Apartment, Suite, Unit etc." />
+                      </a-form-item>
+                      <a-form-item name="city" label="City">
+                        <a-input v-model:value="stateAddress.city" placeholder="Enter City" />
+                      </a-form-item>
+                      <a-form-item name="zip" label="Zip/Postal Code">
+                        <a-input v-model:value="stateAddress.zip" placeholder="Enter Zip" />
+                      </a-form-item>
+                    </a-form>
+                  </div>
+                </a-col>
+              </a-row>
+            </div>
+          </BasicFormWrapper>
+        </template>
+        <template #method>
+          <BasicFormWrapper class="basic-form-inner">
+            <div class="atbd-form-checkout">
+              <a-row justify="center">
+                <a-col :sm="22" :xs="24">
+                  <div class="payment-method-form">
+                    <sdHeading as="h4">3. Please Please Select Your Payment Method</sdHeading>
+                    <div class="shipping-selection">
+                      <a-radio-group :style="{ width: '100%' }">
+                        <div class="shipping-selection__card">
+                          <a-radio :style="{ width: '100%' }" value="card">
+                            <sdCards
+                              headless
+                              :bodyStyle="{
+                                backgroundColor: '#F8F9FB',
+                                borderRadius: '20px',
+                                border: '1px solid #F1F2F6',
+                              }"
+                            >
+                              <div class="supported-card d-flex">
+                                <span>Credit/Debit Card</span>
+                                <div class="supported-card_logos">
+                                  <img
+                                    :style="{ width: '50px' }"
+                                    :src="require('@/static/img/cards-logo/ms.png')"
+                                    alt=""
+                                  />
+                                  <img
+                                    :style="{ width: '50px' }"
+                                    :src="require('@/static/img/cards-logo/american-express.png')"
+                                    alt=""
+                                  />
+                                  <img
+                                    :style="{ width: '50px' }"
+                                    :src="require('@/static/img/cards-logo/visa.png')"
+                                    alt=""
+                                  />
+                                </div>
                               </div>
-                            </div>
-                            <sdCards headless :style="{ marginBottom: 0 }">
-                              <a-form @finish="handleMethodSubmit" :model="stateMethod" name="info">
-                                <a-form-item name="number" label="Card Number">
-                                  <a-input placeholder="6547-8702-6987-2527" />
-                                </a-form-item>
-                                <a-form-item name="name" label="Name on Card">
-                                  <a-input placeholder="Full name" />
-                                </a-form-item>
-                                <a-form-item name="month" initialValue="" label="Expiration Date">
-                                  <a-select :style="{ width: '100%' }">
-                                    <a-select-option value="">MM</a-select-option>
+                              <sdCards headless :style="{ marginBottom: 0 }">
+                                <a-form @finish="handleMethodSubmit" :model="stateMethod" name="info">
+                                  <a-form-item name="number" label="Card Number">
+                                    <a-input placeholder="6547-8702-6987-2527" />
+                                  </a-form-item>
+                                  <a-form-item name="name" label="Name on Card">
+                                    <a-input placeholder="Full name" />
+                                  </a-form-item>
+                                  <a-form-item name="month" initialValue="" label="Expiration Date">
+                                    <a-select :style="{ width: '100%' }">
+                                      <a-select-option value="">MM</a-select-option>
 
-                                    <a-select-option v-for="value in month" :key="value" :value="value">
-                                      {value}
-                                    </a-select-option>
-                                  </a-select>
-                                </a-form-item>
-                                <a-form-item name="year">
-                                  <a-select :style="{ width: '100%' }">
-                                    <a-select-option value="">YY</a-select-option>
-                                    <a-select-option :value="new Date().getFullYear()">{{
-                                      new Date().getFullYear()
-                                    }}</a-select-option>
+                                      <a-select-option v-for="value in month" :key="value" :value="value">
+                                        {value}
+                                      </a-select-option>
+                                    </a-select>
+                                  </a-form-item>
+                                  <a-form-item name="year">
+                                    <a-select :style="{ width: '100%' }">
+                                      <a-select-option value="">YY</a-select-option>
+                                      <a-select-option :value="new Date().getFullYear()">{{
+                                        new Date().getFullYear()
+                                      }}</a-select-option>
 
-                                    <a-select-option
-                                      v-for="value in month"
-                                      :key="value"
-                                      :value="parseInt(new Date().getFullYear(), 10) + parseInt(value, 10)"
-                                    >
-                                      {{ parseInt(new Date().getFullYear(), 10) + parseInt(value, 10) }}
-                                    </a-select-option>
-                                  </a-select>
-                                </a-form-item>
-                                <a-form-item name="cvv" label="CVV">
-                                  <div class="cvv-wrap">
-                                    <a-input :style="{ width: '60%' }" placeholder="XXX" />
-                                    <a class="input-leftText" to="#">
-                                      What is this?
-                                    </a>
-                                  </div>
-                                </a-form-item>
-                              </a-form>
+                                      <a-select-option
+                                        v-for="value in month"
+                                        :key="value"
+                                        :value="parseInt(new Date().getFullYear(), 10) + parseInt(value, 10)"
+                                      >
+                                        {{ parseInt(new Date().getFullYear(), 10) + parseInt(value, 10) }}
+                                      </a-select-option>
+                                    </a-select>
+                                  </a-form-item>
+                                  <a-form-item name="cvv" label="CVV">
+                                    <div class="cvv-wrap">
+                                      <a-input :style="{ width: '60%' }" placeholder="XXX" />
+                                      <a class="input-leftText" to="#">
+                                        What is this?
+                                      </a>
+                                    </div>
+                                  </a-form-item>
+                                </a-form>
+                              </sdCards>
                             </sdCards>
-                          </sdCards>
-                        </a-radio>
-                      </div>
-                      <div class="shipping-selection__paypal">
-                        <a-radio value="payPal" :style="{ width: '100%' }">
-                          Pay With PayPal
-                          <img :src="require('@/static/img/PayPalLogo.png')" alt="paypal" />
-                        </a-radio>
-                      </div>
-                      <div class="shipping-selection__cash">
-                        <a-radio value="cash" :style="{ width: '100%' }">
-                          Cash on delivery
-                        </a-radio>
-                      </div>
-                    </a-radio-group>
+                          </a-radio>
+                        </div>
+                        <div class="shipping-selection__paypal">
+                          <a-radio value="payPal" :style="{ width: '100%' }">
+                            Pay With PayPal
+                            <img :src="require('@/static/img/PayPalLogo.png')" alt="paypal" />
+                          </a-radio>
+                        </div>
+                        <div class="shipping-selection__cash">
+                          <a-radio value="cash" :style="{ width: '100%' }">
+                            Cash on delivery
+                          </a-radio>
+                        </div>
+                      </a-radio-group>
+                    </div>
                   </div>
-                </div>
-              </a-col>
-            </a-row>
-          </div>
-        </BasicFormWrapper>
-      </template>
-      <template #review>
-        <BasicFormWrapper v-if="status !== 'finish'" :style="{ width: '100%' }">
-          <div class="atbd-review-order" :style="{ width: '100%' }">
-            <sdHeading as="h4">4. Review and confirm Order</sdHeading>
-            <sdCards :bodyStyle="{ backgroundColor: '#F8F9FB', borderRadius: 10 }" headless>
-              <div class="atbd-review-order__single">
-                <sdCards headless>
-                  <div class="atbd-review-order__shippingTitle">
-                    <sdHeading as="h5">
-                      Shipping Information
-                      <a to="#">
-                        <sdFeatherIcons type="edit" />
-                        Edit
+                </a-col>
+              </a-row>
+            </div>
+          </BasicFormWrapper>
+        </template>
+        <template #review>
+          <BasicFormWrapper v-if="status !== 'finish'" :style="{ width: '100%' }">
+            <div class="atbd-review-order" :style="{ width: '100%' }">
+              <sdHeading as="h4">4. Review and confirm Order</sdHeading>
+              <sdCards :bodyStyle="{ backgroundColor: '#F8F9FB', borderRadius: 10 }" headless>
+                <div class="atbd-review-order__single">
+                  <sdCards headless>
+                    <div class="atbd-review-order__shippingTitle">
+                      <sdHeading as="h5">
+                        Shipping Information
+                        <a to="#">
+                          <sdFeatherIcons type="edit" />
+                          Edit
+                        </a>
+                      </sdHeading>
+                    </div>
+                    <article class="atbd-review-order__shippingInfo">
+                      <a-radio-group :style="{ width: '100%' }">
+                        <a-radio value="ms" :style="{ width: '100%' }">
+                          <div class="shipping-info-text">
+                            <sdHeading as="h6">Ibn Adam</sdHeading>
+                            <sdHeading as="h6">Phone: +61412345678</sdHeading>
+                            <p>
+                              795 Folsom Ave, Suite 600 <br />
+                              San Francisco, CA 94107 <br />
+                              United States
+                            </p>
+                          </div>
+                        </a-radio>
+                      </a-radio-group>
+                      <a class="btn-addNew" to="#">
+                        + Add New Address
                       </a>
-                    </sdHeading>
-                  </div>
-                  <article class="atbd-review-order__shippingInfo">
+                    </article>
+                  </sdCards>
+                </div>
+                <div class="atbd-review-order__single">
+                  <sdCards headless>
+                    <div>
+                      <sdHeading as="h5">Payment Method</sdHeading>
+                    </div>
                     <a-radio-group :style="{ width: '100%' }">
                       <a-radio value="ms" :style="{ width: '100%' }">
-                        <div class="shipping-info-text">
-                          <sdHeading as="h6">Ibn Adam</sdHeading>
-                          <sdHeading as="h6">Phone: +61412345678</sdHeading>
-                          <p>
-                            795 Folsom Ave, Suite 600 <br />
-                            San Francisco, CA 94107 <br />
-                            United States
-                          </p>
+                        <div class="method-info">
+                          <img :src="require('@/static/img/ms.svg')" alt="" />
+                          **** **** **** 2597
                         </div>
                       </a-radio>
                     </a-radio-group>
-                    <a class="btn-addNew" to="#">
-                      + Add New Address
+                    <a class="btn-addCard" to="#">
+                      + Add New Card
                     </a>
-                  </article>
-                </sdCards>
-              </div>
-              <div class="atbd-review-order__single">
-                <sdCards headless>
-                  <div>
-                    <sdHeading as="h5">Payment Method</sdHeading>
-                  </div>
-                  <a-radio-group :style="{ width: '100%' }">
-                    <a-radio value="ms" :style="{ width: '100%' }">
-                      <div class="method-info">
-                        <img :src="require('@/static/img/ms.svg')" alt="" />
-                        **** **** **** 2597
+                  </sdCards>
+                </div>
+
+                <div class="atbd-review-order__single">
+                  <sdCards headless>
+                    <ProductTable>
+                      <div class="table-cart table-responsive">
+                        <a-table :pagination="false" :dataSource="dataSource" :columns="columns" />
                       </div>
-                    </a-radio>
-                  </a-radio-group>
-                  <a class="btn-addCard" to="#">
-                    + Add New Card
-                  </a>
-                </sdCards>
-              </div>
+                    </ProductTable>
 
-              <div class="atbd-review-order__single">
-                <sdCards headless>
-                  <ProductTable>
-                    <div class="table-cart table-responsive">
-                      <a-table :pagination="false" :dataSource="dataSource" :columns="columns" />
-                    </div>
-                  </ProductTable>
-
-                  <a-row justify="end">
-                    <a-col :xxl="8" :xl="5" :md="9" :sm="14" :xs="24" :offset="!rtl ? 10 : 0">
-                      <OrderSummary>
-                        <div class="invoice-summary-inner">
-                          <ul class="summary-list">
-                            <li>
-                              <span class="summary-list-title">Subtotal :</span>
-                              <span class="summary-list-text">{{ `$${subtotal}` }}</span>
-                            </li>
-                            <li>
-                              <span class="summary-list-title">Discount :</span>
-                              <span class="summary-list-text">{{ `$${-20}` }}</span>
-                            </li>
-                            <li>
-                              <span class="summary-list-title">Shipping Charge :</span>
-                              <span class="summary-list-text">{{ `$${30}` }}</span>
-                            </li>
-                          </ul>
-                          <sdHeading class="summary-total" as="h4">
-                            <span class="summary-total-label">Total : </span>
-                            <span class="summary-total-amount">{{ `$${subtotal + 30 - 20}` }}</span>
-                          </sdHeading>
-                        </div>
-                      </OrderSummary>
-                    </a-col>
-                  </a-row>
-                </sdCards>
-              </div>
-            </sdCards>
-          </div>
-        </BasicFormWrapper>
-
-        <a-row v-else justify="start" :style="{ width: '100%' }">
-          <a-col :xl="20" :xs="24">
-            <div class="checkout-successful">
-              <sdCards
-                headless
-                :bodyStyle="{
-                  backgroundColor: '#F8F9FB',
-                  borderRadius: '20px',
-                }"
-              >
-                <sdCards headless>
-                  <span class="icon-success">
-                    <sdFeatherIcons type="check" />
-                  </span>
-                  <sdHeading as="h3">Payment Successful</sdHeading>
-                  <p>Thank you! We have received your Payment</p>
-                </sdCards>
+                    <a-row justify="end">
+                      <a-col :xxl="8" :xl="5" :md="9" :sm="14" :xs="24" :offset="!rtl ? 10 : 0">
+                        <OrderSummary>
+                          <div class="invoice-summary-inner">
+                            <ul class="summary-list">
+                              <li>
+                                <span class="summary-list-title">Subtotal :</span>
+                                <span class="summary-list-text">{{ `$${subtotal}` }}</span>
+                              </li>
+                              <li>
+                                <span class="summary-list-title">Discount :</span>
+                                <span class="summary-list-text">{{ `$${-20}` }}</span>
+                              </li>
+                              <li>
+                                <span class="summary-list-title">Shipping Charge :</span>
+                                <span class="summary-list-text">{{ `$${30}` }}</span>
+                              </li>
+                            </ul>
+                            <sdHeading class="summary-total" as="h4">
+                              <span class="summary-total-label">Total : </span>
+                              <span class="summary-total-amount">{{ `$${subtotal + 30 - 20}` }}</span>
+                            </sdHeading>
+                          </div>
+                        </OrderSummary>
+                      </a-col>
+                    </a-row>
+                  </sdCards>
+                </div>
               </sdCards>
             </div>
-          </a-col>
-        </a-row>
-      </template>
-    </Steps>
+          </BasicFormWrapper>
+
+          <a-row v-else justify="start" :style="{ width: '100%' }">
+            <a-col :xl="20" :xs="24">
+              <div class="checkout-successful">
+                <sdCards
+                  headless
+                  :bodyStyle="{
+                    backgroundColor: '#F8F9FB',
+                    borderRadius: '20px',
+                  }"
+                >
+                  <sdCards headless>
+                    <span class="icon-success">
+                      <sdFeatherIcons type="check" />
+                    </span>
+                    <sdHeading as="h3">Payment Successful</sdHeading>
+                    <p>Thank you! We have received your Payment</p>
+                  </sdCards>
+                </sdCards>
+              </div>
+            </a-col>
+          </a-row>
+        </template>
+      </Steps>
+    </WizardTwo>
   </WizardWrapper>
 </template>
 <script>
-import { FigureWizards, WizardWrapper, ProductTable, OrderSummary } from '../Style';
+import { FigureWizards, WizardWrapper, ProductTable, OrderSummary, WizardTwo } from '../Style';
+import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
 import { computed, onMounted, ref, watchEffect, reactive } from 'vue';
+import { PlusOutlined, MinusOutlined, DeleteOutlined } from '@ant-design/icons-vue';
 
 const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 const columns = [
@@ -337,11 +341,20 @@ const columns = [
 
 const WizardsTwo = {
   name: 'WizardsTwo',
-  components: { Steps, FigureWizards, WizardWrapper, ProductTable, OrderSummary },
+  components: {
+    Steps,
+    FigureWizards,
+    WizardWrapper,
+    ProductTable,
+    OrderSummary,
+    WizardTwo,
+    BasicFormWrapper,
+    PlusOutlined,
+    MinusOutlined,
+  },
   setup() {
     const { state, dispatch } = useStore();
     const cartData = computed(() => state.cart.data);
-    const isLoading = computed(() => state.cart.loading);
     const rtl = computed(() => state.themeLayout.rtlData);
     const status = ref('process');
     const isFinished = ref(false);
@@ -419,19 +432,19 @@ const WizardsTwo = {
           return {
             key: id,
             product: (
-              <div className="cart-single">
+              <div sdButton="cart-single">
                 <FigureWizards>
-                  <img style={{ width: 80 }} src={require(`@/${img}`)} alt="" />
+                  <img style="{{width: 80}}" src={require(`@/${img}`)} alt="" />
                   <figcaption>
-                    <div className="cart-single__info">
+                    <div class="cart-single__info">
                       <sdHeading as="h6">{name}</sdHeading>
-                      <ul className="info-list">
+                      <ul class="info-list">
                         <li>
-                          <span className="info-title">Size :</span>
+                          <span class="info-title">Size :</span>
                           <span>{size}</span>
                         </li>
                         <li>
-                          <span className="info-title"> Color :</span>
+                          <span class="info-title"> Color :</span>
                           <span>{color}</span>
                         </li>
                       </ul>
@@ -440,32 +453,32 @@ const WizardsTwo = {
                 </FigureWizards>
               </div>
             ),
-            price: <span className="cart-single-price">${price}</span>,
+            price: <span class="cart-single-price">${price}</span>,
             quantity: (
-              <div className="cart-single-quantity">
-                <Button onClick={() => decrementUpdate(id, quantity)} className="btn-dec" type="default">
-                  <FeatherIcon icon="minus" size={12} />
-                </Button>
+              <div class="cart-single-quantity">
+                <sdButton onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
+                  <MinusOutlined />
+                </sdButton>
                 {quantity}
-                <Button onClick={() => incrementUpdate(id, quantity)} className="btn-inc" type="default">
-                  <FeatherIcon icon="plus" size={12} />
-                </Button>
+                <sdButton onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
+                  <PlusOutlined />
+                </sdButton>
               </div>
             ),
-            total: <span className="cart-single-t-price">${quantity * price}</span>,
+            total: <span class="cart-single-t-price">${quantity * price}</span>,
             action: (
-              <div className="table-action">
-                <Button
+              <div class="table-action">
+                <sdButton
                   onClick={() => cartDeleted(id)}
-                  className="btn-icon"
+                  class="btn-icon"
                   to="#"
                   size="default"
                   type="danger"
                   shape="circle"
                   transparented
                 >
-                  <FeatherIcon icon="trash-2" size={16} />
-                </Button>
+                  <DeleteOutlined />
+                </sdButton>
               </div>
             ),
           };
@@ -504,7 +517,6 @@ const WizardsTwo = {
       month,
       columns,
       cartData,
-      isLoading,
       rtl,
       status,
       isFinished,
@@ -519,14 +531,17 @@ const WizardsTwo = {
         {
           title: 'Shipping Address',
           content: 'address',
+          icon: <img src={require('@/static/img/icon/address.svg')} />,
         },
         {
           title: 'Payment Method',
           content: 'method',
+          icon: <img src={require('@/static/img/icon/155-credit-card.svg')} />,
         },
         {
           title: 'Review Order',
           content: 'review',
+          icon: <img src={require('@/static/img/icon/024-like.svg')} />,
         },
       ],
       handleAccountSubmit,
