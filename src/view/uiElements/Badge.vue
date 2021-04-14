@@ -156,7 +156,7 @@ import {
   BadgeRedStyle,
   BadgeDynamicStyle,
 } from './ui-elements-styled';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 export default {
   name: 'Badge',
   components: {
@@ -205,7 +205,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['rtl']),
+    ...mapState(['rtl']),
   },
 };
 </script>

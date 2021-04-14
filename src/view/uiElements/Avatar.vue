@@ -91,7 +91,8 @@ import { Main } from '../styled';
 
 import config from '../../config/config';
 import { AvatarWraperStyle } from './ui-elements-styled';
-import { mapGetters } from 'vuex';
+import { useStore } from 'vuex';
+import { computed, ref } from 'vue';
 
 const { theme } = config;
 const UserList = ['U', 'Lucy', 'Tom', 'Edward'];
@@ -103,22 +104,25 @@ export default {
     Main,
     AvatarWraperStyle,
   },
-  data() {
+  setup() {
+    const { state } = useStore();
+    const user = ref(UserList[0]);
+    const color = ref(ColorList[0]);
+    const rtl = computed(state.themeLayout.rtlData);
+
+    function changeUser() {
+      const index = UserList.indexOf(user.value);
+      user.value = index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
+      color.value = index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0];
+    }
+
     return {
       theme,
-      user: UserList[0],
-      color: ColorList[0],
+      user,
+      color,
+      rtl,
+      changeUser,
     };
-  },
-  methods: {
-    changeUser() {
-      const index = UserList.indexOf(this.user);
-      this.user = index < UserList.length - 1 ? UserList[index + 1] : UserList[0];
-      this.color = index < ColorList.length - 1 ? ColorList[index + 1] : ColorList[0];
-    },
-  },
-  computed: {
-    ...mapGetters(['rtl']),
   },
 };
 </script>

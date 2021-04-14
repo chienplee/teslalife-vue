@@ -419,19 +419,19 @@ const WizardsOne = {
           return {
             key: id,
             product: (
-              <div className="cart-single">
+              <div class="cart-single">
                 <FigureWizards>
                   <img style={{ width: 80 }} src={require(`@/${img}`)} alt="" />
                   <figcaption>
-                    <div className="cart-single__info">
+                    <div class="cart-single__info">
                       <sdHeading as="h6">{name}</sdHeading>
-                      <ul className="info-list">
+                      <ul class="info-list">
                         <li>
-                          <span className="info-title">Size :</span>
+                          <span class="info-title">Size :</span>
                           <span>{size}</span>
                         </li>
                         <li>
-                          <span className="info-title"> Color :</span>
+                          <span class="info-title"> Color :</span>
                           <span>{color}</span>
                         </li>
                       </ul>
@@ -440,24 +440,24 @@ const WizardsOne = {
                 </FigureWizards>
               </div>
             ),
-            price: <span className="cart-single-price">${price}</span>,
+            price: <span class="cart-single-price">${price}</span>,
             quantity: (
-              <div className="cart-single-quantity">
-                <Button onClick={() => decrementUpdate(id, quantity)} className="btn-dec" type="default">
+              <div class="cart-single-quantity">
+                <Button onClick={() => decrementUpdate(id, quantity)} class="btn-dec" type="default">
                   <FeatherIcon icon="minus" size={12} />
                 </Button>
                 {quantity}
-                <Button onClick={() => incrementUpdate(id, quantity)} className="btn-inc" type="default">
+                <Button onClick={() => incrementUpdate(id, quantity)} class="btn-inc" type="default">
                   <FeatherIcon icon="plus" size={12} />
                 </Button>
               </div>
             ),
-            total: <span className="cart-single-t-price">${quantity * price}</span>,
+            total: <span class="cart-single-t-price">${quantity * price}</span>,
             action: (
-              <div className="table-action">
+              <div class="table-action">
                 <Button
                   onClick={() => cartDeleted(id)}
-                  className="btn-icon"
+                  class="btn-icon"
                   to="#"
                   size="default"
                   type="danger"

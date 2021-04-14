@@ -1,5 +1,17 @@
 <template>
-  <sdPageHeader title="Ecommerce Dashboard"> </sdPageHeader>
+  <sdPageHeader title="Ecommerce Dashboard">
+    <template v-slot:buttons>
+      <div class="page-header-actions">
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
+        <sdButton size="small" type="primary">
+          <sdFeatherIcons type="plus" size="14" />
+          Add New
+        </sdButton>
+      </div>
+    </template>
+  </sdPageHeader>
   <Main>
     <a-row :gutter="25">
       <a-col :xxl="6" :md="12" :sm="12" :xs="24">

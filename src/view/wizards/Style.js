@@ -23,7 +23,7 @@ const ProductCard = Styled.div`
     border-radius: 10px;
     background-color: #fff;
     position: relative;
-    
+
     @media only screen and (max-width: 767px){
         max-width: 350px;
         margin: 0 auto;
@@ -612,7 +612,7 @@ const AddProductForm = Styled.div`
     .ant-select-arrow{
         ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 11px;
     }
-    
+
     .ant-table table {
         text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
     }
@@ -1013,7 +1013,7 @@ const WizardWrapper = Styled.div`
             font-weight: 500;
             margin-top: 8px;
             padding: ${({ theme }) => (theme.rtl ? '0 10px 0 0' : '0 0 0 10px')};
-            
+
             color: ${({ theme }) => theme['gray-solid']} !important;
             @media only screen and (max-width: 1210px) {
                 padding: ${({ theme }) => (!theme.rtl ? '0 0 0 20px' : '0 20px 0 0')};
@@ -1500,9 +1500,9 @@ const WizardWrapper = Styled.div`
 
 const WizardTwo = Styled.div`
     .ant-steps:not(.ant-steps-vertical) .ant-steps-item-custom .ant-steps-item-icon {
-        width: 50px;  
-        box-shadow: none;      
-    }    
+        width: 50px;
+        box-shadow: none;
+    }
     .ant-steps-item-icon .ant-steps-icon span{
         color: #000;
         font-size: 20px;
@@ -1602,7 +1602,7 @@ const WizardFour = Styled.div`
         @media (max-width: 575px){
             align-items: flex-start;
         }
-        
+
         &.ant-steps-vertical{
             flex: 1;
             padding: 30px;
@@ -1635,7 +1635,7 @@ const WizardFour = Styled.div`
             }
         }
     }
-    
+
     .create-account-form{
         padding: 30px;
         border-radius: 6px;
@@ -1760,14 +1760,14 @@ const WizardFive = Styled.div`
             }
         }
     }
-    .ant-steps:not(.ant-steps-dot):not(.ant-steps-navigation) .ant-steps-item .ant-steps-item-icon {        
+    .ant-steps:not(.ant-steps-dot):not(.ant-steps-navigation) .ant-steps-item .ant-steps-item-icon {
         display: none;
     }
     .ant-steps-item.ant-steps-item-process.ant-steps-item-active {
         background: #F4F5F7;
     }
     .step-action-wrap{
-        border-top: 1px solid ${({ theme }) => theme['bg-color-deep']}; 
+        border-top: 1px solid ${({ theme }) => theme['bg-color-deep']};
         margin-top: 30px;
         .step-action-inner{
             width: 100% !important;
@@ -1953,7 +1953,7 @@ const WizardSix = Styled.div`
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 26px;
-            color: ${({ theme }) => theme['dark-color']}; 
+            color: ${({ theme }) => theme['dark-color']};
             @media only screen and (max-width: 991px) {
                 margin-bottom: 15px;
             }
@@ -2013,10 +2013,10 @@ const WizardSix = Styled.div`
             min-width: 100%;
         }
     }
-    
+
 `;
 const WizardBlock = Styled.div`
-    
+
     >.ant-card{
         .ant-card-body{
             padding: 50px 0 !important;
@@ -2027,7 +2027,7 @@ const WizardBlock = Styled.div`
             }
         }
     }
-    
+
 `;
 
 export {

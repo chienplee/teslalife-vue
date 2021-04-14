@@ -148,7 +148,7 @@
 <script>
 import { Main } from '../styled';
 import { ProgressBarStyle } from './ui-elements-styled';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'Progressbar',
@@ -162,7 +162,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['rtl']),
+    ...mapState(['rtl']),
   },
   methods: {
     increase() {

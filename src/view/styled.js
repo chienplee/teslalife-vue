@@ -18,7 +18,7 @@ const Main = Styled.div`
     .ant-card-rtl .ant-card-extra{
                 margin-right: 0 !important;
             }
-    .ant-tabs-tab span svg {        
+    .ant-tabs-tab span svg {
         ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 5px;
     }
     /* Picker Under Input */
@@ -56,7 +56,7 @@ const Main = Styled.div`
     }
 
     /* progress bars */
-    
+
     @media only screen and (max-width: 1199px){
         padding: 0px 15px;
     }
@@ -497,7 +497,7 @@ const Main = Styled.div`
           span.fa:before{
             color: ${({ theme }) => theme['warning-color']};
             content: "\f005";
-    
+
           }
         }
     }
@@ -509,7 +509,7 @@ const Main = Styled.div`
         }
     }
 
-    
+
     .ant-rate-content{
         font-weight: 500;
         color: ${({ theme }) => theme['gray-color']}
@@ -522,9 +522,9 @@ const Main = Styled.div`
                    padding-top: 0 !important;
                 }
             }
-            
+
         }
-                
+
     }
 
     /* // Rechart */
@@ -680,7 +680,7 @@ const Main = Styled.div`
                 }
             }
         }
-        
+
         .ant-steps {
             padding: 50px;
             @media only screen and (max-width: 1399px) {
@@ -1045,7 +1045,7 @@ const BasicFormWrapper = Styled.div`
     }
     .add-record-form{
         margin: 25px 0 35px 0;
-        
+
         .record-form-actions{
             padding-right: 40px;
         }
@@ -1388,7 +1388,7 @@ const TableWrapper = Styled.div`
                                 i{
                                     color: ${({ theme }) => theme['info-color']};
                                 }
-                              }  
+                              }
                             }
                             &.delete{
                               &:hover{
@@ -1396,7 +1396,7 @@ const TableWrapper = Styled.div`
                                 i{
                                     color: ${({ theme }) => theme['danger-color']};
                                 }
-                              }  
+                              }
                             }
                         }
                     }
@@ -1526,7 +1526,7 @@ const TableWrapper = Styled.div`
                 color: ${({ theme }) => theme['light-color']};
             }
         }
-    }    
+    }
 `;
 
 const DragDropStyle = Styled.div`
@@ -1629,7 +1629,7 @@ const ExportStyleWrap = Styled.div`
             flex-flow: column;
         }
         .btn-export{
-            height: 44px; 
+            height: 44px;
             @media only screen and (max-width: 575px){
                 margin-bottom: 20px;
             }

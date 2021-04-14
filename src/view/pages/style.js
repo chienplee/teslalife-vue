@@ -366,7 +366,7 @@ const UserCard = Styled.div`
         width: 100%;
         border-radius: 50%;
         max-width: 150px;
-      }      
+      }
     }
     .card__more_actions{
       position: absolute;
@@ -441,7 +441,7 @@ const UserCard = Styled.div`
       img{
         margin-bottom: 18px;
         max-width: 120px;
-      }      
+      }
     }
     .card__actions{
       margin: -5px;
@@ -685,7 +685,7 @@ const FaqWrapper = Styled.div`
       background-color: #fff;
       padding: 18px 25px !important;
       border-radius: 5px !important;
-      @media only screen and (max-width: 575px){        
+      @media only screen and (max-width: 575px){
         padding: ${({ theme }) => (!theme.rtl ? '15px 45px 15px 15px' : '15px 15px 15px 45px')} !important;
       }
       .ant-collapse-arrow{
@@ -1109,7 +1109,7 @@ const AddUser = Styled.div`
     margin-bottom: 36px;
   }
   .add-user-wrap{
-   $: 
+   $:
   }
   .add-user-bottom{
     margin-top: 20px;
@@ -1502,7 +1502,7 @@ const TestimonialWrapper = Styled.div`
   position: relative;
   padding: 0 150px;
   .button-group {
-      width: 100%;   
+      width: 100%;
       display: flex;
       justify-content: space-between;
       position: absolute;
@@ -2068,7 +2068,7 @@ const SupportContentWrap = Styled.div`
         justify-content: center;
         height: 40px;
         background-color: #EFEFFE;
-        border-radius: 20px; 
+        border-radius: 20px;
         margin: 36px auto 0;
         font-size: 15px;
         padding: 0 24.5px;

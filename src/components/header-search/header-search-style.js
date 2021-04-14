@@ -1,6 +1,6 @@
 import Styled from 'vue3-styled-components';
-
-const Div = Styled.div`
+const props = ['darkMode'];
+const Div = Styled('div', props)`
     .ant-input{
         border: none;
     }

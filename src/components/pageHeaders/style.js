@@ -2,8 +2,8 @@ import Styled from 'vue3-styled-components';
 import { PageHeader } from 'ant-design-vue';
 
 const PageHeaderStyle = Styled(PageHeader)`
-  margin-bottom: 25px;
-  
+  margin-bottom: 0;
+
   .page-header-actions button.ant-btn-white svg {
     width: 12px;
     height: 12px;

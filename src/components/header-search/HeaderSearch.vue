@@ -33,7 +33,8 @@
 
 <script>
 import { Div } from './header-search-style';
-import { mapGetters } from 'vuex';
+import { useStore } from 'vuex';
+import { computed, ref } from 'vue';
 
 export default {
   name: 'HeaderSearch',
@@ -41,82 +42,87 @@ export default {
   components: {
     Div,
   },
-  data() {
-    return {
-      searchData: [
-        {
-          id: 1,
-          title: 'AntDesign',
-          count: 10000,
-        },
-        {
-          id: 2,
-          title: 'Design UI',
-          count: 10600,
-        },
+  setup() {
+    const { state } = useStore();
+    const searchData = ref([
+      {
+        id: 1,
+        title: 'AntDesign',
+        count: 10000,
+      },
+      {
+        id: 2,
+        title: 'Design UI',
+        count: 10600,
+      },
 
-        {
-          id: 3,
-          title: 'Bootstrap Design UI',
-          count: 60100,
-        },
-        {
-          id: 4,
-          title: 'Meterial design',
-          count: 30010,
-        },
+      {
+        id: 3,
+        title: 'Bootstrap Design UI',
+        count: 60100,
+      },
+      {
+        id: 4,
+        title: 'Meterial design',
+        count: 30010,
+      },
 
-        {
-          id: 5,
-          title: 'AntDesign design language',
-          count: 100000,
-        },
-      ],
-      filteredData: [
-        {
-          id: 1,
-          title: 'AntDesign',
-          count: 10000,
-        },
-        {
-          id: 2,
-          title: 'Design UI',
-          count: 10600,
-        },
+      {
+        id: 5,
+        title: 'AntDesign design language',
+        count: 100000,
+      },
+    ]);
+    const rtl = computed(() => state.themeLayout.rtlData);
+    const filteredData = ref([
+      {
+        id: 1,
+        title: 'AntDesign',
+        count: 10000,
+      },
+      {
+        id: 2,
+        title: 'Design UI',
+        count: 10600,
+      },
 
-        {
-          id: 3,
-          title: 'Bootstrap Design UI',
-          count: 60100,
-        },
-        {
-          id: 4,
-          title: 'Meterial design',
-          count: 30010,
-        },
+      {
+        id: 3,
+        title: 'Bootstrap Design UI',
+        count: 60100,
+      },
+      {
+        id: 4,
+        title: 'Meterial design',
+        count: 30010,
+      },
 
-        {
-          id: 5,
-          title: 'AntDesign design language',
-          count: 100000,
-        },
-      ],
-      visible: false,
-    };
-  },
-  computed: {
-    ...mapGetters(['rtl']),
-  },
-  methods: {
-    search: function(e, searchDatas) {
+      {
+        id: 5,
+        title: 'AntDesign design language',
+        count: 100000,
+      },
+    ]);
+    const visible = ref(false);
+
+    const search = (e, searchDatas) => {
       const data = searchDatas.filter(item => {
         return item.title.startsWith(e.target.value);
       });
-      this.filteredData = data;
-    },
-    hide() {
-      this.visible = false;
-    },
+      filteredData.value = data;
+    };
+    const hide = () => {
+      visible.value = false;
+    };
+
+    return {
+      search,
+      hide,
+      searchData,
+      filteredData,
+      visible,
+      rtl,
+    };
   },
 };
 </script>

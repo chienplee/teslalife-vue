@@ -109,7 +109,6 @@ const ScheduleCalendar = {
   setup() {
     const { state, dispatch } = useStore();
     const events = computed(() => state.calendar.events);
-    // const eventsFiltered = computed(() => state.calendar.events.filter(item => item.date[0] === date));
     const isVisible = computed(() => state.calendar.eventVisible);
     const currentMonth = ref(0);
     const defaultValue = ref(moment().format('YYYY-MM-DD'));
@@ -179,7 +178,6 @@ const ScheduleCalendar = {
       onDecrement,
       handleCancel,
       addNew,
-      // eventsFiltered,
       dataList,
       moment,
       uniqueDate,

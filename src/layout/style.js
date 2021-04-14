@@ -1,9 +1,5 @@
 import Styled from 'vue3-styled-components';
-const props = {
-  hide: Boolean,
-  searchHide: Boolean,
-  darkMode: Boolean,
-};
+const props = ['hide', 'searchHide', 'darkMode', 'topMenu', 'theme'];
 const Div = Styled('div', props)`
     position: relative;
     header{
@@ -278,7 +274,7 @@ const Div = Styled('div', props)`
             }
 
             .ant-menu{
-                overflow-x: hidden;
+                /* overflow-x: hidden; */
                 ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0 none;
                 .ant-menu-submenu, .ant-menu-item{
                     i{
@@ -503,9 +499,6 @@ const Div = Styled('div', props)`
         .ant-menu-item-group{
             .ant-menu-item-group-title{
                 padding: 0;
-                .sidebar-nav-title{
-                    padding-left: 0;
-                }
             }
         }
     }

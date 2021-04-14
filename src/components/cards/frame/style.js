@@ -119,7 +119,7 @@ const CardFrame = Styled(Card, props)`
     border-radius: 50% !important;
     ${({ theme }) => (theme.rtl ? ' margin-left' : ' margin-right')}: 7px !important;
   }
-  
+
 
   .ant-card-extra .ant-dropdown-trigger {
     line-height: 0;
@@ -134,7 +134,7 @@ const CardFrame = Styled(Card, props)`
     bottom: 0;
     ${({ theme }) => (!theme.rtl ? ' left' : ' right')}: 5px;
   }
- 
+
 `;
 
 export { CardFrame };

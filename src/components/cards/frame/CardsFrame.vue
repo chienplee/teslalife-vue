@@ -18,7 +18,7 @@
         <template v-slot:overlay>
           <slot name="more"></slot>
         </template>
-        <router-link v-if="!moreText" to="#"><sdFeatherIcons type="more-horizontal"/></router-link>
+        <router-link v-if="!moreText" to="#"><sdFeatherIcons type="more-horizontal" size="24"/></router-link>
         <router-link v-else to="#">More</router-link>
       </sdDropdown>
       <slot name="button"></slot>

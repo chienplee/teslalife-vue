@@ -99,7 +99,7 @@
 
 <script>
 import { Main } from '../styled';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import { CloseCircleOutlined } from '@ant-design/icons-vue';
 export default {
   name: 'Result',
@@ -108,7 +108,7 @@ export default {
     CloseCircleOutlined,
   },
   computed: {
-    ...mapGetters(['rtl']),
+    ...mapState(['rtl']),
   },
 };
 </script>

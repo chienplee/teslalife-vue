@@ -1,7 +1,7 @@
 <template>
   <div class="full-width-table">
     <sdCards title="Top Landing Pages" more>
-      <template>
+      <template #more>
         <router-link to="#">
           <sdFeatherIcons size="16" type="printer" />
           <span>Printer</span>
