@@ -148,7 +148,7 @@
       <a-col :xxl="16" :xs="24"
         ><Suspense>
           <template #default>
-            <TotalRevenue title="Revenue" :chartHeight="87" />
+            <TotalRevenue title="Revenue" :chartHeight="88" />
           </template>
           <template #fallback>
             <sdCards headless>
