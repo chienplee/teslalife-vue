@@ -31,9 +31,9 @@ export default {
     state.loading = true;
   },
 
-  axiosUpdateSuccess(state, data) {
+  axiosUpdateSuccess(state) {
     state.loading = false;
-    state.data = data;
+    // state.data = data;
   },
 
   axiosUpdateErr(state, err) {
@@ -45,9 +45,9 @@ export default {
     state.loading = true;
   },
 
-  axiosDeleteSuccess(state, data) {
+  axiosDeleteSuccess(state) {
     state.loading = false;
-    state.data = data;
+    // state.data = data;
   },
 
   axiosDeleteErr(state, err) {

@@ -71,7 +71,7 @@
                       <a-input v-model:value="formState.position" placeholder="Position" />
                     </a-form-item>
                     <a-form-item label="Joining Date">
-                      <a-date-picker :style="{ width: '100%' }" v-model:value="formState.join" :format="dateFormat" />
+                      <a-date-picker :style="{ width: '100%' }" v-model:value="join" :format="dateFormat" />
                     </a-form-item>
                     <a-form-item name="status" label="Status">
                       <a-radio-group v-model:value="formState.status">
@@ -99,8 +99,9 @@
 import { RecordFormWrapper } from './style';
 import { Main, BasicFormWrapper } from '../../styled';
 import { useStore } from 'vuex';
-import { computed, onMounted, reactive, watchEffect } from 'vue';
+import { computed, onMounted, reactive, ref, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
+// import moment from 'moment';
 
 const dateFormat = 'YYYY/MM/DD';
 
@@ -114,17 +115,24 @@ const UpdateData = {
     const crud = computed(() => state.crud.data);
     const url = computed(() => state.crud.url);
     const isFileLoading = computed(() => state.crud.fileLoading);
+    const join = ref('2021/04/14');
 
     const handleSubmit = values => {
-      dispatch('axiosCrudSubmitData', {
-        ...values,
-        image: url.value,
+      dispatch('axiosDataUpdate', {
+        id: params.id,
+        data: {
+          ...values,
+          join: '2021/04/14',
+          image: url.value,
+        },
       });
       dispatch('axiosFileClear');
     };
+
     onMounted(() => {
       dispatch('axiosSingleDataGet', params.id);
     });
+
     const props = {
       name: 'file',
       action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -146,19 +154,19 @@ const UpdateData = {
       country: '',
       city: '',
       company: '',
-      join: '',
       position: '',
       status: '',
     });
 
     watchEffect(() => {
       if (crud.value.name) {
+        console.log(crud.value);
         formState.name = crud.value.name;
         formState.email = crud.value.email;
         formState.country = crud.value.country;
         formState.city = crud.value.city;
         formState.company = crud.value.company;
-        formState.join = crud.value.join;
+        join.value = crud.value.join;
         formState.position = crud.value.position;
         formState.status = crud.value.status;
       }
@@ -172,6 +180,7 @@ const UpdateData = {
       props,
       dateFormat,
       formState,
+      join,
     };
   },
 };

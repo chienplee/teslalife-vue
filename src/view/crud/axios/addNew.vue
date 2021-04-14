@@ -68,7 +68,7 @@
                       <a-input v-model:value="formState.position" placeholder="Position" />
                     </a-form-item>
                     <a-form-item label="Joining Date">
-                      <a-date-picker :style="{ width: '100%' }" v-model:value="formState.join" :format="dateFormat" />
+                      <a-date-picker :style="{ width: '100%' }" v-model:value="join" :format="dateFormat" />
                     </a-form-item>
                     <a-form-item name="status" label="Status">
                       <a-radio-group v-model:value="formState.status">
@@ -96,7 +96,7 @@
 import { RecordFormWrapper } from './style';
 import { Main, BasicFormWrapper } from '../../styled';
 import { useStore } from 'vuex';
-import { computed, reactive } from 'vue';
+import { computed, reactive, ref } from 'vue';
 
 const dateFormat = 'YYYY/MM/DD';
 
@@ -109,11 +109,13 @@ const AddNew = {
     const isLoading = computed(() => state.crud.loading);
     const url = computed(() => state.crud.url);
     const isFileLoading = computed(() => state.crud.fileLoading);
+    const join = ref('');
 
     const handleSubmit = values => {
       dispatch('axiosCrudSubmitData', {
         ...values,
-        image: 'abc.png',
+        image: url.value,
+        join: join.value,
         id: new Date().getTime(),
       });
       dispatch('axiosFileClear');
@@ -140,7 +142,6 @@ const AddNew = {
       country: '',
       city: '',
       company: '',
-      join: '',
       position: '',
       status: '',
     });
@@ -153,6 +154,7 @@ const AddNew = {
       props,
       dateFormat,
       formState,
+      join,
     };
   },
 };

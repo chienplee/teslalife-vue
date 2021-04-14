@@ -101,7 +101,12 @@ const ViewPage = {
     const handleDelete = id => {
       const confirm = window.confirm('Are you sure delete this?');
       if (confirm) {
-        dispatch('fbDataDelete', parseInt(id, 10));
+        dispatch('axiosDataDelete', {
+          id,
+          getData: () => {
+            dispatch('axiosCrudGetData');
+          },
+        });
       }
       return false;
     };

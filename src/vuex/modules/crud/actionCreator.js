@@ -14,29 +14,29 @@ const addNotificationError = err => {
   });
 };
 
-// const deleteNotificationSuccess = () => {
-//   notification.success({
-//     message: 'Your Record hasbeen Deleted',
-//   });
-// };
+const deleteNotificationSuccess = () => {
+  notification.success({
+    message: 'Your Record hasbeen Deleted',
+  });
+};
 
-// const deleteNotificationError = err => {
-//   notification.error({
-//     message: err,
-//   });
-// };
+const deleteNotificationError = err => {
+  notification.error({
+    message: err,
+  });
+};
 
-// const updateNotificationSuccess = () => {
-//   notification.success({
-//     message: 'Your Record hasbeen updated',
-//   });
-// };
+const updateNotificationSuccess = () => {
+  notification.success({
+    message: 'Your Record hasbeen updated',
+  });
+};
 
-// const updateNotificationError = err => {
-//   notification.error({
-//     message: err,
-//   });
-// };
+const updateNotificationError = err => {
+  notification.error({
+    message: err,
+  });
+};
 
 const state = () => ({
   data: [],
@@ -51,11 +51,11 @@ const actions = {
     try {
       await commit('axiosAddBeginBegin');
       const response = await DataService.post('/create', data);
-      console.log(response);
-      await commit('axiosAddBeginSuccess', JSON.parse(response.data));
+      await commit('axiosAddBeginSuccess', response.data.data);
       addNotificationSuccess();
     } catch (err) {
       await commit('axiosAddBeginErr', err);
+      console.log(err);
       addNotificationError(err);
     }
   },
@@ -70,6 +70,7 @@ const actions = {
       await commit('axiosReadErr', err);
     }
   },
+
   async axiosFileClear({ commit }) {
     try {
       await commit('axiosUploadBegin');
@@ -95,6 +96,33 @@ const actions = {
       commit('axiosSingleDataSuccess', query.data.data);
     } catch (err) {
       await commit('axiosSingleDataErr', err);
+    }
+  },
+
+  async axiosDataDelete({ commit }, { id, getData }) {
+    try {
+      await commit('axiosDeleteBegin');
+      await DataService.get(`/delete/${id}`);
+      await commit('axiosDeleteSuccess');
+      await getData();
+      deleteNotificationSuccess();
+    } catch (err) {
+      await commit('axiosDeleteErr', err);
+      console.log(err);
+      deleteNotificationError(err);
+    }
+  },
+
+  async axiosDataUpdate({ commit }, { id, data }) {
+    try {
+      await commit('axiosUpdateBegin');
+      await DataService.post(`/update/${id}`, data);
+      commit('axiosUpdateSuccess');
+
+      updateNotificationSuccess();
+    } catch (err) {
+      await commit('axiosUpdateErr', err);
+      updateNotificationError(err);
     }
   },
 };

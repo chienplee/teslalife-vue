@@ -42,6 +42,15 @@ class DataService {
     });
   }
 
+  static delete(path = '', data = {}) {
+    return client({
+      method: 'DELETE',
+      url: path,
+      data: JSON.stringify(data),
+      headers: { ...authHeader() },
+    });
+  }
+
   static put(path = '', data = {}) {
     return client({
       method: 'PUT',
