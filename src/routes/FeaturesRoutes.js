@@ -115,6 +115,14 @@ export default [
           child: () => import(/* webpackChunkName: "wizard2" */ '@/view/wizards/overview/WizardsTwo.vue'),
         },
       },
+      {
+        name: 'wizard3',
+        path: 'wizard3',
+        components: {
+          default: () => import(/* webpackChunkName: "wizard" */ '@/view/wizards/Wizards.vue'),
+          child: () => import(/* webpackChunkName: "wizard2" */ '@/view/wizards/overview/WizardsThree.vue'),
+        },
+      },
     ],
   },
   {
