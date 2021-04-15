@@ -239,16 +239,6 @@ export default [
         name: 'upload',
         component: () => import(/* webpackChunkName: "Upload" */ '@/view/uiElements/Upload'),
       },
-      {
-        path: '/tables/basic',
-        name: 'table',
-        component: () => import('@/view/table/table'),
-      },
-      {
-        path: '/tables/dataTable',
-        name: 'datatable',
-        component: () => import('@/view/table/DataTable'),
-      },
     ],
   },
 ];
