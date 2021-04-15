@@ -23,7 +23,6 @@
                       <a-form-item name="username" label="Username">
                         <a-input placeholder="Username" />
                       </a-form-item>
-
                       <a-form-item name="password" label="Password">
                         <a-input-password type="password" v-model:value="password" placeholder="Password" />
                         <span class="input-message">Enter a valid password. Min 6 characters long</span>
@@ -39,44 +38,25 @@
             </div>
           </BasicFormWrapper>
         </template>
-        <template #address>
+        <template #profile>
           <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
                 <a-col :sm="22" :xs="24">
-                  <div class="create-account-form">
-                    <sdHeading as="h4">2. Please Fill in Your Shipping Address</sdHeading>
-                    <a-form @finish="handleAddressSubmit" :model="stateAddress" name="address">
-                      <a-form-item name="name" label="Contact Name">
-                        <a-input v-model:value="stateAddress.name" placeholder="Ibn adam" />
+                  <div class="shipping-form">
+                    <sdHeading as="h4">2. Please setup your profile</sdHeading>
+                    <a-form :model="profile" name="address">
+                      <a-form-item name="fname" label="First Name">
+                        <a-input v-model:value="profile.fname" placeholder="First Name" />
                       </a-form-item>
-                      <a-form-item name="company">
-                        <template #label
-                          ><span> Company Name <span>(Optional)</span> </span></template
-                        >
-                        <a-input v-model:value="stateAddress.company" placeholder="adam" />
+                      <a-form-item name="lname" label="Last Name">
+                        <a-input v-model:value="profile.lname" placeholder="Last Name" />
                       </a-form-item>
-                      <a-form-item name="phone" label="Phone Number">
-                        <a-input v-model:value="stateAddress.phone" placeholder="+880" />
-                      </a-form-item>
-                      <a-form-item name="country" label="Country/Region">
-                        <a-select v-model:value="stateAddress.country" :style="{ width: '100%' }">
-                          <a-select-option value="">Please Select</a-select-option>
-                          <a-select-option value="bangladesh">Bangladesh</a-select-option>
-                          <a-select-option value="india">India</a-select-option>
-                        </a-select>
+                      <a-form-item name="email" label="Email Address">
+                        <a-input type="email" v-model:value="profile.email" placeholder="name@gmail.com" />
                       </a-form-item>
                       <a-form-item name="street" label="Street Address">
-                        <a-input v-model:value="stateAddress.street" placeholder="House Number and Street Name" />
-                      </a-form-item>
-                      <a-form-item name="street2" label="">
-                        <a-input v-model:value="stateAddress.street2" placeholder="Apartment, Suite, Unit etc." />
-                      </a-form-item>
-                      <a-form-item name="city" label="City">
-                        <a-input v-model:value="stateAddress.city" placeholder="Enter City" />
-                      </a-form-item>
-                      <a-form-item name="zip" label="Zip/Postal Code">
-                        <a-input v-model:value="stateAddress.zip" placeholder="Enter Zip" />
+                        <a-input v-model:value="profile.address" placeholder="Address" />
                       </a-form-item>
                     </a-form>
                   </div>
@@ -85,6 +65,7 @@
             </div>
           </BasicFormWrapper>
         </template>
+        <!-- 
         <template #method>
           <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
@@ -272,7 +253,7 @@
               </div>
             </a-col>
           </a-row>
-        </template>
+        </template> -->
       </Steps>
     </WizardThree>
   </WizardWrapper>
@@ -283,8 +264,6 @@ import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
 import { computed, onMounted, ref, reactive } from 'vue';
-
-const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
 const WizardsThree = {
   name: 'WizardsThree',
@@ -326,14 +305,6 @@ const WizardsThree = {
       zip: '',
     });
 
-    const handleAccountSubmit = values => {
-      console.log(values);
-    };
-
-    const handleAddressSubmit = values => {
-      console.log(values);
-    };
-
     const next = () => {
       status.value = 'process';
       current.value = current.value + 1;
@@ -357,7 +328,6 @@ const WizardsThree = {
       done,
       prev,
       next,
-      month,
       cartData,
       isLoading,
       rtl,
@@ -373,19 +343,17 @@ const WizardsThree = {
         },
         {
           title: 'Profile',
-          content: 'address',
+          content: 'profile',
         },
         {
           title: 'Hints',
-          content: 'method',
+          content: 'hints',
         },
         {
           title: 'Finish',
-          content: 'review',
+          content: 'finish',
         },
       ],
-      handleAccountSubmit,
-      handleAddressSubmit,
       profile,
       stateAddress,
     };
