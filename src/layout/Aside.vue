@@ -1,11 +1,9 @@
 <template>
   <a-menu
-    :default-selected-keys="['1']"
-    :default-open-keys="['sub1']"
+    v-model:openKeys="openKeys"
+    v-model:selectedKeys="selectedKeys"
     :mode="mode"
     :theme="darkMode ? 'dark' : 'light'"
-    :open-keys="openKeys"
-    @openChange="onOpenChange"
   >
     <a-sub-menu key="dashboard">
       <template v-slot:title><sdFeatherIcons type="home" /><span>Dashboard</span></template>
@@ -166,29 +164,40 @@
       <a-sub-menu key="mail">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Email</span></template>
         <a-menu-item @click="toggleCollapsed" key="inbox">
-          <router-link to="/app/mail">
+          <router-link to="/app/mail/inbox">
             Inbox
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="single">
+        <a-menu-item @click="toggleCollapsed" key="singleMail">
           <router-link to="/app/mail-single/1585118055048">
             Read Email
           </router-link>
         </a-menu-item>
       </a-sub-menu>
 
-      <a-menu-item @click="toggleCollapsed" key="chat">
-        <sdFeatherIcons type="circle" />
-        <span>
+      <a-sub-menu key="chat">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Chat</span></template>
+        <a-menu-item @click="toggleCollapsed" key="privateSingle">
           <router-link to="/app/chat/private/rofiq@gmail.com">
-            Chat
+            Private
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="groupSingle">
+          <router-link to="/app/chat/group/1">
+            Group
+          </router-link>
+        </a-menu-item>
+
+        <a-menu-item @click="toggleCollapsed" key="allSingle">
+          <router-link to="/app/chat/all/rofiq@gmail.com">
+            All
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
 
       <a-sub-menu key="ecommerce">
         <template v-slot:title><sdFeatherIcons type="shopping-cart" /><span>eCommerce</span></template>
-        <a-menu-item @click="toggleCollapsed" key="product">
+        <a-menu-item @click="toggleCollapsed" key="pro-grid">
           <router-link to="/app/ecommerce/product/grid">
             Products
           </router-link>
@@ -231,12 +240,23 @@
       </a-sub-menu>
       <a-sub-menu key="social">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Social App</span></template>
-        <a-menu-item @click="toggleCollapsed" key="profile">
+        <a-menu-item @click="toggleCollapsed" key="overview">
           <router-link to="/app/social/profile/overview">
             My Profile
           </router-link>
         </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="timeline">
+          <router-link to="/app/social/profile/timeline">
+            Timeline
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="activity">
+          <router-link to="/app/social/profile/activity">
+            Activity
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
+
       <a-sub-menu key="project">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Projects</span></template>
         <a-menu-item @click="toggleCollapsed" key="grid">
@@ -250,7 +270,7 @@
           </router-link>
         </a-menu-item>
         <a-menu-item @click="toggleCollapsed" key="createProject">
-          <router-link to="/app/createProject/grid">
+          <router-link to="/app/createProject/create-grid">
             Project Create
           </router-link>
         </a-menu-item>
@@ -261,14 +281,29 @@
         </a-menu-item>
       </a-sub-menu>
 
-      <a-menu-item @click="toggleCollapsed" key="calender">
-        <sdFeatherIcons type="mail" />
-        <span>
+      <a-sub-menu key="calendar">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Calender</span></template>
+        <a-menu-item @click="toggleCollapsed" key="month">
           <router-link to="/app/calendar/month">
-            Calender
+            Month
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="year">
+          <router-link to="/app/calendar/year">
+            Year
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="day">
+          <router-link to="/app/calendar/day">
+            Day
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="schedule">
+          <router-link to="/app/calendar/schedule">
+            Schedule
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
 
       <a-sub-menu key="users">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Users</span></template>
@@ -277,12 +312,12 @@
             Team
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="users-grid">
+        <a-menu-item @click="toggleCollapsed" key="user-grid">
           <router-link to="/app/users/users/user-grid">
             Users Grid
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="users-list">
+        <a-menu-item @click="toggleCollapsed" key="user-list">
           <router-link to="/app/users/users/user-list">
             Users List
           </router-link>
@@ -311,31 +346,56 @@
 
       <a-sub-menu key="contact">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Contact</span></template>
-        <a-menu-item @click="toggleCollapsed" key="grid">
-          <router-link to="/app/contact/grid">
+        <a-menu-item @click="toggleCollapsed" key="contact-grid">
+          <router-link to="/app/contact/contact-grid">
             Contact Grid
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="list">
-          <router-link to="/app/contact/list">
+        <a-menu-item @click="toggleCollapsed" key="contact-list">
+          <router-link to="/app/contact/contact-list">
             Contact List
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="create">
-          <router-link to="/app/contact/create">
+        <a-menu-item @click="toggleCollapsed" key="contact-create">
+          <router-link to="/app/contact/contact-create">
             Contact Create
           </router-link>
         </a-menu-item>
       </a-sub-menu>
 
-      <a-menu-item @click="toggleCollapsed" key="note">
-        <sdFeatherIcons type="circle" />
-        <span>
+      <a-sub-menu key="note">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Note</span></template>
+        <a-menu-item @click="toggleCollapsed" key="note-all">
           <router-link to="/app/note/all">
-            Note
+            All
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="note-favorite">
+          <router-link to="/app/note/favorite">
+            Favorite
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="note-personal">
+          <router-link to="/app/note/personal">
+            Personal
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="note-work">
+          <router-link to="/app/note/work">
+            Work
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="note-social">
+          <router-link to="/app/note/social">
+            Social
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="note-important">
+          <router-link to="/app/note/important">
+            Important
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
 
       <a-menu-item @click="toggleCollapsed" key="to-do">
         <sdFeatherIcons type="circle" />
@@ -360,14 +420,24 @@
         </a-menu-item>
       </a-sub-menu>
 
-      <a-menu-item key="task">
-        <sdFeatherIcons type="circle" />
-        <span @click="toggleCollapsed">
+      <a-sub-menu key="task">
+        <template v-slot:title><sdFeatherIcons type="mail" /><span>Task</span></template>
+        <a-menu-item @click="toggleCollapsed" key="all">
           <router-link to="/app/task/all">
-            Task
+            All
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="favorites">
+          <router-link to="/app/task/favorites">
+            Favorites
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="completed">
+          <router-link to="/app/task/completed">
+            Completed
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
     </a-menu-item-group>
 
     <a-menu-item-group key="features">
@@ -897,9 +967,10 @@
   </a-menu>
 </template>
 <script>
-import { computed, reactive, ref, toRefs } from 'vue';
+import { computed, reactive, ref, toRefs, watch, watchEffect } from 'vue';
 import VueTypes from 'vue-types';
 import { useStore } from 'vuex';
+import { useRoute } from 'vue-router';
 
 export default {
   name: 'AsideItems',
@@ -921,27 +992,42 @@ export default {
       modeChangeSideNav,
     } = events.value;
 
+    const router = computed(() => useRoute());
     const state = reactive({
-      rootSubmenuKeys: ['sub1', 'sub2', 'sub4'],
-      openKeys: ['sub1'],
-      selectedKeys: [],
+      selectedKeys: ['home'],
+      openKeys: ['dashboard'],
+      preOpenKeys: ['dashboard'],
     });
 
-    const onOpenChange = openKeys => {
-      const latestOpenKey = openKeys.find(key => state.openKeys.indexOf(key) === -1);
-
-      if (state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-        state.openKeys = openKeys;
-      } else {
-        state.openKeys = latestOpenKey ? [latestOpenKey] : [];
+    watchEffect(() => {
+      if (router.value.matched.length) {
+        if (router.value.matched.length > 1) {
+          state.selectedKeys = [router.value.matched[1].name];
+          state.openKeys = [router.value.matched[0].name];
+          state.preOpenKeys = [router.value.matched[0].name];
+        } else if (router.value.matched.length > 2) {
+          state.selectedKeys = [router.value.matched[2].name];
+          state.openKeys = [router.value.matched[0].name];
+          state.preOpenKeys = [router.value.matched[0].name];
+        } else {
+          state.selectedKeys = [router.value.matched[0].name];
+          state.openKeys = [router.value.matched[0].name];
+          state.preOpenKeys = [router.value.matched[0].name];
+        }
       }
-    };
+    });
+
+    watch(
+      () => state.openKeys,
+      (val, oldVal) => {
+        state.preOpenKeys = oldVal;
+      },
+    );
 
     return {
       mode,
       ...toRefs(state),
       darkMode,
-      onOpenChange,
       onRtlChange,
       onLtrChange,
       modeChangeDark,

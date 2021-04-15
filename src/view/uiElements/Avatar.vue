@@ -108,7 +108,7 @@ export default {
     const { state } = useStore();
     const user = ref(UserList[0]);
     const color = ref(ColorList[0]);
-    const rtl = computed(state.themeLayout.rtlData);
+    const rtl = computed(() => state.themeLayout.rtlData);
 
     function changeUser() {
       const index = UserList.indexOf(user.value);
