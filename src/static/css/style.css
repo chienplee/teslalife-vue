@@ -1581,7 +1581,9 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 .full-width-table .top-seller-table {
   min-height: 406px;
 }
-
+.full-width-table .top-seller-table.table-recent-orders{
+  min-height: 390px;
+}
 .full-width-table .top-seller-table .ant-table-content .ant-table-cell {
   white-space: normal;
   padding: 16px 15px;

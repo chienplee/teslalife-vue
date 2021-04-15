@@ -1,6 +1,28 @@
 <template>
   <SalesGrowthWrap>
     <sdCards more title="Monthly Sales Growth">
+      <template #more>
+        <router-link to="#">
+          <sdFeatherIcons size="16" type="printer" />
+          <span>Printer</span>
+        </router-link>
+        <router-link to="#">
+          <sdFeatherIcons size="16" type="book-open" />
+          <span>PDF</span>
+        </router-link>
+        <router-link to="#">
+          <sdFeatherIcons size="16" type="file-text" />
+          <span>Google Sheets</span>
+        </router-link>
+        <router-link to="#">
+          <sdFeatherIcons size="16" type="x" />
+          <span>Excel (XLSX)</span>
+        </router-link>
+        <router-link to="#">
+          <sdFeatherIcons size="16" type="file" />
+          <span>CSV</span>
+        </router-link>
+      </template>
       <a-row>
         <a-col :xs="24">
           <div class="growth-list d-flex justify-content-between">

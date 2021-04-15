@@ -71,7 +71,7 @@
       <a-col :lg="16" :xs="24">
         <Suspense>
           <template #default>
-            <AverageSalesRevenue />
+            <AverageSalesRevenue :chartHeight="90" />
           </template>
           <template #fallback>
             <sdCards headless>
