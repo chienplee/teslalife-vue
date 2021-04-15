@@ -684,18 +684,18 @@
         </a-menu-item>
       </a-sub-menu>
 
-      <a-sub-menu key="chart">
+      <a-sub-menu key="charts">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Charts</span></template>
-        <a-menu-item @click="toggleCollapsed" key="chartJs">
+        <a-menu-item @click="toggleCollapsed" key="chart-js">
           <router-link to="/chart/chart-js">
             Chart js
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="googleChart">
+        <!-- <a-menu-item @click="toggleCollapsed" key="googleChart">
           <router-link to="/chart/google-chart">
             Google Chart
           </router-link>
-        </a-menu-item>
+        </a-menu-item> -->
         <a-sub-menu key="apexchart">
           <template v-slot:title><sdFeatherIcons type="bar-chart" /><span>Apex Charts</span></template>
           <a-menu-item @click="toggleCollapsed" key="columnChart">
@@ -738,22 +738,22 @@
 
       <a-sub-menu key="forms">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Forms</span></template>
-        <a-menu-item @click="toggleCollapsed" key="alerts">
+        <a-menu-item @click="toggleCollapsed" key="formLayout">
           <router-link to="/forms/form-layout">
             Form Layout
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="form-elements">
+        <a-menu-item @click="toggleCollapsed" key="formElements">
           <router-link to="/forms/form-elements">
             Form Elements
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="form-components">
+        <a-menu-item @click="toggleCollapsed" key="formComponents">
           <router-link to="/forms/form-components">
             Form Components
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="form-validation">
+        <a-menu-item @click="toggleCollapsed" key="formValidation">
           <router-link to="/forms/form-validation">
             Form Validation
           </router-link>
@@ -832,7 +832,7 @@
       </a-sub-menu>
       <a-sub-menu key="widgets">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Widgets</span></template>
-        <a-menu-item @click="toggleCollapsed" key="widgetsChart">
+        <a-menu-item @click="toggleCollapsed" key="widgetCharts">
           <router-link to="/widgets/chart">
             Charts
           </router-link>
@@ -842,7 +842,7 @@
             Card
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="widgetsMixed">
+        <a-menu-item @click="toggleCollapsed" key="widgetMixed">
           <router-link to="/widgets/mixed">
             Mixed
           </router-link>
@@ -854,14 +854,40 @@
         <p class="sidebar-nav-title">Pages</p>
       </template>
 
-      <a-menu-item @click="toggleCollapsed" key="profile-settings">
-        <sdFeatherIcons type="circle" />
-        <span>
+      <a-sub-menu key="settings">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Settings</span></template>
+        <a-menu-item @click="toggleCollapsed" key="profile-settings">
           <router-link to="/page/profile-settings">
             Settings
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-profile">
+          <router-link to="/page/profile-settings/profile">
+            Profile
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-account">
+          <router-link to="/page/profile-settings/account">
+            Account
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-password">
+          <router-link to="/page/profile-settings/password">
+            Password
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-social">
+          <router-link to="/page/profile-settings/social">
+            Social
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-notification">
+          <router-link to="/page/profile-settings/notification">
+            Notification
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+
       <a-menu-item @click="toggleCollapsed" key="starter">
         <sdFeatherIcons type="circle" />
         <span>
@@ -872,7 +898,7 @@
       </a-menu-item>
       <a-sub-menu key="knowledgebase">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Knowledge Base</span></template>
-        <a-menu-item @click="toggleCollapsed" key="knowledge">
+        <a-menu-item @click="toggleCollapsed" key="kno-plugins">
           <router-link to="/page/knowledgebase/plugins">
             Knowledge Base
           </router-link>
