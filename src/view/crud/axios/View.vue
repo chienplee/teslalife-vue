@@ -4,7 +4,7 @@
       <template #subTitle>
         <div>
           <sdButton class="btn-add_new" size="default" type="primary">
-            <router-link to="/"> <sdFeatherIcons type="plus" size="14" /> Add New </router-link>
+            <router-link to="/crud/axios-add"> <sdFeatherIcons type="plus" size="14" /> Add New </router-link>
           </sdButton>
         </div>
       </template>

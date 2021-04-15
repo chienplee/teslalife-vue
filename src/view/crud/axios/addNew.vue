@@ -1,7 +1,7 @@
 <template>
   <sdPageHeader title="Add New">
     <sdButton class="btn-add_new" size="default" key="1" type="primary">
-      <router-link to="/crud/firestore/fbView">View All</router-link>
+      <router-link to="/crud/axios-view">View All</router-link>
     </sdButton>
   </sdPageHeader>
   <Main>
