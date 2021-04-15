@@ -6,37 +6,37 @@ export default [
     children: [
       {
         path: '',
-        name: 'Inbox',
+        name: 'inbox',
         component: () => import(/* webpackChunkName: "Inbox" */ '@/view/apps/email/overview/Inbox.vue'),
       },
       {
         path: 'inbox',
-        name: 'Inbox',
+        name: 'inbox',
         component: () => import(/* webpackChunkName: "Inbox" */ '@/view/apps/email/overview/Inbox.vue'),
       },
       {
         path: 'starred',
-        name: 'Starred',
+        name: 'starred',
         component: () => import(/* webpackChunkName: "starred" */ '@/view/apps/email/overview/Starred.vue'),
       },
       {
         path: 'sent',
-        name: 'Sent',
+        name: 'sent',
         component: () => import(/* webpackChunkName: "Sent" */ '@/view/apps/email/overview/Sent.vue'),
       },
       {
         path: 'drafts',
-        name: 'Drafts',
+        name: 'drafts',
         component: () => import(/* webpackChunkName: "Draft" */ '@/view/apps/email/overview/Draft.vue'),
       },
       {
         path: 'spam',
-        name: 'Spam',
+        name: 'spam',
         component: () => import(/* webpackChunkName: "Spam" */ '@/view/apps/email/overview/Spam.vue'),
       },
       {
         path: 'trash',
-        name: 'Trash',
+        name: 'trash',
         component: () => import(/* webpackChunkName: "Trash" */ '@/view/apps/email/overview/Trash.vue'),
       },
       {
@@ -105,83 +105,90 @@ export default [
     ],
   },
   {
-    path: '/app/ecommerce',
     name: 'ecommerce',
-    component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+    path: '/app',
+    component: () => import(/* webpackChunkName: "ecommerce" */ '../view/apps/ecommerce/Index.vue'),
     children: [
       {
-        name: 'product',
-        path: 'product',
+        path: 'ecommerce',
+        name: 'ecommerce-product',
         component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+        children: [
+          {
+            name: 'product',
+            path: 'product',
+            component: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+          },
+          {
+            name: 'pro-grid',
+            path: 'product/grid',
+            components: {
+              default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+              grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/Grid.vue'),
+            },
+          },
+          {
+            name: 'pro-list',
+            path: 'product/list',
+            components: {
+              default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
+              grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/List.vue'),
+            },
+          },
+        ],
       },
       {
-        name: 'pro-grid',
-        path: 'product/grid',
-        components: {
-          default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
-          grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/Grid.vue'),
-        },
+        name: 'detail',
+        path: 'ecommerce/productDetails/:id',
+        component: () => import(/* webpackChunkName: "detail" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
       },
       {
-        name: 'pro-list',
-        path: 'product/list',
-        components: {
-          default: () => import(/* webpackChunkName: "product" */ '../view/apps/ecommerce/product/Products.vue'),
-          grid: () => import(/* webpackChunkName: "grid" */ '../view/apps/ecommerce/product/overview/List.vue'),
-        },
-      },
-    ],
-  },
-  {
-    name: 'detail',
-    path: '/app/ecommerce/productDetails/:id',
-    component: () => import(/* webpackChunkName: "detail" */ '../view/apps/ecommerce/product/ProductDetails.vue'),
-  },
-  {
-    name: 'add-product',
-    path: '/app/ecommerce/add-product',
-    component: () => import(/* webpackChunkName: "addProduct" */ '../view/apps/ecommerce/product/AddProduct.vue'),
-  },
-  {
-    name: 'edit-product',
-    path: '/app/ecommerce/edit-product',
-    component: () => import(/* webpackChunkName: "editProduct" */ '../view/apps/ecommerce/product/EditProduct.vue'),
-  },
-  {
-    name: 'orders',
-    path: '/app/ecommerce/orders',
-    component: () => import(/* webpackChunkName: "Orders" */ '../view/apps/ecommerce/Orders.vue'),
-  },
-  {
-    name: 'sellers',
-    path: '/app/ecommerce/sellers',
-    component: () => import(/* webpackChunkName: "sellers" */ '../view/apps/ecommerce/Sellers.vue'),
-  },
-  {
-    name: 'invoice',
-    path: '/app/ecommerce/invoice',
-    component: () => import(/* webpackChunkName: "invoice" */ '../view/apps/ecommerce/Invoice.vue'),
-  },
-  {
-    name: 'cart',
-    path: '/app/ecommerce/cart',
-    component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
-    children: [
-      {
-        name: 'exact',
-        path: '',
-        components: {
-          default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
-          child: () => import(/* webpackChunkName: "cartTable" */ '../view/apps/ecommerce/overview/CartTable.vue'),
-        },
+        name: 'add-product',
+        path: 'ecommerce/add-product',
+        component: () => import(/* webpackChunkName: "addProduct" */ '../view/apps/ecommerce/product/AddProduct.vue'),
       },
       {
-        name: 'checkout',
-        path: 'checkout',
-        components: {
-          default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
-          child: () => import(/* webpackChunkName: "checkout" */ '../view/apps/ecommerce/overview/CheckOut.vue'),
-        },
+        name: 'edit-product',
+        path: 'ecommerce/edit-product',
+        component: () => import(/* webpackChunkName: "editProduct" */ '../view/apps/ecommerce/product/EditProduct.vue'),
+      },
+      {
+        name: 'orders',
+        path: 'ecommerce/orders',
+        component: () => import(/* webpackChunkName: "Orders" */ '../view/apps/ecommerce/Orders.vue'),
+      },
+      {
+        name: 'sellers',
+        path: 'ecommerce/sellers',
+        component: () => import(/* webpackChunkName: "sellers" */ '../view/apps/ecommerce/Sellers.vue'),
+      },
+      {
+        name: 'invoice',
+        path: 'ecommerce/invoice',
+        component: () => import(/* webpackChunkName: "invoice" */ '../view/apps/ecommerce/Invoice.vue'),
+      },
+      {
+        name: 'cart',
+        path: 'ecommerce/cart',
+        component: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+        children: [
+          {
+            name: 'exact',
+            path: '',
+            components: {
+              default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+              child: () => import(/* webpackChunkName: "cartTable" */ '../view/apps/ecommerce/overview/CartTable.vue'),
+            },
+          },
+          {
+            name: 'checkout',
+            path: 'checkout',
+            components: {
+              default: () => import(/* webpackChunkName: "cart" */ '../view/apps/ecommerce/Cart.vue'),
+              child: () => import(/* webpackChunkName: "checkout" */ '../view/apps/ecommerce/overview/CheckOut.vue'),
+            },
+          },
+        ],
       },
     ],
   },
@@ -245,8 +252,8 @@ export default [
     component: () => import(/* webpackChunkName: "createProject" */ '../view/apps/project/CreateProject.vue'),
     children: [
       {
-        path: 'grid',
-        name: 'grid',
+        path: 'create-grid',
+        name: 'create-grid',
         components: {
           default: () => import(/* webpackChunkName: "project" */ '../view/apps/project/CreateProject.vue'),
           child: () => import(/* webpackChunkName: "grid" */ '../view/apps/project/overview/Grid.vue'),
@@ -398,29 +405,6 @@ export default [
           },
         ],
       },
-    ],
-  },
-  {
-    name: 'users',
-    path: '/app/users',
-    component: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
-    children: [
-      {
-        path: 'dataTable',
-        name: 'dataTable',
-        components: {
-          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
-          child: () => import(/* webpackChunkName: "dataTable" */ '../view/apps/users/UserListDataTable.vue'),
-        },
-      },
-      {
-        path: 'team',
-        name: 'team',
-        components: {
-          default: () => import(/* webpackChunkName: "users" */ '../view/apps/users/Index.vue'),
-          child: () => import(/* webpackChunkName: "team" */ '../view/apps/users/Team.vue'),
-        },
-      },
       {
         path: 'add-user',
         name: 'add-user',
@@ -458,20 +442,28 @@ export default [
     ],
   },
   {
-    name: 'contact-grid',
-    path: '/app/contact/grid',
-    component: () => import(/* webpackChunkName: "contact-grid" */ '../view/apps/contact/ContactGrid.vue'),
+    name: 'contact',
+    path: '/app/contact',
+    component: () => import(/* webpackChunkName: "contact-grid" */ '../view/apps/contact/Index.vue'),
+    children: [
+      {
+        name: 'contact-grid',
+        path: 'contact-grid',
+        component: () => import(/* webpackChunkName: "contact-grid" */ '../view/apps/contact/ContactGrid.vue'),
+      },
+      {
+        name: 'contact-list',
+        path: 'contact-list',
+        component: () => import(/* webpackChunkName: "contact-list" */ '../view/apps/contact/Contact.vue'),
+      },
+      {
+        name: 'contact-create',
+        path: 'contact-create',
+        component: () => import(/* webpackChunkName: "contact-create" */ '../view/apps/contact/ContactCreate.vue'),
+      },
+    ],
   },
-  {
-    name: 'contact-list',
-    path: '/app/contact/list',
-    component: () => import(/* webpackChunkName: "contact-list" */ '../view/apps/contact/Contact.vue'),
-  },
-  {
-    name: 'contact-create',
-    path: '/app/contact/create',
-    component: () => import(/* webpackChunkName: "contact-create" */ '../view/apps/contact/ContactCreate.vue'),
-  },
+
   {
     name: 'note',
     path: '/app/note',
@@ -533,15 +525,23 @@ export default [
     component: () => import(/* webpackChunkName: "to-do" */ '../view/apps/todo/Todo.vue'),
   },
   {
-    name: 'import',
-    path: '/app/import',
-    component: () => import(/* webpackChunkName: "import" */ '../view/apps/importExport/Import.vue'),
+    name: 'import-export',
+    path: '/app',
+    component: () => import(/* webpackChunkName: "import" */ '../view/apps/importExport/Index.vue'),
+    children: [
+      {
+        name: 'import',
+        path: 'import',
+        component: () => import(/* webpackChunkName: "import" */ '../view/apps/importExport/Import.vue'),
+      },
+      {
+        name: 'export',
+        path: 'export',
+        component: () => import(/* webpackChunkName: "export" */ '../view/apps/importExport/Export.vue'),
+      },
+    ],
   },
-  {
-    name: 'export',
-    path: '/app/export',
-    component: () => import(/* webpackChunkName: "export" */ '../view/apps/importExport/Export.vue'),
-  },
+
   {
     name: 'task',
     path: '/app/task',

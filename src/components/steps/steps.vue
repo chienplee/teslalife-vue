@@ -7,7 +7,6 @@
     :current="navigation ? currents : current"
     :direction="direction"
     :status="status"
-    progressDot="progressDot"
     @change="onChanges"
   >
     <slot></slot>
