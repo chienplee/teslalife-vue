@@ -1032,18 +1032,18 @@ export default {
 
     watchEffect(() => {
       if (router.value.matched.length) {
-        if (router.value.matched.length > 1) {
-          state.selectedKeys = [router.value.matched[1].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
-        } else if (router.value.matched.length > 2) {
+        if (router.value.matched.length > 2) {
           state.selectedKeys = [router.value.matched[2].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
+        } else if (router.value.matched.length > 3) {
+          state.selectedKeys = [router.value.matched[3].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
         } else {
-          state.selectedKeys = [router.value.matched[0].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
+          state.selectedKeys = [router.value.matched[1].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
         }
       }
     });

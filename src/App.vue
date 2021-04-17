@@ -13,7 +13,8 @@
   >
     <Suspense>
       <template #default>
-        <WithAdminLayout />
+        <!-- <WithAuthLayout /> -->
+        <router-view></router-view>
       </template>
       <template #fallback>
         <div class="spin">
@@ -26,16 +27,17 @@
 <script>
 import { ThemeProvider } from 'vue3-styled-components';
 import { theme } from './config/theme/themeVariables';
-import { computed, defineAsyncComponent } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 
-const WithAdminLayout = defineAsyncComponent(() => import('./layout/withAdminLayout'));
+// const WithAdminLayout = defineAsyncComponent(() => import('./layout/withAdminLayout'));
+// const WithAuthLayout = defineAsyncComponent(() => import('./layout/withAuthLayout'));
 
 export default {
   name: 'App',
   components: {
     ThemeProvider,
-    WithAdminLayout,
+    // WithAuthLayout,
   },
   setup() {
     const { state } = useStore();
