@@ -1,8 +1,9 @@
 <template>
   <WizardWrapper>
-    <WizardThree>
+    <WizardFour>
       <Steps
         isSwitch
+        isVertical
         :current="0"
         :status="status"
         :steps="steps"
@@ -16,7 +17,7 @@
           <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
-                <a-col :sm="22" :xs="24">
+                <a-col :xs="24">
                   <div class="create-account-form">
                     <sdHeading as="h4">1. Please Create Your Account</sdHeading>
                     <a-form name="account">
@@ -40,7 +41,7 @@
           <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
-                <a-col :sm="22" :xs="24">
+                <a-col :xs="24">
                   <div class="shipping-form">
                     <sdHeading as="h4">2. Please setup your profile</sdHeading>
                     <a-form :model="profile" name="address">
@@ -68,7 +69,7 @@
           <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
-                <a-col :sm="22" :xs="24">
+                <a-col :xs="24">
                   <div class="payment-method-form profile-hints">
                     <sdHeading as="h4">3. Please see your hints</sdHeading>
                     <p>
@@ -92,16 +93,20 @@
 
         <template #finish>
           <BasicFormWrapper v-if="status !== 'finish'" :style="{ width: '100%' }">
-            <div class="atbd-finish-order" :style="{ width: '100%' }">
-              <sdHeading as="h4">4. Let's Finished</sdHeading>
-              <a-checkbox v-model:checked="checked"
-                ><span class="checkbox-label">I Agree with the Terms and Conditions.</span></a-checkbox
-              >
-            </div>
+            <a-row justify="center">
+              <a-col :xs="24">
+                <div class="atbd-finish-order" :style="{ width: '100%' }">
+                  <sdHeading as="h4">4. Let's Finished</sdHeading>
+                  <a-checkbox v-model:checked="checked"
+                    ><span class="checkbox-label">I Agree with the Terms and Conditions.</span></a-checkbox
+                  >
+                </div>
+              </a-col>
+            </a-row>
           </BasicFormWrapper>
 
           <a-row v-else justify="center" :style="{ width: '100%' }">
-            <a-col :xl="21" :xs="24">
+            <a-col :xs="24">
               <div class="checkout-successful">
                 <sdCards
                   headless
@@ -123,11 +128,11 @@
           </a-row>
         </template>
       </Steps>
-    </WizardThree>
+    </WizardFour>
   </WizardWrapper>
 </template>
 <script>
-import { WizardWrapper, WizardThree } from '../Style';
+import { WizardWrapper, WizardFour } from '../Style';
 import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
@@ -138,7 +143,7 @@ const WizardsFour = {
   components: {
     Steps,
     WizardWrapper,
-    WizardThree,
+    WizardFour,
     BasicFormWrapper,
   },
   setup() {
@@ -147,6 +152,7 @@ const WizardsFour = {
     const rtl = computed(() => state.themeLayout.rtlData);
     const status = ref('process');
     const isFinished = ref(false);
+    const isVertical = ref(true);
     const current = ref(1);
     const password = ref(123456);
     const confirm_password = ref();
@@ -184,6 +190,7 @@ const WizardsFour = {
       rtl,
       status,
       isFinished,
+      isVertical,
       current,
       profile,
       password,
