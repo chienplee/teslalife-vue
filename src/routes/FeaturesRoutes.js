@@ -117,11 +117,11 @@ export default [
         name: 'leaflet',
         component: () => import(/* webpackChunkName: "Leaflet" */ '@/view/maps/Leaflet.vue'),
       },
-      // {
-      //   path: 'vector',
-      //   name: 'vector',
-      //   component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
-      // },
+      {
+        path: 'vector',
+        name: 'vector',
+        component: () => import(/* webpackChunkName: "Vector" */ '@/view/maps/Vector.vue'),
+      },
     ],
   },
 

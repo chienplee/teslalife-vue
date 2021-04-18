@@ -17,28 +17,7 @@
       <a-row :gutter="25">
         <a-col :md="24" :xs="24">
           <sdCards title="Leaflet Basic Map">
-            <!-- <Map class="map-wrapper" v-if="mapData" :data="mapData" :projection="projection" :key="1">
-              <MapFeatures
-                fill="#DBE1E8"
-                stroke="#FFF"
-                strokeWidth="{0.5}"
-                :style="{
-                  default: {
-                    fill: '#DBE1E8',
-                    outline: 'none',
-                  },
-                  hover: {
-                    fill: '#5F63F2',
-                    outline: 'none',
-                  },
-                  pressed: {
-                    fill: '#5F63F2',
-                    outline: 'none',
-                  },
-                }"
-                :key="2"
-              />
-            </Map> -->
+            <WorldMap :options="options" />
           </sdCards>
         </a-col>
       </a-row>
@@ -48,22 +27,24 @@
 
 <script>
 import { Main } from '../styled';
-// import { geoEqualEarth } from 'd3-geo';
+import WorldMap from '@/components/utilities/VectorMap.vue';
 
 export default {
   name: 'vector',
   components: {
     Main,
+    WorldMap,
   },
   data: () => ({
-    mapData: undefined,
-    // projection: geoEqualEarth,
+    options: {
+      width: 960,
+      height: 480,
+      zoom: true,
+      hideAntarctic: true,
+      landsColor: '#ddd',
+      landsBorder: '#fff',
+    },
   }),
-  // mounted() {
-  //   fetch('https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json')
-  //     .then(r => r.json())
-  //     .then(d => (this.mapData = d));
-  // },
 };
 </script>
 
