@@ -854,14 +854,40 @@
         <p class="sidebar-nav-title">Pages</p>
       </template>
 
-      <a-menu-item @click="toggleCollapsed" key="profile-settings">
-        <sdFeatherIcons type="circle" />
-        <span>
+      <a-sub-menu key="settings">
+        <template v-slot:title><sdFeatherIcons type="circle" /><span>Settings</span></template>
+        <a-menu-item @click="toggleCollapsed" key="profile-settings">
           <router-link to="/page/profile-settings">
             Settings
           </router-link>
-        </span>
-      </a-menu-item>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-profile">
+          <router-link to="/page/profile-settings/profile">
+            Profile
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-account">
+          <router-link to="/page/profile-settings/account">
+            Account
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-password">
+          <router-link to="/page/profile-settings/password">
+            Password
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-social">
+          <router-link to="/page/profile-settings/social">
+            Social
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="set-notification">
+          <router-link to="/page/profile-settings/notification">
+            Notification
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+
       <a-menu-item @click="toggleCollapsed" key="starter">
         <sdFeatherIcons type="circle" />
         <span>
@@ -872,7 +898,7 @@
       </a-menu-item>
       <a-sub-menu key="knowledgebase">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Knowledge Base</span></template>
-        <a-menu-item @click="toggleCollapsed" key="knowledge">
+        <a-menu-item @click="toggleCollapsed" key="kno-plugins">
           <router-link to="/page/knowledgebase/plugins">
             Knowledge Base
           </router-link>
@@ -1006,18 +1032,18 @@ export default {
 
     watchEffect(() => {
       if (router.value.matched.length) {
-        if (router.value.matched.length > 1) {
-          state.selectedKeys = [router.value.matched[1].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
-        } else if (router.value.matched.length > 2) {
+        if (router.value.matched.length > 2) {
           state.selectedKeys = [router.value.matched[2].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
+        } else if (router.value.matched.length > 3) {
+          state.selectedKeys = [router.value.matched[3].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
         } else {
-          state.selectedKeys = [router.value.matched[0].name];
-          state.openKeys = [router.value.matched[0].name];
-          state.preOpenKeys = [router.value.matched[0].name];
+          state.selectedKeys = [router.value.matched[1].name];
+          state.openKeys = [router.value.matched[1].name];
+          state.preOpenKeys = [router.value.matched[1].name];
         }
       }
     });

@@ -59,32 +59,38 @@ export default [
     component: () => import(/* webpackChunkName: "404" */ '@/view/pages/404.vue'),
   },
   {
-    path: '/page/profile-settings',
-    name: 'profileSettings',
+    path: '/page',
+    name: 'settings',
     component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/settings/Settings.vue'),
     children: [
       {
-        path: '/page/profile-settings',
+        path: 'profile-settings',
+        name: 'profile-settings',
         component: () => import(/* webpackChunkName: "Profile" */ '@/view/pages/settings/overview/Profile.vue'),
       },
       {
-        path: '/page/profile-settings/profile',
+        path: 'profile-settings/profile',
+        name: 'set-profile',
         component: () => import(/* webpackChunkName: "Profile" */ '@/view/pages/settings/overview/Profile.vue'),
       },
       {
-        path: '/page/profile-settings/account',
+        path: 'profile-settings/account',
+        name: 'set-account',
         component: () => import(/* webpackChunkName: "Account" */ '@/view/pages/settings/overview/Account.vue'),
       },
       {
-        path: '/page/profile-settings/password',
+        path: 'profile-settings/password',
+        name: 'set-password',
         component: () => import(/* webpackChunkName: "Password" */ '@/view/pages/settings/overview/Password.vue'),
       },
       {
-        path: '/page/profile-settings/social',
+        path: 'profile-settings/social',
+        name: 'set-social',
         component: () => import(/* webpackChunkName: "Social" */ '@/view/pages/settings/overview/SocialProfile.vue'),
       },
       {
-        path: '/page/profile-settings/notification',
+        path: 'profile-settings/notification',
+        name: 'set-notification',
         component: () =>
           import(/* webpackChunkName: "Notification" */ '@/view/pages/settings/overview/Notification.vue'),
       },
@@ -96,32 +102,37 @@ export default [
     component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/Index.vue'),
     children: [
       {
-        path: '/page/knowledgebase/plugins',
+        path: 'plugins',
+        name: 'kno-plugins',
         component: () =>
           import(/* webpackChunkName: "Plugins" */ '@/view/pages/knowledgebase/overview/ArticlePlugin.vue'),
       },
       {
-        path: '/page/knowledgebase/themes',
+        path: 'themes',
+        name: 'kno-themes',
         component: () =>
           import(/* webpackChunkName: "Themes" */ '@/view/pages/knowledgebase/overview/ArticleTheme.vue'),
       },
       {
-        path: '/page/knowledgebase/extensions',
+        path: 'extensions',
+        name: 'kno-extensions',
         component: () =>
           import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
       },
+      {
+        path: 'all-articles',
+        name: 'all-articles',
+        component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
+      },
+      {
+        path: 'single',
+        name: 'knowledge-base-singale',
+        component: () =>
+          import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
+      },
     ],
   },
-  {
-    path: '/page/knowledgebase/all-articles',
-    name: 'all-articles',
-    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
-  },
-  {
-    path: '/page/knowledgebase/single',
-    name: 'knowledge-base-singale',
-    component: () => import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
-  },
+
   {
     path: '/changelog',
     name: 'changelog',

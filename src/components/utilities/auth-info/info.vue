@@ -61,7 +61,7 @@
                   <a to="#"> <sdFeatherIcons type="bell" /> Help </a>
                 </li>
               </ul>
-              <router-link class="user-dropdwon__bottomAction" to="#"> <LogoutOutlined /> Sign Out </router-link>
+              <a @click="SignOut" class="user-dropdwon__bottomAction" href="#"> <LogoutOutlined /> Sign Out </a>
             </div>
           </UserDropDwon>
         </template>
@@ -79,6 +79,8 @@ import Support from './Support';
 import Settings from './Settings';
 import Notification from './Notification';
 import Message from './Message';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'AuthInfo',
@@ -94,6 +96,19 @@ export default {
   data() {
     return {
       flag: 'english',
+    };
+  },
+  setup() {
+    const { dispatch } = useStore();
+    const { push } = useRouter();
+    const SignOut = e => {
+      e.preventDefault();
+      push('/auth/login');
+      dispatch('logOut');
+    };
+
+    return {
+      SignOut,
     };
   },
   methods: {

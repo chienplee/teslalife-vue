@@ -2,12 +2,12 @@ import app from '../../config/configApp';
 // import VueGoogleMap from 'vuejs-google-maps';
 import { LMap, LTileLayer, LMarker, LWMSTileLayer, LControlLayers } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
-import VueSimpleMaps from 'vue-simple-maps';
+// import VueSimpleMaps from 'vue-simple-maps';
 import VueMasonry from 'vue-masonry-css';
 
 app.use(VueMasonry);
 
-app.use(VueSimpleMaps);
+// app.use(VueSimpleMaps);
 
 app.component('l-map', LMap);
 app.component('l-tile-layer', LTileLayer);

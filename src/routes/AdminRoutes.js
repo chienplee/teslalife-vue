@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router';
+// import { createWebHistory, createRouter } from 'vue-router';
 import FeaturesRoutes from './FeaturesRoutes';
 import PageRoutes from './PageRoutes';
 import Components from './Components';
@@ -6,7 +6,7 @@ import Apps from './Applications';
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'dashboard',
     component: () => import(/* webpackChunkName: "Dashboard" */ '@/view/dashboard/Dashboard.vue'),
     children: [
@@ -70,10 +70,10 @@ const routes = [
   ...Apps,
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  linkExactActiveClass: 'active',
-  routes,
-});
+// const router = createRouter({
+//   history: createWebHistory(),
+//   linkExactActiveClass: 'active',
+//   routes,
+// });
 
-export default router;
+export default routes;
