@@ -829,6 +829,11 @@
             Wizard3
           </router-link>
         </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="wizard4">
+          <router-link to="/wizard/wizard4">
+            Wizard4
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="widgets">
         <template v-slot:title><sdFeatherIcons type="circle" /><span>Widgets</span></template>
