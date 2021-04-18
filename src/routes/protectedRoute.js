@@ -30,13 +30,10 @@ router.beforeEach((to, from, next) => {
   // console.log(to, store);
   if (to.meta.auth && store.state.auth.login) {
     next({ to: '/' });
-    console.log('login');
   } else if (!to.meta.auth && !store.state.auth.login) {
     next({ name: 'login' });
-    console.log('login fail');
   } else {
     next();
-    console.log('go ahead');
   }
 });
 
