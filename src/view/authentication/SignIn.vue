@@ -51,6 +51,7 @@ import { FacebookOutlined, TwitterOutlined } from '@ant-design/icons-vue';
 import { computed, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
 import { AuthWrapper } from './style';
+import { useRouter } from 'vue-router';
 
 const SignIn = {
   name: 'SignIn',
@@ -59,8 +60,10 @@ const SignIn = {
     const { state, dispatch } = useStore();
     const isLoading = computed(() => state.auth.loading);
     const checked = ref(null);
+    const router = useRouter();
 
     const handleSubmit = () => {
+      router.push('/');
       dispatch('login');
     };
     const onChange = checked => {
@@ -68,7 +71,7 @@ const SignIn = {
     };
 
     const formState = reactive({
-      email: 'example.email',
+      email: 'example@email.com',
       password: '1234565',
     });
 

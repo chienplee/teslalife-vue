@@ -45,6 +45,7 @@ import { RecordViewWrapper } from './style';
 import { Main, TableWrapper } from '../../styled';
 import { useStore } from 'vuex';
 import { computed, onMounted, ref } from 'vue';
+import moment from 'moment';
 
 const columns = [
   {
@@ -140,7 +141,7 @@ const ViewPage = {
             email,
             company,
             position,
-            jdate: join,
+            jdate: moment(join).format('YYYY-MM-DD'),
             status: <span class={`status ${status}`}>{status}</span>,
             action: (
               <div class="table-actions">

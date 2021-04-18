@@ -1,12 +1,32 @@
 import mutations from './mutations';
+import Cookies from 'js-cookie';
 
 const state = () => ({
-  login: null,
+  login: Cookies.get('logedIn'),
   loading: false,
   error: null,
 });
 
-const actions = {};
+const actions = {
+  async login({ commit }) {
+    try {
+      commit('loginBegin');
+      Cookies.set('logedIn', true);
+      return commit('loginSuccess', true);
+    } catch (err) {
+      commit('loginErr', err);
+    }
+  },
+  async logOut({ commit }) {
+    try {
+      commit('logoutBegin');
+      Cookies.remove('logedIn');
+      commit('logoutSuccess', null);
+    } catch (err) {
+      commit('logoutErr', err);
+    }
+  },
+};
 
 export default {
   namespaced: false,
