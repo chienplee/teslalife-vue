@@ -46,6 +46,7 @@
     "vue3-styled-components": "^1.2.0",
     "vuedraggable": "^4.0.1",
     "vuex": "^4.0.0",
+    "world-map": "0.0.9",
     "xlsx": "^0.16.9",
     "yup": "^0.32.9"
   },
