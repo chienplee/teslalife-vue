@@ -18,6 +18,7 @@ import note from './modules/note/actionCreator';
 import todo from './modules/todo/actionCreator';
 import task from './modules/task/actionCreator';
 import crud from './modules/crud/actionCreator';
+import auth from './modules/authentication/actionCreator';
 
 export default createStore({
   modules: {
@@ -40,5 +41,6 @@ export default createStore({
     todo,
     task,
     crud,
+    auth,
   },
 });

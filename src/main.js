@@ -1,6 +1,6 @@
 import app from './config/configApp';
 
-import router from './routes/AdminRoutes';
+import router from './routes/protectedRoute';
 import store from '@/vuex/store';
 import './static/css/style.css';
 // Vue 3rd party plugins
@@ -10,9 +10,8 @@ import '@/core/plugins/maps';
 import '@/core/plugins/apexcharts';
 import '@/core/components/custom';
 import '@/core/components/style';
-// import '@/core/plugins/custom-scroll-bar';
 
 app.config.productionTip = false;
-app.use(router);
 app.use(store);
+app.use(router);
 app.mount('#app');
