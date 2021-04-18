@@ -114,10 +114,10 @@ const AverageSalesRevenue = {
   name: 'AverageSalesRevenue',
   components: { PerformanceChartWrapper, Pstates, Chartjs },
   props: {
-    chartHeight: VueTypes.number.def(100),
+    chartHeights: VueTypes.number.def(100),
   },
   setup(props) {
-    const { chartHeight } = toRefs(props);
+    const { chartHeights } = toRefs(props);
     const { state, dispatch } = useStore();
 
     const performanceState = computed(() => state.chartContent.performanceData);
@@ -125,7 +125,7 @@ const AverageSalesRevenue = {
     const performance = ref('year');
     const performanceTab = ref('users');
 
-    const height = ref(window.innerWidth <= 575 ? 200 : chartHeight);
+    const height = ref(window.innerWidth <= 575 ? 200 : chartHeights);
 
     onMounted(() => dispatch('performanceGetData'));
     const handleActiveChangePerformance = (event, value) => {
