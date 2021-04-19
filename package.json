@@ -38,7 +38,7 @@
     "vue-json-csv": "^1.2.12",
     "vue-masonry-css": "^1.0.3",
     "vue-router": "^4.0.4",
-    "vue-types": "^2.0.0-rc.1",
+    "vue-types": "^4.0.0-rc.2",
     "vue2-daterange-picker": "^0.6.3",
     "vue3-apexcharts": "^1.2.1",
     "vue3-google-map": "^0.6.0",
