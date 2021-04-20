@@ -39,7 +39,7 @@
             </l-map>
           </sdCards>
         </a-col>
-        <a-col :md="12" :xs="24">
+        <!-- <a-col :md="12" :xs="24">
           <sdCards title="Leaflet WMS Layer">
             <l-map :zoom="5" :center="[40.797897, -110.077641]" class="map-wrapper" style="width: 100%">
               <l-control-layer />
@@ -54,7 +54,7 @@
               />
             </l-map>
           </sdCards>
-        </a-col>
+        </a-col> -->
       </a-row>
     </Main>
   </div>

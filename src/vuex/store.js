@@ -17,7 +17,7 @@ import contact from './modules/contact/actionCreator';
 import note from './modules/note/actionCreator';
 import todo from './modules/todo/actionCreator';
 import task from './modules/task/actionCreator';
-import crud from './modules/crud/actionCreator';
+import crud from './modules/crud/axios/actionCreator';
 import auth from './modules/authentication/actionCreator';
 
 export default createStore({
