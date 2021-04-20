@@ -44,7 +44,7 @@
             <div class="atbd-form-checkout">
               <a-row justify="center">
                 <a-col :xs="24">
-                  <div class="create-account-form">
+                  <div class="shipping-form">
                     <sdHeading as="h4">2. Please Fill in Your Shipping Address</sdHeading>
                     <a-form @finish="handleAddressSubmit" :model="stateAddress" name="address">
                       <a-form-item name="name" label="Contact Name">
@@ -289,31 +289,26 @@
             </div>
           </BasicFormWrapper>
 
-          <a-row v-else justify="start" :style="{ width: '100%' }">
+          <a-row v-else justify="center" :style="{ width: '100%' }">
             <a-col :xl="20" :xs="24">
-              <div class="checkout-successful">
-                <sdCards
-                  headless
-                  :bodyStyle="{
-                    backgroundColor: '#F8F9FB',
-                    borderRadius: '20px',
-                  }"
-                >
+              <a-modal :footer="null" v-model:visible="visible" @ok="handleOk" :onCancel="handleCancel">
+                <div class="checkout-successful">
                   <sdCards headless>
-                    <span class="icon-success">
-                      <sdFeatherIcons type="check" />
-                    </span>
-                    <a-button @click="showConfirm">Confirm</a-button>
-                    <p>All is good! Please confirm the form submission.</p>
-                    <div class="submission-action">
-                      <sdButton type="primary">
-                        Submit
-                      </sdButton>
-                      <sdButton type="light">Cancel</sdButton>
+                    <div class="submission-successModal">
+                      <span class="icon-success">
+                        <sdFeatherIcons type="check" size="14" />
+                      </span>
+                      <p>All is good! Please confirm the form submission.</p>
+                      <div class="submission-action">
+                        <sdButton type="primary" @click="handleOk">
+                          Submit
+                        </sdButton>
+                        <sdButton type="light" @click="handleCancel">Cancel</sdButton>
+                      </div>
                     </div>
                   </sdCards>
-                </sdCards>
-              </div>
+                </div>
+              </a-modal>
             </a-col>
           </a-row>
         </template>
@@ -326,10 +321,8 @@ import { FigureWizards, WizardWrapper, ProductTable, OrderSummary, WizardFive } 
 import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
-import { computed, onMounted, ref, watchEffect, reactive, createVNode } from 'vue';
+import { computed, onMounted, ref, watchEffect, reactive } from 'vue';
 import { PlusOutlined, MinusOutlined, DeleteOutlined } from '@ant-design/icons-vue';
-import { CheckOutlined } from '@ant-design/icons-vue';
-import { Modal } from 'ant-design-vue';
 
 const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 const columns = [
@@ -431,13 +424,28 @@ const WizardsFive = {
       current.value = current.value - 1;
     };
 
+    const visible = ref(false);
+    const showModal = () => {
+      visible.value = true;
+    };
+    const handleCancel = () => {
+      status.value = 'process';
+      isFinished.value = false;
+      visible.value = false;
+    };
+    const handleOk = () => {
+      status.value = 'process';
+      isFinished.value = false;
+      visible.value = false;
+    };
+
     const done = () => {
       const confirm = window.confirm('Are sure to submit order?');
       if (confirm) {
         status.value = 'finish';
         isFinished.value = true;
         current.value = 0;
-        showConfirm();
+        showModal();
       }
     };
 
@@ -529,21 +537,6 @@ const WizardsFive = {
       });
     });
 
-    const showConfirm = () => {
-      Modal.confirm({
-        icon: createVNode(CheckOutlined),
-        content: '',
-
-        onOk() {
-          return new Promise((resolve, reject) => {
-            setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-          }).catch(() => console.log('Oops errors!'));
-        },
-
-        onCancel() {},
-      });
-    };
-
     return {
       done,
       prev,
@@ -558,7 +551,10 @@ const WizardsFive = {
       isVertical,
       current,
       dataSource,
-      showConfirm,
+      visible,
+      showModal,
+      handleOk,
+      handleCancel,
       steps: [
         {
           title: 'Create Account',
