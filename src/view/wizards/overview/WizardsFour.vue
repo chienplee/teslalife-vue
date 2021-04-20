@@ -139,7 +139,7 @@ import { useStore } from 'vuex';
 import { computed, ref, reactive } from 'vue';
 
 const WizardsFour = {
-  name: 'WizardsThree',
+  name: 'WizardsFour',
   components: {
     Steps,
     WizardWrapper,
