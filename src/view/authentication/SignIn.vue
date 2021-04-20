@@ -62,7 +62,7 @@ import { auth0options } from '@/config/auth0';
 
 const domain = process.env.VUE_APP_AUTH0_DOMAIN;
 const clientId = process.env.VUE_APP_AUTH0_CLIENT_ID;
-console.log(clientId);
+
 const SignIn = {
   name: 'SignIn',
   components: { FacebookOutlined, TwitterOutlined, AuthWrapper },
