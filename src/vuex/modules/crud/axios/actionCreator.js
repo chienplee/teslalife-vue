@@ -81,9 +81,13 @@ const actions = {
   },
 
   async axiosFileUploader({ commit }, imageAsFile) {
+    let data = new FormData();
+    data.set('image', imageAsFile);
     try {
       await commit('axiosUploadBegin');
-      commit('axiosUploadSuccess', imageAsFile);
+      const query = await DataService.post('/fileUpload', data, { 'Content-Type': 'multipart/form-data' });
+      console.log(query.data.result);
+      commit('axiosUploadSuccess', query.data.result);
     } catch (err) {
       await commit('axiosUploadErr', err);
     }
