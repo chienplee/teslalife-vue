@@ -42,6 +42,11 @@
             </a>
           </li>
         </ul>
+        <div class="auth0-login">
+          <a href="#" @click="() => lock.show()">
+            Sign In with Auth0
+          </a>
+        </div>
       </a-form>
     </div>
   </AuthWrapper>
@@ -52,7 +57,12 @@ import { computed, reactive, ref } from 'vue';
 import { useStore } from 'vuex';
 import { AuthWrapper } from './style';
 import { useRouter } from 'vue-router';
+import { Auth0Lock } from 'auth0-lock';
+import { auth0options } from '@/config/auth0';
 
+const domain = process.env.VUE_APP_AUTH0_DOMAIN;
+const clientId = process.env.VUE_APP_AUTH0_CLIENT_ID;
+console.log(clientId);
 const SignIn = {
   name: 'SignIn',
   components: { FacebookOutlined, TwitterOutlined, AuthWrapper },
@@ -75,12 +85,26 @@ const SignIn = {
       password: '1234565',
     });
 
+    const lock = new Auth0Lock(clientId, domain, auth0options);
+
+    lock.on('authenticated', authResult => {
+      lock.getUserInfo(authResult.accessToken, error => {
+        if (error) {
+          return;
+        }
+
+        handleSubmit();
+        lock.hide();
+      });
+    });
+
     return {
       isLoading,
       checked,
       handleSubmit,
       onChange,
       formState,
+      lock,
     };
   },
 };
