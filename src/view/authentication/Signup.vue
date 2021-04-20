@@ -1,6 +1,6 @@
 <template>
   <AuthWrapper>
-    <p class="auth-notice">Already have an account? <router-link to="/auth">Sign In</router-link></p>
+    <p class="auth-notice">Already have an account? <router-link to="/auth/login">Sign In</router-link></p>
     <div class="auth-contents">
       <a-form name="register" :model="formState" @finish="handleSubmit" layout="vertical">
         <sdHeading as="h3"> Sign Up to <span class="color-secondary">Admin</span> </sdHeading>
