@@ -82,7 +82,7 @@ const Email = {
   components: { Main, MailSideBar, EmailNavbar, ComposeMail, EmailWrapper },
   data() {
     return {
-      path: this.$route.matched[0].path,
+      path: this.$route.matched[1].path,
     };
   },
   setup() {
