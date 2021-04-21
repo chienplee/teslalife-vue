@@ -10,7 +10,7 @@
             <br />
             <br />
             <sdHeading as="h1">
-              StrikingDash React <br />
+              StrikingDash Vue <br />
               Web Application
             </sdHeading>
             <img class="auth-content-figure" :src="require('@/static/img/auth/Illustration.png')" alt="" />
