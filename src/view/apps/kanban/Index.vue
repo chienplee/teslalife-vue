@@ -50,6 +50,25 @@
                   />
                 </div>
 
+                <div class="sDash_kanvan-task">
+                  <div
+                    v-for="item in tasks.filter(item => item.boardId === board.boardId)"
+                    :key="item.id"
+                    :id="item.id"
+                    class="sDash_kanvan-task__single"
+                  >
+                    <span>Hello</span>
+                    <!-- <KanbanBoardItem
+                      taskId="{taskId}"
+                      onBackShadow="{onBackShadow}"
+                      onTaskTitleUpdate="{onTaskTitleUpdate}"
+                      onTaskTitleDelete="{onTaskTitleDelete}"
+                      showModal="{showModal}"
+                      data="{item}"
+                    /> -->
+                  </div>
+                </div>
+
                 <div :class="board.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'">
                   <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, board.boardId)">
                     <sdFeatherIcons type="plus" size="12" />
