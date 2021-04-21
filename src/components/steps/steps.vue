@@ -21,6 +21,13 @@
         :key="item.title"
         :title="item.title"
       >
+        <template #description>
+          <div class="wizard-item" v-for="(wizard, index) in wizardItem" :key="index">
+            <h2>{{ wizard.title }}</h2>
+            <p>{{ wizard.description }}</p>
+            <img :src="require('../../static/' + wizard.path)" alt="" />
+          </div>
+        </template>
       </a-step>
     </StepsStyle>
 
@@ -110,6 +117,7 @@ const Steps = {
     status: VueTypes.string,
     //progressDot: VueTypes.func.def(() => 1),
     steps: VueTypes.arrayOf(VueTypes.object),
+    wizardItem: VueTypes.arrayOf(VueTypes.object),
     isSwitch: VueTypes.bool.def(false),
     navigation: VueTypes.bool.def(false),
     isFinished: VueTypes.bool.def(false),

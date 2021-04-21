@@ -1,20 +1,20 @@
 <template>
   <WizardWrapper>
-    <WizardFive>
+    <WizardSix>
       <Steps
         isSwitch
         isVertical
         :current="0"
         :status="status"
         :steps="steps"
-        :direction="vertical"
+        :wizardItem="wizardItem"
         @onNext="next"
         @onPrev="prev"
         @onDone="done"
         :isFinished="isFinished"
       >
         <template #account>
-          <BasicFormWrapper class="basic-form-inner theme-light">
+          <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
                 <a-col :xs="24">
@@ -40,7 +40,7 @@
           </BasicFormWrapper>
         </template>
         <template #address>
-          <BasicFormWrapper class="basic-form-inner theme-light">
+          <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
                 <a-col :xs="24">
@@ -86,7 +86,7 @@
           </BasicFormWrapper>
         </template>
         <template #method>
-          <BasicFormWrapper class="basic-form-inner theme-light">
+          <BasicFormWrapper class="basic-form-inner">
             <div class="atbd-form-checkout">
               <a-row justify="center">
                 <a-col :xs="24">
@@ -288,36 +288,34 @@
               </sdCards>
             </div>
           </BasicFormWrapper>
-
-          <a-row v-else justify="center" :style="{ width: '100%' }">
+          <a-row v-else justify="start" :style="{ width: '100%' }">
             <a-col :xl="20" :xs="24">
-              <a-modal :footer="null" v-model:visible="visible" @ok="handleOk" :onCancel="handleCancel">
-                <div class="checkout-successful">
+              <div class="checkout-successful">
+                <sdCards
+                  headless
+                  :bodyStyle="{
+                    backgroundColor: '#F8F9FB',
+                    borderRadius: '20px',
+                  }"
+                >
                   <sdCards headless>
-                    <div class="submission-successModal">
-                      <span class="icon-success">
-                        <sdFeatherIcons type="check" size="14" />
-                      </span>
-                      <p>All is good! Please confirm the form submission.</p>
-                      <div class="submission-action">
-                        <sdButton type="primary" @click="handleOk">
-                          Submit
-                        </sdButton>
-                        <sdButton type="light" @click="handleCancel">Cancel</sdButton>
-                      </div>
-                    </div>
+                    <span class="icon-success">
+                      <sdFeatherIcons type="check" />
+                    </span>
+                    <sdHeading as="h3">Payment Successful</sdHeading>
+                    <p>Thank you! We have received your Payment</p>
                   </sdCards>
-                </div>
-              </a-modal>
+                </sdCards>
+              </div>
             </a-col>
           </a-row>
         </template>
       </Steps>
-    </WizardFive>
+    </WizardSix>
   </WizardWrapper>
 </template>
 <script>
-import { FigureWizards, WizardWrapper, ProductTable, OrderSummary, WizardFive } from '../Style';
+import { FigureWizards, WizardWrapper, ProductTable, OrderSummary, WizardSix } from '../Style';
 import { BasicFormWrapper } from '../../styled';
 import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
@@ -348,8 +346,8 @@ const columns = [
   },
 ];
 
-const WizardsFive = {
-  name: 'WizardsFive',
+const WizardsSix = {
+  name: 'WizardsSix',
   components: {
     Steps,
     FigureWizards,
@@ -357,7 +355,7 @@ const WizardsFive = {
     BasicFormWrapper,
     ProductTable,
     OrderSummary,
-    WizardFive,
+    WizardSix,
     PlusOutlined,
     MinusOutlined,
   },
@@ -424,28 +422,12 @@ const WizardsFive = {
       current.value = current.value - 1;
     };
 
-    const visible = ref(false);
-    const showModal = () => {
-      visible.value = true;
-    };
-    const handleCancel = () => {
-      status.value = 'process';
-      isFinished.value = false;
-      visible.value = false;
-    };
-    const handleOk = () => {
-      status.value = 'process';
-      isFinished.value = false;
-      visible.value = false;
-    };
-
     const done = () => {
       const confirm = window.confirm('Are sure to submit order?');
       if (confirm) {
         status.value = 'finish';
         isFinished.value = true;
         current.value = 0;
-        showModal();
       }
     };
 
@@ -551,26 +533,39 @@ const WizardsFive = {
       isVertical,
       current,
       dataSource,
-      visible,
-      showModal,
-      handleOk,
-      handleCancel,
       steps: [
         {
-          title: 'Create Account',
+          title: '',
           content: 'account',
         },
         {
-          title: 'Shipping Address',
+          title: '',
           content: 'address',
         },
         {
-          title: 'Payment Method',
+          title: '',
           content: 'method',
         },
         {
-          title: 'Review Order',
+          title: '',
           content: 'review',
+        },
+      ],
+      wizardItem: [
+        {
+          title: 'Create Account',
+          description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
+          path: 'img/wizards/1.svg',
+        },
+        {
+          title: 'Shipping Address',
+          description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
+          path: 'img/wizards/1-1.svg',
+        },
+        {
+          title: 'Payment Method',
+          description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
+          path: 'img/wizards/2.svg',
         },
       ],
       handleAccountSubmit,
@@ -581,5 +576,5 @@ const WizardsFive = {
   },
 };
 
-export default WizardsFive;
+export default WizardsSix;
 </script>
