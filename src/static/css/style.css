@@ -1396,6 +1396,12 @@ ul {
   min-width: 250px;
 }
 
+/* ant input */
+.ant-input{
+  padding: 12px 11px !important;
+}
+
+
 /* Input Affix */
 
 .ant-input-affix-wrapper > input.ant-input {
@@ -1749,7 +1755,13 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 }
 
 .ant-page-header-heading {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.ant-page-header-heading-extra{
+  margin:4px 0 4px auto !important;
 }
 
 .ant-page-header-heading-title {

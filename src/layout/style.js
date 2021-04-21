@@ -261,11 +261,11 @@ const Div = Styled('div', props)`
                 .ant-menu{
                     .ant-menu-submenu-inline{
                         > .ant-menu-submenu-title{
-                            padding: 0 30px !important;
+                            padding: 0 15px !important;
                         }
                     }
                     .ant-menu-item{
-                        padding: 0 30px !important;
+                        padding: 0 15px !important;
                     }
                 }
             }
@@ -280,6 +280,7 @@ const Div = Styled('div', props)`
             .ant-menu{
                 /* overflow-x: hidden; */
                 ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0 none;
+                box-shadow: none !important;
                 .ant-menu-submenu, .ant-menu-item{
                     i{
                         line-height: normal;
