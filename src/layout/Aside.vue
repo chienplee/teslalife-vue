@@ -40,7 +40,7 @@
     </a-sub-menu>
 
     <a-sub-menu key="layout">
-      <template v-slot:title><sdFeatherIcons type="home" /><span>Layout</span></template>
+      <template v-slot:title><sdFeatherIcons type="layout" /><span>Layout</span></template>
       <a-menu-item @click="toggleCollapsed" key="light">
         <a
           @click="
@@ -128,33 +128,13 @@
     </a-sub-menu>
 
     <a-menu-item @click="toggleCollapsed" key="changelog">
-      <sdFeatherIcons type="circle" />
+      <sdFeatherIcons type="activity" />
       <span>
         <router-link to="/changelog">
           Changelog
         </router-link>
       </span>
     </a-menu-item>
-
-    <a-menu-item-group key="crud">
-      <template v-slot:title>
-        <p class="sidebar-nav-title">CRUD</p>
-      </template>
-
-      <a-sub-menu key="axios">
-        <template v-slot:title><sdFeatherIcons type="database" /><span>Axios</span></template>
-        <a-menu-item @click="toggleCollapsed" key="axios-view">
-          <router-link to="/crud/axios-view">
-            View All
-          </router-link>
-        </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="axios-add">
-          <router-link to="/crud/axios-add">
-            Add New
-          </router-link>
-        </a-menu-item>
-      </a-sub-menu>
-    </a-menu-item-group>
 
     <a-menu-item-group key="applications">
       <template v-slot:title>
@@ -176,7 +156,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="chat">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Chat</span></template>
+        <template v-slot:title><sdFeatherIcons type="message-square" /><span>Chat</span></template>
         <a-menu-item @click="toggleCollapsed" key="privateSingle">
           <router-link to="/app/chat/private/rofiq@gmail.com">
             Private
@@ -239,7 +219,7 @@
         </a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="social">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Social App</span></template>
+        <template v-slot:title><sdFeatherIcons type="aperture" /><span>Social App</span></template>
         <a-menu-item @click="toggleCollapsed" key="overview">
           <router-link to="/app/social/profile/overview">
             My Profile
@@ -258,7 +238,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="project">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Projects</span></template>
+        <template v-slot:title><sdFeatherIcons type="target" /><span>Projects</span></template>
         <a-menu-item @click="toggleCollapsed" key="grid">
           <router-link to="/app/project/grid">
             Project Grid
@@ -282,7 +262,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="calendar">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Calender</span></template>
+        <template v-slot:title><sdFeatherIcons type="calendar" /><span>Calender</span></template>
         <a-menu-item @click="toggleCollapsed" key="month">
           <router-link to="/app/calendar/month">
             Month
@@ -306,7 +286,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="users">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Users</span></template>
+        <template v-slot:title><sdFeatherIcons type="users" /><span>Users</span></template>
         <a-menu-item @click="toggleCollapsed" key="team">
           <router-link to="/app/users/team">
             Team
@@ -332,20 +312,20 @@
             Users Grid Group
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="dataTable">
-          <router-link to="/app/users/dataTable">
-            Users table
-          </router-link>
-        </a-menu-item>
         <a-menu-item @click="toggleCollapsed" key="add-user">
           <router-link to="/app/users/add-user/info">
             Add Users
           </router-link>
         </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="dataTable">
+          <router-link to="/app/users/dataTable">
+            Users table
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="contact">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Contact</span></template>
+        <template v-slot:title><sdFeatherIcons type="user-plus" /><span>Contact</span></template>
         <a-menu-item @click="toggleCollapsed" key="contact-grid">
           <router-link to="/app/contact/contact-grid">
             Contact Grid
@@ -364,7 +344,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="note">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Note</span></template>
+        <template v-slot:title><sdFeatherIcons type="file-text" /><span>Note</span></template>
         <a-menu-item @click="toggleCollapsed" key="note-all">
           <router-link to="/app/note/all">
             All
@@ -398,7 +378,7 @@
       </a-sub-menu>
 
       <a-menu-item @click="toggleCollapsed" key="to-do">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="check-square" />
         <span>
           <router-link to="/app/to-do">
             To Do
@@ -407,7 +387,7 @@
       </a-menu-item>
 
       <a-menu-item @click="toggleCollapsed" key="kanban">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="columns" />
         <span>
           <router-link to="/app/kanban">
             Kanban Board
@@ -416,7 +396,7 @@
       </a-menu-item>
 
       <a-sub-menu key="import-export">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Import Export</span></template>
+        <template v-slot:title><sdFeatherIcons type="repeat" /><span>Import Export</span></template>
         <a-menu-item @click="toggleCollapsed" key="import">
           <router-link to="/app/import">
             Import
@@ -430,7 +410,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="task">
-        <template v-slot:title><sdFeatherIcons type="mail" /><span>Task</span></template>
+        <template v-slot:title><sdFeatherIcons type="file" /><span>Task</span></template>
         <a-menu-item @click="toggleCollapsed" key="all">
           <router-link to="/app/task/all">
             All
@@ -449,12 +429,32 @@
       </a-sub-menu>
     </a-menu-item-group>
 
+    <a-menu-item-group key="crud">
+      <template v-slot:title>
+        <p class="sidebar-nav-title">CRUD</p>
+      </template>
+
+      <a-sub-menu key="axios">
+        <template v-slot:title><sdFeatherIcons type="database" /><span>Axios</span></template>
+        <a-menu-item @click="toggleCollapsed" key="axios-view">
+          <router-link to="/crud/axios-view">
+            View All
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="axios-add">
+          <router-link to="/crud/axios-add">
+            Add New
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+    </a-menu-item-group>
+
     <a-menu-item-group key="features">
       <template v-slot:title>
         <p class="sidebar-nav-title">FEATURES</p>
       </template>
       <a-sub-menu key="components">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>UI Elements</span></template>
+        <template v-slot:title><sdFeatherIcons type="layers" /><span>UI Elements</span></template>
         <a-menu-item @click="toggleCollapsed" key="alerts">
           <router-link to="/components/alerts">
             Alerts
@@ -694,7 +694,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="charts">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Charts</span></template>
+        <template v-slot:title><sdFeatherIcons type="bar-chart-2" /><span>Charts</span></template>
         <a-menu-item @click="toggleCollapsed" key="chart-js">
           <router-link to="/chart/chart-js">
             Chart js
@@ -746,7 +746,7 @@
       </a-sub-menu>
 
       <a-sub-menu key="forms">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Forms</span></template>
+        <template v-slot:title><sdFeatherIcons type="disc" /><span>Forms</span></template>
         <a-menu-item @click="toggleCollapsed" key="formLayout">
           <router-link to="/forms/form-layout">
             Form Layout
@@ -769,46 +769,8 @@
         </a-menu-item>
       </a-sub-menu>
 
-      <a-sub-menu key="icons">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Icons</span></template>
-        <a-menu-item @click="toggleCollapsed" key="featherIcons">
-          <router-link to="/icons/featherIcons">
-            FeatherIcons
-          </router-link>
-        </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="antdIcons">
-          <router-link to="/icons/antdIcons">
-            Ant Design Icons
-          </router-link>
-        </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="fa">
-          <router-link to="/icons/fa">
-            FontAwesome Icons
-          </router-link>
-        </a-menu-item>
-      </a-sub-menu>
-
-      <a-sub-menu key="maps">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Maps</span></template>
-        <a-menu-item @click="toggleCollapsed" key="google">
-          <router-link to="/maps/google">
-            Google Maps
-          </router-link>
-        </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="leaflet">
-          <router-link to="/maps/leaflet">
-            Leaflet
-          </router-link>
-        </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="vector">
-          <router-link to="/maps/vector">
-            Vector
-          </router-link>
-        </a-menu-item>
-      </a-sub-menu>
-
       <a-sub-menu key="tables">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Table</span></template>
+        <template v-slot:title><sdFeatherIcons type="cpu" /><span>Table</span></template>
         <a-menu-item @click="toggleCollapsed" key="table">
           <router-link to="/tables/basic">
             Basic Table
@@ -821,8 +783,26 @@
         </a-menu-item>
       </a-sub-menu>
 
+      <a-sub-menu key="widgets">
+        <template v-slot:title><sdFeatherIcons type="server" /><span>Widgets</span></template>
+        <a-menu-item @click="toggleCollapsed" key="widgetCharts">
+          <router-link to="/widgets/chart">
+            Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="widgetsCard">
+          <router-link to="/widgets/card">
+            Card
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="widgetMixed">
+          <router-link to="/widgets/mixed">
+            Mixed
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
       <a-sub-menu key="wizard">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Wizard</span></template>
+        <template v-slot:title><sdFeatherIcons type="square" /><span>Wizard</span></template>
         <a-menu-item @click="toggleCollapsed" key="wizard1">
           <router-link to="/wizard/wizard1">
             Wizard1
@@ -854,37 +834,55 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
-      <a-sub-menu key="widgets">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Widgets</span></template>
-        <a-menu-item @click="toggleCollapsed" key="widgetCharts">
-          <router-link to="/widgets/chart">
-            Charts
+      <a-sub-menu key="icons">
+        <template v-slot:title><sdFeatherIcons type="grid" /><span>Icons</span></template>
+        <a-menu-item @click="toggleCollapsed" key="featherIcons">
+          <router-link to="/icons/featherIcons">
+            FeatherIcons
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="widgetsCard">
-          <router-link to="/widgets/card">
-            Card
+        <a-menu-item @click="toggleCollapsed" key="antdIcons">
+          <router-link to="/icons/antdIcons">
+            Ant Design Icons
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="widgetMixed">
-          <router-link to="/widgets/mixed">
-            Mixed
+        <a-menu-item @click="toggleCollapsed" key="fa">
+          <router-link to="/icons/fa">
+            FontAwesome Icons
           </router-link>
         </a-menu-item>
       </a-sub-menu>
     </a-menu-item-group>
+    <a-sub-menu key="maps">
+      <template v-slot:title><sdFeatherIcons type="map" /><span>Maps</span></template>
+      <a-menu-item @click="toggleCollapsed" key="google">
+        <router-link to="/maps/google">
+          Google Maps
+        </router-link>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="leaflet">
+        <router-link to="/maps/leaflet">
+          Leaflet
+        </router-link>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="vector">
+        <router-link to="/maps/vector">
+          Vector
+        </router-link>
+      </a-menu-item>
+    </a-sub-menu>
     <a-menu-item-group key="pages">
       <template v-slot:title>
         <p class="sidebar-nav-title">Pages</p>
       </template>
-
       <a-sub-menu key="settings">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Settings</span></template>
+        <template v-slot:title><sdFeatherIcons type="settings" /><span>Settings</span></template>
         <a-menu-item @click="toggleCollapsed" key="profile-settings">
           <router-link to="/page/profile-settings">
             Settings
           </router-link>
         </a-menu-item>
+
         <a-menu-item @click="toggleCollapsed" key="set-profile">
           <router-link to="/page/profile-settings/profile">
             Profile
@@ -911,7 +909,54 @@
           </router-link>
         </a-menu-item>
       </a-sub-menu>
-
+      <a-menu-item @click="toggleCollapsed" key="gallery">
+        <sdFeatherIcons type="image" />
+        <span>
+          <router-link to="/page/gallery">
+            Gallery
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="pricing">
+        <sdFeatherIcons type="dollar-sign" />
+        <span>
+          <router-link to="/page/pricing">
+            Pricing
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="banners">
+        <sdFeatherIcons type="cast" />
+        <span>
+          <router-link to="/page/banners">
+            Banners
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="testimonials">
+        <sdFeatherIcons type="book-open" />
+        <span>
+          <router-link to="/page/testimonials">
+            Testimonials
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="faq`s">
+        <sdFeatherIcons type="help-circle" />
+        <span>
+          <router-link to="/page/faqs">
+            FAQs
+          </router-link>
+        </span>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="search">
+        <sdFeatherIcons type="search" />
+        <span>
+          <router-link to="/page/search">
+            Search
+          </router-link>
+        </span>
+      </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="starter">
         <sdFeatherIcons type="circle" />
         <span>
@@ -921,7 +966,7 @@
         </span>
       </a-menu-item>
       <a-sub-menu key="knowledgebase">
-        <template v-slot:title><sdFeatherIcons type="circle" /><span>Knowledge Base</span></template>
+        <template v-slot:title><sdFeatherIcons type="book" /><span>Knowledge Base</span></template>
         <a-menu-item @click="toggleCollapsed" key="kno-plugins">
           <router-link to="/page/knowledgebase/plugins">
             Knowledge Base
@@ -939,71 +984,25 @@
         </a-menu-item>
       </a-sub-menu>
       <a-menu-item @click="toggleCollapsed" key="support">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="headphones" />
         <span>
           <router-link to="/page/support">
             Support Center
           </router-link>
         </span>
       </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="pricing">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/pricing">
-            Pricing
-          </router-link>
-        </span>
-      </a-menu-item>
+
       <a-menu-item @click="toggleCollapsed" key="maintenance">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="airplay" />
         <span>
           <router-link to="/page/maintenance">
             Maintenance
           </router-link>
         </span>
       </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="banners">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/banners">
-            Banners
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="testimonials">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/testimonials">
-            Testimonials
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="faq`s">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/faqs">
-            FAQs
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="search">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/search">
-            Search
-          </router-link>
-        </span>
-      </a-menu-item>
-      <a-menu-item @click="toggleCollapsed" key="gallery">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/page/gallery">
-            Gallery
-          </router-link>
-        </span>
-      </a-menu-item>
+
       <a-menu-item @click="toggleCollapsed" key="404">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="info" />
         <span>
           <router-link to="/page/404">
             404
@@ -1011,7 +1010,7 @@
         </span>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="comingSoon">
-        <sdFeatherIcons type="circle" />
+        <sdFeatherIcons type="clock" />
         <span>
           <router-link to="/page/comingSoon">
             Coming Soon
