@@ -158,7 +158,7 @@ const Task = {
     const visible = ref(false);
     const modalType = ref('primary');
     const { matched } = useRoute();
-    const { path } = matched[0];
+    const { path } = matched[1];
 
     const showModal = () => {
       visible.value = true;

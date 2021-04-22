@@ -89,7 +89,7 @@ const Project = {
   setup() {
     const { state, dispatch } = useStore();
     const searchData = computed(() => state.headerSearchData);
-    const { path } = useRoute().matched[0];
+    const { path } = useRoute().matched[1];
     const visible = ref(false);
     const categoryActive = ref('all');
 
