@@ -1,42 +1,42 @@
 export default {
-  toAddBoardReadBegin(state) {
+  toAddBoardBegin(state) {
     state.loading = true;
   },
 
-  toAddBoardReadSuccess(state, data) {
+  toAddBoardSuccess(state, data) {
     state.loading = false;
-    state.data = data;
+    state.boardData = data;
   },
 
-  toAddBoardReadErr(state, err) {
+  toAddBoardErr(state, err) {
     state.loading = false;
     state.error = err;
   },
   toAddTaskBegin(state) {
-    state.loading = true;
+    state.tsLoading = true;
   },
 
   toAddTaskSuccess(state, data) {
-    state.loading = false;
-    state.data = data;
+    state.tsLoading = false;
+    state.taskData = data;
   },
 
   toAddTaskErr(state, err) {
-    state.loading = false;
+    state.tsLoading = false;
     state.error = err;
   },
 
   toDeleteTaskBegin(state) {
-    state.loading = true;
+    state.tsLoading = true;
   },
 
   toDeleteTaskSuccess(state, data) {
-    state.loading = false;
-    state.data = data;
+    state.tsLoading = false;
+    state.taskData = data;
   },
 
   toDeleteTaskErr(state, err) {
-    state.loading = false;
+    state.tsLoading = false;
     state.error = err;
   },
 };

@@ -13,10 +13,10 @@ const state = () => ({
 const actions = {
   async ToAddBoard({ commit }, data) {
     try {
-      commit('toAddBoardReadBegin');
+      commit('toAddBoardBegin');
       commit('toAddBoardSuccess', data);
     } catch (err) {
-      commit('toAddBoardReadErr', err);
+      commit('toAddBoardErr', err);
     }
   },
 
