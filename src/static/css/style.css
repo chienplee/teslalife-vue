@@ -2688,3 +2688,13 @@ html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-submenu-arrow {
 html[dir='rtl'] .ant-menu-vertical .ant-menu-submenu-title {
   padding-right: 15px !important;
 }
+
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
+  background: none !important;
+  border-bottom: 1px solid #F1F2F6;
+}
+
+.tox .tox-statusbar{
+  border-top: 1px solid #f1f2f6 !important;
+}

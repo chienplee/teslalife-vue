@@ -120,10 +120,10 @@
   </Main>
 </template>
 <script>
-import { ContactPageheaderStyle, Action } from './style';
+import { ContactPageheaderStyle, Action, UserTableStyleWrapper } from './style';
 import ContactCard from './overview/ContactCard';
 import { Main, CardToolbox, BasicFormWrapper, TableWrapper } from '../../styled';
-import { AddUser, UserTableStyleWrapper } from '../../pages/style';
+import { AddUser } from '../../pages/style';
 import { useStore } from 'vuex';
 import { computed, reactive, ref } from 'vue';
 

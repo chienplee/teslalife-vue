@@ -113,6 +113,7 @@ const Steps = {
     isSwitch: VueTypes.bool.def(false),
     navigation: VueTypes.bool.def(false),
     isFinished: VueTypes.bool.def(false),
+    isVertical: VueTypes.bool.def(false),
     height: VueTypes.number.def(150),
   },
 
