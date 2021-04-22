@@ -700,11 +700,11 @@
             Chart js
           </router-link>
         </a-menu-item>
-        <!-- <a-menu-item @click="toggleCollapsed" key="googleChart">
+        <a-menu-item @click="toggleCollapsed" key="googleChart">
           <router-link to="/chart/google-chart">
             Google Chart
           </router-link>
-        </a-menu-item> -->
+        </a-menu-item>
         <a-sub-menu key="apexchart">
           <template v-slot:title><sdFeatherIcons type="bar-chart" /><span>Apex Charts</span></template>
           <a-menu-item @click="toggleCollapsed" key="columnChart">
