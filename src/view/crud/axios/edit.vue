@@ -45,6 +45,9 @@
                     <a-form-item name="name" label="Name">
                       <a-input v-model:value="formState.name" placeholder="Input Name" />
                     </a-form-item>
+                    <a-form-item name="old_image" label="old_image" hidden>
+                      <a-input :value="formState.old_image" placeholder="Input Name" />
+                    </a-form-item>
                     <a-form-item name="email" label="Email">
                       <a-input v-model:value="formState.email" type="email" placeholder="example@gmail.com" />
                     </a-form-item>
@@ -158,11 +161,12 @@ const UpdateData = {
       company: '',
       position: '',
       status: '',
+      old_image: '',
     });
 
     watchEffect(() => {
       if (crud.value.name) {
-        console.log(crud.value);
+        console.log(crud.value.image);
         formState.name = crud.value.name;
         formState.email = crud.value.email;
         formState.country = crud.value.country;
@@ -171,6 +175,7 @@ const UpdateData = {
         join.value = crud.value.join;
         formState.position = crud.value.position;
         formState.status = crud.value.status;
+        formState.old_image = crud.value.image;
       }
     });
 
