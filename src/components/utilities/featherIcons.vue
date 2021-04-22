@@ -5,6 +5,7 @@
 <script>
 import { icons } from 'feather-icons';
 import VueTypes from 'vue-types';
+
 export default {
   name: 'FeatherIcons',
   props: {

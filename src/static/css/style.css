@@ -1396,6 +1396,12 @@ ul {
   min-width: 250px;
 }
 
+/* ant input */
+.ant-input{
+  padding: 12px 11px !important;
+}
+
+
 /* Input Affix */
 
 .ant-input-affix-wrapper > input.ant-input {
@@ -1581,7 +1587,9 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 .full-width-table .top-seller-table {
   min-height: 406px;
 }
-
+.full-width-table .top-seller-table.table-recent-orders{
+  min-height: 390px;
+}
 .full-width-table .top-seller-table .ant-table-content .ant-table-cell {
   white-space: normal;
   padding: 16px 15px;
@@ -1747,7 +1755,13 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 }
 
 .ant-page-header-heading {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.ant-page-header-heading-extra{
+  margin:4px 0 4px auto !important;
 }
 
 .ant-page-header-heading-title {
@@ -2673,4 +2687,14 @@ html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-submenu-arrow {
 
 html[dir='rtl'] .ant-menu-vertical .ant-menu-submenu-title {
   padding-right: 15px !important;
+}
+
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
+  background: none !important;
+  border-bottom: 1px solid #F1F2F6;
+}
+
+.tox .tox-statusbar{
+  border-top: 1px solid #f1f2f6 !important;
 }

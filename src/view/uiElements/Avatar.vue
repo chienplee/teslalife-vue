@@ -18,16 +18,32 @@
         <a-col :md="12" :sm="12" :xs="24">
           <sdCards title="Basic">
             <AvatarWraperStyle :style="{ marginBottom: 10 }">
-              <a-avatar :size="64" icon="user" />
-              <a-avatar size="large" icon="user" />
-              <a-avatar icon="user" />
-              <a-avatar size="small" icon="user" />
+              <a-avatar :size="64"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar size="large"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar size="small"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
             </AvatarWraperStyle>
             <AvatarWraperStyle>
-              <a-avatar shape="square" :size="64" icon="user" />
-              <a-avatar shape="square" size="large" icon="user" />
-              <a-avatar shape="square" icon="user" />
-              <a-avatar shape="square" size="small" icon="user" />
+              <a-avatar shape="square" :size="64"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar shape="square" size="large"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar shape="square"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar shape="square" size="small"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
             </AvatarWraperStyle>
           </sdCards>
           <sdCards title="Autoset Font Size">
@@ -57,25 +73,35 @@
         <a-col :md="12" :sm="12" :xs="24">
           <sdCards title="Type">
             <AvatarWraperStyle>
-              <a-avatar icon="user" />
-              <a-avatar icon="user" />
+              <a-avatar
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
+              <a-avatar
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
               <a-avatar>U</a-avatar>
               <a-avatar>USER</a-avatar>
               <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
               <a-avatar :style="{ color: '#f56a00', backgroundColor: '#fde3cf' }">U</a-avatar>
-              <a-avatar :style="{ backgroundColor: '#20C997' }" icon="user" />
+              <a-avatar :style="{ backgroundColor: '#20C997' }"
+                ><template #icon><UserOutlined /></template
+              ></a-avatar>
             </AvatarWraperStyle>
           </sdCards>
           <sdCards title="with badge">
             <AvatarWraperStyle>
               <span :style="{ [!rtl ? 'marginRight' : 'marginLeft']: 10 }">
                 <a-badge :count="1">
-                  <a-avatar shape="square" icon="user" />
+                  <a-avatar shape="square"
+                    ><template #icon><UserOutlined /></template
+                  ></a-avatar>
                 </a-badge>
               </span>
               <span>
                 <a-badge dot>
-                  <a-avatar shape="square" icon="user" />
+                  <a-avatar shape="square"
+                    ><template #icon><UserOutlined /></template
+                  ></a-avatar>
                 </a-badge>
               </span>
             </AvatarWraperStyle>
@@ -88,7 +114,7 @@
 
 <script>
 import { Main } from '../styled';
-
+import { UserOutlined } from '@ant-design/icons-vue';
 import config from '../../config/config';
 import { AvatarWraperStyle } from './ui-elements-styled';
 import { useStore } from 'vuex';
@@ -103,6 +129,7 @@ export default {
   components: {
     Main,
     AvatarWraperStyle,
+    UserOutlined,
   },
   setup() {
     const { state } = useStore();

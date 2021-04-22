@@ -23,9 +23,11 @@
       >
         <template #description>
           <div class="wizard-item" v-for="(wizard, index) in wizardItem" :key="index">
-            <h2>{{ wizard.title }}</h2>
-            <p>{{ wizard.description }}</p>
-            <img :src="require('../../static/' + wizard.path)" alt="" />
+            <template v-if="index === parseInt(currents)">
+              <h2>{{ wizard.title }}</h2>
+              <p>{{ wizard.description }}</p>
+              <img :src="require('../../static/' + wizard.path)" alt="" />
+            </template>
           </div>
         </template>
       </a-step>
@@ -127,7 +129,6 @@ const Steps = {
 
   setup(props, { emit }) {
     const { current } = toRefs(props);
-
     const currents = ref(current.value);
     const next = () => {
       currents.value = currents.value + 1;
@@ -138,13 +139,16 @@ const Steps = {
       currents.value = currents.value - 1;
       emit('onPrev', currents.value);
     };
+
     const onDone = () => {
       emit('onDone', currents.value);
     };
+
     const onChanges = curr => {
       currents.value = curr;
       emit('onChange', curr);
     };
+
     return {
       onChanges,
       prev,

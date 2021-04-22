@@ -107,12 +107,17 @@ import { PerformanceChartWrapper, Pstates } from '../../style';
 import { chartLinearGradient, customTooltips } from '../../../../components/utilities/utilities';
 import Chartjs from '../../../../components/utilities/chartjs';
 import { useStore } from 'vuex';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, toRefs } from 'vue';
+import VueTypes from 'vue-types';
 
 const AverageSalesRevenue = {
   name: 'AverageSalesRevenue',
   components: { PerformanceChartWrapper, Pstates, Chartjs },
-  setup() {
+  props: {
+    chartHeights: VueTypes.number.def(100),
+  },
+  setup(props) {
+    const { chartHeights } = toRefs(props);
     const { state, dispatch } = useStore();
 
     const performanceState = computed(() => state.chartContent.performanceData);
@@ -120,7 +125,7 @@ const AverageSalesRevenue = {
     const performance = ref('year');
     const performanceTab = ref('users');
 
-    const height = ref(window.innerWidth <= 575 ? 200 : 100);
+    const height = ref(window.innerWidth <= 575 ? 200 : chartHeights);
 
     onMounted(() => dispatch('performanceGetData'));
     const handleActiveChangePerformance = (event, value) => {

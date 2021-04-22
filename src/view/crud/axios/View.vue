@@ -2,14 +2,12 @@
   <RecordViewWrapper>
     <sdPageHeader title="Data List">
       <template #subTitle>
-        <div>
-          <sdButton class="btn-add_new" size="default" type="primary">
-            <router-link to="/crud/axios-add"> <sdFeatherIcons type="plus" size="14" /> Add New </router-link>
-          </sdButton>
-        </div>
+        <sdButton class="btn-add_new" size="default" type="primary">
+          <router-link to="/crud/axios-add"> <sdFeatherIcons type="plus" size="14" /> Add New </router-link>
+        </sdButton>
       </template>
-      <template #buttons
-        ><div class="search-box">
+      <template #buttons>
+        <div class="search-box">
           <span class="search-icon">
             <sdFeatherIcons type="search" size="14" />
           </span>
