@@ -573,4 +573,9 @@ export default [
       },
     ],
   },
+  {
+    name: 'kanban',
+    path: '/app/kanban',
+    component: () => import(/* webpackChunkName: "kanban" */ '../view/apps/kanban/Index.vue'),
+  },
 ];

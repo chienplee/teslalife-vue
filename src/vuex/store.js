@@ -19,6 +19,7 @@ import todo from './modules/todo/actionCreator';
 import task from './modules/task/actionCreator';
 import crud from './modules/crud/axios/actionCreator';
 import auth from './modules/authentication/axios/actionCreator';
+import KanbanBoard from './modules/kanban/actionCreator';
 
 export default createStore({
   modules: {
@@ -42,5 +43,6 @@ export default createStore({
     task,
     crud,
     auth,
+    KanbanBoard,
   },
 });

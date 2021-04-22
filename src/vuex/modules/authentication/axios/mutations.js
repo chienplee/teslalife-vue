@@ -1,8 +1,7 @@
 export default {
   loginBegin(state) {
-    state.loading = true;
+    state.login = true;
   },
-
   loginSuccess(state, data) {
     state.loading = false;
     state.login = data;

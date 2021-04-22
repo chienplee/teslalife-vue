@@ -1,5 +1,5 @@
 <template>
-  <i :class="myClass" v-html="activity"></i>
+  <i v-html="activity"></i>
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
         'stroke-width': this.stroke,
         width: this.size,
         height: this.size,
+        class: this.class,
       }),
     };
   },

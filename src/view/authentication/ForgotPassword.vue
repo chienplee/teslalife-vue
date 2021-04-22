@@ -14,7 +14,7 @@
             Send Reset Instructions
           </sdButton>
         </a-form-item>
-        <p class="return-text">Return to <router-link to="/auth">Sign In</router-link></p>
+        <p class="return-text">Return to <router-link to="/auth/login">Sign In</router-link></p>
       </a-form>
     </div>
   </AuthWrapper>

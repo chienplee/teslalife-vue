@@ -56,7 +56,7 @@ const actions = {
     } catch (err) {
       await commit('axiosAddBeginErr', err);
       console.log(err);
-      addNotificationError(err);
+      addNotificationError(err.message);
     }
   },
 
@@ -85,9 +85,9 @@ const actions = {
     data.set('image', imageAsFile);
     try {
       await commit('axiosUploadBegin');
-      const query = await DataService.post('/fileUpload', data, { 'Content-Type': 'multipart/form-data' });
-      console.log(query.data.result);
-      commit('axiosUploadSuccess', query.data.result);
+      const query = await DataService.post('/image-upload', data, { 'Content-Type': 'multipart/form-data' });
+      console.log(query.data);
+      commit('axiosUploadSuccess', `img/basics/${query.data}`);
     } catch (err) {
       await commit('axiosUploadErr', err);
     }

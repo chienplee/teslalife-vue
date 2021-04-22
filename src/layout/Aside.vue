@@ -406,6 +406,15 @@
         </span>
       </a-menu-item>
 
+      <a-menu-item @click="toggleCollapsed" key="kanban">
+        <sdFeatherIcons type="circle" />
+        <span>
+          <router-link to="/app/kanban">
+            Kanban Board
+          </router-link>
+        </span>
+      </a-menu-item>
+
       <a-sub-menu key="import-export">
         <template v-slot:title><sdFeatherIcons type="mail" /><span>Import Export</span></template>
         <a-menu-item @click="toggleCollapsed" key="import">
@@ -837,6 +846,11 @@
         <a-menu-item @click="toggleCollapsed" key="wizard5">
           <router-link to="/wizard/wizard5">
             Wizard5
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="wizard6">
+          <router-link to="/wizard/wizard6">
+            Wizard6
           </router-link>
         </a-menu-item>
       </a-sub-menu>
