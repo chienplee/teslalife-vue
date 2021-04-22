@@ -18,83 +18,85 @@
         <KanvanBoardWrap>
           <sdCards headless title="Product Design">
             <div class="sDash_kanban-board-list">
-              <div v-for="board in boardData" :key="board.boardId" class="sDash_kanban-board-item" ref="{ref}">
-                <div
-                  :class="
-                    board.boardId === titleBoardId
-                      ? 'sDash_kanban-board-item__header editable'
-                      : 'sDash_kanban-board-item__header'
-                  "
-                >
-                  <h4 class="list-header-title">
-                    <span>{{ board.title }}</span>
-                    <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
-                      <template #overlay>
-                        <a @click="e => onBoardEditable(e, board.boardId, board.title)" href="#">
-                          <span>Edit Card Title</span>
-                        </a>
-                        <a @click="() => deleteColumnHandler(board.boardId)" href="#">
-                          <span>Delete Card</span>
-                        </a>
-                      </template>
-                      <a href="#" class="btn-more">
-                        <sdFeatherIcons type="more-horizontal" size="14" />
-                      </a>
-                    </sdDropdown>
-                  </h4>
-                  <BoardTitleUpdate
-                    :boardId="titleBoardId"
-                    :boardTitle="boardTitle"
-                    :onBoardTitleChange="onBoardTitleChange"
-                    :onBlur="onBoardEditableHide"
-                  />
-                </div>
-
-                <div class="sDash_kanvan-task">
+              <div v-for="board in boardData" :key="board.boardId" class="sDash_kanban-board-item">
+                <div class="sDash_kanban-board-item-scrolable">
                   <div
-                    v-for="item in tasks.filter(item => item.boardId === board.boardId)"
-                    :key="item.id"
-                    :id="item.id"
-                    class="sDash_kanvan-task__single"
+                    :class="
+                      board.boardId === titleBoardId
+                        ? 'sDash_kanban-board-item__header editable'
+                        : 'sDash_kanban-board-item__header'
+                    "
                   >
-                    <span>Hello</span>
-                    <!-- <KanbanBoardItem
-                      taskId="{taskId}"
-                      onBackShadow="{onBackShadow}"
-                      onTaskTitleUpdate="{onTaskTitleUpdate}"
-                      onTaskTitleDelete="{onTaskTitleDelete}"
-                      showModal="{showModal}"
-                      data="{item}"
-                    /> -->
-                  </div>
-                </div>
-
-                <div :class="board.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'">
-                  <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, board.boardId)">
-                    <sdFeatherIcons type="plus" size="12" />
-                    <span>Add Task</span>
-                  </a>
-
-                  <div class="sDash_addTask-from">
-                    <a-input
-                      :name="`taskInput-${board.boardId}`"
-                      class="sDash_addTask-input"
-                      placeholder="Enter a Title"
-                      @pressEnter="() => addTaskHandler(board.boardId)"
+                    <h4 class="list-header-title">
+                      <span>{{ board.title }}</span>
+                      <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
+                        <template #overlay>
+                          <a @click="e => onBoardEditable(e, board.boardId, board.title)" href="#">
+                            <span>Edit Card Title</span>
+                          </a>
+                          <a @click="() => deleteColumnHandler(board.boardId)" href="#">
+                            <span>Delete Card</span>
+                          </a>
+                        </template>
+                        <a href="#" class="btn-more">
+                          <sdFeatherIcons type="more-horizontal" size="14" />
+                        </a>
+                      </sdDropdown>
+                    </h4>
+                    <BoardTitleUpdate
+                      :boardId="titleBoardId"
+                      :boardTitle="boardTitle"
+                      :onBoardTitleChange="onBoardTitleChange"
+                      :onBlur="onBoardEditableHide"
                     />
-                    <div class="sDash_addTask-action">
-                      <sdButton
-                        @click="() => addTaskHandler(board.boardId)"
-                        class="add-column"
-                        htmlType="submit"
-                        size="small"
-                        type="primary"
-                      >
-                        Add
-                      </sdButton>
-                      <a href="#" @click="handleOffAddTask">
-                        <sdFeatherIcons type="x" size="18" />
-                      </a>
+                  </div>
+
+                  <div class="sDash_kanvan-task">
+                    <div
+                      v-for="item in tasks.filter(item => item.boardId === board.boardId)"
+                      :key="item.id"
+                      class="sDash_kanvan-task__single"
+                    >
+                      <KanbanBoardItem
+                        :taskId="taskId"
+                        :onBackShadow="onBackShadow"
+                        :onTaskTitleUpdate="onTaskTitleUpdate"
+                        :onTaskTitleDelete="onTaskTitleDelete"
+                        :showModal="showModal"
+                        :data="item"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    :class="board.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'"
+                  >
+                    <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, board.boardId)">
+                      <sdFeatherIcons type="plus" size="12" />
+                      <span>Add Task</span>
+                    </a>
+
+                    <div class="sDash_addTask-from">
+                      <a-input
+                        :name="`taskInput-${board.boardId}`"
+                        class="sDash_addTask-input"
+                        placeholder="Enter a Title"
+                        @pressEnter="() => addTaskHandler(board.boardId)"
+                      />
+                      <div class="sDash_addTask-action">
+                        <sdButton
+                          @click="() => addTaskHandler(board.boardId)"
+                          class="add-column"
+                          htmlType="submit"
+                          size="small"
+                          type="primary"
+                        >
+                          Add
+                        </sdButton>
+                        <a href="#" @click="handleOffAddTask">
+                          <sdFeatherIcons type="x" size="18" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -105,7 +107,7 @@
                     <sdFeatherIcons type="plus" size="12" />
                     <span>Add Column</span>
                   </a>
-                  <a-form class="addColumn-form" name="columnAdd" @finish="addColumnHandler">
+                  <a-form class="addColumn-form" :model="formState" name="columnAdd" @finish="addColumnHandler">
                     <div class="btn-addColumn-form">
                       <a-input
                         v-model:value="columnTitle"
@@ -131,16 +133,16 @@
       </a-col>
     </a-row>
   </Main>
-  <!-- <UpdateTask handleCancel={handleCancel} modalVisible={modalVisible} data={checklistData} /> -->
+  <UpdateTask :handleCancel="handleCancel" :modalVisible="modalVisible" :data="checklistData" />
   <BackShadow v-if="backShadow" @click="onBackShadowHide" />
 </template>
 <script>
 import propTypes from 'vue-types';
 import { KanvanBoardWrap, BackShadow } from './style';
-// import KanbanBoardItem from './overview/KanbanBoardItem';
-// import UpdateTask from './overview/UpdateTask';
+import KanbanBoardItem from './overview/KanbanBoardItem';
+import UpdateTask from './overview/UpdateTask';
 import { Main } from '../../styled';
-import { toRefs, ref, computed, reactive, watchEffect } from 'vue';
+import { toRefs, ref, computed, reactive } from 'vue';
 import { useStore } from 'vuex';
 
 const BoardTitleUpdate = {
@@ -175,15 +177,18 @@ const BoardTitleUpdate = {
 
 const Kanban = {
   name: 'Kanban',
-  components: { KanvanBoardWrap, BackShadow, Main, BoardTitleUpdate },
+  components: { KanvanBoardWrap, BackShadow, Main, BoardTitleUpdate, KanbanBoardItem, UpdateTask },
   setup() {
-    const { state } = useStore();
+    const { state, dispatch } = useStore();
     const rtl = computed(() => state.themeLayout.rtlData);
     const boardData = computed(() => state.KanbanBoard.boardData);
     const tasks = computed(() => state.KanbanBoard.taskData);
     const addColumn = ref(false);
 
+    const formState = reactive({});
+
     const states = reactive({
+      formState,
       columnTitle: '',
       boardTitle: '',
       boardId: '',
@@ -213,17 +218,152 @@ const Kanban = {
       state.columnTitle = e.target.value;
     };
 
-    const { boardId } = toRefs(states);
-    watchEffect(() => console.log(states));
+    const handleOnAddTask = (e, id) => {
+      e.preventDefault();
+      states.boardId = id;
+    };
+
+    const handleOffAddTask = e => {
+      e.preventDefault();
+      states.boardId = '';
+    };
+
+    const onBackShadow = id => {
+      states.backShadow = true;
+      states.taskId = id;
+    };
+
+    const onBackShadowHide = () => {
+      states.backShadow = false;
+      states.taskId = '';
+    };
+
+    const onTaskTitleUpdate = (value, id) => {
+      tasks.value.map(task => {
+        if (task.id === id) {
+          task.title = value;
+          states.backShadow = false;
+          states.taskId = '';
+        }
+        return task;
+      });
+      dispatch('ToAddTask', tasks.value);
+    };
+
+    const onTaskTitleDelete = (e, id) => {
+      e.preventDefault();
+      const afterDeleteTask = tasks.value.filter(task => task.id !== id);
+      states.backShadow = false;
+      states.taskId = '';
+      dispatch('ToDeleteTask', afterDeleteTask);
+    };
+
+    const addTaskHandler = id => {
+      const arrayData = [];
+      const taskItem = document.querySelector(`input[name="taskInput-${id}"]`).value;
+      tasks.value.map(data => {
+        return arrayData.push(data.id);
+      });
+      const max = Math.max(...arrayData);
+
+      if (taskItem !== '') {
+        dispatch('ToAddTask', [
+          ...tasks.value,
+          {
+            id: `${max + 1}`,
+            boardId: states.boardId,
+            title: taskItem,
+            checklist: [],
+          },
+        ]);
+        states.boardId = '';
+      } else {
+        alert('Please Enter a Task Ttile');
+      }
+    };
+
+    const addColumnHandler = () => {
+      const arrayData = [];
+      boardData.value.map(data => {
+        return arrayData.push(data.boardId);
+      });
+
+      const max = Math.max(...arrayData);
+
+      if (states.columnTitle !== '') {
+        dispatch('ToAddBoard', [
+          ...boardData.value,
+          {
+            boardId: max + 1,
+            title: states.columnTitle,
+          },
+        ]);
+
+        states.columnTitle = '';
+        addColumn.value = false;
+      } else {
+        alert('Please Enter a Column Ttile');
+      }
+    };
+
+    const showModal = dataList => {
+      states.modalVisible = !states.modalVisible;
+      states.checklistData = dataList;
+    };
+
+    const onBoardEditable = (e, id, title) => {
+      e.preventDefault();
+      states.boardEditable = true;
+      states.boardTitle = title;
+      states.titleBoardId = id;
+    };
+
+    const onBoardEditableHide = id => {
+      boardData.value.map(board => {
+        if (board.boardId === id) {
+          board.title = document.querySelector(`input[name="titile-edit${id}"]`).value;
+        }
+        return board;
+      });
+      dispatch('ToAddBoard', boardData.value);
+      states.boardEditable = false;
+      states.titleBoardId = '';
+    };
+
+    const deleteColumnHandler = id => {
+      const afterDeleteData = boardData.value.filter(board => board.boardId !== id);
+      const confirm = window.confirm('Are You sure to delete this?');
+      if (confirm) {
+        dispatch('ToAddBoard', afterDeleteData);
+      }
+      return false;
+    };
+
+    const handleCancel = () => {
+      states.modalVisible = false;
+    };
+
     return {
+      handleCancel,
+      deleteColumnHandler,
+      onBoardEditableHide,
+      onBoardEditable,
+      showModal,
+      addColumnHandler,
+      addTaskHandler,
+      onTaskTitleDelete,
+      onBackShadow,
+      onTaskTitleUpdate,
+      onBackShadowHide,
+      handleOffAddTask,
+      handleOnAddTask,
       activeAddOption,
       rtl,
       boardData,
       tasks,
       addColumn,
       states,
-      ...states,
-      boardId,
+      ...toRefs(states),
       onColumnTitleChange,
       diActiveAddOption,
     };

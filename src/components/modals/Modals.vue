@@ -44,13 +44,18 @@ export default {
     visible: VueTypes.bool.def(false),
     confirmLoading: VueTypes.bool.def(false),
     title: VueTypes.string,
-    className: VueTypes.string.def('atbd-modal'),
+    class: VueTypes.string.def('atbd-modal'),
     type: VueTypes.oneOf(['primary', 'secondary', 'success', 'error', 'danger', 'info', 'white', 'warning']).def(
       'white',
     ),
     footer: VueTypes.oneOf([null]),
     width: VueTypes.number.def(620),
     color: VueTypes.oneOfType([VueTypes.bool, VueTypes.string]).def(false),
+  },
+  data() {
+    return {
+      className: this.class,
+    };
   },
 };
 </script>
