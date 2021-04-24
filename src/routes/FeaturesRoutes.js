@@ -35,7 +35,7 @@ export default [
       {
         path: 'google-chart',
         name: 'googleChart',
-        component: () => import('@/view/charts/GoogleCharts.vue'),
+        component: () => import(/* webpackChunkName: "google-chart" */ '@/view/charts/GoogleCharts.vue'),
       },
       {
         path: 'chart-js',
