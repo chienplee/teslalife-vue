@@ -42,7 +42,15 @@
             </div>
 
             <sdCards title="Lookup-Patterns - Uncertain Category">
-              <sdAutoComplete :dataSource="searchData" @onSearch="patternSearch" width="100%" patterns patternButtons />
+              <div class="autocomplete-with-btn">
+                <sdAutoComplete
+                  :dataSource="searchData"
+                  @onSearch="patternSearch"
+                  width="100%"
+                  patterns
+                  patternButtons
+                />
+              </div>
             </sdCards>
           </a-col>
         </a-row>

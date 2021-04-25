@@ -36,7 +36,7 @@
               <template v-slot:description>
                 <span> Customize <a href="#API">Description</a> </span>
               </template>
-              <sdButton size="default" :outlined="true" type="primary">
+              <sdButton size="small" type="primary">
                 Create Now
               </sdButton>
             </a-empty>

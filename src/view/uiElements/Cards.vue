@@ -58,11 +58,11 @@
           </sdCards>
         </a-col>
         <a-col :xs="24">
-          <sdCards title="Basic card" size="default">
+          <sdCards title="No border" size="default">
             <a-col :lg="8" :md="10" :xs="24" :style="{ padding: 0 }">
               <CardStyleWrapper>
                 <sdCards
-                  title="No border"
+                  title="Default size card"
                   :border="false"
                   size="default"
                   :moreText="true"
@@ -83,7 +83,7 @@
           </sdCards>
         </a-col>
         <a-col :xs="24">
-          <sdCards title="Basic card" size="default">
+          <sdCards title="Simple card" size="default">
             <a-col :lg="8" :md="10" :xs="24" :style="{ padding: 0 }">
               <CardStyleWrapper>
                 <sdCards :headless="true" :border="true" :style="{ width: 400 }">
@@ -98,7 +98,7 @@
         <a-col :xs="24">
           <sdCards title="Card In Column" size="default">
             <div class="columnCardsWrapper">
-              <a-row :gutter="16">
+              <a-row :gutter="30">
                 <a-col :sm="8" :xs="24">
                   <CardStyleWrapper>
                     <sdCards :border="false" title="Card title">
@@ -127,14 +127,14 @@
         <a-col :xs="24">
           <div class="card-grid-wrap">
             <sdCards title="Grid Card" size="default">
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
-              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: 24 }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
+              <a-card-grid :style="{ width: '25%', textAlign: 'center', padding: '24px' }">Content</a-card-grid>
             </sdCards>
           </div>
         </a-col>
