@@ -13,6 +13,7 @@ export const PageHeader = {
     routes: VueTypes.object,
     buttons: VueTypes.array,
     ghost: VueTypes.bool,
+    breadcrumb: VueTypes.array.def([]),
   },
 
   render() {
@@ -30,7 +31,7 @@ export const PageHeader = {
             class={this.class}
             title={this.title || this.$slots.title()}
             subTitle={this.subTitle || (this.$slots.subTitle ? this.$slots.subTitle() : null)}
-            breadcrumb={this.routes && this.routes}
+            breadcrumb={this.breadcrumb && this.breadcrumb}
             ghost={this.ghost}
             extra={this.$slots.buttons && this.$slots.buttons()}
           ></PageHeaderStyle>
