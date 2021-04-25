@@ -44,19 +44,14 @@
         <a-col :md="24" :xs="24">
           <sdCards title="Breadcrumb header">
             <PageHeaderWrapper>
-              <sdPageHeader
-                bgColor="#fff"
-                title="Title"
-                subTitle="This is a subtitle"
-                :routes="{ props: { routes } }"
-              />
+              <sdPageHeader bgColor="#fff" title="Title" :breadcrumb="{ routes }" subTitle="This is a subtitle" />
             </PageHeaderWrapper>
           </sdCards>
         </a-col>
         <a-col :md="24" :xs="24">
           <sdCards title="Extra Content header">
             <PageHeaderWrapper>
-              <sdPageHeader bgColor="#fff" title="Title" subTitle="This is a subtitle" :routes="{ props: { routes } }">
+              <sdPageHeader :breadcrumb="{ routes }" bgColor="#fff" title="Title" subTitle="This is a subtitle">
                 <template v-slot:buttons>
                   <a-space>
                     <sdButton size="small" type="default">
