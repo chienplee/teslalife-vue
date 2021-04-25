@@ -42,6 +42,32 @@
 
         <li class="has-subMenu">
           <a href="#" class="parent">
+            Crud
+          </a>
+          <ul class="subMenu">
+            <li class="has-subMenu-left">
+              <a href="#" class="parent">
+                <sdFeatherIcons type="database" />
+                Axios Crud
+              </a>
+              <ul class="subMenu">
+                <li @click="addParentActive">
+                  <router-link to="/crud/axios-view">
+                    View All
+                  </router-link>
+                </li>
+                <li @click="addParentActive">
+                  <router-link to="/crud/axios-add">
+                    Add New
+                  </router-link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="has-subMenu">
+          <a href="#" class="parent">
             Apps
           </a>
           <ul class="subMenu">
