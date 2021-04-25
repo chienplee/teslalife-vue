@@ -63,7 +63,7 @@ const ChatApp = {
   components: { Main, UL, Content, ChatSidebar },
   setup() {
     const { state } = useStore();
-    const match = computed(() => useRoute().matched[0]);
+    const match = computed(() => useRoute().matched[1]);
     const rtl = computed(() => state.themeLayout.rtlData);
     const searchData = computed(() => state.headerSearchData);
     const left = computed(() => (!rtl.value ? 'left' : 'right'));
