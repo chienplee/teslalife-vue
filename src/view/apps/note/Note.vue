@@ -190,7 +190,7 @@ const Note = {
     const { state, dispatch } = useStore();
     const noteData = computed(() => state.note.data);
     const { matched } = useRoute();
-    const { path } = matched[0];
+    const { path } = matched[1];
 
     const visible = ref(false);
     const modalType = ref('primary');

@@ -262,7 +262,7 @@ export default {
       modeChangeTopNav,
       modeChangeSideNav,
     };
-    console.log(topMenu.value);
+    //console.log(topMenu.value);
     return {
       toggleCollapsed,
       handleSearchHide,

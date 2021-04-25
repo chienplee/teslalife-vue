@@ -51,10 +51,10 @@
                   v-if="(innerWidth <= 991 && innerWidth >= 768) || innerWidth > 575"
                   class="product-list-action__viewmode"
                 >
-                  <router-link :to="`${path}/product/grid`">
+                  <router-link :to="`${path}/ecommerce/product/grid`">
                     <sdFeatherIcons type="grid" size="16" />
                   </router-link>
-                  <router-link :to="`${path}/product/list`">
+                  <router-link :to="`${path}/ecommerce/product/list`">
                     <sdFeatherIcons type="list" size="16" />
                   </router-link>
                 </div>
@@ -83,7 +83,7 @@ const Product = {
     const { state, dispatch } = useStore();
     const searchData = computed(() => state.headerSearchData);
     const { matched } = useRoute();
-    const { path } = matched[0];
+    const { path } = matched[1];
     const active = ref('active');
     const onSorting = e => {
       dispatch('sorting', e.target.value);

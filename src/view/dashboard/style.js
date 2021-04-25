@@ -1772,6 +1772,9 @@ const SalesGrowthWrap = Styled.div`
             color: ${({ theme }) => theme['gray-color']};
         }
     }
+    canvas{
+        margin-bottom: 0 !important;
+    }
 `;
 
 const TopSellerWrap = Styled.div`

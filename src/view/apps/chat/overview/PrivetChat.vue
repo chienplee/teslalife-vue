@@ -38,7 +38,7 @@ const PrivateChat = {
   components: { BlockSpan },
   setup() {
     const { state, dispatch } = useStore();
-    const match = computed(() => useRoute().matched[0]);
+    const match = computed(() => useRoute().matched[1]);
     const chatData = computed(() =>
       state.chat.privetChat.data.sort((a, b) => {
         return b.time - a.time;

@@ -368,6 +368,7 @@ const WizardsSix = {
     const isFinished = ref(false);
     const isVertical = ref(true);
     const current = ref(1);
+
     onMounted(() => {
       dispatch('cartGetData');
     });
@@ -537,35 +538,50 @@ const WizardsSix = {
         {
           title: '',
           content: 'account',
-        },
-        {
-          title: '',
-          content: 'address',
-        },
-        {
-          title: '',
-          content: 'method',
-        },
-        {
-          title: '',
-          content: 'review',
-        },
-      ],
-      wizardItem: [
-        {
-          title: 'Create Account',
+          subTitle: 'Create Account',
           description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
           path: 'img/wizards/1.svg',
         },
         {
-          title: 'Shipping Address',
+          title: '',
+          content: 'address',
+          subTitle: 'Shipping Address',
           description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
           path: 'img/wizards/1-1.svg',
         },
         {
-          title: 'Payment Method',
+          title: '',
+          content: 'method',
+          subTitle: 'Payment Method',
           description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
           path: 'img/wizards/2.svg',
+        },
+        {
+          title: '',
+          content: 'review',
+          subTitle: 'Review Order',
+          description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
+          path: 'img/wizards/3.svg',
+        },
+      ],
+      wizardItem: [
+        {
+          key: 0,
+        },
+        {
+          key: 1,
+        },
+        {
+          key: 2,
+        },
+        {
+          key: 3,
+        },
+        {
+          key: 4,
+          title: 'fafafa',
+          description: 'dfdfa',
+          path: 'img/wizards/4.svg',
         },
       ],
       handleAccountSubmit,

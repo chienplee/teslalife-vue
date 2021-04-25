@@ -2,7 +2,7 @@ import Styled from 'vue3-styled-components';
 import { Table } from 'ant-design-vue';
 
 const Style = Styled(Table)`
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
   .ant-table{
     padding-bottom: 30px;
     border-radius: 10px;
@@ -123,7 +123,7 @@ const Style = Styled(Table)`
     }
   }
 
-  
+
   .ant-table-tbody{
     .ant-table-cell{
       white-space: normal !important;
@@ -193,7 +193,7 @@ const Style = Styled(Table)`
     z-index: 1;
     ${({ theme }) => (!theme.rtl ? 'right' : 'left')}: 0;
   }
-  
+
 `;
 
 const small = ({ rtl }) => {
@@ -271,7 +271,7 @@ const MailBox = Styled.div`
     position: absolute;
     bottom: 15%;
     ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 25px;
-    width: 95%;    
+    width: 95%;
   }
   input{
     padding: 15px 0;
@@ -457,6 +457,10 @@ const EmailNav = Styled.nav`
             color: ${({ theme }) => theme['primary-color']};
           }
         }
+        &.active{
+          background: rgba(95, 99, 242, 0.1);
+          color: rgb(95, 99, 242);
+        }
       }
 
       &:hover{
@@ -598,7 +602,7 @@ const MessageAction = Styled.div`
 
 const EmailAuthor = Styled.div`
   display: flex;
-  align-items: center;  
+  align-items: center;
   svg{
     color: ${({ theme }) => theme['extra-light-color']};
   }
@@ -758,6 +762,9 @@ const MessageDetails = Styled.div`
       &:hover{
         background: rgba(95,99,242,0.05);
       }
+      i{
+        line-height: 0;
+      }
     }
   }
   .message-author{
@@ -826,7 +833,7 @@ const MessageDetails = Styled.div`
         }
       }
       &.starActive {
-        color: ${({ theme }) => theme['warning-color']} !important;       
+        color: ${({ theme }) => theme['warning-color']} !important;
         i:before,
         span.fa:before{
           content: "\f005";

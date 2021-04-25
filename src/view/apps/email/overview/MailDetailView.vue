@@ -72,7 +72,7 @@
                 <div>
                   <sdHeading as="h4">{{ email.userName }}</sdHeading>
                   <sdDropdown placement="bottomCenter">
-                    <template #content>
+                    <template #overlay>
                       <ul class="mail-props">
                         <li>
                           <span>From:</span> <span>{{ email.from }}</span>

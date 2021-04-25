@@ -38,7 +38,7 @@
           </ul>
         </div>
       </template>
-      <div class="table-bordered top-seller-table table-responsive">
+      <div class="table-bordered top-seller-table table-recent-orders table-responsive">
         <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
       </div>
     </sdCards>

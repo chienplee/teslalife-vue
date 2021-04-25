@@ -85,7 +85,7 @@ const MyProfile = {
   components: { Main, UserCards, UserBio, CoverSection, SettingWrapper },
   setup() {
     const { matched } = useRoute();
-    const { path } = matched[0];
+    const { path } = matched[1];
     return {
       path,
     };

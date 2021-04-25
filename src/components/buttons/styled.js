@@ -37,7 +37,7 @@ const ghosts = theme => {
           background: transparent;
           border: 1px solid ${theme['border-color-normal']} !important;
           color: ${theme['border-color-normal']} !important;
-            
+
           &:hover, &:focus {
               background: #ffffff50 !important;
               border: 1px solid transparent !important;

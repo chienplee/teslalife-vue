@@ -7,9 +7,11 @@ const Div = Styled('div', props)`
         ${({ darkMode }) => (darkMode ? `background: #272B41;` : '')};
         z-index: 999;
 
-        .ant-btn-link{
+        .ant-btn-white{
             ${({ darkMode }) =>
-              darkMode ? `background: #272B41;border-color: #272B41;color: #7D808D !important` : ''};
+              darkMode
+                ? `background: #272B41 !important; border-color: #272B41 !important; color: #7D808D !important`
+                : ''};
         }
 
         .head-example{
@@ -231,10 +233,12 @@ const Div = Styled('div', props)`
     }
 
     .navbar-brand{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         button{
             padding: ${({ theme }) => (theme.rtl ? '0 15px 0 25px !important' : '0 25px 0 15px !important')};
-            line-height: 0;
-            margin-top: 4px;
+            line-height: 0;0
             color: ${({ theme }) => theme['extra-light-color']};
             @media only screen and (max-width: 875px){
                 padding: ${({ theme }) => (theme.rtl ? '0 10px 0 25px !important' : '0 25px 0 10px !important')};
@@ -257,11 +261,11 @@ const Div = Styled('div', props)`
                 .ant-menu{
                     .ant-menu-submenu-inline{
                         > .ant-menu-submenu-title{
-                            padding: 0 30px !important;
+                            padding: 0 15px !important;
                         }
                     }
                     .ant-menu-item{
-                        padding: 0 30px !important;
+                        padding: 0 15px !important;
                     }
                 }
             }
@@ -276,6 +280,7 @@ const Div = Styled('div', props)`
             .ant-menu{
                 /* overflow-x: hidden; */
                 ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0 none;
+                box-shadow: none !important;
                 .ant-menu-submenu, .ant-menu-item{
                     i{
                         line-height: normal;
