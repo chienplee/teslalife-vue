@@ -267,7 +267,7 @@ const SingleChatWrapper = Styled.div`
           text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
         }
         .message-box{
-          
+
           ${({ theme }) => (!theme.rtl ? 'border-radius: 15px 15px 0 15px;' : 'border-radius: 15px 15px 15px 0')};
           background: ${({ theme }) => theme['bg-color-deep']};
           color: ${({ theme }) => theme['gray-color']};
@@ -361,7 +361,7 @@ const Footer = Styled.div`
       flex-flow: column;
     }
     .smile-icon{
-      position: relative; 
+      position: relative;
       position: absolute;
       ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: 25px;
       top: 50%;
@@ -400,7 +400,7 @@ const Footer = Styled.div`
           padding: 15px;
         }
       }
-      
+
     }
     .ant-upload-list{
       display: flex;
@@ -564,7 +564,7 @@ const ChatSidebar = Styled.div`
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 20px #9299B803;
-  
+
   .custom-scrollbar{
     >div{
       @media only screen and (max-width: 1800px){

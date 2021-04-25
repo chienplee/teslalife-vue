@@ -19,7 +19,7 @@
             </router-link>
           </template>
           <a to="#">
-            <sdFeatherIcons type="more-vertical" />
+            <sdFeatherIcons size="24" type="more-vertical" />
           </a>
         </sdDropdown>
       </template>
@@ -28,12 +28,12 @@
         <p>Active Now</p>
       </template>
       <ul class="atbd-chatbox" v-if="singleContent.length">
-        <div v-for="({ time, img, email, content }, index) in singleContent" :key="time">
+        <li v-for="({ time, img, email, content }, index) in singleContent" :key="time" class="atbd-chatbox__single">
           <p v-if="index === 1" class="time-connector text-center text-capitalize">
             <span>today</span>
           </p>
 
-          <li class="atbd-chatbox__single" :key="id" :style="{ overflow: 'hidden' }">
+          <div :key="id" :style="{ overflow: 'hidden' }">
             <div :class="email !== me ? 'left' : 'right'">
               <img v-if="email !== me" :src="require(`../../../../static/img/chat-author/${img}`)" alt="" />
 
@@ -195,8 +195,8 @@
                 </div>
               </div>
             </div>
-          </li>
-        </div>
+          </div>
+        </li>
       </ul>
       <p v-else>No data found</p>
       <Footer>
