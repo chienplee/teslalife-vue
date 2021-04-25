@@ -23,7 +23,7 @@
       >
         <template #description>
           <div class="wizard-item" v-for="(wizard, index) in wizardItem" :key="index">
-            <template v-if="index === parseInt(currents)">
+            <template v-if="index === currents">
               <h2>{{ wizard.title }}</h2>
               <p>{{ wizard.description }}</p>
               <img :src="require('../../static/' + wizard.path)" alt="" />

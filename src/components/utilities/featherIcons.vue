@@ -5,6 +5,7 @@
 <script>
 import { icons } from 'feather-icons';
 import VueTypes from 'vue-types';
+import { toRefs, watchEffect, ref } from 'vue';
 
 export default {
   name: 'FeatherIcons',
@@ -16,17 +17,31 @@ export default {
     color: VueTypes.string,
     fill: VueTypes.string.def('transparent'),
   },
-  data() {
-    return {
-      myClass: this.class,
-      activity: icons[this.type].toSvg({
-        'stroke-width': this.stroke,
-        width: this.size,
-        height: this.size,
-        class: this.class,
-        color: this.color,
-        fill: this.fill,
+  setup(props) {
+    const { size, color, fill, type, stroke } = toRefs(props);
+
+    let activity = ref(
+      icons[type.value].toSvg({
+        'stroke-width': stroke.value,
+        width: size.value,
+        height: size.value,
+        color: color.value,
+        fill: fill.value,
       }),
+    );
+
+    watchEffect(() => {
+      activity.value = icons[type.value].toSvg({
+        'stroke-width': stroke.value,
+        width: size.value,
+        height: size.value,
+        color: color.value,
+        fill: fill.value,
+      });
+    });
+
+    return {
+      activity,
     };
   },
 };
