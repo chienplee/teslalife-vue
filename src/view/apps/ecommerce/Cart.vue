@@ -68,7 +68,8 @@ const ShoppingCart = {
       current.value = current;
     };
     const isExact = ref(true);
-    isExact.value = matched[1].name === 'exact' ? true : false;
+    isExact.value = matched[3].name === 'exact' ? true : false;
+
     onBeforeRouteUpdate(async to => {
       isExact.value = to.name === 'exact' ? true : false;
     });
@@ -80,7 +81,7 @@ const ShoppingCart = {
       current,
       subtotal,
       onHandleCurrent,
-      path: matched[0].path,
+      path: matched[2].path,
       isExact,
     };
   },
