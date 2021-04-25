@@ -53,13 +53,13 @@ const Style = Styled(Alert, props)`
 
   ${({ showIcon, theme }) =>
     showIcon &&
-    `padding: 16px 40px 20px!important;
+    `padding: 16px 15px 20px!important;
     .alert-empty-message{
       padding: 11px 40px 11px!important;      
     }
     .ant-alert-icon{
-      top: 20px !important;
-      ${theme.rtl ? 'right' : 'left'}: 15px !important;
+      top: 5px !important;
+      ${theme.rtl ? 'right' : 'left'}: 0px !important;
     }
     .ant-alert-message{
       margin-top: -2px;

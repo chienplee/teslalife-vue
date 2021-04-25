@@ -29,11 +29,7 @@
           <sdCards title="Size">
             <CasCaderStyleWrapper>
               <sdCascader size="large" :onChange="onChange" />
-            </CasCaderStyleWrapper>
-            <CasCaderStyleWrapper>
               <sdCascader size="default" :onChange="onChange" />
-            </CasCaderStyleWrapper>
-            <CasCaderStyleWrapper>
               <sdCascader size="small" :onChange="onChange" />
             </CasCaderStyleWrapper>
           </sdCards>
