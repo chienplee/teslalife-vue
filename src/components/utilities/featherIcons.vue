@@ -13,6 +13,8 @@ export default {
     size: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(16),
     stroke: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(2),
     class: VueTypes.string,
+    color: VueTypes.string,
+    fill: VueTypes.string.def('transparent'),
   },
   data() {
     return {
@@ -22,6 +24,8 @@ export default {
         width: this.size,
         height: this.size,
         class: this.class,
+        color: this.color,
+        fill: this.fill,
       }),
     };
   },

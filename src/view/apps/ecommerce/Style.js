@@ -39,6 +39,9 @@ const NotFoundWrapper = Styled.div`
 `;
 
 const SidebarSingle = Styled.div`
+    &:not(:last-child){
+        margin-bottom: 32px;
+    }
     h1{
         font-size: 15px;
         margin-bottom: 20px;
@@ -49,6 +52,7 @@ const SidebarSingle = Styled.div`
     }
     .price-range-text{
         font-weight: 500;
+        margin-bottom: 0;
     }
     .atbd-category-list{
         li{
@@ -104,6 +108,10 @@ const SidebarSingle = Styled.div`
                     }
                     .ant-rate{
                         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
+                        svg{
+                            width: 13px !important;
+                            height: 13px !important;
+                        }
                     }
                 }
                 .rating-right{
@@ -127,7 +135,7 @@ const ProductCard = Styled.div`
     border-radius: 10px;
     background-color: #fff;
     position: relative;
-    
+
     @media only screen and (max-width: 767px){
         max-width: 350px;
         margin: 0 auto;
@@ -401,8 +409,11 @@ const TopToolBox = Styled.div`
             padding: 0 12.5px;
         }
         &.ant-radio-button-wrapper-checked{
-            &:focus-within{
-                box-shadow: 0 0;
+            box-shadow: none !important;
+            outline: 0 !important;
+            &:focus{
+                box-shadow: none !important;
+                outline: 0 !important;
             }
         }
         &:not(:first-child){
@@ -453,7 +464,7 @@ const TopToolBox = Styled.div`
     .product-list-action__tab{
         margin: -10px;
         color: ${({ theme }) => theme['gray-color']};
-        
+
         @media only screen and (max-width: 767px){
             margin-bottom: 15px;
             text-align: center;
@@ -552,7 +563,7 @@ const TopToolBox = Styled.div`
 const PaginationWrapper = Styled.div`
     display: flex;
     justify-content: flex-end;
-    
+
     @media only screen and (max-width: 767px){
         margin-top: 0px !important
     }
@@ -564,13 +575,13 @@ const PaginationWrapper = Styled.div`
         .ant-pagination-item,
         .ant-pagination-options .ant-select-selector{
             border: 1px solid ${({ theme }) => theme['border-color-light']} !important;
-            color: ${({ theme }) => theme['gray-color']};            
+            color: ${({ theme }) => theme['gray-color']};
         }
         .ant-pagination-item a{
             color: ${({ theme }) => theme['gray-color']};
         }
     }
-    
+
 `;
 
 const ProductDetailsWrapper = Styled.div`
@@ -1216,7 +1227,7 @@ const AddProductForm = Styled.div`
     .ant-select-arrow{
         ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 11px;
     }
-    
+
     .ant-table table {
         text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
     }

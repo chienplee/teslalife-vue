@@ -5,7 +5,7 @@
       <img :src="require(`../../../../../${renderData.img}`)" :alt="`img${renderData.id}`" />
     </figure>
     <figcaption>
-      <a @click="() => dispatch(updateWishList(renderData.id))" class="btn-heart" to="#">
+      <a @click="() => addWishList(renderData.id)" class="btn-heart" to="#">
         <sdFeatherIcons
           type="heart"
           size="14"
@@ -14,7 +14,9 @@
         />
       </a>
       <sdHeading class="product-single-title" as="h5">
-        <router-link :to="`${matched[0].path}/productDetails/${renderData.id}`">{{ renderData.name }}</router-link>
+        <router-link :to="`${matched[1].path}/ecommerce/productDetails/${renderData.id}`">{{
+          renderData.name
+        }}</router-link>
       </sdHeading>
       <p class="product-single-price">
         <span class="product-single-price__new">${{ renderData.price }} </span>
@@ -60,12 +62,16 @@ const ProductCards = {
     const { product } = toRefs(props);
     const renderData = computed(() => product.value);
     const { matched } = useRoute();
+    const addWishList = value => {
+      dispatch('updateWishList', value);
+    };
 
     return {
       dispatch,
       renderData,
       isLoader,
       matched,
+      addWishList,
     };
   },
 };

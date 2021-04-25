@@ -482,6 +482,7 @@ const Main = Styled.div`
         span.fa{
           font-size: 16px;
           color: ${({ theme }) => theme['extra-light-color']};
+          line-height: 0;
         }
         &.starDeactivate{
           i:before{
