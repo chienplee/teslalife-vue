@@ -368,6 +368,7 @@ const WizardsSix = {
     const isFinished = ref(false);
     const isVertical = ref(true);
     const current = ref(1);
+
     onMounted(() => {
       dispatch('cartGetData');
     });
@@ -566,6 +567,16 @@ const WizardsSix = {
           title: 'Payment Method',
           description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
           path: 'img/wizards/2.svg',
+        },
+        {
+          title: 'Review Order',
+          description: 'Lorem Ipsum is simply dummy text of the dummy typesetting industry.',
+          path: 'img/wizards/3.svg',
+        },
+        {
+          title: '',
+          description: '',
+          path: 'img/wizards/4.svg',
         },
       ],
       handleAccountSubmit,

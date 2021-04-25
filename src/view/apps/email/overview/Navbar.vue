@@ -60,7 +60,7 @@
         </li>
 
         <li class="add-label-btn" @click="addNewLabels" role="menuitem">
-          <router-link @click="addNewLabels" :to="`${path}newLabels`">
+          <router-link @click="addNewLabels" to="#">
             <sdFeatherIcons type="plus" size="18" /> Add New Label
           </router-link>
 

@@ -28,22 +28,22 @@
           <sdHeading as="h5">{{ name }}</sdHeading>
           <div class="members">
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#">
-              <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+              <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
             </a>
             <a to="#" class="show-more">
               <span>20+</span>
@@ -64,11 +64,11 @@
 
           <div :key="id" :style="{ overflow: 'hidden' }">
             <div :class="email !== me ? 'left' : 'right'">
-              <img v-if="email !== me" :src="require(`../../../../static/img/avatar/chat-auth.png`)" alt="" />
+              <img v-if="email !== me" :src="require(`@/static/img/avatar/chat-auth.png`)" alt="" />
 
               <div class="atbd-chatbox__content">
                 <sdHeading as="h5" class="atbd-chatbox__name">
-                  {{ email !== me && name }}
+                  {{ email !== me ? name : null }}
                   <span>{{
                     moment(time).format('MM-DD-YYYY') === moment().format('MM-DD-YYYY')
                       ? moment(id).format('hh:mm A')
@@ -219,12 +219,12 @@
                 </div>
 
                 <div v-if="singleContent.length === index + 1" class="group-seen">
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
-                  <img :src="require('../../../../static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
+                  <img :src="require('@/static/img/avatar/chat-auth.png')" alt="" />
                 </div>
               </div>
             </div>

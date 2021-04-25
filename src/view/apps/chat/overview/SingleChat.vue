@@ -35,11 +35,11 @@
 
           <div :key="id" :style="{ overflow: 'hidden' }">
             <div :class="email !== me ? 'left' : 'right'">
-              <img v-if="email !== me" :src="require(`../../../../static/img/chat-author/${img}`)" alt="" />
+              <img v-if="email !== me" :src="require(`@/static/img/chat-author/${img}`)" alt="" />
 
               <div class="atbd-chatbox__content">
                 <sdHeading as="h5" class="atbd-chatbox__name">
-                  {{ email !== me && name }}
+                  {{ email !== me ? name : null }}
                   <span>{{
                     moment(time).format('MM-DD-YYYY') === moment().format('MM-DD-YYYY')
                       ? moment(id).format('hh:mm A')
@@ -191,7 +191,7 @@
 
                 <div v-if="email === me && singleContent.length === index + 1" class="message-seen text-right">
                   <span class="message-seen__time">Seen 9:20 PM </span>
-                  <img :src="`../../../../static/img/chat-author/${img}`" alt="" />
+                  <img :src="`@/static/img/chat-author/${img}`" alt="" />
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@
           <div :class="`chatbox-reply-form d-flex ${fileList.length && 'hasImage'} ${fileList2.length && 'hasFile'}`">
             <div class="chatbox-reply-input">
               <span class="smile-icon">
-                <Picker v-if="pickerShow" :onEmojiClick="onEmojiClick" />
+                <EmojiPickerPlugin v-if="pickerShow" :onEmojiClick="onEmojiClick" />
                 <router-link @click="onPickerShow" to="#">
                   <sdFeatherIcons type="smile" size="24" />
                 </router-link>
@@ -241,7 +241,7 @@
 </template>
 <script>
 import moment from 'moment';
-import Picker from 'vue-emoji-picker';
+import { EmojiPickerPlugin } from 'vue-emoji-picker';
 import { SingleChatWrapper, MessageList, BackShadowEmoji, Footer } from '../style';
 import { useStore } from 'vuex';
 import { computed, ref } from 'vue';
@@ -250,7 +250,7 @@ import { useRoute } from 'vue-router';
 
 const SingleChat = {
   name: 'SingleChat',
-  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer },
+  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, EmojiPickerPlugin },
   setup() {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
@@ -351,7 +351,6 @@ const SingleChat = {
       fileList2,
       pickerShow,
       moment,
-      Picker,
     };
   },
 };
