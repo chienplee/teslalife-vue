@@ -40,8 +40,6 @@
               </a-form-item>
             </a-form>
           </sdCards>
-        </a-col>
-        <a-col :lg="12" :xs="24">
           <sdCards title="Select" class="mb-25">
             <a-form name="sDash_Select" layout="vertical">
               <a-form-item label="Basic Select">
@@ -139,6 +137,7 @@ import { CheckListWrap } from './overview/Style';
 import GridForm from './overview/GridForm';
 import SizedForm from './overview/SizedForm';
 import InputForm from './overview/InputForm';
+import { ref } from 'vue';
 export default {
   name: 'FormElement',
   components: {
@@ -148,24 +147,27 @@ export default {
     InputForm,
     CheckListWrap,
   },
-  data() {
-    return {
-      headers: {
-        authorization: 'authorization-text',
-      },
-    };
-  },
-  methods: {
-    handleChange(info) {
+  setup() {
+    const handleChange = info => {
       if (info.file.status !== 'uploading') {
-        //console.log(info.file, info.fileList);
+        console.log(info.file, info.fileList);
       }
+
       if (info.file.status === 'done') {
         message.success(`${info.file.name} file uploaded successfully`);
       } else if (info.file.status === 'error') {
         message.error(`${info.file.name} file upload failed.`);
       }
-    },
+    };
+
+    const fileList = ref([]);
+    return {
+      fileList,
+      headers: {
+        authorization: 'authorization-text',
+      },
+      handleChange,
+    };
   },
 };
 </script>
