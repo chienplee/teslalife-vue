@@ -37,6 +37,7 @@
                     changeType('primary');
                   }
                 "
+                size="small"
                 type="primary"
                 >Primary</sdButton
               >
@@ -47,6 +48,7 @@
                     changeType('success');
                   }
                 "
+                size="small"
                 type="success"
                 >Success</sdButton
               >
@@ -57,6 +59,7 @@
                     changeType('warning');
                   }
                 "
+                size="small"
                 type="warning"
                 >Warning</sdButton
               >
@@ -67,6 +70,7 @@
                     changeType('error');
                   }
                 "
+                size="small"
                 type="error"
                 >Error</sdButton
               >
@@ -102,6 +106,7 @@
                     changeType('primary');
                   }
                 "
+                size="small"
                 type="primary"
                 >Primary</sdButton
               >
@@ -112,6 +117,7 @@
                     changeType('success');
                   }
                 "
+                size="small"
                 type="success"
                 >Success</sdButton
               >
@@ -122,6 +128,7 @@
                     changeType('warning');
                   }
                 "
+                size="small"
                 type="warning"
                 >Warning</sdButton
               >
@@ -132,6 +139,7 @@
                     changeType('error');
                   }
                 "
+                size="small"
                 type="error"
                 >Error</sdButton
               >
@@ -146,7 +154,7 @@
               feedback or display information. Additionally
             </p>
             <sdModal
-              title="Color Modal"
+              title="Information Modal"
               :color="true"
               :type="modalType"
               :onOk="handleOk"
@@ -160,10 +168,10 @@
               </p>
             </sdModal>
             <a-space>
-              <sdButton type="info" @click="info"> Info </sdButton>
-              <sdButton type="success" @click="success"> Success </sdButton>
-              <sdButton type="error" @click="error"> Error </sdButton>
-              <sdButton type="warning" @click="warning"> Warning </sdButton>
+              <sdButton type="info" size="small" @click="info"> Info </sdButton>
+              <sdButton type="success" size="small" @click="success"> Success </sdButton>
+              <sdButton type="error" size="small" @click="error"> Error </sdButton>
+              <sdButton type="warning" size="small" @click="warning"> Warning </sdButton>
             </a-space>
           </sdCards>
         </a-col>

@@ -3,60 +3,60 @@ import { Card } from 'ant-design-vue';
 
 const BtnWraper = theme => `
     .ant-card-head {
-      display: flex !important;
-      justify-content: space-evenly !important;
+      display: flex;
+      justify-content: space-evenly;
       .ant-card-head-wrapper{
-        width: 100% !important;
+        width: 100%;
       }
       .ant-tabs.ant-tabs-top.ant-card-head-tabs.ant-tabs-large.ant-tabs-line{
-        width: 100% !important;
-        display: block !important;
+        width: 100%;
+        display: block;
       }
       .ant-tabs-nav-scroll {
-        display: flex !important;
-        justify-content: flex-end !important;
+        display: flex;
+        justify-content: flex-end;
       }
       .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
-        display: none !important !important;
+        display: none;
       }
       .ant-tabs-nav .ant-tabs-tab {
-        border-radius: 2px !important;
-        height: 30px !important;
-        margin: 0px !important;
-        ${theme.rtl ? 'margin-right' : 'margin-left'}: -1px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        border: 1px solid ${theme['border-color-base']} !important;
-        background: #fff !important;
+        border-radius: 2px;
+        height: 30px;
+        margin: 0px;
+        ${theme.rtl ? 'margin-right' : 'margin-left'}: -1px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid ${theme['border-color-base']};
+        background: #fff;
         span svg {
-          ${theme.rtl ? 'padding-right' : 'padding-left'}: 5px !important;
+          ${theme.rtl ? 'padding-right' : 'padding-left'}: 5px;
         }
       }
       .ant-tabs-nav .ant-tabs-tab-active {
-        font-weight: 500 !important;
-        border: 1px solid ${theme['primary-color']} !important;
-        background: ${theme['primary-color']} !important;
-        color: #fff !important;
-        border-radius: 2px !important;
-        height: 30px !important;
-        margin: 0px !important;
-        display: inline-flex !important;
-        align-items: center !important;
+        font-weight: 500;
+        border: 1px solid ${theme['primary-color']};
+        background: ${theme['primary-color']};
+        color: #fff;
+        border-radius: 2px;
+        height: 30px;
+        margin: 0px;
+        display: inline-flex;
+        align-items: center;
       }
       .ant-tabs-bar {
-        border: none !important;
+        border: none;
       }
       .ant-tabs-nav-wrap {
-        margin-bottom: 0px !important;
-        overflow: hidden !important;
+        margin-bottom: 0px;
+        overflow: hidden;
     }
     }
     .ant-card-head .ant-tabs.ant-tabs-top.ant-card-head-tabs.ant-tabs-large.ant-tabs-line {
-      width: 100% !important;
-      display: block !important;
-      justify-content: flex-end !important;
-      height: 73px !important;
-      padding-top: 8px !important;
+      width: 100%;
+      display: block;
+      justify-content: flex-end;
+      height: 73px;
+      padding-top: 8px;
   }
 `;
 const props = ['isbutton', 'bodypadding'];
@@ -64,67 +64,67 @@ const props = ['isbutton', 'bodypadding'];
 const CardFrame = Styled(Card, props)`
   ${({ isbutton, theme }) => isbutton && BtnWraper(theme)}
 
-  margin-bottom: 25px !important;
+  margin-bottom: 25px;
   .ant-card-head{
-    border-color: #F1F2F6 !important;
+    border-color: #F1F2F6;
   }
   .ant-card-head .ant-card-head-title {
-    padding: 18px 0 !important;
+    padding: 16.5px 0;
   }
   .ant-card-head-title .ant-page-header-heading-title{
-    font-weight: 500 !important;
+    font-weight: 500;
   }
   .ant-card-body{
-    padding: ${({ bodypadding }) => (bodypadding ? `${bodypadding} !important` : '25px')} !important;
+    padding: ${({ bodypadding }) => (bodypadding ? `${bodypadding}` : '25px')};
     table{
       .ant-tag{
-        line-height: 18px !important;
-        border: 0 none !important;
-        text-transform: uppercase !important;
-        font-size: 10px !important;
-        color: #fff !important;
+        line-height: 18px;
+        border: 0 none;
+        text-transform: uppercase;
+        font-size: 10px;
+        color: #fff;
         &.early{
-          background: ${({ theme }) => theme['primary-color']} !important;
+          background: ${({ theme }) => theme['primary-color']};
         }
         &.late{
-          background: ${({ theme }) => theme['warning-color']} !important;
+          background: ${({ theme }) => theme['warning-color']};
         }
         &.complete{
-          background: ${({ theme }) => theme['success-color']} !important;
+          background: ${({ theme }) => theme['success-color']};
         }
         &.progress{
-          background: ${({ theme }) => theme['danger-color']} !important;
+          background: ${({ theme }) => theme['danger-color']};
         }
       }
     }
   }
   .ant-card.ant-card-bordered {
-      border-radius: 5px !important;
-      overflow: hidden !important;
-      border: none !important;
+      border-radius: 4px;
+      overflow: hidden;
+      border: none;
   }
   .custom-label {
-    font-size: 13px !important;
-    color: #868eae !important;
-    display: inline-flex !important;
-    align-items: center !important;
+    font-size: 13px;
+    color: #868eae;
+    display: inline-flex;
+    align-items: center;
   }
   .custom-label:not(:last-child) {
-    ${({ theme }) => (theme.rtl ? ' margin-left' : ' margin-right')} : 20px !important;
+    ${({ theme }) => (theme.rtl ? ' margin-left' : ' margin-right')} : 20px;
   }
 
   .custom-label span {
-    width: 8px !important;
-    height: 8px !important;
-    border-radius: 50% !important;
-    ${({ theme }) => (theme.rtl ? ' margin-left' : ' margin-right')}: 7px !important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    ${({ theme }) => (theme.rtl ? ' margin-left' : ' margin-right')}: 7px;
   }
 
 
   .ant-card-extra .ant-dropdown-trigger {
     line-height: 0;
     order: 1;
-    ${({ theme }) => (!theme.rtl ? ' margin-left' : ' margin-right')}: 20px !important;
+    ${({ theme }) => (!theme.rtl ? ' margin-left' : ' margin-right')}: 20px;
   }
 
   .growth-downward h1 sub,

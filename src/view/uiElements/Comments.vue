@@ -29,7 +29,7 @@
                       @click="like"
                     />
                   </a-tooltip>
-                  <span style="padding-left: '8px'; cursor: 'auto'">
+                  <span class="comment-ld-action">
                     {{ likes }}
                   </span>
                 </span>
@@ -42,7 +42,7 @@
                       @click="dislike"
                     />
                   </a-tooltip>
-                  <span style="padding-left: '8px'; cursor: 'auto'">
+                  <span class="comment-ld-action">
                     {{ dislikes }}
                   </span>
                 </span>
@@ -173,7 +173,7 @@
           </sdCards>
         </a-col>
 
-        <a-col :xs="24">
+        <a-col :xs="12">
           <sdCards title="Reply Editor">
             <a-list
               v-if="comments.length"
@@ -198,9 +198,14 @@
               </template>
               <template v-slot:content>
                 <a-textarea :rows="4" :value="value" @change="handleChange" />
-                <br />
-                <br />
-                <sdButton html-type="submit" :load="true" type="primary" @click="handleSubmit">
+                <sdButton
+                  html-type="submit"
+                  class="add-comment"
+                  size="large"
+                  :load="true"
+                  type="primary"
+                  @click="handleSubmit"
+                >
                   Add Comment
                 </sdButton>
               </template>

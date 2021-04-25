@@ -13,7 +13,6 @@ const AutoCompleteStyled = Styled(AutoComplete, props)`
     .ant-select-selector{
         display: flex;
         align-items: center;
-        height: 37px !important;
         padding: 0 !important;
         border-color: #E3E6EF !important;
         .ant-select-selection-search{
@@ -23,14 +22,19 @@ const AutoCompleteStyled = Styled(AutoComplete, props)`
             .ant-input-suffix{
                 svg,
                 i{
+                    position: relative;
+                    top: 1.5px;
                     color: ${({ theme }) => theme['extra-light-color']};
                 }
             }
         }
     }
     .ant-select-selector input{
-        height: 33px !important;
+        height: 35px !important;
         ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 0 !important;
+        &::placeholder{
+            color: ${({ theme }) => theme['extra-light-color']} !important;
+        }
     }
     .ant-select-selection-search{
         ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 20px;
@@ -41,6 +45,7 @@ const AutoCompleteStyled = Styled(AutoComplete, props)`
     }
     .ant-select-selection-search textarea.ant-input{
         padding: 12px 20px;
+        height: 50px;
     }
     .ant-input-affix-wrapper{
         padding: 0 20px;

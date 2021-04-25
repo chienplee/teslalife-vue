@@ -512,7 +512,8 @@ ul {
   font-weight: 500;
 }
 
-.ant-picker-input > input::placeholder {
+.ant-calendar-picker-input::placeholder,
+.ant-calendar-range-picker-input::placeholder{
   color: #adb4d2 !important;
 }
 
@@ -1746,8 +1747,8 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 
 /* page heading */
 
-.ant-page-header {
-  padding: 26px 30px 26px 30px !important;
+.ant-layout-content .ant-page-header {
+  padding: 28px 30px 28px 30px;
 }
 
 .ant-page-header.header-boxed {

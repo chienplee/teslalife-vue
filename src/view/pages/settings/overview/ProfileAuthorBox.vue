@@ -19,19 +19,19 @@
     <nav class="settings-menmulist">
       <ul>
         <li>
-          <router-link :to="`${path}/profile`">
+          <router-link :to="{ name: 'set-profile' }">
             <sdFeatherIcons type="user" size="14" />
             Edit Profile
           </router-link>
         </li>
         <li>
-          <router-link :to="`${path}/account`">
+          <router-link :to="{ name: 'set-account' }">
             <sdFeatherIcons type="settings" size="14" />
             Account Settings
           </router-link>
         </li>
         <li>
-          <router-link :to="`${path}/password`">
+          <router-link :to="{ name: 'set-password' }">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -52,13 +52,13 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="`${path}/social`">
+          <router-link :to="{ name: 'set-social' }">
             <sdFeatherIcons type="users" size="14" />
             Social Profile
           </router-link>
         </li>
         <li>
-          <router-link :to="`${path}/notification`">
+          <router-link :to="{ name: 'set-notification' }">
             <sdFeatherIcons type="bell" size="14" /> Notification
           </router-link>
         </li>
@@ -70,10 +70,5 @@
 export default {
   name: 'AuthorBox',
   components: {},
-  data() {
-    return {
-      path: this.$route.matched[0].path,
-    };
-  },
 };
 </script>
