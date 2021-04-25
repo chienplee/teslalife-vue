@@ -574,8 +574,8 @@ const WizardsSix = {
           path: 'img/wizards/3.svg',
         },
         {
-          title: '',
-          description: '',
+          title: 'fafafa',
+          description: 'dfdfa',
           path: 'img/wizards/4.svg',
         },
       ],

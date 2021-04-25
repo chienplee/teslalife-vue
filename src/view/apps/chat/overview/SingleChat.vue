@@ -204,7 +204,8 @@
           <div :class="`chatbox-reply-form d-flex ${fileList.length && 'hasImage'} ${fileList2.length && 'hasFile'}`">
             <div class="chatbox-reply-input">
               <span class="smile-icon">
-                <EmojiPickerPlugin v-if="pickerShow" :onEmojiClick="onEmojiClick" />
+                <!-- <EmojiPickerPlugin v-if="pickerShow" :onEmojiClick="onEmojiClick" /> -->
+                <EmojiPicker :emojiClick="onEmojiHandle" v-if="pickerShow" />
                 <router-link @click="onPickerShow" to="#">
                   <sdFeatherIcons type="smile" size="24" />
                 </router-link>
@@ -241,16 +242,16 @@
 </template>
 <script>
 import moment from 'moment';
-import { EmojiPickerPlugin } from 'vue-emoji-picker';
 import { SingleChatWrapper, MessageList, BackShadowEmoji, Footer } from '../style';
 import { useStore } from 'vuex';
 import { computed, ref } from 'vue';
 import { message } from 'ant-design-vue';
 import { useRoute } from 'vue-router';
+import EmojiPicker from '@/components/utilities/Emoji.vue';
 
 const SingleChat = {
   name: 'SingleChat',
-  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, EmojiPickerPlugin },
+  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, EmojiPicker },
   setup() {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
@@ -276,6 +277,10 @@ const SingleChat = {
       return (inputValue.value = inputValue.value + emojiObject.emoji);
     };
 
+    const onEmojiHandle = emoji => {
+      inputValue.value = inputValue.value + emoji;
+    };
+
     const onPickerShow = () => {
       pickerShow.value = !pickerShow.value;
     };
@@ -299,6 +304,7 @@ const SingleChat = {
     };
 
     return {
+      onEmojiHandle,
       rtl,
       handleSubmit,
       setPickerShow,

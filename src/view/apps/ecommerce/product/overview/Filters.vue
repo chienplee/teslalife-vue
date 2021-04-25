@@ -7,12 +7,12 @@
           Filters
         </span>
       </template>
-      <SidebarSingle :style="{ marginBottom: 32 }">
+      <SidebarSingle>
         <sdHeading as="h5">Price Range</sdHeading>
         <Slider @onChange="onChange" range :step="10" :defaultValues="[0, 1500]" />
         <p class="price-range-text">${{ min }} - ${{ max }}</p>
       </SidebarSingle>
-      <SidebarSingle :style="{ marginBottom: 32 }">
+      <SidebarSingle>
         <sdHeading as="h5">Category</sdHeading>
 
         <nav>
@@ -74,7 +74,7 @@
         </div>
       </SidebarSingle>
 
-      <SidebarSingle :style="{ marginBottom: 32 }">
+      <SidebarSingle>
         <sdHeading as="h5">Brands</sdHeading>
         <a-checkbox-group
           @change="onChangeBrand"

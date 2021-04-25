@@ -59,20 +59,24 @@
                     </div>
 
                     <div class="sDash_kanvan-task">
-                      <div
-                        v-for="item in tasks.filter(item => item.boardId === element.boardId)"
-                        :key="item.id"
-                        class="sDash_kanvan-task__single"
+                      <draggable
+                        class="list-group"
+                        :list="tasks.filter(item => item.boardId === element.boardId)"
+                        @move="log"
                       >
-                        <KanbanBoardItem
-                          :taskId="taskId"
-                          :onBackShadow="onBackShadow"
-                          :onTaskTitleUpdate="onTaskTitleUpdate"
-                          :onTaskTitleDelete="onTaskTitleDelete"
-                          :showModal="showModal"
-                          :data="item"
-                        />
-                      </div>
+                        <template #item="{element}">
+                          <div :key="element.id" class="sDash_kanvan-task__single">
+                            <KanbanBoardItem
+                              :taskId="taskId"
+                              :onBackShadow="onBackShadow"
+                              :onTaskTitleUpdate="onTaskTitleUpdate"
+                              :onTaskTitleDelete="onTaskTitleDelete"
+                              :showModal="showModal"
+                              :data="element"
+                            />
+                          </div>
+                        </template>
+                      </draggable>
                     </div>
 
                     <div
@@ -363,7 +367,12 @@ const Kanban = {
       };
     }
 
+    const log = evt => {
+      console.log(evt);
+    };
+
     return {
+      log,
       getComponentData,
       dragAbleBoardData,
       handleCancel,
