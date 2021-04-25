@@ -203,8 +203,12 @@ const Main = Styled.div`
     }
 
     .ant-collapse > .ant-collapse-item .ant-collapse-header .ant-collapse-arrow{
-
         font-size: 8px;
+        color: ${({ theme }) => theme['light-color']};
+        svg,
+        i{
+            color: ${({ theme }) => theme['light-color']};
+        }
     }
 
     .ant-collapse .ant-collapse {
@@ -223,6 +227,14 @@ const Main = Styled.div`
         margin: 20px 0 10px 0;
         border: 1px solid #E3E6EF;
         border-radius: 0;
+    }
+
+    // Ant Collapse Borderless
+
+    .ant-collapse.ant-collapse-borderless{
+        .ant-collapse-item{
+            background-color: #F8F9FB !important;
+        }
     }
 
     /* // Ant Radio */
@@ -588,7 +600,7 @@ const Main = Styled.div`
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
     }
 
-    // Ant comment action
+    // Ant comment
     .ant-comment-actions{
         li{
             position: relative;
@@ -609,8 +621,27 @@ const Main = Styled.div`
             .com-time{
                 cursor: default;
             }
+            >span{
+                padding-right: 0;
+            }
             span{
                 margin-right: 0;
+            }
+        }
+
+        .comment-ld-action{
+            padding-left: 8px;
+            cursor: auto;
+        }
+    }
+
+    .ant-comment{
+        .ant-comment-content{
+            .add-comment{
+                margin-top: 25px;
+                font-size: 14px;
+                padding: 0px 25px;
+                box-shadow: 0 8px 13px ${({ theme }) => theme['primary-color']}20;
             }
         }
     }
@@ -768,7 +799,6 @@ const ButtonsGroupWrapper = Styled.div`
     }
     .button-group-single .ant-btn-light{
         border: 1px solid #E3E6EF;
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
         ${({ theme }) => (theme.rtl ? 'border-left-width' : 'border-right-width')}: 0px;
         font-weight: 500;
         color: ${({ theme }) => theme['extra-light-color']} !important;
@@ -809,15 +839,28 @@ const BtnWithIcon = Styled.div`
 
 const AlertList = Styled.div`
     margin-top: -15px;
+
+    .ant-alert{
+        .ant-alert-icon{
+            position: relative;
+        }
+        &.ant-alert-with-description{
+            .ant-alert-icon{
+                font-size: 15px;
+                margin-right: 10px;
+            }
+        }
+    }
+
     .alert-empty-message{
         .ant-alert{
-            padding: 10px 40px 10px!important;
+            padding: 10px 40px 10px 15px !important;
             &.ant-alert-no-icon{
                 padding: 10px 20px 10px!important;
             }
         }
         .ant-alert-icon{
-            top: 15px !important;
+            top: 5px !important;
         }
         .ant-alert-message{
             display: none !important;
@@ -834,6 +877,22 @@ const AutoCompleteWrapper = Styled.div`
             width: 200px !important;
             @media only screen and (max-width: 575px){
                 width: 100% !important;
+            }
+        }
+    }
+
+    .autocomplete-with-btn{
+        .ant-input-suffix{
+            position: absolute;
+            right: 0;
+            top: -1px;
+            .search-btn{
+                padding: 0px 12px !important;
+                border-radius: 0 4px 4px  0 !important;
+                height: 40px !important;
+                i{
+                    top: -2px !important;
+                }
             }
         }
     }
@@ -861,16 +920,18 @@ const CalendarWrapper = Styled.div`
 `;
 
 const DatePickerWrapper = Styled.div`
-    .ant-picker{
-        padding: 6px 11px 6px;
+    .ant-calendar-picker{
         width: 100%;
         border-color: #E3E6EF;
         border-radius: 5px;
+        .ant-calendar-picker-input{
+            padding: 6px 11px 6px;
+        }
     }
-    .ant-picker:not(:last-child){
+    .ant-calendar-picker:not(:last-child){
         margin-bottom: 20px;
     }
-    .ant-picker-input > input{
+    .ant-calendar-picker > input{
         color: #5A5F7D;
     }
     .ant-picker-range .ant-picker-input > input{

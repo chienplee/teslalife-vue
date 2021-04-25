@@ -17,38 +17,38 @@
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Basic">
-            <a-button type="primary" @click="openNotification">
+            <sdButton type="primary" size="small" @click="openNotification">
               Open the notification box
-            </a-button>
+            </sdButton>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Custom style">
-            <a-button type="primary" @click="openNotificationCustom">
+            <sdButton type="primary" size="small" @click="openNotificationCustom">
               Open the notification box
-            </a-button>
+            </sdButton>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Custom Icon">
-            <a-button type="primary" @click="openNotificationIcon">
+            <sdButton type="primary" size="small" @click="openNotificationIcon">
               Open the notification box
-            </a-button>
+            </sdButton>
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Notification with icon">
             <a-space>
-              <sdButton type="success" @click="() => openNotificationWithIcon('success')">
+              <sdButton type="success" size="small" @click="() => openNotificationWithIcon('success')">
                 Success
               </sdButton>
-              <sdButton type="info" @click="() => openNotificationWithIcon('info')">
+              <sdButton type="info" size="small" @click="() => openNotificationWithIcon('info')">
                 Info
               </sdButton>
-              <sdButton type="warning" @click="() => openNotificationWithIcon('warning')">
+              <sdButton type="warning" size="small" @click="() => openNotificationWithIcon('warning')">
                 Warning
               </sdButton>
-              <sdButton type="error" @click="() => openNotificationWithIcon('error')">
+              <sdButton type="error" size="small" @click="() => openNotificationWithIcon('error')">
                 Error
               </sdButton>
             </a-space>
@@ -57,26 +57,26 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Placement">
             <a-space>
-              <a-button type="primary" @click="openNotificationPlacement('topLeft')">
+              <sdButton type="primary" size="small" @click="openNotificationPlacement('topLeft')">
                 <RadiusUpleftOutlined />
 
                 topLeft
-              </a-button>
-              <a-button type="primary" @click="openNotificationPlacement('topRight')">
+              </sdButton>
+              <sdButton type="primary" size="small" @click="openNotificationPlacement('topRight')">
                 <RadiusUprightOutlined />
                 topRight
-              </a-button>
+              </sdButton>
             </a-space>
             <a-divider />
             <a-space>
-              <a-button type="primary" @click="openNotificationPlacement('bottomLeft')">
+              <sdButton type="primary" size="small" @click="openNotificationPlacement('bottomLeft')">
                 <RadiusBottomleftOutlined />
                 bottomLeft
-              </a-button>
-              <a-button type="primary" @click="openNotificationPlacement('bottomRight')">
+              </sdButton>
+              <sdButton type="primary" size="small" @click="openNotificationPlacement('bottomRight')">
                 <RadiusBottomrightOutlined />
                 bottomRight
-              </a-button>
+              </sdButton>
             </a-space>
           </sdCards>
         </a-col>

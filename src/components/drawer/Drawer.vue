@@ -1,6 +1,6 @@
 <template>
   <div v-if="type == 'basic'">
-    <sdButton type="primary" @click="showDrawer">{{ btnText }}</sdButton>
+    <sdButton type="primary" :raised="true" @click="showDrawer">{{ btnText }}</sdButton>
     <a-drawer
       :title="title"
       :placement="placement"
@@ -18,7 +18,7 @@
       <a-radio value="bottom">bottom</a-radio>
       <a-radio value="left">left</a-radio>
     </a-radio-group>
-    <sdButton type="primary" @click="showDrawer">{{ btnText }}</sdButton>
+    <sdButton type="primary" :raised="true" @click="showDrawer">{{ btnText }}</sdButton>
     <a-drawer :title="title" :placement="customPlacement" :closable="false" :visible="visible" @close="onClose">
       <slot></slot>
     </a-drawer>
@@ -29,17 +29,14 @@
       height: '200px',
       overflow: 'hidden',
       position: 'relative',
-      border: '1px solid #ebedf0',
-      borderRadius: '2px',
       padding: '48px',
       textAlign: 'center',
-      background: '#fafafa',
       width: '100%',
     }"
   >
     Render in this
     <div style="margin-top: 16px">
-      <sdButton type="primary" @click="showDrawer">Open</sdButton>
+      <sdButton type="primary" :raised="true" @click="showDrawer">Open</sdButton>
     </div>
     <a-drawer
       :title="title"
@@ -55,7 +52,7 @@
   </div>
 
   <div v-if="type == 'submit'">
-    <sdButton type="primary" @click="showDrawer">
+    <sdButton type="primary" :raised="true" @click="showDrawer">
       <PlusOutlined />
       New account
     </sdButton>

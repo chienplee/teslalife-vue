@@ -1,7 +1,7 @@
 import Styled from 'vue3-styled-components';
 
 const CascaderStyle = Styled.div`
-    margin: 15px 0;
+    margin: 20px 0;
     .ant-input{
         padding: 5.5px 20px;
     }

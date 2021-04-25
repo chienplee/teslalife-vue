@@ -4,7 +4,7 @@ const DropdownStyle = Styled.div`
   .ant-card-body .ant-btn {
     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
       margin-bottom: 10px;
-      height: 36px;
+      height: 36px !important;
       font-weight: 400;
       border-color: #E3E6EF;
       padding: 0px 19px;
@@ -163,6 +163,10 @@ const BreadcrumbWrapperStyle = Styled.div`
   .ant-breadcrumb{
     color: #5A5F7D;
     .ant-breadcrumb-link{
+      i{
+        position: relative;
+        top: 2px;
+      }
       .anticon{
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 2px !important;
       }
@@ -223,7 +227,7 @@ const BadgeDynamicStyle = Styled.div`
       &:first-child{
         z-index: 22;
         ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
-  theme['border-color-normal']};
+  theme['border-color-normal']} !important;
       }
     }
 
@@ -243,6 +247,12 @@ const BadgeDynamicStyle = Styled.div`
   .ant-switch-checked .ant-switch-handle{
     ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: calc(100% - 14px - 5px);
   }
+  &:after{
+    top: 3px;
+  }
+}
+.ant-switch-checked{
+  background-color: ${({ theme }) => theme['info-color']};
 }
 `;
 
@@ -253,9 +263,6 @@ const CardStyleWrapper = Styled.div`
 .ant-card-head{
   border-color: #E3E6EF;
   background: #F8F9FB;
-}
-.ant-card-head .ant-card-head-title{
-  padding: 12px 0;
 }
 .ant-card-head .ant-card-extra{
   display: block;
@@ -271,14 +278,14 @@ const CardStyleWrapper = Styled.div`
   color: #5F63F2;
 }
 .ant-card-body{
-  padding: 22px 25px 15px 25px !important
+  padding: 22px 25px 16px 25px !important
 }
 .ant-card-body p{
   margin-bottom: 4px;
   color: ${({ theme }) => theme['gray-color']};
 }
 .ant-card.ant-card-bordered {
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
   background: #fff;
   border: 1px solid #E3E6EF !important;
@@ -287,6 +294,9 @@ const CardStyleWrapper = Styled.div`
   font-size: 16px;
   padding-left: 15px !important;
   padding-right: 15px !important;
+  .ant-card-head-title{
+    padding: 10.5px 0;
+  }
 }
 .ant-card-small > .ant-card-body{
   padding: 12px 15px 8px 15px !important
@@ -294,6 +304,7 @@ const CardStyleWrapper = Styled.div`
 `;
 
 const CasCaderStyleWrapper = Styled.div`
+  margin: -20px 0;
   .ant-cascader-picker{
     display: block;
     width: fit-content;
