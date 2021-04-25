@@ -265,6 +265,9 @@ const ProductCard = Styled.div`
     .product-single-rating{
         font-size: 12px;
         font-weight: 500;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         .ant-rate{
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 5px;
         }
@@ -275,6 +278,9 @@ const ProductCard = Styled.div`
             font-weight: 400;
             ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
             color: ${({ theme }) => theme['light-color']};
+        }
+        svg{
+            width: 13px;
         }
     }
     .product-single-action{
