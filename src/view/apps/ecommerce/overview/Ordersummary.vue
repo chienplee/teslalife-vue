@@ -32,23 +32,23 @@
               <span class="summary-list-text">{{ `$${30}` }}</span>
             </li>
           </ul>
-          <a-form :onFinish="submitPromo">
+          <a-form :model="formState" :onFinish="submitPromo">
             <a-form-item name="couponType" label="">
-              <a-select v-model="formcouponType" :style="{ width: '100%' }">
+              <a-select v-model:value="couponType" :style="{ width: '100%' }">
                 <a-select-option value="">
-                  <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Select Coupon
+                  <span> <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Select Coupon </span>
                 </a-select-option>
                 <a-select-option value="one">
-                  <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Coupon one
+                  <span> <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Coupon one </span>
                 </a-select-option>
                 <a-select-option value="tow">
-                  <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Coupon tow
+                  <span> <img :src="require('@/static/img/Subtraction1.png')" alt="" /> Coupon tow </span>
                 </a-select-option>
               </a-select>
             </a-form-item>
             <div class="promo-apply-form">
               <a-form-item name="promoCode" label="Promo Code">
-                <a-input v-model="formpromoCode" placeholder="Promo Code" />
+                <a-input v-model:value="promoCode" placeholder="Promo Code" />
               </a-form-item>
               <a-form-item>
                 <sdButton htmlType="submit" size="default" type="success" outlined>
@@ -78,7 +78,7 @@
   </sdCards>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, reactive, ref, toRefs } from 'vue';
 import { useStore } from 'vuex';
 import { OrderSummary } from '../Style';
 
@@ -96,6 +96,11 @@ const OrdersSummary = {
       promo.value = values;
     };
 
+    const formState = reactive({
+      couponType: '',
+      promoCode: '',
+    });
+
     const onSubmit = () => {
       document.querySelectorAll('button span').forEach(item => {
         if (item.innerHTML === 'Done') {
@@ -110,6 +115,7 @@ const OrdersSummary = {
       current,
       coupon,
       rtl,
+      ...toRefs(formState),
     };
   },
 };

@@ -24,43 +24,43 @@
             </sdCards>
             <sdCards title="Event menu">
               <sdPopover action="hover" placement="bottomLeft">
-                <a to="#">hover me </a>
+                <sdButton type="primary" size="smalll">hover </sdButton>
               </sdPopover>
               <sdPopover action="click" placement="bottom">
-                <a to="#">click </a>
+                <sdButton type="primary" size="smalll">click </sdButton>
               </sdPopover>
             </sdCards>
           </a-col>
           <a-col :md="12" :xs="24">
             <sdCards title="Placement">
               <sdPopover placement="bottomLeft">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Bottom Left
                 </sdButton>
               </sdPopover>
               <sdPopover placement="bottom">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Bottom Center
                 </sdButton>
               </sdPopover>
               <sdPopover placement="bottomRight">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Bottom Right
                 </sdButton>
               </sdPopover>
               <br />
               <sdPopover placement="topLeft">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Top Left
                 </sdButton>
               </sdPopover>
               <sdPopover placement="top">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Top Center
                 </sdButton>
               </sdPopover>
               <sdPopover placement="topRight">
-                <sdButton class="btn-outlined" size="small" :outlined="true" type="light">
+                <sdButton size="small" type="primary">
                   Top Right
                 </sdButton>
               </sdPopover>

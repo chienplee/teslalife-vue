@@ -30,8 +30,9 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Placement">
-            <div id="components-a-popconfirm-demo-placement">
+            <div id="components-a-popconfirm-demo-placement" class="placement-confirm">
               <div
+                class="pop-confirm pop-confirm-top"
                 :style="{
                   [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth}px`,
                   whiteSpace: 'nowrap',
@@ -42,24 +43,25 @@
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>TL</a-button>
+                  <sdButton type="white" size="default" :outlined="true">TL</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="top" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>Top</a-button>
+                  <sdButton type="white" size="default" :outlined="true">Top</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="topRight" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>TR</a-button>
+                  <sdButton type="white" size="default" :outlined="true">TR</sdButton>
                 </a-popconfirm>
               </div>
               <div
+                className="pop-confirm pop-confirm-left"
                 :style="{
                   width: `${buttonWidth}px`,
                   float: !rtl ? 'left' : 'right',
@@ -70,24 +72,25 @@
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>LT</a-button>
+                  <sdButton type="white" size="default" :outlined="true">LT</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="left" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>Left</a-button>
+                  <sdButton type="white" size="default" :outlined="true">Left</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="leftBottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>LB</a-button>
+                  <sdButton type="white" size="default" :outlined="true">LB</sdButton>
                 </a-popconfirm>
               </div>
               <div
+                className="pop-confirm pop-confirm-right"
                 :style="{
                   width: `${buttonWidth}px`,
                   [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth * 4 + 24}px`,
@@ -98,24 +101,25 @@
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>RT</a-button>
+                  <sdButton type="white" size="default" :outlined="true">RT</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="right" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>Right</a-button>
+                  <sdButton type="white" size="default" :outlined="true">Right</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="rightBottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>RB</a-button>
+                  <sdButton type="white" size="default" :outlined="true">RB</sdButton>
                 </a-popconfirm>
               </div>
               <div
+                className="pop-confirm pop-confirm-bottom"
                 :style="{
                   [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth}px`,
                   clear: 'both',
@@ -127,21 +131,21 @@
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>BL</a-button>
+                  <sdButton type="white" size="default" :outlined="true">BL</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="bottom" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>Bottom</a-button>
+                  <sdButton type="white" size="default" :outlined="true">Bottom</sdButton>
                 </a-popconfirm>
                 <a-popconfirm placement="bottomRight" ok-text="Yes" cancel-text="No" @confirm="confirm">
                   <template v-slot:title>
                     <p>{{ text }}</p>
                     <p>{{ text }}</p>
                   </template>
-                  <a-button>BR</a-button>
+                  <sdButton type="white" size="default" :outlined="true">BR</sdButton>
                 </a-popconfirm>
               </div>
             </div>
@@ -164,7 +168,7 @@ export default {
   },
   data() {
     return {
-      buttonWidth: 70,
+      buttonWidth: 90,
       text: 'Are you sure to delete this task?',
     };
   },
@@ -183,12 +187,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-#components-a-popconfirm-demo-placement .ant-btn {
-  width: 70px;
-  text-align: center;
-  padding: 0;
-  margin-right: 8px;
-  margin-bottom: 8px;
-}
-</style>
