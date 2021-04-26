@@ -16,7 +16,7 @@
     <Main>
       <a-row :gutter="25">
         <a-col :md="24" :xs="24">
-          <sdCards title="Leaflet Basic Map">
+          <sdCards title="World Map">
             <WorldMap :options="options" />
           </sdCards>
         </a-col>

@@ -71,6 +71,27 @@ const actions = {
     }
   },
 
+  async axiosDataSearch({ commit }, searchItem) {
+    try {
+      await commit('axiosReadBegin');
+      if (searchItem != '') {
+        const query = await DataService.get(`/search/${searchItem}`);
+        await commit('axiosReadSuccess', query.data.data);
+      } else {
+        try {
+          const query = await DataService.get('/view-all');
+          await commit('axiosReadSuccess', query.data.data);
+        } catch (err) {
+          console.log(err);
+          await commit('axiosReadErr', err);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      await commit('axiosReadErr', err);
+    }
+  },
+
   async axiosFileClear({ commit }) {
     try {
       await commit('axiosUploadBegin');
