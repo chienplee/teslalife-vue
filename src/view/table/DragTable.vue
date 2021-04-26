@@ -7,7 +7,7 @@
             <template #item="{element}">
               <tr>
                 <td style="width: 30px">
-                  <sdFeatherIcons class="handle" :style="{ cursor: 'pointer', color: '#999' }" type="move" />
+                  <sdFeatherIcons classes="handle" :style="{ cursor: 'pointer', color: '#999' }" type="move" />
                 </td>
                 <td scope="row">
                   <div class="user-info">
