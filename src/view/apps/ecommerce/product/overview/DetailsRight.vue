@@ -160,7 +160,7 @@ const DetailsRight = {
 
     const decrementQuantity = e => {
       e.preventDefault();
-      if (quantity.value !== 5) quantity.value = quantity.value - 1;
+      if (quantity.value !== 1) quantity.value = quantity.value - 1;
     };
 
     const isLoader = computed(() => state.ecommerce.isLoading);

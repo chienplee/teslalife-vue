@@ -237,7 +237,7 @@ const Main = Styled.div`
         }
     }
 
-    /* // Ant Radio */
+    // Ant Radio
     .ant-radio-button-wrapper{
         height: 48px;
         line-height: 46px;
@@ -253,7 +253,48 @@ const Main = Styled.div`
         }
     }
 
+    .ant-radio-group-small{
+        .ant-radio-button-wrapper{
+            height: 30px;
+            padding: 0 7px;
+            line-height: 28px;
+        }
+    }
+
+    // Ant Result
+    .ant-result{
+        .ant-result-icon{
+            > .anticon{
+                font-size: 50px;
+            }
+        }
+    }
+    .ant-result-title{
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: center;
+        color: ${({ theme }) => theme['dark-color']};
+    }
+
+    .ant-result-subtitle{
+        color: #5a5f7d;
+        font-size: 12px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .ant-result-extra{
+        margin-top: 24px;
+    }
+
     /* // Select */
+    .sDash-select-vertical-list{
+        .ant-select{
+            &:not(:last-child){
+                margin-bottom: 15px;
+            }
+        }
+    }
     .ant-tree-select .ant-select-selector{
         height: 42px;
     }
@@ -273,9 +314,6 @@ const Main = Styled.div`
                 ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
             }
         }
-        .ant-select-selection-item{
-            ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 10px !important;
-        }
         &.ant-select-lg{
             height: 50px;
             line-height: 48px;
@@ -287,9 +325,14 @@ const Main = Styled.div`
                 line-height: 48px !important;
                 ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
             }
-            &.ant-select-multiple.ant-select-lg .ant-select-selection-item{
-                height: 32px;
-                line-height: 32px !important;
+            &.ant-select-multiple {
+                .ant-select-selector{
+                    padding: 1px 5px 5px 10px !important;
+                }
+                .ant-select-selection-item{
+                    height: 32px;
+                    line-height: 32px !important;
+                }
             }
         }
         &.ant-select-multiple.ant-select-sm{
@@ -297,6 +340,16 @@ const Main = Styled.div`
                 height: 16px;
                 line-height: 14px;
                 font-size: 11px;
+            }
+        }
+    }
+
+    .ant-select-multiple {
+        .ant-select-selector{
+            padding: 0 5px 0 10px !important;
+            .ant-select-selection-item{
+                height: 24px;
+                line-height: 22px;
             }
         }
     }
@@ -522,6 +575,15 @@ const Main = Styled.div`
         }
     }
 
+
+    .ant-rate{
+        .ant-rate-star{
+            svg{
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
 
     .ant-rate-content{
         font-weight: 500;

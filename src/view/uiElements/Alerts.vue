@@ -243,7 +243,7 @@ export default {
     Main,
     AlertList,
   },
-  data() {
+  setup() {
     return {
       theme,
     };

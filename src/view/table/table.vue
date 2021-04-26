@@ -23,10 +23,10 @@
         <a-col :xs="12">
           <RevenueGenerated />
         </a-col>
-        <!-- 
-          <a-col :xs="24">
-            <DragAndDropTable />
-          </a-col> -->
+
+        <a-col :xs="24">
+          <DragAndDropTable />
+        </a-col>
       </a-row>
     </Main>
   </div>
@@ -40,6 +40,7 @@ import TrafficChannel from '../../view/dashboard/overview/performance/TrafficCha
 import TopLandingPages from '../../view/dashboard/overview/performance/TopLandingPages';
 import TopSellingProduct from '../../view/dashboard/overview/ecommerce/TopSellingProduct';
 import RevenueGenerated from '../../view/dashboard/overview/ecommerce/RevenueGenerated';
+import DragAndDropTable from '../table/DragTable';
 export default {
   name: 'Tables',
   components: {
@@ -50,6 +51,7 @@ export default {
     TopLandingPages,
     TopSellingProduct,
     RevenueGenerated,
+    DragAndDropTable,
   },
 };
 </script>
