@@ -274,6 +274,11 @@ const ProductCard = Styled.div`
         .ant-rate-star:not(:last-child) {
             ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 2px !important;
         }
+        .ant-rate-star{
+            div{
+                transform: none !important;
+            }
+        }
         .total-reviews{
             font-weight: 400;
             ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
@@ -287,7 +292,7 @@ const ProductCard = Styled.div`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        margin: 21px -5px -5px -5px;
+        margin: 15px -5px -5px -5px;
         button{
             margin: 5px;
         }
@@ -628,6 +633,9 @@ const ProductDetailsWrapper = Styled.div`
         }
         .ant-rate{
             margin-bottom: 6px;
+            svg{
+                width: 13px;
+            }
         }
         .ant-rate-star:not(:last-child){
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 2px !important;
@@ -1041,7 +1049,7 @@ const CouponForm = Styled.div`
         .ant-form-item{
             margin-bottom: 0;
         }
-        .ant-form-item-control-input-content{
+        .ant-form-item-control{
             input{
                 max-width: 180px;
                 ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 20px;
