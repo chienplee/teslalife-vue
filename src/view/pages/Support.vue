@@ -97,11 +97,8 @@
                 <sdCards headless title="Frequently Asked Questions">
                   <FaqWrapper>
                     <a-collapse :bordered="false" default-active-key="1">
-                      <template #expandIcon="props">
-                        <sdFeatherIcons v-if="props.isActive" type="plus" size="14" />
-                        <sdFeatherIcons v-else type="minus" size="14" />
-                      </template>
                       <a-collapse-panel
+                        :showArrow="false"
                         header="How long does it take to download updates?"
                         key="1"
                         :style="customPanelStyle"
@@ -127,6 +124,7 @@
                         </div>
                       </a-collapse-panel>
                       <a-collapse-panel
+                        :showArrow="false"
                         header="How to use SCSS variables to build custom color?"
                         key="2"
                         :style="customPanelStyle"
@@ -153,6 +151,7 @@
                         </div>
                       </a-collapse-panel>
                       <a-collapse-panel
+                        :showArrow="false"
                         header="How long does it take to download updates?"
                         key="3"
                         :style="customPanelStyle"
@@ -177,7 +176,12 @@
                           </sdButton>
                         </div>
                       </a-collapse-panel>
-                      <a-collapse-panel header="What is the flex layout?" key="4" :style="customPanelStyle">
+                      <a-collapse-panel
+                        :showArrow="false"
+                        header="What is the flex layout?"
+                        key="4"
+                        :style="customPanelStyle"
+                      >
                         <p>
                           Many support queries and technical questions will already be answered in supporting
                           documentation such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche
@@ -199,6 +203,7 @@
                         </div>
                       </a-collapse-panel>
                       <a-collapse-panel
+                        :showArrow="false"
                         header="How long does it take to download updates?"
                         key="5"
                         :style="customPanelStyle"
@@ -223,7 +228,12 @@
                           </sdButton>
                         </div>
                       </a-collapse-panel>
-                      <a-collapse-panel header="Where to buy this UI dashboard?" key="6" :style="customPanelStyle">
+                      <a-collapse-panel
+                        :showArrow="false"
+                        header="Where to buy this UI dashboard?"
+                        key="6"
+                        :style="customPanelStyle"
+                      >
                         <p>
                           Many support queries and technical questions will already be answered in supporting
                           documentation such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche
@@ -245,6 +255,7 @@
                         </div>
                       </a-collapse-panel>
                       <a-collapse-panel
+                        :showArrow="false"
                         header="How long does it take to download updates?"
                         key="7"
                         :style="customPanelStyle"
@@ -291,7 +302,7 @@ export default {
     SupportContentWrap,
     FaqWrapper,
   },
-  data() {
+  setup() {
     return {
       customPanelStyle: {
         background: '#ffffff',

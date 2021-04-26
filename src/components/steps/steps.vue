@@ -22,7 +22,7 @@
         :title="item.title"
       >
         <template #description>
-          <div class="wizard-item">
+          <div v-if="item.path" class="wizard-item">
             <h2>{{ item.subTitle }}</h2>
             <p>{{ item.description }}</p>
             <img :src="require('../../static/' + item.path)" alt="" />

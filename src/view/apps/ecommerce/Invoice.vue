@@ -147,7 +147,7 @@ const Invoice = {
           key: '1',
           row: '1',
           details: (
-            <>
+            <div>
               <div class="product-info">
                 <sdHeading class="product-info-title" as="h6">
                   Fiber Base Chair
@@ -163,7 +163,7 @@ const Invoice = {
                   </li>
                 </ul>
               </div>
-            </>
+            </div>
           ),
           unit: <span class="product-unit">$248.66</span>,
           quantity: <span class="product-quantity">3</span>,
@@ -173,7 +173,7 @@ const Invoice = {
           key: '2',
           row: '2',
           details: (
-            <>
+            <div>
               <div class="product-info">
                 <sdHeading class="product-info-title" as="h6">
                   Panton Tunior Chair
@@ -189,7 +189,7 @@ const Invoice = {
                   </li>
                 </ul>
               </div>
-            </>
+            </div>
           ),
           unit: <span class="product-unit">$248.66</span>,
           quantity: <span class="product-quantity">2</span>,
