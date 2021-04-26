@@ -332,6 +332,7 @@ const SelectWrapperStyle = Styled.div`
 `;
 
 const SelectRadioStyle = Styled.div`
+  margin-bottom: 20px;
   .ant-radio-button-wrapper{
     height: 42px !important;
     line-height: 40px !important;

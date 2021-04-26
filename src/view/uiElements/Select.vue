@@ -40,73 +40,71 @@
                 <a-radio-button value="small">Small</a-radio-button>
               </a-radio-group>
             </SelectRadioStyle>
-            <br />
-            <br />
-            <a-select :size="size" v-model:value="value4" style="width: 200px">
-              <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
-                {{ (i + 9).toString(36) + i }}
-              </a-select-option>
-            </a-select>
-            <br />
-            <a-select
-              mode="multiple"
-              :size="size"
-              placeholder="Please select"
-              v-model:value="value5"
-              style="width: 200px"
-              @popupScroll="popupScroll"
-            >
-              <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
-                {{ (i + 9).toString(36) + i }}
-              </a-select-option>
-            </a-select>
-            <br />
-            <a-select mode="tags" :size="size" placeholder="Please select" v-model:value="value6" style="width: 200px">
-              <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
-                {{ (i + 9).toString(36) + i }}
-              </a-select-option>
-            </a-select>
+            <div class="tag-select-list">
+              <a-select :size="size" v-model:value="value4" style="width: 200px">
+                <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
+                  {{ (i + 9).toString(36) + i }}
+                </a-select-option>
+              </a-select>
+              <a-select
+                mode="multiple"
+                :size="size"
+                placeholder="Please select"
+                v-model:value="value5"
+                style="width: 100%"
+                @popupScroll="popupScroll"
+              >
+                <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
+                  {{ (i + 9).toString(36) + i }}
+                </a-select-option>
+              </a-select>
+              <a-select mode="tags" :size="size" placeholder="Please select" v-model:value="value6" style="width: 100%">
+                <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
+                  {{ (i + 9).toString(36) + i }}
+                </a-select-option>
+              </a-select>
+            </div>
           </sdCards>
           <sdCards title="Custom">
-            <a-select v-model:value="value" style="width: 100%">
-              <template #dropdownRender="{ menuNode: menu }">
-                <v-nodes :vnodes="menu" />
-                <a-divider style="margin: 4px 0" />
-                <div style="padding: 4px 8px; cursor: pointer" @mousedown="e => e.preventDefault()" @click="addItem">
-                  <plus-outlined />
-                  Add item
-                </div>
-              </template>
-              <a-select-option v-for="item in items" :key="item" :value="item">
-                {{ item }}
-              </a-select-option>
-            </a-select>
-            <br />
-            <br />
-            <a-select
-              v-model:value="valueCountry"
-              mode="multiple"
-              style="width: 100%"
-              placeholder="select one country"
-              option-label-prop="label"
-            >
-              <a-select-option value="china" label="China">
-                <span role="img" aria-label="China">🇨🇳</span>
-                China
-              </a-select-option>
-              <a-select-option value="usa" label="USA">
-                <span role="img" aria-label="USA">🇺🇸</span>
-                USA
-              </a-select-option>
-              <a-select-option value="japan" label="Japan">
-                <span role="img" aria-label="Japan">🇯🇵</span>
-                Japan
-              </a-select-option>
-              <a-select-option value="korea" label="Korea">
-                <span role="img" aria-label="Korea">🇰🇷</span>
-                Korea
-              </a-select-option>
-            </a-select>
+            <div class="sDash-select-vertical-list">
+              <a-select v-model:value="value" style="width: 100%">
+                <template #dropdownRender="{ menuNode: menu }">
+                  <v-nodes :vnodes="menu" />
+                  <a-divider style="margin: 4px 0" />
+                  <div style="padding: 4px 8px; cursor: pointer" @mousedown="e => e.preventDefault()" @click="addItem">
+                    <plus-outlined />
+                    Add item
+                  </div>
+                </template>
+                <a-select-option v-for="item in items" :key="item" :value="item">
+                  {{ item }}
+                </a-select-option>
+              </a-select>
+              <a-select
+                v-model:value="valueCountry"
+                mode="multiple"
+                style="width: 100%"
+                placeholder="select one country"
+                option-label-prop="label"
+              >
+                <a-select-option value="china" label="China">
+                  <span role="img" aria-label="China">🇨🇳</span>
+                  China
+                </a-select-option>
+                <a-select-option value="usa" label="USA">
+                  <span role="img" aria-label="USA">🇺🇸</span>
+                  USA
+                </a-select-option>
+                <a-select-option value="japan" label="Japan">
+                  <span role="img" aria-label="Japan">🇯🇵</span>
+                  Japan
+                </a-select-option>
+                <a-select-option value="korea" label="Korea">
+                  <span role="img" aria-label="Korea">🇰🇷</span>
+                  Korea
+                </a-select-option>
+              </a-select>
+            </div>
           </sdCards>
           <sdCards title="Hide Already Selected">
             <a-select
@@ -291,7 +289,7 @@ export default defineComponent({
       popupScroll,
       size: ref('default'),
       value4: ref('a1'),
-      value5: ref(['a1', 'b2']),
+      value5: ref(['a10', 'b20']),
       value6: ref(['a1', 'b2']),
       value8: ref(['a1', 'b2']),
       groupValue: ref(['lucy']),

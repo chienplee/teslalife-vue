@@ -41,7 +41,7 @@
                 Option C
               </a-radio>
               <a-radio :style="radioStyle" :value="4">
-                More...
+                Others..
                 <a-input v-if="value === 4" :style="{ width: 100, marginLeft: 10 }" />
               </a-radio>
             </a-radio-group>
