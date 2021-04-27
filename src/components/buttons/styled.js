@@ -136,9 +136,7 @@ const ButtonStyled = Styled('button', props)`
     img{
         width: 16px;
         height: 16px;
-        +span{
-            ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 6px;
-        }
+        margin-right: 6px;
     }
 
     ${({ transparent, theme, type }) => transparent && transparents(theme, type)};
