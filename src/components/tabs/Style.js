@@ -3,6 +3,8 @@ import { Tabs } from 'ant-design-vue';
 
 const { TabPane } = Tabs;
 
+const props = ['color'];
+
 const TabColor = colors => `
   margin-bottom: 30px !important;
   .ant-tabs-bar {
@@ -25,7 +27,7 @@ const TabColor = colors => `
     border-radius: 3px;
     background : ${colors !== 'default' && colors};
   }
-  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+  .ant-tabs-tab.ant-tabs-tab-active{
     color : ${
       colors !== 'default' && colors !== '#ffffff' && colors !== '#fff' && colors !== 'white' ? '#ffffff' : '#5F63F2'
     };
@@ -47,12 +49,12 @@ const TabChildColor = color => `
   
 `;
 
-const TabBasic = Styled(Tabs)`
+const TabBasic = Styled(Tabs, props)`
   margin-bottom: 30px !important;
   ${({ color }) => color && TabColor(color)}
 `;
 
-const Child = Styled(TabPane)` 
+const Child = Styled(TabPane, props)` 
     /* background: ${({ color }) =>
       color !== 'default' && color !== '#ffffff' && color !== '#fff' && color !== 'white' ? '#ffffff' : '#000000'}; */
     ${({ color }) => color && TabChildColor(color)}
