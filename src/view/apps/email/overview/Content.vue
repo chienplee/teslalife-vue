@@ -85,11 +85,11 @@ const Content = {
                   <sdFeatherIcons type="sliders" size={16} />
                 </router-link>
                 <sdDropdown
-                  content={
+                  overlay={
                     <>
-                      <router-linknk to="#">
+                      <router-link to="#">
                         <span>Newest</span>
-                      </router-linknk>
+                      </router-link>
                       <router-link to="#">
                         <span>Oldest</span>
                       </router-link>
@@ -100,7 +100,7 @@ const Content = {
                   }
                 >
                   <router-link to="#">
-                    <FeatherIcon type="more-vertical" size={18} />
+                    <sdFeatherIcons type="more-vertical" size={18} />
                   </router-link>
                 </sdDropdown>
               </div>

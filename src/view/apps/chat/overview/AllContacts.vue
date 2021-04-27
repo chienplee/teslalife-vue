@@ -1,21 +1,25 @@
 <template>
   <ChatWrapper>
     <div class="create-action">
-      <Button class="btn-add" size="default" type="default" shape="circle" block>
+      <sdButton class="btn-add" size="default" type="default" shape="circle" block>
         <sdFeatherIcons type="user-plus" size="14" />
         Add New Contact
-      </Button>
+      </sdButton>
     </div>
     <ul v-if="chatData">
-      <li v-for="({ userName, content, email, active, img }, key) in chatData" :key="key + 1" class="chat-link-signle">
-        <router-link @click="dataFiltering" :data-email="email" :to="`${match.path}/${email}`">
+      <li
+        @click="dataFiltering"
+        v-for="({ userName, content, email, active, img }, key) in chatData"
+        :key="key + 1"
+        class="chat-link-signle"
+      >
+        <router-link :data-email="email" :to="`${email}`">
           <div class="author-figure">
-            <img :src="require(`../../../../static/img/chat-author/${img}`)" alt="" />
+            <img :src="require(`@/static/img/chat-author/${img}`)" alt="" />
             <span :class="active ? 'active' : 'inactive'" />
           </div>
           <div class="author-info">
             <BlockSpan class="author-name">{{ userName }}</BlockSpan>
-
             <BlockSpan class="author-chatText">
               {{ textRefactor(content[content.length - 1].content, 5) }}
             </BlockSpan>
@@ -46,7 +50,7 @@ const AllContact = {
   components: { BlockSpan, ChatWrapper },
   setup() {
     const { state, dispatch } = useStore();
-    const match = computed(() => useRoute());
+    const match = useRoute();
     const chatData = computed(() =>
       state.chat.privetChat.data.sort((a, b) => {
         return b.time - a.time;
@@ -54,8 +58,7 @@ const AllContact = {
     );
     const dataFiltering = e => {
       e.preventDefault();
-
-      dispatch('filterSinglePage', e.currentTarget.getAttribute('data-email'));
+      dispatch('filterSinglePage', match.params.id);
     };
 
     return {

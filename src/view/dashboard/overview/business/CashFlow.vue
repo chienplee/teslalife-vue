@@ -72,24 +72,7 @@
           class="cashFlow"
           type="bar"
           :labels="cashFlowState.labels"
-          :datasets="[
-            {
-              data: cashFlowState.dataIn,
-              backgroundColor: '#20C99770',
-              hoverBackgroundColor: '#20C997',
-              label: 'Cash in',
-              maxBarThickness: 10,
-              barThickness: 12,
-            },
-            {
-              data: cashFlowState.dataOut,
-              backgroundColor: '#FF4D4F70',
-              hoverBackgroundColor: '#FF4D4F',
-              label: 'Cash out',
-              maxBarThickness: 10,
-              barThickness: 12,
-            },
-          ]"
+          :datasets="cashFlowDataset"
           :height="106"
           :options="chartOptions"
         />
@@ -223,6 +206,30 @@ const CashFlow = {
         },
       };
     });
+    const cashFlowDataset = ref(false);
+
+    onMounted(() => {
+      cashFlowDataset.value = cashFlowState.value
+        ? [
+            {
+              data: cashFlowState.value.dataIn,
+              backgroundColor: '#20C99770',
+              hoverBackgroundColor: '#20C997',
+              label: 'Cash in',
+              maxBarThickness: 10,
+              barThickness: 12,
+            },
+            {
+              data: cashFlowState.value.dataOut,
+              backgroundColor: '#FF4D4F70',
+              hoverBackgroundColor: '#FF4D4F',
+              label: 'Cash out',
+              maxBarThickness: 10,
+              barThickness: 12,
+            },
+          ]
+        : false;
+    });
 
     return {
       cashFlowState,
@@ -231,6 +238,7 @@ const CashFlow = {
       customTooltips,
       chartOptions,
       handleActiveChangeCash,
+      cashFlowDataset,
     };
   },
 };
