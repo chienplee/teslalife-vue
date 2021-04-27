@@ -60,7 +60,7 @@ const ProjectSorting = Styled.div`
         }
         .project-sort-group{
             padding: 0 5px;
-            
+
         }
         .project-sort-group .sort-group .layout-style a{
             width: 35px;
@@ -162,24 +162,24 @@ const ProjectSorting = Styled.div`
         right: auto;
         ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 11px !important;
     }
-    
+
     .sort-group{
         color: ${({ theme }) => theme['gray-solid']};
         display: flex;
         align-items: center;
         justify-content: flex-end;
 
-               
+
         .ant-select{
             ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 10px;
             ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
             min-width: 260px;
             .ant-select-selector{
                 border: 0 none;
-                .ant-select-selection-item{                    
+                .ant-select-selection-item{
                     color: ${({ theme }) => theme['gray-solid']};
                 }
-                
+
             }
         }
         .layout-style{
@@ -402,6 +402,9 @@ const ProjectList = Styled.div`
             font-size: 12px;
             color: ${({ theme }) => theme['gray-solid']};
         }
+        .ant-progress>div{
+            flex-direction: row;
+        }
     }
     .date-started,
     .date-finished{
@@ -524,6 +527,9 @@ const ProjectDetailsWrapper = Styled.div`
         .ant-progress-text{
             color: #fff;
             font-weight: 500;
+        }
+        .ant-progress>div{
+            flex-direction: row;
         }
     }
     .about-project-wrapper{
