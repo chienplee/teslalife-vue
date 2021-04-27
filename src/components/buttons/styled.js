@@ -117,7 +117,7 @@ const ButtonStyled = Styled('button', props)`
 
     background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`] + ''};
     border-width: 0px;
-    border-style: ${({ type }) => (type !== 'dash' ? 'solid' : 'dashed')};
+    border-style: ${({ type }) => (type !== 'dashed' ? 'solid' : 'dashed')};
     color: ${({ type }) => (type !== 'default' && type !== 'white' ? '#ffffff' : '#5A5F7D')};
     display: inline-flex;
     align-items: center;
