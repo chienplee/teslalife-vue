@@ -52,6 +52,5 @@ export default {
   components: {
     NestedDropdwon,
   },
-  data() {},
 };
 </script>

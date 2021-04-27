@@ -64,6 +64,7 @@ export const Button = {
         loading={this.loading}
         block={this.block}
         disabled={this.disabled}
+        class={`ant-btn ant-btn-${this.type} ${this.shape && `ant-btn-${this.shape}`} ${this.block && `ant-btn-block`}`}
       >
         {this.$slots.default()}
       </ButtonStyled>

@@ -104,7 +104,9 @@ const SalesGrowth = {
   name: 'SalesGrowth',
   components: { SalesGrowthWrap, Chartjs },
   data() {
-    chartOptions;
+    return {
+      chartOptions,
+    };
   },
 };
 

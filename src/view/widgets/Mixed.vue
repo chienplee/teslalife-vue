@@ -29,7 +29,7 @@
           </a-col>
 
           <a-col :xxl="8" :md="12" :xs="24">
-            <!-- <SalesByLocation /> -->
+            <SalesByLocation />
           </a-col>
 
           <a-col :xxl="8" :md="12" :xs="24">
@@ -47,7 +47,7 @@ import { Main } from '../styled';
 import SocialMediaOverview from '../dashboard/overview/index/SocialMediaOverview';
 import CardGroup from '../dashboard/overview/business/CardGroup';
 import DailyOverview from '../dashboard/overview/performance/DailyOverview';
-//import SalesByLocation from '../dashboard/overview/ecommerce/SalesByLocation';
+import SalesByLocation from '../dashboard/overview/ecommerce/SalesByLocation';
 import Ordersummary from '../apps/ecommerce/overview/Ordersummary';
 export default defineComponent({
   name: 'WidgetMixed',
@@ -56,7 +56,7 @@ export default defineComponent({
     SocialMediaOverview,
     CardGroup,
     DailyOverview,
-    //SalesByLocation,
+    SalesByLocation,
     Ordersummary,
   },
   setup() {

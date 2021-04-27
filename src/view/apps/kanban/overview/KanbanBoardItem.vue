@@ -24,7 +24,7 @@
       </div>
       <div class="sDash_kanvan-task__edit--right">
         <a href="#" class="btn-delete" @click="e => onTaskTitleDelete(e, id)">
-          <sdFeatherIcon type="trash-2" size="12" />
+          <sdFeatherIcons type="trash-2" size="12" />
           <span>Delete Task</span>
         </a>
       </div>

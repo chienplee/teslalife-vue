@@ -41,6 +41,20 @@ export default {
     state.error = err;
   },
 
+  topLocationBegin(state) {
+    state.tsLoading = true;
+  },
+
+  topLocationSuccess(state, data) {
+    state.tsLoading = false;
+    state.locationData = data;
+  },
+
+  topLocationErr(state, err) {
+    state.tsLoading = false;
+    state.error = err;
+  },
+
   generatedBegin(state) {
     state.geLoading = true;
   },

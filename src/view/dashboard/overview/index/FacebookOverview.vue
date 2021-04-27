@@ -185,7 +185,6 @@
             </a-row>
           </a-col>
         </a-row>
-        {{ forcastOverviewStates }}
       </sdCards>
     </div>
   </CardGroup>

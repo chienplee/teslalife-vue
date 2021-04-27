@@ -10,8 +10,8 @@
     :class="className"
     :footer="null"
   >
-    <template v-slot:footer>
-      <slot v-if="footer !== null" name="footer">
+    <template #footer>
+      <slot name="footer">
         <sdButton type="white" :outlined="color ? false : true" key="back" @click="onCancel">
           Return
         </sdButton>
@@ -48,7 +48,7 @@ export default {
     type: VueTypes.oneOf(['primary', 'secondary', 'success', 'error', 'danger', 'info', 'white', 'warning']).def(
       'white',
     ),
-    footer: VueTypes.oneOf([null]),
+    footer: VueTypes.oneOf([null, true]).def(null),
     width: VueTypes.number.def(620),
     color: VueTypes.oneOfType([VueTypes.bool, VueTypes.string]).def(false),
   },

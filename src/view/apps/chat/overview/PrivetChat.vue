@@ -1,10 +1,15 @@
 <template>
   <ul v-if="chatData">
-    <li v-for="(user, key) in chatData" :key="key + 1" class="chat-link-signle">
-      <router-link @click="e => dataFiltering(e, user.email)" :to="`${match.path}/private/${user.email}`">
+    <li
+      v-for="(user, key) in chatData"
+      @click="e => dataFiltering(e, user.email)"
+      :key="key + 1"
+      class="chat-link-signle"
+    >
+      <router-link :to="`${user.email}`">
         <div class="author-figure">
-          <img :src="require(`../../../../static/img/chat-author/${user.img}`)" alt="" />
-          <span :class="active ? 'active' : 'inactive'" />
+          <img :src="require(`@/static/img/chat-author/${user.img}`)" alt="" />
+          <span :class="user.active ? 'active' : 'inactive'" />
         </div>
         <div class="author-info">
           <BlockSpan class="author-name">{{ user.userName }}</BlockSpan>
