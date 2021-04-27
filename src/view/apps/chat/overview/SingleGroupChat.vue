@@ -57,7 +57,7 @@
         </div>
       </template>
       <ul class="atbd-chatbox" v-if="singleContent.length">
-        <div v-for="({ time, email, content }, index) in singleContent" :key="time" class="atbd-chatbox__single">
+        <div v-for="({ time, email, content, id }, index) in singleContent" :key="time" class="atbd-chatbox__single">
           <p v-if="index === 1" class="time-connector text-center text-capitalize">
             <span>today</span>
           </p>
@@ -283,7 +283,7 @@ import { useRoute } from 'vue-router';
 
 const SingleGroupChat = {
   name: 'SingleGroupChat',
-  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer },
+  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, Picker },
   setup() {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
@@ -384,7 +384,6 @@ const SingleGroupChat = {
       fileList2,
       pickerShow,
       moment,
-      Picker,
     };
   },
 };
