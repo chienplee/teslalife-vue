@@ -4,7 +4,7 @@ const UserBioBox = Styled.div`
     .ant-card-body{
         padding: 25px 0 25px 0 !important;
     }
-    
+
     .user-info{
         margin-bottom: 22px;
         padding: 0 25px 22px 25px;
@@ -41,6 +41,9 @@ const UserBioBox = Styled.div`
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px;
                     color: ${({ theme }) => theme['light-color']};
                 }
+                i svg{
+                    margin-right: 0;
+                }
                 span{
                     font-size: 14px;
                     color: ${({ theme }) => theme['gray-color']};
@@ -75,29 +78,29 @@ const UserBioBox = Styled.div`
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
                 }
                 &.facebook{
-                    span{
+                    span, svg{
                         color: #3B5998;
                     }
                 }
                 &.twitter{
-                    span{
+                    span, svg{
                         color: #1DA1F2;
                     }
                 }
                 &.dribble{
-                    span{
+                    span, svg{
                         color: #C2185B;
                     }
                 }
                 &.instagram{
-                    span{
+                    span, svg{
                         color: #FF0300;
                     }
                 }
             }
         }
     }
-    
+
 `;
 
 const SettingWrapper = Styled.div`
@@ -128,6 +131,9 @@ const SettingWrapper = Styled.div`
                 img
                 {
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
+                }
+                svg{
+                    color:#fff;
                 }
             }
         }
@@ -232,7 +238,7 @@ const RightAsideWrapper = Styled.div`
         ul{
             margin: 0;
             padding: 0;
-            
+
             li{
                 display: flex;
                 align-items: center;
@@ -418,7 +424,7 @@ const ActivityContents = Styled.div`
             }
             &:hover{
                 box-shadow: 0 15px 50px #88888820;
-                .more{                        
+                .more{
                     visibility: visible;
                 }
             }
@@ -458,7 +464,7 @@ const ActivityContents = Styled.div`
                 }
             }
         }
-                
+
     }
 `;
 const ProductOverviewTable = Styled.div`
