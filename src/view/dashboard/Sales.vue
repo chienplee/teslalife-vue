@@ -104,7 +104,18 @@
           </template>
         </Suspense>
       </a-col>
-      <a-col :lg="8" :xs="24"></a-col>
+      <a-col :lg="8" :xs="24">
+        <Suspense>
+          <template #default>
+            <TopCountriesRevenue />
+          </template>
+          <template #fallback>
+            <sdCards headless>
+              <a-skeleton active />
+            </sdCards>
+          </template>
+        </Suspense>
+      </a-col>
       <a-col :lg="12" :xs="24">
         <Suspense>
           <template #default>
@@ -141,7 +152,7 @@ const AverageSalesRevenue = defineAsyncComponent(() => import('./overview/sales/
 const SalesGrowth = defineAsyncComponent(() => import('./overview/sales/SalesGrowth'));
 const SalesTarget = defineAsyncComponent(() => import('./overview/sales/SalesTarget'));
 const TopSellingProduct = defineAsyncComponent(() => import('./overview/sales/TopSellingProduct'));
-// const TopCountriesRevenue = defineAsyncComponent(() => import('./overview/sales/TopCountriesRevenue'));
+const TopCountriesRevenue = defineAsyncComponent(() => import('./overview/sales/TopCountriesRevenue'));
 const RecentOrder = defineAsyncComponent(() => import('./overview/sales/RecentOrder'));
 
 const Sales = {
@@ -155,6 +166,7 @@ const Sales = {
     TopSellingProduct,
     SalesGrowth,
     RecentOrder,
+    TopCountriesRevenue,
   },
 };
 
