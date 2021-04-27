@@ -50,16 +50,19 @@ const ShoppingCart = {
     const coupon = ref(0);
     const promo = ref(0);
     const current = ref(0);
+
     let subtotal = ref(0);
 
     onMounted(() => dispatch('cartGetData'));
 
     watchEffect(() => {
+      let totalValue = ref(0);
       if (cartData.value !== null) {
         cartData.value.map(data => {
           const { quantity, price } = data;
-          subtotal.value += parseInt(quantity, 10) * parseInt(price, 10);
-          return subtotal;
+          totalValue.value += parseInt(quantity, 10) * parseInt(price, 10);
+
+          return (subtotal.value = totalValue.value);
         });
       }
     });

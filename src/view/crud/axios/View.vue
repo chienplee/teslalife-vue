@@ -11,7 +11,13 @@
           <span class="search-icon">
             <sdFeatherIcons type="search" size="14" />
           </span>
-          <input @change="onHandleSearch" type="text" name="recored-search" placeholder="Search Here" /></div
+          <a-input
+            @change="onHandleSearch"
+            v-model:value.trim="formState.searchItem"
+            type="text"
+            name="recored-search"
+            placeholder="Search Here"
+          /></div
       ></template>
     </sdPageHeader>
     <Main>
@@ -42,7 +48,7 @@
 import { RecordViewWrapper } from './style';
 import { Main, TableWrapper } from '../../styled';
 import { useStore } from 'vuex';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, reactive } from 'vue';
 import moment from 'moment';
 
 const columns = [
@@ -110,8 +116,12 @@ const ViewPage = {
       return false;
     };
 
-    const onHandleSearch = e => {
-      dispatch('fbDataSearch', e.target.value, crud.value);
+    const formState = reactive({
+      searchItem: '',
+    });
+
+    const onHandleSearch = () => {
+      dispatch('axiosDataSearch', formState.searchItem);
     };
 
     const dataSource = computed(
@@ -175,6 +185,7 @@ const ViewPage = {
       onSelectChange,
       dataSource,
       columns,
+      formState,
     };
   },
 };
