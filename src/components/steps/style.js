@@ -62,6 +62,12 @@ const ActionWrapper = Styled.div`
                 margin-top: 15px;
             }
         }
+        .btn-next{
+            i,
+            svg{
+                line-height: 0;
+            }
+        }
     }
 `;
 

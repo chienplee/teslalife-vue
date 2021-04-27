@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Empty">
+    <sdPageHeader title="Spin">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

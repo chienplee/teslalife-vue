@@ -8,7 +8,7 @@
     </div>
   </ProductTable>
   <CouponForm>
-    <a-form :model="formState" @finish="submitCoupon">
+    <a-form id="submitCoupon" :model="formState" @finish="submitCoupon">
       <a-row :gutter="15">
         <a-col :lg="4" :sm="8" :xs="24">
           <a-form-item name="coupon" label="">

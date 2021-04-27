@@ -1,5 +1,5 @@
 <template>
-  <i v-html="activity"></i>
+  <i :class="classes" v-html="activity"></i>
 </template>
 
 <script>
@@ -13,12 +13,12 @@ export default {
     type: VueTypes.string.def('activity'),
     size: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(16),
     stroke: VueTypes.oneOfType([VueTypes.number, VueTypes.string]).def(2),
-    class: VueTypes.string,
+    classes: VueTypes.string,
     color: VueTypes.string,
     fill: VueTypes.string.def('transparent'),
   },
   setup(props) {
-    const { size, color, fill, type, stroke } = toRefs(props);
+    const { size, color, fill, type, stroke, classes } = toRefs(props);
 
     let activity = ref(
       icons[type.value].toSvg({
@@ -27,6 +27,7 @@ export default {
         height: size.value,
         color: color.value,
         fill: fill.value,
+        class: classes.value,
       }),
     );
 
