@@ -8,6 +8,7 @@ import {
   cashFlow,
   income,
   device,
+  location,
   region,
   trafficChanel,
   performance,
@@ -114,6 +115,25 @@ const actions = {
       }, 100);
     } catch (err) {
       commit('topSaleErr', err);
+    }
+  },
+  async topLocationGetData({ commit }) {
+    const { year } = location;
+    try {
+      commit('topLocationBegin');
+      commit('topLocationSuccess', year);
+    } catch (err) {
+      commit('topLocationErr', err);
+    }
+  },
+  async topLocationFilterData({ commit }, value) {
+    try {
+      commit('topLocationBegin');
+      setTimeout(() => {
+        commit('topLocationSuccess', location[value]);
+      }, 100);
+    } catch (err) {
+      commit('topLocationErr', err);
     }
   },
   async generatedGetData({ commit }) {
