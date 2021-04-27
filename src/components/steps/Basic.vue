@@ -23,7 +23,7 @@
         </div>
         <div class="steps-action">
           <a-button v-if="current1 < data.length - 1" class="btn-next" type="primary" @click="next">
-            <sdFeatherIcons type="arrow-right" size="14" /> Save & Next
+            Save & Next <sdFeatherIcons type="arrow-right" size="14" />
           </a-button>
           <a-button v-if="current1 == data.length - 1" type="primary" @click="$message.success('Processing complete!')">
             Done

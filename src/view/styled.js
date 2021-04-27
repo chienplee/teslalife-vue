@@ -834,6 +834,45 @@ const Main = Styled.div`
             }
         }
     }
+
+    // Statistics Account Balance
+    .sDash-ac-balance{
+        .sDash-rcharge-btn{
+            font-size: 14px;
+            margin-top: 15px;
+            height: 42px !important;
+        }
+    }
+
+    // Switch Style
+
+    .ant-switch{
+        min-width: 35px;
+    }
+
+    .ant-switch-small{
+        min-width: 30px;
+        height: 15px;
+        line-height: 15px;
+    }
+
+    // Ant Picker
+    .ant-time-picker{
+        min-width: 250px;
+        .ant-time-picker-input{
+            padding: 12px 11px;
+        }
+        &.ant-time-picker-large{
+            .ant-time-picker-input{
+                padding: 12px 11px;
+            }
+        }
+        &.ant-time-picker-small{
+            .ant-time-picker-input{
+                padding: 8px 11px;
+            }
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1137,7 +1176,7 @@ const BasicFormWrapper = Styled.div`
             }
         }
     }
-    .ant-form-item-control-input{
+    .ant-form-item-control{
         .input-prepend{
             position: absolute;
             ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 0;
@@ -1418,6 +1457,9 @@ const TableWrapper = Styled.div`
     }
     span.anticon.anticon-left{
         transform: rotateY(${({ theme }) => (theme.rtl ? '180deg' : '0deg')})
+    }
+    .ant-table-tbody > tr > td.ant-table-selection-column{
+        text-align: left;
     }
     &.table-order,
     &.table-seller,

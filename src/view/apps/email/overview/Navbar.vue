@@ -3,7 +3,7 @@
     <ul>
       <li>
         <router-link :to="`${path}inbox`" click="toggleCollapsed">
-          <sdFeatherIcon type="inbox" size="18" />
+          <sdFeatherIcons type="inbox" size="18" />
           <span class="nav-text">
             <span>Inbox</span>
             <span class="badge badge-primary">3</span>
@@ -12,7 +12,7 @@
       </li>
       <li>
         <router-link :to="`${path}starred`" click="toggleCollapsed">
-          <sdFeatherIcon type="star" size="18" />
+          <sdFeatherIcons type="star" size="18" />
           <span class="nav-text">
             <span>Starred</span>
           </span>
@@ -20,7 +20,7 @@
       </li>
       <li>
         <router-link :to="`${path}sent`" click="toggleCollapsed">
-          <sdFeatherIcon type="send" size="18" />
+          <sdFeatherIcons type="send" size="18" />
           <span class="nav-text">
             <span>Sent</span>
           </span>
@@ -28,7 +28,7 @@
       </li>
       <li>
         <router-link :to="`${path}drafts`" click="toggleCollapsed">
-          <sdFeatherIcon type="edit" size="18" />
+          <sdFeatherIcons type="edit" size="18" />
           <span class="nav-text">
             <span>Drafts</span>
           </span>
@@ -37,7 +37,7 @@
       </li>
       <li>
         <router-link :to="`${path}spam`" click="toggleCollapsed">
-          <sdFeatherIcon type="alert-octagon" size="18" />
+          <sdFeatherIcons type="alert-octagon" size="18" />
           <span class="nav-text">
             <span>Spam</span>
           </span>
@@ -45,7 +45,7 @@
       </li>
       <li>
         <router-link :to="`${path}trash`" click="toggleCollapsed">
-          <sdFeatherIcon type="trash-2" size="18" />
+          <sdFeatherIcons type="trash-2" size="18" />
           <span class="nav-text">
             <span>Trash</span>
           </span>

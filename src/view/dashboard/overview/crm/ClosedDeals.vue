@@ -23,7 +23,7 @@
     </template>
 
     <div v-if="cdIsLoading" class="sd-spin">
-      <Spin />
+      <a-spin />
     </div>
 
     <CardBarChart v-else>

@@ -99,7 +99,7 @@
               <sdHeading as="h4">
                 {{ instagramOverviewState.comments.data }}
                 <sub>
-                  <sdFeatherIcon icon="arrow-down" size="14" />
+                  <sdFeatherIcons icon="arrow-down" size="14" />
                   30%
                 </sub>
               </sdHeading>

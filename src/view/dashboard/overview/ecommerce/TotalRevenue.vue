@@ -24,23 +24,23 @@
       </template>
       <template #more>
         <router-link to="#">
-          <sdFeatherIcon size="16" type="printer" />
+          <sdFeatherIcons size="16" type="printer" />
           <span>Printer</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcon size="16" type="book-open" />
+          <sdFeatherIcons size="16" type="book-open" />
           <span>PDF</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcon size="16" type="file-text" />
+          <sdFeatherIcons size="16" type="file-text" />
           <span>Google Sheets</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcon size="16" type="x" />
+          <sdFeatherIcons size="16" type="x" />
           <span>Excel (XLSX)</span>
         </router-link>
         <router-link to="#">
-          <sdFeatherIcon size="16" type="file" />
+          <sdFeatherIcons size="16" type="file" />
           <span>CSV</span>
         </router-link>
       </template>

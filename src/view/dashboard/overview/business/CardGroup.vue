@@ -92,7 +92,7 @@
         <sdCards headless title="Current Ratio">
           <div class="ratio-content">
             <sdHeading as="h1">2.4</sdHeading>
-            <a-progress :percent="72" status="warning" />
+            <a-progress :percent="72" class="ant-progress-status-warning" />
             <p><strong>3 or higher</strong> current ratio target</p>
           </div>
         </sdCards>

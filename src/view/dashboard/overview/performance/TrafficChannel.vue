@@ -111,7 +111,7 @@ const TrafficChannel = {
               completions: trafficState.value.direct.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.direct.percent}
+                  percent={parseInt(trafficState.value.direct.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}
@@ -128,7 +128,7 @@ const TrafficChannel = {
               completions: trafficState.value.email.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.email.percent}
+                  percent={parseInt(trafficState.value.email.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}
@@ -145,7 +145,7 @@ const TrafficChannel = {
               completions: trafficState.value.search.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.search.percent}
+                  percent={parseInt(trafficState.value.search.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}
@@ -162,7 +162,7 @@ const TrafficChannel = {
               completions: trafficState.value.referral.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.referral.percent}
+                  percent={parseInt(trafficState.value.referral.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}
@@ -179,7 +179,7 @@ const TrafficChannel = {
               completions: trafficState.value.media.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.media.percent}
+                  percent={parseInt(trafficState.value.media.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}
@@ -196,7 +196,7 @@ const TrafficChannel = {
               completions: trafficState.value.other.goals,
               percentage: (
                 <a-progress
-                  percent={trafficState.value.other.percent}
+                  percent={parseInt(trafficState.value.other.percent)}
                   strokeWidth={5}
                   status="active"
                   showInfo={false}

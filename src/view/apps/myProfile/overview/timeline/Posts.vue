@@ -34,7 +34,7 @@
               columnclass="my-masonry-grid_column"
             >
               <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
-                <img :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+                <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
               </a>
             </div>
           </div>

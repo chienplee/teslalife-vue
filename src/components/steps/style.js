@@ -24,7 +24,7 @@ const ActionWrapper = Styled.div`
         }
     }
     .steps-action{
-        margin-top: 38px;
+        margin-top: 25px;
         width: 100%;
         float: right
         display: flex;
@@ -60,6 +60,12 @@ const ActionWrapper = Styled.div`
         button + button {
             @media only screen and (max-width: 379px){
                 margin-top: 15px;
+            }
+        }
+        .btn-next{
+            i,
+            svg{
+                line-height: 0;
             }
         }
     }

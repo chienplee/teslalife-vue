@@ -49,7 +49,7 @@
       </template>
 
       <div v-if="isIcLoading" class="sd-spin">
-        <Spin />
+        <a-spin />
       </div>
 
       <a-row v-else :gutter="25">
@@ -90,7 +90,7 @@
               <sdHeading as="h1">
                 <span>${{ incomeState.profit[0] }}</span>
                 <sub>
-                  <span> <sdFeatherIcon icon="arrow-up" /> 25% </span>
+                  <span> <sdFeatherIcons icon="arrow-up" /> 25% </span>
                   Since last month
                 </sub>
               </sdHeading>
