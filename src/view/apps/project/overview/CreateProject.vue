@@ -1,15 +1,5 @@
 <template>
   <sdModal :type="modalType" title="Create Project" :visible="visible" :onCancel="handleCancel">
-    <template #footer>
-      <div key="1" class="project-modal-footer">
-        <sdButton size="default" type="primary" key="submit" @click="handleOk">
-          Add New Project
-        </sdButton>
-        <sdButton size="default" type="light" key="back" outlined @click="handleCancel">
-          Cancel
-        </sdButton>
-      </div>
-    </template>
     <div class="project-modal">
       <BasicFormWrapper>
         <a-form :model="formState" @finish="handleOk">
@@ -48,6 +38,16 @@
             <a-col :md="12">
               <a-form-item name="end" label="End Date">
                 <a-date-picker v-model:value="formState.end" placeholder="mm/dd/yyyy" :format="dateFormat" />
+              </a-form-item>
+              <a-form-item>
+                <div key="1" class="project-modal-footer">
+                  <sdButton size="default" type="primary" key="submit" @click="handleOk">
+                    Add New Project
+                  </sdButton>
+                  <sdButton size="default" type="light" key="back" outlined @click="handleCancel">
+                    Cancel
+                  </sdButton>
+                </div>
               </a-form-item>
             </a-col>
           </a-row>
