@@ -24,7 +24,7 @@ const ActionWrapper = Styled.div`
         }
     }
     .steps-action{
-        margin-top: 38px;
+        margin-top: 25px;
         width: 100%;
         float: right
         display: flex;

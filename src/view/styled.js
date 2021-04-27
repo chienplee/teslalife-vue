@@ -1176,7 +1176,7 @@ const BasicFormWrapper = Styled.div`
             }
         }
     }
-    .ant-form-item-control-input{
+    .ant-form-item-control{
         .input-prepend{
             position: absolute;
             ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 0;
@@ -1457,6 +1457,9 @@ const TableWrapper = Styled.div`
     }
     span.anticon.anticon-left{
         transform: rotateY(${({ theme }) => (theme.rtl ? '180deg' : '0deg')})
+    }
+    .ant-table-tbody > tr > td.ant-table-selection-column{
+        text-align: left;
     }
     &.table-order,
     &.table-seller,

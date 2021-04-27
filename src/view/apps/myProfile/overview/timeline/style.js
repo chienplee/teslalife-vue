@@ -47,6 +47,7 @@ const CreatePost = Styled.div`
             }
             .btn-more{
                 padding: 0 16px;
+                height: 30px;
             }
             .postFooter_left{
                 display: flex;
@@ -55,7 +56,7 @@ const CreatePost = Styled.div`
                 height: 35px;
             }
         }
-    }    
+    }
 `;
 
 const BackShadow = Styled.div`
@@ -77,16 +78,34 @@ const BackShadowEmoji = Styled.div`
     z-index: 9999;
 `;
 
-const AllPosts = Styled.div`     
+const AllPosts = Styled.div`
     .ant-card-body{
         padding: 20px 0 !important;
-    }    
+    }
     .post-content{
         .gallery{
             padding: 0 25px;
             img{
                 margin-bottom: 10px;
                 border-radius: 8px;
+            }
+            .my-masonry-grid{
+                margin: -5px;
+                a{
+                    padding: 5px;
+                    display: block;
+                    img{
+                        margin-bottom: 5px;
+                    }
+                    &:empty{
+                        display: none;
+                    }
+                }
+            }
+            .my-masonry-grid[cols=2]{
+                a{
+                    width: 50%;
+                }
             }
         }
         .post-text{
@@ -100,7 +119,7 @@ const AllPosts = Styled.div`
                     margin-bottom: 0;
                 }
             }
-        } 
+        }
         .post-actions{
             padding: 0 25px 20px 25px;
             margin-bottom: 20px;
@@ -193,7 +212,7 @@ const AllPosts = Styled.div`
                     bottom: 10px;
                 }
                 .smile-icon{
-                    position: relative;                    
+                    position: relative;
                     margin-${({ theme }) => (!theme.rtl ? 'right' : 'left')}: 18px;
                     line-height: 1;
                     @media only screen and (max-width: 991px){

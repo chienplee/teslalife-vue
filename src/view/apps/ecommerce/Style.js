@@ -265,23 +265,34 @@ const ProductCard = Styled.div`
     .product-single-rating{
         font-size: 12px;
         font-weight: 500;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         .ant-rate{
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 5px;
         }
         .ant-rate-star:not(:last-child) {
             ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 2px !important;
         }
+        .ant-rate-star{
+            div{
+                transform: none !important;
+            }
+        }
         .total-reviews{
             font-weight: 400;
             ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
             color: ${({ theme }) => theme['light-color']};
+        }
+        svg{
+            width: 13px;
         }
     }
     .product-single-action{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        margin: 21px -5px -5px -5px;
+        margin: 15px -5px -5px -5px;
         button{
             margin: 5px;
         }
@@ -622,6 +633,9 @@ const ProductDetailsWrapper = Styled.div`
         }
         .ant-rate{
             margin-bottom: 6px;
+            svg{
+                width: 13px;
+            }
         }
         .ant-rate-star:not(:last-child){
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 2px !important;
@@ -979,11 +993,11 @@ const ProductTable = Styled.div`
         }
         .cart-single-quantity{
             button{
+                line-height: 1;
                 background-color: ${({ theme }) => theme['bg-color-normal']};
                 i,
                 img,
                 svg{
-                    min-width: 12px;
                     height: 12px;
                 }
                 &.btn-inc,
@@ -1035,7 +1049,7 @@ const CouponForm = Styled.div`
         .ant-form-item{
             margin-bottom: 0;
         }
-        .ant-form-item-control-input-content{
+        .ant-form-item-control{
             input{
                 max-width: 180px;
                 ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 20px;
@@ -1158,6 +1172,7 @@ const OrderSummary = Styled.div`
         }
         .ant-form-item-label{
             text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};
+            line-height: 30px;
             label{
                 font-weight: 400;
                 margin-bottom: 4px;
@@ -1165,16 +1180,22 @@ const OrderSummary = Styled.div`
                 color: ${({ theme }) => theme['gray-color']};
             }
         }
-        .ant-form-item-control-input-content{
+        .ant-form-item-control-wrapper{
             display: flex;
             @media only screen and (max-width: 479px){
                 flex-flow: column;
             }
-            input{
-                margin: ${({ theme }) => (theme.rtl ? '0 0 0px 6px' : '0 6px 0px 0')};
-                height: 40px;
+            .ant-form-item-children{
+                display: block;
+                margin: ${({ theme }) => (theme.rtl ? '0 0 0 6px' : '0 6px 0 0')};
+                height: auto;
                 @media only screen and (max-width: 479px){
                     margin: ${({ theme }) => (theme.rtl ? '0 0 10px 6px' : '0 6px 10px 0')};
+                }
+            }
+            input{
+                height: 40px;
+                @media only screen and (max-width: 479px){
                     width: 100% !important;
                 }
             }
@@ -1215,6 +1236,7 @@ const OrderSummary = Styled.div`
         i,
         svg{
             ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+            color: #fff;
         }
     }
 `;
@@ -1689,6 +1711,7 @@ const CheckoutWrapper = Styled.div`
             }
        }
        .ant-form-item-label{
+           line-height: 35px;
            label{
                font-size: 15px;
            }
@@ -1701,6 +1724,7 @@ const CheckoutWrapper = Styled.div`
            display: inline-block;
            font-size: 13px;
            color: ${({ theme }) => theme['gray-solid']};
+           line-height: 15px;
        }
 
        .shipping-selection{
