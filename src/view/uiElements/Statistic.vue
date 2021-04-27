@@ -22,10 +22,12 @@
                 <a-statistic title="Active Users" :value="112893" />
               </a-col>
               <a-col :span="12">
-                <a-statistic title="Account Balance (CNY)" :value="112893" :precision="2" />
-                <sdButton :style="{ marginTop: 16, fontSize: 14 }" size="large" type="primary" raised>
-                  Recharge
-                </sdButton>
+                <div class="sDash-ac-balance">
+                  <a-statistic title="Account Balance (CNY)" :value="112893" :precision="2" />
+                  <sdButton class="sDash-rcharge-btn" size="large" type="primary" raised>
+                    Recharge
+                  </sdButton>
+                </div>
               </a-col>
             </a-row>
           </sdCards>
@@ -37,7 +39,7 @@
                   :value="11.28"
                   :precision="2"
                   suffix="%"
-                  :value-style="{ color: '#3f8600' }"
+                  :value-style="{ color: '#20C997' }"
                   style="margin-right: 50px"
                 >
                   <template #prefix>
