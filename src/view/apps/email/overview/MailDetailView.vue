@@ -12,7 +12,7 @@
             <sdFeatherIcons type="arrow-left" size="14" />
           </router-link>
           <a-tooltip placement="bottom" title="Refresh">
-            <router-link @click="refreshState" to="#">
+            <router-link to="#">
               <sdFeatherIcons type="rotate-cw" size="18" />
             </router-link>
           </a-tooltip>

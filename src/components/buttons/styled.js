@@ -113,7 +113,7 @@ const socialButton = (color, shape) => `
       }
   `;
 
-const ButtonStyled = Styled(Button, props)`
+const ButtonStyled = Styled('button', props)`
 
     background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`] + ''};
     border-width: 0px;

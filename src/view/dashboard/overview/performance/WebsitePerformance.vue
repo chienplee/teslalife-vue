@@ -80,7 +80,7 @@
           <sdHeading as="h1">
             {{ performanceState.bounce[0] }}
             <sub>
-              <span> <sdFeatherIcon type="arrow-down" size="14" /> 28% </span>
+              <span> <sdFeatherIcons type="arrow-down" size="14" /> 28% </span>
             </sub>
           </sdHeading>
         </div>

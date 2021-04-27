@@ -49,7 +49,7 @@
                 :style="{ marginTop: 0 }"
                 @click="toggleCollapsed"
               >
-                <sdFeatherIcon type="x" />
+                <sdFeatherIcons type="x" />
               </sdButton>
               <div class="mail-sidebar-top">
                 <sdButton @click="toggleMailComposer" shape="round" type="primary" size="default" block>

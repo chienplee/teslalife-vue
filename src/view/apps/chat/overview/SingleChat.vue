@@ -28,7 +28,11 @@
         <p>Active Now</p>
       </template>
       <ul class="atbd-chatbox" v-if="singleContent.length">
-        <li v-for="({ time, img, email, content }, index) in singleContent" :key="time" class="atbd-chatbox__single">
+        <li
+          v-for="({ time, img, email, content, id }, index) in singleContent"
+          :key="time"
+          class="atbd-chatbox__single"
+        >
           <p v-if="index === 1" class="time-connector text-center text-capitalize">
             <span>today</span>
           </p>

@@ -81,6 +81,7 @@ import Notification from './Notification';
 import Message from './Message';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import { LogoutOutlined } from '@ant-design/icons-vue';
 
 export default {
   name: 'AuthInfo',
@@ -92,6 +93,7 @@ export default {
     Settings,
     Notification,
     Message,
+    LogoutOutlined,
   },
   data() {
     return {

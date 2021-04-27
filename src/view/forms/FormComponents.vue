@@ -25,7 +25,7 @@
                       <a-form-item name="input-name">
                         <a-input placeholder="Name">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="user" size="14" />
+                            <sdFeatherIcons type="user" size="14" />
                           </template>
                         </a-input>
                       </a-form-item>
@@ -34,7 +34,7 @@
                       <a-form-item>
                         <a-input name="email" placeholder="Email">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="mail" size="14" />
+                            <sdFeatherIcons type="mail" size="14" />
                           </template>
                         </a-input>
                       </a-form-item>
@@ -43,7 +43,7 @@
                       <a-form-item>
                         <a-input name="input-location" placeholder="Location">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="map-pin" size="14" />
+                            <sdFeatherIcons type="map-pin" size="14" />
                           </template>
                         </a-input>
                       </a-form-item>
@@ -52,7 +52,7 @@
                       <a-form-item>
                         <a-input-password name="password" value="12345678" placeholder="with input password">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="lock" size="14" />
+                            <sdFeatherIcons type="lock" size="14" />
                           </template>
                         </a-input-password>
                       </a-form-item>
@@ -61,7 +61,7 @@
                       <a-form-item>
                         <a-input name="input-payment" placeholder="Payment Method">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="credit-card" size="14" />
+                            <sdFeatherIcons type="credit-card" size="14" />
                           </template>
                         </a-input>
                       </a-form-item>
@@ -70,7 +70,7 @@
                       <a-form-item>
                         <a-input name="input-phone" placeholder="Phone">
                           <template v-slot:prefix>
-                            <sdFeatherIcon type="phone" size="14" />
+                            <sdFeatherIcons type="phone" size="14" />
                           </template>
                         </a-input>
                       </a-form-item>
