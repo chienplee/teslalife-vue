@@ -117,7 +117,7 @@ const ButtonStyled = Styled('button', props)`
 
     background: ${({ type, theme }) => type !== 'default' && theme[`${type}-color`] + ''};
     border-width: 0px;
-    border-style: ${({ type }) => (type !== 'dash' ? 'solid' : 'dashed')};
+    border-style: ${({ type }) => (type !== 'dashed' ? 'solid' : 'dashed')};
     color: ${({ type }) => (type !== 'default' && type !== 'white' ? '#ffffff' : '#5A5F7D')};
     display: inline-flex;
     align-items: center;
@@ -136,9 +136,7 @@ const ButtonStyled = Styled('button', props)`
     img{
         width: 16px;
         height: 16px;
-        +span{
-            ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 6px;
-        }
+        margin-right: 6px;
     }
 
     ${({ transparent, theme, type }) => transparent && transparents(theme, type)};

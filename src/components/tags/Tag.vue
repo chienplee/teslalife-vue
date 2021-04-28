@@ -10,7 +10,7 @@
     </template>
   </div>
   <a-tag v-if="tagType == 'colorful'" :color="color">{{ color }}</a-tag>
-  <div v-if="tagType == 'dynamicTag'">
+  <div class="sDash-dynamic-tag" v-if="tagType == 'dynamicTag'">
     <template v-for="(tag, index) in tags" :key="index">
       <a-tooltip v-if="tag.length > 20" :title="tag">
         <a-tag :key="tag" :closable="index !== 0" @close="handleClose(tag)">
@@ -31,7 +31,7 @@
       @blur="handleInputConfirm"
       @keyup.enter="handleInputConfirm"
     />
-    <a-tag v-else @click="showInput" style="background: #fff; border-style: dashed">
+    <a-tag v-else @click="showInput" class="sDash-new-tag-input">
       <plus-outlined />
       New Tag
     </a-tag>

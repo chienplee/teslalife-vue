@@ -71,18 +71,7 @@ export default {
       'geekblue',
       'purple',
     ];
-    const customColors = [
-      '#f50',
-      '#2db7f5',
-      '#87d068',
-      '#108ee9',
-      '#3b5999',
-      '#5c0959',
-      '#87d068',
-      '#2db7f5',
-      '#87d068',
-      '#f50',
-    ];
+    const customColors = ['#f50', '#2db7f5', '#87d068', '#108ee9', '#3b5999', '#5c0959'];
     return {
       colors,
       customColors,

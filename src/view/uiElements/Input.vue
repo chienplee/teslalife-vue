@@ -25,9 +25,12 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Three sizes of Input">
-            <template v-slot:prefix>
-              <sdFeatherIcons type="user" />
-            </template>
+            <a-input size="large" placeholder="Large size">
+              <template v-slot:prefix>
+                <sdFeatherIcons type="user" />
+              </template>
+              /></a-input
+            >
             <br />
             <br />
             <a-input placeholder="default size">
