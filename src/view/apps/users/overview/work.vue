@@ -19,9 +19,9 @@
               <a-input v-model:value="formState.company" placeholder="Company Name" />
             </a-form-item>
 
-            <a-form.Item name="department" label="Department">
+            <a-form-item name="department" label="Department">
               <a-input v-model:value="formState.department" placeholder="Department name" />
-            </a-form.Item>
+            </a-form-item>
 
             <a-form-item name="designation" label="Designation">
               <a-input v-model:value="formState.designation" placeholder="Designation" />
@@ -31,7 +31,7 @@
               <a-datePicker v-model:value="formState.hiringDate" :format="dateFormat" style="width: 100%" />
             </a-form-item>
 
-            <a-form-item name="status" label="Status">
+            <a-form-item name="status" label="Status" class="work-status">
               <a-radio-group v-model:value="formState.status">
                 <a-radio value="active">Active</a-radio>
                 <a-radio value="deactivated">Deactivated</a-radio>

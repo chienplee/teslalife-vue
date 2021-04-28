@@ -122,11 +122,28 @@ const AddUser = Styled.div`
     font-weight: 500;
     margin-bottom: 36px;
   }
+  .ant-form-item:not(:last-child){
+    margin-bottom: 11px !important;
+  }
+  .ant-form-item-label{
+    line-height: 35px;
+  }
+  .work-status{
+    .ant-form-item-control{
+      line-height: 0;
+    }
+  }
+  .ant-form-item-control{
+    line-height: 0;
+  }
   .add-user-wrap{
    $:
   }
   .add-user-bottom{
     margin-top: 20px;
+    button{
+      height: 44px;
+    }
     button + button{
       ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
     }
@@ -275,10 +292,10 @@ const AddUser = Styled.div`
     }
   }
   .social-form{
-    .ant-form-item-control-input-content{
+    .ant-form-item-control-wrapper{
       .ant-input-prefix{
-        width: 44px;
-        height: 44px;
+        width: 46px;
+        height: 46px;
         border-radius: 4px;
       }
     }
@@ -296,6 +313,10 @@ const AddUser = Styled.div`
         }
       }
     }
+    .ant-input-affix-wrapper{
+      padding-top: 0;
+      padding-bottom: 0;
+    }
     .ant-input-prefix{
       position: relative;
       ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: -11px;
@@ -309,26 +330,27 @@ const AddUser = Styled.div`
         background-color: ${({ theme }) => theme['primary-color']};
         i,
         svg,
-        span.fa{
-          color: #fff;
+        span.fa,
+        i svg{
+          color: #fff !important;
           font-size: 16px;
         }
-        .fa-facebook{
+        &.facebook{
           background-color: #3B5998;
         }
-        .fa-twitter{
+        &.twitter{
           background-color: #38B8FF;
         }
-        .fa-linkedin{
+        &.linkedin{
           background-color: #2CAAE1;
         }
-        .fa-instagram{
+        &.instagram{
           background-color: #FF0300;
         }
-        .fa-github{
+        &.github{
           background-color: #292929;
         }
-        .fa-youtube{
+        &.youtube{
           background-color: #FE0909;
         }
       }

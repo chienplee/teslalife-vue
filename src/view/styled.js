@@ -873,6 +873,8 @@ const Main = Styled.div`
             }
         }
     }
+
+
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1335,6 +1337,25 @@ const CardToolbox = Styled.div`
         font-weight: 500;
         display: flex;
         align-items: center;
+        .title-counter{
+            min-width: 100px;
+        }
+        .ant-input-affix-wrapper{
+            margin-left: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-radius: 6px;
+            border: 0 none;
+            .ant-input-suffix{
+                i{
+                    line-height: 0;
+                    svg{
+                        font-size: 14px;
+                        color: ${({ theme }) => theme['light-gray-color']};
+                    }
+                }
+            }
+        }
     }
     .ant-select{
         ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 25px;

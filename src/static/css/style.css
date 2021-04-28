@@ -851,7 +851,37 @@ ul {
   padding: 10px !important;
   text-align: left !important;
 }
+.project-modal .ant-form-item:not(:last-child){
+  margin-bottom: 11px !important;
+}
 
+/* Create contact modal */
+.create-contact-modal{
+  padding: 0 !important;
+}
+.create-contact-modal .ant-form-item-label{
+  line-height: 35px;
+}
+.create-contact-modal .ant-form-item:not(:last-child){
+  margin-bottom: 15px !important;
+}
+
+/* Export Modal */
+.export-modal .ant-form-item-control-wrapper{
+  width: 100%;
+}
+.export-modal .ant-form-item-control-wrapper .ant-input {
+  padding: 7px 11px !important;
+}
+.export-modal .btn-export{
+  height: 42px;
+  margin-right: 10px;
+}
+.export-modal .ant-form-item{
+  margin-bottom: 15px;
+}
+
+/*  */
 .sDash_addTask-modal{
   max-width: 390px;
 }

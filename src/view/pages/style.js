@@ -346,6 +346,14 @@ const UserCard = Styled.div`
               color: ${({ theme }) => theme['gray-color']};
             }
           }
+          .ant-progress{
+            &> div{
+              flex-direction: row;
+            }
+            .ant-progress-text{
+              display: none;
+            }
+          }
         }
       }
     }
@@ -411,17 +419,25 @@ const UserCard = Styled.div`
         &:not(:last-child){
           ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
         }
-        &.facebook span.fa{
-          color: #3B5998;
+        &.facebook{
+            span.fa, svg{
+            color: #3B5998;
+          }
         }
-        &.twitter span.fa{
-          color: #1DA1F2;
+        &.twitter {
+            span.fa, svg{
+            color: #1DA1F2;
+          }
         }
-        &.dribble span.fa{
-          color: #C2185B;
+        &.dribble {
+            span.fa, svg{
+            color: #C2185B;
+          }
         }
-        &.instagram span.fa{
-          color: #FF0300;
+        &.instagram {
+            span.fa, svg{
+            color: #FF0300;
+          }
         }
       }
     }
@@ -445,6 +461,9 @@ const UserCard = Styled.div`
     }
     .card__actions{
       margin: -5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       .ant-btn-white{
         color: ${({ theme }) => theme['gray-color']};
         border: 1px solid ${({ theme }) => theme['border-color-light']};

@@ -969,6 +969,13 @@ const ActivitiesWrapper = Styled.div`
     }
 `;
 
+const ProjectModalFooter = Styled.div`
+    margin-top: 30px;
+    button{
+        margin-right: 10px;
+    }
+`;
+
 export {
   ProjectHeader,
   ProjectSorting,
@@ -981,4 +988,5 @@ export {
   TaskLists,
   TasklistAction,
   ActivitiesWrapper,
+  ProjectModalFooter,
 };
