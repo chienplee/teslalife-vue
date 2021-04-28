@@ -2,9 +2,9 @@
   <sdPageHeader title="Kanban">
     <template #buttons>
       <div key="1" class="page-header-actions">
-        <CalendarButtonPageHeader />
-        <ExportButtonPageHeader />
-        <ShareButtonPageHeader />
+        <sdCalendarButton />
+        <sdExportButton />
+        <sdShareButton />
         <sdButton size="small" type="primary">
           <sdFeatherIcons type="plus" size="14" />
           Add New
@@ -22,7 +22,7 @@
               :component-data="getComponentData()"
               tag="div"
               handle=".handle"
-              item-key="key"
+              item-key="boardId"
             >
               <template #item="{element}">
                 <div class="sDash_kanban-board-item handle">
@@ -53,7 +53,6 @@
                       <BoardTitleUpdate
                         :boardId="titleBoardId"
                         :boardTitle="boardTitle"
-                        :onBoardTitleChange="onBoardTitleChange"
                         :onBlur="onBoardEditableHide"
                       />
                     </div>
@@ -63,6 +62,7 @@
                         class="list-group"
                         :list="tasks.filter(item => item.boardId === element.boardId)"
                         @move="log"
+                        item-key="id"
                       >
                         <template #item="{element}">
                           <div :key="element.id" class="sDash_kanvan-task__single">

@@ -28,12 +28,6 @@
                 :dataSource="dataSource"
                 :pagination="false"
                 rowKey="index"
-                :components="{
-                  body: {
-                    wrapper: DraggableContainer,
-                    row: DraggableBodyRow,
-                  },
-                }"
               />
             </TableWrapper>
             <div class="new-todo-wrap">
@@ -45,7 +39,7 @@
         </TodoStyleWrapper>
       </a-col>
     </a-row>
-    <sdModal :type="modalType" title="Add New Todo" :visible="visible" :footer="null" :onCancel="handleCancel">
+    <sdModal type="primary" title="Add New Todo" :visible="visible" :footer="null" :onCancel="handleCancel">
       <div class="todo-modal">
         <BasicFormWrapper>
           <a-form class="adTodo-form" name="todoAdd" :model="formState" @finish="onSubmitHandler">

@@ -50,7 +50,7 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Vertical Menu">
-            <a-menu style="width: 256px" mode="vertical" @click="handleClick">
+            <a-menu style="width: 256px" mode="vertical">
               <a-menu-item key="1">
                 <MailOutlined />
                 Navigation One

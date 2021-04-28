@@ -25,8 +25,6 @@
                   :model="formState"
                   :rules="rules"
                   :layout="formState.layout"
-                  @finish="handleFinish"
-                  @finishFailed="handleFinishFailed"
                 >
                   <a-row :gutter="30">
                     <a-col :md="8" :xs="24">

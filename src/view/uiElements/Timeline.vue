@@ -319,9 +319,18 @@ export default {
     TimeLinePointerIconWrap,
     TimelineNormalWrap,
     TimelineBoxWrap,
+    SwRocket,
+    SwShieldCheck,
+    SwPenTool,
+    SwNotification,
+    SwUsers,
+    SwLayers,
+    SwPicture,
+    SwClock,
+    SwEllipse,
   },
   setup() {
-    return { SwRocket, SwShieldCheck, SwPenTool, SwNotification, SwUsers, SwLayers, SwPicture, SwClock, SwEllipse };
+    return {};
   },
 };
 </script>
