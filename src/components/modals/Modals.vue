@@ -26,6 +26,9 @@
         </sdButton>
       </slot>
     </template>
+
+    <slot name="title"> </slot>
+
     <slot></slot>
   </ModalStyled>
 </template>
