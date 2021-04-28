@@ -35,9 +35,9 @@ const lightGrayColor = '#868EAE';
 const sliderRailColor = 'rgba(95,99,242,0.2)';
 const graySolid = '#9299b8';
 const pinkColor = '#F63178';
-const btnlg = '48px !important';
-const btnsm = '36px !important';
-const btnxs = '29px !important';
+const btnlg = '48px';
+const btnsm = '36px';
+const btnxs = '29px';
 
 const theme = {
   'primary-color': primaryColor, // primary color for all components
