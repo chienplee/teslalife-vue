@@ -511,7 +511,7 @@ export default [
       },
       {
         path: 'important',
-        name: 'important',
+        name: 'note-important',
         components: {
           default: () => import(/* webpackChunkName: "note" */ '../view/apps/note/Note.vue'),
           child: () => import(/* webpackChunkName: "important" */ '../view/apps/note/overview/important.vue'),

@@ -53,7 +53,7 @@
     <sdModal
       title="Edit Task"
       class="sDash_addTask-modal"
-      :type="modalType"
+      type="primary"
       :visible="visible"
       :footer="null"
       :onCancel="handleCancel"

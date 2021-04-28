@@ -24,10 +24,10 @@
             </sdCards>
             <sdCards title="Event menu">
               <sdPopover action="hover" placement="bottomLeft">
-                <sdButton type="primary" size="smalll">hover </sdButton>
+                <sdButton type="primary" size="small">hover </sdButton>
               </sdPopover>
               <sdPopover action="click" placement="bottom">
-                <sdButton type="primary" size="smalll">click </sdButton>
+                <sdButton type="primary" size="small">click </sdButton>
               </sdPopover>
             </sdCards>
           </a-col>

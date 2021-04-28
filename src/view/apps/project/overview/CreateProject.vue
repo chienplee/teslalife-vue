@@ -93,7 +93,7 @@ const CreateProject = {
       project: '',
       category: '',
       description: '',
-      privacy: '',
+      privacy: [''],
       members: '',
       start: '',
       end: '',

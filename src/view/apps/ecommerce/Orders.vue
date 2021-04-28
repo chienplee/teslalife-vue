@@ -172,6 +172,7 @@ const Orders = {
       item,
       searchData,
       columns,
+      orders,
     };
   },
 };

@@ -48,7 +48,7 @@ export default {
     type: VueTypes.oneOf(['primary', 'secondary', 'success', 'error', 'danger', 'info', 'white', 'warning']).def(
       'white',
     ),
-    footer: VueTypes.oneOf([null, true]).def(null),
+    footer: VueTypes.oneOf([null]),
     width: VueTypes.number.def(620),
     color: VueTypes.oneOfType([VueTypes.bool, VueTypes.string]).def(false),
   },

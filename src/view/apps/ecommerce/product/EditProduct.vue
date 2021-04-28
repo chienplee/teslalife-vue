@@ -73,7 +73,7 @@
                               </a-form-item>
 
                               <a-form-item name="description" label="Product Description">
-                                <a-textArea v-model:value="formState.description" :rows="5" />
+                                <a-textarea v-model:value="formState.description" :rows="5" />
                               </a-form-item>
                               <a-form-item name="mTitle" label="Meta Title">
                                 <a-input v-model:value="formState.mTitle" />

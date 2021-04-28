@@ -365,7 +365,7 @@
             Work
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="note-social">
+        <a-menu-item @click="toggleCollapsed" key="social-note">
           <router-link to="/app/note/social">
             Social
           </router-link>

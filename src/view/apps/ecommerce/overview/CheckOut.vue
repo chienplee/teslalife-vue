@@ -421,7 +421,7 @@ const CheckOut = {
     let subtotal = 0;
 
     const dataSource = computed(() =>
-      cartData.value.map(data => {
+      state.cart.data.map(data => {
         const { id, img, name, quantity, price, size, color } = data;
         subtotal += parseInt(quantity, 10) * parseInt(price, 10);
         return {
