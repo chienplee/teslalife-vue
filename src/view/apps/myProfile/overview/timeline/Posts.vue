@@ -2,132 +2,131 @@
   <div v-if="isLoading" class="spin">
     <a-spin />
   </div>
-  <SimpleReactLightbox v-else>
-    <AllPosts>
-      <sdCards more>
-        <template #more>
-          <a @click="() => onPostDelete(postId)" to="#">
-            Delete
-          </a>
-        </template>
-        <template #title>
-          <Title>
-            <img :src="require(`@/${author}`)" alt="" />
-            <p>
-              {{ from }} <span>{{ moment(parseInt(time, 10)).fromNow() }}</span>
-            </p>
-          </Title>
-        </template>
 
-        <div class="post-content">
-          <div v-if="img.length" class="gallery">
-            <!-- <SRLWrapper> -->
-            <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
-              <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
-                <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
-              </a>
-            </div>
-            <div
-              v-if="img.length > 2"
-              :cols="img.length <= 2 ? img.length : 3"
-              class="my-masonry-grid"
-              columnclass="my-masonry-grid_column"
-            >
-              <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
-                <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
-              </a>
-            </div>
-          </div>
-          <div class="post-text">
-            <p>{{ content }}</p>
-          </div>
-          <div class="post-actions">
-            <span>
-              <a @click="() => onLikeUpdate(postId)" to="#">
-                <sdFeatherIcons type="thumbs-up" size="14" />
-              </a>
-              {{ like }}
-            </span>
-            <span>
-              <a to="#">
-                <sdFeatherIcons type="message-square" size="14" />
-              </a>
-              {{ comment.length }}
-            </span>
-            <a to="#">
-              <sdFeatherIcons type="share-2" size="14" />
-              Share
+  <AllPosts v-else>
+    <sdCards more>
+      <template #more>
+        <a @click="() => onPostDelete(postId)" to="#">
+          Delete
+        </a>
+      </template>
+      <template #title>
+        <Title>
+          <img :src="require(`@/${author}`)" alt="" />
+          <p>
+            {{ from }} <span>{{ moment(parseInt(time, 10)).fromNow() }}</span>
+          </p>
+        </Title>
+      </template>
+
+      <div class="post-content">
+        <div v-if="img.length" class="gallery">
+          <!-- <SRLWrapper> -->
+          <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
+            <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
+              <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
             </a>
           </div>
-
-          <div class="post-comments">
-            <div class="commentArea">
-              <div class="comment-form">
-                <img :src="require('@/static/img/chat-author/t2.jpg')" alt="" />
-                <a-textarea @change="onTextChange" v-model:value="textValue" placeholder="Write comment...." />
-                <div class="chatbox-reply-action d-flex">
-                  <span class="smile-icon">
-                    <template v-if="pickerShow">
-                      <BackShadowEmoji @click="() => setPickerShow(false)" />
-                      <Picker @emojiClick="onEmojiClick" />
-                    </template>
-                    <a @click="onPickerShow" to="#">
-                      <sdFeatherIcons type="smile" size="24" />
-                    </a>
-                  </span>
-                  <a to="#">
-                    <a-upload v-bind="props">
-                      <sdFeatherIcons type="image" size="18" />
-                    </a-upload>
-                  </a>
-                  <a to="#">
-                    <a-upload v-bind="attachment">
-                      <sdFeatherIcons type="paperclip" size="18" />
-                    </a-upload>
-                  </a>
-                </div>
-              </div>
-              <sdButton
-                @click="() => (textValue === '' ? alert('Please input your comment...') : onCommentUpdate(postId))"
-                type="primary"
-                class="btn-send"
-              >
-                <sdFeatherIcons type="send" size="18" />
-              </sdButton>
-            </div>
-          </div>
-          <div class="commentReplay">
-            <div v-if="isPostLoading" class="spin">
-              <a-spin />
-            </div>
-            <template v-else>
-              <ExampleComment
-                v-if="comment.length"
-                :replay="{
-                  time: comment[0].time,
-                  name: comment[0].from,
-                  text: comment[0].text,
-                }"
-              >
-                <template v-if="comment.length > 1">
-                  <ExampleComment
-                    v-for="(item, key) in comment"
-                    :key="key + 1"
-                    v-if="key >= 1"
-                    :replay="{
-                      time: item.time,
-                      name: item.name,
-                      text: item.text,
-                    }"
-                  />
-                </template>
-              </ExampleComment>
-            </template>
+          <div
+            v-if="img.length > 2"
+            :cols="img.length <= 2 ? img.length : 3"
+            class="my-masonry-grid"
+            columnclass="my-masonry-grid_column"
+          >
+            <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
+              <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+            </a>
           </div>
         </div>
-      </sdCards>
-    </AllPosts>
-  </SimpleReactLightbox>
+        <div class="post-text">
+          <p>{{ content }}</p>
+        </div>
+        <div class="post-actions">
+          <span>
+            <a @click="() => onLikeUpdate(postId)" to="#">
+              <sdFeatherIcons type="thumbs-up" size="14" />
+            </a>
+            {{ like }}
+          </span>
+          <span>
+            <a to="#">
+              <sdFeatherIcons type="message-square" size="14" />
+            </a>
+            {{ comment.length }}
+          </span>
+          <a to="#">
+            <sdFeatherIcons type="share-2" size="14" />
+            Share
+          </a>
+        </div>
+
+        <div class="post-comments">
+          <div class="commentArea">
+            <div class="comment-form">
+              <img :src="require('@/static/img/chat-author/t2.jpg')" alt="" />
+              <a-textarea @change="onTextChange" v-model:value="textValue" placeholder="Write comment...." />
+              <div class="chatbox-reply-action d-flex">
+                <span class="smile-icon">
+                  <template v-if="pickerShow">
+                    <BackShadowEmoji @click="() => setPickerShow(false)" />
+                    <Picker @emojiClick="onEmojiClick" />
+                  </template>
+                  <a @click="onPickerShow" to="#">
+                    <sdFeatherIcons type="smile" size="24" />
+                  </a>
+                </span>
+                <a to="#">
+                  <a-upload v-bind="props">
+                    <sdFeatherIcons type="image" size="18" />
+                  </a-upload>
+                </a>
+                <a to="#">
+                  <a-upload v-bind="attachment">
+                    <sdFeatherIcons type="paperclip" size="18" />
+                  </a-upload>
+                </a>
+              </div>
+            </div>
+            <sdButton
+              @click="() => (textValue === '' ? alert('Please input your comment...') : onCommentUpdate(postId))"
+              type="primary"
+              class="btn-send"
+            >
+              <sdFeatherIcons type="send" size="18" />
+            </sdButton>
+          </div>
+        </div>
+        <div class="commentReplay">
+          <div v-if="isPostLoading" class="spin">
+            <a-spin />
+          </div>
+          <template v-else>
+            <ExampleComment
+              v-if="comment.length"
+              :replay="{
+                time: comment[0].time,
+                name: comment[0].from,
+                text: comment[0].text,
+              }"
+            >
+              <template v-if="comment.length > 1">
+                <ExampleComment
+                  v-for="(item, key) in comment"
+                  :key="key + 1"
+                  v-if="key >= 1"
+                  :replay="{
+                    time: item.time,
+                    name: item.name,
+                    text: item.text,
+                  }"
+                />
+              </template>
+            </ExampleComment>
+          </template>
+        </div>
+      </div>
+    </sdCards>
+  </AllPosts>
 </template>
 <script>
 import Masonry from 'vue-masonry-css';
@@ -270,6 +269,8 @@ const Posts = {
       isLoading,
       posts,
       isPostLoading,
+      textValue,
+      pickerShow,
     };
   },
 };

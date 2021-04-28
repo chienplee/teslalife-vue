@@ -38,9 +38,9 @@
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Loading">
-            <a-switch loading v-model:checked="checked1" />
+            <a-switch loading v-model:checked="checked6" />
             <br />
-            <a-switch size="small" loading v-model:checked="checked2" />
+            <a-switch size="small" loading v-model:checked="checked7" />
           </sdCards>
         </a-col>
       </a-row>
@@ -67,6 +67,8 @@ export default {
       checked3: true,
       checked4: false,
       checked5: false,
+      checked6: true,
+      checked7: false,
     });
     return {
       checked,

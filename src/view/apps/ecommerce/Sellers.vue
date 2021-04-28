@@ -14,7 +14,7 @@
   </sdPageHeader>
   <Main>
     <sdCards headless>
-      <a-rw :gutter="15">
+      <a-row :gutter="15">
         <a-col :md="24">
           <TopToolBox>
             <a-row :gutter="15">
@@ -47,7 +47,7 @@
             />
           </TableWrapper>
         </a-col>
-      </a-rw>
+      </a-row>
     </sdCards>
   </Main>
 </template>
@@ -146,6 +146,7 @@ const Sellers = {
       dataSource,
       searchData,
       columns,
+      sellers,
     };
   },
 };

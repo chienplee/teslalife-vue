@@ -9,7 +9,7 @@
     <ul v-if="chatData">
       <li
         @click="dataFiltering"
-        v-for="({ userName, content, email, active, img }, key) in chatData"
+        v-for="({ userName, content, email, active, img, id }, key) in chatData"
         :key="key + 1"
         class="chat-link-signle"
       >
