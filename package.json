@@ -4,10 +4,10 @@
   "private": true,
   "posthtml": {
     "recognizeSelfClosing": true
-},
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",    
+    "build": "set \"GENERATE_SOURCEMAP=false\" && vue-cli-service --max-old-space-size=4096 build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
