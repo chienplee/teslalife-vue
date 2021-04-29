@@ -18,7 +18,7 @@
       <span class="pdbr__price">{{ product.price }}</span>
     </sdHeading>
 
-    <sdHeading v-if="oldPrice" class="pdbr__old-price" as="h6">
+    <sdHeading v-if="product.oldPrice" class="pdbr__old-price" as="h6">
       <del>${{ product.oldPrice }}</del> <span class="pdbr__offer-price">30% Off</span>
     </sdHeading>
 

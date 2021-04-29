@@ -7,6 +7,7 @@ import './static/css/style.css';
 import '@/core/plugins/ant-design';
 import '@/core/plugins/fonts';
 import '@/core/plugins/maps';
+import '@/core/plugins/masonry';
 import '@/core/plugins/apexcharts';
 import '@/core/components/custom';
 import '@/core/components/style';

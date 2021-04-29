@@ -149,7 +149,6 @@ export default {
               gridLines: {
                 display: false,
               },
-              barPercentage: 0.6,
               ticks: {
                 beginAtZero: true,
                 fontSize: 11,
@@ -357,11 +356,13 @@ export default {
           data: [20, 60, 50, 45, 50, 60, 70, 40, 45, 35, 25, 30],
           backgroundColor: 'rgba(0,23,55, .5)',
           label: 'Profit',
+          barPercentage: 0.6,
         },
         {
           data: [10, 40, 30, 40, 60, 55, 45, 35, 30, 20, 15, 20],
           backgroundColor: 'rgba(28,225,172, .5)',
           label: 'Lose',
+          barPercentage: 0.6,
         },
       ],
       transparentChartOption: {
@@ -408,7 +409,6 @@ export default {
               gridLines: {
                 display: false,
               },
-              barPercentage: 0.6,
               ticks: {
                 beginAtZero: true,
                 fontSize: 13,

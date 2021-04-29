@@ -10,7 +10,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t1.jpg')" alt="" />
               <p>
-                <span class="inline-text color-primary">James</span> Send you a message{' '}
+                <span class="inline-text color-primary">James</span> Send you a message
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -37,7 +37,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t2.jpg')" alt="" />
               <p>
-                <span class="inline-text color-primary">Adam </span>upload website template for sale{' '}
+                <span class="inline-text color-primary">Adam </span>upload website template for sale
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -118,7 +118,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t5.png')" alt="" />
               <p>
-                <span class="inline-text color-primary">Adam</span> upload website template for sale{' '}
+                <span class="inline-text color-primary">Adam</span> upload website template for sale
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -145,7 +145,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t1.jpg')" alt="" />
               <p>
-                <span class="inline-text color-primary">Mumtahin</span> has registered{' '}
+                <span class="inline-text color-primary">Mumtahin</span> has registered
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -172,7 +172,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t6.png')" alt="" />
               <p>
-                <span class="inline-text color-primary">James</span> Send you a message{' '}
+                <span class="inline-text color-primary">James</span> Send you a message
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -199,7 +199,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t7.png')" alt="" />
               <p>
-                <span class="inline-text color-primary">Mumtahin</span> has registered{' '}
+                <span class="inline-text color-primary">Mumtahin</span> has registered
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -226,7 +226,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t8.png')" alt="" />
               <p>
-                <span class="inline-text color-primary">Adam</span> upload website template for sale{' '}
+                <span class="inline-text color-primary">Adam</span> upload website template for sale
                 <span class="hour">5 hours ago</span>
               </p>
             </div>
@@ -253,7 +253,7 @@
             <div class="activity-info">
               <img :src="require('@/static/img/chat-author/t1.jpg')" alt="" />
               <p>
-                <span class="inline-text color-primary">James</span> Send you a message{' '}
+                <span class="inline-text color-primary">James</span> Send you a message
                 <span class="hour">5 hours ago</span>
               </p>
             </div>

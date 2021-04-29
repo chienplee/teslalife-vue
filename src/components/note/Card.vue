@@ -12,11 +12,7 @@
       <p>{{ data.description }}</p>
       <div class="actions">
         <span>
-          <a
-            :class="data.stared ? 'star active' : 'star'"
-            @click="() => dispatch('onStarUpdate', { data: noteData, id: data.key })"
-            to="#"
-          >
+          <a :class="data.stared ? 'star active' : 'star'" @click="onStarUpdate" to="#">
             <sdFeatherIcons type="star" size="16" />
           </a>
           <a @click="() => onHandleDelete()" to="#">
@@ -75,7 +71,12 @@ const NoteCard = {
       dispatch('noteDeleteData', value);
     };
 
+    const onStarUpdate = () => {
+      dispatch('onStarUpdate', { data: noteData.value, id: data.value.key });
+    };
+
     return {
+      onStarUpdate,
       noteData,
       dispatch,
       onHandleDelete,

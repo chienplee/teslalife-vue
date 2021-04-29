@@ -21,7 +21,7 @@
       <p class="product-single-price">
         <span class="product-single-price__new">${{ renderData.price }} </span>
 
-        <template v-if="oldPrice">
+        <template v-if="renderData.oldPrice">
           <del class="product-single-price__old"> ${{ renderData.oldPrice }} </del>
           <span class="product-single-price__offer"> 60% Off</span>
         </template>

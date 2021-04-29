@@ -170,9 +170,9 @@
             <sdCards>
               <template #title>
                 <nav>
-                  <router-link :to="`${matched[0].path.split('/:')[0]}/${params.id}/tasklist`">Task List</router-link>
+                  <router-link :to="`${matched[1].path.split('/:')[0]}/${params.id}/tasklist`">Task List</router-link>
                   &nbsp; &nbsp;
-                  <router-link :to="`${matched[0].path.split('/:')[0]}/${params.id}/activities`"
+                  <router-link :to="`${matched[1].path.split('/:')[0]}/${params.id}/activities`"
                     >Activities</router-link
                   >
                 </nav>

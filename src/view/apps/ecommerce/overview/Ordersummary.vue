@@ -115,6 +115,7 @@ const OrdersSummary = {
       current,
       coupon,
       rtl,
+      formState,
       ...toRefs(formState),
     };
   },

@@ -37,7 +37,7 @@
           <a-col :md="12" :sm="24" :xs="24">
             <div class="auto-complete-input">
               <sdCards title="Customize">
-                <sdAutoComplete :dataSource="dataSource" @onSearch="onSearch" />
+                <sdAutoComplete :dataSource="searchData" @onSearch="onSearch" />
               </sdCards>
             </div>
 

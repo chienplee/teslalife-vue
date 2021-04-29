@@ -14,6 +14,7 @@
       </template>
     </sdPageHeader>
     <Main>
+      <!-- <a-row> -->
       <KnowledgeBaseTop />
       <KnowledgebaseArticleWrap>
         <div class="knowledgebase-article-container">
@@ -40,22 +41,29 @@
           <PopularArticleWrap>
             <div class="sDash_popular-article sDash_popular-article-container">
               <h2 class="sDash_popular-article__title">Popular articles</h2>
-              <ResponsiveMasonry columnsCountBreakPoints="{ 350: 1, 767: 2, 900: 3 }">
-                <Masonry class="sDash_popular-article__box" :gutter="15">
-                  <div
-                    v-for="article in articles"
-                    :key="article.id"
-                    :class="`sDash_popular-article__single theme-` + article.type"
-                  >
-                    <h4 class="single-article-title">{{ article.title }}</h4>
-                    <p>{{ article.text }}</p>
-                    <router-link class="btn-link" to="/page/knowledgebase/single">
-                      Read more
-                      <ArrowRightOutlined />
-                    </router-link>
-                  </div>
-                </Masonry>
-              </ResponsiveMasonry>
+              <div v-masonry="containerId" transition-duration="0.3s" item-selector=".item">
+                <div class="sDash_popular-article__box">
+                  <a-row>
+                    <a-col
+                      :md="8"
+                      :sm="12"
+                      :xs="24"
+                      v-masonry-tile
+                      class="item"
+                      v-for="article in articles"
+                      :key="article.id"
+                      :class="`sDash_popular-article__single theme-${article.type}`"
+                    >
+                      <h4 class="single-article-title">{{ article.title }}</h4>
+                      <p>{{ article.text }}</p>
+                      <router-link class="btn-link" to="/page/knowledgebase/single">
+                        Read more
+                        <ArrowRightOutlined />
+                      </router-link>
+                    </a-col>
+                  </a-row>
+                </div>
+              </div>
             </div>
           </PopularArticleWrap>
           <CtaWrap>
@@ -69,13 +77,14 @@
           </CtaWrap>
         </div>
       </KnowledgebaseArticleWrap>
+      <!-- </a-row> -->
     </Main>
   </div>
 </template>
 
 <script>
 import { Main } from '../../styled';
-import { ArrowRightOutlined } from '@ant-design/icons-vue';
+//import { ArrowRightOutlined } from '@ant-design/icons-vue';
 import KnowledgeBaseTop from './overview/knowledgebase/KnowledgeTop';
 import { KnowledgebaseArticleWrap, ArticleTabWrap, PopularArticleWrap, CtaWrap } from './style';
 import articles from '../../../demoData/article.json';
@@ -83,7 +92,7 @@ export default {
   name: 'KnowledgeBase',
   components: {
     Main,
-    ArrowRightOutlined,
+    //ArrowRightOutlined,
     KnowledgeBaseTop,
     KnowledgebaseArticleWrap,
     ArticleTabWrap,

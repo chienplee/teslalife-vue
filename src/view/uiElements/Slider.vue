@@ -7,7 +7,7 @@
           <sdExportButton />
           <sdShareButton />
           <sdButton size="small" type="primary">
-            <PlusIcon size="14" />
+            <sdFeatherIcons type="plus" size="14" />
             Add New
           </sdButton>
         </div>
