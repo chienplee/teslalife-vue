@@ -37,7 +37,7 @@
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
-          <sdCards title="Google Rectangle Map">
+          <sdCards title="Google Circle Map">
             <CircleMap :apiKey="apiKey" />
           </sdCards>
         </a-col>
