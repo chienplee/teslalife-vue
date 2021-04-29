@@ -5,20 +5,19 @@ const HorizontalFormStyleWrap = Styled.div`
         margin-bottom: 25px
     }
     .ant-form-horizontal{
-        label{
-            display: inline-block;
-            font-weight: 500;
-            margin-bottom: 24px;
-            @media only screen and (max-width: 767px) {
-                margin-bottom: 12px;
+        .ant-form-item .ant-form-item-label{
+            label{
+                display: inline-block;
+                font-weight: 500;
+                margin-bottom: 0;
+                @media only screen and (max-width: 767px) {
+                    margin-bottom: 0;
+                }
             }
         }
+        
         .ant-form-item{
             margin-bottom: 25px !important;
-        }
-        .ant-input-affix-wrapper > input.ant-input{
-            padding-top: 12px;
-            padding-bottom: 12px;
         }
         .ant-input-affix-wrapper .ant-input-prefix svg{
             color: ${({ theme }) => theme['gray-color']};
