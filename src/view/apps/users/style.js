@@ -70,6 +70,9 @@ const UserTableStyleWrapper = Styled.nav`
         }
       }
     }
+    .table-actions{
+      min-width: 150px !important;
+    }
   }
   .ant-table-pagination.ant-pagination{
     width: 100%;
