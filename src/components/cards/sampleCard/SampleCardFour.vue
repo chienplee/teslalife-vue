@@ -15,11 +15,11 @@
         </div>
         <div class="feedback">
           <span class="like">
-            <FeatherIcon icon="heart" size="14" />
+            <sdFeatherIcons type="heart" size="14" />
             70
           </span>
           <span class="view">
-            <FeatherIcon icon="eye" size="14" />
+            <sdFeatherIcons type="eye" size="14" />
             120
           </span>
         </div>

@@ -16,41 +16,34 @@
     <Main>
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
-          <sdCards title="Google Map Basic">
-            <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="position" :zoom="15">
-              <Marker :options="{ position }" />
-            </GoogleMap>
+          <sdCards title="Google Basic Map">
+            <BasicMap :apiKey="apiKey" />
+          </sdCards>
+        </a-col>
+
+        <a-col :md="12" :xs="24">
+          <sdCards title="Google Polyline Map">
+            <PolylineMap :apiKey="apiKey" />
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
-          <sdCards title="Google Map Custom Marker with info window">
-            <div>
-              <GoogleMap :api-key="apiKey" style="width: 100%; height: 500px" :center="position" :zoom="15">
-                <Marker :options="{ position }" />
-              </GoogleMap>
-
-              <!-- <google-map
-                class="map-wrapper"
-                id="map1"
-                :center="position"
-                ref="Map"
-              >
-                <google-map-marker
-                  :icon="require(`../../static/img/map/mpc.png`)"
-                  :position="position"
-                  @click="toggleInfoWindow()"
-                ></google-map-marker>
-                <google-map-infowindow
-                  :position="position"
-                  :show.sync="showInfo"
-                  :options="{ maxWidth: 300 }"
-                  @info-window-clicked="infoClicked"
-                >
-                  <h4>Hello</h4>
-                  <p>This is most of the beautiful</p>
-                </google-map-infowindow>
-              </google-map> -->
-            </div>
+          <sdCards title="Google Polygon Map">
+            <PolygonMap :apiKey="apiKey" />
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :xs="24">
+          <sdCards title="Google Rectangle Map">
+            <RectangleMap :apiKey="apiKey" />
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :xs="24">
+          <sdCards title="Google Circle Map">
+            <CircleMap :apiKey="apiKey" />
+          </sdCards>
+        </a-col>
+        <a-col :md="12" :xs="24">
+          <sdCards title="Google Advanced Map">
+            <AdvancedMap :apiKey="apiKey" />
           </sdCards>
         </a-col>
       </a-row>
@@ -60,44 +53,27 @@
 
 <script>
 import { Main } from '../styled';
-import mapData from '../../config/map/google-maps-styles';
-import { GoogleMap, Marker } from 'vue3-google-map';
 import { defineComponent } from 'vue';
+import BasicMap from './googleMaps/BasicMap';
+import PolylineMap from './googleMaps/PolylineMap';
+import PolygonMap from './googleMaps/PolygonMap';
+import RectangleMap from './googleMaps/RectangleMap';
+import CircleMap from './googleMaps/CircleMap';
+import AdvancedMap from './googleMaps/AdvancedMap';
 
 export default defineComponent({
   name: 'GoogleMaps',
   components: {
     Main,
-    GoogleMap,
-    Marker,
+    BasicMap,
+    PolylineMap,
+    PolygonMap,
+    RectangleMap,
+    CircleMap,
+    AdvancedMap,
   },
   setup() {
-    const center = { lat: 40.689247, lng: -74.044502 };
-    return { center };
-  },
-  data() {
-    return {
-      apiKey: 'AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08',
-      showInfo: false,
-      position: {
-        lat: 50.797897,
-        lng: -1.077641,
-      },
-      style: {
-        light: { styles: mapData.mapOneStyles },
-        dark: { styles: mapData.mapStyleDark },
-        theme: { styles: mapData.mapThreeStyles },
-        styleMap: { styles: mapData.mapTwoStyles },
-      },
-    };
-  },
-  methods: {
-    toggleInfoWindow() {
-      this.showInfo = true;
-    },
-    infoClicked(context) {
-      console.log(context);
-    },
+    return { apiKey: 'AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08' };
   },
 });
 </script>

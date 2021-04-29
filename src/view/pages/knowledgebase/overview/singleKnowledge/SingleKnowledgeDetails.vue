@@ -28,7 +28,7 @@
       </div>
       <div class="knowledge-details__single--block">
         <div class="knowledge-details-collapse">
-          <a-collapse v-model:activeKey="activeKey" accordion>
+          <a-collapse accordion>
             <a-collapse-panel class="knowledge-details-collapse__title" key="0" header="Measuring elevation">
               <div class="knowledge-details-collapse__text">
                 <p>
@@ -44,7 +44,7 @@
       </div>
       <div class="knowledge-details__single--block">
         <div class="knowledge-details-collapse">
-          <a-collapse v-model:activeKey="activeKey" accordion>
+          <a-collapse accordion>
             <a-collapse-panel class="knowledge-details-collapse__title" key="1" header="Measuring elevation">
               <div class="knowledge-details-collapse__text">
                 <p>
@@ -158,7 +158,7 @@
     <div class="sDash_comment-form">
       <h4 class="sDash_comment-form__title">Leave comment</h4>
       <a-form name="comment" :model="formState" layout="vertical">
-        <a-row gutter="20">
+        <a-row :gutter="20">
           <a-col :sm="12" :xs="24">
             <a-form-item label="Name" name="name">
               <a-input v-model:value="formState.name" />
@@ -170,20 +170,20 @@
             </a-form-item>
           </a-col>
         </a-row>
-        <Row>
+        <a-row>
           <a-col :xs="24">
             <a-form-item label="Comment" name="comment">
               <a-textarea placeholder="Basic usage" :rows="4" />
             </a-form-item>
           </a-col>
-        </Row>
-        <Row>
+        </a-row>
+        <a-row>
           <a-col :xs="24">
             <sdButton html-type="submit" class="btn-submit" size="large" type="primary" raised key="submit">
               Submit Comment
             </sdButton>
           </a-col>
-        </Row>
+        </a-row>
       </a-form>
     </div>
   </KnowledgeDetailsWrap>

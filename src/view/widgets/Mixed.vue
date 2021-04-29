@@ -49,6 +49,7 @@ import CardGroup from '../dashboard/overview/business/CardGroup';
 import DailyOverview from '../dashboard/overview/performance/DailyOverview';
 import SalesByLocation from '../dashboard/overview/ecommerce/SalesByLocation';
 import Ordersummary from '../apps/ecommerce/overview/Ordersummary';
+import { MixedCardWrap } from './Style';
 export default defineComponent({
   name: 'WidgetMixed',
   components: {
@@ -58,6 +59,7 @@ export default defineComponent({
     DailyOverview,
     SalesByLocation,
     Ordersummary,
+    MixedCardWrap,
   },
   setup() {
     return {};
