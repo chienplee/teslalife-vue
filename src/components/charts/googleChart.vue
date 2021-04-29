@@ -1,5 +1,5 @@
 <script>
-import { GChart } from 'vue-google-charts';
+import { GChart } from 'vue3-googl-chart';
 import VueTypes from 'vue-types';
 
 export const GoogleBasicBarChart = {
