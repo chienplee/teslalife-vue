@@ -14,7 +14,7 @@
       </template>
     </sdPageHeader>
     <Main>
-      <Row gutter="25">
+      <a-row :gutter="25">
         <a-col :sm="24" :xs="24">
           <ComingsoonStyleWrapper>
             <sdCards headless>
@@ -88,7 +88,7 @@
             </sdCards>
           </ComingsoonStyleWrapper>
         </a-col>
-      </Row>
+      </a-row>
     </Main>
   </div>
 </template>
