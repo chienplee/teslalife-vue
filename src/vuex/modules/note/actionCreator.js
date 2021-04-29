@@ -51,13 +51,13 @@ const actions = {
         if (item.key === id) {
           const fav = item;
           if (item.stared) {
-            fav.stared = false;
-          } else {
             fav.stared = true;
+          } else {
+            fav.stared = false;
           }
         }
-        return commit('starUpdateSuccess', data);
       });
+      return commit('starUpdateSuccess', data);
     } catch (err) {
       commit('starUpdateErr', err);
     }

@@ -17,133 +17,115 @@
       <a-col :xs="24">
         <KanvanBoardWrap>
           <sdCards headless title="Product Design">
-            <draggable
-              v-model="dragAbleBoardData"
-              :component-data="getComponentData()"
-              tag="div"
-              handle=".handle"
-              item-key="boardId"
-            >
-              <template #item="{element}">
-                <div class="sDash_kanban-board-item handle">
-                  <div class="sDash_kanban-board-item-scrolable">
-                    <div
-                      :class="
-                        element.boardId === titleBoardId
-                          ? 'sDash_kanban-board-item__header editable'
-                          : 'sDash_kanban-board-item__header'
-                      "
-                    >
-                      <h4 class="list-header-title">
-                        <span>{{ element.title }}</span>
-                        <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
-                          <template #overlay>
-                            <a @click="e => onBoardEditable(e, element.boardId, element.title)" href="#">
-                              <span>Edit Card Title</span>
-                            </a>
-                            <a @click="() => deleteColumnHandler(element.boardId)" href="#">
-                              <span>Delete Card</span>
-                            </a>
-                          </template>
-                          <a href="#" class="btn-more">
-                            <sdFeatherIcons type="more-horizontal" size="14" />
+            <div class="sDash_kanban-board-list">
+              <div v-for="(element, key) in boardData" :key="key" class="sDash_kanban-board-item handle">
+                <div class="sDash_kanban-board-item-scrolable">
+                  <div
+                    :class="
+                      element.boardId === titleBoardId
+                        ? 'sDash_kanban-board-item__header editable'
+                        : 'sDash_kanban-board-item__header'
+                    "
+                  >
+                    <h4 class="list-header-title">
+                      <span>{{ element.title }}</span>
+                      <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
+                        <template #overlay>
+                          <a @click="e => onBoardEditable(e, element.boardId, element.title)" href="#">
+                            <span>Edit Card Title</span>
                           </a>
-                        </sdDropdown>
-                      </h4>
-                      <BoardTitleUpdate
-                        :boardId="titleBoardId"
-                        :boardTitle="boardTitle"
-                        :onBlur="onBoardEditableHide"
-                      />
-                    </div>
-
-                    <div class="sDash_kanvan-task">
-                      <draggable
-                        class="list-group"
-                        :list="tasks.filter(item => item.boardId === element.boardId)"
-                        @move="log"
-                        item-key="id"
-                      >
-                        <template #item="{element}">
-                          <div :key="element.id" class="sDash_kanvan-task__single">
-                            <KanbanBoardItem
-                              :taskId="taskId"
-                              :onBackShadow="onBackShadow"
-                              :onTaskTitleUpdate="onTaskTitleUpdate"
-                              :onTaskTitleDelete="onTaskTitleDelete"
-                              :showModal="showModal"
-                              :data="element"
-                            />
-                          </div>
+                          <a @click="() => deleteColumnHandler(element.boardId)" href="#">
+                            <span>Delete Card</span>
+                          </a>
                         </template>
-                      </draggable>
-                    </div>
+                        <a href="#" class="btn-more">
+                          <sdFeatherIcons type="more-horizontal" size="14" />
+                        </a>
+                      </sdDropdown>
+                    </h4>
+                    <BoardTitleUpdate :boardId="titleBoardId" :boardTitle="boardTitle" :onBlur="onBoardEditableHide" />
+                  </div>
 
-                    <div
-                      :class="
-                        element.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'
-                      "
-                    >
-                      <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, element.boardId)">
-                        <sdFeatherIcons type="plus" size="12" />
-                        <span>Add Task</span>
-                      </a>
-
-                      <div class="sDash_addTask-from">
-                        <a-input
-                          :name="`taskInput-${element.boardId}`"
-                          class="sDash_addTask-input"
-                          placeholder="Enter a Title"
-                          @pressEnter="() => addTaskHandler(element.boardId)"
+                  <div class="sDash_kanvan-task">
+                    <div class="list-group">
+                      <div
+                        v-for="element in tasks.filter(item => item.boardId === element.boardId)"
+                        :key="element.id"
+                        class="sDash_kanvan-task__single"
+                      >
+                        <KanbanBoardItem
+                          :taskId="taskId"
+                          :onBackShadow="onBackShadow"
+                          :onTaskTitleUpdate="onTaskTitleUpdate"
+                          :onTaskTitleDelete="onTaskTitleDelete"
+                          :showModal="showModal"
+                          :data="element"
                         />
-                        <div class="sDash_addTask-action">
-                          <sdButton
-                            @click="() => addTaskHandler(element.boardId)"
-                            class="add-column"
-                            htmlType="submit"
-                            size="small"
-                            type="primary"
-                          >
-                            Add
-                          </sdButton>
-                          <a href="#" @click="handleOffAddTask">
-                            <sdFeatherIcons type="x" size="18" />
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </template>
-              <template #footer>
-                <div :class="addColumn ? 'btn-addColumn add-column-on' : 'btn-addColumn'">
-                  <div class="btn-addColumn-inner">
-                    <a href="#" class="btn-add" @click="activeAddOption">
+
+                  <div
+                    :class="element.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'"
+                  >
+                    <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, element.boardId)">
                       <sdFeatherIcons type="plus" size="12" />
-                      <span>Add Column</span>
+                      <span>Add Task</span>
                     </a>
-                    <a-form class="addColumn-form" :model="formState" name="columnAdd" @finish="addColumnHandler">
-                      <div class="btn-addColumn-form">
-                        <a-input
-                          v-model:value="columnTitle"
-                          class="sDash-add-column-input"
-                          @change="onColumnTitleChange"
-                          placeholder="Enter Column Title"
-                        />
-                        <div class="sDash_add-column-action">
-                          <sdButton class="add-column" htmlType="submit" size="small" type="primary">
-                            Add
-                          </sdButton>
-                          <a href="#" @click="diActiveAddOption">
-                            <sdFeatherIcons type="x" size="18" />
-                          </a>
-                        </div>
+
+                    <div class="sDash_addTask-from">
+                      <a-input
+                        :name="`taskInput-${element.boardId}`"
+                        class="sDash_addTask-input"
+                        placeholder="Enter a Title"
+                        @pressEnter="() => addTaskHandler(element.boardId)"
+                      />
+                      <div class="sDash_addTask-action">
+                        <sdButton
+                          @click="() => addTaskHandler(element.boardId)"
+                          class="add-column"
+                          htmlType="submit"
+                          size="small"
+                          type="primary"
+                        >
+                          Add
+                        </sdButton>
+                        <a href="#" @click="handleOffAddTask">
+                          <sdFeatherIcons type="x" size="18" />
+                        </a>
                       </div>
-                    </a-form>
+                    </div>
                   </div>
                 </div>
-              </template>
-            </draggable>
+              </div>
+
+              <div :class="addColumn ? 'btn-addColumn add-column-on' : 'btn-addColumn'">
+                <div class="btn-addColumn-inner">
+                  <a href="#" class="btn-add" @click="activeAddOption">
+                    <sdFeatherIcons type="plus" size="12" />
+                    <span>Add Column</span>
+                  </a>
+                  <a-form class="addColumn-form" :model="formState" name="columnAdd" @finish="addColumnHandler">
+                    <div class="btn-addColumn-form">
+                      <a-input
+                        v-model:value="columnTitle"
+                        class="sDash-add-column-input"
+                        @change="onColumnTitleChange"
+                        placeholder="Enter Column Title"
+                      />
+                      <div class="sDash_add-column-action">
+                        <sdButton class="add-column" htmlType="submit" size="small" type="primary">
+                          Add
+                        </sdButton>
+                        <a href="#" @click="diActiveAddOption">
+                          <sdFeatherIcons type="x" size="18" />
+                        </a>
+                      </div>
+                    </div>
+                  </a-form>
+                </div>
+              </div>
+            </div>
           </sdCards>
         </KanvanBoardWrap>
       </a-col>
@@ -160,7 +142,6 @@ import UpdateTask from './overview/UpdateTask';
 import { Main } from '../../styled';
 import { toRefs, ref, computed, reactive } from 'vue';
 import { useStore } from 'vuex';
-import draggable from 'vuedraggable';
 
 const BoardTitleUpdate = {
   name: 'BoardTitleUpdate',
@@ -194,14 +175,13 @@ const BoardTitleUpdate = {
 
 const Kanban = {
   name: 'Kanban',
-  components: { KanvanBoardWrap, BackShadow, Main, BoardTitleUpdate, KanbanBoardItem, UpdateTask, draggable },
+  components: { KanvanBoardWrap, BackShadow, Main, BoardTitleUpdate, KanbanBoardItem, UpdateTask },
   setup() {
     const { state, dispatch } = useStore();
     const rtl = computed(() => state.themeLayout.rtlData);
     const boardData = computed(() => state.KanbanBoard.boardData);
     const tasks = computed(() => state.KanbanBoard.taskData);
     const addColumn = ref(false);
-    const dragAbleBoardData = ref(boardData.value);
 
     const formState = reactive({});
 
@@ -361,20 +341,13 @@ const Kanban = {
       states.modalVisible = false;
     };
 
-    function getComponentData() {
-      return {
-        class: 'sDash_kanban-board-list',
-      };
-    }
-
     const log = evt => {
       console.log(evt);
     };
 
     return {
       log,
-      getComponentData,
-      dragAbleBoardData,
+
       handleCancel,
       deleteColumnHandler,
       onBoardEditableHide,
