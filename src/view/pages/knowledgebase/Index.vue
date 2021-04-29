@@ -41,14 +41,13 @@
           <PopularArticleWrap>
             <div class="sDash_popular-article sDash_popular-article-container">
               <h2 class="sDash_popular-article__title">Popular articles</h2>
-              <div v-masonry="containerId" transition-duration="0.3s" item-selector=".item">
+              <div transition-duration="0.3s" item-selector=".item">
                 <div class="sDash_popular-article__box">
                   <a-row>
                     <a-col
                       :md="8"
                       :sm="12"
                       :xs="24"
-                      v-masonry-tile
                       class="item"
                       v-for="article in articles"
                       :key="article.id"
@@ -84,7 +83,7 @@
 
 <script>
 import { Main } from '../../styled';
-//import { ArrowRightOutlined } from '@ant-design/icons-vue';
+import { ArrowRightOutlined } from '@ant-design/icons-vue';
 import KnowledgeBaseTop from './overview/knowledgebase/KnowledgeTop';
 import { KnowledgebaseArticleWrap, ArticleTabWrap, PopularArticleWrap, CtaWrap } from './style';
 import articles from '../../../demoData/article.json';
@@ -92,7 +91,7 @@ export default {
   name: 'KnowledgeBase',
   components: {
     Main,
-    //ArrowRightOutlined,
+    ArrowRightOutlined,
     KnowledgeBaseTop,
     KnowledgebaseArticleWrap,
     ArticleTabWrap,

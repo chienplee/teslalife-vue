@@ -76,7 +76,7 @@
             </a-form-item>
 
             <div class="setting-form-actions">
-              <sdButton @click="handleSubmit" size="default" htmlType="submit" type="primary">
+              <sdButton size="default" htmlType="submit" type="primary">
                 Update Profile
               </sdButton>
               &nbsp; &nbsp;
