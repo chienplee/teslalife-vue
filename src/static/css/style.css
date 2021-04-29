@@ -286,24 +286,6 @@ ul {
   margin-bottom: 15px;
 }
 
-/* progressbars */
-
-.ant-progress {
-  display: inline-flex !important;
-  align-items: center;
-}
-
-.ant-progress > div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.ant-progress .ant-progress-outer {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-}
-
 .revenue-chat-percentage span {
   display: block;
   font-size: 13px;
@@ -510,8 +492,8 @@ ul {
 
 .ant-form-item-label > label {
   font-weight: 500;
+  display: inline-block;
 }
-
 .ant-calendar-picker-input::placeholder,
 .ant-calendar-range-picker-input::placeholder{
   color: #adb4d2 !important;
@@ -1615,6 +1597,15 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 .full-width-table .top-seller-table th:first-child,
 .full-width-table .top-seller-table td:first-child {
   text-align: left !important;
+}
+
+/* Table Basic */
+table tbody >tr >th,
+table tbody >tr >td
+{
+  position: relative;
+  padding: 16px 16px;
+  overflow-wrap: break-word;
 }
 
 /* Table Responsive */

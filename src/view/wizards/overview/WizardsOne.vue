@@ -25,7 +25,7 @@
                     <a-form-item name="email" label="Email Address">
                       <a-input type="email" v-model:value="stateAccount.email" placeholder="name@gmail.com" />
                     </a-form-item>
-                    <a-form-item name="password" label="Password">
+                    <a-form-item class="d" name="password" label="Password">
                       <a-input type="password" v-model:value="stateAccount.password" placeholder="Password" />
                       <span class="input-message">Enter a valid password. Min 6 characters long</span>
                     </a-form-item>

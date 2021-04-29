@@ -28,14 +28,12 @@ const Main = Styled.div`
 
     /* progressbars */
 
-    .ant-progress {
-        display: inline-flex !important;
+    .ant-progress >div{
+        display: inline-flex;
         align-items: center;
-    }
-
-    .ant-progress>div {
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        position: relative;
+        font-size: 14px;
     }
 
     .ant-progress .ant-progress-outer {
@@ -927,6 +925,16 @@ const Main = Styled.div`
         padding: 3px 7px;
     }
 
+    #world-map{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ant-form-item-label{
+        line-height: 1.5715;
+    }
+
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1153,6 +1161,7 @@ const BasicFormWrapper = Styled.div`
                 }
             }
         }
+        
         .ant-input-affix-wrapper .ant-input-prefix svg{
             color: #9299B8;
         }
@@ -1699,7 +1708,7 @@ const TableWrapper = Styled.div`
         }
         .table-actions{
             text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
-            min-width: 150px !important;
+            min-width: 100px !important;
             button{
                 height: 40px;
                 padding: 0 11px;
@@ -1777,17 +1786,16 @@ const DragDropStyle = Styled.div`
         }
         tr{
             td{
-                &.drag-visible{
-                    svg,
-                    img{
-                        width: 20px;
-                    }
-                    svg,
-                    i{
-                        color: ${({ theme }) => theme['extra-light-color']} !important;
-                    }
+                svg,
+                img{
+                    width: 20px;
+                }
+                svg,
+                i{
+                    color: ${({ theme }) => theme['extra-light-color']} !important;
                 }
             }
+            
         }
         .user-info{
             .user-name{

@@ -395,7 +395,6 @@ const ProjectListAssignees = Styled.div`
 `;
 
 const ProjectList = Styled.div`
-
     .project-list-progress{
         p{
             margin: 4px 0 0 0;
@@ -423,17 +422,17 @@ const ProjectList = Styled.div`
             }
         }
     }
-    .ant-table-container table > thead > tr th{
+    .ant-table-content table > thead > tr th{
         font-weight: 400;
         color: ${({ theme }) => theme['light-color']};
         border-top: 1px solid ${({ theme }) => theme['border-color-light']};
     }
-    .ant-table-container table > thead > tr th:first-child{
+    .ant-table-content table > thead > tr th:first-child{
         border-radius: ${({ theme }) => (theme.rtl ? '0 10px 10px 0' : '10px 0 0 10px')} !important;
         ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};
     }
-    .ant-table-container table > thead > tr th:last-child{
+    .ant-table-content table > thead > tr th:last-child{
         border-radius: ${({ theme }) => (!theme.rtl ? '0 10px 10px 0' : '10px 0 0 10px')} !important;
         ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};

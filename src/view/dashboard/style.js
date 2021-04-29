@@ -957,7 +957,6 @@ const RegionMap = Styled.div`
 `;
 
 const LadingPages = Styled.div`
-    margin: -25px;
     @media only screen and (max-width: 1599px){
         min-height: 380px;
     }
@@ -1445,7 +1444,6 @@ const RevenueChartWrapper = Styled.div`
 
 const TrafficTableWrapper = Styled.div`
     min-height: 450px;
-    margin: -25px;
     ${({ theme }) => (theme.topMenu ? 'min-height: 515px' : 'min-height: 450px')};
     @media only screen and (max-width: 1599px){
         min-height: 400px;
