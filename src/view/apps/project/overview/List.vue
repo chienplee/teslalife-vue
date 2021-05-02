@@ -1,13 +1,11 @@
 <template>
   <a-row :gutter="25">
     <a-col :xs="24">
-      <sdCards headless>
-        <ProjectList>
-          <div class="table-responsive">
-            <a-table :pagination="false" :dataSource="dataSource" :columns="columns" />
-          </div>
-        </ProjectList>
-      </sdCards>
+      <ProjectList>
+        <div class="table-responsive">
+          <a-table :pagination="false" :dataSource="dataSource" :columns="columns" />
+        </div>
+      </ProjectList>
     </a-col>
     <a-col :xs="24" class="pb-30">
       <ProjectPagination v-if="projects.length">

@@ -10,11 +10,11 @@ import VueTypes from 'vue-types';
 export default {
   name: 'WorldMap',
   props: {
-    id: VueTypes.string.def('my-map'),
+    id: VueTypes.string.def('world-map'),
     options: VueTypes.object.def({
       mapstyle: {
         ocean: '#4A5B62',
-        region: '#F3F3F3',
+        region: '#DBE1E8',
         border: '#ffffff',
       },
       project: {

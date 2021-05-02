@@ -370,6 +370,8 @@ const ProductTable = Styled.div`
                 svg{
                     min-width: 12px;
                     height: 12px;
+                    margin: 0;
+                    color: #5A5F7D;
                 }
                 &.btn-inc,
                 &.btn-dec{
@@ -970,14 +972,14 @@ const WizardWrapper = Styled.div`
             }
         }
     }
-    .wizard-steps-item-active{
+    .ant-steps-item-active{
         .ant-steps-item-container{
             &:after{
                 background-image: url(${require('@/static/img/progress-active.svg')});
             }
         }
     }
-    .success-step-item{
+    .ant-steps-item-finish{
         .ant-steps-item-container{
             &:after{
                 background-image: url(${require('@/static/img/progress-success.svg')});
@@ -1169,7 +1171,7 @@ const WizardWrapper = Styled.div`
                     }
                }
            }
-           .ant-form-item-control-input-content{
+           .ant-form-item-control{
                 input{
                     @media only screen and (max-width: 479px) {
                         width: 100% !important;

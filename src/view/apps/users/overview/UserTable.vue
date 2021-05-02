@@ -1,20 +1,18 @@
 <template>
-  <sdCards headless>
-    <UserTableStyleWrapper>
-      <TableWrapper class="table-responsive">
-        <a-table
-          :rowSelection="rowSelection"
-          :dataSource="usersTableData"
-          :columns="usersTableColumns"
-          :pagination="{
-            defaultPageSize: 5,
-            total: usersTableData.length,
-            showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
-          }"
-        />
-      </TableWrapper>
-    </UserTableStyleWrapper>
-  </sdCards>
+  <UserTableStyleWrapper>
+    <TableWrapper class="table-responsive">
+      <a-table
+        :rowSelection="rowSelection"
+        :dataSource="usersTableData"
+        :columns="usersTableColumns"
+        :pagination="{
+          defaultPageSize: 5,
+          total: usersTableData.length,
+          showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+        }"
+      />
+    </TableWrapper>
+  </UserTableStyleWrapper>
 </template>
 <script>
 import { UserTableStyleWrapper } from '../style';
