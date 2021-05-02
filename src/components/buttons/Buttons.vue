@@ -1,5 +1,23 @@
 <template>
-  <ButtonStyled :class="`ant-btn ant-btn-${type} ${shape && `ant-btn-${shape}`} ${block && `ant-btn-block`}`">
+  <ButtonStyled
+    :squared="squared"
+    :outlined="outlined"
+    :ghost="ghost"
+    :transparent="transparented"
+    :raised="raised"
+    :data="type"
+    :size="size"
+    :shape="shape"
+    :type="type"
+    :icon="icon"
+    :color="color"
+    :social="social"
+    :click="() => this.load && this.enterLoading"
+    :loading="loading"
+    :block="block"
+    :disabled="disabled"
+    :class="`ant-btn ant-btn-${type} ${shape && `ant-btn-${shape}`} ${block && `ant-btn-block`}`"
+  >
     <slot></slot>
   </ButtonStyled>
 </template>
@@ -38,7 +56,7 @@ export const Button = {
     ]).def('default'),
     shape: VueTypes.string,
     icon: VueTypes.string,
-    size: VueTypes.oneOf(['large', 'default', 'small']),
+    size: VueTypes.oneOf(['large', 'default', 'small']).def('default'),
     color: VueTypes.string,
     outlined: VueTypes.bool.def(false),
     block: VueTypes.bool.def(false),
