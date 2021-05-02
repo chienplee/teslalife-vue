@@ -37,6 +37,7 @@
     "swiper": "^6.4.15",
     "v-calendar": "^3.0.0-alpha.3",
     "vue": "^3.0.7",
+    "vue-cool-lightbox": "^2.7.3",
     "vue-emoji-picker": "^1.0.1",
     "vue-json-csv": "^1.2.12",
     "vue-masonry": "^0.13.0",
