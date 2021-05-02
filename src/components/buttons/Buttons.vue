@@ -12,7 +12,7 @@
     :icon="icon"
     :color="color"
     :social="social"
-    :click="() => this.load && this.enterLoading"
+    :click="() => load && enterLoading"
     :loading="loading"
     :block="block"
     :disabled="disabled"
