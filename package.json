@@ -6,7 +6,7 @@
     "recognizeSelfClosing": true
   },
   "scripts": {
-    "serve": "vue-cli-service serve",    
+    "serve": "vue-cli-service serve",
     "build": "set \"GENERATE_SOURCEMAP=false\" && vue-cli-service --max-old-space-size=4096 build",
     "lint": "vue-cli-service lint"
   },
@@ -38,6 +38,7 @@
     "v-calendar": "^3.0.0-alpha.3",
     "vue": "^3.0.7",
     "vue-emoji-picker": "^1.0.1",
+    "vue-inline-svg": "^3.0.0-beta.2",
     "vue-json-csv": "^1.2.12",
     "vue-masonry": "^0.13.0",
     "vue-masonry-css": "^1.0.3",
@@ -73,6 +74,7 @@
     "node-sass": "^5.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
+    "vue-svg-loader": "^0.17.0-beta.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
