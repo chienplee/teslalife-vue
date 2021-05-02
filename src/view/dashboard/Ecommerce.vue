@@ -181,7 +181,18 @@
           </template>
         </Suspense>
       </a-col>
-      <a-col :xxl="8" :xs="24"></a-col>
+      <a-col :xxl="8" :xs="24">
+        <Suspense>
+          <template #default>
+            <SalesByLocation />
+          </template>
+          <template #fallback>
+            <sdCards headless>
+              <a-skeleton active />
+            </sdCards>
+          </template>
+        </Suspense>
+      </a-col>
       <a-col :xxl="8" :xs="24">
         <Suspense>
           <template #default>
@@ -206,7 +217,7 @@ import { defineAsyncComponent } from 'vue';
 const TotalRevenue = defineAsyncComponent(() => import('./overview/ecommerce/TotalRevenue'));
 const RevenueGenerated = defineAsyncComponent(() => import('./overview/ecommerce/RevenueGenerated'));
 const TopSellingProduct = defineAsyncComponent(() => import('./overview/ecommerce/TopSellingProduct'));
-// const SalesByLocation = defineAsyncComponent(() => import('./overview/ecommerce/SalesByLocation'));
+const SalesByLocation = defineAsyncComponent(() => import('./overview/ecommerce/SalesByLocation'));
 const RevenueByDevice = defineAsyncComponent(() => import('./overview/ecommerce/RevenueByDevice'));
 
 const chartOptions = {
@@ -253,6 +264,7 @@ const Ecommerce = {
     RevenueGenerated,
     TopSellingProduct,
     RevenueByDevice,
+    SalesByLocation,
   },
   setup() {
     return {

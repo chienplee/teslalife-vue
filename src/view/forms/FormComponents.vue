@@ -1,7 +1,7 @@
 <template>
   <div>
     <sdPageHeader title="Form Component">
-      <template v-slot:buttons>
+      <template #buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
           <sdExportButton />
@@ -24,7 +24,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item name="input-name">
                         <a-input placeholder="Name">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="user" size="14" />
                           </template>
                         </a-input>
@@ -33,7 +33,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="email" placeholder="Email">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="mail" size="14" />
                           </template>
                         </a-input>
@@ -42,7 +42,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="input-location" placeholder="Location">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="map-pin" size="14" />
                           </template>
                         </a-input>
@@ -51,7 +51,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input-password name="password" value="12345678" placeholder="with input password">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="lock" size="14" />
                           </template>
                         </a-input-password>
@@ -60,7 +60,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="input-payment" placeholder="Payment Method">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="credit-card" size="14" />
                           </template>
                         </a-input>
@@ -69,7 +69,7 @@
                     <a-col :lg="12" :xs="24" class="mb-25">
                       <a-form-item>
                         <a-input name="input-phone" placeholder="Phone">
-                          <template v-slot:prefix>
+                          <template #prefix>
                             <sdFeatherIcons type="phone" size="14" />
                           </template>
                         </a-input>
@@ -79,7 +79,7 @@
                 </a-form>
               </BasicFormWrapper>
             </sdCards>
-            <sdCards title="Dropdowns" class="mb-25">
+            <sdCards title="Dropdown" class="mb-25">
               <DropDownListComponents>
                 <div class="sDash_dropdown-list">
                   <sdDropdown placement="bottomLeft">
@@ -140,21 +140,22 @@
             <sdCards title="Dropzone" class="mb-25">
               <div className="sDash_uploader-list">
                 <a-upload-dragger
+                  v-model:fileList="fileList"
                   name="file"
                   :multiple="true"
                   action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                   @change="handleChange"
-                  clas="sDash-uploader-large"
                 >
-                  <p className="ant-upload-text">Drop files here to upload</p>
+                  <p class="ant-upload-text">Drop files here to upload</p>
                 </a-upload-dragger>
                 <a-upload-dragger
+                  v-model:fileList="fileList"
                   name="file"
                   :multiple="true"
                   action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                   @change="handleChange"
                 >
-                  <p className="ant-upload-text">Drop files here to upload</p>
+                  <p class="ant-upload-text">Drop files here to upload</p>
                 </a-upload-dragger>
               </div>
             </sdCards>
@@ -167,10 +168,11 @@
 
 <script>
 import { message } from 'ant-design-vue';
+import { defineComponent, ref } from 'vue';
 import { Main, BasicFormWrapper } from '../styled';
 import { FormComponentsWrap, DropDownListComponents } from './overview/Style';
 
-export default {
+export default defineComponent({
   name: 'FormComponent',
   components: {
     Main,
@@ -183,18 +185,25 @@ export default {
       disabled: false,
     };
   },
-  methods: {
-    handleChange(info) {
+  setup() {
+    const handleChange = info => {
       const status = info.file.status;
+
       if (status !== 'uploading') {
-        //console.log(info.file, info.fileList);
+        console.log(info.file, info.fileList);
       }
+
       if (status === 'done') {
         message.success(`${info.file.name} file uploaded successfully.`);
       } else if (status === 'error') {
         message.error(`${info.file.name} file upload failed.`);
       }
-    },
+    };
+
+    return {
+      handleChange,
+      fileList: ref([]),
+    };
   },
-};
+});
 </script>

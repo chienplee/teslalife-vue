@@ -128,12 +128,12 @@
     </a-sub-menu>
 
     <a-menu-item @click="toggleCollapsed" key="changelog">
-      <sdFeatherIcons type="activity" />
-      <span>
-        <router-link to="/changelog">
+      <router-link to="/changelog">
+        <sdFeatherIcons type="activity" />
+        <span>
           Changelog
-        </router-link>
-      </span>
+        </span>
+      </router-link>
     </a-menu-item>
 
     <a-menu-item-group key="applications">
@@ -378,21 +378,21 @@
       </a-sub-menu>
 
       <a-menu-item @click="toggleCollapsed" key="to-do">
-        <sdFeatherIcons type="check-square" />
-        <span>
-          <router-link to="/app/to-do">
+        <router-link to="/app/to-do">
+          <sdFeatherIcons type="check-square" />
+          <span>
             To Do
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
 
       <a-menu-item @click="toggleCollapsed" key="kanban">
-        <sdFeatherIcons type="columns" />
-        <span>
-          <router-link to="/app/kanban">
+        <router-link to="/app/kanban">
+          <sdFeatherIcons type="columns" />
+          <span>
             Kanban Board
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
 
       <a-sub-menu key="import-export">
@@ -910,60 +910,60 @@
         </a-menu-item>
       </a-sub-menu>
       <a-menu-item @click="toggleCollapsed" key="gallery">
-        <sdFeatherIcons type="image" />
-        <span>
-          <router-link to="/page/gallery">
+        <router-link to="/page/gallery">
+          <sdFeatherIcons type="image" />
+          <span>
             Gallery
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="pricing">
-        <sdFeatherIcons type="dollar-sign" />
-        <span>
-          <router-link to="/page/pricing">
+        <router-link to="/page/pricing">
+          <sdFeatherIcons type="dollar-sign" />
+          <span>
             Pricing
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="banners">
-        <sdFeatherIcons type="cast" />
-        <span>
-          <router-link to="/page/banners">
+        <router-link to="/page/banners">
+          <sdFeatherIcons type="cast" />
+          <span>
             Banners
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="testimonials">
-        <sdFeatherIcons type="book-open" />
-        <span>
-          <router-link to="/page/testimonials">
+        <router-link to="/page/testimonials">
+          <sdFeatherIcons type="book-open" />
+          <span>
             Testimonials
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="faq`s">
-        <sdFeatherIcons type="help-circle" />
-        <span>
-          <router-link to="/page/faqs">
+        <router-link to="/page/faqs">
+          <sdFeatherIcons type="help-circle" />
+          <span>
             FAQs
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="search">
-        <sdFeatherIcons type="search" />
-        <span>
-          <router-link to="/page/search">
+        <router-link to="/page/search">
+          <sdFeatherIcons type="search" />
+          <span>
             Search
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="starter">
-        <sdFeatherIcons type="circle" />
-        <span>
-          <router-link to="/starter">
+        <router-link to="/starter">
+          <sdFeatherIcons type="circle" />
+          <span>
             Blank Page
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-sub-menu key="knowledgebase">
         <template v-slot:title><sdFeatherIcons type="book" /><span>Knowledge Base</span></template>
@@ -984,38 +984,38 @@
         </a-menu-item>
       </a-sub-menu>
       <a-menu-item @click="toggleCollapsed" key="support">
-        <sdFeatherIcons type="headphones" />
-        <span>
-          <router-link to="/page/support">
+        <router-link to="/page/support">
+          <sdFeatherIcons type="headphones" />
+          <span>
             Support Center
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
 
       <a-menu-item @click="toggleCollapsed" key="maintenance">
-        <sdFeatherIcons type="airplay" />
-        <span>
-          <router-link to="/page/maintenance">
+        <router-link to="/page/maintenance">
+          <sdFeatherIcons type="airplay" />
+          <span>
             Maintenance
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
 
       <a-menu-item @click="toggleCollapsed" key="404">
-        <sdFeatherIcons type="info" />
-        <span>
-          <router-link to="/page/404">
+        <router-link to="/page/404">
+          <sdFeatherIcons type="info" />
+          <span>
             404
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
       <a-menu-item @click="toggleCollapsed" key="comingSoon">
-        <sdFeatherIcons type="clock" />
-        <span>
-          <router-link to="/page/comingSoon">
+        <router-link to="/page/comingSoon">
+          <sdFeatherIcons type="clock" />
+          <span>
             Coming Soon
-          </router-link>
-        </span>
+          </span>
+        </router-link>
       </a-menu-item>
     </a-menu-item-group>
   </a-menu>

@@ -1,3 +1,8 @@
+<template>
+  <ButtonStyled :class="`ant-btn ant-btn-${type} ${shape && `ant-btn-${shape}`} ${block && `ant-btn-block`}`">
+    <slot></slot>
+  </ButtonStyled>
+</template>
 <script>
 import { ButtonStyled, ButtonStyledGroup } from './styled';
 import VueTypes from 'vue-types';
@@ -44,31 +49,6 @@ export const Button = {
     social: VueTypes.bool.def(false),
     load: VueTypes.bool.def(false),
     ghost: VueTypes.bool.def(false),
-  },
-  render() {
-    return (
-      <ButtonStyled
-        squared={this.squared}
-        outlined={this.outlined ? true : false}
-        ghost={this.ghost}
-        transparent={this.transparented ? true : false}
-        raised={this.raised ? true : false}
-        data={this.type}
-        size={this.size}
-        shape={this.shape}
-        type={this.type}
-        icon={this.icon}
-        color={this.color}
-        social={this.social}
-        click={() => this.load && this.enterLoading}
-        loading={this.loading}
-        block={this.block}
-        disabled={this.disabled}
-        class={`ant-btn ant-btn-${this.type} ${this.shape && `ant-btn-${this.shape}`} ${this.block && `ant-btn-block`}`}
-      >
-        {this.$slots.default()}
-      </ButtonStyled>
-    );
   },
 };
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Horizontal Form">
+    <sdPageHeader title="Form Elements">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -18,12 +18,10 @@
         <a-col :xs="24">
           <GridForm />
         </a-col>
-
         <a-col :lg="12" :xs="24">
           <SizedForm />
           <InputForm />
         </a-col>
-
         <a-col :lg="12" :xs="24">
           <sdCards title="Text Input" class="mb-25">
             <a-form name="sDash_textarea" layout="vertical">
