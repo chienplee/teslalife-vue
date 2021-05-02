@@ -561,18 +561,22 @@ const WizardsFive = {
         {
           title: 'Create Account',
           content: 'account',
+          titleDescription: 'Setup Your Account Details',
         },
         {
           title: 'Shipping Address',
           content: 'address',
+          titleDescription: 'Choose Your Location',
         },
         {
           title: 'Payment Method',
           content: 'method',
+          titleDescription: 'Use Credit or Debit Cards',
         },
         {
           title: 'Review Order',
           content: 'review',
+          titleDescription: 'Review and Submit',
         },
       ],
       handleAccountSubmit,
