@@ -20,10 +20,10 @@
         <a-row>
           <a-col :lg="{ span: 16, offset: 8 }" :md="{ span: 15, offset: 9 }" :xs="{ span: 24, offset: 0 }">
             <div class="sDash_form-action">
-              <sdButton class="btn-signin" html-type="submit" type="light">
+              <sdButton size="large" class="btn-signin" html-type="submit" type="light">
                 Cancel
               </sdButton>
-              <sdButton class="btn-signin" type="primary">
+              <sdButton size="large" class="btn-signin" type="primary">
                 Save
               </sdButton>
             </div>

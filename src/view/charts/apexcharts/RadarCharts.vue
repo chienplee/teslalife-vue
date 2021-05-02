@@ -34,12 +34,14 @@
 </template>
 
 <script>
+import { Main } from '../../styled';
 import Basic from '../../../components/apexcharts/radar-charts/Basic';
 import RadarMultipleSeries from '../../../components/apexcharts/radar-charts/RadarMultipleSeries';
 import RadarWithPolygonFill from '../../../components/apexcharts/radar-charts/RadarWithPolygonFill';
 export default {
   name: 'RadarCharts',
   components: {
+    Main,
     Basic,
     RadarMultipleSeries,
     RadarWithPolygonFill,
