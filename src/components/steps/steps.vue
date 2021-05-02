@@ -20,6 +20,7 @@
         :icon="item.icon && item.icon"
         :key="item.title"
         :title="item.title"
+        :description="item.titleDescription"
       >
         <template #description>
           <div v-if="item.path" class="wizard-item">
@@ -115,6 +116,7 @@ const Steps = {
     current: VueTypes.number.def(0),
     direction: VueTypes.string.def('horizontal'),
     status: VueTypes.string,
+    description: VueTypes.string,
     //progressDot: VueTypes.func.def(() => 1),
     steps: VueTypes.arrayOf(VueTypes.object),
     wizardItem: VueTypes.arrayOf(VueTypes.object),
