@@ -23,8 +23,6 @@
             </sdButton>
             <div class="calendar-display">
               <v-calendar is-expanded v-model="date" />
-
-              <!-- <CalenDar next2Label={null} prev2Label={null} onChange={onChange} value={state.date} /> -->
             </div>
             <br />
             <sdCards headless>
@@ -56,15 +54,6 @@ import { Main } from '../../styled';
 import { useStore } from 'vuex';
 import { computed, reactive, ref } from 'vue';
 import './overview/style.css';
-
-// import 'react-calendar/dist/Calendar.css';
-
-// const YearCalendar = lazy(() => import('./overview/Year'));
-// const MonthCalendar = lazy(() => import('./overview/Month'));
-// const WeekCalendar = lazy(() => import('./overview/Week'));
-// const DayCalendar = lazy(() => import('./overview/Day'));
-// const TodayCalendar = lazy(() => import('./overview/Today'));
-// const ScheduleCalendar = lazy(() => import('./overview/Schedule'));
 
 const Calendars = {
   name: 'Calendars',

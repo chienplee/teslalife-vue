@@ -18,21 +18,21 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Basic">
             <MessageStyleWrapper>
-              <sdButton type="primary" @click="info">
+              <sdButton type="primary" size="large" :raised="true" @click="info">
                 Display normal message
               </sdButton>
             </MessageStyleWrapper>
           </sdCards>
-          <sdCards title="Other Message">
+          <sdCards title="Other types of message">
             <MessageStyleWrapper>
               <a-space>
-                <sdButton :outlined="true" type="white" @click="success">
+                <sdButton :outlined="true" type="white" size="large" @click="success">
                   Success
                 </sdButton>
-                <sdButton :outlined="true" type="white" @click="error">
+                <sdButton :outlined="true" type="white" size="large" @click="error">
                   Error
                 </sdButton>
-                <sdButton :outlined="true" type="white" @click="warning">
+                <sdButton :outlined="true" type="white" size="large" @click="warning">
                   Warning
                 </sdButton>
               </a-space>
@@ -42,14 +42,14 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Custom Message">
             <MessageStyleWrapper>
-              <sdButton type="primary" @click="displayDuration">
+              <sdButton type="primary" size="large" :raised="true" @click="displayDuration">
                 Customized display duration
               </sdButton>
             </MessageStyleWrapper>
           </sdCards>
-          <sdCards title="Custom Message">
+          <sdCards title="Loading">
             <MessageStyleWrapper>
-              <sdButton type="white" :outlined="true" @click="loading">
+              <sdButton type="white" size="large" :outlined="true" @click="loading">
                 Display a loading indicator
               </sdButton>
             </MessageStyleWrapper>

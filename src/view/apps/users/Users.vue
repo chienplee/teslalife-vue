@@ -61,7 +61,7 @@ const Users = {
   setup() {
     const { state } = useStore();
     const searchData = computed(() => state.headerSearchData);
-    const { path } = useRoute().matched[1];
+    const { path } = useRoute().matched[2];
 
     const current = ref(0);
     const pageSize = ref(0);

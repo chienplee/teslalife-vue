@@ -1,9 +1,11 @@
 <template>
   <sdModal class="sDash_task-details" :visible="modalVisible" :footer="null" :onCancel="handleCancel">
-    <template #title
-      ><h4>{{ data.title }}</h4>
-      <span class="sub-text">in list Active Project</span></template
-    >
+    <template #title>
+      <div class="ant-modal-title">
+        <sdHeading as="h4">{{ data.title }}</sdHeading>
+        <span class="sub-text">in list Active Project</span>
+      </div>
+    </template>
     <div class="sDash_task-details-modal">
       <div class="sDash_task-details-modal__description">
         <span class="sDash_task-details__label">Description</span>
@@ -67,7 +69,10 @@
             <div class="sDash_checklist-tasks-wrap">
               <ul class="sDash_checklist-tasks">
                 <li v-for="(task, i) in item.checkListTask" class="sDash_checklist-tasks__single" :key="i">
-                  <a-checkbox v-model:checked="task.checked" @change="value => onChange(value, item.id, task.id)">
+                  <a-checkbox
+                    v-model:checked="task.checked"
+                    @change="e => onChange(e.target.checked, item.id, task.id)"
+                  >
                     <span class="sDash_task-label">{{ task.label }}</span>
                   </a-checkbox>
                   <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">

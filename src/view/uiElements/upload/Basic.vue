@@ -7,10 +7,10 @@
     :headers="headers"
     @change="handleChange"
   >
-    <a-button class="btn-outlined" type="light">
+    <sdButton class="btn-outlined" type="light" size="large" :outlined="true">
       <upload-outlined></upload-outlined>
       Click to Upload
-    </a-button>
+    </sdButton>
   </a-upload>
 </template>
 

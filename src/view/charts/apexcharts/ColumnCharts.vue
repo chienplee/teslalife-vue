@@ -41,6 +41,7 @@ import BasicColumn from '../../../components/apexcharts/column-charts/Basic';
 import ColumnWithDataLabel from '../../../components/apexcharts/column-charts/ColumnWithData';
 import ColumnWithNegativeValues from '../../../components/apexcharts/column-charts/ColumnWithNegativeValues';
 import DistributedColumns from '../../../components/apexcharts/column-charts/DistributedColumns';
+import { Main } from '../../styled';
 export default {
   name: 'AreaCharts',
   components: {
@@ -48,6 +49,7 @@ export default {
     ColumnWithDataLabel,
     ColumnWithNegativeValues,
     DistributedColumns,
+    Main,
   },
 };
 </script>

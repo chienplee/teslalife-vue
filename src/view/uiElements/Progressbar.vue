@@ -115,8 +115,8 @@
             <ProgressBarStyle>
               <a-progress type="circle" :percent="percent" />
               <a-button-group>
-                <a-button icon="minus" @click="decline" />
-                <a-button icon="plus" @click="increase" />
+                <a-button @click="decline"><MinusOutlined /></a-button>
+                <a-button @click="increase"><PlusOutlined /></a-button>
               </a-button-group>
             </ProgressBarStyle>
           </sdCards>
@@ -149,12 +149,15 @@
 import { Main } from '../styled';
 import { ProgressBarStyle } from './ui-elements-styled';
 import { mapState } from 'vuex';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons-vue';
 
 export default {
   name: 'Progressbar',
   components: {
     Main,
     ProgressBarStyle,
+    PlusOutlined,
+    MinusOutlined,
   },
   data() {
     return {

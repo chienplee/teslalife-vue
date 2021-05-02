@@ -1,18 +1,16 @@
 <template>
-  <sdFragment>
-    <ColorPalette
-      :isgrad="gradient"
-      :direction="direction"
-      :isbg="bg"
-      :iscontent="content"
-      :isbordered="bordered"
-      :type="colorCode"
-    >
-      <span><slot></slot></span>
-      <span v-if="content">{{ !gradient ? colorCode : colorCode[1] }}</span>
-    </ColorPalette>
-    <span v-if="!content">{{ colorCode }}</span>
-  </sdFragment>
+  <ColorPalette
+    :isgrad="gradient"
+    :direction="direction"
+    :isbg="bg"
+    :iscontent="content"
+    :isbordered="bordered"
+    :type="colorCode"
+  >
+    <span><slot></slot></span>
+    <span v-if="content">{{ !gradient ? colorCode : colorCode[1] }}</span>
+  </ColorPalette>
+  <span v-if="!content">{{ colorCode }}</span>
 </template>
 
 <script>

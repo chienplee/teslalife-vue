@@ -111,7 +111,7 @@ const Steps = {
   name: 'Steps',
   components: { StepsStyle, ActionWrapper },
   props: {
-    size: VueTypes.string,
+    size: VueTypes.string.def('default'),
     current: VueTypes.number.def(0),
     direction: VueTypes.string.def('horizontal'),
     status: VueTypes.string,
@@ -124,7 +124,7 @@ const Steps = {
     isVertical: VueTypes.bool.def(false),
     height: VueTypes.number.def(150),
   },
-
+  emits: ['onPrev', 'onNext', 'onDone'],
   setup(props, { emit }) {
     const { current } = toRefs(props);
     const currents = ref(current.value);

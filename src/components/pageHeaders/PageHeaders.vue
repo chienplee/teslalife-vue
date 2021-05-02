@@ -13,7 +13,7 @@ export const PageHeader = {
     routes: VueTypes.object,
     buttons: VueTypes.array,
     ghost: VueTypes.bool,
-    breadcrumb: VueTypes.array.def([]),
+    breadcrumb: VueTypes.object.def({ routes: [] }),
   },
 
   render() {

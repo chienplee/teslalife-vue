@@ -436,6 +436,7 @@ const Main = Styled.div`
     .ant-comment-content-detail p{
         color: #9299B8;
     }
+
     .ant-list-items{
         padding-top: 22px;
     }
@@ -455,6 +456,22 @@ const Main = Styled.div`
         resize: none;
         min-height: 170px;
         border-radius: 5px;
+    }
+
+    // Ant List
+    .ant-list.ant-list-bordered{
+        .ant-list-header,
+        .ant-list-footer{
+            padding: 13px 16px;
+        }
+        .ant-list-items{
+            padding-top: 0;
+            .ant-list-item{
+                padding: 12.5px 16px;
+                margin-bottom: 0;
+                color: ${({ theme }) => theme['gray-color']};
+            }
+        }
     }
 
     /* // Vector Map */
@@ -874,6 +891,41 @@ const Main = Styled.div`
         }
     }
 
+    .sDash-dynamic-tag{
+        .sDash-new-tag-input{
+            background-color: #EFF0F3;
+        }
+        .ant-input{
+            height: 30px;
+        }
+    }
+
+    // Ant Tab
+    .ant-tabs-top-bar{
+        .ant-tabs-nav{
+            margin: 0 0 16px;
+        }
+    }
+
+    // Ant Input
+    .ant-input{
+        padding: 12px 11px;
+        &::placeholder{
+            color: #9299B8;
+        }
+    }
+    .ant-input-affix-wrapper{
+        padding: 12px 11px;
+        font-size: 14px;
+    }
+    .ant-input-affix-wrapper-lg{
+        padding: 11.5px 11px;
+        font-size: 16px;
+    }
+
+    .ant-input-affix-wrapper-sm {
+        padding: 3px 7px;
+    }
 
 `;
 
@@ -1060,6 +1112,7 @@ const TagInput = Styled.div`
         margin: 3px;
         font-size: 11px;
         padding: 0 4px;
+        border-radius: 5px;
         border: 0 none;
         height: 24px;
         display: inline-flex;

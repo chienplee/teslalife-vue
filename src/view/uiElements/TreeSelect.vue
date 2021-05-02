@@ -25,6 +25,7 @@
               placeholder="Please select"
               allow-clear
               tree-default-expand-all
+              class="ant-tree-select"
             >
               <a-tree-select-node key="0-1" value="parent 1" title="parent 1">
                 <a-tree-select-node key="0-1-1" value="parent 1-0" title="parent 1-0">
@@ -41,6 +42,7 @@
           </sdCards>
           <sdCards title="Generate from tree data">
             <a-tree-select
+              class="ant-tree-select"
               v-model:value="value"
               style="width: 100%"
               :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
@@ -55,6 +57,7 @@
           </sdCards>
           <sdCards title="Asynchronous loading">
             <a-tree-select
+              class="ant-tree-select"
               v-model:value="value"
               tree-data-simple-mode
               :style="{ width: '100%' }"
@@ -68,6 +71,7 @@
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Multiple Selection">
             <a-tree-select
+              class="ant-tree-select"
               show-search
               :style="{ width: '100%' }"
               v-model:value="value2"
@@ -92,6 +96,7 @@
           </sdCards>
           <sdCards title="Checkable">
             <a-tree-select
+              class="ant-tree-select"
               v-model:value="value3"
               :style="{ width: '100%' }"
               :tree-data="treeData3"

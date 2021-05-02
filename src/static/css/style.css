@@ -1427,16 +1427,10 @@ ul {
   min-width: 250px;
 }
 
-/* ant input */
-.ant-input{
-  padding: 12px 11px !important;
-}
-
-
 /* Input Affix */
 
 .ant-input-affix-wrapper > input.ant-input {
-  padding-left: 5px;
+  padding-left: 5px !important;
 }
 
 .ant-input-affix-wrapper .ant-input-prefix svg {

@@ -34,7 +34,7 @@
           <a-progress
             :percent="status === 'complete' ? 100 : percentage"
             :stroke-width="5"
-            status="primary"
+            :status="status === 'complete' ? 'success' : 'active'"
             class="progress-primary"
           />
           <p>12/15 Task Completed</p>

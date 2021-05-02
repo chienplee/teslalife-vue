@@ -20,7 +20,6 @@
     :dropdownMatchSelectWidth="false"
     :dropdownStyle="{ width: 300 }"
     :style="{ width }"
-    :options="content"
     :placeholder="placeholder"
     @search="onSearching"
   >

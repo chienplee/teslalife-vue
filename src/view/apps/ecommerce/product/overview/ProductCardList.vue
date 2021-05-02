@@ -5,13 +5,13 @@
       <a-row :gutter="15">
         <a-col :md="6" :xs="24">
           <figure>
-            <img :style="{ width: '100%' }" :src="require(`../../../../../${renderData.img}`)" alt="" />
+            <img :style="{ width: '100%' }" :src="require(`@/${renderData.img}`)" alt="" />
           </figure>
         </a-col>
         <a-col :md="12" :xs="24">
           <div class="product-single-description">
             <sdHeading class="product-single-title" as="h5">
-              <router-link :to="`${matched[0].path}/productDetails/${renderData.id}`">{{
+              <router-link :to="`${matched[1].path}/ecommerce/productDetails/${renderData.id}`">{{
                 renderData.name
               }}</router-link>
             </sdHeading>

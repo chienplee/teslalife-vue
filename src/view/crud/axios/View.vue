@@ -124,46 +124,46 @@ const ViewPage = {
       dispatch('axiosDataSearch', formState.searchItem);
     };
 
-    const dataSource = computed(
-      () =>
-        crud.value.length &&
-        crud.value.map((person, key) => {
-          const { id, name, email, company, position, join, status, city, country, image } = person;
+    const dataSource = computed(() =>
+      crud.value.length
+        ? crud.value.map((person, key) => {
+            const { id, name, email, company, position, join, status, city, country, image } = person;
 
-          return {
-            key: key + 1,
-            name: (
-              <div class="record-img align-center-v">
-                <img
-                  src={image ? process.env.VUE_APP_BASE_URL + image : require('@/static/img/avatar/profileImage.png')}
-                  alt={id}
-                />
-                <span>
-                  <span>{name}</span>
-                  <span class="record-location">
-                    {city},{country}
+            return {
+              key: key + 1,
+              name: (
+                <div class="record-img align-center-v">
+                  <img
+                    src={image ? process.env.VUE_APP_BASE_URL + image : require('@/static/img/avatar/profileImage.png')}
+                    alt={id}
+                  />
+                  <span>
+                    <span>{name}</span>
+                    <span class="record-location">
+                      {city},{country}
+                    </span>
                   </span>
-                </span>
-              </div>
-            ),
-            email,
-            company,
-            position,
-            jdate: moment(join).format('YYYY-MM-DD'),
-            status: <span class={`status ${status}`}>{status}</span>,
-            action: (
-              <div class="table-actions">
-                <router-link class="edit" to={`/crud/axios-edit/${id}`}>
-                  <sdFeatherIcons type="edit" size={14} />
-                </router-link>
-                &nbsp;&nbsp;&nbsp;
-                <router-link class="delete" onClick={() => handleDelete(id)} to="#">
-                  <sdFeatherIcons type="trash-2" size={14} />
-                </router-link>
-              </div>
-            ),
-          };
-        }),
+                </div>
+              ),
+              email,
+              company,
+              position,
+              jdate: moment(join).format('YYYY-MM-DD'),
+              status: <span class={`status ${status}`}>{status}</span>,
+              action: (
+                <div class="table-actions">
+                  <router-link class="edit" to={`/crud/axios-edit/${id}`}>
+                    <sdFeatherIcons type="edit" size={14} />
+                  </router-link>
+                  &nbsp;&nbsp;&nbsp;
+                  <router-link class="delete" onClick={() => handleDelete(id)} to="#">
+                    <sdFeatherIcons type="trash-2" size={14} />
+                  </router-link>
+                </div>
+              ),
+            };
+          })
+        : [],
     );
 
     const onSelectChange = selectedRowKey => {
