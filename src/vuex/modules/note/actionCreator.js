@@ -35,6 +35,15 @@ const actions = {
     }
   },
 
+  async noteDraggable({ commit }, data) {
+    try {
+      commit('noteReadBegin');
+      commit('noteReadSuccess', data);
+    } catch (err) {
+      commit('noteReadErr', err);
+    }
+  },
+
   async noteDeleteData({ commit }, data) {
     try {
       commit('noteReadBegin');
