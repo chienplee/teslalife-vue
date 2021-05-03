@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { Main } from '../../styled';
 import Basic from '../../../components/apexcharts/radialbar-charts/Basic';
 import AngleCircle from '../../../components/apexcharts/radialbar-charts/AngleCircle';
 import Gradient from '../../../components/apexcharts/radialbar-charts/Gradient';
@@ -44,6 +45,7 @@ import StrokedGauge from '../../../components/apexcharts/radialbar-charts/Stroke
 export default {
   name: 'BarCharts',
   components: {
+    Main,
     Basic,
     AngleCircle,
     Gradient,

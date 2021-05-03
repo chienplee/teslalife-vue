@@ -31,11 +31,13 @@
 </template>
 
 <script>
+import { Main } from '../../styled';
 import Basic from '../../../components/apexcharts/area-charts/Basic';
 import Spline from '../../../components/apexcharts/area-charts/Spline';
 export default {
   name: 'AreaCharts',
   components: {
+    Main,
     Basic,
     Spline,
   },
