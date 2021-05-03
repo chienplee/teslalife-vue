@@ -137,6 +137,9 @@ const CardWrapper = Styled.figure`
                         margin-right: 10px;
                         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
                     }
+                    i{
+                      line-height: 1;
+                    }
                     svg,
                     img{
                         color: ${({ theme }) => theme['extra-light-color']};
