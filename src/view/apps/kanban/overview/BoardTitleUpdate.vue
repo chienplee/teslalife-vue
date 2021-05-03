@@ -1,9 +1,9 @@
 <template>
   <a-input
-    :name="`titile-edit${this.boardId}`"
+    :name="`titile-edit${boardId}`"
     class="title-edit"
     placeholder="Enter Title"
-    :onBlur="() => onBlur(boardId)"
+    @blur="() => onBlur(boardId)"
     @pressEnter="() => onBlur(boardId)"
     v-model:value="value"
   />
