@@ -8,9 +8,9 @@
         <div class="more">
           <sdDropdown :action="['click']" class="wide-dropdwon">
             <template #overlay>
-              <a href="#">Edit</a>
-              <a href="#">Delete</a>
-              <a href="#">View</a>
+              <router-link to="#">Edit</router-link>
+              <router-link to="#">Delete</router-link>
+              <router-link to="#">View</router-link>
             </template>
             <router-link to="#">
               <sdFeatherIcons type="more-horizontal" size="18" />
