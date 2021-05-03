@@ -8,6 +8,7 @@
           :current="0"
           :status="status"
           :steps="steps"
+          direction="vertical"
           @onNext="next"
           @onPrev="prev"
           @onDone="done"
