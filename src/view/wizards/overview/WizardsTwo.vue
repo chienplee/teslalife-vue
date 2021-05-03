@@ -425,8 +425,9 @@ const WizardsTwo = {
     };
 
     let subtotal = ref(0);
-    const dataSource = computed(
-      () =>
+    const dataSource = computed(() => {
+      subtotal.value = 0;
+      return (
         cartData.value !== null &&
         cartData.value.map(data => {
           const { id, img, name, quantity, price, size, color } = data;
@@ -484,8 +485,9 @@ const WizardsTwo = {
               </div>
             ),
           };
-        }),
-    );
+        })
+      );
+    });
 
     watchEffect(() => {
       const activeElement = document.querySelectorAll('.ant-steps-item-active');
@@ -519,6 +521,7 @@ const WizardsTwo = {
       month,
       columns,
       cartData,
+      subtotal,
       rtl,
       status,
       isFinished,
