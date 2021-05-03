@@ -819,9 +819,7 @@ const Main = Styled.div`
         align-items: center;
         min-height: 100px;
         border-color: #C6D0DC;
-        &.sDash-uploader-large{
-            min-height: 180px;
-        }
+        
         .ant-upload-drag-container{
             .ant-upload-text{
                 margin-bottom: 0;
@@ -831,21 +829,27 @@ const Main = Styled.div`
         }
     }
 
+    .sDash-uploader-large{
+        .ant-upload-drag{
+            min-height: 180px;
+        }
+    }
+
     // Form Validation
     .ant-form-item{
-        &.ant-form-item-has-success{
+        .has-success{
             .ant-input{
                 border-color: ${({ theme }) => theme['success-color']};
             }
             &.ant-form-item-with-help{
-                .ant-form-item-explain{
+                .ant-form-explain{
                     color: ${({ theme }) => theme['success-color']};
                 }
             }
         }
         &.ant-form-item-with-help{
-            .ant-form-item-explain{
-                margin-top: 6px;
+            .ant-form-explain{
+                margin: 6px 0 2px 0;
             }
         }
     }
@@ -925,6 +929,15 @@ const Main = Styled.div`
         padding: 3px 7px;
     }
 
+    .ant-input-lg{
+        padding: 11.5px 11px;
+        font-size: 16px;
+    }
+
+    .ant-input-sm{
+        padding: 3px 7px;
+    }
+
     #world-map{
         display: flex;
         align-items: center;
@@ -934,7 +947,9 @@ const Main = Styled.div`
     .ant-form-item-label{
         line-height: 1.5715;
     }
-
+    .ant-form-vertical .ant-form-item{
+        padding-bottom: 0;
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`

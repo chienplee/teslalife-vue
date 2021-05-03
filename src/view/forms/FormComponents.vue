@@ -140,6 +140,7 @@
             <sdCards title="Dropzone" class="mb-25">
               <div className="sDash_uploader-list">
                 <a-upload-dragger
+                  class="sDash-uploader-large"
                   v-model:fileList="fileList"
                   name="file"
                   :multiple="true"
