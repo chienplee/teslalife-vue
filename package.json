@@ -7,7 +7,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && vue-cli-service --max-old-space-size=4096 build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@vue-leaflet/vue-leaflet": "^0.6.0",
     "ant-design-vue": "^2.1.2",
     "apexcharts": "^3.25.0",
+    "auth0-lock": "^11.29.1",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
@@ -37,7 +38,9 @@
     "swiper": "^6.4.15",
     "v-calendar": "^3.0.0-alpha.3",
     "vue": "^3.0.7",
+    "vue-cool-lightbox": "^2.7.3",
     "vue-emoji-picker": "^1.0.1",
+    "vue-inline-svg": "^3.0.0-beta.2",
     "vue-json-csv": "^1.2.12",
     "vue-masonry": "^0.13.0",
     "vue-masonry-css": "^1.0.3",
@@ -73,6 +76,7 @@
     "node-sass": "^5.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
+    "vue-svg-loader": "^0.17.0-beta.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

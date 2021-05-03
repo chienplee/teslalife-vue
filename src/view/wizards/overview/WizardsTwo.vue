@@ -314,6 +314,7 @@ import Steps from '@/components/steps/steps';
 import { useStore } from 'vuex';
 import { computed, onMounted, ref, watchEffect, reactive } from 'vue';
 import { PlusOutlined, MinusOutlined, DeleteOutlined } from '@ant-design/icons-vue';
+import SvgConverter from '@/components/utilities/SvgConverter.vue';
 
 const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 const columns = [
@@ -351,6 +352,7 @@ const WizardsTwo = {
     BasicFormWrapper,
     PlusOutlined,
     MinusOutlined,
+    SvgConverter,
   },
   setup() {
     const { state, dispatch } = useStore();
@@ -526,22 +528,22 @@ const WizardsTwo = {
         {
           title: 'Create Account',
           content: 'account',
-          icon: <img src={require('@/static/img/icon/user.svg')} />,
+          icon: <SvgConverter src={require('@/static/img/icon/user.svg')} />,
         },
         {
           title: 'Shipping Address',
           content: 'address',
-          icon: <img src={require('@/static/img/icon/address.svg')} />,
+          icon: <SvgConverter src={require('@/static/img/icon/address.svg')} />,
         },
         {
           title: 'Payment Method',
           content: 'method',
-          icon: <img src={require('@/static/img/icon/155-credit-card.svg')} />,
+          icon: <SvgConverter src={require('@/static/img/icon/155-credit-card.svg')} />,
         },
         {
           title: 'Review Order',
           content: 'review',
-          icon: <img src={require('@/static/img/icon/024-like.svg')} />,
+          icon: <SvgConverter src={require('@/static/img/icon/024-like.svg')} />,
         },
       ],
       handleAccountSubmit,

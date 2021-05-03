@@ -79,6 +79,8 @@
 import { Main } from '../styled';
 import { GalleryNav } from './style';
 import GalleryCards from './overview/GalleryCards';
+import { computed, reactive } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   name: 'Gallery',
@@ -87,32 +89,29 @@ export default {
     GalleryNav,
     GalleryCards,
   },
-  data() {
-    return {
-      state: {
-        activeClass: '',
-      },
-    };
-  },
-  computed: {
-    gallery() {
-      return this.$store.state.gallery.data;
-    },
-    isLoading() {
-      return this.$store.state.gallery.isLoading;
-    },
-  },
-  methods: {
-    handleChange(value) {
-      this.state = {
-        ...this.state,
-        activeClass: value,
-      };
-      this.$store.dispatch('galleryFilter', {
+  setup() {
+    const state = reactive({
+      activeClass: '',
+    });
+
+    const store = useStore();
+    const gallery = computed(() => store.state.gallery.data);
+    const isLoading = computed(() => store.state.gallery.isLoading);
+
+    function handleChange(value) {
+      state.activeClass = value;
+      store.dispatch('galleryFilter', {
         column: 'category',
         value,
       });
-    },
+    }
+
+    return {
+      handleChange,
+      gallery,
+      isLoading,
+      state,
+    };
   },
 };
 </script>
