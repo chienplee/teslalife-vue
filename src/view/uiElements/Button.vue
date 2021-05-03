@@ -223,7 +223,7 @@
             </ButtonsGroupWrapper>
           </sdCards>
 
-          <sdCards title="BlocK" size="default">
+          <sdCards title="Block" size="default">
             <BlockButtonsWrapper>
               <sdButton size="large" type="primary" block>
                 Large Button
