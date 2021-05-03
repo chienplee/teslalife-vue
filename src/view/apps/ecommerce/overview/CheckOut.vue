@@ -123,22 +123,21 @@
                             <sdCards headless :style="{ marginBottom: 0 }">
                               <a-form @finish="handleMethodSubmit" :model="stateMethod" name="info">
                                 <a-form-item name="number" label="Card Number">
-                                  <a-input placeholder="6547-8702-6987-2527" />
+                                  <a-input v-model:value="stateMethod.number" placeholder="6547-8702-6987-2527" />
                                 </a-form-item>
                                 <a-form-item name="name" label="Name on Card">
-                                  <a-input placeholder="Full name" />
+                                  <a-input v-model:value="stateMethod.name" placeholder="Full name" />
                                 </a-form-item>
-                                <a-form-item name="month" initialValue="" label="Expiration Date">
-                                  <a-select :style="{ width: '100%' }">
+                                <a-form-item name="month" label="Expiration Date">
+                                  <a-select v-model:value="stateMethod.month" :style="{ width: '100%' }">
                                     <a-select-option value="">MM</a-select-option>
-
                                     <a-select-option v-for="value in month" :key="value" :value="value">
-                                      {value}
+                                      {{ value }}
                                     </a-select-option>
                                   </a-select>
                                 </a-form-item>
                                 <a-form-item name="year">
-                                  <a-select :style="{ width: '100%' }">
+                                  <a-select v-model:value="stateMethod.year" :style="{ width: '100%' }">
                                     <a-select-option value="">YY</a-select-option>
                                     <a-select-option :value="new Date().getFullYear()">{{
                                       new Date().getFullYear()
@@ -361,6 +360,13 @@ const CheckOut = {
       zip: '',
     });
 
+    const stateMethod = reactive({
+      month: '',
+      year: '',
+      name: '',
+      number: '',
+    });
+
     const handleAccountSubmit = values => {
       console.log(values);
     };
@@ -418,12 +424,14 @@ const CheckOut = {
       }
     };
     const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
-    let subtotal = 0;
+    let subtotal = ref(0);
 
-    const dataSource = computed(() =>
-      state.cart.data.map(data => {
+    const dataSource = computed(() => {
+      subtotal.value = 0;
+      return state.cart.data.map(data => {
         const { id, img, name, quantity, price, size, color } = data;
-        subtotal += parseInt(quantity, 10) * parseInt(price, 10);
+        subtotal.value += parseInt(quantity, 10) * parseInt(price, 10);
+
         return {
           key: id,
           product: (
@@ -477,8 +485,8 @@ const CheckOut = {
             </div>
           ),
         };
-      }),
-    );
+      });
+    });
 
     return {
       prev,
@@ -520,6 +528,7 @@ const CheckOut = {
           content: 'review',
         },
       ],
+      stateMethod,
     };
   },
 };

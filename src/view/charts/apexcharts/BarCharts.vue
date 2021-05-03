@@ -31,11 +31,13 @@
 </template>
 
 <script>
+import { Main } from '../../styled';
 import Basic from '../../../components/apexcharts/bar-charts/BasicBar';
 import Reverse from '../../../components/apexcharts/bar-charts/ReversedBar';
 export default {
   name: 'BarCharts',
   components: {
+    Main,
     Basic,
     Reverse,
   },

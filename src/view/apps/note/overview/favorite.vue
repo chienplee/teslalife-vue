@@ -1,32 +1,44 @@
 <template>
   <sdCards title="Note Lists">
     <NoteCardWrap>
-      <a-row :gutter="15">
-        <a-col v-for="(element, key) in noteData" :key="key" :xxl="8" :xl="12" :lg="12" :sm="12" :xs="24">
-          <NoteCard :data="element" />
-        </a-col>
-      </a-row>
+      <draggable v-model="myList" tag="a-row" :component-data="getComponentData()" handle=".handle" item-key="key">
+        <template #item="{element}">
+          <a-col :xxl="8" :xl="12" :lg="12" :sm="12" :xs="24">
+            <NoteCard :data="element" />
+          </a-col>
+        </template>
+      </draggable>
     </NoteCardWrap>
   </sdCards>
 </template>
 <script>
 import { NoteCardWrap } from '../style';
 import NoteCard from '@/components/note/Card';
-import { useStore } from 'vuex';
-import { computed } from 'vue';
-
+import draggable from 'vuedraggable';
 const Favorite = {
   name: 'Favorite',
-  components: { NoteCardWrap, NoteCard },
+  components: { NoteCardWrap, NoteCard, draggable },
   setup() {
-    const { state } = useStore();
-    const noteData = computed(() => state.note.data.filter(item => item.stared));
+    function getComponentData() {
+      return {
+        gutter: 24,
+      };
+    }
 
     return {
-      noteData,
+      getComponentData,
     };
   },
+  computed: {
+    myList: {
+      get() {
+        return this.$store.state.note.data.filter(item => item.stared);
+      },
+      set(value) {
+        this.$store.dispatch('noteDraggable', value);
+      },
+    },
+  },
 };
-
 export default Favorite;
 </script>

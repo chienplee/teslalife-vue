@@ -34,12 +34,14 @@
 </template>
 
 <script>
+import { Main } from '../../styled';
 import Basic from '../../../components/apexcharts/pie-charts/BasicPic';
 import DonutPic from '../../../components/apexcharts/pie-charts/DonutPic';
 import GradientDonut from '../../../components/apexcharts/pie-charts/GradientDonut';
 export default {
   name: 'BarCharts',
   components: {
+    Main,
     Basic,
     DonutPic,
     GradientDonut,

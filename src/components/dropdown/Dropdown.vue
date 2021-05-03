@@ -31,7 +31,12 @@ export default {
     placement: VueTypes.string.def('bottomRight'),
     title: VueTypes.string,
     action: VueTypes.array.def(['hover']),
-    className: VueTypes.string.def('strikingDash-dropdown'),
+    class: VueTypes.string.def('strikingDash-dropdown'),
+  },
+  data() {
+    return {
+      className: this.class,
+    };
   },
 };
 </script>

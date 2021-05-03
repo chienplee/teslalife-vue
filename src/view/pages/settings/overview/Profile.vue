@@ -123,9 +123,13 @@ const Profile = defineComponent({
       formState,
       handleFinish,
       handleFinishFailed,
+    };
+  },
+
+  data() {
+    return {
       tags: ['UI/UX', 'Branding', 'Product Design', 'Web Design'],
       values: null,
-      // form: this.$form.createForm(this, { name: "coordinated" }),
       inputVisible: false,
       inputValue: '',
     };
