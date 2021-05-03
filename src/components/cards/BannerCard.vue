@@ -10,17 +10,9 @@
           <div class="more">
             <sdDropdown :action="['click']" class="wide-dropdwon">
               <template #overlay>
-                <a-menu>
-                  <a-menu-item>
-                    <router-link to="#">Edit</router-link>
-                  </a-menu-item>
-                  <a-menu-item>
-                    <router-link to="#">Delete</router-link>
-                  </a-menu-item>
-                  <a-menu-item>
-                    <router-link to="#">View</router-link>
-                  </a-menu-item>
-                </a-menu>
+                <router-link to="#">Edit</router-link>
+                <router-link to="#">Delete</router-link>
+                <router-link to="#">View</router-link>
               </template>
               <router-link to="#">
                 <sdFeatherIcons type="more-horizontal" size="18" />
