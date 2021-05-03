@@ -874,7 +874,6 @@ const InvoiceAction = Styled.div`
 `;
 
 const WizardWrapper = Styled.div`
-    // padding: 25px 0;
     color:#eee;
     &.bordered-wizard{
         padding: 0;
@@ -1016,7 +1015,7 @@ const WizardWrapper = Styled.div`
             margin-top: 8px;
             padding: ${({ theme }) => (theme.rtl ? '0 10px 0 0' : '0 0 0 10px')};
 
-            color: ${({ theme }) => theme['gray-solid']} !important;
+            color: ${({ theme }) => theme['gray-solid']};
             @media only screen and (max-width: 1210px) {
                 padding: ${({ theme }) => (!theme.rtl ? '0 0 0 20px' : '0 20px 0 0')};
             }
@@ -1067,17 +1066,7 @@ const WizardWrapper = Styled.div`
             }
         }
         &.ant-steps-item-finish{
-            // .ant-steps-item-container{
-            //     &:after{
-            //         background-image: url(${require('@/static/img/progress-active.svg')});
-            //     }
-            // }
-            // .ant-steps-item-title{
-            //     color: ${({ theme }) => theme['dark-color']} !important;
-            //     &:after{
-            //         background-image: url(${require('@/static/img/progress-active.svg')});
-            //     }
-            // }
+            
             .ant-steps-item-icon{
                 background: ${({ theme }) => theme['success-color']} !important;
                 .ant-steps-icon{
@@ -1724,18 +1713,17 @@ const WizardFive = Styled.div`
             .ant-steps-item-title{
                 margin-top: 0px;
                 line-height: 1.4;
+                font-size: 16px;
+                margin-bottom: .35rem;
+                color: ${({ theme }) => theme['dark-color']};
                 ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 0;
-                h2{
-                    font-size: 16px;
-                    margin-bottom: .35rem;
-                    color: ${({ theme }) => theme['dark-color']};
-                }
-                p{
-                    font-size: 13px;
-                    font-weight: 400;
-                    margin-bottom: 0;
-                    color: ${({ theme }) => theme['gray-color']};
-                }
+            }
+            .ant-steps-item-description{
+                font-size: 13px;
+                font-weight: 400;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                color: ${({ theme }) => theme['gray-color']};
             }
         }
     }
