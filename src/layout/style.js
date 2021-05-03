@@ -467,7 +467,7 @@ const Div = Styled('div', props)`
                         }
                     }
                     .ant-menu-item{
-                        padding: 0 20px !important;
+                        padding: 0 32px !important;
                         justify-content: center;
                     }
                     .ant-menu-submenu, .ant-menu-item{

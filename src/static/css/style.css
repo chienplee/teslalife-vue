@@ -2135,7 +2135,9 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   font-weight: 400;
   color: rgba(255, 255, 255, 0.65) !important;
 }
-
+.ant-menu-dark .ant-menu-item a span{
+  color: rgba(255, 255, 255, 0.65) !important;
+}
 .ant-menu-dark .ant-menu-item a:hover {
   color: #ffffff;
 }

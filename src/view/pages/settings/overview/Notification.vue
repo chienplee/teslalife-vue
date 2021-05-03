@@ -47,7 +47,7 @@
                         </div>
                         <a-switch :defaultChecked="false" />
                       </li>
-                      <li style="{listStyle}">
+                      <li :style="listStyle">
                         <div class="notification-list-single">
                           <sdHeading class="notification-list-single__title" as="h4">
                             Meetups Near you
@@ -116,7 +116,7 @@
                         padding: 0,
                       }"
                     >
-                      <li style="{listStyle}">
+                      <li :style="listStyle">
                         <div class="notification-list-single">
                           <sdHeading class="notification-list-single__title" as="h4">
                             Company News

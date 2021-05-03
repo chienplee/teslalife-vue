@@ -19,49 +19,45 @@
           <GalleryNav>
             <ul>
               <li>
-                <router-link
-                  :class="state.activeClass === '' ? 'active' : 'deactivate'"
-                  @click="() => handleChange('')"
-                  to="#"
-                >
+                <a :class="state.activeClass === '' ? 'active' : 'deactivate'" @click="() => handleChange('')" href="#">
                   All
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link
+                <a
                   :class="state.activeClass === 'webDesign' ? 'active' : 'deactivate'"
                   @click="() => handleChange('webDesign')"
-                  to="#"
+                  href="#"
                 >
                   Web Design
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link
+                <a
                   :class="state.activeClass === 'uiDesign' ? 'active' : 'deactivate'"
                   @click="() => handleChange('uiDesign')"
-                  to="#"
+                  href="#"
                 >
                   UI Design
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link
+                <a
                   :class="state.activeClass === 'wireframe' ? 'active' : 'deactivate'"
                   @click="() => handleChange('wireframe')"
-                  to="#"
+                  href="#"
                 >
                   Wireframe
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link
+                <a
                   :class="state.activeClass === 'Presentation' ? 'active' : 'deactivate'"
                   @click="() => handleChange('Presentation')"
-                  to="#"
+                  href="#"
                 >
                   Presentation
-                </router-link>
+                </a>
               </li>
             </ul>
           </GalleryNav>
