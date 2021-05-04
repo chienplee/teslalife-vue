@@ -165,4 +165,15 @@ const ButtonStyledGroup = Styled(ButtonGroup)`
     }
 `;
 
-export { ButtonStyled, ButtonStyledGroup };
+const CustomDropDown = Styled('div')`
+    position: relative;
+    .sDash-range-calendar{
+        position: absolute;
+        z-index: 1 !important;
+        top: 45px;
+        right: 0;
+        margin-right: -50%;
+    }
+`;
+
+export { ButtonStyled, ButtonStyledGroup, CustomDropDown };
