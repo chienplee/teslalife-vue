@@ -62,6 +62,9 @@
           :labels="youtubeSubscribeState.labels"
           :datasets="youtubeSubscribeDatasets"
           :options="chartOptions"
+          :style="{
+            marginBottom: '0',
+          }"
         />
       </sdChartContainer>
     </CardBarChart>
