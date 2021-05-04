@@ -119,18 +119,17 @@ export default [
         component: () =>
           import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
       },
-      {
-        path: 'all-articles',
-        name: 'all-articles',
-        component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
-      },
-      {
-        path: 'single',
-        name: 'knowledge-base-singale',
-        component: () =>
-          import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
-      },
     ],
+  },
+  {
+    path: '/page/knowledgebase/all-articles',
+    name: 'all-articles',
+    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
+  },
+  {
+    path: '/page/knowledgebase/single/1',
+    name: 'knowledge-base-singale',
+    component: () => import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
   },
 
   {

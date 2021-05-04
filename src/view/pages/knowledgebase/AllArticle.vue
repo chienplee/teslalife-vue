@@ -39,15 +39,15 @@
                   <div class="sDash_article-category-links">
                     <ul>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">
+                        <router-link to="/page/knowledgebase/single/1">
                           Log in and out of plugins view your success and other stats
                         </router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Log in and out of Plugins</router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                       <li>
                         <a-collapse v-model:activeKey="activeKey" accordion>
@@ -70,7 +70,7 @@
                         </a-collapse>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                     </ul>
                   </div>
@@ -84,15 +84,15 @@
                   <div class="sDash_article-category-links">
                     <ul>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">
+                        <router-link to="/page/knowledgebase/single/1">
                           Log in and out of plugins view your success and other stats
                         </router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Log in and out of Plugins</router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                       <li>
                         <a-collapse v-model:activeKey="activeKey" accordion>
@@ -115,7 +115,7 @@
                         </a-collapse>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                     </ul>
                   </div>
@@ -129,15 +129,15 @@
                   <div class="sDash_article-category-links">
                     <ul>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">
+                        <router-link to="/page/knowledgebase/single/1">
                           Log in and out of plugins view your success and other stats
                         </router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Log in and out of Plugins</router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                       <li>
                         <a-collapse v-model:activeKey="activeKey" accordion>
@@ -160,7 +160,7 @@
                         </a-collapse>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                     </ul>
                   </div>
@@ -174,15 +174,15 @@
                   <div class="sDash_article-category-links">
                     <ul>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">
+                        <router-link to="/page/knowledgebase/single/1">
                           Log in and out of plugins view your success and other stats
                         </router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Log in and out of Plugins</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Log in and out of Plugins</router-link>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                       <li>
                         <a-collapse v-model:activeKey="activeKey" accordion>
@@ -205,7 +205,7 @@
                         </a-collapse>
                       </li>
                       <li>
-                        <router-link to="/admin/knowledgebaseSingle/1">Switch between accounts</router-link>
+                        <router-link to="/page/knowledgebase/single/1">Switch between accounts</router-link>
                       </li>
                     </ul>
                   </div>

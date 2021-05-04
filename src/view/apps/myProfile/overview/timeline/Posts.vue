@@ -23,9 +23,18 @@
         <div v-if="img.length" class="gallery">
           <!-- <SRLWrapper> -->
           <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
-            <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
+            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
               <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
             </a>
+            <vue-easy-lightbox
+              v-if="img.length <= 2"
+              escDisabled
+              moveDisabled
+              :visible="visible"
+              :imgs="imagePath"
+              :index="index"
+              @hide="handleHide"
+            ></vue-easy-lightbox>
           </div>
           <div
             v-if="img.length > 2"
@@ -33,9 +42,19 @@
             class="my-masonry-grid"
             columnclass="my-masonry-grid_column"
           >
-            <a v-for="(src, key) in img" :key="key + 1" :href="require(`@/${src}`)" data-attribute="SRL">
+            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
               <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
             </a>
+
+            <vue-easy-lightbox
+              v-if="img.length > 2"
+              escDisabled
+              moveDisabled
+              :visible="visible"
+              :imgs="imagePath"
+              :index="index"
+              @hide="handleHide"
+            ></vue-easy-lightbox>
           </div>
         </div>
         <div class="post-text">
@@ -136,6 +155,7 @@ import PropTypes from 'vue-types';
 import { AllPosts, BackShadowEmoji, Title } from './style';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
+import VueEasyLightbox from 'vue-easy-lightbox';
 
 const ExampleComment = {
   name: 'ExampleComment',
@@ -168,7 +188,7 @@ const ExampleComment = {
 
 const Posts = {
   name: 'Posts',
-  components: { AllPosts, BackShadowEmoji, Title, Picker, ExampleComment, Masonry },
+  components: { AllPosts, BackShadowEmoji, Title, Picker, ExampleComment, Masonry, VueEasyLightbox },
   props: {
     postId: PropTypes.number,
     from: PropTypes.string,
@@ -179,19 +199,35 @@ const Posts = {
     content: PropTypes.string,
     author: PropTypes.string,
   },
-  setup() {
+
+  setup(prop) {
     const { state, dispatch } = useStore();
     const posts = computed(() => state.profile.posts);
     const isLoading = computed(() => state.profile.loading);
     const isPostLoading = computed(() => state.profile.postLoading);
-
+    const imagePath = ref([]);
     const inputValue = ref('');
+    const visible = ref(false);
+    const index = ref(0);
     const fileList = ref([]);
     const fileList2 = ref([]);
 
     const pickerShow = ref(false);
     const textValue = ref('');
 
+    const showImage = imgIndex => {
+      prop.img.map(data => {
+        imagePath.value.push(window.location.origin + require(`@/${data}`));
+      }),
+        (index.value = imgIndex); // index of imgList
+      show();
+    };
+    const show = () => {
+      visible.value = true;
+    };
+    const handleHide = () => {
+      visible.value = false;
+    };
     const onEmojiClick = (event, emojiObject) => {
       textValue.value = textValue.value + emojiObject.emoji;
     };
@@ -271,6 +307,12 @@ const Posts = {
       isPostLoading,
       textValue,
       pickerShow,
+      visible,
+      index,
+      showImage,
+      show,
+      handleHide,
+      imagePath,
     };
   },
 };
