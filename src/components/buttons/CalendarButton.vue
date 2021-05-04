@@ -1,14 +1,14 @@
 <template>
-  <sdPopover class="fff" placement="bottomRight" title="Search by Calendar" action="click">
+  <sdDropdown class="sDash-range-calendar" placement="bottomRight" title="Search by Calendar" action="click">
     <!-- <DateRangePickerOne slot="content" /> -->
-    <template #content
+    <template #overlay
       ><v-calendar :columns="$screens({ default: 1, lg: 2 })" is-expanded v-model="range" is-range
     /></template>
     <sdButton size="small" type="white">
       <sdFeatherIcons type="calendar" size="14" />
       Calendar
     </sdButton>
-  </sdPopover>
+  </sdDropdown>
 </template>
 
 <script>

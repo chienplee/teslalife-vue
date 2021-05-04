@@ -1,5 +1,5 @@
 <template>
-  <a-popover :class="className" v-model="visible" :placement="placement" :title="title && title" :trigger="action">
+  <a-popover class="className" v-model="visible" :placement="placement" :title="title && title" :trigger="action">
     <template v-if="title" v-slot:title>
       <Title>{{ title }}</Title>
     </template>
