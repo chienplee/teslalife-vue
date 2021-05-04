@@ -37,7 +37,7 @@ const events = [
   {
     title: 'UI/UX Tasks',
     id: 4,
-    date: ['09/12/2020', '09/12/2020'],
+    date: ['09/12/2021', '09/12/2021'],
     label: 'info',
     time: ['9:00 am', '3:00 pm'],
     type: 'event',
@@ -92,7 +92,7 @@ const initialState = [
   {
     title: 'UI/UX Tasks',
     id: 4,
-    date: ['09/12/2020', '09/12/2020'],
+    date: ['09/12/2021', '09/12/2021'],
     label: 'info',
     time: ['9:00 am', '3:00 pm'],
     type: 'event',

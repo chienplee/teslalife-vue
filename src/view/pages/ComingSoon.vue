@@ -83,7 +83,7 @@
                     </router-link>
                   </li>
                 </ul>
-                <p>2020 © AazzTech</p>
+                <p>2021 © SovWare</p>
               </div>
             </sdCards>
           </ComingsoonStyleWrapper>

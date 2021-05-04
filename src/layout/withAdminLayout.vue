@@ -29,18 +29,18 @@
           <a-col :lg="6" :md="10" :sm="0" :xs="0">
             <TopMenuSearch v-if="topMenu && innerWidth > 991">
               <div class="top-right-wrap d-flex">
-                <router-link
+                <a
                   :class="`${activeSearch ? 'search-toggle active' : 'search-toggle'}`"
                   @click="
                     () => {
                       toggleSearch();
                     }
                   "
-                  to="#"
+                  href="#"
                 >
                   <sdFeatherIcons type="search" />
                   <sdFeatherIcons type="x" />
-                </router-link>
+                </a>
                 <div :class="`${activeSearch ? 'topMenu-search-form show' : 'topMenu-search-form'}`">
                   <form action="">
                     <span class="search-icon">
@@ -141,7 +141,7 @@
             >
               <a-row>
                 <a-col :md="12" :xs="24">
-                  <span class="admin-footer__copyright">2020 © AazzTech</span>
+                  <span class="admin-footer__copyright">2021 © SovWare</span>
                 </a-col>
                 <a-col :md="12" :xs="24">
                   <div class="admin-footer__links">
@@ -220,6 +220,10 @@ export default {
       hide.value = !hide.value;
       searchHide.value = true;
     };
+    const toggleSearch = () => {
+      activeSearch.value = !activeSearch.value;
+    };
+
     const toggleCollapsedMobile = () => {
       if (innerWidth <= 990) {
         collapsed.value = false;
@@ -271,6 +275,7 @@ export default {
       collapsed,
       hide,
       searchHide,
+      toggleSearch,
       customizerAction,
       activeSearch,
       innerWidth: window.innerWidth,

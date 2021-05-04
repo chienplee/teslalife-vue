@@ -59,7 +59,7 @@ const KnowledgebaseTopWrap = Styled.div`
                     margin-bottom: 15px;
                 }
                 .ant-select-selection-search{
-                    
+
                     .ant-select-selection-search-input{
                         height: 54px;
                     }
@@ -135,7 +135,7 @@ const KnowledgebaseTopWrap = Styled.div`
                 @media only screen and (max-width: 379px){
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0px !important;
                 }
-                
+
             }
             &:not(:last-child){
                 ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
@@ -411,29 +411,37 @@ const PopularArticleWrap = Styled.div`
                 i,
                 span{
                     ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 10px;
-                    
+
                 }
             }
         }
         .sDash_popular-article__box{
             direction: ltr;
-            margin: 0 0 0px 0;
+            margin: 0;
             @media only screen and (max-width: 899px){
                 margin: 0;
             }
+            .ant-row{
+                margin: -15px;
+            }
+            .row-masonry{
+                flex-flow: column wrap !important;
+                max-height: 550px;
+                overflow: auto;
+            }
+            .item{
+                padding: 15px;
+            }
             .sDash_popular-article__single {
-                margin: 0 0 15px 0;
+                margin: 0;
                 direction: ${({ theme }) => (theme.rtl ? 'rtl' : 'ltr')};
-                @media only screen and (max-width: 899px){
-                    margin: 0 0 30px 0;
-                }
             }
         }
     }
 `;
 
 const CtaWrap = Styled.div`
-    margin-top: 15px;
+    margin-top: 40px;
     .sDash_knowledgebase-cta{
         text-align: center;
         .sDash_knowledgebase-cta__title{
@@ -847,8 +855,8 @@ const KnowledgeDetailsWrap = Styled.div`
                                 span.fa,
                                 i,
                                 svg{
-                                    color: ${({ theme }) => theme['primray-color']};                            
-                                }                            
+                                    color: ${({ theme }) => theme['primray-color']};
+                                }
                             }
                         }
                     }
@@ -965,14 +973,14 @@ const KnowledgeDetailsWrap = Styled.div`
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 20px;
-            color: ${({ theme }) => theme['dark-color']}; 
+            color: ${({ theme }) => theme['dark-color']};
         }
         .ant-form-item{
             .ant-form-item-label{
                 padding: 0 0 10px;
                 label{
                     font-size: 15px;
-                    color: ${({ theme }) => theme['gray-color']}; 
+                    color: ${({ theme }) => theme['gray-color']};
                 }
             }
             textarea{

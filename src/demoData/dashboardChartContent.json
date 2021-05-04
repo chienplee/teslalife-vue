@@ -82,19 +82,19 @@
     }
   },
   "closedDeals": {
-    "week": {      
+    "week": {
       "labels": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       "won": [100, 500, 150, 1000, 1400, 2400, 2000],
       "amount": [80, 350, 100, 900, 1000, 1400, 1500],
       "percent": 25
     },
-    "month": {      
+    "month": {
       "labels": ["1-5", "6-10", "11-15", "16-20", "21-25", "26-31"],
       "won": [2500, 5000, 1500, 1500, 4000, 2400],
       "amount": [2000, 4000, 1200, 1300, 3000, 2200],
       "percent": 50
     },
-    "year": {      
+    "year": {
       "labels": ["Jan", "Feb", "Mar", "App", "May", "Jun", "Jul", "Aug", "Sep", "Nov", "Oct", "Dec"],
       "won": [9500, 5500, 1900, 5500, 9000, 24000, 9500, 5500, 1900, 5500, 9000, 24000],
       "amount": [9000, 5000, 2000, 5000, 8000, 30000, 9000, 5500, 2300, 5000, 8000, 20000],
@@ -1129,35 +1129,35 @@
       {
         "key": "1",
         "name": "John Mark",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$536.00",
         "img": "static/img/users/1.png"
       },
       {
         "key": "2",
         "name": "David Miller",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$336.00",
         "img": "static/img/users/2.png"
       },
       {
         "key": "3",
         "name": "Chris Lein",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$356.00",
         "img": "static/img/users/3.png"
       },
       {
         "key": "4",
         "name": "Ahmad Musa",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$383.00",
         "img": "static/img/users/4.png"
       },
       {
         "key": "5",
         "name": "Robert Philips",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$536.00",
         "img": "static/img/users/5.png"
       }
@@ -1166,35 +1166,35 @@
       {
         "key": "1",
         "name": "John Mark",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$1536.00",
         "img": "static/img/users/1.png"
       },
       {
         "key": "2",
         "name": "David Miller",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$1336.00",
         "img": "static/img/users/2.png"
       },
       {
         "key": "3",
         "name": "Chris Lein",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$1356.00",
         "img": "static/img/users/3.png"
       },
       {
         "key": "4",
         "name": "Ahmad Musa",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$1383.00",
         "img": "static/img/users/4.png"
       },
       {
         "key": "5",
         "name": "Robert Philips",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$1536.00",
         "img": "static/img/users/5.png"
       }
@@ -1203,35 +1203,35 @@
       {
         "key": "1",
         "name": "John Mark",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$5536.00",
         "img": "static/img/users/1.png"
       },
       {
         "key": "2",
         "name": "David Miller",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$5336.00",
         "img": "static/img/users/2.png"
       },
       {
         "key": "3",
         "name": "Chris Lein",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$5356.00",
         "img": "static/img/users/3.png"
       },
       {
         "key": "4",
         "name": "Ahmad Musa",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$5383.00",
         "img": "static/img/users/4.png"
       },
       {
         "key": "5",
         "name": "Robert Philips",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$5536.00",
         "img": "static/img/users/5.png"
       }
@@ -1240,35 +1240,35 @@
       {
         "key": "1",
         "name": "John Mark",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$12536.00",
         "img": "static/img/users/1.png"
       },
       {
         "key": "2",
         "name": "David Miller",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$11336.00",
         "img": "static/img/users/2.png"
       },
       {
         "key": "3",
         "name": "Chris Lein",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$10356.00",
         "img": "static/img/users/3.png"
       },
       {
         "key": "4",
         "name": "Ahmad Musa",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$9383.00",
         "img": "static/img/users/4.png"
       },
       {
         "key": "5",
         "name": "Robert Philips",
-        "date": "20 June 2020",
+        "date": "20 June 2021",
         "price": "$13536.00",
         "img": "static/img/users/5.png"
       }
