@@ -44,7 +44,7 @@ export default {
         if (e.target.closest('#dropdownParent')) {
           return false;
         } else {
-          handleVisible();
+          isVisible.value = false;
         }
       });
     });
