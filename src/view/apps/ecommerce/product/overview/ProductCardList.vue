@@ -41,11 +41,11 @@
               <span class="total-reviews"> 778 Reviews</span>
             </div>
             <div class="product-single-action">
-              <sdButton size="small" class="btn-cart" type="light" :outlined="true">
+              <sdButton size="small" class="btn-cart" type="white" :outlined="true">
                 <sdFeatherIcons type="shopping-bag" size="14" />
                 Add To Cart
               </sdButton>
-              <sdButton size="small" class="btn-cart" type="primary">
+              <sdButton size="small" type="primary">
                 Buy Now
               </sdButton>
             </div>

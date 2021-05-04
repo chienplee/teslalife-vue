@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <BasicFormWrapper>
     <HorizontalFormStyleWrap>
       <sdCards title="Basic Inputs">
         <a-form
@@ -46,21 +46,25 @@
             />
           </a-form-item>
           <a-form-item label="Color">
-            <a-input :style="{ height: '55px' }" name="color" type="color" v-model:value="formState.color" />
+            <div className="sDash_color-picker">
+              <a-input :style="{ height: '55px' }" name="color" type="color" v-model:value="formState.color" />
+            </div>
           </a-form-item>
         </a-form>
       </sdCards>
     </HorizontalFormStyleWrap>
-  </div>
+  </BasicFormWrapper>
 </template>
 
 <script>
 import { reactive } from 'vue';
+import { BasicFormWrapper } from '../../styled';
 import { HorizontalFormStyleWrap } from './Style';
 import moment from 'moment';
 export default {
   name: 'InputForm',
   components: {
+    BasicFormWrapper,
     HorizontalFormStyleWrap,
   },
   methods: {

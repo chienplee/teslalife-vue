@@ -5,10 +5,10 @@
     :file-list="fileList"
     @change="handleChange"
   >
-    <a-button>
+    <sdButton class="btn-outlined" type="light" size="large" :outlined="true">
       <upload-outlined></upload-outlined>
       Upload
-    </a-button>
+    </sdButton>
   </a-upload>
 </template>
 

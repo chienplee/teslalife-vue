@@ -61,7 +61,7 @@
                     <div class="sDash_kanvan-task">
                       <draggable
                         class="list-group"
-                        :list="task.filter(item => item.boardId === element.boardId)"
+                        :list="tasks.filter(item => item.boardId === element.boardId)"
                         item-key="id"
                       >
                         <template #item="{element}">
