@@ -19,11 +19,11 @@
         <a-col :md="12" :xs="24">
           <sdCards title="Basic">
             <ProgressBarStyle>
-              <a-progress :percent="30" />
-              <a-progress :percent="50" status="active" />
-              <a-progress :percent="70" status="exception" />
-              <a-progress :percent="100" />
-              <a-progress :percent="50" :show-info="false" />
+              <a-progress :percent="30" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="50" status="active" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="70" status="exception" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="100" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="50" :show-info="false" :style="{ marginBottom: '15px' }" />
             </ProgressBarStyle>
           </sdCards>
 
@@ -57,7 +57,7 @@
           </sdCards>
           <sdCards title="Square linecaps">
             <ProgressBarStyle>
-              <a-progress stroke-linecap="square" :percent="75" />
+              <a-progress stroke-linecap="square" :percent="75" :style="{ marginBottom: '15px' }" />
               <a-progress
                 stroke-linecap="square"
                 :percent="75"
@@ -82,6 +82,7 @@
                   '100%': '#87d068',
                 }"
                 :percent="99.9"
+                :style="{ marginBottom: '15px' }"
               />
               <a-progress
                 :stroke-color="{
@@ -90,6 +91,7 @@
                 }"
                 :percent="99.9"
                 status="active"
+                :style="{ marginBottom: '15px' }"
               />
               <a-progress
                 :style="{ [!rtl ? 'marginRight' : 'marginLeft']: '15px' }"
@@ -114,10 +116,12 @@
           <sdCards title="Dynamic circle">
             <ProgressBarStyle>
               <a-progress type="circle" :percent="percent" />
-              <a-button-group>
-                <a-button @click="decline"><MinusOutlined /></a-button>
-                <a-button @click="increase"><PlusOutlined /></a-button>
-              </a-button-group>
+              <div class="progressbar-action-btn">
+                <a-button-group>
+                  <a-button @click="decline"><MinusOutlined /></a-button>
+                  <a-button @click="increase"><PlusOutlined /></a-button>
+                </a-button-group>
+              </div>
             </ProgressBarStyle>
           </sdCards>
           <sdCards title="Circular progress bar">
@@ -134,9 +138,9 @@
           </sdCards>
           <sdCards title="Mini size progress bar">
             <ProgressBarStyle>
-              <a-progress :percent="30" size="small" />
-              <a-progress :percent="50" size="small" status="active" />
-              <a-progress :percent="70" size="small" status="exception" />
+              <a-progress :percent="30" size="small" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="50" size="small" status="active" :style="{ marginBottom: '15px' }" />
+              <a-progress :percent="70" size="small" status="exception" :style="{ marginBottom: '15px' }" />
             </ProgressBarStyle>
           </sdCards>
         </a-col>

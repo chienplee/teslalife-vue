@@ -1,5 +1,5 @@
 <template>
-  <sdPopover placement="bottomRight" title="Search by Calendar" action="click">
+  <sdPopover class="fff" placement="bottomRight" title="Search by Calendar" action="click">
     <!-- <DateRangePickerOne slot="content" /> -->
     <template #content
       ><v-calendar :columns="$screens({ default: 1, lg: 2 })" is-expanded v-model="range" is-range

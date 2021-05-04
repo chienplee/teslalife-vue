@@ -2268,9 +2268,6 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
     overflow-y: auto;
     overflow-x: hidden;
   }
-  .rdrCalendarWrapper.rdrDateRangeWrapper {
-    margin-top: 20px;
-  }
   .ant-menu-inline-collapsed-tooltip {
     display: none;
   }
@@ -2523,9 +2520,6 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   }
   .ant-drawer-content-wrapper {
     width: 260px !important;
-  }
-  .rdrCalendarWrapper.rdrDateRangeWrapper {
-    margin-top: 0;
   }
 }
 

@@ -552,8 +552,21 @@ const ProgressBarStyle = Styled.div`
   .ant-progress > div{
     width: 100%;
   }
-  .ant-progress .ant-progress-text{
+  .ant-progress.ant-progress-circle .ant-progress-text{
     margin-left: 0px !important;
+  }
+  .progressbar-action-btn{
+    display: inline-flex;
+    margin-left: 15px;
+  }
+`;
+
+const CheckboxGroupStyle = Styled.div`
+  .ant-checkbox-group{
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
   }
 `;
 
@@ -578,4 +591,5 @@ export {
   TimelineNormalWrap,
   TimelineBoxWrap,
   DashboardBaseStyleWrap,
+  CheckboxGroupStyle,
 };
