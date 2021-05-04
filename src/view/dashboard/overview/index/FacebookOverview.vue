@@ -39,6 +39,9 @@
                         type="line"
                         :labels="forcastOverviewState.EnLabels"
                         :options="areaChartOption"
+                        :style="{
+                          marginBottom: '0',
+                        }"
                         :datasets="[
                           {
                             label: '',
@@ -80,6 +83,9 @@
                         class="impression"
                         :labels="forcastOverviewState.ImLabels"
                         :options="areaChartOption"
+                        :style="{
+                          marginBottom: '0',
+                        }"
                         :datasets="[
                           {
                             label: '',
@@ -124,6 +130,9 @@
                         id="likes"
                         class="likes"
                         :options="areaChartOption"
+                        :style="{
+                          marginBottom: '0',
+                        }"
                         :datasets="[
                           {
                             data: forcastOverviewState.LiData,
@@ -164,6 +173,9 @@
                         id="impression2"
                         class="impression2"
                         :options="areaChartOption"
+                        :style="{
+                          marginBottom: '0',
+                        }"
                         :datasets="[
                           {
                             data: forcastOverviewState.ImData2,

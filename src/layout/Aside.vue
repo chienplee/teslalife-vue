@@ -978,7 +978,7 @@
           </router-link>
         </a-menu-item>
         <a-menu-item @click="toggleCollapsed" key="knowledge-base-singale">
-          <router-link to="/page/knowledgebase/single">
+          <router-link to="/page/knowledgebase/single/1">
             Single Article
           </router-link>
         </a-menu-item>

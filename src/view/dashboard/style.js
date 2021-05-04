@@ -86,7 +86,7 @@ const DashboardBaseStyleWrap = Styled.div`
 const Focard = Styled.div`
     canvas{
         width: 100% !important;
-        margin-top: 50px;
+        margin-top: 64px;
         @media only screen and (max-width: 1199px){
             margin-top: 15px;
         }
@@ -454,7 +454,7 @@ const CardGroup = Styled.div`
         padding: 0 !important;
     }
     .traffic-table{
-        min-height: 438px;
+        min-height: 410px;
         .ant-table{
             border-radius: 10px;
         }
@@ -474,9 +474,20 @@ const CardGroup = Styled.div`
             }
             tbody{
                 tr{
+                    &:first-child{
+                        td{
+                            background-color: #fff !important;
+                        }
+                    }
+                    &:not(:first-child){
+                        &:hover{
+                            td{
+                                background: ${({ theme }) => theme['bg-color-light']} !important;
+                            }
+                        }
+                    }
                     &:hover{
                         td{
-                            background: ${({ theme }) => theme['bg-color-light']};
                             .social-name{
                                 color: ${({ theme }) => theme['primary-color']};
                             }
@@ -485,18 +496,18 @@ const CardGroup = Styled.div`
                 }
                 td{
                     padding: 14.5px 15px;
-                    text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};;
-                    ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')};: 1px solid ${({ theme }) =>
+                    text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
+                    ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};
                     color: ${({ theme }) => theme['gray-color']};
                     &:first-child{
-                        ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')};: 0 none;
-                        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};;
-                        ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')};: 25px;
+                        ${({ theme }) => (!theme.rtl ? 'border-left' : 'border-right')}: 0 none;
+                        text-align: ${({ theme }) => (!theme.rtl ? 'left' : 'right')};
+                        ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 25px;
                     }
                     &:last-child{
-                        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')};: 0 none;
-                        ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')};: 25px;
+                        ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 0 none;
+                        ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 25px;
                     }
                     .traffic-title{
                         font-weight: 500;
@@ -1068,7 +1079,7 @@ const LineChartWrapper = Styled.div`
             svg,
             i,
             img{
-                margin-right: 6px;
+                margin-right: 3px;
             }
         }
     }
@@ -1093,8 +1104,7 @@ const LineChartWrapper = Styled.div`
     .overview-container{
         .line-chart-row{
             &:not(:last-child){
-                margin-bottom: 18px;
-                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 18px')};
+                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 11px')};
             }
         }
     }

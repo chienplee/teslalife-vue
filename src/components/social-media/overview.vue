@@ -1,6 +1,6 @@
 <template>
   <MainWraper>
-    <SocialIcon class="social-icon" :bgColor="bgColor">
+    <SocialIcon :bgColor="bgColor">
       <font-awesome-icon
         class="super-crazy-colors"
         :icon="icon"

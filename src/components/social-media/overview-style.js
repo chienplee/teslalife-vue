@@ -6,7 +6,7 @@ const MainWraper = Styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 18px 0;
+  margin: 20px 0;
   h1{
     font-size: 22px;
     font-weight: 600;
@@ -16,11 +16,6 @@ const MainWraper = Styled.div`
   p{
     margin: 0;
     color: #868EAE;
-  }
-  .social-icon{
-    span{
-      font-size: 20px;
-    }
   }
 `;
 
@@ -33,6 +28,9 @@ const SocialIcon = Styled('div', ['bgColor'])`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  svg{
+    height: 20px;
+  }
 `;
 
 export { MainWraper, SocialIcon };
