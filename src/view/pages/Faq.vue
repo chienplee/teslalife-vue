@@ -25,34 +25,34 @@
                   </Badge>
                   <ul>
                     <li>
-                      <router-link class="active primary" @click="handleChange" to="#">
+                      <a class="active primary" @click="handleChange" href="#">
                         Using Applications
-                      </router-link>
+                      </a>
                     </li>
                     <li>
-                      <router-link class="secondary" @click="handleChange" to="#">
+                      <a class="secondary" @click="handleChange" href="#">
                         UI Elements
-                      </router-link>
+                      </a>
                     </li>
                     <li>
-                      <router-link class="success" @click="handleChange" to="#">
+                      <a class="success" @click="handleChange" href="#">
                         Components
-                      </router-link>
+                      </a>
                     </li>
                     <li>
-                      <router-link class="warning" @click="handleChange" to="#">
+                      <a class="warning" @click="handleChange" href="#">
                         Build Process
-                      </router-link>
+                      </a>
                     </li>
                     <li>
-                      <router-link class="info" @click="handleChange" to="#">
+                      <a class="info" @click="handleChange" href="#">
                         Support Policy
-                      </router-link>
+                      </a>
                     </li>
                     <li>
-                      <router-link class="danger" @click="handleChange" to="#">
+                      <a class="danger" @click="handleChange" href="#">
                         Accounts & Billing
-                      </router-link>
+                      </a>
                     </li>
                   </ul>
                 </sdCards>

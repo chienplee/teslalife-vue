@@ -17,7 +17,7 @@
       <a-row :gutter="25">
         <a-col :sm="24" :xs="24">
           <sdCards headless>
-            <sdHeading as="h3">Skeleton Page</sdHeading>
+            <h3>Skeleton Page</h3>
           </sdCards>
         </a-col>
       </a-row>

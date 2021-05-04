@@ -11,49 +11,45 @@
             <div class="search-filter-menu">
               <ul>
                 <li>
-                  <router-link
-                    :class="activeClass === 'all' ? 'active' : 'deactivate'"
-                    @click="handleChange('all')"
-                    to="#"
-                  >
+                  <a :class="activeClass === 'all' ? 'active' : 'deactivate'" @click="handleChange('all')" href="#">
                     All
-                  </router-link>
+                  </a>
                 </li>
                 <li>
-                  <router-link
+                  <a
                     :class="activeClass === 'webDesign' ? 'active' : 'deactivate'"
                     @click="handleChange('webDesign')"
-                    to="#"
+                    href="#"
                   >
                     Web Design
-                  </router-link>
+                  </a>
                 </li>
                 <li>
-                  <router-link
+                  <a
                     :class="activeClass === 'uiDesign' ? 'active' : 'deactivate'"
                     @click="handleChange('uiDesign')"
-                    to="#"
+                    href="#"
                   >
                     UI Design
-                  </router-link>
+                  </a>
                 </li>
                 <li>
-                  <router-link
+                  <a
                     :class="activeClass === 'wireframe' ? 'active' : 'deactivate'"
                     @click="handleChange('wireframe')"
-                    to="#"
+                    href="#"
                   >
                     Wireframe
-                  </router-link>
+                  </a>
                 </li>
                 <li>
-                  <router-link
+                  <a
                     :class="activeClass === 'presentation' ? 'active' : 'deactivate'"
                     @click="handleChange('presentation')"
-                    to="#"
+                    href="#"
                   >
                     Presentation
-                  </router-link>
+                  </a>
                 </li>
               </ul>
             </div>
