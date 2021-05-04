@@ -18,7 +18,7 @@
         <a-col :md="24" :xs="24">
           <sdCards title="Basic Header">
             <PageHeaderWrapper>
-              <sdPageHeader bgColor="#fff" title="Title" subTitle="This is a subtitle" />
+              <sdPageHeader :breadcrumb="false" bgColor="#fff" title="Title" subTitle="This is a subtitle" />
             </PageHeaderWrapper>
           </sdCards>
         </a-col>
