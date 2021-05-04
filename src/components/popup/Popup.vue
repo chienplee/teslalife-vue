@@ -1,5 +1,5 @@
 <template>
-  <a-popover v-model="visible" :placement="placement" :title="title && title" :trigger="action">
+  <a-popover :class="className" v-model="visible" :placement="placement" :title="title && title" :trigger="action">
     <template v-if="title" v-slot:title>
       <Title>{{ title }}</Title>
     </template>
@@ -34,11 +34,13 @@ export default {
   props: {
     placement: VueTypes.string.def('bottom'),
     title: VueTypes.string,
+    class: VueTypes.string,
     action: VueTypes.string.def('hover'),
   },
   data() {
     return {
       visible: false,
+      className: this.class,
     };
   },
   components: {
