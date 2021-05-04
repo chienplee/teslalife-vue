@@ -25,11 +25,11 @@
                 </div>
 
                 <div class="card__actions">
-                  <sdButton size="default" outlined type="light">
+                  <sdButton size="default" outlined type="white">
                     <sdFeatherIcons type="message-square" size="14" />
-                    Chat
+                    <span>Chat</span>
                   </sdButton>
-                  <sdButton size="default" outlined type="light">
+                  <sdButton size="default" outlined type="white">
                     View Profile
                   </sdButton>
                 </div>

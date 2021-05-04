@@ -15,25 +15,33 @@
         <sdButton class="btn-today" type="light" size="small" outlined>
           <router-link to="./day">Today</router-link>
         </sdButton>
-        <sdButton @click="decrementYear" type="light" outlined><sdFeatherIcons type="chevron-left"/></sdButton>
-        <sdDropdown :action="['click']">
-          <template #overlay>
-            <sdCards>
-              <a-row>
-                <a-col v-for="item in months" :sm="8" :key="item.id">
-                  <span @click="() => setMonth(item.id)" style="display: block; text-align: center; cursor: pointer">{{
-                    item.month
-                  }}</span>
-                </a-col>
-              </a-row>
-            </sdCards>
-          </template>
+        <div class="calender-head__navigation">
+          <sdButton @click="decrementYear" class="btn-navigate" type="light" outlined
+            ><sdFeatherIcons type="chevron-left"
+          /></sdButton>
+          <sdDropdown :action="['click']" class="date-label">
+            <template #overlay>
+              <sdCards>
+                <a-row>
+                  <a-col v-for="item in months" :sm="8" :key="item.id">
+                    <span
+                      @click="() => setMonth(item.id)"
+                      style="display: block; text-align: center; cursor: pointer"
+                      >{{ item.month }}</span
+                    >
+                  </a-col>
+                </a-row>
+              </sdCards>
+            </template>
 
-          <template v-for="item in months" :key="item.id">
-            <a href="#" v-if="item.id == month">{{ item.month }} {{ year }}</a>
-          </template>
-        </sdDropdown>
-        <sdButton @click="incrementYear" type="light" outlined><sdFeatherIcons type="chevron-right"/></sdButton>
+            <template v-for="item in months" :key="item.id">
+              <a href="#" v-if="item.id == month">{{ item.month }} {{ year }}</a>
+            </template>
+          </sdDropdown>
+          <sdButton @click="incrementYear" class="btn-navigate" type="light" outlined
+            ><sdFeatherIcons type="chevron-right"
+          /></sdButton>
+        </div>
       </div>
       <div class="calendar-header__right">
         <ul>

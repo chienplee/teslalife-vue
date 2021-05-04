@@ -833,7 +833,37 @@ ul {
   padding: 10px !important;
   text-align: left !important;
 }
+.project-modal .ant-form-item:not(:last-child){
+  margin-bottom: 11px !important;
+}
 
+/* Create contact modal */
+.create-contact-modal{
+  padding: 0 !important;
+}
+.create-contact-modal .ant-form-item-label{
+  line-height: 35px;
+}
+.create-contact-modal .ant-form-item:not(:last-child){
+  margin-bottom: 15px !important;
+}
+
+/* Export Modal */
+.export-modal .ant-form-item-control-wrapper{
+  width: 100%;
+}
+.export-modal .ant-form-item-control-wrapper .ant-input {
+  padding: 7px 11px !important;
+}
+.export-modal .btn-export{
+  height: 42px;
+  margin-right: 10px;
+}
+.export-modal .ant-form-item{
+  margin-bottom: 15px;
+}
+
+/*  */
 .sDash_addTask-modal{
   max-width: 390px;
 }
@@ -2105,7 +2135,9 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   font-weight: 400;
   color: rgba(255, 255, 255, 0.65) !important;
 }
-
+.ant-menu-dark .ant-menu-item a span{
+  color: rgba(255, 255, 255, 0.65) !important;
+}
 .ant-menu-dark .ant-menu-item a:hover {
   color: #ffffff;
 }
@@ -2235,9 +2267,6 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
-  }
-  .rdrCalendarWrapper.rdrDateRangeWrapper {
-    margin-top: 20px;
   }
   .ant-menu-inline-collapsed-tooltip {
     display: none;
@@ -2429,6 +2458,70 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   margin-bottom: 0 !important;
 }
 
+/* Range Calendar Style */
+.sDash-range-calendar{
+  padding: 12px !important;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(143, 142, 159,.20);
+}
+.sDash-range-calendar .vc-pane-container .vc-arrows-container{
+  top: -6px;
+}
+.sDash-range-calendar .vc-pane-container .vc-pane + .vc-pane{
+  padding-left: 10px;
+}
+.sDash-range-calendar .vc-arrows-container .vc-arrow svg{
+  width: 18px;
+  height: 18px;
+  color: #272b41;
+}
+.sDash-range-calendar .vc-arrows-container .vc-arrow{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.sDash-range-calendar .vc-arrows-container .vc-arrow:hover{
+  background-color: #f7f7fe;
+}
+.sDash-range-calendar .vc-arrows-container .vc-arrow:hover svg{
+  color: #5F63F2;
+}
+.sDash-range-calendar .vc-container{
+  border: 0 none;
+}
+.sDash-range-calendar .vc-pane .vc-header {
+  padding: 0;
+}
+.sDash-range-calendar .vc-pane .vc-header .vc-title{
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #272b41;
+  font-weight: 500;
+  padding: 4px 0;
+}
+.sDash-range-calendar .vc-pane .vc-weeks .vc-weekday{
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  color: #666d92;
+  padding-bottom: 0;
+}
+.sDash-range-calendar .vc-pane .vc-weeks .vc-day .vc-day-content{
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #272b41;
+  width: 36px;
+  height: 36px;
+  line-height: 40px;
+}
+.sDash-range-calendar .vc-pane .vc-weeks .vc-day .vc-day-content:hover{
+  background-color: #eee;
+}
+.sDash-range-calendar .vc-pane .vc-weeks .vc-day.is-today .vc-day-content{
+  background-color: #5F63F2;
+  color: #fff;
+}
+
 @media only screen and (max-width: 479px) {
   .placement-confirm {
     display: flex;
@@ -2491,9 +2584,6 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   }
   .ant-drawer-content-wrapper {
     width: 260px !important;
-  }
-  .rdrCalendarWrapper.rdrDateRangeWrapper {
-    margin-top: 0;
   }
 }
 

@@ -39,15 +39,17 @@
               <a-form-item name="end" label="End Date">
                 <a-date-picker v-model:value="formState.end" placeholder="mm/dd/yyyy" :format="dateFormat" />
               </a-form-item>
+            </a-col>
+            <a-col :md="12">
               <a-form-item>
-                <div key="1" class="project-modal-footer">
+                <ProjectModalFooter>
                   <sdButton size="default" type="primary" key="submit" @click="handleOk">
                     Add New Project
                   </sdButton>
                   <sdButton size="default" type="light" key="back" outlined @click="handleCancel">
                     Cancel
                   </sdButton>
-                </div>
+                </ProjectModalFooter>
               </a-form-item>
             </a-col>
           </a-row>
@@ -59,6 +61,7 @@
 <script>
 import propTypes from 'vue-types';
 import { BasicFormWrapper } from '../../../styled';
+import { ProjectModalFooter } from '../style';
 import { reactive, ref, toRefs } from 'vue';
 
 const options = [
@@ -80,7 +83,7 @@ const dateFormat = 'MM/DD/YYYY';
 
 const CreateProject = {
   name: 'CreateProject',
-  components: { BasicFormWrapper },
+  components: { BasicFormWrapper, ProjectModalFooter },
   props: {
     visible: propTypes.bool.def(false),
     onCancel: propTypes.func.isRequired,

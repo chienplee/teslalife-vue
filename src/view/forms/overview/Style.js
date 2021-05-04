@@ -23,7 +23,7 @@ const HorizontalFormStyleWrap = Styled.div`
             color: ${({ theme }) => theme['gray-color']};
         }
         .sDash_form-action{
-            margin: 5px -7.5px -7.5px -7.5px;
+            margin: -7.5px;
             button{
                 font-size: 14px;
                 font-weight: 500;
@@ -37,6 +37,9 @@ const HorizontalFormStyleWrap = Styled.div`
                 &.ant-btn-light{
                     background-color: #F1F2F6;
                     border-color: #F1F2F6;
+                }
+                &.sDash_form-action__btn{
+                    height: 44px;
                 }
             }
             .ant-btn-light{
@@ -88,6 +91,9 @@ const VerticalFormStyleWrap = Styled.div`
         .ant-btn-light{
             background-color: #F8F9FB;
         }
+    }
+    .ant-form-item{
+        padding-bottom: 0;
     }
 `;
 
@@ -161,8 +167,8 @@ const FormValidationWrap = Styled.div`
     .ant-card-body{
         padding: 30px 25px 50px 25px !important;
     }
-    .ant-form-item-has-error{
-        .ant-form-item-explain{
+    .ant-form-item .has-error{
+        .ant-form-explain{
             font-size: 13px;
         }
     }
@@ -170,11 +176,10 @@ const FormValidationWrap = Styled.div`
         .ant-form-item-control-input{
             min-height: auto;
         }
-        .ant-form-item-has-error{
+        .ant-form-item .has-error{
             .ant-checkbox-wrapper{
                 span{
                     font-size: 13px;
-                    color: ${({ theme }) => theme['danger-color']};
                 }
                 .ant-checkbox{
                     border-color: ${({ theme }) => theme['danger-color']}30;

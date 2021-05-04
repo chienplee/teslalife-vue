@@ -28,6 +28,7 @@
                   :visible="isModalVisible"
                   :footer="null"
                   :onCancel="handleCancel"
+                  class="export-modal"
                 >
                   <a-form name="contact">
                     <a-form-item name="f_name">

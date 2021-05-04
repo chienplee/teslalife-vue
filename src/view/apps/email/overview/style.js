@@ -102,7 +102,7 @@ const Style = Styled(Table)`
             }
           }
           .pagination-slider{
-            margin: ${({ theme }) => (theme.rtl ? '0 15px 0 20px' : '0 20px 0 15px')};
+            margin: ${({ theme }) => (theme.rtl ? '0 15px 0 15px' : '0 15px 0 15px')};
             .btn-paging{
               display: inline-flex;
               height: 30px;

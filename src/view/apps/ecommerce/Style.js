@@ -189,9 +189,12 @@ const ProductCard = Styled.div`
         .product-single-action{
             flex-flow: column;
             align-items: flex-start;
+            margin: 28px 0 0 0;
             button{
                 min-width: 132px;
                 margin: 0;
+                padding: 0px 14px;
+                height: 38px;
             }
             .btn-cart{
                 margin: 0 0 10px;
@@ -237,7 +240,7 @@ const ProductCard = Styled.div`
         box-shadow: 0 5px 10px ${({ theme }) => theme['light-color']}15;
     }
     .product-single-title{
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         font-size: 15px;
         font-weight: 500;
         a{
@@ -269,6 +272,7 @@ const ProductCard = Styled.div`
         flex-wrap: wrap;
         align-items: center;
         .ant-rate{
+            line-height: 1.2;
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 5px;
         }
         .ant-rate-star:not(:last-child) {
@@ -292,8 +296,9 @@ const ProductCard = Styled.div`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        margin: 15px -5px -5px -5px;
+        margin: 20px -5px -5px -5px;
         button{
+            font-size: 12px;
             margin: 5px;
         }
         .ant-btn-default{
@@ -1098,10 +1103,19 @@ const OrderSummary = Styled.div`
             max-width: 600px;
             margin: 0 auto;
         }
+        .ant-form-item-control{
+            line-height: 2.2;
+        }
+        .ant-form-item-control-wrapper{
+            width: 100%;
+        }
         .ant-select{
             .ant-select-selection-item{
                 font-weight: 500;
             }
+        }
+        .ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+            height: 30px !important;
         }
     }
     .invoice-summary-inner{
@@ -1182,8 +1196,12 @@ const OrderSummary = Styled.div`
         }
         .ant-form-item-control-wrapper{
             display: flex;
+            width: 100%;
             @media only screen and (max-width: 479px){
                 flex-flow: column;
+            }
+            .ant-form-item-control{
+                width: 100%;
             }
             .ant-form-item-children{
                 display: block;

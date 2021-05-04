@@ -15,13 +15,13 @@
             </div>
 
             <div class="card__actions">
-              <sdButton size="default" outlined type="light">
+              <sdButton size="default" outlined type="white">
                 <sdFeatherIcons type="mail" size="14" />
-                Message
+                <span>Message</span>
               </sdButton>
-              <sdButton size="default" outlined type="light">
+              <sdButton size="default" outlined type="white">
                 <sdFeatherIcons type="user-plus" size="14" />
-                Following
+                <span>Following</span>
               </sdButton>
             </div>
             <div class="card__info">
@@ -34,7 +34,7 @@
                     <p>Total Revenue</p>
                   </div>
                 </a-col>
-                <a-col xs="8">
+                <a-col :xs="8">
                   <div class="info-single">
                     <sdHeading class="info-single__title" as="h2">
                       3,257
@@ -42,7 +42,7 @@
                     <p>Orders</p>
                   </div>
                 </a-col>
-                <a-col xs="8">
+                <a-col :xs="8">
                   <div class="info-single">
                     <sdHeading class="info-single__title" as="h2">
                       74

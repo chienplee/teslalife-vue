@@ -47,7 +47,7 @@
         :footer="null"
         :onCancel="handleCancel"
       >
-        <div class="project-modal">
+        <div class="project-modal create-contact-modal">
           <AddUser>
             <BasicFormWrapper>
               <a-form name="contact" :rules="rules" :model="addFormState" @finish="handleOk">
@@ -85,7 +85,7 @@
         :footer="null"
         :onCancel="handleCancel"
       >
-        <div class="project-modal">
+        <div class="project-modal create-contact-modal">
           <AddUser>
             <BasicFormWrapper>
               <a-form name="contactEdit" :rules="rules" :model="editFormState" @finish="handleEditOk">

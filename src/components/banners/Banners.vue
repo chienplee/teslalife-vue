@@ -174,7 +174,7 @@ export const Banner7 = () => {
           <figcaption>
             <h2>Subscribe to our newsletter</h2>
             <p>Lorem ipsum dolor sit amet, consetetur </p>
-            <sdButton class="btn-outlined" size="large" outlined type="primary">
+            <sdButton class="btn-outlined ant-btn-lg" outlined type="primary">
               Subscribe Now
             </sdButton>
           </figcaption>

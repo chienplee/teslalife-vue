@@ -311,6 +311,7 @@ const RightAsideWrapper = Styled.div`
                 font-size: 12px;
                 font-weight: 500;
                 padding: 0 12.88px;
+                height: 32px;
                 @media only screen and (max-width: 1599px){
                     margin-top: 15px;
                 }
@@ -318,6 +319,10 @@ const RightAsideWrapper = Styled.div`
                 i,
                 img{
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+                }
+                span{
+                    display: flex;
+                    align-items: center;
                 }
             }
         }

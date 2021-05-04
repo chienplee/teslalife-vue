@@ -32,7 +32,7 @@ const ProfileAuthorBox = Styled.div`
                 border-radius: 50%;
                 width: 32px;
                 background: ${({ theme }) => theme['primary-color']};
-            } 
+            }
             a{
                 display: flex;
                 align-items: center;
@@ -71,9 +71,9 @@ const ProfileAuthorBox = Styled.div`
                 i,
                 svg,
                 img{
-                    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 13px;
+                    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
                 }
-                &.router-link-exact-active{
+                &.router-link-active{
                     font-weight: 500;
                     color: ${({ theme }) => theme['primary-color']};
                     background: ${({ theme }) => theme['primary-color']}05;
@@ -148,7 +148,7 @@ const AccountWrapper = Styled.div`
     }
     .account-form-top{
         margin-bottom: 26px;
-        padding-bottom: 30px; 
+        padding-bottom: 30px;
         border-bottom: 1px solid ${({ theme }) => theme['border-color-light']};
     }
     .account-form{
@@ -210,6 +210,9 @@ const ChangePasswordWrapper = Styled.div`
         min-height: 565px;
     }
     form{
+        .ant-input{
+            background: none !important;
+        }
         .ant-form-item-control-input-content{
             .ant-input-password{
             padding: ${({ theme }) => (theme.rtl ? '0 0 0 20px' : '0 20px 0 0')} !important;

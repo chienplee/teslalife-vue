@@ -25,7 +25,7 @@ const ContactCardWrapper = Styled.div`
     top: 0;
     right: 0;
     padding: 0;
-    svg {      
+    svg {
       color: #AEB9CD;
       width: 18px;
       height: 18px;

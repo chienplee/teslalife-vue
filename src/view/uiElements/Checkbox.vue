@@ -52,17 +52,19 @@
           </sdCards>
 
           <sdCards title="Checkbox Group">
-            <a-checkbox-group v-model:value="value1" name="checkboxgroup" :options="plainOptions" />
-            <br />
-            <a-checkbox-group v-model:value="value2" :options="plainOptions" />
-            <br />
-            <a-checkbox-group v-model:value="value3" :options="options" :value="['Pear']" />
-            <br />
-            <a-checkbox-group v-model:value="value4" :options="optionsWithDisabled" disabled>
-              <template #label="{ value }">
-                <span style="color: red">{{ value }}</span>
-              </template>
-            </a-checkbox-group>
+            <CheckboxGroupStyle>
+              <a-checkbox-group v-model:value="value1" name="checkboxgroup" :options="plainOptions" />
+
+              <a-checkbox-group v-model:value="value2" :options="plainOptions" />
+
+              <a-checkbox-group v-model:value="value3" :options="options" :value="['Pear']" />
+
+              <a-checkbox-group v-model:value="value4" :options="optionsWithDisabled" disabled>
+                <template #label="{ value }">
+                  <span style="color: red">{{ value }}</span>
+                </template>
+              </a-checkbox-group>
+            </CheckboxGroupStyle>
           </sdCards>
           <sdCards title="Use With Grid">
             <a-checkbox-group v-model:value="value">
@@ -94,6 +96,7 @@
 <script>
 import { reactive, toRefs, watch, ref, computed } from 'vue';
 import { Main } from '../styled';
+import { CheckboxGroupStyle } from './ui-elements-styled';
 
 const plainOptions = ['Apple', 'Pear', 'Orange'];
 
@@ -112,6 +115,7 @@ export default {
   name: 'Checkbox',
   components: {
     Main,
+    CheckboxGroupStyle,
   },
 
   setup() {

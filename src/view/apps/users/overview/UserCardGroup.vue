@@ -30,7 +30,7 @@
           <div class="card__content">
             <p>{{ content }}</p>
             <div class="image-group">
-              <img v-for="(item, key) in img" :key="key + 1" :src="require(`@/${item}`)" alt="" />;
+              <img v-for="(item, key) in img" :key="key + 1" :src="require(`@/${item}`)" alt="" />
             </div>
           </div>
           <div class="card__info">

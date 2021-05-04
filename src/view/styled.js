@@ -819,9 +819,7 @@ const Main = Styled.div`
         align-items: center;
         min-height: 100px;
         border-color: #C6D0DC;
-        &.sDash-uploader-large{
-            min-height: 180px;
-        }
+        
         .ant-upload-drag-container{
             .ant-upload-text{
                 margin-bottom: 0;
@@ -831,21 +829,27 @@ const Main = Styled.div`
         }
     }
 
+    .sDash-uploader-large{
+        .ant-upload-drag{
+            min-height: 180px;
+        }
+    }
+
     // Form Validation
     .ant-form-item{
-        &.ant-form-item-has-success{
+        .has-success{
             .ant-input{
                 border-color: ${({ theme }) => theme['success-color']};
             }
             &.ant-form-item-with-help{
-                .ant-form-item-explain{
+                .ant-form-explain{
                     color: ${({ theme }) => theme['success-color']};
                 }
             }
         }
         &.ant-form-item-with-help{
-            .ant-form-item-explain{
-                margin-top: 6px;
+            .ant-form-explain{
+                margin: 6px 0 2px 0;
             }
         }
     }
@@ -920,8 +924,17 @@ const Main = Styled.div`
         padding: 11.5px 11px;
         font-size: 16px;
     }
-    
+
     .ant-input-affix-wrapper-sm {
+        padding: 3px 7px;
+    }
+
+    .ant-input-lg{
+        padding: 11.5px 11px;
+        font-size: 16px;
+    }
+
+    .ant-input-sm{
         padding: 3px 7px;
     }
 
@@ -934,7 +947,15 @@ const Main = Styled.div`
     .ant-form-item-label{
         line-height: 1.5715;
     }
+    .ant-form-vertical .ant-form-item{
+        padding-bottom: 0;
+    }
 
+    .ant-checkbox-wrapper{
+        span + span{
+            color: ${({ theme }) => theme['light-color']};
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1132,9 +1153,26 @@ const PageHeaderWrapper = Styled.div`
     .ant-page-header{
         border: 1px solid ${({ theme }) => theme['border-color-normal']};
         border-radius: 5px;
+        background-color: transparent !important;
+        padding: 18px 20px;
+    }
+    .ant-page-header-heading-extra{
+        color: #ddd;
+        .ant-space {
+            button{
+                border-radius: 3px;
+                padding: 0 18.3px;
+            }
+        }
     }
     .ant-page-header .ant-page-header-heading-left{
         margin: 2px 0;
+    }
+    .ant-page-header.has-breadcrumb{
+        padding: 22px 25px 25px 25px;
+        .ant-page-header-heading-extra{
+            margin: 0 0 0 auto !important;
+        }
     }
 `;
 
@@ -1395,6 +1433,25 @@ const CardToolbox = Styled.div`
         font-weight: 500;
         display: flex;
         align-items: center;
+        .title-counter{
+            min-width: 100px;
+        }
+        .ant-input-affix-wrapper{
+            margin-left: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-radius: 6px;
+            border: 0 none;
+            .ant-input-suffix{
+                i{
+                    line-height: 0;
+                    svg{
+                        font-size: 14px;
+                        color: ${({ theme }) => theme['light-gray-color']};
+                    }
+                }
+            }
+        }
     }
     .ant-select{
         ${({ theme }) => (!theme.rtl ? 'margin-left' : 'margin-right')}: 25px;

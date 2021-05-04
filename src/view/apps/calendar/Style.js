@@ -43,11 +43,48 @@ const Aside = Styled.aside`
             }
         }
     }
-    
+
 `;
 
 const CalendarWrapper = Styled.div`
-    
+    .calendar-display{
+        .vc-container{
+            border: 0 none;
+            .vc-header{
+                padding-top: 20px;
+                .vc-title{
+                    font-size: 16px;
+                }
+            }
+            .vc-weeks{
+                padding: 15px 15px 25px;
+            }
+            .vc-arrows-container{
+                padding: 20px 20px 8px;
+                svg{
+                    width: 8px;
+                    color: ${({ theme }) => theme['gray-color']};
+                }
+            }
+            .vc-day.is-not-in-month *{
+                color: ${({ theme }) => theme['extra-light-color']};
+                opacity: 1;
+            }
+            .vc-day{
+                span{
+                    color: ${({ theme }) => theme['gray-color']};
+                    font-weight: 400;
+                }
+                &.is-today{
+                    span{
+                        background: ${({ theme }) => theme['primary-color']};
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
     .react-calendar{
         font-family: 'Inter', sans-serif;
         width: 100%;
@@ -170,9 +207,13 @@ const CalendarWrapper = Styled.div`
                 height: 34px;
                 color: ${({ theme }) => theme['gray-color']};
                 border-color: ${({ theme }) => theme['border-color-light']};
+                background: transparent !important;
                 @media only screen and (max-width: 479px){
                     margin-bottom: 15px;
                 }
+            }
+            .btn-navigate{
+                background: transparent !important;
             }
             .year-select{
                 .ant-select-selector{
@@ -325,7 +366,7 @@ const CalendarWrapper = Styled.div`
     }
 
     .table-event{
-        
+
         border: 1px solid ${({ theme }) => theme['border-color-light']};
         &.table-responsive{
             @media only screen and (max-width: 1599px){
@@ -344,7 +385,7 @@ const CalendarWrapper = Styled.div`
                     padding: 16px 18px 16px 18px;
                     ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};
-                    
+
                 }
             }
         }
@@ -388,8 +429,8 @@ const CalendarWrapper = Styled.div`
                     width: 100%;
                     display: block;
                     border-radius: 3px 6px 6px 3px;
-                    padding: 6px 12px;
-                    margin: 2px 0;
+                    padding: 6px 12px !important;
+                    margin: 2px 0 !important;
                     position: relative;
                     &:after{
                         position: absolute;
@@ -450,7 +491,7 @@ const CalendarWrapper = Styled.div`
                     }
                 }
             }
-            
+
         }
     }
 
@@ -539,7 +580,7 @@ const CalendarWrapper = Styled.div`
                     color: ${({ theme }) => theme['dark-color']};
                     @media only screen and (max-width: 575px){
                         display: inline-block;
-                        margin-top: 6px; 
+                        margin-top: 6px;
                     }
                 }
                 .schedule-time{
@@ -572,8 +613,8 @@ const CalendarWrapper = Styled.div`
 
     .ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
         overflow-y: unset;
-    }  
-    
+    }
+
 `;
 
 const UpdatePopup = Styled.div`
@@ -581,7 +622,7 @@ const UpdatePopup = Styled.div`
         width: 320px !important;
         .ant-card-body{
             padding: 0 !important;
-            
+
             .headerUpdate{
                 border-radius: 8px 8px 0 0;
                 padding: 13px 20px;
@@ -763,6 +804,23 @@ const AddEventWrap = Styled.div`
             }
         }
     }
+    .date-time-picker{
+        margin: -5px;
+        flex-wrap: wrap;
+    }
+    .ant-calendar-picker{
+        padding: 5px;
+        flex: 0 0 50%;
+    }
+    .ant-time-picker{
+        width: auto;
+        padding: 5px;
+        flex: 0 0 50%;
+        .ant-time-picker-input{
+            width: 100%;
+            height: 48px;
+        }
+    }
     .ant-form-item-control-input{
         min-height: 46px;
         textarea{
@@ -792,7 +850,7 @@ const AddEventWrap = Styled.div`
             }
         }
     }
-    
+
     .date-time-picker {
         .ant-picker{
             min-width: auto;

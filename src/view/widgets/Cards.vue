@@ -63,7 +63,7 @@
         <a-col v-for="item in cardFive" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24" class="mb-25">
           <SampleCardFive :item="item" />
         </a-col>
-        <a-col v-for="item in cardSix" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24" class="mb-25">
+        <a-col v-for="item in cardSix" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24">
           <SampleCardSix :item="item" />
         </a-col>
         <a-col v-for="item in cardSeven" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24" class="mb-25">
