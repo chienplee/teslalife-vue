@@ -851,11 +851,16 @@ const KnowledgeDetailsWrap = Styled.div`
                             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
                         }
                         a{
+                            span.fa,
+                            i,
+                            svg{
+                                color: ${({ theme }) => theme['extra-light-color']};
+                            }
                             &:hover{
                                 span.fa,
                                 i,
                                 svg{
-                                    color: ${({ theme }) => theme['primray-color']};
+                                    color: ${({ theme }) => theme['primary-color']};
                                 }
                             }
                         }
@@ -874,7 +879,7 @@ const KnowledgeDetailsWrap = Styled.div`
                 li{
                     &.page-next{
                         a{
-                            span.fa{
+                            span.fa, svg{
                                 ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
                             }
                         }
@@ -888,7 +893,7 @@ const KnowledgeDetailsWrap = Styled.div`
                             @media only screen and (max-width: 575px){
                                 text-align: ${({ theme }) => (theme.rtl ? 'right' : 'left')};
                             }
-                            span.fa{
+                            span.fa, svg{
                                 margin-left: 8px;
                                 ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 8px;
                             }
@@ -909,7 +914,7 @@ const KnowledgeDetailsWrap = Styled.div`
                                 display: inline-block;
                                 font-size: 14px;
                             }
-                            span{
+                            span, svg{
                                 font-size: 13px;
                                 font-weight: 400;
                                 color: ${({ theme }) => theme['light-color']};
