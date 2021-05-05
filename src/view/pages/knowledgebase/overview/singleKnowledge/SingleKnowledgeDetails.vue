@@ -47,7 +47,7 @@
       </div>
       <div class="knowledge-details__single--block">
         <div class="knowledge-details-collapse">
-          <a-collapse v-model:activeKey="activeKey">
+          <a-collapse v-model:activeKey="activeKeyOthers">
             <a-collapse-panel class="knowledge-details-collapse__title" key="1">
               <template #header>
                 <h4>Measuring elevation</h4>
@@ -207,6 +207,7 @@ export default {
   },
   setup() {
     const activeKey = ref(['1']);
+    const activeKeyOthers = ref(['1']);
     const formState = reactive({
       name: '',
       email: '',
@@ -217,6 +218,7 @@ export default {
     });
     return {
       activeKey,
+      activeKeyOthers,
       formState,
       faFacebookF,
       faTwitter,
