@@ -105,6 +105,9 @@
               :labels="incomeState.labels"
               :datasets="incomeDataset"
               :height="88"
+              :style="{
+                marginBottom: '0',
+              }"
               :options="{
                 maintainAspectRatio: true,
                 responsive: true,

@@ -30,7 +30,11 @@
             <div class="card-chunk">
               <Chart
                 class="growth"
+                :height="180"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+                :style="{
+                  marginBottom: '-5',
+                }"
                 :datasets="[
                   {
                     data: [20, 60, 50, 45, 50, 60, 70],
@@ -62,7 +66,11 @@
             <div class="card-chunk">
               <Chart
                 class="downward"
+                :height="180"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+                :style="{
+                  marginBottom: '-5',
+                }"
                 :datasets="[
                   {
                     data: [20, 60, 50, 45, 50, 60, 70],
@@ -95,7 +103,11 @@
             <div class="card-chunk">
               <Chart
                 class="upward"
+                :height="180"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+                :style="{
+                  marginBottom: '-5',
+                }"
                 :datasets="[
                   {
                     data: [20, 60, 50, 45, 50, 60, 70],
@@ -127,7 +139,11 @@
             <div class="card-chunk">
               <Chart
                 class="visitors"
+                :height="180"
                 :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+                :style="{
+                  marginBottom: '-5',
+                }"
                 :datasets="[
                   {
                     data: [20, 60, 50, 45, 50, 60, 70],
