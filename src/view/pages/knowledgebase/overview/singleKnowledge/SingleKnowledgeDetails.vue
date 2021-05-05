@@ -28,8 +28,11 @@
       </div>
       <div class="knowledge-details__single--block">
         <div class="knowledge-details-collapse">
-          <a-collapse accordion>
-            <a-collapse-panel class="knowledge-details-collapse__title" key="0" header="Measuring elevation">
+          <a-collapse v-model:activeKey="activeKey">
+            <a-collapse-panel class="knowledge-details-collapse__title" key="1">
+              <template #header>
+                <h4>Measuring elevation</h4>
+              </template>
               <div class="knowledge-details-collapse__text">
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
@@ -44,8 +47,11 @@
       </div>
       <div class="knowledge-details__single--block">
         <div class="knowledge-details-collapse">
-          <a-collapse accordion>
-            <a-collapse-panel class="knowledge-details-collapse__title" key="1" header="Measuring elevation">
+          <a-collapse v-model:activeKey="activeKey">
+            <a-collapse-panel class="knowledge-details-collapse__title" key="1">
+              <template #header>
+                <h4>Measuring elevation</h4>
+              </template>
               <div class="knowledge-details-collapse__text">
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
@@ -190,7 +196,7 @@
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive, ref, watch } from 'vue';
 import { KnowledgeDetailsWrap } from '../../style';
 import { faFacebookF, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
 
@@ -200,12 +206,17 @@ export default {
     KnowledgeDetailsWrap,
   },
   setup() {
+    const activeKey = ref(['1']);
     const formState = reactive({
       name: '',
       email: '',
       comment: '',
     });
+    watch(activeKey, val => {
+      console.log('activeKey', val);
+    });
     return {
+      activeKey,
       formState,
       faFacebookF,
       faTwitter,
