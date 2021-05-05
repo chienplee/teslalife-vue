@@ -950,6 +950,12 @@ const Main = Styled.div`
     .ant-form-vertical .ant-form-item{
         padding-bottom: 0;
     }
+
+    .ant-checkbox-wrapper{
+        span + span{
+            color: ${({ theme }) => theme['light-color']};
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1147,9 +1153,26 @@ const PageHeaderWrapper = Styled.div`
     .ant-page-header{
         border: 1px solid ${({ theme }) => theme['border-color-normal']};
         border-radius: 5px;
+        background-color: transparent !important;
+        padding: 18px 20px;
+    }
+    .ant-page-header-heading-extra{
+        color: #ddd;
+        .ant-space {
+            button{
+                border-radius: 3px;
+                padding: 0 18.3px;
+            }
+        }
     }
     .ant-page-header .ant-page-header-heading-left{
         margin: 2px 0;
+    }
+    .ant-page-header.has-breadcrumb{
+        padding: 22px 25px 25px 25px;
+        .ant-page-header-heading-extra{
+            margin: 0 0 0 auto !important;
+        }
     }
 `;
 

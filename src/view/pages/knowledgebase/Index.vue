@@ -14,7 +14,6 @@
       </template>
     </sdPageHeader>
     <Main>
-      <!-- <a-row> -->
       <KnowledgeBaseTop />
       <KnowledgebaseArticleWrap>
         <div class="knowledgebase-article-container">
@@ -48,7 +47,7 @@
                       <div :class="`sDash_popular-article__single theme-${article.type}`">
                         <h4 class="single-article-title">{{ article.title }}</h4>
                         <p>{{ article.text }}</p>
-                        <router-link class="btn-link" to="/page/knowledgebase/single">
+                        <router-link class="btn-link" to="/page/knowledgebase/single/1">
                           Read more
                           <ArrowRightOutlined />
                         </router-link>
@@ -70,7 +69,6 @@
           </CtaWrap>
         </div>
       </KnowledgebaseArticleWrap>
-      <!-- </a-row> -->
     </Main>
   </div>
 </template>
