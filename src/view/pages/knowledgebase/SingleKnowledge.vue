@@ -57,19 +57,19 @@
                       </a>
                       <ul :class="open === 'menu1' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#" class="active">Switch between accounts</router-link>
+                          <a href="#" class="active">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                         <li>
-                          <router-link to="#">Understand your actions in lorem</router-link>
+                          <a href="#">Understand your actions in lorem</a>
                         </li>
                       </ul>
                     </li>
@@ -80,19 +80,19 @@
                       </a>
                       <ul :class="open === 'menu2' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                         <li>
-                          <router-link to="#">Understand your actions in lorem</router-link>
+                          <a href="#">Understand your actions in lorem</a>
                         </li>
                       </ul>
                     </li>
@@ -103,16 +103,16 @@
                       </a>
                       <ul :class="open === 'menu3' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -123,16 +123,16 @@
                       </a>
                       <ul :class="open === 'menu4' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -143,16 +143,16 @@
                       </a>
                       <ul :class="open === 'menu5' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -163,16 +163,16 @@
                       </a>
                       <ul :class="open === 'menu6' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -183,16 +183,16 @@
                       </a>
                       <ul :class="open === 'menu7' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -203,16 +203,16 @@
                       </a>
                       <ul :class="open === 'menu8' ? 'submenu show' : 'submenu'">
                         <li>
-                          <router-link to="#">Switch between accounts</router-link>
+                          <a href="#">Switch between accounts</a>
                         </li>
                         <li>
-                          <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                          <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                         </li>
                         <li>
-                          <router-link to="#">Stop getting emails from lorem</router-link>
+                          <a href="#">Stop getting emails from lorem</a>
                         </li>
                         <li>
-                          <router-link to="#">Threads to organize discussions</router-link>
+                          <a href="#">Threads to organize discussions</a>
                         </li>
                       </ul>
                     </li>
@@ -238,19 +238,19 @@
                         </a>
                         <ul :class="open === 'menu1' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#" class="active">Switch between accounts</router-link>
+                            <a href="#" class="active">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                           <li>
-                            <router-link to="#">Understand your actions in lorem</router-link>
+                            <a href="#">Understand your actions in lorem</a>
                           </li>
                         </ul>
                       </li>
@@ -261,19 +261,19 @@
                         </a>
                         <ul :class="open === 'menu2' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                           <li>
-                            <router-link to="#">Understand your actions in lorem</router-link>
+                            <a href="#">Understand your actions in lorem</a>
                           </li>
                         </ul>
                       </li>
@@ -284,16 +284,16 @@
                         </a>
                         <ul :class="open === 'menu3' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>
@@ -304,16 +304,16 @@
                         </a>
                         <ul :class="open === 'menu4' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>
@@ -324,16 +324,16 @@
                         </a>
                         <ul :class="open === 'menu5' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>
@@ -344,16 +344,16 @@
                         </a>
                         <ul :class="open === 'menu6' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>
@@ -364,16 +364,16 @@
                         </a>
                         <ul :class="open === 'menu7' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>
@@ -384,16 +384,16 @@
                         </a>
                         <ul :class="open === 'menu8' ? 'submenu show' : 'submenu'">
                           <li>
-                            <router-link to="#">Switch between accounts</router-link>
+                            <a href="#">Switch between accounts</a>
                           </li>
                           <li>
-                            <router-link to="#">Installing vendor marketplace lorem vendor marketplace </router-link>
+                            <a href="#">Installing vendor marketplace lorem vendor marketplace </a>
                           </li>
                           <li>
-                            <router-link to="#">Stop getting emails from lorem</router-link>
+                            <a href="#">Stop getting emails from lorem</a>
                           </li>
                           <li>
-                            <router-link to="#">Threads to organize discussions</router-link>
+                            <a href="#">Threads to organize discussions</a>
                           </li>
                         </ul>
                       </li>

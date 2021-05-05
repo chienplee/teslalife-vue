@@ -6,7 +6,7 @@
     "img": "static/img/sellers/1.png",
     "product": "397",
     "amount": "$4,248.66",
-    "date": "January 20, 2020"
+    "date": "January 20, 2021"
   },
   {
     "id": "#02-0004",
@@ -15,7 +15,7 @@
     "img": "static/img/sellers/2.png",
     "product": "397",
     "amount": "$14,248.61",
-    "date": "January 28, 2020"
+    "date": "January 28, 2021"
   },
   {
     "id": "#02-0005",
@@ -24,7 +24,7 @@
     "img": "static/img/sellers/3.png",
     "product": "397",
     "amount": "$24,248.90",
-    "date": "January 30, 2020"
+    "date": "January 30, 2021"
   },
   {
     "id": "#02-0006",
@@ -33,7 +33,7 @@
     "img": "static/img/sellers/4.png",
     "product": "397",
     "amount": "$6,248.87",
-    "date": "February 2, 2020"
+    "date": "February 2, 2021"
   },
   {
     "id": "#02-0007",
@@ -42,7 +42,7 @@
     "img": "static/img/sellers/5.png",
     "product": "397",
     "amount": "$35,545.66",
-    "date": "February 12, 2020"
+    "date": "February 12, 2021"
   },
   {
     "id": "#02-0008",
@@ -51,7 +51,7 @@
     "img": "static/img/sellers/6.png",
     "product": "397",
     "amount": "$4,248.66",
-    "date": "February 8, 2020"
+    "date": "February 8, 2021"
   },
   {
     "id": "#02-0009",
@@ -60,7 +60,7 @@
     "img": "static/img/sellers/7.png",
     "product": "397",
     "amount": "$34,248.66",
-    "date": "February 2, 2020"
+    "date": "February 2, 2021"
   },
 
   {
@@ -70,7 +70,7 @@
     "img": "static/img/sellers/8.png",
     "product": "397",
     "amount": "$14,244.20",
-    "date": "January 20, 2020"
+    "date": "January 20, 2021"
   },
   {
     "id": "#02-0011",
@@ -79,7 +79,7 @@
     "img": "static/img/sellers/9.png",
     "product": "397",
     "amount": "$4,248.66",
-    "date": "January 20, 2020"
+    "date": "January 20, 2021"
   },
   {
     "id": "#02-0012",
@@ -88,6 +88,6 @@
     "img": "static/img/sellers/1.png",
     "product": "397",
     "amount": "$4,248.66",
-    "date": "January 20, 2020"
+    "date": "January 20, 2021"
   }
 ]

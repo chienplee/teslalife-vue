@@ -24,7 +24,7 @@
                 <td>
                   <span class="drag_designation">{{ element.designation }}</span>
                 </td>
-                <td><span class="drag_join-date">January 20, 2020</span></td>
+                <td><span class="drag_join-date">January 20, 2021</span></td>
                 <td>
                   <div class="table-actions">
                     <sdButton class="btn-icon" type="info" to="#" shape="circle">

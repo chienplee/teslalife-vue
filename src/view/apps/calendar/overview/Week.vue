@@ -224,7 +224,7 @@ const WeekCalendar = {
     const isVisible = computed(() => state.calendar.eventVisible);
 
     const currentWeek = ref(moment().week());
-    const maxWeek = ref(moment('12-31-2020', 'MM-DD-YYYY').isoWeek());
+    const maxWeek = ref(moment('04-05-2021', 'MM-DD-YYYY').isoWeek());
     const minWeek = ref(1);
     const year = ref(moment().format('YYYY'));
     const defaultValue = ref(moment().format('YYYY-MM-DD'));

@@ -84,7 +84,7 @@
                   <sdFeatherIcons type="plus" v-if="!props.isActive" size="14" />
                   <sdFeatherIcons type="minus" v-else size="14" />
                 </template>
-                <a-collapse-panel header="How long does it take to download updates?" key="1" :style="customPanelStyle">
+                <a-collapse-panel header="How long does it take to download updates?" key="1">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -104,11 +104,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel
-                  header="How to use SCSS variables to build custom color?"
-                  key="2"
-                  :style="customPanelStyle"
-                >
+                <a-collapse-panel header="How to use SCSS variables to build custom color?" key="2">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -128,7 +124,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel header="How long does it take to download updates?" key="3" :style="customPanelStyle">
+                <a-collapse-panel header="How long does it take to download updates?" key="3">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -148,7 +144,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel header="What is the flex layout?" key="4" :style="customPanelStyle">
+                <a-collapse-panel header="What is the flex layout?" key="4">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -168,7 +164,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel header="How long does it take to download updates?" key="5" :style="customPanelStyle">
+                <a-collapse-panel header="How long does it take to download updates?" key="5">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -188,7 +184,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel header="Where to buy this UI dashboard?" key="6" :style="customPanelStyle">
+                <a-collapse-panel header="Where to buy this UI dashboard?" key="6">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -208,7 +204,7 @@
                     </sdButton>
                   </div>
                 </a-collapse-panel>
-                <a-collapse-panel header="How long does it take to download updates?" key="7" :style="customPanelStyle">
+                <a-collapse-panel header="How long does it take to download updates?" key="7">
                   <p>
                     Many support queries and technical questions will already be answered in supporting documentation
                     such as FAQ&rsquo;s and comments from previous buyers. Anim pariatur cliche reprehenderit, enim
@@ -248,16 +244,6 @@ export default {
     FaqCategoryBox,
     FaqWrapper,
     FaqSupportBox,
-  },
-  data() {
-    return {
-      customPanelStyle: {
-        background: '#ffffff',
-        borderRadius: 5,
-        marginBottom: 5,
-        border: '1px solid #F1F2F6',
-      },
-    };
   },
   methods: {
     handleChange(e) {

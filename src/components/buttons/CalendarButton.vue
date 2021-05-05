@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       range: {
-        start: new Date(2020, 0, 1),
-        end: new Date(2020, 0, 5),
+        start: new Date(2021, 0, 1),
+        end: new Date(2021, 0, 5),
       },
     };
   },
