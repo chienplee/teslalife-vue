@@ -208,8 +208,7 @@
           <div :class="`chatbox-reply-form d-flex ${fileList.length && 'hasImage'} ${fileList2.length && 'hasFile'}`">
             <div class="chatbox-reply-input">
               <span class="smile-icon">
-                <!-- <EmojiPickerPlugin v-if="pickerShow" :onEmojiClick="onEmojiClick" /> -->
-                <EmojiPicker :emojiClick="onEmojiHandle" v-if="pickerShow" />
+                <EmojiPicker :emojiClick="onEmojiClick" v-if="pickerShow" />
                 <router-link @click="onPickerShow" to="#">
                   <sdFeatherIcons type="smile" size="24" />
                 </router-link>
@@ -276,13 +275,8 @@ const SingleChat = {
       pickerShow.value = value;
     };
 
-    const onEmojiClick = (event, emojiObject) => {
-      event.preventDefault();
-      return (inputValue.value = inputValue.value + emojiObject.emoji);
-    };
-
-    const onEmojiHandle = emoji => {
-      inputValue.value = inputValue.value + emoji;
+    const onEmojiClick = emojiObject => {
+      return (inputValue.value = inputValue.value + emojiObject);
     };
 
     const onPickerShow = () => {
@@ -308,7 +302,6 @@ const SingleChat = {
     };
 
     return {
-      onEmojiHandle,
       rtl,
       handleSubmit,
       setPickerShow,

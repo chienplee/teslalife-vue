@@ -21,7 +21,6 @@
 
       <div class="post-content">
         <div v-if="img.length" class="gallery">
-          <!-- <SRLWrapper> -->
           <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
             <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
               <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
@@ -87,8 +86,8 @@
               <div class="chatbox-reply-action d-flex">
                 <span class="smile-icon">
                   <template v-if="pickerShow">
-                    <BackShadowEmoji @click="() => setPickerShow(false)" />
-                    <Picker @emojiClick="onEmojiClick" />
+                    <BackShadowEmoji @click="onPickerShow" />
+                    <EmojiPicker :emojiClick="onEmojiClick" v-if="pickerShow" />
                   </template>
                   <a @click="onPickerShow" to="#">
                     <sdFeatherIcons type="smile" size="24" />
@@ -148,14 +147,13 @@
   </AllPosts>
 </template>
 <script>
-import Masonry from 'vue-masonry-css';
-import Picker from 'vue-emoji-picker';
 import moment from 'moment';
 import PropTypes from 'vue-types';
 import { AllPosts, BackShadowEmoji, Title } from './style';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 import VueEasyLightbox from 'vue-easy-lightbox';
+import EmojiPicker from '@/components/utilities/Emoji.vue';
 
 const ExampleComment = {
   name: 'ExampleComment',
@@ -188,7 +186,7 @@ const ExampleComment = {
 
 const Posts = {
   name: 'Posts',
-  components: { AllPosts, BackShadowEmoji, Title, Picker, ExampleComment, Masonry, VueEasyLightbox },
+  components: { AllPosts, BackShadowEmoji, Title, ExampleComment, VueEasyLightbox, EmojiPicker },
   props: {
     postId: PropTypes.number,
     from: PropTypes.string,
@@ -228,8 +226,9 @@ const Posts = {
     const handleHide = () => {
       visible.value = false;
     };
-    const onEmojiClick = (event, emojiObject) => {
-      textValue.value = textValue.value + emojiObject.emoji;
+    const onEmojiClick = emojiObject => {
+      console.log(emojiObject);
+      textValue.value = textValue.value + emojiObject;
     };
 
     const onPickerShow = () => {
