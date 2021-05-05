@@ -695,6 +695,7 @@ const FaqWrapper = Styled.div`
   }
   .ant-collapse-item{
     border: 1px solid ${({ theme }) => theme['border-color-light']} !important;
+    margin-bottom: 5px;
     &.ant-collapse-item-active{
       box-shadow: 0px 15px 40px ${({ theme }) => theme['light-color']}15;
     }
@@ -717,6 +718,7 @@ const FaqWrapper = Styled.div`
   }
 
   .ant-collapse-content{
+    background-color: #fff !important;
     box-shadow: 0 15px 40px ${({ theme }) => theme['light-color']}15;
     .ant-collapse-content-box{
       border-top: 1px solid ${({ theme }) => theme['border-color-light']} !important;
@@ -1046,7 +1048,7 @@ const ComingsoonStyleWrapper = Styled.div`
         flex-flow: column;
         margin-bottom: 20px;
       }
-      .ant-form-item-control-input{
+      .ant-form-item-control{
         margin-right: 20px;
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
         @media only screen and (max-width: 375px){

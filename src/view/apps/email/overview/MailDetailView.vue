@@ -221,7 +221,7 @@
               </figure>
               <div class="reply-view__meta">
                 <span class="meta-list">
-                  <span class="date-meta">Jan 2, 2020, 5:22 PM</span>
+                  <span class="date-meta">Jan 2, 2021, 5:22 PM</span>
                   <router-link
                     :class="email.stared ? 'starActive' : 'starDeactivate'"
                     @click="() => onStaredChange(email.id)"

@@ -390,7 +390,7 @@
                   </router-link>
                 </li>
                 <li @click="addParentActive">
-                  <router-link :to="`/page/knowledgebase/plugins`">
+                  <router-link :to="`/page/knowledgebase/base/plugins`">
                     Knowledgebase
                   </router-link>
                 </li>
@@ -400,7 +400,7 @@
                   </router-link>
                 </li>
                 <li @click="addParentActive">
-                  <router-link :to="`/page/knowledgebase/single`">
+                  <router-link :to="`/page/knowledgebase/single/1`">
                     Single Article
                   </router-link>
                 </li>

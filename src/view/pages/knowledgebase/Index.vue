@@ -42,22 +42,16 @@
               <h2 class="sDash_popular-article__title">Popular articles</h2>
               <div transition-duration="0.3s" item-selector=".item">
                 <div class="sDash_popular-article__box">
-                  <a-row>
-                    <a-col
-                      :md="8"
-                      :sm="12"
-                      :xs="24"
-                      class="item"
-                      v-for="article in articles"
-                      :key="article.id"
-                      :class="`sDash_popular-article__single theme-${article.type}`"
-                    >
-                      <h4 class="single-article-title">{{ article.title }}</h4>
-                      <p>{{ article.text }}</p>
-                      <router-link class="btn-link" to="/page/knowledgebase/single/1">
-                        Read more
-                        <ArrowRightOutlined />
-                      </router-link>
+                  <a-row class="row-masonry">
+                    <a-col :md="8" :sm="12" :xs="24" class="item" v-for="article in articles" :key="article.id">
+                      <div :class="`sDash_popular-article__single theme-${article.type}`">
+                        <h4 class="single-article-title">{{ article.title }}</h4>
+                        <p>{{ article.text }}</p>
+                        <router-link class="btn-link" to="/page/knowledgebase/single/1">
+                          Read more
+                          <ArrowRightOutlined />
+                        </router-link>
+                      </div>
                     </a-col>
                   </a-row>
                 </div>

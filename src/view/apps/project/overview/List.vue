@@ -99,7 +99,7 @@ const ProjectLists = {
               </ProjectListTitle>
             ),
             startDate: <span class="date-started">26 Dec 2019</span>,
-            deadline: <span class="date-finished">18 Mar 2020</span>,
+            deadline: <span class="date-finished">18 Mar 2021</span>,
             assigned: (
               <ProjectListAssignees>
                 <ul>

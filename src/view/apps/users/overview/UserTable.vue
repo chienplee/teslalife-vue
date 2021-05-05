@@ -83,7 +83,7 @@ const UserListTable = {
           email: 'john@gmail.com',
           company: 'Business Development',
           position: designation,
-          joinDate: 'January 20, 2020',
+          joinDate: 'January 20, 2021',
           status: <span class={`status-text ${status}`}>{status}</span>,
           action: (
             <div class="table-actions">

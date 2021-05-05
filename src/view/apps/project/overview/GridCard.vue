@@ -27,7 +27,7 @@
           </div>
           <div>
             <span>Deadline</span>
-            <strong>18 Mar 2020</strong>
+            <strong>18 Mar 2021</strong>
           </div>
         </div>
         <div class="project-progress">

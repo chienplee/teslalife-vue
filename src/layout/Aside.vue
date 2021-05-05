@@ -132,6 +132,7 @@
         <sdFeatherIcons type="activity" />
         <span>
           Changelog
+          <span class="badge badge-primary menuItem">{{ versions[0].version }}</span>
         </span>
       </router-link>
     </a-menu-item>
@@ -177,7 +178,7 @@
 
       <a-sub-menu key="ecommerce">
         <template v-slot:title><sdFeatherIcons type="shopping-cart" /><span>eCommerce</span></template>
-        <a-menu-item @click="toggleCollapsed" key="pro-grid">
+        <a-menu-item @click="toggleCollapsed" key="ecommerce-product">
           <router-link to="/app/ecommerce/product/grid">
             Products
           </router-link>
@@ -1025,6 +1026,7 @@ import { computed, reactive, ref, toRefs, watch, watchEffect } from 'vue';
 import VueTypes from 'vue-types';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
+import versions from '../demoData/changelog.json';
 
 export default {
   name: 'AsideItems',
@@ -1088,6 +1090,7 @@ export default {
       modeChangeLight,
       modeChangeTopNav,
       modeChangeSideNav,
+      versions,
     };
   },
 };

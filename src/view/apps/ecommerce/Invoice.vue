@@ -44,7 +44,7 @@
                       Invoice
                     </sdHeading>
                     <p>No : #642678</p>
-                    <p>Date : Jan 17, 2020</p>
+                    <p>Date : Jan 17, 2021</p>
                   </article>
                 </a-col>
                 <a-col :lg="8" :xs="24">
