@@ -54,6 +54,19 @@ export default {
     state.tsLoading = false;
     state.error = err;
   },
+  regionBegin(state) {
+    state.tsLoading = true;
+  },
+
+  regionSuccess(state, data) {
+    state.tsLoading = false;
+    state.locationData = data;
+  },
+
+  regionErr(state, err) {
+    state.tsLoading = false;
+    state.error = err;
+  },
 
   generatedBegin(state) {
     state.geLoading = true;
@@ -123,16 +136,16 @@ export default {
     state.error = err;
   },
 
-  regionBegin(state) {
+  topRegionBegin(state) {
     state.reLoading = true;
   },
 
-  regionSuccess(state, data) {
+  topRegionSuccess(state, data) {
     state.reLoading = false;
     state.regionData = data;
   },
 
-  regionErr(state, err) {
+  topRegionErr(state, err) {
     state.reLoading = false;
     state.error = err;
   },
