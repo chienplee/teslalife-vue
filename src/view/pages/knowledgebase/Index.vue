@@ -22,13 +22,13 @@
               <nav>
                 <ul>
                   <li>
-                    <router-link to="/page/knowledgebase/plugins">Plugins</router-link>
+                    <router-link to="/page/knowledgebase/base/plugins">Plugins</router-link>
                   </li>
                   <li>
-                    <router-link to="/page/knowledgebase/themes">Themes</router-link>
+                    <router-link to="/page/knowledgebase/base/themes">Themes</router-link>
                   </li>
                   <li>
-                    <router-link to="/page/knowledgebase/extensions">Extensions</router-link>
+                    <router-link to="/page/knowledgebase/base/extensions">Extensions</router-link>
                   </li>
                 </ul>
               </nav>
