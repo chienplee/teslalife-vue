@@ -46,6 +46,9 @@ const OverviewSalesCard = Styled.div`
             height: 60px;
             width: 60px;
         }
+        img{
+            max-width: 35px;
+        }
         &.box-primary{
             background-color: ${({ theme }) => theme['primary-color']}10;
         }
@@ -102,7 +105,7 @@ const Focard = Styled.div`
             .focard-status{
                 .focard-status__percentage{
                     color: ${({ theme }) => theme['danger-color']};
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
         }
@@ -110,7 +113,7 @@ const Focard = Styled.div`
             .focard-status{
                 .focard-status__percentage{
                     color: ${({ theme }) => theme['success-color']};
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
         }
@@ -143,6 +146,8 @@ const Focard = Styled.div`
         }
         svg{
             width: 15px;
+            position: relative;
+            top: 3px;
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
         }
     }
@@ -1037,6 +1042,9 @@ const CardBarChart2 = Styled.div`
             ${({ theme }) => (!theme.rtl ? 'padding-right' : 'padding-left')}: 10px;
             font-weight: 600;
 
+            i{
+                line-height: 1;
+            }
             svg{
                 width: 15px;
             }
@@ -1104,7 +1112,7 @@ const LineChartWrapper = Styled.div`
     .overview-container{
         .line-chart-row{
             &:not(:last-child){
-                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 11px')};
+                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 11.5px')};
             }
         }
     }
@@ -1159,12 +1167,14 @@ const RatioCard = Styled.div`
             }
         }
         p{
-            color: ${({ theme }) => theme['light-color']};
+            font-weight: 400;
             margin-bottom: 0;
+            color: ${({ theme }) => theme['light-color']};
             strong{
                 font-size: 13px;
+                font-weight: 500;
+                margin-right: 4px;
                 color: ${({ theme }) => theme['dark-color']};
-                font-weight: 600;
             }
         }
     }
@@ -1191,7 +1201,7 @@ const IncomeExpenseWrapper = Styled.div`
         }
     }
     .chart-dataIndicator{
-        padding: 15px 0 25px 0;
+        padding: 10px 0 25px 0;
         margin-top: 0 !important;
     }
     ul{
@@ -1286,7 +1296,7 @@ const LocationMapWrapper = Styled.div`
             tr{
                 &:hover{
                     td{
-                        background: #fff;
+                        background: #fff !important;
                     }
                 }
                 td{
@@ -1616,6 +1626,7 @@ const ChartContainer = Styled.div`
                 font-weight: 500;
                 padding-bottom: 3px;
                 white-space: nowrap;
+                padding: 2px 0;
                 color: ${({ theme }) => theme['dark-color']};
                 @media only screen and (max-width: 1199px){
                     font-size: 12px;

@@ -73,7 +73,7 @@ const TopCountriesRevenue = {
         height: 115.49,
         zoom: true,
         hideAntarctic: true,
-        landsColor: '#ddd',
+        landsColor: '#E3E6EF',
         landsBorder: '#fff',
       },
     };

@@ -169,8 +169,9 @@ const CustomDropDown = Styled('div')`
     position: relative;
     .sDash-range-calendar{
         position: absolute;
+        padding: 10px 10px 0 10px;
         z-index: 22 !important;
-        top: 45px;
+        top: 50px;
         right: 0;
         margin-right: -50%;
         background-color: #fff;

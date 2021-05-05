@@ -2460,7 +2460,6 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 
 /* Range Calendar Style */
 .sDash-range-calendar{
-  padding: 12px !important;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(143, 142, 159,.20);
 }
@@ -2494,19 +2493,23 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 }
 .sDash-range-calendar .vc-pane .vc-header .vc-title{
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: arial;
   color: #272b41;
   font-weight: 500;
   padding: 4px 0;
 }
 .sDash-range-calendar .vc-pane .vc-weeks .vc-weekday{
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-family: arial;
   color: #666d92;
   padding-bottom: 0;
 }
+.sDash-range-calendar .vc-pane .vc-weeks .vc-day{
+  padding: 2px 0;
+}
 .sDash-range-calendar .vc-pane .vc-weeks .vc-day .vc-day-content{
-  font-family: 'Inter', sans-serif;
+  font-family: arial;
   font-size: 13px;
   font-weight: 500;
   color: #272b41;
@@ -2692,6 +2695,11 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Auto Complate */
+.auto-complete-input .ant-select-single .ant-select-selector input{
+  padding: 7px 12px !important;
 }
 
 /* masonry-grid start from here */
