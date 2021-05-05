@@ -967,8 +967,8 @@
       </a-menu-item>
       <a-sub-menu key="knowledgebase">
         <template v-slot:title><sdFeatherIcons type="book" /><span>Knowledge Base</span></template>
-        <a-menu-item @click="toggleCollapsed" key="kno-plugins">
-          <router-link to="/page/knowledgebase/plugins">
+        <a-menu-item @click="toggleCollapsed" key="base">
+          <router-link to="/page/knowledgebase/base/plugins">
             Knowledge Base
           </router-link>
         </a-menu-item>
