@@ -99,39 +99,46 @@ export default [
   {
     path: '/page/knowledgebase',
     name: 'knowledgebase',
-    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/Index.vue'),
+    component: () => import(/* webpackChunkName: "knowledgebase" */ '@/view/pages/knowledgebase/MainBox.vue'),
     children: [
       {
-        path: 'plugins',
-        name: 'kno-plugins',
-        component: () =>
-          import(/* webpackChunkName: "Plugins" */ '@/view/pages/knowledgebase/overview/ArticlePlugin.vue'),
+        path: 'base',
+        name: 'base',
+        component: () => import(/* webpackChunkName: "base" */ '@/view/pages/knowledgebase/Index.vue'),
+        children: [
+          {
+            path: 'plugins',
+            name: 'kno-plugins',
+            component: () =>
+              import(/* webpackChunkName: "Plugins" */ '@/view/pages/knowledgebase/overview/ArticlePlugin.vue'),
+          },
+          {
+            path: 'themes',
+            name: 'kno-themes',
+            component: () =>
+              import(/* webpackChunkName: "Themes" */ '@/view/pages/knowledgebase/overview/ArticleTheme.vue'),
+          },
+          {
+            path: 'extensions',
+            name: 'kno-extensions',
+            component: () =>
+              import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
+          },
+        ],
       },
       {
-        path: 'themes',
-        name: 'kno-themes',
-        component: () =>
-          import(/* webpackChunkName: "Themes" */ '@/view/pages/knowledgebase/overview/ArticleTheme.vue'),
+        path: 'all-articles',
+        name: 'all-articles',
+        component: () => import(/* webpackChunkName: "all-articles" */ '@/view/pages/knowledgebase/AllArticle.vue'),
       },
       {
-        path: 'extensions',
-        name: 'kno-extensions',
+        path: 'single/1',
+        name: 'knowledge-base-singale',
         component: () =>
-          import(/* webpackChunkName: "Extensions" */ '@/view/pages/knowledgebase/overview/ArticleExtension.vue'),
+          import(/* webpackChunkName: "knowledge-base" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
       },
     ],
   },
-  {
-    path: '/page/knowledgebase/all-articles',
-    name: 'all-articles',
-    component: () => import(/* webpackChunkName: "Settings" */ '@/view/pages/knowledgebase/AllArticle.vue'),
-  },
-  {
-    path: '/page/knowledgebase/single/1',
-    name: 'knowledge-base-singale',
-    component: () => import(/* webpackChunkName: "SingleKnowledge" */ '@/view/pages/knowledgebase/SingleKnowledge.vue'),
-  },
-
   {
     path: '/changelog',
     name: 'changelog',

@@ -1,23 +1,29 @@
 <template>
-  <sdDropdown class="sDash-range-calendar" placement="bottomRight" title="Search by Calendar" action="click">
-    <!-- <DateRangePickerOne slot="content" /> -->
-    <template #overlay
-      ><v-calendar :columns="$screens({ default: 1, lg: 2 })" is-expanded v-model="range" is-range
-    /></template>
-    <sdButton size="small" type="white">
+  <CustomDropDown id="dropdownParent">
+    <div
+      v-if="isVisible"
+      class="sDash-range-calendar"
+      placement="bottomRight"
+      title="Search by Calendar"
+      action="click"
+    >
+      <v-calendar :columns="$screens({ default: 1, lg: 2 })" is-expanded v-model="range" is-range />
+    </div>
+    <sdButton @click="handleVisible" size="small" type="white">
       <sdFeatherIcons type="calendar" size="14" />
       Calendar
     </sdButton>
-  </sdDropdown>
+  </CustomDropDown>
 </template>
 
 <script>
-// import DateRangePickerOne from "../datePicker/DatePicker";
+import { onMounted, ref } from 'vue';
+import { CustomDropDown } from './styled';
 
 export default {
   name: 'CalendarButton',
   components: {
-    // DateRangePickerOne,
+    CustomDropDown,
   },
   data() {
     return {
@@ -27,5 +33,32 @@ export default {
       },
     };
   },
+  setup() {
+    const isVisible = ref(false);
+    const handleVisible = () => {
+      isVisible.value = !isVisible.value;
+    };
+
+    onMounted(() => {
+      document.body.addEventListener('click', e => {
+        if (e.target.closest('#dropdownParent')) {
+          return false;
+        } else {
+          isVisible.value = false;
+        }
+      });
+    });
+
+    return {
+      handleVisible,
+      isVisible,
+    };
+  },
 };
 </script>
+
+<style>
+.ant-page-header-heading {
+  overflow: visible;
+}
+</style>
