@@ -111,7 +111,7 @@ const SessionsbyRegion = {
 
 export default SessionsbyRegion;
 </script>
-<style>
+<style scoped>
 .ps {
   height: 200px;
 }
