@@ -14,7 +14,7 @@
             <sdButton v-if="!topMenu || innerWidth <= 991" @click="toggleCollapsed" type="white">
               <img :src="require(`../static/img/icon/${collapsed ? 'right.svg' : 'left.svg'}`)" alt="menu" />
             </sdButton>
-            <router-link :class="topMenu && innerWidth > 991 ? 'striking-logo top-menu' : 'striking-logo'" to="/admin">
+            <router-link :class="topMenu && innerWidth > 991 ? 'striking-logo top-menu' : 'striking-logo'" to="/">
               <img
                 :src="!darkMode ? require(`../static/img/Logo_Dark.svg`) : require(`../static/img/Logo_white.png`)"
                 alt="logo"
