@@ -604,7 +604,7 @@ const ExList = Styled.div`
 const OverviewCard = Styled.div`
     background: #fff;
     border-radius: 10px;
-    padding: 25px 25px 20px;
+    padding: 25px 25px 15px;
     overflow: hidden;
     position: relative;
     z-index: 0;
@@ -693,8 +693,11 @@ const OverviewCard = Styled.div`
             svg,
             img,
             i{
-                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 8px;
+                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 6px;
             }
+        }
+        .ant-dropdown-trigger{
+            height: 32px;
         }
     }
 `;
@@ -742,10 +745,12 @@ const Pstates = Styled.div`
         @media only screen and (max-width: 1599px){
             flex: 0 0 50%;
         }
+        p{
+            font-weight: 500;
+        }
         &:hover{
             box-shadow: 0 15px 30px rgba(146,153,184,0.15);
             p{
-                font-weight: 500;
                 color: ${({ theme }) => theme['primary-color']};
             }
         }
@@ -1307,7 +1312,7 @@ const LocationMapWrapper = Styled.div`
                 td{
                     padding: 7px 16px;
                     &:first-child{
-                        padding-left: 0;
+                        ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 0;
                     }
                     &:last-child{
                         text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};

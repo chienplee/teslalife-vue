@@ -395,6 +395,7 @@ const ProjectListAssignees = Styled.div`
 `;
 
 const ProjectList = Styled.div`
+    margin-bottom: 30px;
     .project-list-progress{
         p{
             margin: 4px 0 0 0;
@@ -420,6 +421,27 @@ const ProjectList = Styled.div`
                 &:hover{
                     td{
                         background-color: ${({ theme }) => theme['bg-color-light']};
+                    }
+                }
+                .ant-tag{
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+                    line-height: 18px;
+                    background: red;
+                    color: #fff;
+                    border: 0 none;
+                    &.early{
+                        background: ${({ theme }) => theme['primary-color']};
+                    }
+                    &.progress{
+                        background: ${({ theme }) => theme['danger-color']};
+                    }
+                    &.late{
+                        background: ${({ theme }) => theme['warning-color']};
+                    }
+                    &.complete{
+                        background: ${({ theme }) => theme['success-color']};
                     }
                 }
             }
