@@ -284,6 +284,7 @@ const CalendarWrapper = Styled.div`
                     i,
                     svg{
                         color: ${({ theme }) => theme['light-color']};
+                        margin-right: 0;
                     }
                 }
                 .date-label{
@@ -292,6 +293,14 @@ const CalendarWrapper = Styled.div`
                     font-size: 16px;
                     font-weight: 500;
                     color: ${({ theme }) => theme['dark-color']};
+                    a{
+                        color: ${({ theme }) => theme['dark-color']};
+                    }
+                    .ant-select-selector{
+                        display: flex;
+                        align-items: center;
+                        padding: 0;
+                    }
                 }
             }
         }
@@ -705,9 +714,9 @@ const BlockViewCalendarWrapper = Styled.div`
             }
         }
     }
-    .ant-picker-calendar{
+    .ant-fullcalendar{
         border: 1px solid ${({ theme }) => theme['border-color-light']};
-        .ant-picker-body{
+        .ant-fullcalendar-calendar-body{
             padding: 0 !important;
         }
         .ant-picker-calendar-date {
@@ -715,20 +724,22 @@ const BlockViewCalendarWrapper = Styled.div`
             margin: 0 !important;
             border-top: 0 none !important;
         }
-        .ant-picker-cell{
+        .ant-fullcalendar-cell,
+        .ant-fullcalendar-month-panel-cell{
             min-width: 155px;
+            padding: 0;
             ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};
             .ant-picker-cell-inner{
                 min-width: 155px;
             }
             &:hover{
-                .ant-picker-calendar-date{
+                .ant-fullcalendar-date{
                     background-color: transparent !important;
                 }
             }
-            &.ant-picker-cell-today{
-                .ant-picker-calendar-date-today{
+            &.ant-fullcalendar-today{
+                .ant-fullcalendar-date{
                     background-color: #EFEFFE !important;
                     position: relative;
                     &:after{
@@ -743,8 +754,8 @@ const BlockViewCalendarWrapper = Styled.div`
                     }
                 }
             }
-            &.ant-picker-cell-selected{
-                .ant-picker-calendar-date{
+            &.ant-fullcalendar-selected-day{
+                .ant-fullcalendar-date{
                     background-color: transparent;
                 }
             }
@@ -758,6 +769,10 @@ const BlockViewCalendarWrapper = Styled.div`
             }
             .ant-picker-calendar-date-value{
                 margin: 6px 4px 10px 0
+            }
+            .ant-fullcalendar-date, .ant-fullcalendar-month{
+                border-top:0;
+                margin: 0;
             }
         }
         table{

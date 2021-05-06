@@ -1741,6 +1741,12 @@ table tbody >tr >td
   z-index: 105;
 }
 
+@media (max-width: 1150px){
+  .ant-menu-submenu-popup {
+    display:none;
+  }
+}
+
 .ant-menu-submenu-popup .ant-menu-sub {
   padding: 8px 0;
 }
@@ -2270,6 +2276,9 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   }
   .ant-menu-inline-collapsed-tooltip {
     display: none;
+  }
+  .ant-popover{
+    width: 100%;
   }
 }
 

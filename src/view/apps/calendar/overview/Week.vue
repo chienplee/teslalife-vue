@@ -13,7 +13,7 @@
     <div class="calendar-header">
       <div class="calendar-header__left">
         <sdButton class="btn-today" size="small" type="light" outlined>
-          <router-link to="./today">Today</router-link>
+          <router-link to="./day">Today</router-link>
         </sdButton>
         <div class="calender-head__navigation">
           <sdButton @click="onDecrement" class="btn-navigate" type="light" outlined>

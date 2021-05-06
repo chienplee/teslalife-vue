@@ -726,11 +726,11 @@ const Main = Styled.div`
 
     // Emoji Picker React
     .emoji-picker-react{
-        top: 15px;
+        bottom: 15px;
         right: 25px;
         box-shadow: 0 5px 10px #efefef10;
         @media only screen and (max-width: 479px){
-            top: 25px;
+            bottom: 25px;
             right: -50px;
             width: 260px;
         }
@@ -819,7 +819,7 @@ const Main = Styled.div`
         align-items: center;
         min-height: 100px;
         border-color: #C6D0DC;
-        
+
         .ant-upload-drag-container{
             .ant-upload-text{
                 margin-bottom: 0;
@@ -1199,7 +1199,7 @@ const BasicFormWrapper = Styled.div`
                 }
             }
         }
-        
+
         .ant-input-affix-wrapper .ant-input-prefix svg{
             color: #9299B8;
         }
@@ -1852,7 +1852,7 @@ const DragDropStyle = Styled.div`
                     color: ${({ theme }) => theme['extra-light-color']} !important;
                 }
             }
-            
+
         }
         .user-info{
             .user-name{

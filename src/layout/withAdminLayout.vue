@@ -56,13 +56,13 @@
           </a-col>
           <a-col :style="{ position: 'static' }" :md="0" :sm="18" :xs="12">
             <div class="mobile-action">
-              <router-link class="btn-search" @click="e => handleSearchHide(e, searchHide)" to="#">
+              <a class="btn-search" @click="e => handleSearchHide(e, searchHide)" href="#">
                 <sdFeatherIcons type="search" v-if="searchHide" />
                 <sdFeatherIcons type="x" v-else />
-              </router-link>
-              <router-link class="btn-auth" @click="() => onShowHide(hide)" to="#">
+              </a>
+              <a class="btn-auth" @click="() => onShowHide(hide)" href="#">
                 <sdFeatherIcons type="more-vertical" />
-              </router-link>
+              </a>
             </div>
           </a-col>
         </a-row>

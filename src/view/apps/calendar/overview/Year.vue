@@ -19,14 +19,16 @@
           <sdButton onClick="{onDecrement}" class="btn-navigate" type="light" outlined>
             <sdFeatherIcons type="chevron-left" />
           </sdButton>
-          <a-select
-            class="year-select"
-            @change="value => setState({ ...state, currentYear: value })"
-            v-model:value="currentYear"
-            :style="{ width: '100px' }"
-          >
-            <a-select-option v-for="i in option" :key="i" :value="i">{{ i }}</a-select-option>
-          </a-select>
+          <span class="date-label">
+            <a-select
+              class="year-select"
+              @change="value => setState({ ...state, currentYear: value })"
+              v-model:value="currentYear"
+              :style="{ width: '80px' }"
+            >
+              <a-select-option v-for="i in option" :key="i" :value="i">{{ i }}</a-select-option>
+            </a-select>
+          </span>
           <sdButton class="btn-navigate" @click="onIncrement" type="light" outlined>
             <sdFeatherIcons type="chevron-right" />
           </sdButton>
