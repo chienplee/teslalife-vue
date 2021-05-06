@@ -88,7 +88,7 @@ const SidebarSingle = Styled.div`
                 margin-bottom: 10px;
             }
             &.ant-checkbox-wrapper{
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+                margin-right: 0;
             }
             >span + span{
                 width: 100%;

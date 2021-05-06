@@ -74,6 +74,18 @@
           </template>
         </Suspense>
       </a-col>
+      <a-col :xxl="12" :xl="16" :md="12" :xs="24">
+        <Suspense>
+          <template #default>
+            <SessionsbyRegion />
+          </template>
+          <template #fallback>
+            <sdCards headless>
+              <a-skeleton active />
+            </sdCards>
+          </template>
+        </Suspense>
+      </a-col>
     </a-row>
   </Main>
 </template>
@@ -86,11 +98,19 @@ const WebsitePerformance = defineAsyncComponent(() => import('./overview/perform
 const TrafficChannel = defineAsyncComponent(() => import('./overview/performance/TrafficChannel'));
 const SessionsByDevice = defineAsyncComponent(() => import('./overview/performance/SessionsByDevice'));
 const TopLandingPages = defineAsyncComponent(() => import('./overview/performance/TopLandingPages'));
-// const SessionsbyRegion = defineAsyncComponent(() => import('./overview/performance/SessionsbyRegion'));
+const SessionsbyRegion = defineAsyncComponent(() => import('./overview/performance/SessionsbyRegion'));
 
 const Performance = {
   name: 'Performance',
-  components: { Main, DailyOverview, TopLandingPages, WebsitePerformance, TrafficChannel, SessionsByDevice },
+  components: {
+    Main,
+    DailyOverview,
+    TopLandingPages,
+    WebsitePerformance,
+    TrafficChannel,
+    SessionsByDevice,
+    SessionsbyRegion,
+  },
 };
 
 export default Performance;

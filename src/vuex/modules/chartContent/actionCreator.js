@@ -136,6 +136,25 @@ const actions = {
       commit('topLocationErr', err);
     }
   },
+  async topRegionGetData({ commit }) {
+    const { year } = region;
+    try {
+      commit('topRegionBegin');
+      commit('topRegionSuccess', year);
+    } catch (err) {
+      commit('topRegionErr', err);
+    }
+  },
+  async topRegionFilterData({ commit }, value) {
+    try {
+      commit('topRegionBegin');
+      setTimeout(() => {
+        commit('topRegionSuccess', region[value]);
+      }, 100);
+    } catch (err) {
+      commit('topRegionErr', err);
+    }
+  },
   async generatedGetData({ commit }) {
     const { year } = generated;
     try {

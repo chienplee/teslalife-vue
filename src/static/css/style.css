@@ -596,7 +596,11 @@ ul {
 }
 
 .ant-pagination {
-  margin: -4px -12px !important;
+  margin: -4px -4px !important;
+}
+
+.ant-pagination-options-size-changer.ant-select{
+  margin-right: 0 !important;
 }
 
 .ant-pagination-item,
@@ -2744,6 +2748,24 @@ li.active > .display {
 
 
 /* rtl section from here */
+html[dir='rtl'] .ant-upload-list-item-name{
+  padding-right: 22px;
+  padding-left: 0;
+}
+html[dir='rtl'] .table-bordered .ant-table-thead tr th:last-child,
+html[dir='rtl'] .table-bordered .ant-table-tbody tr td:last-child {
+  text-align: left;
+}
+html[dir='rtl']  .ant-table table{
+  text-align: right;
+}
+html[dir='rtl'] .ant-page-header .ant-page-header-heading-title{
+  padding-right: 0;
+  padding-left: 12px;
+}
+html[dir='rtl'] .ant-card-extra .ant-dropdown-trigger {
+  margin-left: 0;
+}
 html[dir='rtl'] .ant-card-head-title span {
   margin-right: 15px;
 }
@@ -2771,6 +2793,16 @@ html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-submenu-arrow {
 
 html[dir='rtl'] .ant-menu-vertical .ant-menu-submenu-title {
   padding-right: 15px !important;
+}
+
+html[dir='rtl'] .ant-select-arrow{
+  right: auto;
+  left: 11px;
+}
+
+html[dir='rtl'] .ant-modal-close{
+  right: auto;
+  left: 0;
 }
 
 
