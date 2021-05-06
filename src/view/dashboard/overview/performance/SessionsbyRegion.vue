@@ -1,5 +1,5 @@
 <template>
-  <div class="full-width-table">
+  <div class="full-width-table region-list-table">
     <sdCards title="Sessions by Region" bodypadding="0px">
       <template #button>
         <div class="card-nav">

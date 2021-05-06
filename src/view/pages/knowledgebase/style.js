@@ -426,7 +426,6 @@ const PopularArticleWrap = Styled.div`
             }
             .row-masonry{
                 flex-flow: column wrap !important;
-                max-height: 550px;
                 overflow: auto;
             }
             .item{
