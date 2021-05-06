@@ -113,7 +113,22 @@
 
             <sdCards title="Text Editor" class="mb-25">
               <div class="sDash_editor">
-                <!-- <RichTextEditor placeholder="Type your message..." value={state.value} onChange={onTextInput} /> -->
+                <editor
+                  v-if="api"
+                  :apiKey="api"
+                  placeholder="Type your message..."
+                  :init="{
+                    menubar: false,
+                    plugins: [
+                      'advlist autolink lists link image charmap print preview anchor',
+                      'searchreplace visualblocks code fullscreen',
+                      'insertdatetime media table paste code help wordcount',
+                    ],
+                    toolbar:
+                      'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code',
+                    skin: 'outside',
+                  }"
+                />
               </div>
             </sdCards>
           </a-col>
@@ -169,10 +184,10 @@
 
 <script>
 import { message } from 'ant-design-vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 import { Main, BasicFormWrapper } from '../styled';
 import { FormComponentsWrap, DropDownListComponents } from './overview/Style';
-
+import Editor from '@tinymce/tinymce-vue';
 export default defineComponent({
   name: 'FormComponent',
   components: {
@@ -180,6 +195,7 @@ export default defineComponent({
     BasicFormWrapper,
     FormComponentsWrap,
     DropDownListComponents,
+    Editor,
   },
   data() {
     return {
@@ -187,6 +203,7 @@ export default defineComponent({
     };
   },
   setup() {
+    const api = ref(false);
     const handleChange = info => {
       const status = info.file.status;
 
@@ -200,10 +217,13 @@ export default defineComponent({
         message.error(`${info.file.name} file upload failed.`);
       }
     };
-
+    onMounted(() => {
+      api.value = process.env.VUE_APP_TINYMCE_API_KEY;
+    });
     return {
       handleChange,
       fileList: ref([]),
+      api,
     };
   },
 });

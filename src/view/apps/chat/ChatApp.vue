@@ -41,7 +41,17 @@
                 </li>
               </UL>
             </nav>
-            <Content><router-view></router-view></Content>
+            <Content>
+              <perfect-scrollbar
+                :options="{
+                  wheelSpeed: 1,
+                  swipeEasing: true,
+                  suppressScrollX: true,
+                }"
+              >
+                <router-view></router-view>
+              </perfect-scrollbar>
+            </Content>
           </sdCards>
         </ChatSidebar>
       </a-col>
@@ -57,10 +67,12 @@ import { Main } from '../../styled';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 
 const ChatApp = {
   name: 'ChatApp',
-  components: { Main, UL, Content, ChatSidebar },
+  components: { Main, UL, Content, ChatSidebar, PerfectScrollbar },
   setup() {
     const { state } = useStore();
     const match = computed(() => useRoute().matched[1]);
@@ -82,3 +94,8 @@ const ChatApp = {
 
 export default ChatApp;
 </script>
+<style scoped>
+.ps {
+  height: 495px;
+}
+</style>
