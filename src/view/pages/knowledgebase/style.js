@@ -421,13 +421,6 @@ const PopularArticleWrap = Styled.div`
             @media only screen and (max-width: 899px){
                 margin: 0;
             }
-            .ant-row{
-                margin: -15px;
-            }
-            .row-masonry{
-                flex-flow: column wrap !important;
-                overflow: auto;
-            }
             .item{
                 padding: 15px;
             }
@@ -435,6 +428,9 @@ const PopularArticleWrap = Styled.div`
                 margin: 0;
                 direction: ${({ theme }) => (theme.rtl ? 'rtl' : 'ltr')};
             }
+        }
+        .ant-masonry{
+            margin: -15px;
         }
     }
 `;
