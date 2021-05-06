@@ -177,7 +177,7 @@ const UserCard = Styled.div`
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        text-align: left;
+        text-align: ${({ theme }) => (theme.rtl ? 'right' : 'left')};
         @media only screen and (max-width: 379px){
           flex-flow: column;
         }
@@ -456,14 +456,11 @@ const UserCard = Styled.div`
     figure{
       img{
         margin-bottom: 18px;
-        max-width: 120px;
+        max-width: 150px;
       }
     }
     .card__actions{
       margin: -5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       .ant-btn-white{
         color: ${({ theme }) => theme['gray-color']};
         border: 1px solid ${({ theme }) => theme['border-color-light']};

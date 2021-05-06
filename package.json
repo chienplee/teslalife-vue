@@ -34,7 +34,6 @@
     "leaflet": "^1.7.1",
     "mitt": "^2.1.0",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
     "swiper": "^6.4.15",
     "v-calendar": "^3.0.0-alpha.3",
     "vue": "^3.0.7",

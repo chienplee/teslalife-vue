@@ -10,10 +10,10 @@ const Style = Styled(Table)`
       th,
       td{
         &:first-child{
-          ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 30px;
+          ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 28px;
         }
         &:last-child{
-          ${({ theme }) => (!theme.rtl ? 'padding-right' : 'padding-left')}: 30px;
+          ${({ theme }) => (!theme.rtl ? 'padding-right' : 'padding-left')}: 28px;
         }
       }
     }
@@ -44,7 +44,7 @@ const Style = Styled(Table)`
         }
         .email-top-search{
           display: flex;
-          justify-content: ${({ theme }) => (theme.rtl ? 'flex-start' : 'flex-end')};
+          justify-content: flex-end;
           align-items: center;
           min-width: 350px;
           @media only screen and (max-width: 575px){
@@ -426,6 +426,7 @@ const EmailNav = Styled.nav`
         }
         a{
           color: ${({ theme }) => theme['light-color']} !important;
+          background-color: transparent !important;
           transition: .3s;
           &:hover{
             background: transparent;
@@ -484,7 +485,7 @@ const EmailNav = Styled.nav`
         position: relative;
         width: calc(100% + 60px);
         ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 50%;
-        transform: translateX(-50%);
+        transform: ${({ theme }) => (theme.rtl ? 'translateX(50%)' : 'translateX(-50%)')};
         background: #fff;
         border-radius: 8px;
         @media only screen and (max-width: 1199px){

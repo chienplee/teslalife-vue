@@ -56,13 +56,13 @@
           </a-col>
           <a-col :style="{ position: 'static' }" :md="0" :sm="18" :xs="12">
             <div class="mobile-action">
-              <a class="btn-search" @click="e => handleSearchHide(e, searchHide)" href="#">
+              <router-link class="btn-search" @click="handleSearchHide(searchHide)" to="#">
                 <sdFeatherIcons type="search" v-if="searchHide" />
                 <sdFeatherIcons type="x" v-else />
-              </a>
-              <a class="btn-auth" @click="() => onShowHide(hide)" href="#">
+              </router-link>
+              <router-link class="btn-auth" @click="onShowHide(hide)" to="#">
                 <sdFeatherIcons type="more-vertical" />
-              </a>
+              </router-link>
             </div>
           </a-col>
         </a-row>
@@ -210,14 +210,12 @@ export default {
       e.preventDefault();
       collapsed.value = !collapsed.value;
     };
-    const handleSearchHide = (e, searchHide) => {
-      e.preventDefault();
-      searchHide.value = !searchHide.value;
+    const handleSearchHide = search => {
+      searchHide.value = !search;
       hide.value = true;
     };
-    const onShowHide = e => {
-      e.preventDefault();
-      hide.value = !hide.value;
+    const onShowHide = h => {
+      hide.value = !h;
       searchHide.value = true;
     };
     const toggleSearch = () => {

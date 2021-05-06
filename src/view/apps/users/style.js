@@ -37,7 +37,10 @@ const UserCarrdTop = Styled.div`
     }
   }
 `;
-const UserTableStyleWrapper = Styled.nav`
+const UserTableStyleWrapper = Styled.div`
+  padding: 25px;
+  background: #fff;
+  border-radius: 10px
   table{
     tbody{
       td{
@@ -323,6 +326,7 @@ const AddUser = Styled.div`
     .ant-input-prefix{
       position: relative;
       ${({ theme }) => (!theme.rtl ? 'left' : 'right')}: -11px;
+      ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0;
       span{
         display: flex;
         align-items: center;

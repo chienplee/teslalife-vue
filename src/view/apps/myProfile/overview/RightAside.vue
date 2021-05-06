@@ -14,7 +14,7 @@
             class="btn-ff"
             @click="() => dispatch(profileFriendsChangeStatus(key))"
             :outlined="!status"
-            :type="status ? 'primary' : 'light'"
+            :type="status ? 'primary' : 'white'"
           >
             <span v-if="!status">Follow</span>
 

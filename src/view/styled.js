@@ -1032,14 +1032,15 @@ const AlertList = Styled.div`
         &.ant-alert-with-description{
             .ant-alert-icon{
                 font-size: 15px;
-                margin-right: 10px;
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
+                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0;
             }
         }
     }
 
     .alert-empty-message{
         .ant-alert{
-            padding: 10px 40px 10px 15px !important;
+            padding: ${({ theme }) => (theme.rtl ? '10px 15px 10px 40px' : '10px 40px 10px 15px')} !important;
             &.ant-alert-no-icon{
                 padding: 10px 20px 10px!important;
             }
@@ -1069,11 +1070,12 @@ const AutoCompleteWrapper = Styled.div`
     .autocomplete-with-btn{
         .ant-input-suffix{
             position: absolute;
-            right: 0;
+            ${({ theme }) => (theme.rtl ? 'left' : 'right')}:0;
+            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
             top: -1px;
             .search-btn{
                 padding: 0px 12px !important;
-                border-radius: 0 4px 4px  0 !important;
+                border-radius: ${({ theme }) => (theme.rtl ? '4px 0 0  4px' : '0 4px 4px  0')} !important;
                 height: 40px !important;
                 i{
                     top: -2px !important;
@@ -1183,6 +1185,9 @@ const MessageStyleWrapper = Styled.div`
 `;
 
 const BasicFormWrapper = Styled.div`
+    .ant-input{
+        padding: 12px 11px;
+    }
     .ant-form {
         .form-item{
             margin-bottom: 30px;
@@ -1434,10 +1439,9 @@ const CardToolbox = Styled.div`
         display: flex;
         align-items: center;
         .title-counter{
-            min-width: 100px;
+            white-space: nowrap;
         }
         .ant-input-affix-wrapper{
-            margin-left: 25px;
             padding-top: 0;
             padding-bottom: 0;
             border-radius: 6px;
