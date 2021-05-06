@@ -19,25 +19,27 @@
           <sdButton @click="decrementYear" class="btn-navigate" type="light" outlined
             ><sdFeatherIcons type="chevron-left"
           /></sdButton>
-          <sdDropdown :action="['click']" class="date-label">
-            <template #overlay>
-              <sdCards>
-                <a-row>
-                  <a-col v-for="item in months" :sm="8" :key="item.id"
-                    ><span
-                      @click="() => setMonth(item.id)"
-                      style="display: block; text-align: center; cursor: pointer"
-                      >{{ item.month }}</span
-                    ></a-col
-                  >
-                </a-row>
-              </sdCards>
-            </template>
+          <span class="date-label">
+            <sdDropdown :action="['click']" class="date-label">
+              <template #overlay>
+                <sdCards>
+                  <a-row>
+                    <a-col v-for="item in months" :sm="8" :key="item.id"
+                      ><span
+                        @click="() => setMonth(item.id)"
+                        style="display: block; text-align: center; cursor: pointer"
+                        >{{ item.month }}</span
+                      ></a-col
+                    >
+                  </a-row>
+                </sdCards>
+              </template>
 
-            <template v-for="item in months" :key="item.id">
-              <a href="#" v-if="item.id == month">{{ item.month }} {{ year }}</a>
-            </template>
-          </sdDropdown>
+              <template v-for="item in months" :key="item.id">
+                <a href="#" v-if="item.id == month">{{ item.month }} {{ year }}</a>
+              </template>
+            </sdDropdown>
+          </span>
           <sdButton @click="incrementYear" class="btn-navigate" type="light" outlined
             ><sdFeatherIcons type="chevron-right"
           /></sdButton>
@@ -73,6 +75,7 @@
         "
         mode="month"
         v-model:value="defaultValue"
+        class="ant-picker-calendar"
         ><template #dateCellRender="{ current: value }">
           <ul class="events">
             <sdDropdown

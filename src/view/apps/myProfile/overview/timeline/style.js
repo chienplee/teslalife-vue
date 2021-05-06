@@ -218,7 +218,7 @@ const AllPosts = Styled.div`
                     @media only screen and (max-width: 991px){
                         margin-${({ theme }) => (!theme.rtl ? 'right' : 'left')}: 8px;
                     }
-                    aside{
+                    emoji-picker{
                         position: absolute;
                         z-index: 9999999;
                     }

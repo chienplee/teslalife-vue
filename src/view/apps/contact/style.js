@@ -6,15 +6,31 @@ const Action = Styled.div`
   }
 `;
 const ContactPageheaderStyle = Styled.div`
+  .ant-input{
+    padding: 11px 12px !important;
+  }
   .ant-page-header-heading-title{
     margin-right: 0;
     padding-right: 0;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
     &:after{
       display: none;
     }
   }
+
+  .ant-page-header-heading-sub-title{
+    .ant-input-affix-wrapper{
+      display: inline-flex;
+      ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 20px;
+    }
+  }
   .ant-select .ant-select-selection-search-input{
     border-radius: 6px;
+  }
+
+  .ant-page-header-heading-extra{
+    margin: ${({ theme }) => (theme.rtl ? '4px auto 4px 0 !important' : '4px 0 4px auto !important')};
   }
 `;
 const ContactCardWrapper = Styled.div`

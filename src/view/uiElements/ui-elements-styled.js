@@ -76,7 +76,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
+    right: 10px !important;
     padding: 0 4px;
     font-size: 10px;
     font-weight: 600;
@@ -85,7 +85,7 @@ const AvatarWraperStyle = Styled.div`
   }
   .ant-badge-dot{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 10px !important;
+    right: 10px !important;
     width: 10px;
     height: 10px;
     border: 2px solid #fff;
@@ -106,7 +106,7 @@ const BadgeWraperStyle = Styled.div`
   }
   .ant-badge-count{
     top: 10px;
-    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
+    right: 15px !important;
     font-size: 10px;
     font-weight: 600;
     min-width: 20px;
@@ -117,11 +117,11 @@ const BadgeWraperStyle = Styled.div`
   }
   .ant-scroll-number-custom-component{
     top: 10px !important;
-    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 15px !important;
+    right: 15px !important;
   }
   .ant-badge-dot{
     top: 0;
-    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: -1px !important;
+    right: -1px !important;
     border: 1px solid #fff;
     width: 10px;
     height: 10px;
@@ -229,12 +229,15 @@ const BadgeDynamicStyle = Styled.div`
         ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-normal']} !important;
       }
+      &+.ant-btn{
+        margin-left: 0;
+      }
     }
 
   }
 }
 .ant-badge-dot{
-  ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 16px !important;
+  right: 16px !important;
   top: 8px;
 }
 .ant-switch{
