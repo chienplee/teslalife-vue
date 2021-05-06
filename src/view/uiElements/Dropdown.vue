@@ -68,7 +68,8 @@
             <sdCards title="Button with dropdown menu">
               <DropdownIconStyleWrapper>
                 <sdButton @click="handleButtonClick" class="btn-outlined" size="default" :outlined="true" type="light">
-                  Bottom Left Click
+                  <span>Bottom Left Click</span>
+
                   <sdDropdown placement="bottomLeft" :action="['click']">
                     <a to="#">
                       <sdFeatherIcons type="more-horizontal" />
@@ -76,7 +77,8 @@
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
-                  Top Left hover
+                  <span>Top Left hover</span>
+
                   <sdDropdown placement="topLeft">
                     <a to="#">
                       <sdFeatherIcons type="more-horizontal" />
@@ -84,7 +86,8 @@
                   </sdDropdown>
                 </sdButton>
                 <sdButton @click="handleButtonClick" class="btn-outlined" size="default" :outlined="true" type="light">
-                  Bottom Right hover
+                  <span>Bottom Right hover</span>
+
                   <sdDropdown placement="bottomRight" :action="['hover']">
                     <a to="#">
                       <sdFeatherIcons type="user" />
@@ -92,7 +95,8 @@
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
-                  Top Right hover
+                  <span>Top Right hover</span>
+
                   <sdDropdown placement="topRight">
                     <a to="#">
                       <sdFeatherIcons type="more-horizontal" />
@@ -110,7 +114,7 @@
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="warning">
-                  Warning
+                  <span>Warning</span>
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
                       <sdFeatherIcons type="more-horizontal" />
@@ -118,7 +122,7 @@
                   </sdDropdown>
                 </sdButton>
                 <sdButton class="btn-outlined" :outlined="true" type="light">
-                  Info
+                  <span>Info</span>
                   <sdDropdown placement="bottomLeft" size="small">
                     <a to="#">
                       <sdFeatherIcons type="download" />

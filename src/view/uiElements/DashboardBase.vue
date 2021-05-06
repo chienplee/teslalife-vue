@@ -198,7 +198,7 @@
                   <sdButton type="secondary" :style="{ marginRight: '10px', marginBottom: '10px' }">
                     Normal
                   </sdButton>
-                  <sdButton type="secondary" size="large">
+                  <sdButton type="secondary" size="large" :style="{ [rtl ? 'marginRight' : '']: '10px' }">
                     Large Button
                   </sdButton>
                 </a-col>
@@ -320,12 +320,22 @@ import { Main } from '../styled';
 import { DashboardBaseStyleWrap } from './ui-elements-styled';
 import Palette from '../../components/color-palette/palette';
 import config from '../../config/config';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 export default {
   name: 'ThemeConfiguration',
   components: {
     Main,
     DashboardBaseStyleWrap,
     Palette,
+  },
+  setup() {
+    const { state } = useStore();
+    const rtl = computed(() => state.themeLayout.rtlData);
+
+    return {
+      rtl,
+    };
   },
   data() {
     return {

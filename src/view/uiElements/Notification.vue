@@ -38,7 +38,7 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Notification with icon">
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton type="success" size="small" @click="() => openNotificationWithIcon('success')">
                 Success
               </sdButton>
@@ -56,26 +56,26 @@
         </a-col>
         <a-col :md="12" :xs="24">
           <sdCards title="Placement">
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton type="primary" size="small" @click="openNotificationPlacement('topLeft')">
                 <RadiusUpleftOutlined />
 
-                topLeft
+                <span>topLeft</span>
               </sdButton>
               <sdButton type="primary" size="small" @click="openNotificationPlacement('topRight')">
                 <RadiusUprightOutlined />
-                topRight
+                <span>topRight</span>
               </sdButton>
             </a-space>
             <a-divider />
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton type="primary" size="small" @click="openNotificationPlacement('bottomLeft')">
                 <RadiusBottomleftOutlined />
-                bottomLeft
+                <span>bottomLeft</span>
               </sdButton>
               <sdButton type="primary" size="small" @click="openNotificationPlacement('bottomRight')">
                 <RadiusBottomrightOutlined />
-                bottomRight
+                <span>bottomRight</span>
               </sdButton>
             </a-space>
           </sdCards>

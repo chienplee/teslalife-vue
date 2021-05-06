@@ -39,11 +39,12 @@ const SpinerWraperStyle = Styled.div`
 `;
 
 const CarouselStyleWraper = Styled.div`
-  .ant-carousel .slick-slide {
+  .ant-carousel .slick-slider {
     text-align: center;
     height: 150px;
     line-height: 160px;
     background: #5A5F7D;
+    direction: ltr;
     overflow: hidden;
   }
   .ant-carousel .slick-dots li{

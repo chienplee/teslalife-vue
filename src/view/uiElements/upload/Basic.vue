@@ -9,7 +9,7 @@
   >
     <sdButton class="btn-outlined" type="light" size="large" :outlined="true">
       <upload-outlined></upload-outlined>
-      Click to Upload
+      <span>Click to Upload</span>
     </sdButton>
   </a-upload>
 </template>

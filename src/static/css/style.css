@@ -2813,7 +2813,67 @@ html[dir='rtl'] .ant-modal-close{
   right: auto;
   left: 0;
 }
+html[dir='rtl'] .ant-radio-button-wrapper:first-child{
+  border-radius: 0 4px 4px 0;
+}
+html[dir='rtl'] .ant-radio-button-wrapper:last-child{
+  border-radius: 4px 0 0 4px;
+}
 
+html[dir='rtl'] .ant-cascader-picker-arrow{
+  right: auto;
+  left: 12px;
+}
+
+html[dir='rtl'] .ant-comment-avatar{
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+html[dir='rtl'] .ant-calendar-picker-clear, 
+html[dir='rtl'] .ant-calendar-picker-icon{
+  right: auto;
+  left: 12px;
+}
+
+/* Menu RTL Style */
+html[dir='rtl'] .ant-menu-item .anticon, 
+html[dir='rtl'] .ant-menu-submenu-title .anticon{
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir='rtl'] .ant-menu-inline, 
+html[dir='rtl'] .ant-menu-vertical, 
+html[dir='rtl'] .ant-menu-vertical-left{
+  border-right: 0 none;
+  border-left: 1px solid #f0f0f0;
+}
+
+html[dir='rtl'] .ant-input-affix-wrapper .ant-input-prefix{
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+html[dir='rtl'] .ant-message .anticon{
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir='rtl'] .ant-notification-notice-close{
+  right: auto;
+  left: 22px;
+}
+
+html[dir='rtl'] .ant-notification-notice-closable .ant-notification-notice-message{
+  padding-right: 0;
+  padding-left: 22px;
+}
+
+html[dir='rtl'] .ant-notification-notice-with-icon .ant-notification-notice-message{
+  margin-left: 0;
+  margin-right: 48px;
+}
 
 .tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{
   background: none !important;

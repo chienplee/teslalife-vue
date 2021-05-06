@@ -24,7 +24,7 @@
     </template>
     <sdButton size="small" type="white">
       <sdFeatherIcons type="download" />
-      Export
+      <span>Export</span>
     </sdButton>
   </sdPopover>
 </template>

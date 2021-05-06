@@ -29,7 +29,12 @@
               <sdButton type="primary" size="small" @click="toggleChecked">
                 {{ !checked ? 'Check' : 'Uncheck' }}
               </sdButton>
-              <sdButton :style="{ marginLeft: '10px' }" type="primary" size="small" @click="toggleDisable">
+              <sdButton
+                :style="{ [rtl ? 'marginRight' : 'marginLeft']: '10px' }"
+                type="primary"
+                size="small"
+                @click="toggleDisable"
+              >
                 {{ !disabled ? 'Disable' : 'Enable' }}
               </sdButton>
             </p>
@@ -95,6 +100,7 @@
 
 <script>
 import { reactive, toRefs, watch, ref, computed } from 'vue';
+import { useStore } from 'vuex';
 import { Main } from '../styled';
 import { CheckboxGroupStyle } from './ui-elements-styled';
 
@@ -119,6 +125,8 @@ export default {
   },
 
   setup() {
+    const store = useStore();
+    const rtl = computed(() => store.state.themeLayout.rtlData);
     const state = reactive({
       indeterminate: true,
       checkedList: ['Apple', 'Orange'],
@@ -164,6 +172,7 @@ export default {
     return {
       ...toRefs(state),
       label,
+      rtl,
       toggleDisable,
       plainOptions,
       onCheckAllChange,
