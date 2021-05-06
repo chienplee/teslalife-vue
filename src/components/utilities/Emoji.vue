@@ -1,5 +1,5 @@
 <template>
-  <emoji-picker @emoji-click="OnEmojiClick"></emoji-picker>
+  <emoji-picker @emoji-click="OnEmojiClick" class="emoji-picker-react"></emoji-picker>
 </template>
 <script>
 import { defineComponent, toRefs } from 'vue';
