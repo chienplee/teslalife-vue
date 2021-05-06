@@ -234,7 +234,6 @@ const Div = Styled('div', props)`
 
     .navbar-brand{
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         button{
             padding: ${({ theme }) => (theme.rtl ? '0 15px 0 25px !important' : '0 25px 0 15px !important')};

@@ -372,7 +372,7 @@ const Footer = Styled.div`
       @media only screen and (max-width: 575px){
         top: 26px;
       }
-      aside{
+      emoji-picker{
           position: absolute;
           z-index: 999999999;
           bottom: 0;
