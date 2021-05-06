@@ -27,182 +27,192 @@
         <sdHeading as="h5">{{ name }}</sdHeading>
         <p>Active Now</p>
       </template>
+
       <ul class="atbd-chatbox" v-if="singleContent.length">
-        <li
-          v-for="({ time, img, email, content, id }, index) in singleContent"
-          :key="time"
-          class="atbd-chatbox__single"
+        <perfect-scrollbar
+          :options="{
+            wheelSpeed: 1,
+            swipeEasing: true,
+            suppressScrollX: true,
+          }"
         >
-          <p v-if="index === 1" class="time-connector text-center text-capitalize">
-            <span>today</span>
-          </p>
+          <li
+            v-for="({ time, img, email, content, id }, index) in singleContent"
+            :key="time"
+            class="atbd-chatbox__single"
+          >
+            <p v-if="index === 1" class="time-connector text-center text-capitalize">
+              <span>today</span>
+            </p>
 
-          <div :key="id" :style="{ overflow: 'hidden' }">
-            <div :class="email !== me ? 'left' : 'right'">
-              <img v-if="email !== me" :src="require(`@/static/img/chat-author/${img}`)" alt="" />
+            <div :key="id" :style="{ overflow: 'hidden' }">
+              <div :class="email !== me ? 'left' : 'right'">
+                <img v-if="email !== me" :src="require(`@/static/img/chat-author/${img}`)" alt="" />
 
-              <div class="atbd-chatbox__content">
-                <sdHeading as="h5" class="atbd-chatbox__name">
-                  {{ email !== me ? name : null }}
-                  <span>{{
-                    moment(time).format('MM-DD-YYYY') === moment().format('MM-DD-YYYY')
-                      ? moment(id).format('hh:mm A')
-                      : moment(id).format('LL')
-                  }}</span>
-                </sdHeading>
+                <div class="atbd-chatbox__content">
+                  <sdHeading as="h5" class="atbd-chatbox__name">
+                    {{ email !== me ? name : null }}
+                    <span>{{
+                      moment(time).format('MM-DD-YYYY') === moment().format('MM-DD-YYYY')
+                        ? moment(id).format('hh:mm A')
+                        : moment(id).format('LL')
+                    }}</span>
+                  </sdHeading>
 
-                <div v-if="email !== me" class="atbd-chatbox__contentInner d-flex">
-                  <div class="atbd-chatbox__message">
-                    <MessageList class="message-box">{{ content }}</MessageList>
+                  <div v-if="email !== me" class="atbd-chatbox__contentInner d-flex">
+                    <div class="atbd-chatbox__message">
+                      <MessageList class="message-box">{{ content }}</MessageList>
+                    </div>
+
+                    <div class="atbd-chatbox__actions">
+                      <sdDropdown :action="['hover']" placement="bottomCenter">
+                        <template #overlay>
+                          <div class="atbd-chatbox__emoji">
+                            <ul>
+                              <li>
+                                <router-link to="#">
+                                  <span role="img">&#127773;</span>
+                                </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <span role="img">&#128116;</span>
+                                </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <span role="img">&#128127;</span>
+                                </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <span role="img">&#128151;</span>
+                                </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <span role="img">&#128400;</span>
+                                </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <sdFeatherIcons type="more-horizontal" />
+                                </router-link>
+                              </li>
+                            </ul>
+                          </div>
+                        </template>
+                        <router-link to="#">
+                          <sdFeatherIcons type="smile" />
+                        </router-link>
+                      </sdDropdown>
+
+                      <sdDropdown :action="['hover']" placement="bottomCenter">
+                        <template #overlay>
+                          <div class="atbd-chatbox__messageControl">
+                            <ul>
+                              <li>
+                                <router-link to="#">Copy</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Edit</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Quote</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Forward</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Remove</router-link>
+                              </li>
+                            </ul>
+                          </div>
+                        </template>
+                        <router-link to="#">
+                          <sdFeatherIcons type="more-horizontal" size="16" />
+                        </router-link>
+                      </sdDropdown>
+                    </div>
                   </div>
 
-                  <div class="atbd-chatbox__actions">
-                    <sdDropdown :action="['hover']" placement="bottomCenter">
-                      <template #overlay>
-                        <div class="atbd-chatbox__emoji">
-                          <ul>
-                            <li>
-                              <router-link to="#">
-                                <span role="img">&#127773;</span>
-                              </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <span role="img">&#128116;</span>
-                              </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <span role="img">&#128127;</span>
-                              </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <span role="img">&#128151;</span>
-                              </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <span role="img">&#128400;</span>
-                              </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <sdFeatherIcons type="more-horizontal" />
-                              </router-link>
-                            </li>
-                          </ul>
-                        </div>
-                      </template>
-                      <router-link to="#">
-                        <sdFeatherIcons type="smile" />
-                      </router-link>
-                    </sdDropdown>
-
-                    <sdDropdown :action="['hover']" placement="bottomCenter">
-                      <template #overlay>
-                        <div class="atbd-chatbox__messageControl">
-                          <ul>
-                            <li>
-                              <router-link to="#">Copy</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Edit</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Quote</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Forward</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Remove</router-link>
-                            </li>
-                          </ul>
-                        </div>
-                      </template>
-                      <router-link to="#">
-                        <sdFeatherIcons type="more-horizontal" size="16" />
-                      </router-link>
-                    </sdDropdown>
+                  <div v-else class="atbd-chatbox__contentInner d-flex">
+                    <div class="atbd-chatbox__actions">
+                      <sdDropdown :action="['hover']" placement="bottomCenter">
+                        <template #overlay>
+                          <div class="atbd-chatbox__messageControl">
+                            <ul>
+                              <li>
+                                <router-link to="#">Edit </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Copy </router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Quote</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Forward</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">Remove</router-link>
+                              </li>
+                            </ul>
+                          </div>
+                        </template>
+                        <router-link to="#">
+                          <sdFeatherIcons type="more-horizontal" size="16" />
+                        </router-link>
+                      </sdDropdown>
+                      <sdDropdown :action="['hover']" placement="bottomCenter">
+                        <template #overlay>
+                          <div class="atbd-chatbox__emoji">
+                            <ul>
+                              <li>
+                                <router-link to="#">&#127773;</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">&#128116;</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">&#128127;</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">&#128151;</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">&#128400;</router-link>
+                              </li>
+                              <li>
+                                <router-link to="#">
+                                  <sdFeatherIcons type="more-horizontal" />
+                                </router-link>
+                              </li>
+                            </ul>
+                          </div>
+                        </template>
+                        <router-link to="#">
+                          <sdFeatherIcons type="smile" />
+                        </router-link>
+                      </sdDropdown>
+                    </div>
+                    <div class="atbd-chatbox__message">
+                      <MessageList class="message-box">{{ content }}</MessageList>
+                    </div>
                   </div>
-                </div>
 
-                <div v-else class="atbd-chatbox__contentInner d-flex">
-                  <div class="atbd-chatbox__actions">
-                    <sdDropdown :action="['hover']" placement="bottomCenter">
-                      <template #overlay>
-                        <div class="atbd-chatbox__messageControl">
-                          <ul>
-                            <li>
-                              <router-link to="#">Edit </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Copy </router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Quote</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Forward</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">Remove</router-link>
-                            </li>
-                          </ul>
-                        </div>
-                      </template>
-                      <router-link to="#">
-                        <sdFeatherIcons type="more-horizontal" size="16" />
-                      </router-link>
-                    </sdDropdown>
-                    <sdDropdown :action="['hover']" placement="bottomCenter">
-                      <template #overlay>
-                        <div class="atbd-chatbox__emoji">
-                          <ul>
-                            <li>
-                              <router-link to="#">&#127773;</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">&#128116;</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">&#128127;</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">&#128151;</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">&#128400;</router-link>
-                            </li>
-                            <li>
-                              <router-link to="#">
-                                <sdFeatherIcons type="more-horizontal" />
-                              </router-link>
-                            </li>
-                          </ul>
-                        </div>
-                      </template>
-                      <router-link to="#">
-                        <sdFeatherIcons type="smile" />
-                      </router-link>
-                    </sdDropdown>
+                  <div v-if="email === me && singleContent.length === index + 1" class="message-seen text-right">
+                    <span class="message-seen__time">Seen 9:20 PM </span>
+                    <img :src="`@/static/img/chat-author/${img}`" alt="" />
                   </div>
-                  <div class="atbd-chatbox__message">
-                    <MessageList class="message-box">{{ content }}</MessageList>
-                  </div>
-                </div>
-
-                <div v-if="email === me && singleContent.length === index + 1" class="message-seen text-right">
-                  <span class="message-seen__time">Seen 9:20 PM </span>
-                  <img :src="`@/static/img/chat-author/${img}`" alt="" />
                 </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </perfect-scrollbar>
       </ul>
       <p v-else>No data found</p>
+
       <Footer>
         <form @submit="handleSubmit">
           <div :class="`chatbox-reply-form d-flex ${fileList.length && 'hasImage'} ${fileList2.length && 'hasFile'}`">
@@ -251,10 +261,12 @@ import { computed, ref } from 'vue';
 import { message } from 'ant-design-vue';
 import { useRoute } from 'vue-router';
 import EmojiPicker from '@/components/utilities/Emoji.vue';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 
 const SingleChat = {
   name: 'SingleChat',
-  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, EmojiPicker },
+  components: { SingleChatWrapper, MessageList, BackShadowEmoji, Footer, EmojiPicker, PerfectScrollbar },
   setup() {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
@@ -360,3 +372,8 @@ const SingleChat = {
 
 export default SingleChat;
 </script>
+<style scoped>
+.ps {
+  height: 450px;
+}
+</style>
