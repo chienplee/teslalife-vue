@@ -21,7 +21,7 @@
           <sdButton
             v-if="responsive <= 991"
             type="white"
-            class="mail-sidebar-trigger"
+            class="mail-sidebar-trigger ant-btn-link"
             :style="{ marginTop: 0 }"
             @click="toggleCollapsed()"
           >

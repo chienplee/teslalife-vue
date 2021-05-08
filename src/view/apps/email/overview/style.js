@@ -83,6 +83,7 @@ const Style = Styled(Table)`
         }
         .email-top-right{
           justify-content: flex-end;
+          min-width: 241px;
           .email-extra{
             line-height: 1;
             a{
