@@ -85,8 +85,15 @@ const AllPosts = Styled.div`
     .post-content{
         .gallery{
             padding: 0 25px;
+            .ant-row{
+                height: 100%;
+                margin: -5px;
+                .ant-col{
+                    padding: 5px;
+                }
+            }
             img{
-                margin-bottom: 10px;
+                margin-bottom: 0px;
                 border-radius: 8px;
             }
             .my-masonry-grid{

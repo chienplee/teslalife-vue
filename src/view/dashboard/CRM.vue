@@ -197,7 +197,7 @@
           </template>
         </Suspense>
       </a-col>
-      <a-col :xxl="8" :xs="24"
+      <a-col :xxl="8" :xl="12" :xs="24"
         ><Suspense>
           <template #default>
             <SalesLeaderBoard />
