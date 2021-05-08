@@ -683,11 +683,11 @@ const Main = Styled.div`
         li{
             position: relative;
             &:not(:last-child){
-                margin-right: 8px;
-                padding-right: 8px;
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
+                ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
                 &:after{
                     position: absolute;
-                    right: 0;
+                    ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 0;
                     top: 50%;
                     transform: translateY(-50%);
                     width: 1px;
@@ -700,15 +700,15 @@ const Main = Styled.div`
                 cursor: default;
             }
             >span{
-                padding-right: 0;
+                ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 0;
             }
             span{
-                margin-right: 0;
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
             }
         }
 
         .comment-ld-action{
-            padding-left: 8px;
+            ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 8px;
             cursor: auto;
         }
     }
@@ -956,6 +956,24 @@ const Main = Styled.div`
             color: ${({ theme }) => theme['light-color']};
         }
     }
+    .ant-menu{
+        .ant-menu-item{
+            svg,
+            i{
+                color: ${({ theme }) => theme['light-color']};
+            }
+        }
+    }
+    .sDash-action-btn-list{
+        &.ant-space{
+            .ant-space-item{
+                &:not(:last-child){
+                    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px !important;
+                    ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
+                }
+            }
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -994,6 +1012,20 @@ const ButtonsGroupWrapper = Styled.div`
     }
     .ant-btn-group:not(:last-child){
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 20px;
+    }
+    .ant-btn-group{
+        > .ant-btn:first-child{
+            ${({ theme }) => (theme.rtl ? 'border-top-right-radius' : 'border-top-left-radius')}: 3px !important;
+            ${({ theme }) => (theme.rtl ? 'border-top-left-radius' : 'border-top-right-radius')}: 0 !important;
+            ${({ theme }) => (theme.rtl ? 'border-bottom-right-radius' : 'border-bottom-left-radius')}: 3px !important;
+            ${({ theme }) => (theme.rtl ? 'border-bottom-left-radius' : 'border-bottom-right-radius')}: 0 !important;
+        }
+        > .ant-btn:last-child:not(:first-child){
+            ${({ theme }) => (theme.rtl ? 'border-top-left-radius' : 'border-top-right-radius')}: 3px !important;
+            ${({ theme }) => (theme.rtl ? 'border-top-right-radius' : 'border-top-left-radius')}: 0 !important;
+            ${({ theme }) => (theme.rtl ? 'border-bottom-left-radius' : 'border-bottom-right-radius')}: 3px !important;
+            ${({ theme }) => (theme.rtl ? 'border-bottom-right-radius' : 'border-bottom-left-radius')}: 0 !important;
+        }
     }
 `;
 
@@ -1104,6 +1136,18 @@ const CalendarWrapper = Styled.div`
             line-height: 28px !important;
         }
     }
+    .ant-fullcalendar-header{
+        direction: ltr;
+    }
+    .ant-fullcalendar-fullscreen {
+        .ant-fullcalendar-content{
+            text-align: ${({ theme }) => (theme.rtl ? 'right' : 'left')};
+            .ant-badge-status-text{
+                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 8px;
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+            }
+        }
+    }
 `;
 
 const DatePickerWrapper = Styled.div`
@@ -1181,6 +1225,14 @@ const PageHeaderWrapper = Styled.div`
 const MessageStyleWrapper = Styled.div`
     .ant-btn-lg{
         font-size: 14px;
+    }
+    .ant-space{
+        .ant-space-item{
+            &:not(:last-child){
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px !important;
+                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
+            }
+        }
     }
 `;
 

@@ -56,7 +56,7 @@
                 Navigation One
               </a-menu-item>
               <a-menu-item key="2">
-                <sdFeatherIcons type="calendar" size="14" />
+                <CalendarOutlined />
                 Navigation Two
               </a-menu-item>
               <a-sub-menu key="sub1">

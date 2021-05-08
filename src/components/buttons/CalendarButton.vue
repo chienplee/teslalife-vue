@@ -11,7 +11,7 @@
     </div>
     <sdButton @click="handleVisible" size="small" type="white">
       <sdFeatherIcons type="calendar" size="14" />
-      Calendar
+      <span>Calendar</span>
     </sdButton>
   </CustomDropDown>
 </template>

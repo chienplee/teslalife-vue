@@ -24,7 +24,7 @@
     </template>
     <sdButton size="small" type="white">
       <sdFeatherIcons type="share-2" size="14" />
-      Share
+      <span>Share</span>
     </sdButton>
   </sdPopover>
 </template>

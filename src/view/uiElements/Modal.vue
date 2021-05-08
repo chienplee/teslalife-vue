@@ -29,7 +29,7 @@
                 to get user feedback or display information. Additionally
               </p>
             </sdModal>
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton
                 @click="
                   () => {
@@ -98,7 +98,7 @@
                 to get user feedback or display information. Additionally
               </p>
             </sdModal>
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton
                 @click="
                   () => {
@@ -147,7 +147,7 @@
           </sdCards>
         </a-col>
         <a-col :md="12" :xs="24">
-          <sdCards title="Color Modal">
+          <sdCards title="Color Modal" class="Information Modal">
             <p>
               When requiring users to interact with the application, but without jumping to a new page and interrupting
               the user's workflow, you can use Modal to create a new floating layer over the current page to get user
@@ -167,7 +167,7 @@
                 to get user feedback or display information. Additionally
               </p>
             </sdModal>
-            <a-space>
+            <a-space class="sDash-action-btn-list">
               <sdButton type="info" size="small" @click="info"> Info </sdButton>
               <sdButton type="success" size="small" @click="success"> Success </sdButton>
               <sdButton type="error" size="small" @click="error"> Error </sdButton>
