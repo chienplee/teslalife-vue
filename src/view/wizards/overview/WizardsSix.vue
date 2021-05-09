@@ -126,7 +126,7 @@
                                   </div>
                                 </div>
                                 <sdCards headless :style="{ marginBottom: 0 }">
-                                  <a-form @finish="handleMethodSubmit" :model="stateMethod" name="info">
+                                  <a-form :model="stateMethod" name="info">
                                     <a-form-item name="number" label="Card Number">
                                       <a-input placeholder="6547-8702-6987-2527" />
                                     </a-form-item>
@@ -136,7 +136,7 @@
                                     <a-form-item name="month" initialValue="" label="Expiration Date">
                                       <div class="ex-date-year-wrap d-flex">
                                         <div class="ex-date">
-                                          <a-select :style="{ width: '100%' }">
+                                          <a-select v-model:value="exDate" :style="{ width: '100%' }">
                                             <a-select-option value="">MM</a-select-option>
                                             <a-select-option v-for="value in month" :key="value" :value="value">
                                               {{ value }}
@@ -147,7 +147,7 @@
                                     </a-form-item>
                                     <a-form-item name="year">
                                       <div class="ex-year">
-                                        <a-select :style="{ width: '100%' }">
+                                        <a-select v-model:value="exYear" :style="{ width: '100%' }">
                                           <a-select-option value="">YY</a-select-option>
                                           <a-select-option :value="new Date().getFullYear()">{{
                                             new Date().getFullYear()
@@ -370,7 +370,8 @@ const WizardsSix = {
     const isFinished = ref(false);
     const isVertical = ref(true);
     const current = ref(1);
-
+    const exDate = ref('');
+    const exYear = ref('');
     onMounted(() => {
       dispatch('cartGetData');
     });
@@ -525,6 +526,8 @@ const WizardsSix = {
     });
 
     return {
+      exDate,
+      exYear,
       subtotal,
       done,
       prev,
