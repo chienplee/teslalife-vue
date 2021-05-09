@@ -15,7 +15,7 @@ const ProfileAuthorBox = Styled.div`
         margin: 0 auto 18px;
         .ant-upload-select{
             position: absolute;
-        ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 0;
+            ${({ theme }) => (theme.rtl ? 'left' : 'right')}: 0;
             bottom: -2px;
             height: 40px;
             width: 40px;
@@ -37,6 +37,9 @@ const ProfileAuthorBox = Styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                color: #fff;
+            }
+            i{
                 color: #fff;
             }
         }

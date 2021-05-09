@@ -2791,7 +2791,10 @@ html[dir='rtl'] .ant-modal-close{
   right: auto;
   left: 0;
 }
-
+html[dir='rtl'] .ant-result-extra > *{
+  margin-right: 0;
+  margin-left: 8px;
+}
 
 /* Menu RTL Style */
 html[dir='rtl'] .ant-menu.ant-menu-vertical {
@@ -2822,10 +2825,51 @@ html[dir='rtl'] .ant-select-arrow{
   right: auto;
   left: 11px;
 }
-
 html[dir='rtl'] .ant-cascader-picker-arrow{
   right: auto;
   left: 12px;
+}
+html[dir='rtl'] .ant-steps-item-title::after{
+  left: auto;
+  right: 100%;
+}
+html[dir='rtl'] .ant-steps-small .ant-steps-item-icon{
+  margin-right: 0;
+  margin-left: 8px;
+}
+html[dir='rtl'] .ant-rate-text{
+  margin-right: 8px;
+  margin-left: 0;
+}
+html[dir='rtl'] .ant-steps-small .ant-steps-item-title{
+  padding-right: 0;
+  padding-left: 12px;
+}
+html[dir='rtl'] .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
+  margin-right: 0;
+  margin-left: 16px;
+}
+
+html[dir='rtl'] .ant-steps-item-icon{
+  margin-right: 0;
+  margin-left: 8px;
+}
+html[dir='rtl'] .ant-steps-item-title{
+  padding-right: 0;
+  padding-left: 16px;
+}
+
+html[dir='rtl'] .ant-statistic-content-prefix{
+  margin-right: 0;
+  margin-left: 4px;
+}
+html[dir='rtl'] .ant-steps-vertical.ant-steps-small .ant-steps-item-container .ant-steps-item-tail{
+  left: auto;
+  right: 12px;
+}
+
+html[dir='rtl'] .ant-steps-vertical .ant-steps-item-icon{
+  float: right;
 }
 
 html[dir='rtl'] .ant-radio-button-wrapper:first-child{
