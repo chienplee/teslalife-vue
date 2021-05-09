@@ -16,11 +16,11 @@
           <div class="card__actions">
             <sdButton size="default" type="white" outlined>
               <sdFeatherIcons type="mail" size="14" />
-              Message
+              <span>Message</span>
             </sdButton>
             <sdButton size="default" type="white" outlined>
               <sdFeatherIcons type="user-plus" size="14" />
-              Following
+              <span>Following</span>
             </sdButton>
           </div>
           <div class="card__info">

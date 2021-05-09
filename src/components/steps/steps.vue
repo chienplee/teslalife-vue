@@ -80,14 +80,14 @@
                 <div class="steps-action">
                   <sdButton v-if="currents > 0" class="btn-prev" type="light" @click="() => prev()">
                     <sdFeatherIcons type="arrow-left" size="16" />
-                    Previous
+                    <span>Previous</span>
                   </sdButton>
                   <sdButton v-if="currents < steps.length - 1" class="btn-next" type="primary" @click="() => next()">
-                    Save & Next
+                    <span>Save & Next</span>
                     <sdFeatherIcons type="arrow-right" size="16" />
                   </sdButton>
                   <sdButton v-if="currents === steps.length - 1" type="primary" @click="onDone">
-                    Done
+                    <span>Done</span>
                   </sdButton>
                 </div>
               </a-col>

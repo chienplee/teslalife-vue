@@ -97,14 +97,7 @@
                         <a-radio-group :style="{ width: '100%' }">
                           <div class="shipping-selection__card">
                             <a-radio :style="{ width: '100%' }" value="card">
-                              <sdCards
-                                headless
-                                :bodyStyle="{
-                                  backgroundColor: '#F8F9FB',
-                                  borderRadius: '20px',
-                                  border: '1px solid #F1F2F6',
-                                }"
-                              >
+                              <sdCards headless>
                                 <div class="supported-card d-flex">
                                   <span>Credit/Debit Card</span>
                                   <div class="supported-card_logos">

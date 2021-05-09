@@ -34,7 +34,7 @@
       <div class="product-single-action">
         <sdButton size="small" type="white" class="btn-cart" outlined>
           <sdFeatherIcons type="shopping-bag" size="14" />
-          Add To Cart
+          <span>Add To Cart</span>
         </sdButton>
         <sdButton size="small" type="primary">
           Buy Now
