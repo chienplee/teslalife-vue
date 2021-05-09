@@ -499,6 +499,11 @@ const Div = Styled('div', props)`
                     display: none;
                 }
             }
+            .ant-menu-submenu {
+                .ant-menu-sub {
+                    opacity: 0;
+                }
+            }
         }
         .ant-menu-item-group{
             .ant-menu-item-group-title{

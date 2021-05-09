@@ -906,6 +906,11 @@ const Main = Styled.div`
     .ant-tabs-top-bar{
         .ant-tabs-nav{
             margin: 0 0 16px;
+            .ant-tabs-tab{
+                i{
+                    line-height: .6;
+                }
+            }
         }
     }
 
@@ -1192,6 +1197,9 @@ const TagInput = Styled.div`
         height: 24px;
         display: inline-flex;
         align-items: center;
+        i{
+            line-height: .6;
+        }
     }
 `;
 

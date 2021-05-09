@@ -89,7 +89,7 @@
                 <a-statistic-countdown
                   title="Countdown"
                   :value="deadline"
-                  style="margin-right: 50px"
+                  :style="{ [rtl ? 'marginLeft' : 'marginRight']: 50 }"
                   @finish="onFinish"
                 />
               </a-col>
@@ -98,7 +98,7 @@
                   title="Million Seconds"
                   :value="deadline"
                   format="HH:mm:ss:SSS"
-                  style="margin-right: 50px"
+                  :style="{ [rtl ? 'marginLeft' : 'marginRight']: 50 }"
                 />
               </a-col>
             </a-row>
@@ -112,6 +112,8 @@
 <script>
 import { Main } from '../styled';
 import { LikeOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons-vue';
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 export default {
   name: 'Statistic',
   components: {
@@ -129,6 +131,12 @@ export default {
     onFinish() {
       console.log('finished!');
     },
+  },
+  setup() {
+    const { state } = useStore();
+    const rtl = computed(() => state.themeLayout.rtlData);
+
+    return { rtl };
   },
 };
 </script>
