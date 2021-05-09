@@ -26,7 +26,7 @@
         <span class="mail-cc">Cc</span>
       </div>
       <div class="group">
-        <editor v-if="api" :apiKey="api" :init="{ height: 320, menubar: false }" />
+        <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
       </div>
     </div>
 
@@ -54,11 +54,10 @@
 </template>
 <script>
 import VoerroTagsInput from '@voerro/vue-tagsinput';
-import Editor from '@tinymce/tinymce-vue';
-
 import { MailBox } from './style';
-import { onMounted, ref } from 'vue';
+import { ref, toRefs } from 'vue';
 import VueTypes from 'vue-types';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const antProps = {
   name: 'file',
@@ -80,7 +79,7 @@ const antProps = {
 
 const MailComposer = {
   name: 'mailComposer',
-  components: { MailBox, 'tags-input': VoerroTagsInput, editor: Editor },
+  components: { MailBox, 'tags-input': VoerroTagsInput },
   props: {
     onChange: VueTypes.func.def(() => {}),
     onSend: VueTypes.func.def(() => {}),
@@ -88,25 +87,38 @@ const MailComposer = {
     replay: VueTypes.bool.def(false),
     text: VueTypes.bool.def(false),
   },
-  setup({ defaultTag }) {
-    const tags = ref(defaultTag ? [defaultTag] : []);
-    const api = ref(false);
+  data() {
+    return {
+      editor: ClassicEditor,
+      editorData: '<p>Content of the editor.</p>',
+      editorConfig: {
+        // The configuration of the editor.
+      },
+    };
+  },
+  setup(props) {
+    const { defaultTag } = toRefs(props);
+    console.log(defaultTag.value);
+    const tags = ref(['hello']);
     const handleChange = tag => {
       tags.value = [...tags.value, tag];
     };
-    onMounted(() => {
-      api.value = process.env.VUE_APP_TINYMCE_API_KEY;
-    });
+
+    const onSubmit = () => {
+      // onSend && onSend(state.value.toString('html'));
+    };
+
     return {
       handleChange,
       tags,
       antProps,
-      api,
+      onSubmit,
       selectedTags: [
         { key: 'web-development', value: 'Web Development' },
         { key: 'php', value: 'PHP' },
         { key: 'javascript', value: 'JavaScript' },
       ],
+      ClassicEditor,
     };
   },
 };

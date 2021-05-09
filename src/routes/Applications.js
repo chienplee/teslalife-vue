@@ -52,7 +52,7 @@ export default [
           {
             path: 'forward',
             name: 'Forward',
-            component: () => <h1>Hello forward</h1>,
+            component: () => import(/* webpackChunkName: "replay" */ '@/view/apps/email/overview/MailComposer.vue'),
           },
         ],
       },
