@@ -31,6 +31,7 @@
     "emoji-picker-element": "^1.4.0",
     "feather-icons": "^4.28.0",
     "file-saver": "^2.0.5",
+    "jest-worker": "^26.6.2",
     "js-cookie": "^2.2.1",
     "leaflet": "^1.7.1",
     "mitt": "^2.1.0",

@@ -8,89 +8,97 @@
             <a-badge class="badge-success" count="3" />
           </sdHeading>
           <div class="atbd-top-dropdwon-menu">
-            <ul class="atbd-top-dropdwon__nav">
-              <li>
-                <a to="#">
-                  <figure class="atbd-top-dropdwon__content">
-                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
-                    <figcaption>
-                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
-                      <div>
-                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
-                        <span>
-                          <a-badge class="badge-success" count="3" />
-                        </span>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <li>
-                <a to="#">
-                  <figure class="atbd-top-dropdwon__content">
-                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
-                    <figcaption>
-                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
-                      <div>
-                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
-                        <span>
-                          <a-badge class="badge-success" count="3" />
-                        </span>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <li>
-                <a to="#">
-                  <figure class="atbd-top-dropdwon__content">
-                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
-                    <figcaption>
-                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
-                      <div>
-                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
-                        <span>
-                          <a-badge class="badge-success" count="3" />
-                        </span>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <li>
-                <a to="#">
-                  <figure class="atbd-top-dropdwon__content">
-                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
-                    <figcaption>
-                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
-                      <div>
-                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
-                        <span>
-                          <a-badge class="badge-success" count="3" />
-                        </span>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <li>
-                <a to="#">
-                  <figure class="atbd-top-dropdwon__content">
-                    <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
-                    <figcaption>
-                      <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
-                      <div>
-                        <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
-                        <span>
-                          <a-badge class="badge-success" count="3" />
-                        </span>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-              <ul />
-            </ul>
+            <perfect-scrollbar
+              :options="{
+                wheelSpeed: 1,
+                swipeEasing: true,
+                suppressScrollX: true,
+              }"
+            >
+              <ul class="atbd-top-dropdwon__nav">
+                <li>
+                  <a to="#">
+                    <figure class="atbd-top-dropdwon__content">
+                      <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
+                      <figcaption>
+                        <sdHeading as="h5"> Software <span class="color-success">3 hrs ago </span> </sdHeading>
+                        <div>
+                          <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
+                          <span>
+                            <a-badge class="badge-success" count="3" />
+                          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a to="#">
+                    <figure class="atbd-top-dropdwon__content">
+                      <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
+                      <figcaption>
+                        <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
+                        <div>
+                          <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
+                          <span>
+                            <a-badge class="badge-success" count="3" />
+                          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a to="#">
+                    <figure class="atbd-top-dropdwon__content">
+                      <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
+                      <figcaption>
+                        <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
+                        <div>
+                          <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
+                          <span>
+                            <a-badge class="badge-success" count="3" />
+                          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a to="#">
+                    <figure class="atbd-top-dropdwon__content">
+                      <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
+                      <figcaption>
+                        <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
+                        <div>
+                          <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
+                          <span>
+                            <a-badge class="badge-success" count="3" />
+                          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <li>
+                  <a to="#">
+                    <figure class="atbd-top-dropdwon__content">
+                      <img :src="require('../../../static/img/avatar/NoPath.png')" alt="" />
+                      <figcaption>
+                        <sdHeading as="h5"> Software <span class="color-success">3 hrs ago</span> </sdHeading>
+                        <div>
+                          <span class="atbd-top-dropdwonText">Lorem ipsum dolor amet cosec...</span>
+                          <span>
+                            <a-badge class="badge-success" count="3" />
+                          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+                <ul />
+              </ul>
+            </perfect-scrollbar>
           </div>
           <router-link class="btn-seeAll" to="#">
             See all messages
@@ -107,12 +115,20 @@
 </template>
 
 <script>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 import { AtbdTopDropdwon } from './auth-info-style';
 
 export default {
   name: 'MessageBox',
   components: {
     AtbdTopDropdwon,
+    PerfectScrollbar,
   },
 };
 </script>
+<style scoped>
+.ps {
+  height: 200px;
+}
+</style>
