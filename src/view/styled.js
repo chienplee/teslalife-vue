@@ -772,7 +772,7 @@ const Main = Styled.div`
         .payment-method-form.theme-light{
             .shipping-selection__card{
                 .ant-card-body{
-                    padding: 25px 0 !important;
+                    padding: 25px !important;
                 }
             }
         }
@@ -977,6 +977,13 @@ const Main = Styled.div`
                     ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
                 }
             }
+        }
+    }
+
+    .sDash-switch-list{
+        margin: 0 -5px;
+        button{
+            margin: 0 5px;
         }
     }
 `;
