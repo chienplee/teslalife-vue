@@ -96,11 +96,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -116,11 +116,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -136,11 +136,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -156,11 +156,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -176,11 +176,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -196,11 +196,11 @@
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
                       <sdFeatherIcons type="smile" size="14" />
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
@@ -215,11 +215,11 @@
                   <sdHeading as="h4">Was this article helpful?</sdHeading>
                   <div class="panel-actions">
                     <sdButton :outlined="true" type="success">
-                      Yes
+                      <span>Yes</span>
                     </sdButton>
                     <sdButton :outlined="true" type="warning">
                       <sdFeatherIcons type="frown" size="14" />
-                      No
+                      <span>No</span>
                     </sdButton>
                   </div>
                 </a-collapse-panel>
