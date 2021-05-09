@@ -14,7 +14,6 @@
       </template>
     </sdPageHeader>
     <Main>
-      <!-- <a-row> -->
       <KnowledgeBaseTop />
       <KnowledgebaseArticleWrap>
         <div class="knowledgebase-article-container">
@@ -23,13 +22,13 @@
               <nav>
                 <ul>
                   <li>
-                    <router-link to="/page/knowledgebase/plugins">Plugins</router-link>
+                    <router-link to="/page/knowledgebase/base/plugins">Plugins</router-link>
                   </li>
                   <li>
-                    <router-link to="/page/knowledgebase/themes">Themes</router-link>
+                    <router-link to="/page/knowledgebase/base/themes">Themes</router-link>
                   </li>
                   <li>
-                    <router-link to="/page/knowledgebase/extensions">Extensions</router-link>
+                    <router-link to="/page/knowledgebase/base/extensions">Extensions</router-link>
                   </li>
                 </ul>
               </nav>
@@ -56,7 +55,7 @@
                       <div :class="`sDash_popular-article__single theme-${article.type}`">
                         <h4 class="single-article-title">{{ article.title }}</h4>
                         <p>{{ article.text }}</p>
-                        <router-link class="btn-link" to="/page/knowledgebase/single">
+                        <router-link class="btn-link" to="/page/knowledgebase/single/1">
                           Read more
                           <ArrowRightOutlined />
                         </router-link>
@@ -78,14 +77,13 @@
           </CtaWrap>
         </div>
       </KnowledgebaseArticleWrap>
-      <!-- </a-row> -->
     </Main>
   </div>
 </template>
 
 <script>
 import { Main } from '../../styled';
-//import { ArrowRightOutlined } from '@ant-design/icons-vue';
+
 import KnowledgeBaseTop from './overview/knowledgebase/KnowledgeTop';
 import { KnowledgebaseArticleWrap, ArticleTabWrap, PopularArticleWrap, CtaWrap } from './style';
 import articles from '../../../demoData/article.json';
@@ -93,7 +91,6 @@ export default {
   name: 'KnowledgeBase',
   components: {
     Main,
-    //ArrowRightOutlined,
     KnowledgeBaseTop,
     KnowledgebaseArticleWrap,
     ArticleTabWrap,
