@@ -38,9 +38,9 @@
         </a-col>
       </a-row>
       <a-row :gutter="25">
-        <!-- <a-col :xxl="4" :xl="12" :lg="12" :sm="24" :xs="24">
+        <a-col :xxl="4" :xl="12" :lg="12" :sm="24" :xs="24">
           <BannerCarousel />
-        </a-col> -->
+        </a-col>
         <a-col :xxl="4" :xl="12" :lg="12" :sm="24" :xs="24">
           <BannerLong />
         </a-col>
@@ -74,7 +74,7 @@ import {
   Banner5,
   Banner6,
   Banner7,
-  // BannerCarousel,
+  BannerCarousel,
   BannerLong,
   BannerCard,
   BannerCard2,
@@ -93,7 +93,7 @@ export default {
     Banner5,
     Banner6,
     Banner7,
-    // BannerCarousel,
+    BannerCarousel,
     BannerLong,
     BannerCard,
     BannerCard2,
