@@ -12,7 +12,7 @@
             element-id="tags"
             :placeholder="replay ? null : 'To'"
             :existing-tags="selectedTags"
-            v-model="selectedTags"
+            v-model:value="selectedTags"
             ><template v-slot:selected-tag="{ tag, index, removeTag }">
               <span class="tagsinput-tag">
                 <span v-html="tag.value"></span>
@@ -98,28 +98,27 @@ const MailComposer = {
     };
   },
   setup(props) {
-    const { defaultTag } = toRefs(props);
-    console.log(defaultTag.value);
+    const { defaultTag, onSend } = toRefs(props);
+
     const tags = ref(['hello']);
     const handleChange = tag => {
       tags.value = [...tags.value, tag];
     };
 
     const onSubmit = () => {
-      // onSend && onSend(state.value.toString('html'));
+      onSend && onSend(this.editorData);
     };
+
+    const selectedTags = ref(defaultTag.value ? [{ key: defaultTag.value, value: defaultTag.value }] : []);
 
     return {
       handleChange,
       tags,
       antProps,
       onSubmit,
-      selectedTags: [
-        { key: 'web-development', value: 'Web Development' },
-        { key: 'php', value: 'PHP' },
-        { key: 'javascript', value: 'JavaScript' },
-      ],
+      selectedTags,
       ClassicEditor,
+      disabled: false,
     };
   },
 };

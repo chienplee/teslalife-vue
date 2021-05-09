@@ -47,7 +47,11 @@ export default [
           {
             path: 'replay',
             name: 'Replay',
-            component: () => import(/* webpackChunkName: "replay" */ '@/view/apps/email/overview/MailComposer.vue'),
+            components: {
+              default: () =>
+                import(/* webpackChunkName: "singleMail" */ '@/view/apps/email/overview/MailDetailView.vue'),
+              child: () => import(/* webpackChunkName: "replay" */ '@/view/apps/email/overview/MailComposer.vue'),
+            },
           },
           {
             path: 'forward',

@@ -2996,3 +2996,9 @@ html[dir='rtl'] .ant-comment-avatar{
 .tox .tox-statusbar{
   border-top: 1px solid #f1f2f6 !important;
 }
+
+/* custom scroll */
+
+.ps__rail-y .ps__thumb-y{
+  background-color: rgb(241, 242, 246);
+}
