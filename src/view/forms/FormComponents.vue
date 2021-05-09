@@ -113,22 +113,7 @@
 
             <sdCards title="Text Editor" class="mb-25">
               <div class="sDash_editor">
-                <editor
-                  v-if="api"
-                  :apiKey="api"
-                  placeholder="Type your message..."
-                  :init="{
-                    menubar: false,
-                    plugins: [
-                      'advlist autolink lists link image charmap print preview anchor',
-                      'searchreplace visualblocks code fullscreen',
-                      'insertdatetime media table paste code help wordcount',
-                    ],
-                    toolbar:
-                      'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code',
-                    skin: 'outside',
-                  }"
-                />
+                <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
               </div>
             </sdCards>
           </a-col>
@@ -184,10 +169,10 @@
 
 <script>
 import { message } from 'ant-design-vue';
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { Main, BasicFormWrapper } from '../styled';
 import { FormComponentsWrap, DropDownListComponents } from './overview/Style';
-import Editor from '@tinymce/tinymce-vue';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default defineComponent({
   name: 'FormComponent',
   components: {
@@ -195,15 +180,19 @@ export default defineComponent({
     BasicFormWrapper,
     FormComponentsWrap,
     DropDownListComponents,
-    Editor,
   },
   data() {
     return {
+      editor: ClassicEditor,
+      editorData:
+        "<p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>",
+      editorConfig: {
+        height: '300px',
+      },
       disabled: false,
     };
   },
   setup() {
-    const api = ref(false);
     const handleChange = info => {
       const status = info.file.status;
 
@@ -217,13 +206,9 @@ export default defineComponent({
         message.error(`${info.file.name} file upload failed.`);
       }
     };
-    onMounted(() => {
-      api.value = process.env.VUE_APP_TINYMCE_API_KEY;
-    });
     return {
       handleChange,
       fileList: ref([]),
-      api,
     };
   },
 });

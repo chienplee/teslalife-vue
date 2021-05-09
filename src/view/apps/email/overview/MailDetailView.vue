@@ -255,7 +255,7 @@
               </ul>
             </nav>
             <div class="reply-form d-flex">
-              <router-view></router-view>
+              <router-view defaultTag="Alice Freeman"></router-view>
             </div>
           </MessageReply>
         </a-col>

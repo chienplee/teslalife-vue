@@ -189,7 +189,7 @@ export const BannerCarousel = defineComponent({
   render() {
     return (
       <BannerCarouselWrap>
-        <a-carousel>
+        <a-carousel autoplay>
           <div class="banner-signle">
             <div class="banner-single__img">
               <img src={require('../../static/img/banner/8.png')} alt="" />
