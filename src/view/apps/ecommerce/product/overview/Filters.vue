@@ -9,7 +9,7 @@
       </template>
       <SidebarSingle>
         <sdHeading as="h5">Price Range</sdHeading>
-        <Slider @onChange="onChange" range :step="10" :defaultValues="[0, 1500]" />
+        <Slider @onChange="onChange" range :step="10" :min="0" :max="max" :defaultValues="[min, max]" />
         <p class="price-range-text">${{ min }} - ${{ max }}</p>
       </SidebarSingle>
       <SidebarSingle>

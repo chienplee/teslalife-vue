@@ -101,7 +101,7 @@ const ToDo = {
           ),
           action: (
             <div class="todos-action">
-              <sdFeatherIcons size={16} style={{ cursor: 'pointer', color: '#999' }} type="move" />
+              <sdFeatherIcons size={16} style={{ cursor: 'pointer', color: '#999', display: 'none' }} type="move" />
               <a
                 class={item.favorite ? 'star active' : 'star'}
                 onClick={() => dispatch('onStarUpdate', { data: todoData.value, id: item.key })}
