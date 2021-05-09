@@ -738,6 +738,7 @@ const FaqWrapper = Styled.div`
         color: ${({ theme }) => theme['dark-color']};
       }
       .panel-actions{
+        display: flex;
         button{
           height: 36px;
           padding: 0 15px;

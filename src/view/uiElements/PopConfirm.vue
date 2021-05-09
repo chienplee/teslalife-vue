@@ -34,7 +34,7 @@
               <div
                 class="pop-confirm pop-confirm-top"
                 :style="{
-                  [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth}px`,
+                  [rtl ? 'marginRight' : 'marginLeft']: `${buttonWidth}px`,
                   whiteSpace: 'nowrap',
                 }"
               >
@@ -64,7 +64,7 @@
                 className="pop-confirm pop-confirm-left"
                 :style="{
                   width: `${buttonWidth}px`,
-                  float: !rtl ? 'left' : 'right',
+                  float: rtl ? 'right' : 'left',
                 }"
               >
                 <a-popconfirm placement="leftTop" ok-text="Yes" cancel-text="No" @confirm="confirm">
@@ -93,7 +93,7 @@
                 className="pop-confirm pop-confirm-right"
                 :style="{
                   width: `${buttonWidth}px`,
-                  [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth * 4 + 24}px`,
+                  [rtl ? 'marginRight' : 'marginLeft']: `${buttonWidth * 4 + 24}px`,
                 }"
               >
                 <a-popconfirm placement="rightTop" ok-text="Yes" cancel-text="No" @confirm="confirm">
@@ -121,7 +121,7 @@
               <div
                 className="pop-confirm pop-confirm-bottom"
                 :style="{
-                  [!rtl ? 'marginLeft' : 'marginRight']: `${buttonWidth}px`,
+                  [rtl ? 'marginRight' : 'marginLeft']: `${buttonWidth}px`,
                   clear: 'both',
                   whiteSpace: 'nowrap',
                 }"

@@ -561,7 +561,11 @@ const ProgressBarStyle = Styled.div`
   }
   .progressbar-action-btn{
     display: inline-flex;
-    margin-left: 15px;
+    ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 15px;
+
+    .ant-btn-group{
+      direction: ltr;
+    }
   }
 `;
 
