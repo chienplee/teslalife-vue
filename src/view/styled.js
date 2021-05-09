@@ -906,6 +906,11 @@ const Main = Styled.div`
     .ant-tabs-top-bar{
         .ant-tabs-nav{
             margin: 0 0 16px;
+            .ant-tabs-tab{
+                i{
+                    line-height: 1;
+                }
+            }
         }
     }
 

@@ -3,7 +3,7 @@ import { theme, darkTheme } from './theme/themeVariables';
 const config = {
   darkMode: false,
   topMenu: false,
-  rtl: false,
+  rtl: true,
   theme,
   darkTheme,
   auth0: false,

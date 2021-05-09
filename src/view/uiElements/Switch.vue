@@ -20,7 +20,7 @@
         </a-col>
         <a-col :md="12" :sm="24" :xs="24">
           <sdCards title="Size">
-            <a-switch style="margin-right: 10px;" v-model:checked="checked1" />
+            <a-switch :style="{ [rtl ? 'marginRight' : 'marginLeft']: 10 }" v-model:checked="checked1" />
             <a-switch size="small" v-model:checked="checked2" />
           </sdCards>
         </a-col>
@@ -51,7 +51,8 @@
 <script>
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons-vue';
 import { Main } from '../styled';
-import { ref, reactive, toRefs } from 'vue';
+import { useStore } from 'vuex';
+import { ref, reactive, toRefs, computed } from 'vue';
 export default {
   name: 'Switch',
   components: {
@@ -60,6 +61,8 @@ export default {
     CloseOutlined,
   },
   setup() {
+    const store = useStore();
+    const rtl = computed(() => store.state.themeLayout.rtlData);
     const checked = ref(false);
     const state = reactive({
       checked1: true,
@@ -72,6 +75,7 @@ export default {
     });
     return {
       checked,
+      rtl,
       ...toRefs(state),
     };
   },

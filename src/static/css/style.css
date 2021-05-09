@@ -2756,11 +2756,8 @@ li.active > .display {
 }
 
 
-/* rtl section from here */
-html[dir='rtl'] .ant-upload-list-item-name{
-  padding-right: 22px;
-  padding-left: 0;
-}
+/* rtl Style from here */
+
 html[dir='rtl'] .table-bordered .ant-table-thead tr th:last-child,
 html[dir='rtl'] .table-bordered .ant-table-tbody tr td:last-child {
   text-align: left;
@@ -2778,46 +2775,47 @@ html[dir='rtl'] .ant-card-extra .ant-dropdown-trigger {
 html[dir='rtl'] .ant-card-head-title span {
   margin-right: 15px;
 }
-html[dir='rtl'] span[aria-label="arrow-right"] svg, html[dir='rtl'] span[aria-label="arrow-left"] svg {
+html[dir='rtl'] span[aria-label="arrow-right"] svg, 
+html[dir='rtl'] span[aria-label="arrow-left"] svg {
   transform: rotateY(180deg);
 }
+html[dir='rtl'] .ant-menu-vertical .ant-menu-submenu-title {
+  padding-right: 15px !important;
+}
+html[dir='rtl'] .ant-modal-close{
+  right: auto;
+  left: 0;
+}
 
+
+/* Menu RTL Style */
 html[dir='rtl'] .ant-menu.ant-menu-vertical {
   text-align: right !important;
 }
-
 html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-submenu-placement-rightTop {
   left: -170px !important;
 }
-
 html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-vertical-left {
   text-align: right;
 }
-
 html[dir='rtl'] .ant-menu.ant-menu-vertical .ant-menu-submenu-arrow {
   right: auto;
   left: 16px;
   transform: rotateY(180deg);
 }
-
-html[dir='rtl'] .ant-menu-vertical .ant-menu-submenu-title {
-  padding-right: 15px !important;
+html[dir='rtl'] .ant-tag .anticon-close{
+  margin-left: 0;
+  margin-right: 3px;
+}
+html[dir='rtl'] .ant-slider-vertical .ant-slider-handle{
+  margin-left: 0;
+  margin-right: -5px;
 }
 
+/* Ui Elements */
 html[dir='rtl'] .ant-select-arrow{
   right: auto;
   left: 11px;
-}
-
-html[dir='rtl'] .ant-modal-close{
-  right: auto;
-  left: 0;
-}
-html[dir='rtl'] .ant-radio-button-wrapper:first-child{
-  border-radius: 0 4px 4px 0;
-}
-html[dir='rtl'] .ant-radio-button-wrapper:last-child{
-  border-radius: 4px 0 0 4px;
 }
 
 html[dir='rtl'] .ant-cascader-picker-arrow{
@@ -2825,29 +2823,11 @@ html[dir='rtl'] .ant-cascader-picker-arrow{
   left: 12px;
 }
 
-html[dir='rtl'] .ant-comment-avatar{
-  margin-right: 0;
-  margin-left: 12px;
+html[dir='rtl'] .ant-radio-button-wrapper:first-child{
+  border-radius: 0 4px 4px 0;
 }
-
-html[dir='rtl'] .ant-calendar-picker-clear, 
-html[dir='rtl'] .ant-calendar-picker-icon{
-  right: auto;
-  left: 12px;
-}
-
-/* Menu RTL Style */
-html[dir='rtl'] .ant-menu-item .anticon, 
-html[dir='rtl'] .ant-menu-submenu-title .anticon{
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-html[dir='rtl'] .ant-menu-inline, 
-html[dir='rtl'] .ant-menu-vertical, 
-html[dir='rtl'] .ant-menu-vertical-left{
-  border-right: 0 none;
-  border-left: 1px solid #f0f0f0;
+html[dir='rtl'] .ant-radio-button-wrapper:last-child{
+  border-radius: 4px 0 0 4px;
 }
 
 html[dir='rtl'] .ant-input-affix-wrapper .ant-input-prefix{
@@ -2858,6 +2838,66 @@ html[dir='rtl'] .ant-input-affix-wrapper .ant-input-prefix{
 html[dir='rtl'] .ant-message .anticon{
   margin-right: 0;
   margin-left: 8px;
+}
+
+html[dir='rtl'] .ant-upload-list-item-name{
+  padding-right: 22px;
+  padding-left: 0;
+}
+html[dir='rtl'] .ant-timeline-item-tail{
+  left: auto;
+  right: 4px;
+  border-right: 0 none;
+  border-left: 2px solid #f0f0f0;
+}
+html[dir='rtl'] .ant-timeline-item-head-custom{
+  left: auto;
+  right: 5px;
+  transform: translate(50%, -50%);
+}
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail, .ant-timeline.ant-timeline-right .ant-timeline-item-tail, 
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head, .ant-timeline.ant-timeline-right .ant-timeline-item-head, 
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom, 
+html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
+  left:auto;
+  right: 50%;
+}
+html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom, 
+html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-label .ant-timeline-item-head-custom, 
+html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
+  margin-right: 1px;
+  margin-left: 0;
+}
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-left .ant-timeline-item-content, 
+html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-left .ant-timeline-item-content{
+  left: auto;
+  right: calc(50% - 4px);
+  text-align: right;
+}
+html[dir='rtl'] .ant-timeline-item-content{
+  margin: 0 18px 0 0;
+}
+
+html[dir='rtl'] .ant-upload-list-item-card-actions{
+  right: auto;
+  left: 0;
+}
+html[dir='rtl'] .ant-upload-list-item-card-actions .anticon{
+  padding-left: 6px;
+  padding-right: 0px;
+}
+html[dir='rtl'] .ant-upload-list-item-list-type-text:hover .ant-upload-list-item-name-icon-count-1{
+  padding-right: 22px;
+  padding-left: 0;
+}
+html[dir='rtl'] .ant-upload-list-item-info{
+  padding: 0 4px 0 12px;
+}
+
+html[dir='rtl'] .ant-time-picker-icon, 
+html[dir='rtl'] .ant-time-picker-clear{
+  right: auto;
+  left: 11px;
 }
 
 html[dir='rtl'] .ant-notification-notice-close{
@@ -2873,6 +2913,30 @@ html[dir='rtl'] .ant-notification-notice-closable .ant-notification-notice-messa
 html[dir='rtl'] .ant-notification-notice-with-icon .ant-notification-notice-message{
   margin-left: 0;
   margin-right: 48px;
+}
+
+html[dir='rtl'] .ant-menu-item .anticon, 
+html[dir='rtl'] .ant-menu-submenu-title .anticon{
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir='rtl'] .ant-menu-inline, 
+html[dir='rtl'] .ant-menu-vertical, 
+html[dir='rtl'] .ant-menu-vertical-left{
+  border-right: 0 none;
+  border-left: 1px solid #f0f0f0;
+}
+
+html[dir='rtl'] .ant-calendar-picker-clear, 
+html[dir='rtl'] .ant-calendar-picker-icon{
+  right: auto;
+  left: 12px;
+}
+
+html[dir='rtl'] .ant-comment-avatar{
+  margin-right: 0;
+  margin-left: 12px;
 }
 
 .tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary{

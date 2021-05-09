@@ -2,7 +2,7 @@
   <a-upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" v-model:file-list="fileList">
     <sdButton class="btn-outlined" type="light" size="large" :outlined="true">
       <upload-outlined></upload-outlined>
-      Upload
+      <span>Upload</span>
     </sdButton>
   </a-upload>
 </template>
