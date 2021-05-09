@@ -21,25 +21,10 @@
 
       <div class="post-content">
         <div v-if="img.length" class="gallery">
-          <div :cols="img.length <= 2 ? img.length : 2">
-            <div v-masonry="containerId" transition-duration="0.3s" item-selector=".item">
-              <a-row>
-                <a-col
-                  :md="12"
-                  :sm="12"
-                  :xs="24"
-                  v-masonry-tile
-                  class="item"
-                  v-for="(src, key) in img"
-                  :key="key + 1"
-                  @click="showImage(key)"
-                >
-                  <a href="#">
-                    <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
-                  </a>
-                </a-col>
-              </a-row>
-            </div>
+          <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
+            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
+              <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+            </a>
             <vue-easy-lightbox
               v-if="img.length <= 2"
               escDisabled
@@ -50,25 +35,15 @@
               @hide="handleHide"
             ></vue-easy-lightbox>
           </div>
-          <div v-if="img.length > 2" :cols="img.length <= 2 ? img.length : 3">
-            <div v-masonry="containerId" transition-duration="0.3s" item-selector=".item">
-              <a-row>
-                <a-col
-                  :md="8"
-                  :sm="12"
-                  :xs="24"
-                  v-masonry-tile
-                  class="item"
-                  v-for="(src, key) in img"
-                  :key="key + 1"
-                  @click="showImage(key)"
-                >
-                  <a href="#"
-                    ><img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt=""
-                  /></a>
-                </a-col>
-              </a-row>
-            </div>
+          <div
+            v-if="img.length > 2"
+            :cols="img.length <= 2 ? img.length : 3"
+            class="my-masonry-grid"
+            columnclass="my-masonry-grid_column"
+          >
+            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
+              <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+            </a>
 
             <vue-easy-lightbox
               v-if="img.length > 2"
