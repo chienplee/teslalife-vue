@@ -56,6 +56,9 @@ const ActionWrapper = Styled.div`
                     margin-right: 10px;
                 }
             }
+            i{
+                width: auto;
+            }
         }
         button + button {
             @media only screen and (max-width: 379px){
