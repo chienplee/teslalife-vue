@@ -20,7 +20,7 @@
           <div class="sDash_paginaion">
             <ul>
               <li>
-                <router-link class="active" to="/page/knowledgebase/plugins">
+                <router-link class="active" to="/page/knowledgebase/base/plugins">
                   Doc Home
                 </router-link>
               </li>
