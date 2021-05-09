@@ -880,6 +880,9 @@ const RegionList = Styled.div`
     max-height: 300px;
     overflow: hidden auto;
     border: 1px solid ${({ theme }) => theme['border-color-light']};
+    .ps{
+        height: auto !important;
+    }
     table{
         tr{
             &:first-child{

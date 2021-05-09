@@ -2229,6 +2229,11 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   margin: 4px 0;
 }
 
+/* Performance - Region table */
+.region-list-table .ant-card-body{
+  padding: 25px !important;
+}
+
 /* Responsive CSS */
 
 @media only screen and (max-width: 1599px) {
