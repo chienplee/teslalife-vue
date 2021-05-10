@@ -26,7 +26,6 @@
             >
               <template #item="{element}">
                 <div class="sDash_kanban-board-item">
-                  <sdFeatherIcons type="menu" class="handle" />
                   <div class="sDash_kanban-board-item-scrolable">
                     <div
                       :class="
@@ -36,7 +35,7 @@
                       "
                     >
                       <h4 class="list-header-title">
-                        <span>{{ element.title }}</span>
+                        <span><sdFeatherIcons type="menu" class="handle" /> {{ element.title }}</span>
                         <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
                           <template #overlay>
                             <a @click="e => onBoardEditable(e, element.boardId, element.title)" href="#">

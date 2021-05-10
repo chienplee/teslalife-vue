@@ -17,7 +17,7 @@
       <a-col :xs="24">
         <sdCards headless>
           <a-row :gutter="25" justify="center">
-            <a-col :xxl="12" :md="14" :sm="18" :xs="24">
+            <a-col :xxl="12" :md="16" :sm="24" :xs="24">
               <AddProductForm>
                 <a-form
                   :ref="formRef"

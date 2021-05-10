@@ -18,7 +18,7 @@
         <a-col :md="24">
           <TopToolBox>
             <a-row :gutter="15">
-              <a-col :xxl="5" lg="10" :xs="24">
+              <a-col :xxl="5" :lg="10" :xs="24">
                 <div class="table-search-box">
                   <sdAutoComplete :dataSource="searchData" width="100%" patterns />
                 </div>

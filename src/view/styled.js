@@ -1812,8 +1812,9 @@ const TableWrapper = Styled.div`
                     .customer-name{
                         min-width: 174px;
                     }
-                    .status{
-                        min-width: 175px;
+                    .status.warning{
+                        min-width: 131px;
+                        display: inline-block !important;
                     }
                     .ordered-amount{
                         min-width: 175px;
@@ -1829,7 +1830,7 @@ const TableWrapper = Styled.div`
         }
         .table-actions{
             text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
-            min-width: 100px !important;
+            min-width: 115px !important;
             button{
                 height: 40px;
                 padding: 0 11px;
