@@ -277,7 +277,7 @@ import moment from 'moment';
 import EmojiPicker from '@/components/utilities/Emoji.vue';
 import { SingleChatWrapper, MessageList, BackShadowEmoji, Footer } from '../style';
 import { useStore } from 'vuex';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { message } from 'ant-design-vue';
 import { useRoute } from 'vue-router';
 
@@ -292,8 +292,8 @@ const SingleGroupChat = {
     const left = computed(() => (!rtl.value ? 'left' : 'right'));
 
     const me = ref('woadud@gmail.com');
-    const singleContent = computed(() => chatData.value[0].content);
-    const name = computed(() => chatData.value[0].groupName);
+    const singleContent = computed(() => (chatData.value[0] ? chatData.value[0].content : []));
+    const name = computed(() => chatData.value[0] && chatData.value[0].groupName);
 
     const inputValue = ref('');
     const fileList = ref([]);
@@ -329,6 +329,8 @@ const SingleGroupChat = {
       singleContent.value = [...singleContent.value, pushcontent];
       inputValue.value = '';
     };
+
+    onMounted(() => dispatch('filterSinglepageGroup', params.id));
 
     return {
       rtl,
