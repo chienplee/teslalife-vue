@@ -52,7 +52,7 @@
           Buy Now
         </sdButton>
         <sdButton class="btn-cart" size="default" type="secondary">
-          <sdFeatherIcons type="shopping-bag" size="14" /> Add To Cart
+          <sdFeatherIcons type="shopping-bag" size="14" /> <span>Add To Cart</span>
         </sdButton>
         <sdButton
           @click="() => dispatch('updateWishList', parseInt(id, 10))"

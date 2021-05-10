@@ -423,6 +423,9 @@ const ActivityContents = Styled.div`
                     background-color: ${({ theme }) => theme['warning-color']}15;
                     color: ${({ theme }) => theme['warning-color']};
                 }
+                i{
+                    line-height: 0;
+                }
             }
             .more{
                 visibility: hidden;
