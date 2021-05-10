@@ -31,7 +31,7 @@
             </l-map>
           </sdCards>
         </a-col>
-        <a-col :md="12" :xs="24">
+        <a-col :md="24" :xs="24">
           <sdCards title="Leaflet Custom Icon Map">
             <l-map :center="[50.797897, -1.077641]" :zoom="12" class="map-wrapper">
               <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"> </l-tile-layer>
@@ -39,22 +39,6 @@
             </l-map>
           </sdCards>
         </a-col>
-        <!-- <a-col :md="12" :xs="24">
-          <sdCards title="Leaflet WMS Layer">
-            <l-map :zoom="5" :center="[40.797897, -110.077641]" class="map-wrapper" style="width: 100%">
-              <l-control-layer />
-              <l-wms-tile-layer
-                v-for="layer in layers"
-                :key="layer.name"
-                :base-url="baseUrl"
-                :layers="layer.layers"
-                :visible="layer.visible"
-                :name="layer.name"
-                layer-type="base"
-              />
-            </l-map>
-          </sdCards>
-        </a-col> -->
       </a-row>
     </Main>
   </div>

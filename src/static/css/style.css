@@ -1423,6 +1423,10 @@ ul {
   color: #e3e6ef;
 }
 
+.ant-input{
+  padding: 12px 11px;
+}
+
 /* Space Item */
 
 .ant-space-item .ant-btn span {
@@ -2124,7 +2128,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 }
 
 .page-header-actions button + button {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .page-header-actions button.ant-btn-white svg {
@@ -3009,4 +3013,10 @@ html[dir='rtl'] .ant-comment-avatar{
 
 .tox .tox-statusbar{
   border-top: 1px solid #f1f2f6 !important;
+}
+
+/* custom scroll */
+
+.ps__rail-y .ps__thumb-y{
+  background-color: rgb(241, 242, 246);
 }

@@ -56,6 +56,7 @@ const AllContact = {
         return b.time - a.time;
       }),
     );
+
     const dataFiltering = e => {
       e.preventDefault();
       dispatch('filterSinglePage', match.params.id);

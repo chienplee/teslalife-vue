@@ -12,7 +12,7 @@
             element-id="tags"
             :placeholder="replay ? null : 'To'"
             :existing-tags="selectedTags"
-            v-model="selectedTags"
+            v-model:value="selectedTags"
             ><template v-slot:selected-tag="{ tag, index, removeTag }">
               <span class="tagsinput-tag">
                 <span v-html="tag.value"></span>
@@ -90,36 +90,37 @@ const MailComposer = {
   data() {
     return {
       editor: ClassicEditor,
-      editorData:
-        "<p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>",
       editorConfig: {
         // The configuration of the editor.
       },
     };
   },
   setup(props) {
-    const { defaultTag } = toRefs(props);
-    console.log(defaultTag.value);
+    const { defaultTag, onSend } = toRefs(props);
+
     const tags = ref(['hello']);
     const handleChange = tag => {
       tags.value = [...tags.value, tag];
     };
+    const editorData = ref(
+      "<p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>",
+    );
 
     const onSubmit = () => {
-      // onSend && onSend(state.value.toString('html'));
+      onSend.value && onSend.value(editorData.value);
     };
+
+    const selectedTags = ref(defaultTag.value ? [{ key: defaultTag.value, value: defaultTag.value }] : []);
 
     return {
       handleChange,
       tags,
       antProps,
       onSubmit,
-      selectedTags: [
-        { key: 'web-development', value: 'Web Development' },
-        { key: 'php', value: 'PHP' },
-        { key: 'javascript', value: 'JavaScript' },
-      ],
+      selectedTags,
       ClassicEditor,
+      disabled: false,
+      editorData,
     };
   },
 };
