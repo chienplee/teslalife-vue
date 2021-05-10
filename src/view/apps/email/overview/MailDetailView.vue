@@ -255,7 +255,9 @@
               </ul>
             </nav>
             <div class="reply-form d-flex">
-              <router-view name="child" defaultTag="Alice Freeman" replay :onSend="replyMail"></router-view>
+              <div class="reply-box">
+                <router-view name="child" defaultTag="Alice Freeman" replay :onSend="replyMail"></router-view>
+              </div>
             </div>
           </MessageReply>
         </a-col>

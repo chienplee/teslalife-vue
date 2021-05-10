@@ -1423,6 +1423,10 @@ ul {
   color: #e3e6ef;
 }
 
+.ant-input{
+  padding: 12px 11px;
+}
+
 /* Space Item */
 
 .ant-space-item .ant-btn span {

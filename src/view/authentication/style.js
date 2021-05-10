@@ -69,6 +69,11 @@ const AuthWrapper = Styled.div`
         }
       }
     }
+    .ant-form{
+      .ant-form-item{
+        margin-bottom: 14px;
+      }
+    }
     #forgotPass{
       .forgot-text{
         margin-bottom: 25px;

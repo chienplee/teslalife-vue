@@ -1051,6 +1051,16 @@ const MessageReply = Styled.div`
       .react-tagsinput{
         border-bottom: 0 none !important;
       }
+      .tags-input-remove{
+        i{
+          font-size: 12px;
+          margin-left: 4px;
+          svg{
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
     }
     .reply-title{
       ${({ theme }) => (!theme.rtl ? 'margin-right' : 'margin-left')}: 10px;
