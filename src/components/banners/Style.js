@@ -38,7 +38,7 @@ const Figure2 = Styled.figure`
 `;
 
 const Figure3 = Styled.figure`
-    position: relative;    
+    position: relative;
     min-height: 180px;
     margin-bottom: 0;
     padding: 18px 0 0;
@@ -62,7 +62,7 @@ const Figure3 = Styled.figure`
         img{
             bottom: -55px;
         }
-        figcaption{  
+        figcaption{
             h2{
                 margin-bottom: 10px;
             }
@@ -103,7 +103,7 @@ const Figure3 = Styled.figure`
 `;
 
 const Figure6 = Styled.figure`
-    position: relative;  
+    position: relative;
     margin-bottom: 0;
     direction: ${({ theme }) => (theme.rtl ? 'rtl' : 'ltr')};
     figcaption{
@@ -114,11 +114,11 @@ const Figure6 = Styled.figure`
             margin: 15px 0 18px;
         }
     }
-    
+
 `;
 
 const Figure7 = Styled.figure`
-    display: flex;  
+    display: flex;
     margin-bottom: 0;
     align-items: center;
     @media only screen and (max-width: 575px){
@@ -239,7 +239,7 @@ const BannerCarouselWrap = Styled.div`
             text-align: center;
             h3{
                 font-size: 24px;
-                font-weight: 600; 
+                font-weight: 600;
                 color: #fff;
                 margin-bottom: 8px;
             }
@@ -277,7 +277,7 @@ const BannerLongWrap = Styled.div`
 
 const BannerCardWrap = Styled.div`
     position: relative
-    margin-bottom: 
+    margin-bottom:
     @media only screen and (max-width: 1199px){
         margin-bottom: 50px !important;
     }
@@ -340,6 +340,9 @@ const BannerCtaWrap = Styled.div`
         background-repeat: no-repeat;
         background-position: left;
         border-radius: 10px;
+        @media only screen and (max-width: 1599px){
+            margin-top: 30px;
+        }
         @media only screen and (max-width: 575px){
             background-position: center;
         }
@@ -372,7 +375,7 @@ const BannerCtaWrap = Styled.div`
                     font-size: 15px;
                     opacity: .70;
                 }
-            } 
+            }
         }
     }
 `;
