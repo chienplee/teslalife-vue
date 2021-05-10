@@ -54,7 +54,7 @@
   <div v-if="type == 'submit'">
     <sdButton type="primary" :raised="true" @click="showDrawer">
       <PlusOutlined />
-      New account
+      <span>New account</span>
     </sdButton>
     <a-drawer :title="title" :width="720" :visible="visible" :body-style="{ paddingBottom: '80px' }" @close="onClose">
       <slot></slot>
