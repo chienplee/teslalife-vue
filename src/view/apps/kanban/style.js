@@ -14,7 +14,8 @@ const KanvanBoardWrap = Styled.div`
     .sDash_kanban-board-item{
       flex: 0 0 20%;
       padding: 10px;
-      height: 400px;
+      max-height: 400px;
+      margin-bottom: 30px;
       @media only screen and (max-width: 1599px){
         flex: 0 0 25%;
       }
@@ -28,7 +29,6 @@ const KanvanBoardWrap = Styled.div`
         flex: 0 0 100%;
       }
       .sDash_kanban-board-item-scrolable{
-        padding-bottom: 80px;
         border-radius: 5px;
         background-color: ${({ theme }) => theme['bg-color-normal']};
       }
@@ -141,6 +141,13 @@ const KanvanBoardWrap = Styled.div`
             height: 20px;
           }
         }
+        & > span{
+          display: inline-flex;
+          align-items: center;
+          i{
+            padding-right: 8px;
+          }
+        }
       }
     }
     .sDash_kanvan-task{
@@ -233,7 +240,7 @@ const KanvanBoardWrap = Styled.div`
         }
       }
     }
-    
+
     .btn-addTask{
       display: inline-block;
       width: calc(100% - 40px);

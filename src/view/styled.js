@@ -986,6 +986,14 @@ const Main = Styled.div`
             margin: 0 5px;
         }
     }
+
+    .page-header-actions {
+        button{
+            & +button{
+                margin-left: 4px;
+            }
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1223,6 +1231,11 @@ const PageHeaderWrapper = Styled.div`
             button{
                 border-radius: 3px;
                 padding: 0 18.3px;
+            }
+            .ant-space-item{
+                &:last-child{
+                    margin-right: ${({ theme }) => (theme.rtl ? '8px' : '0px')};
+                }
             }
         }
     }
@@ -1819,8 +1832,9 @@ const TableWrapper = Styled.div`
                     .customer-name{
                         min-width: 174px;
                     }
-                    .status{
-                        min-width: 175px;
+                    .status.warning{
+                        min-width: 131px;
+                        display: inline-block !important;
                     }
                     .ordered-amount{
                         min-width: 175px;
@@ -1836,7 +1850,7 @@ const TableWrapper = Styled.div`
         }
         .table-actions{
             text-align: ${({ theme }) => (theme.rtl ? 'left' : 'right')};
-            min-width: 100px !important;
+            min-width: 115px !important;
             button{
                 height: 40px;
                 padding: 0 11px;

@@ -70,6 +70,7 @@ const CardFrame = Styled(Card, props)`
   }
   .ant-card-head .ant-card-head-title {
     padding: 16.5px 0;
+    line-height: 1.4;
   }
   .ant-card-head-title .ant-page-header-heading-title{
     font-weight: 500;

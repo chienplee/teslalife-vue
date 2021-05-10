@@ -821,7 +821,7 @@ ul {
 }
 
 .project-modal .projects-members {
-  margin-top: -12px;
+  margin-top: 12px;
 }
 
 .project-modal .ant-form-item-control-input {
@@ -1650,7 +1650,8 @@ table tbody >tr >td
   overflow-x: auto;
 }
 
-.table-responsive .ant-table-content .ant-table-cell {
+.table-responsive .ant-table-content .ant-table-cell,
+.table-responsive .ant-table-body td {
   white-space: nowrap;
 }
 
@@ -2234,6 +2235,19 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   padding: 25px !important;
 }
 
+/* mail editor */
+.ck-editor .ck.ck-toolbar{
+  border: 1px solid rgb(241, 242, 246);
+}
+.ck-editor .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused){
+  border-color: rgb(241, 242, 246);
+}
+.ck-editor .ck.ck-editor__main>.ck-editor__editable{
+  min-height: 275px;
+  max-height: 275px;
+}
+
+
 /* Responsive CSS */
 
 @media only screen and (max-width: 1599px) {
@@ -2414,7 +2428,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
     margin: 0 !important;
   }
   .ant-card-head-wrapper .ant-card-head-title {
-    padding: 20px 0 0px !important;
+    padding: 20px 0 18px !important;
   }
   .card-nav ul li.active:before {
     display: none;
@@ -2780,7 +2794,7 @@ html[dir='rtl'] .ant-card-extra .ant-dropdown-trigger {
 html[dir='rtl'] .ant-card-head-title span {
   margin-right: 15px;
 }
-html[dir='rtl'] span[aria-label="arrow-right"] svg, 
+html[dir='rtl'] span[aria-label="arrow-right"] svg,
 html[dir='rtl'] span[aria-label="arrow-left"] svg {
   transform: rotateY(180deg);
 }
@@ -2904,20 +2918,20 @@ html[dir='rtl'] .ant-timeline-item-head-custom{
   right: 5px;
   transform: translate(50%, -50%);
 }
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail, .ant-timeline.ant-timeline-right .ant-timeline-item-tail, 
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head, .ant-timeline.ant-timeline-right .ant-timeline-item-head, 
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom, 
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail, .ant-timeline.ant-timeline-right .ant-timeline-item-tail,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head, .ant-timeline.ant-timeline-right .ant-timeline-item-head,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom,
 html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
   left:auto;
   right: 50%;
 }
-html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom, 
-html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-label .ant-timeline-item-head-custom, 
+html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom,
+html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-label .ant-timeline-item-head-custom,
 html[dir='rtl'] .ant-timeline-rtl.ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
   margin-right: 1px;
   margin-left: 0;
 }
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-left .ant-timeline-item-content, 
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-left .ant-timeline-item-content,
 html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-left .ant-timeline-item-content{
   left: auto;
   right: calc(50% - 4px);
@@ -2943,7 +2957,7 @@ html[dir='rtl'] .ant-upload-list-item-info{
   padding: 0 4px 0 12px;
 }
 
-html[dir='rtl'] .ant-time-picker-icon, 
+html[dir='rtl'] .ant-time-picker-icon,
 html[dir='rtl'] .ant-time-picker-clear{
   right: auto;
   left: 11px;
@@ -2964,20 +2978,20 @@ html[dir='rtl'] .ant-notification-notice-with-icon .ant-notification-notice-mess
   margin-right: 48px;
 }
 
-html[dir='rtl'] .ant-menu-item .anticon, 
+html[dir='rtl'] .ant-menu-item .anticon,
 html[dir='rtl'] .ant-menu-submenu-title .anticon{
   margin-right: 0;
   margin-left: 10px;
 }
 
-html[dir='rtl'] .ant-menu-inline, 
-html[dir='rtl'] .ant-menu-vertical, 
+html[dir='rtl'] .ant-menu-inline,
+html[dir='rtl'] .ant-menu-vertical,
 html[dir='rtl'] .ant-menu-vertical-left{
   border-right: 0 none;
   border-left: 1px solid #f0f0f0;
 }
 
-html[dir='rtl'] .ant-calendar-picker-clear, 
+html[dir='rtl'] .ant-calendar-picker-clear,
 html[dir='rtl'] .ant-calendar-picker-icon{
   right: auto;
   left: 12px;

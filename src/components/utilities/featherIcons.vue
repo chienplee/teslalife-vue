@@ -1,5 +1,5 @@
 <template>
-  <i :class="classes" v-html="activity"></i>
+  <i :class="classes" v-html="activity" style="line-height: 0"></i>
 </template>
 
 <script>

@@ -523,6 +523,9 @@ const ProjectDetailsWrapper = Styled.div`
             img{
                 ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
             }
+            i{
+                line-height: 0;
+            }
         }
         .project-edit{
             color: ${({ theme }) => theme['primary-color']};

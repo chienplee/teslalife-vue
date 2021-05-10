@@ -21,10 +21,10 @@
 
               <div class="card__actions">
                 <sdButton size="default" outlined type="white">
-                  View Profile
+                  <span>View Profile</span>
                 </sdButton>
                 <sdButton size="default" outlined type="white">
-                  Message
+                  <span>Message</span>
                 </sdButton>
               </div>
             </figcaption>

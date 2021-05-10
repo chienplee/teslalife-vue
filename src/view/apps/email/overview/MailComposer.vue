@@ -25,7 +25,7 @@
         </div>
         <span class="mail-cc">Cc</span>
       </div>
-      <div class="group">
+      <div class="group mail-editor">
         <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
       </div>
     </div>

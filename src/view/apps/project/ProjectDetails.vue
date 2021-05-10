@@ -4,9 +4,11 @@
       <template #title
         ><div key="1" class="project-header">
           <sdHeading as="h2">{{ project[0].title }}</sdHeading>
-          <sdButton type="primary" size="small"> <sdFeatherIcons type="plus" size="14" /> Add Task </sdButton>
+          <sdButton type="primary" size="small">
+            <sdFeatherIcons type="plus" size="14" /> <span>Add Task</span>
+          </sdButton>
           <sdButton class="btn-markComplete" :outlined="true" type="light" size="small">
-            <sdFeatherIcons type="check" size="14" /> Mark as Complete
+            <sdFeatherIcons type="check" size="14" /> <span>Mark as Complete</span>
           </sdButton>
         </div></template
       >
@@ -28,7 +30,7 @@
         <a-spin />
       </div>
       <a-row v-else :gutter="25">
-        <a-col :xxl="6" :xl="8" :xs="24">
+        <a-col :xxl="6" :xl="8" :md="24" :xs="24">
           <div class="project-progress">
             <h3>Progress</h3>
             <a-progress :percent="65" :stroke-width="5" status="active" />
@@ -80,7 +82,7 @@
             </div>
           </sdCards>
         </a-col>
-        <a-col :xxl="12" :xl="16" :xs="24">
+        <a-col :xxl="12" :xl="16" :md="24" :xs="24">
           <div class="about-project-wrapper">
             <sdCards title="About Project">
               <div class="about-content">
@@ -112,7 +114,7 @@
             <sdCards title="Users">
               <template #button>
                 <sdButton class="btn-addUser" outlined type="light" size="small">
-                  <sdFeatherIcons type="user-plus" size="14" /> Add Users
+                  <sdFeatherIcons type="user-plus" size="14" /> <span>Add Users</span>
                 </sdButton>
               </template>
               <div class="project-users">
