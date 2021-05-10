@@ -986,6 +986,14 @@ const Main = Styled.div`
             margin: 0 5px;
         }
     }
+
+    .page-header-actions {
+        button{
+            & +button{
+                margin-left: 4px;
+            }
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1223,6 +1231,11 @@ const PageHeaderWrapper = Styled.div`
             button{
                 border-radius: 3px;
                 padding: 0 18.3px;
+            }
+            .ant-space-item{
+                &:last-child{
+                    margin-right: ${({ theme }) => (theme.rtl ? '8px' : '0px')};
+                }
             }
         }
     }
