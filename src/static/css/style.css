@@ -2123,7 +2123,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 }
 
 .page-header-actions button + button {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .page-header-actions button.ant-btn-white svg {

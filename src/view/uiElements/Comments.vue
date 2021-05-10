@@ -173,7 +173,7 @@
           </sdCards>
         </a-col>
 
-        <a-col :xs="12">
+        <a-col :lg="12" :xs="24">
           <sdCards title="Reply Editor">
             <a-list
               v-if="comments.length"

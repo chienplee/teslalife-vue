@@ -437,6 +437,10 @@ const Main = Styled.div`
 
     .ant-list-items{
         padding-top: 22px;
+        .ant-list-item{
+            padding: 0;
+            border-bottom: 0 none;
+        }
     }
     .ant-list-items li:not(:last-child){
         margin-bottom: 22px;
@@ -986,14 +990,6 @@ const Main = Styled.div`
             margin: 0 5px;
         }
     }
-
-    .page-header-actions {
-        button{
-            & +button{
-                margin-left: 4px;
-            }
-        }
-    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
@@ -1165,6 +1161,43 @@ const CalendarWrapper = Styled.div`
             .ant-badge-status-text{
                 ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 8px;
                 ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 0;
+            }
+        }
+        table tbody >tr >th, 
+        table tbody >tr >td{
+            padding: 0;
+        }
+
+        .ant-fullcalendar-calendar-body{
+            padding: 8px 0;
+        }
+
+        .ant-fullcalendar-header{
+            .ant-fullcalendar-year-select{
+                @media only screen and (max-width: 479px){
+                    width: 50% !important;
+                }
+            }
+            .ant-fullcalendar-month-select{
+                @media only screen and (max-width: 479px){
+                    width: calc(50% - 8px) !important;
+                }
+            }
+            .ant-select-selector{
+                @media only screen and (max-width: 479px){
+                    text-align: left;
+                }
+            }
+            .ant-radio-group{
+                @media only screen and (max-width: 479px){
+                    width: 100%;
+                    margin-left: 0;
+                    margin-top: 8px;
+                }
+                .ant-radio-button-wrapper{
+                    width: 50%;
+                    text-align: center;
+                }
             }
         }
     }
