@@ -4,6 +4,7 @@ const FigureWizards = Styled.figure`
 
     display: inline-flex;
     img {
+        max-width: 80px;
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
     }
 `;
@@ -1081,7 +1082,7 @@ const WizardWrapper = Styled.div`
             width: 100%
         }
         .ant-input-password.ant-input-affix-wrapper{
-            ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 0;
+            ${({ theme }) => (!theme.rtl ? 'padding-left' : 'padding-right')}: 12px;
         }
         .ant-form-item-label{
             label{
@@ -1320,7 +1321,7 @@ const WizardWrapper = Styled.div`
             }
             .ant-card{
                 .ant-card-body{
-                    padding: 30px !important;
+                    padding: 26px !important;
                     border-radius: 15px;
                     box-shadow: 0 10px 30px ${({ theme }) => theme['gray-solid']}10;
                 }
@@ -2003,7 +2004,14 @@ const WizardSix = Styled.div`
             min-width: 100%;
         }
     }
-
+    .shipping-selection__card{
+        .ex-date-year-wrap{
+            width: 100%;
+            .ex-date{
+                width: 100%;
+            }
+        }
+    }
 `;
 const WizardBlock = Styled.div`
 

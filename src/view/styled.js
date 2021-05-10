@@ -772,7 +772,7 @@ const Main = Styled.div`
         .payment-method-form.theme-light{
             .shipping-selection__card{
                 .ant-card-body{
-                    padding: 25px 0 !important;
+                    padding: 25px !important;
                 }
             }
         }
@@ -976,6 +976,21 @@ const Main = Styled.div`
                     ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px !important;
                     ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
                 }
+            }
+        }
+    }
+
+    .sDash-switch-list{
+        margin: 0 -5px;
+        button{
+            margin: 0 5px;
+        }
+    }
+
+    .page-header-actions {
+        button{
+            & +button{
+                margin-left: 4px;
             }
         }
     }
@@ -1216,6 +1231,11 @@ const PageHeaderWrapper = Styled.div`
             button{
                 border-radius: 3px;
                 padding: 0 18.3px;
+            }
+            .ant-space-item{
+                &:last-child{
+                    margin-right: ${({ theme }) => (theme.rtl ? '8px' : '0px')};
+                }
             }
         }
     }
