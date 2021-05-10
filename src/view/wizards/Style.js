@@ -2004,7 +2004,14 @@ const WizardSix = Styled.div`
             min-width: 100%;
         }
     }
-
+    .shipping-selection__card{
+        .ex-date-year-wrap{
+            width: 100%;
+            .ex-date{
+                width: 100%;
+            }
+        }
+    }
 `;
 const WizardBlock = Styled.div`
 
