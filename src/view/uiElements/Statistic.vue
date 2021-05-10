@@ -68,7 +68,7 @@
           <sdCards title="Unit" caption="The simplest use of Statistic">
             <a-row :gutter="16">
               <a-col :span="12">
-                <a-statistic title="Feedback" :value="1128" style="margin-right: 50px">
+                <a-statistic title="Feedback" :value="1128">
                   <template #suffix>
                     <LikeOutlined />
                   </template>

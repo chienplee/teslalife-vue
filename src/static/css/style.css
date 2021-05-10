@@ -540,6 +540,7 @@ ul {
 .ant-pagination .ant-pagination-options .ant-pagination-options-quick-jumper {
   height: 30px;
   line-height: 30px;
+  margin-left: 8px;
 }
 
 .ant-pagination .ant-pagination-options .ant-pagination-options-quick-jumper input {
@@ -1655,6 +1656,7 @@ table tbody >tr >td
 }
 
 .table-responsive .ant-table-content .ant-table-cell,
+.table-responsive .ant-table-content tbody td,
 .table-responsive .ant-table-body td {
   white-space: nowrap;
 }

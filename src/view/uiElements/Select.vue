@@ -15,7 +15,7 @@
     </sdPageHeader>
     <Main>
       <a-row :gutter="25">
-        <a-col :md="12" xs="24">
+        <a-col :md="12" :xs="24">
           <sdCards title="Basic">
             <SelectWrapperStyle>
               <a-select v-model:value="value1" style="width: 120px" @focus="focus" ref="select" @change="handleChange">
@@ -119,7 +119,7 @@
             </a-select>
           </sdCards>
         </a-col>
-        <a-col :md="12" xs="24">
+        <a-col :md="12" :xs="24">
           <sdCards title="Select Coordinate">
             <SelectWrapperStyle>
               <a-select v-model:value="province" style="width: 120px">
