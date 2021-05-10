@@ -523,6 +523,9 @@ const TopToolBox = Styled.div`
                 color: ${({ theme }) => theme['primary-color']};
             }
         }
+        @media only screen and (max-width: 991px){
+            display: none;
+        }
     }
 
     .table-search-box{

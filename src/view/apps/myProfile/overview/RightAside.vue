@@ -31,7 +31,7 @@
     </sdCards>
     <sdCards title="Photos">
       <template #button>
-        <router-link class="btn-seeAll" to="/admin/pages/gallery">
+        <router-link class="btn-seeAll" to="/page/gallery">
           See All
         </router-link>
       </template>
@@ -65,11 +65,9 @@
   </RightAsideWrapper>
 </template>
 <script>
-// import ModalVideo from 'react-modal-video';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 import { RightAsideWrapper } from './style';
-// import './video-modal.css';
 
 const RightAside = {
   name: 'RightAside',

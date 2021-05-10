@@ -15,7 +15,7 @@ const HorizontalFormStyleWrap = Styled.div`
                 }
             }
         }
-        
+
         .ant-form-item{
             margin-bottom: 25px !important;
         }
@@ -67,7 +67,7 @@ const VerticalFormStyleWrap = Styled.div`
     .ant-card{
         margin-bottom: 25px
     }
-    
+
     .ant-input-affix-wrapper .ant-input-prefix svg{
         color: ${({ theme }) => theme['gray-color']};
     }
@@ -133,7 +133,6 @@ const FormComponentsWrap = Styled.div`
         }
     }
     .sDash_editor{
-        border: 1px solid #E3E6EF;
         border-radius: 4px;
         .EditorToolbar__root___3_Aqz{
             padding: 12px 20px 0;

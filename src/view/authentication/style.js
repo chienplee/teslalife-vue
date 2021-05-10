@@ -54,6 +54,9 @@ const AuthWrapper = Styled.div`
           color: ${({ theme }) => theme['extra-light-color']};
         }
       }
+      .ant-input{
+        padding: 12px 11px;
+      }
       .auth-form-action{
         margin-bottom: 20px;
         display: flex;

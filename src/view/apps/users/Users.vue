@@ -12,16 +12,16 @@
               <sdFeatherIcons type="plus" size="14" /> Add New User
             </router-link>
           </sdButton>
-          <router-link class="action-btn" key="2" :to="`${path}/users/user-grid`">
+          <router-link class="action-btn" key="2" :to="`${path}/user-grid`">
             <sdFeatherIcons type="grid" size="14" />
           </router-link>
-          <router-link class="action-btn" key="3" :to="`${path}/users/user-list`">
+          <router-link class="action-btn" key="3" :to="`${path}/user-list`">
             <sdFeatherIcons type="list" size="14" />
           </router-link>
-          <router-link class="action-btn" key="4" :to="`${path}/users/grid-style`">
+          <router-link class="action-btn" key="4" :to="`${path}/grid-style`">
             <sdFeatherIcons type="maximize" size="14" />
           </router-link>
-          <router-link class="action-btn" key="5" :to="`${path}/users/grid-group`">
+          <router-link class="action-btn" key="5" :to="`${path}/grid-group`">
             <sdFeatherIcons type="users" size="14" />
           </router-link>
         </template>

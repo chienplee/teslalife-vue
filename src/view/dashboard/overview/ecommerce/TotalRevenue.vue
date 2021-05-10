@@ -138,7 +138,7 @@ const TotalRevenue = {
         fill: false,
         backgroundColor: '#00173750',
         label: 'Previous period',
-
+        borderDash: [4, 4],
         pointStyle: 'circle',
         pointRadius: '0',
         hoverRadius: '9',

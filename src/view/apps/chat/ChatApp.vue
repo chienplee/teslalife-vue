@@ -15,7 +15,7 @@
 
   <Main>
     <a-row :gutter="30">
-      <a-col :xxl="7" :lg="10" xs="24">
+      <a-col :xxl="7" :lg="10" :xs="24">
         <ChatSidebar>
           <sdCards headless>
             <div class="chatbox-search">

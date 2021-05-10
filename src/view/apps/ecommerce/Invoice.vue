@@ -110,15 +110,15 @@
               <InvoiceAction>
                 <sdButton size="small" shape="round" type="default">
                   <sdFeatherIcons type="printer" size="14" />
-                  Print
+                  <span>Print</span>
                 </sdButton>
                 <sdButton size="small" shape="round" type="default">
                   <sdFeatherIcons type="send" size="14" />
-                  Send Invoice
+                  <span>Send Invoice</span>
                 </sdButton>
                 <sdButton size="small" shape="round" type="primary">
                   <sdFeatherIcons type="download" size="14" />
-                  Download
+                  <span>Download</span>
                 </sdButton>
               </InvoiceAction>
             </a-col>

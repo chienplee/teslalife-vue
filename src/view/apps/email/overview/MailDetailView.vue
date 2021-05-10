@@ -255,7 +255,7 @@
               </ul>
             </nav>
             <div class="reply-form d-flex">
-              <router-view defaultTag="Alice Freeman"></router-view>
+              <router-view name="child" defaultTag="Alice Freeman" replay :onSend="replyMail"></router-view>
             </div>
           </MessageReply>
         </a-col>
@@ -290,13 +290,15 @@ const Single = {
       dispatch('filterSinglePage', parseInt(params.id));
     });
 
-    const replyMail = async replyMessage => {
-      replyMessage.value = replyMessage;
+    const replyMail = message => {
+      replyMessage.value = message;
+      console.log(message);
     };
 
     const onStaredChange = id => {
       dispatch('onStarUpdate', id);
     };
+
     return {
       onStaredChange,
       replyMail,

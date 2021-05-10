@@ -111,6 +111,7 @@ const Orders = {
 
     const item = computed(() => state.orders.data);
     const selectedRowKeys = ref([]);
+    const stateValue = ref('');
     const filterKey = ref(['Shipped', 'Awaiting Shipment', 'Canceled']);
 
     const handleChangeForFilter = e => {
@@ -173,6 +174,7 @@ const Orders = {
       searchData,
       columns,
       orders,
+      stateValue,
     };
   },
 };
