@@ -62,7 +62,7 @@ const KanvanBoardWrap = Styled.div`
           display: flex;
           align-items: center;
           .add-column{
-            margin-right: 15px;
+            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
           }
           a{
             line-height: 1;
@@ -145,7 +145,7 @@ const KanvanBoardWrap = Styled.div`
           display: inline-flex;
           align-items: center;
           i{
-            padding-right: 8px;
+            ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 8px;
           }
         }
       }
@@ -203,7 +203,7 @@ const KanvanBoardWrap = Styled.div`
         .sDash_kanvan-task__edit{
           display: flex;
           position: absolute;
-          left: -30px;
+          ${({ theme }) => (theme.rtl ? 'right' : 'left')}: -30px;
           top: -10px;
           z-index: 99999;
           width: calc(100% + 60px);
@@ -218,7 +218,7 @@ const KanvanBoardWrap = Styled.div`
           .sDash_kanvan-task__edit--right{
             .btn-delete{
               font-size: 12px;
-              margin-left: 6px;
+              ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 6px;
               white-space: nowrap;
               background-color: ${({ theme }) => theme['dark-color']};
               line-height: 2.6;
@@ -230,7 +230,7 @@ const KanvanBoardWrap = Styled.div`
               i,
               svg{
                 color: #fff;
-                margin-right: 4px;
+                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 4px;
               }
             }
           }
@@ -280,7 +280,7 @@ const KanvanBoardWrap = Styled.div`
         svg,
         i,
         img{
-          margin-right: 3px;
+          ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 3px;
         }
       }
       .btn-addColumn-inner{
@@ -306,6 +306,7 @@ const KanvanBoardWrap = Styled.div`
           align-items: center;
           .add-column{
             margin-right: 15px;
+            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 15px;
           }
           a{
             line-height: 1;
