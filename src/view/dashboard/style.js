@@ -342,6 +342,7 @@ const CardGroup = Styled.div`
             padding: 0 10.5px;
             color: ${({ theme }) => theme['gray-color']};
             border-color: ${({ theme }) => theme['border-color-light']};
+            box-shadow: 0 0;
             &:before{
                 display: none;
             }
@@ -357,6 +358,7 @@ const CardGroup = Styled.div`
             &.ant-radio-button-wrapper-checked{
                 color: #fff !important;
                 background: ${({ theme }) => theme['primary-color']} !important;
+                // border-color: ${({ theme }) => theme['primary-color']};
                 &:hover{
                     color: #fff !important;
                     background: ${({ theme }) => theme['primary-color']} !important;
@@ -1120,7 +1122,7 @@ const LineChartWrapper = Styled.div`
     .overview-container{
         .line-chart-row{
             &:not(:last-child){
-                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 11.5px')};
+                ${({ theme }) => (theme.topMenu ? 'margin-bottom: 25px' : 'margin-bottom: 24px')};
             }
         }
     }

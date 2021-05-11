@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Popover">
+    <sdPageHeader :breadcrumb="false" title="Popover">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Social Media Dashboard">
+    <sdPageHeader :breadcrumb="false" title="Social Media Dashboard">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

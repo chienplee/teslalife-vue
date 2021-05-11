@@ -1,7 +1,7 @@
 /* eslint-disable vue/require-v-for-key */ /* eslint-disable vue/require-v-for-key */
 <template>
   <div>
-    <sdPageHeader title="Comments">
+    <sdPageHeader :breadcrumb="false" title="Comments">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

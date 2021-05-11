@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Form Validation">
+    <sdPageHeader :breadcrumb="false" title="Form Validation">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

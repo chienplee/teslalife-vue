@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Google Map">
+    <sdPageHeader :breadcrumb="false" title="Google Map">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

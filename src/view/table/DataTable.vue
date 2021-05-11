@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Data Tables" />
+    <sdPageHeader :breadcrumb="false" title="Data Tables" />
     <Main>
       <a-row :gutter="15">
         <a-col :xs="24">

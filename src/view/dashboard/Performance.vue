@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader title="Website Performance Dashboard">
+  <sdPageHeader :breadcrumb="false" title="Website Performance Dashboard">
     <template v-slot:buttons>
       <div class="page-header-actions">
         <sdCalendarButton />
