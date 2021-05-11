@@ -1002,6 +1002,12 @@ const Main = Styled.div`
     .ant-tabs-tab-next-icon{
         top: 40%;
     }
+
+    .sDash-drawer-placement{
+        .ant-radio-group{
+            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
+        }
+    }
 `;
 
 const ButtonsGroupWrapper = Styled.div`
