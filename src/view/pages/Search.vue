@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" ghost title="Search Result" />
+    <sdPageHeader ghost title="Search Result" />
     <Main>
       <SearchResultWrapper>
         <a-row :gutter="25">

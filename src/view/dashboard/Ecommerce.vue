@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader :breadcrumb="false" title="Ecommerce Dashboard">
+  <sdPageHeader title="Ecommerce Dashboard">
     <template v-slot:buttons>
       <div class="page-header-actions">
         <sdCalendarButton />

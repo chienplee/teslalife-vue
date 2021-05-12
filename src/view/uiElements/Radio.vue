@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="Radio">
+    <sdPageHeader title="Radio">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="Leaflet Map">
+    <sdPageHeader title="Leaflet Map">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

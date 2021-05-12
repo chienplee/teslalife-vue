@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="PageHeader">
+    <sdPageHeader title="PageHeader">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -18,14 +18,14 @@
         <a-col :md="24" :xs="24">
           <sdCards title="Basic Header">
             <PageHeaderWrapper>
-              <sdPageHeader :breadcrumb="false" bgColor="#fff" title="Title" subTitle="This is a subtitle" />
+              <sdPageHeader bgColor="#fff" title="Title" subTitle="This is a subtitle" />
             </PageHeaderWrapper>
           </sdCards>
         </a-col>
         <a-col :md="24" :xs="24">
           <sdCards title="Custom header">
             <PageHeaderWrapper>
-              <sdPageHeader :breadcrumb="false" title="Title">
+              <sdPageHeader title="Title">
                 <template v-slot:buttons>
                   <div class="page-header-actions">
                     <sdCalendarButton />

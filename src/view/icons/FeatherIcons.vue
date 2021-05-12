@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="FeatherIcons">
+    <sdPageHeader title="FeatherIcons">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

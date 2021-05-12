@@ -58,24 +58,14 @@
                     </div>
 
                     <div class="sDash_kanvan-task">
-                      <draggable
-                        class="list-group"
-                        :list="tasks.filter(item => item.boardId === element.boardId)"
-                        item-key="id"
-                      >
-                        <template #item="{element}">
-                          <div :key="element.id" class="sDash_kanvan-task__single">
-                            <KanbanBoardItem
-                              :taskId="taskId"
-                              :onBackShadow="onBackShadow"
-                              :onTaskTitleUpdate="onTaskTitleUpdate"
-                              :onTaskTitleDelete="onTaskTitleDelete"
-                              :showModal="showModal"
-                              :data="element"
-                            />
-                          </div>
-                        </template>
-                      </draggable>
+                      <TaskItem
+                        :id="element.boardId"
+                        :taskId="taskId"
+                        :onBackShadow="onBackShadow"
+                        :onTaskTitleUpdate="onTaskTitleUpdate"
+                        :onTaskTitleDelete="onTaskTitleDelete"
+                        :showModal="showModal"
+                      />
                     </div>
 
                     <div
@@ -160,10 +150,20 @@ import { toRefs, ref, computed, reactive } from 'vue';
 import { useStore } from 'vuex';
 import draggable from 'vuedraggable';
 import BoardTitleUpdate from './overview/BoardTitleUpdate.vue';
+import TaskItem from './overview/TaskItem';
 
 const Kanban = {
   name: 'Kanban',
-  components: { KanvanBoardWrap, BackShadow, Main, BoardTitleUpdate, KanbanBoardItem, UpdateTask, draggable },
+  components: {
+    KanvanBoardWrap,
+    BackShadow,
+    Main,
+    BoardTitleUpdate,
+    KanbanBoardItem,
+    UpdateTask,
+    draggable,
+    TaskItem,
+  },
   setup() {
     const { state, dispatch } = useStore();
     const rtl = computed(() => state.themeLayout.rtlData);
@@ -237,6 +237,7 @@ const Kanban = {
       states.taskId = '';
       dispatch('ToDeleteTask', afterDeleteTask);
     };
+
     const addTaskHandler = id => {
       const arrayData = [];
       const taskItem = document.querySelector(`input[name="taskInput-${id}"]`).value;
@@ -259,6 +260,7 @@ const Kanban = {
         alert('Please Enter a Task Ttile');
       }
     };
+
     const addColumnHandler = () => {
       const arrayData = [];
       boardData.value.map(data => {
@@ -279,16 +281,19 @@ const Kanban = {
         alert('Please Enter a Column Ttile');
       }
     };
+
     const showModal = dataList => {
       states.modalVisible = !states.modalVisible;
       states.checklistData = dataList;
     };
+
     const onBoardEditable = (e, id, title) => {
       e.preventDefault();
       states.boardEditable = true;
       states.boardTitle = title;
       states.titleBoardId = id;
     };
+
     const onBoardEditableHide = id => {
       boardData.value.map(board => {
         if (board.boardId === id) {
@@ -355,14 +360,6 @@ const Kanban = {
       },
       set(value) {
         this.$store.dispatch('ToAddBoard', value);
-      },
-    },
-    taskData: {
-      get() {
-        return this.$store.state.KanbanBoard.taskData;
-      },
-      set(value) {
-        this.$store.dispatch('ToAddTask', value);
       },
     },
   },

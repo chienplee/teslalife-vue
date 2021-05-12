@@ -3,38 +3,45 @@
 </template>
 
 <script>
-import WorldMap from 'world-map';
+import svgMap from 'svgmap';
+import 'svgmap/dist/svgMap.min.css';
 import { onMounted, toRefs } from 'vue';
 import VueTypes from 'vue-types';
 
 export default {
   name: 'WorldMap',
   props: {
-    id: VueTypes.string.def('world-map'),
+    id: VueTypes.string.def('svgMap'),
     options: VueTypes.object.def({
-      mapstyle: {
-        ocean: '#4A5B62',
-        region: '#DBE1E8',
-        border: '#ffffff',
+      data: {
+        gdp: {
+          name: 'GDP per capita',
+          format: '{0} USD',
+          thousandSeparator: ',',
+          thresholdMax: 50000,
+          thresholdMin: 1000,
+        },
+        change: {
+          name: 'Change to year before',
+          format: '{0} %',
+        },
       },
-      project: {
-        name: 'Mercator',
-        zoomlevel: 6,
-        zoomarea: [-122.417, 37.775],
+      applyData: 'gdp',
+      values: {
+        AF: { gdp: 587, change: 4.73 },
+        AL: { gdp: 4583, change: 11.09 },
+        DZ: { gdp: 4293, change: 10.01 },
+        // ...
       },
-      showtable: false,
-      editpanel: false,
-      dataType: 'csv',
-      dataurl: 'countriesdata.csv',
-      defaultfill: 'steelblue',
-      defaultsize: 30,
-      player: true,
     }),
   },
   setup(props) {
     const { id, options } = toRefs(props);
     onMounted(() => {
-      WorldMap(id.value, options.value);
+      new svgMap({
+        targetElementID: id.value,
+        data: { ...options.value },
+      });
     });
   },
 };
