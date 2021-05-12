@@ -38,7 +38,7 @@
         </a-col>
         <a-col :xxl="14" :md="13" :xs="24">
           <RegionMap>
-            <WorldMap :options="options" />
+            <WorldMap />
           </RegionMap>
         </a-col>
       </a-row>

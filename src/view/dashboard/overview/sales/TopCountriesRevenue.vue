@@ -1,7 +1,7 @@
 <template>
   <LocationMapWrapper>
     <div class="full-width-table">
-      <sdCards more title="Top Countries by Revenue" size="large">
+      <sdCards more title="Top Countries by Revenue">
         <template #more>
           <router-link to="#">
             <span>2 years</span>
@@ -14,7 +14,7 @@
           </router-link>
         </template>
         <div class="location-map d-flex justify-content-center">
-          <WorldMap :options="options" />
+          <WorldMap />
         </div>
         <div class="location-table theme-2">
           <a-table :columns="locationColumns" :dataSource="locationData" :pagination="false" :showHeader="false" />

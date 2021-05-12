@@ -29,7 +29,7 @@
           </div>
         </template>
         <div class="location-map d-flex justify-content-center">
-          <WorldMap :options="options" />
+          <WorldMap />
         </div>
         <div class="location-table">
           <a-table :columns="sellingColumns" :dataSource="sellingData" :pagination="false" />
