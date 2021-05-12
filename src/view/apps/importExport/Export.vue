@@ -63,13 +63,8 @@
                 Export
               </sdButton>
 
-              <a-input
-                v-model:value="searchData"
-                @change="handleSearch"
-                placeholder="Search by Name"
-                style="width: 20%;"
-              >
-                <template #suffix>
+              <a-input v-model:value="searchData" @change="handleSearch" placeholder="Search by Name">
+                <template #prefix>
                   <sdFeatherIcons type="search" size="14" />
                 </template>
               </a-input>

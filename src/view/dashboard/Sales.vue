@@ -17,7 +17,7 @@
       <a-col :lg="8" :xs="24">
         <sdCards headless>
           <OverviewSalesCard>
-            <div class="icon-box box-secondary">
+            <div class="icon-box box-primary">
               <SvgConverter :src="require('@/static/img/icon/New Customer.svg')" />
             </div>
             <div class="card-chunk">
@@ -35,7 +35,7 @@
 
         <sdCards headless>
           <OverviewSalesCard>
-            <div class="icon-box box-primary">
+            <div class="icon-box box-secondary">
               <SvgConverter :src="require('../../static/img/icon/SalesRevenue.svg')" />
             </div>
             <div class="card-chunk">

@@ -1245,7 +1245,7 @@ const IncomeExpenseWrapper = Styled.div`
 
 const LocationMapWrapper = Styled.div`
     .location-map{
-        padding: 10px 0 30px;
+        padding: 10px 0 5px;
         position: relative;
         >div{
             width: 100%;
@@ -1279,6 +1279,9 @@ const LocationMapWrapper = Styled.div`
             button + button{
                 border-top: 0 none;
             }
+        }
+        #world-map{
+            margin-top: 25px;
         }
     }
     .location-table{

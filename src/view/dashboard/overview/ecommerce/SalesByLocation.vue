@@ -101,11 +101,11 @@ const SalesByLocation = {
 
       options: {
         width: 492,
-        height: 188,
+        height: 180,
         zoom: true,
         hideAntarctic: true,
-        landsColor: '#ddd',
-        landsBorder: '#fff',
+        landsColor: '#E3E6EF',
+        landsBorder: '#E3E6EF',
       },
     };
   },

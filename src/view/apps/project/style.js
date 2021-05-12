@@ -198,6 +198,11 @@ const ProjectSorting = Styled.div`
                 &.active{
                     color: ${({ theme }) => theme['primary-color']};
                     background: #fff;
+                    i{
+                        svg{
+                            color: ${({ theme }) => theme['primary-color']};
+                        }
+                    }
                 }
             }
         }
@@ -500,8 +505,8 @@ const ProjectDetailsWrapper = Styled.div`
             height: 35px;
             padding: 0px 13.5px;
             &.btn-markComplete{
-                background: #fff;
-                border-color: ${({ theme }) => theme['border-color-deep']};
+                background: #fff !important;
+                border-color: ${({ theme }) => theme['border-color-deep']} !important;
             }
         }
     }
@@ -656,6 +661,7 @@ const ProjectDetailsWrapper = Styled.div`
             padding: 0px 12.6px;
             font-size: 12px;
             font-weight: 500;
+            color: ${({ theme }) => theme['primary-color']} !important;
             border-color: ${({ theme }) => theme['border-color-light']};
         }
         i +span, svg +span, img +span {
