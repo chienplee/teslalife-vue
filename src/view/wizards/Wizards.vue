@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader :breadcrumb="false" title="Wizards"> </sdPageHeader>
+  <sdPageHeader title="Wizards"> </sdPageHeader>
   <Main>
     <a-row :gutter="25">
       <a-col :sm="24" :xs="24">

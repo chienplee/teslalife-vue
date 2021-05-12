@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="PopConfirm">
+    <sdPageHeader title="PopConfirm">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

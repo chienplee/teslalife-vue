@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="Antd Icons">
+    <sdPageHeader title="Antd Icons">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="Alerts">
+    <sdPageHeader title="Alerts">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

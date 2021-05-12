@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader :breadcrumb="false" title="DatePicker">
+  <sdPageHeader title="DatePicker">
     <template v-slot:buttons>
       <div class="page-header-actions">
         <sdCalendarButton />

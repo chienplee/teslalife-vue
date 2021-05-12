@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader :breadcrumb="false" title="Auto Complete">
+    <sdPageHeader title="Auto Complete">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
