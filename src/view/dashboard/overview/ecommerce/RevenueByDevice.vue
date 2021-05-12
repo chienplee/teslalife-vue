@@ -37,6 +37,10 @@
           <Chartjs
             type="doughnut"
             class="revenue"
+            :height="220"
+            :style="{
+              marginBottom: '0',
+            }"
             :options="{
               cutoutPercentage: 60,
               maintainAspectRatio: false,

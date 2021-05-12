@@ -113,7 +113,7 @@
           <div class="project-users-wrapper">
             <sdCards title="Users">
               <template #button>
-                <sdButton class="btn-addUser" outlined type="light" size="small">
+                <sdButton class="btn-addUser" outlined type="white" size="small">
                   <sdFeatherIcons type="user-plus" size="14" /> <span>Add Users</span>
                 </sdButton>
               </template>

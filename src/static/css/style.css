@@ -1606,16 +1606,19 @@ html[dir='rtl'] .sDash_upload-basic .sDash_upload-browse{
 .full-width-table .top-seller-table.table-recent-orders{
   min-height: 390px;
 }
-.full-width-table .top-seller-table .ant-table-content .ant-table-cell {
+.full-width-table .top-seller-table .ant-table-content th,
+.full-width-table .top-seller-table .ant-table-content td {
   white-space: normal;
   padding: 16px 15px;
 }
 
-.full-width-table .top-seller-table .ant-table-content .ant-table-cell:first-child {
+.full-width-table .top-seller-table .ant-table-content .th:first-child,
+.full-width-table .top-seller-table .ant-table-content .td:first-child {
   padding-left: 25px;
 }
 
-.full-width-table .top-seller-table .ant-table-content .ant-table-cell:last-child {
+.full-width-table .top-seller-table .ant-table-content .th:last-child,
+.full-width-table .top-seller-table .ant-table-content .td:last-child {
   padding-right: 25px;
 }
 

@@ -138,15 +138,12 @@ const TotalRevenue = {
         fill: false,
         backgroundColor: '#00173750',
         label: 'Previous period',
-        borderDash: [4, 4],
+        borderDash: [3, 3],
         pointStyle: 'circle',
         pointRadius: '0',
-        hoverRadius: '9',
-        pointBorderColor: '#fff',
-        pointBackgroundColor: '#5F63F2',
-        hoverBorderWidth: 5,
-        amount: '$7,596',
-        amountClass: 'current-amount',
+        hoverRadius: '0',
+        amount: '$3,258',
+        amountClass: 'prev-amount',
       },
     ]);
 
@@ -161,6 +158,13 @@ const TotalRevenue = {
       },
       legend: {
         display: false,
+        position: 'bottom',
+        align: 'start',
+        labels: {
+          boxWidth: 6,
+          display: false,
+          usePointStyle: true,
+        },
       },
       hover: {
         mode: 'index',
@@ -175,7 +179,7 @@ const TotalRevenue = {
         custom: customTooltips,
         callbacks: {
           title() {
-            return 'Total Revenue';
+            return `Total Revenue`;
           },
           label(t, d) {
             const { yLabel, datasetIndex } = t;
@@ -197,7 +201,8 @@ const TotalRevenue = {
               beginAtZero: true,
               fontSize: 13,
               fontColor: '#182b49',
-              max: 80,
+              suggestedMin: 50,
+              suggestedMax: 80,
               stepSize: 20,
               callback(label) {
                 return `${label}k`;

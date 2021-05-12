@@ -620,12 +620,23 @@ const ProductDetailsWrapper = Styled.div`
     }
     .pdbl__slider{
         margin-top: 15px;
+        .ant-col-md-4{
+            display: block;
+            flex: 0 0 15%;
+            max-width: 15%;
+        }
     }
     .pdbl__image{
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+        width: 80px;
+        height: 80px;
+        // ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
+        figure{
+            height: 100%;
+        }
         img{
             border-radius: 10px;
-            max-width: 90px;
+            width: 100%;
+            height: 100%;
             @media only screen and (max-width: 991px){
                 margin-bottom: 10px;
             }

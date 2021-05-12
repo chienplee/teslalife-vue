@@ -1781,6 +1781,7 @@ const TableWrapper = Styled.div`
                     .record-img{
                         img{
                             max-width: 38px;
+                            min-height: 38px;
                             border-radius: 50%;
                             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px;
                         }
@@ -2059,6 +2060,23 @@ const ExportStyleWrap = Styled.div`
         margin-bottom: 30px;
         @media only screen and (max-width: 575px){
             flex-flow: column;
+        }
+        .ant-input-affix-wrapper{
+            background-color: transparent;
+            border: 1px solid #e3e6ef;
+            padding: 12px 13px;
+            width: 250px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            .ant-input-prefix{
+                i{
+                    svg{
+                        color: #9299B8;
+                    }
+                }
+            }
         }
         .btn-export{
             height: 44px;

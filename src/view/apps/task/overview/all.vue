@@ -79,11 +79,11 @@
             </a-form-item>
 
             <div class="sDash-modal-actions">
-              <sdButton size="small" type="light" key="cancel" outlined @click="handleCancel">
+              <sdButton size="small" type="white" key="cancel" outlined @click="handleCancel">
                 Cancel
               </sdButton>
               <sdButton htmlType="submit" size="small" type="primary" key="submit">
-                Edit
+                Submit
               </sdButton>
             </div>
           </a-form>

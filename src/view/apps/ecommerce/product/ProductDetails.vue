@@ -23,7 +23,7 @@
                   <img :style="{ width: '100%' }" :src="product && require(`../../../../${product[0].img}`)" alt="" />
                 </figure>
                 <div class="pdbl__slider pdbs">
-                  <a-row v-if="filterData.length" :gutter="5">
+                  <a-row v-if="filterData.length" :gutter="0">
                     <a-col v-for="(value, index) in filterData" :md="4" :key="value.id">
                       <div class="pdbl__image" v-if="index <= 3">
                         <figure>
