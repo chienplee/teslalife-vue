@@ -18,7 +18,7 @@
         <sdCards headless>
           <OverviewSalesCard>
             <div class="icon-box box-secondary">
-              <img :src="require('../../static/img/icon/New Customer.svg')" alt="" />
+              <SvgConverter :src="require('@/static/img/icon/New Customer.svg')" />
             </div>
             <div class="card-chunk">
               <CardBarChart2>
@@ -36,7 +36,7 @@
         <sdCards headless>
           <OverviewSalesCard>
             <div class="icon-box box-primary">
-              <img :src="require('../../static/img/icon/SalesRevenue.svg')" alt="" />
+              <SvgConverter :src="require('../../static/img/icon/SalesRevenue.svg')" />
             </div>
             <div class="card-chunk">
               <CardBarChart2>
@@ -53,7 +53,7 @@
         <sdCards headless>
           <OverviewSalesCard>
             <div class="icon-box box-success">
-              <img :src="require('../../static/img/icon/Profit.svg')" alt="" />
+              <SvgConverter :src="require('../../static/img/icon/Profit.svg')" />
             </div>
             <div class="card-chunk">
               <CardBarChart2>
@@ -147,6 +147,7 @@
 import { CardBarChart2, OverviewSalesCard } from './style';
 import { Main } from '../styled';
 import { defineAsyncComponent } from 'vue';
+import SvgConverter from '@/components/utilities/SvgConverter.vue';
 
 const AverageSalesRevenue = defineAsyncComponent(() => import('./overview/sales/AverageSalesRevenue'));
 const SalesGrowth = defineAsyncComponent(() => import('./overview/sales/SalesGrowth'));
@@ -167,6 +168,7 @@ const Sales = {
     SalesGrowth,
     RecentOrder,
     TopCountriesRevenue,
+    SvgConverter,
   },
 };
 

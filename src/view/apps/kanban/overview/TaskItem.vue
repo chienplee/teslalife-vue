@@ -37,10 +37,6 @@ export default {
       get() {
         return this.$store.state.KanbanBoard.taskData;
       },
-      // set(value) {
-      //   console.log(value);
-      //   this.$store.dispatch('ToAddTask', value);
-      // },
     },
   },
   methods: {
