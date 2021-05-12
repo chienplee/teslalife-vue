@@ -59,6 +59,7 @@
         <Chart
           type="bar"
           class="youtubeSubscribe"
+          :height="195"
           :labels="youtubeSubscribeState.labels"
           :datasets="youtubeSubscribeDatasets"
           :options="chartOptions"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Upload">
+    <sdPageHeader :breadcrumb="false" title="Upload">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

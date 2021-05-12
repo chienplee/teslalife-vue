@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Coming Soon">
+    <sdPageHeader :breadcrumb="false" title="Coming Soon">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

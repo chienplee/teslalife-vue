@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Frequently Asked Questions">
+    <sdPageHeader :breadcrumb="false" title="Frequently Asked Questions">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

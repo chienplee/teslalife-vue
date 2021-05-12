@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Form Component">
+    <sdPageHeader :breadcrumb="false" title="Form Component">
       <template #buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Collapse">
+    <sdPageHeader :breadcrumb="false" title="Collapse">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

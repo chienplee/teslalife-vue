@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Checkbox">
+    <sdPageHeader :breadcrumb="false" title="Checkbox">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Tree Select">
+    <sdPageHeader :breadcrumb="false" title="Tree Select">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

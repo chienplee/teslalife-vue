@@ -121,8 +121,12 @@ const Main = Styled.div`
             text-align: center;
         }
         .ant-radio-group{
+            margin: -4px;
             @media only screen and (max-width: 400px){
                 margin-bottom: 15px;
+            }
+            .ant-radio-wrapper{
+                margin: 4px;
             }
         }
     }
@@ -634,6 +638,9 @@ const Main = Styled.div`
                 @media only screen and (max-width: 1450px){
                     padding: 0 11.5px;
                 }
+                @media only screen and (max-width: 450px){
+                    padding: 0 5.5px;
+                }
             }
         }
     }
@@ -975,19 +982,30 @@ const Main = Styled.div`
     }
     .sDash-action-btn-list{
         &.ant-space{
+            margin: -4px !important;
             .ant-space-item{
-                &:not(:last-child){
-                    ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px !important;
-                    ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
-                }
+                margin: 4px !important
             }
         }
     }
 
+    // Switch List
     .sDash-switch-list{
         margin: 0 -5px;
         button{
             margin: 0 5px;
+        }
+    }
+
+    // Ant tabs
+    .ant-tabs-tab-prev-icon, 
+    .ant-tabs-tab-next-icon{
+        top: 40%;
+    }
+
+    .sDash-drawer-placement{
+        .ant-radio-group{
+            ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
         }
     }
 `;
@@ -1205,7 +1223,7 @@ const CalendarWrapper = Styled.div`
 
 const DatePickerWrapper = Styled.div`
     .ant-calendar-picker{
-        width: 100%;
+        width: 100% !important;
         border-color: #E3E6EF;
         border-radius: 5px;
         .ant-calendar-picker-input{
@@ -1257,18 +1275,25 @@ const PageHeaderWrapper = Styled.div`
         border-radius: 5px;
         background-color: transparent !important;
         padding: 18px 20px;
+        .ant-breadcrumb{
+            @media only screen and (max-width: 767px){
+                text-align: center;
+            }
+        }
     }
     .ant-page-header-heading-extra{
         color: #ddd;
         .ant-space {
+            margin: -4px;
+            @media only screen and (max-width: 767px){
+                justify-content: center;
+            }
             button{
                 border-radius: 3px;
                 padding: 0 18.3px;
             }
             .ant-space-item{
-                &:last-child{
-                    margin-right: ${({ theme }) => (theme.rtl ? '8px' : '0px')};
-                }
+                margin: 4px;
             }
         }
     }
@@ -1279,6 +1304,15 @@ const PageHeaderWrapper = Styled.div`
         padding: 22px 25px 25px 25px;
         .ant-page-header-heading-extra{
             margin: 0 0 0 auto !important;
+            @media only screen and (max-width: 767px){
+                float: none;
+                margin: 15px 0 auto !important;
+            }
+
+            @media only screen and (max-width: 575px){
+                text-align: center;
+                margin: 5px 0 auto !important;
+            }
         }
     }
 `;
@@ -1288,11 +1322,9 @@ const MessageStyleWrapper = Styled.div`
         font-size: 14px;
     }
     .ant-space{
+        margin: -4px;
         .ant-space-item{
-            &:not(:last-child){
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px !important;
-                ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 0 !important;
-            }
+            margin: 4px;
         }
     }
 `;

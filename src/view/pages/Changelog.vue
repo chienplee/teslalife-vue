@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Changelog">
+    <sdPageHeader :breadcrumb="false" title="Changelog">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

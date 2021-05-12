@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Slider">
+    <sdPageHeader :breadcrumb="false" title="Slider">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -37,8 +37,8 @@
             <Sliders range :step="10" :defaultValues="[20, 500]" @onChange="onChange" @onAfterChange="onAfterChange" />
           </sdCards>
           <sdCards title="Graduated slider vertical" caption="The simplest use of slider">
-            <div style="height: 300px">
-              <div style="display: inline-block; height: 300px; margin-left: 70px">
+            <div>
+              <div style="display: inline-block; height: 300px">
                 <Sliders vertical :defaultValue="30" />
               </div>
 

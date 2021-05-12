@@ -11,8 +11,8 @@
       <slot></slot>
     </a-drawer>
   </div>
-  <div v-if="type == 'custom'">
-    <a-radio-group style="margin-right: 8px" v-model:value="customPlacement">
+  <div class="sDash-drawer-placement" v-if="type == 'custom'">
+    <a-radio-group v-model:value="customPlacement">
       <a-radio value="top">top</a-radio>
       <a-radio value="right">right</a-radio>
       <a-radio value="bottom">bottom</a-radio>
@@ -54,7 +54,7 @@
   <div v-if="type == 'submit'">
     <sdButton type="primary" :raised="true" @click="showDrawer">
       <PlusOutlined />
-      New account
+      <span>New account</span>
     </sdButton>
     <a-drawer :title="title" :width="720" :visible="visible" :body-style="{ paddingBottom: '80px' }" @close="onClose">
       <slot></slot>
@@ -80,7 +80,8 @@
 <script>
 import { PlusOutlined } from '@ant-design/icons-vue';
 import VueTypes from 'vue-types';
-import { ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { computed, ref, onMounted } from 'vue';
 export default {
   name: 'Drawer',
   components: {
@@ -94,8 +95,10 @@ export default {
     width: VueTypes.number.def(320),
   },
   setup() {
+    const { state } = useStore();
     const visible = ref(false);
     const customPlacement = ref('left');
+    const rtl = computed(() => state.themeLayout.rtlData);
 
     const afterVisibleChange = bool => {
       console.log('visible', bool);
@@ -117,6 +120,7 @@ export default {
       afterVisibleChange,
       showDrawer,
       onClose,
+      rtl,
     };
   },
 };

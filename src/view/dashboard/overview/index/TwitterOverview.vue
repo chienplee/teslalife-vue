@@ -47,6 +47,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: twitterOverviewState.twist.chartValue,
@@ -79,6 +82,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: twitterOverviewState.impressions.chartValue,
@@ -111,6 +117,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: twitterOverviewState.retweets.chartValue,
@@ -143,6 +152,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: twitterOverviewState.rate.chartValue,
@@ -175,6 +187,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: twitterOverviewState.followers.chartValue,

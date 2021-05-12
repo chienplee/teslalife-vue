@@ -203,7 +203,7 @@ ul {
   height: 1px;
   background: #5f63f2;
   left: 0;
-  bottom: -19px;
+  bottom: -17px;
 }
 
 /* chart growth upward */
@@ -540,6 +540,7 @@ ul {
 .ant-pagination .ant-pagination-options .ant-pagination-options-quick-jumper {
   height: 30px;
   line-height: 30px;
+  margin-left: 8px;
 }
 
 .ant-pagination .ant-pagination-options .ant-pagination-options-quick-jumper input {
@@ -1655,6 +1656,7 @@ table tbody >tr >td
 }
 
 .table-responsive .ant-table-content .ant-table-cell,
+.table-responsive .ant-table-content tbody td,
 .table-responsive .ant-table-body td {
   white-space: nowrap;
 }
@@ -2118,9 +2120,14 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   font-size: 12px;
   font-weight: 500;
   height: 34px;
-  padding: 0 12.32px;
+  padding: 0 11.5px;
+  border-radius: 3px;
   box-shadow: 0 3px 5px #9299b805;
   margin: 6px 4px;
+}
+
+.page-header-actions button.ant-btn-primary i{
+  margin-right: 5px;
 }
 
 .page-header-actions button.ant-btn-white:focus {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="Widgets Mixed">
+    <sdPageHeader :breadcrumb="false" title="Widgets Mixed">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />
@@ -16,7 +16,7 @@
     <Main>
       <MixedCardWrap>
         <a-row :gutter="25">
-          <a-col :md="8" :xs="24">
+          <a-col :lg="8" :md="12" :sm="12" :xs="24">
             <sdCards headless>
               <Ordersummary :subtotal="1200" />
             </sdCards>

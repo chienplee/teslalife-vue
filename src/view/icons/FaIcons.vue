@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sdPageHeader title="FontAwesome Icons">
+    <sdPageHeader :breadcrumb="false" title="FontAwesome Icons">
       <template v-slot:buttons>
         <div class="page-header-actions">
           <sdCalendarButton />

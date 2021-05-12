@@ -47,6 +47,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: instagramOverviewState.post.chartValue,
@@ -79,6 +82,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: instagramOverviewState.like.chartValue,
@@ -111,6 +117,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: instagramOverviewState.comments.chartValue,
@@ -143,6 +152,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: instagramOverviewState.rate.chartValue,
@@ -175,6 +187,9 @@
                 <Chart
                   type="line"
                   :height="48"
+                  :style="{
+                    marginBottom: '0',
+                  }"
                   :datasets="[
                     {
                       data: instagramOverviewState.followers.chartValue,

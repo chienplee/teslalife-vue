@@ -116,6 +116,7 @@ const RecordFormWrapper = Styled.div`
         }
         .info{
             ${({ theme }) => (theme.rtl ? 'margin-right' : 'margin-left')}: 20px;
+            background: none;
             h1{
                 font-size: 15px;
                 font-weight: 500;
