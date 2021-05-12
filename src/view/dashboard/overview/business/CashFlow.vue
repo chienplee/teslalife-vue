@@ -67,7 +67,7 @@
           <sdHeading as="h3">${{ cashFlowState.out }}</sdHeading>
         </div>
       </div>
-      <sdChartContainer class="parentContainer">
+      <sdChartContainer v-if="cashFlowDataset" class="parentContainer">
         <Chart
           class="cashFlow"
           type="bar"
