@@ -169,8 +169,8 @@ const Kanban = {
     const rtl = computed(() => state.themeLayout.rtlData);
     const boardData = computed(() => state.KanbanBoard.boardData);
 
-    const tasksData = computed(() => state.KanbanBoard.taskData);
-    const tasks = ref(tasksData.value);
+    const tasks = computed(() => state.KanbanBoard.taskData);
+    // const tasks = ref(tasksData.value);
     const addColumn = ref(false);
 
     const formState = reactive({});
@@ -245,6 +245,7 @@ const Kanban = {
         return arrayData.push(data.id);
       });
       const max = Math.max(...arrayData);
+      console.log(max);
       if (taskItem !== '') {
         dispatch('ToAddTask', [
           ...tasks.value,

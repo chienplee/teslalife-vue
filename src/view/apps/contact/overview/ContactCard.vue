@@ -57,8 +57,10 @@ const ContactCard = {
     const { user } = toRefs(props);
     const { state, dispatch } = useStore();
     const users = computed(() => state.contact.data);
+
     const onHandleDelete = () => {
-      const value = users.value.filter(item => item.id !== user.id);
+      const newUsers = users.value;
+      const value = newUsers.filter(item => item.id !== user.value.id);
       dispatch('contactDeleteData', value);
     };
 
