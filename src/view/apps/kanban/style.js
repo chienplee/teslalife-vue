@@ -255,6 +255,7 @@ const KanvanBoardWrap = Styled.div`
       i,
       img{
         ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 3px;
+        color: ${({ theme }) => theme['gray-color']};
       }
     }
     .btn-addColumn{

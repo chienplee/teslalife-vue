@@ -773,6 +773,16 @@ const SearchResultWrapper = Styled.div`
       border-radius: 100px;
     }
   }
+  .ant-input-suffix{
+    i{
+      font-size: 14px;
+      top: 0 !important;
+    }
+    svg{
+      width: 14px;
+      height: 14px;
+    }
+  }
   .search-filter-menu{
     margin: 22px 0 20px;
     @media only screen and (max-width: 575px){
