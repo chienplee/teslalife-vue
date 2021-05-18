@@ -30,8 +30,7 @@ export default {
       values: {
         AF: { gdp: 587, change: 4.73 },
         AL: { gdp: 4583, change: 11.09 },
-        DZ: { gdp: 4293, change: 10.01 },
-        // ...
+        DZ: { gdp: 4293, change: 10.02 },
       },
     }),
   },

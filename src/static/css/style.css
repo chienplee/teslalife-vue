@@ -2270,6 +2270,32 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   max-height: 275px;
 }
 
+/* vector map */
+.svgMap-map-wrapper{
+  background: #fff !important;
+}
+.svgMap-tooltip {
+  background: #272B41 !important;
+  border-radius: 3px !important;
+  box-shadow: 0 10px 15px #272B4115 !important;
+  border-bottom: 0 none !important;
+  text-align: center;
+  color: #fff;
+}
+.svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-button:before{
+  width: 9px !important;
+  height: 1px !important;
+}
+.svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-in-button:after{
+  width: 1px !important;
+  height: 9px !important;
+}
+.svgMap-tooltip .svgMap-tooltip-content{
+  color: #fff !important;
+}
+.svgMap-tooltip .svgMap-tooltip-content table td span{
+  color: #5F63F2 !important;
+}
 
 /* Responsive CSS */
 
