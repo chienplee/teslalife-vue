@@ -5,7 +5,13 @@
       <SearchResultWrapper>
         <a-row :gutter="25">
           <a-col :xs="24">
-            <sdAutoComplete @onSearch="handleSearch" :dataSource="notData" placeholder="Type and search" width="40%" />
+            <sdAutoComplete
+              @onSearch="handleSearch"
+              :dataSource="notData"
+              placeholder="Type and search"
+              width="40%"
+              patterns
+            />
           </a-col>
           <a-col :xs="24">
             <div class="search-filter-menu">

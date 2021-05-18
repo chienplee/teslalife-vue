@@ -1946,16 +1946,19 @@ table tbody >tr >td
 .sDash_task-details .ant-modal{
   width: 600px !important;
 }
-.sDash_task-details .ant-modal-header .ant-modal-title h4{
+.sDash_task-details .ant-modal-title h4{
   font-size: 20px;
   font-weight: 500;
   color: #272B41;
   margin-bottom: 4px;
 }
-.sDash_task-details .ant-modal-header .ant-modal-title .sub-text{
+.sDash_task-details .ant-modal-title .sub-text{
   font-size: 14px;
   font-weight: 400;
   color: #868EAE;
+}
+.sDash_task-details .sDash_task-details-modal{
+  margin-top: 20px;
 }
 .sDash_task-details .sDash_task-details-modal .sDash_task-details__label{
   font-size: 16px;
@@ -2071,6 +2074,12 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-block .addC
 .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_checklist__progress .ant-progress-inner .ant-progress-bg{
   height: 5px !important;
   background-color: #20C997;
+}
+.sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_checklist__progress .ant-progress >div{
+  position: relative;
+  display: inline-flex;
+  align-items: center !important;
+  width: 100%;
 }
 .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_checklist__progress .ant-progress .ant-progress-text{
   font-size: 12px;

@@ -18,7 +18,7 @@
         <div class="addChecklist-wrap">
           <sdButton @click="handleTaskEdit" class="btn-checklist" type="primary">
             <sdFeatherIcons type="check-square" size="14" />
-            Add Checklist
+            <span>Add Checklist</span>
           </sdButton>
 
           <div v-if="editable" class="addChecklist-form">
