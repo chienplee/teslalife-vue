@@ -1,4 +1,3 @@
-// import { createWebHistory, createRouter } from 'vue-router';
 import FeaturesRoutes from './FeaturesRoutes';
 import PageRoutes from './PageRoutes';
 import Components from './Components';
@@ -69,11 +68,5 @@ const routes = [
   ...Components,
   ...Apps,
 ];
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   linkExactActiveClass: 'active',
-//   routes,
-// });
 
 export default routes;
