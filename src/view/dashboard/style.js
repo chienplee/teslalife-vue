@@ -920,11 +920,6 @@ const RegionMap = Styled.div`
     text-align: center;
     height: 100%;
     ${({ theme }) => (theme.rtl ? 'padding-right' : 'padding-left')}: 20px;
-    .__react_component_tooltip {
-        background: ${({ theme }) => theme['dark-color']};
-        border-radius: 3px;
-        box-shadow: 0 10px 15px ${({ theme }) => theme['light-color']}15;
-    }
     >div{
         width: 100%;
         height: 250px;
@@ -932,9 +927,13 @@ const RegionMap = Styled.div`
         @media only screen and (max-width: 479px){
             height: 200px;
         }
+        .svgMap-map-wrapper{
+            height: 100%;
+        }
     }
     svg{
         width: 450px;
+        background: #fff;
         @media only screen and (max-width: 479px){
             height: 180px;
         }
@@ -945,10 +944,14 @@ const RegionMap = Styled.div`
             width: 280px;
         }
     }
-    .controls{
-        position: absolute;
-        right: 0;
-        bottom: 10px;
+    .svgMap-map-controls-wrapper{
+        right: 5px !important;
+        left: auto !important;
+        bottom: 10px !important;
+        box-shadow: none !important;
+        .svgMap-map-controls-zoom{
+            flex-direction: column;
+        }
         button{
             display: block;
             width: 27px;
@@ -963,6 +966,7 @@ const RegionMap = Styled.div`
             justify-content: center;
             background-color: #fff;
             cursor: pointer;
+            margin: 0 !important;
             &:first-child{
                 border-radius: 6px 6px 0 0;
             }
@@ -1249,12 +1253,20 @@ const LocationMapWrapper = Styled.div`
         position: relative;
         >div{
             width: 100%;
-            height: 160px;
+            height: 185px;
         }
-        .controls{
-            position: absolute;
-            right: 25px;
-            bottom: 20px;
+        .svgMap-map-wrapper{
+            position: static;
+            padding-top: 0;
+        }
+        .svgMap-map-controls-wrapper{
+            right: 25px !important;
+            left: auto !important;
+            bottom: 10px !important;
+            box-shadow: none !important;
+            .svgMap-map-controls-zoom{
+                flex-direction: column;
+            }
             button{
                 display: block;
                 width: 27px;
@@ -1269,6 +1281,7 @@ const LocationMapWrapper = Styled.div`
                 justify-content: center;
                 background-color: #fff;
                 cursor: pointer;
+                margin: 0 !important;
                 &:focus{
                     outline: none;
                 }

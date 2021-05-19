@@ -17,7 +17,7 @@
       <a-row :gutter="25">
         <a-col :md="24" :xs="24">
           <sdCards title="World Map">
-            <WorldMap :options="options" />
+            <WorldMap />
           </sdCards>
         </a-col>
       </a-row>
@@ -55,8 +55,7 @@ export default {
         values: {
           AF: { gdp: 587, change: 4.73 },
           AL: { gdp: 4583, change: 11.09 },
-          DZ: { gdp: 4293, change: 10.01 },
-          // ...
+          DZ: { gdp: 4293, change: 10.02 },
         },
       },
     };
