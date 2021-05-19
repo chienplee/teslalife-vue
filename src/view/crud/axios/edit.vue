@@ -26,7 +26,14 @@
                     @finish="handleSubmit"
                   >
                     <figure class="pro-image align-center-v">
-                      <img :src="url === null ? require('@/static/img/avatar/profileImage.png') : url" alt="" />
+                      <img
+                        :src="
+                          url === null
+                            ? require('@/static/img/avatar/profileImage.png')
+                            : `https://demo.jsnorm.com/laravel/strikingdash/${url}`
+                        "
+                        alt=""
+                      />
                       <figcaption>
                         <a-upload v-bind="props">
                           <a class="upload-btn" to="#">
