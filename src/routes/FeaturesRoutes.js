@@ -42,6 +42,13 @@ export default [
         name: 'chart-js',
         component: () => import(/* webpackChunkName: "ChartJs" */ '@/view/charts/ChartJs.vue'),
       },
+    ],
+  },
+  {
+    path: '/apexchart',
+    name: 'apexchart',
+    component: () => import('@/view/charts/Index.vue'),
+    children: [
       {
         path: 'line-chart',
         name: 'lineChart',
@@ -54,7 +61,7 @@ export default [
       },
       {
         path: 'column-chart',
-        name: 'columChart',
+        name: 'columnChart',
         component: () => import(/* webpackChunkName: "ColumChart" */ '@/view/charts/apexcharts/ColumnCharts.vue'),
       },
       {

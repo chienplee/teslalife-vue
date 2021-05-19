@@ -17,7 +17,7 @@
       <a-row :gutter="25">
         <a-col :md="24" :xs="24">
           <sdCards title="World Map">
-            <WorldMap :options="options" />
+            <WorldMap />
           </sdCards>
         </a-col>
       </a-row>
