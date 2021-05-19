@@ -1,4 +1,4 @@
-var svgMapDataGPD = {
+export default {
   data: {
     gdp: { name: 'GDP per capita', format: '{0} USD', thousandSeparator: ',', thresholdMax: 5e4, thresholdMin: 1e3 },
     change: { name: 'Change to year before', format: '{0} %' },
@@ -723,5 +723,3 @@ var svgMapDataGPD = {
     ZW: { link: 'https://pt.wikipedia.org/wiki/ZW', gdp: 1176, change: 5.78, gdpAdjusted: 2283, changeAdjusted: 1.02 },
   },
 };
-
-export default svgMapDataGPD;
