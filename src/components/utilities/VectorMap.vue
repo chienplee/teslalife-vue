@@ -20,6 +20,11 @@ export default {
     onMounted(() => {
       new svgMap({
         targetElementID: id.value,
+        initialZoom: 1.08,
+        flagType: 'emoji',
+        colorMax: '#DBE1E8',
+        colorMin: '#DBE1E8',
+        colorNoData: '#DBE1E8',
         data: { ...options.value },
       });
     });
