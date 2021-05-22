@@ -27,7 +27,7 @@
                     <a-col v-for="(value, index) in filterData" :md="4" :key="value.id">
                       <div class="pdbl__image" v-if="index <= 3">
                         <figure>
-                          <router-link target="_blank" :to="`/app/ecommerce/productDetails/${value.id}`">
+                          <router-link :to="`/app/ecommerce/productDetails/${value.id}`">
                             <img :style="{ width: '100%' }" :src="require(`../../../../${value.img}`)" alt="" />
                           </router-link>
                         </figure>
@@ -48,7 +48,7 @@
 </template>
 <script>
 import { computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { Main } from '../../../styled';
 import { ProductDetailsWrapper } from '../Style';
@@ -68,8 +68,15 @@ const ProductDetails = {
     );
     const { params, matched } = useRoute();
     const { path } = matched;
-    onMounted(() => dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }));
 
+    onMounted(() => dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }));
+    const router = useRouter();
+    // onBeforeUnmount(() =>
+    //   dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }),
+    // );
+    router.beforeEach(to => {
+      dispatch('filterSinglePage', { paramsId: parseInt(to.params.id, 10), currentState: products.value });
+    });
     return {
       product,
       path,
