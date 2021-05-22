@@ -78,6 +78,7 @@ const RecordFormWrapper = Styled.div`
         }
         img{
             max-width: 120px;
+            min-width: 120px;
             border-radius: 50%;
         }
         .ant-spin{
@@ -106,6 +107,9 @@ const RecordFormWrapper = Styled.div`
                 border-radius: 50%;
                 width: 32px;
                 background: #5F63F2;
+            }
+            svg{
+                color: #fff;
             }
         }
         .upload-btn{
