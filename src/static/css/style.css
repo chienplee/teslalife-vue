@@ -1650,6 +1650,10 @@ table tbody >tr >td
   overflow-wrap: break-word;
 }
 
+.ant-table-content .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td{
+  background: #fafafa;
+}
+
 /* Table Responsive */
 
 .table-responsive .ant-table-content {
@@ -2604,6 +2608,25 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 .sDash-range-calendar .vc-pane .vc-weeks .vc-day.is-today .vc-day-content{
   background-color: #5F63F2;
   color: #fff;
+}
+
+/* SVG map Style */
+.svgMap-tooltip .svgMap-tooltip-content-container{
+  padding: 10px;
+  min-width: 130px;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-content{
+  display: none;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-flag-container.svgMap-tooltip-flag-container-emoji{
+  font-size: 22px !important;
+  line-height: 0 !important;
+  padding: 4px 0 6px !important;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-title{
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 0;
 }
 
 @media only screen and (max-width: 479px) {

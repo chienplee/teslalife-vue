@@ -38,7 +38,7 @@
         </a-col>
         <a-col :xxl="14" :md="13" :xs="24">
           <RegionMap>
-            <WorldMap :options="{ ...svgMapDataGPD, colorMax: 'green' }" />
+            <WorldMap :options="{ ...svgMapDataGPD }" />
           </RegionMap>
         </a-col>
       </a-row>

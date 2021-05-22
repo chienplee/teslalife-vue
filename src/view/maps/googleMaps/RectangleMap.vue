@@ -16,10 +16,8 @@ export default defineComponent({
   },
   props: {
     apiKey: VueTypes.string.def(''),
-  },
-  setup() {
-    const center = { lat: 33.678, lng: -116.243 };
-    const rectangle = {
+    center: VueTypes.object.def({ lat: 33.678, lng: -116.243 }),
+    rectangle: VueTypes.object.def({
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
       strokeWeight: 2,
@@ -31,9 +29,7 @@ export default defineComponent({
         east: -116.234,
         west: -116.251,
       },
-    };
-
-    return { center, rectangle };
+    }),
   },
 });
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import { GoogleMap, Polygon } from 'vue3-google-map';
 import VueTypes from 'vue-types';
 export default defineComponent({
@@ -16,17 +16,18 @@ export default defineComponent({
   },
   props: {
     apiKey: VueTypes.string.def(''),
-  },
-  setup() {
-    const center = { lat: 24.886, lng: -70.268 };
-    const triangleCoords = [
+    center: VueTypes.object.def({ lat: 37.09, lng: -95.712 }),
+    triangleCoords: VueTypes.array.def([
       { lat: 25.774, lng: -80.19 },
       { lat: 18.466, lng: -66.118 },
       { lat: 32.321, lng: -64.757 },
       { lat: 25.774, lng: -80.19 },
-    ];
+    ]),
+  },
+  setup(props) {
+    const { triangleCoords } = toRefs(props);
     const bermudaTriangle = {
-      paths: triangleCoords,
+      paths: triangleCoords.value,
       strokeColor: '#FF0000',
       strokeOpacity: 0.8,
       strokeWeight: 2,
@@ -34,7 +35,7 @@ export default defineComponent({
       fillOpacity: 0.35,
     };
 
-    return { center, bermudaTriangle };
+    return { bermudaTriangle };
   },
 });
 </script>

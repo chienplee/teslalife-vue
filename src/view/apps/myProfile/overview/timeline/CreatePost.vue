@@ -11,7 +11,7 @@
           <a-upload>
             <sdButton shape="circle" type="light">
               <img :src="require('@/static/img/icon/image.png')" alt="" />
-              Photo/Video
+              <span>Photo/Video</span>
             </sdButton>
           </a-upload>
           <sdButton class="btn-more" shape="circle" type="light">
