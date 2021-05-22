@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import { GoogleMap, Polyline } from 'vue3-google-map';
 import VueTypes from 'vue-types';
 export default defineComponent({
@@ -16,24 +16,25 @@ export default defineComponent({
   },
   props: {
     apiKey: VueTypes.string.def(''),
-  },
-  setup() {
-    const center = { lat: 0, lng: -180 };
-    const flightPlanCoordinates = [
+    center: VueTypes.object.def({ lat: 0, lng: -180 }),
+    flightPlanCoordinates: VueTypes.array.def([
       { lat: 37.772, lng: -122.214 },
       { lat: 21.291, lng: -157.821 },
       { lat: -18.142, lng: 178.431 },
       { lat: -27.467, lng: 153.027 },
-    ];
+    ]),
+  },
+  setup(props) {
+    const { flightPlanCoordinates } = toRefs(props);
     const flightPath = {
-      path: flightPlanCoordinates,
+      path: flightPlanCoordinates.value,
       geodesic: true,
       strokeColor: '#FF0000',
       strokeOpacity: 1.0,
       strokeWeight: 2,
     };
 
-    return { center, flightPath };
+    return { flightPath };
   },
 });
 </script>

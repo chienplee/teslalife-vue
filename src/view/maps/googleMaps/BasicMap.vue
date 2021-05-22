@@ -16,14 +16,11 @@ export default defineComponent({
   },
   props: {
     apiKey: VueTypes.string.def(''),
-  },
-  setup() {
-    const center = { lat: 40.689247, lng: -74.044502 };
-    const position = {
+    center: VueTypes.object.def({ lat: 40.689247, lng: -74.044502 }),
+    position: VueTypes.object.def({
       lat: 50.797897,
       lng: -1.077641,
-    };
-    return { center, position };
+    }),
   },
 });
 </script>
