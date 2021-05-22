@@ -26,8 +26,21 @@
                     @finish="handleSubmit"
                   >
                     <figure class="pro-image align-center-v">
-                      <img :src="url === null ? require('@/static/img/avatar/profileImage.png') : url" alt="" />
+                      <img
+                        v-if="!isFileLoading"
+                        :src="
+                          !url
+                            ? require('@/static/img/avatar/profileImage.png')
+                            : `https://demo.jsnorm.com/laravel/strikingdash/${url}`
+                        "
+                        alt=""
+                      />
+                      <img v-else :src="require('@/static/img/avatar/profileImage.png')" alt="" />
+
                       <figcaption>
+                        <div v-if="isFileLoading" class="isUploadSpain">
+                          <a-spin />
+                        </div>
                         <a-upload v-bind="props">
                           <a class="upload-btn" to="#">
                             <sdFeatherIcons type="camera" size="16" />
@@ -35,10 +48,6 @@
                         </a-upload>
                         <div class="info">
                           <sdHeading as="h4">Profile Photo</sdHeading>
-                        </div>
-
-                        <div v-if="isFileLoading" class="isUploadSpain">
-                          <a-spin />
                         </div>
                       </figcaption>
                     </figure>
@@ -117,8 +126,9 @@ const UpdateData = {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
     const isLoading = computed(() => state.crud.loading);
+    const urlCustom = computed(() => state.crud.url);
+    const url = ref(urlCustom.value);
     const crud = computed(() => state.crud.data);
-    const url = computed(() => state.crud.url);
     const isFileLoading = computed(() => state.crud.fileLoading);
     const join = ref('2021/04/14');
 
@@ -166,7 +176,6 @@ const UpdateData = {
 
     watchEffect(() => {
       if (crud.value.name) {
-        console.log(crud.value.image);
         formState.name = crud.value.name;
         formState.email = crud.value.email;
         formState.country = crud.value.country;
@@ -176,6 +185,7 @@ const UpdateData = {
         formState.position = crud.value.position;
         formState.status = crud.value.status;
         formState.old_image = crud.value.image;
+        url.value = urlCustom.value || crud.value.image;
       }
     });
 

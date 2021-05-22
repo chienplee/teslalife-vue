@@ -706,44 +706,44 @@
             Google Chart
           </router-link>
         </a-menu-item>
-        <a-sub-menu key="apexchart">
-          <template v-slot:title><sdFeatherIcons type="bar-chart" /><span>Apex Charts</span></template>
-          <a-menu-item @click="toggleCollapsed" key="columnChart">
-            <router-link to="/chart/column-chart">
-              Column Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="lineChart">
-            <router-link to="/chart/line-chart">
-              Line Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="areaChart">
-            <router-link to="/chart/area-chart">
-              Area Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="barChart">
-            <router-link to="/chart/bar-chart">
-              Bar Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="pieChart">
-            <router-link to="/chart/pie-chart">
-              Pie Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="radialbarChart">
-            <router-link to="/chart/radialbar-chart">
-              Radialbar Charts
-            </router-link>
-          </a-menu-item>
-          <a-menu-item @click="toggleCollapsed" key="radarChart">
-            <router-link to="/chart/radar-charts">
-              Radar Charts
-            </router-link>
-          </a-menu-item>
-        </a-sub-menu>
+      </a-sub-menu>
+      <a-sub-menu key="apexchart">
+        <template v-slot:title><sdFeatherIcons type="bar-chart" /><span>Apex Charts</span></template>
+        <a-menu-item @click="toggleCollapsed" key="columnChart">
+          <router-link to="/apexchart/column-chart">
+            Column Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="lineChart">
+          <router-link to="/apexchart/line-chart">
+            Line Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="areaChart">
+          <router-link to="/apexchart/area-chart">
+            Area Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="barChart">
+          <router-link to="/apexchart/bar-chart">
+            Bar Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="pieChart">
+          <router-link to="/apexchart/pie-chart">
+            Pie Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="radialbarChart">
+          <router-link to="/apexchart/radialbar-chart">
+            Radialbar Charts
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="radarChart">
+          <router-link to="/apexchart/radar-charts">
+            Radar Charts
+          </router-link>
+        </a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="forms">
