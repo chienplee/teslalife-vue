@@ -71,9 +71,6 @@ const ProductDetails = {
 
     onMounted(() => dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }));
     const router = useRouter();
-    // onBeforeUnmount(() =>
-    //   dispatch('filterSinglePage', { paramsId: parseInt(params.id, 10), currentState: products.value }),
-    // );
     router.beforeEach(to => {
       dispatch('filterSinglePage', { paramsId: parseInt(to.params.id, 10), currentState: products.value });
     });
