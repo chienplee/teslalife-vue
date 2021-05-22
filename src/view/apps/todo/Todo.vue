@@ -20,7 +20,7 @@
           <sdCards title="Task Lists">
             <TableWrapper class="table-responsive">
               <div class="ant-table-content">
-                <table style="width: 100%">
+                <table class="ant-table">
                   <draggable v-model="myList" tag="tbody" group="people" handle=".handle" item-key="name">
                     <template #item="{element}">
                       <tr>

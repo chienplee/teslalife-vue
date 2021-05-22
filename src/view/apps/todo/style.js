@@ -12,6 +12,7 @@ const TodoStyleWrapper = Styled.div`
         padding: 15px 0 25px !important
     }
     .ant-table{
+        width: 100%;
         thead{
             display: none;
         }
@@ -20,16 +21,18 @@ const TodoStyleWrapper = Styled.div`
                 position: relative;
                 &:hover{
                     box-shadow: 0 15px 50px ${({ theme }) => theme['light-color']}20;
-                    .ant-table-cell{
+                    td{
                         background-color: #fff;
                     }
                 }
                 td{
                     font-size: 14px;
-                    color: ${({ theme }) => theme['gray-color']}
+                    color: ${({ theme }) => theme['gray-color']};
                     line-height: .75;
                     &:first-child{
                         padding-left: 25px;
+                        padding-right: 8px;
+                        width: 48px;
                     }
                     &:last-child{
                         padding-right: 25px;
@@ -81,10 +84,10 @@ const TodoStyleWrapper = Styled.div`
                     }
                 }
             }
-            
+
         }
     }
-    
+
     .new-todo-wrap{
         padding: 16px 25px 0;
         .btn-toDoAdd{
