@@ -19,7 +19,7 @@
         <a-col :xxl="6" :xl="9" :xs="24">
           <Aside>
             <sdButton @click="onHandleVisible" class="btn-create" size="large" type="secondary">
-              <sdFeatherIcons type="plus" size="14" /> Create New Event
+              <sdFeatherIcons type="plus" size="14" /> <span>Create New Event</span>
             </sdButton>
             <div class="calendar-display">
               <v-calendar is-expanded v-model="date" />

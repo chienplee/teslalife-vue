@@ -7,7 +7,7 @@
         <sdShareButton />
         <sdButton size="small" type="primary">
           <sdFeatherIcons type="plus" size="14" />
-          Add New
+          <span>Add New</span>
         </sdButton>
       </div>
     </template>

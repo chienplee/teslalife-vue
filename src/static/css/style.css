@@ -818,7 +818,7 @@ ul {
 }
 
 .project-modal {
-  padding: 5px !important;
+  padding: 0 5px !important;
 }
 
 .project-modal .projects-members {
@@ -839,9 +839,11 @@ ul {
   text-align: left !important;
 }
 .project-modal .ant-form-item:not(:last-child){
-  margin-bottom: 11px !important;
+  margin-bottom: 15px !important;
 }
-
+.project-modal button{
+  margin-top: 15px;
+}
 /* Create contact modal */
 .create-contact-modal{
   padding: 0 !important;

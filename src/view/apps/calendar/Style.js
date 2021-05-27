@@ -65,6 +65,11 @@ const CalendarWrapper = Styled.div`
                     width: 8px;
                     color: ${({ theme }) => theme['gray-color']};
                 }
+                .vc-arrow{
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
             }
             .vc-day.is-not-in-month *{
                 color: ${({ theme }) => theme['extra-light-color']};

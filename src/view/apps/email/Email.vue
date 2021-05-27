@@ -32,7 +32,7 @@
             <sdCards headless>
               <div class="mail-sidebar-top">
                 <sdButton @click="toggleMailComposer" shape="round" type="primary" size="default" block>
-                  <sdFeatherIcons type="plus" size="18" /> Compose
+                  <sdFeatherIcons type="plus" size="18" /> <span>Compose</span>
                 </sdButton>
               </div>
 

@@ -28,6 +28,9 @@ const KanvanBoardWrap = Styled.div`
       @media only screen and (max-width: 575px){
         flex: 0 0 100%;
       }
+      .ps{
+        height: 400px;
+      }
       .sDash_kanban-board-item-scrolable{
         border-radius: 5px;
         background-color: ${({ theme }) => theme['bg-color-normal']};
