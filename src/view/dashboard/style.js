@@ -1268,6 +1268,7 @@ const LocationMapWrapper = Styled.div`
     .location-map{
         padding: 10px 0 5px;
         position: relative;
+        overflow: hidden;
         >div{
             width: 100%;
             height: 185px;

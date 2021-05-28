@@ -77,7 +77,7 @@
                     <a-row :gutter="16">
                       <a-col :span="12">
                         <a-form-item label="Owner" name="owner">
-                          <a-select placeholder="Please a-s an owner" v-model:value="form.owner">
+                          <a-select placeholder="Please choose Owner" v-model:value="value1">
                             <a-select-option value="xiao">Xiaoxiao Fu</a-select-option>
                             <a-select-option value="mao">Maomao Zhou</a-select-option>
                           </a-select>
@@ -85,7 +85,7 @@
                       </a-col>
                       <a-col :span="12">
                         <a-form-item label="Type" name="type">
-                          <a-select placeholder="Please choose the type" v-model:value="form.type">
+                          <a-select placeholder="Please choose the type" v-model:value="value1">
                             <a-select-option value="private">Private</a-select-option>
                             <a-select-option value="public">Public</a-select-option>
                           </a-select>
@@ -95,7 +95,7 @@
                     <a-row :gutter="16">
                       <a-col :span="12">
                         <a-form-item label="Approver" name="approver">
-                          <a-select placeholder="Please choose the approver" v-model:value="form.approver">
+                          <a-select placeholder="Please choose the approver" v-model:value="value1">
                             <a-select-option value="jack">Jack Ma</a-select-option>
                             <a-select-option value="tom">Tom Liu</a-select-option>
                           </a-select>

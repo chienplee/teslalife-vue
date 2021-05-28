@@ -55,7 +55,7 @@
                       </h4>
                       <div class="sDash-support-link-item__content">
                         <p>Lorem ipsum dolor sit amet consetetur</p>
-                        <router-link to="./knowledgebase/plugins" class="btn-link">
+                        <router-link to="./knowledgebase/base/plugins" class="btn-link">
                           Learn More
                         </router-link>
                       </div>
@@ -69,7 +69,7 @@
                       <h4 class="sDash-support-link-item__title">FAQ</h4>
                       <div class="sDash-support-link-item__content">
                         <p>Lorem ipsum dolor sit amet consetetur</p>
-                        <router-link to="./faq" class="btn-link">
+                        <router-link to="./faqs" class="btn-link">
                           Learn More
                         </router-link>
                       </div>

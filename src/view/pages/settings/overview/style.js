@@ -8,6 +8,9 @@ const ProfileAuthorBox = Styled.div`
         padding: 0 20px 20px;
         text-align: center;
         border-bottom: 1px solid ${({ theme }) => theme['border-color-light']};
+        .info{
+            background-color: transparent;
+        }
     }
     figure{
         position: relative;
