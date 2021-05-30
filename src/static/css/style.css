@@ -2122,6 +2122,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 .sDash_task-details .ant-modal-body{
   max-height: 800px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 767px) {
@@ -2996,8 +2997,8 @@ html[dir='rtl'] .ant-timeline-item-head-custom{
   right: 5px;
   transform: translate(50%, -50%);
 }
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail, .ant-timeline.ant-timeline-right .ant-timeline-item-tail,
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head, .ant-timeline.ant-timeline-right .ant-timeline-item-head,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head,
 html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom,
 html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
   left:auto;

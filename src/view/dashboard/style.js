@@ -1278,6 +1278,7 @@ const LocationMapWrapper = Styled.div`
             padding-top: 0;
             .svgMap-map-image{
                 left: -20px;
+                padding: 0 15px;
             }
         }
         .svgMap-map-controls-wrapper{
