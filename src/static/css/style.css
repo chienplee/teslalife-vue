@@ -974,6 +974,10 @@ ul {
   z-index: 99999;
 }
 
+.ant-drawer .ant-input{
+  padding: 7px 11px;
+}
+
 /* Select Dropdwon */
 
 .ant-select-dropdown {

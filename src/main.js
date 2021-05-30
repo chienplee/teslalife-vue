@@ -1,5 +1,4 @@
 import app from './config/configApp';
-
 import router from './routes/protectedRoute';
 import store from '@/vuex/store';
 import './static/css/style.css';

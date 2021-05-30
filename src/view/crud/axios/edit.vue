@@ -31,7 +31,7 @@
                         :src="
                           !url
                             ? require('@/static/img/avatar/profileImage.png')
-                            : `https://demo.jsnorm.com/laravel/strikingdash/${url}`
+                            : `https://demo.jsnorm.com/laravel/strikingdash-api/${url}`
                         "
                         alt=""
                       />
