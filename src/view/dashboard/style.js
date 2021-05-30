@@ -31,7 +31,7 @@ const OverviewSalesCard = Styled.div`
     padding: 5px 0 2px 0;
     .icon-box{
         display: flex;
-        aling-items: center;
+        align-items: center;
         justify-content: center;
         height: 60px;
         width: 60px;
@@ -51,12 +51,24 @@ const OverviewSalesCard = Styled.div`
         }
         &.box-primary{
             background-color: ${({ theme }) => theme['primary-color']}10;
+            path,
+            circle{
+                fill: ${({ theme }) => theme['primary-color']};
+            }
         }
         &.box-success{
             background-color: ${({ theme }) => theme['success-color']}10;
+            path,
+            circle{
+                fill: ${({ theme }) => theme['success-color']};
+            }
         }
         &.box-secondary{
             background-color: ${({ theme }) => theme['secondary-color']}10;
+            path,
+            circle{
+                fill: ${({ theme }) => theme['secondary-color']};
+            }
         }
     }
     .card-chunk{
@@ -931,6 +943,11 @@ const RegionMap = Styled.div`
             height: 100%;
         }
     }
+    .svgMap-map-wrapper {
+        .svgMap-map-image{
+            left: -16px;
+        }
+    }
     svg{
         width: 450px;
         background: #fff;
@@ -947,7 +964,7 @@ const RegionMap = Styled.div`
     .svgMap-map-controls-wrapper{
         right: 5px !important;
         left: auto !important;
-        bottom: 10px !important;
+        bottom: 0px !important;
         box-shadow: none !important;
         .svgMap-map-controls-zoom{
             flex-direction: column;
@@ -1251,6 +1268,7 @@ const LocationMapWrapper = Styled.div`
     .location-map{
         padding: 10px 0 5px;
         position: relative;
+        overflow: hidden;
         >div{
             width: 100%;
             height: 185px;
@@ -1258,9 +1276,13 @@ const LocationMapWrapper = Styled.div`
         .svgMap-map-wrapper{
             position: static;
             padding-top: 0;
+            .svgMap-map-image{
+                left: -20px;
+                padding: 0 15px;
+            }
         }
         .svgMap-map-controls-wrapper{
-            right: 25px !important;
+            right: 18px !important;
             left: auto !important;
             bottom: 10px !important;
             box-shadow: none !important;

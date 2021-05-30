@@ -89,10 +89,11 @@ const Content = Styled.div`
       }
     }
     .author-chatMeta{
-      flex: .16;
+      flex: .18;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      text-aling: right;
       @media (max-width: 991px){
         align-items: center;
         justify-content: center;

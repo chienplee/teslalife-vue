@@ -8,7 +8,7 @@
     </div>
     <ul v-if="chatData">
       <li v-for="({ groupName, content, id, img }, key) in chatData" :key="key + 1" class="chat-link-signle">
-        <router-link @click="e => dataFiltering(e, id)" :to="`${match.path}/${id}`">
+        <router-link @click="e => dataFiltering(e, id)" :to="id">
           <div class="author-figure">
             <img :src="require(`../../../../static/img/chat-author/${img}`)" alt="" />
           </div>

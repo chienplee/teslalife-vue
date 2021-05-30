@@ -26,82 +26,90 @@
             >
               <template #item="{element}">
                 <div class="sDash_kanban-board-item">
-                  <div class="sDash_kanban-board-item-scrolable">
-                    <div
-                      :class="
-                        element.boardId === titleBoardId
-                          ? 'sDash_kanban-board-item__header editable'
-                          : 'sDash_kanban-board-item__header'
-                      "
-                    >
-                      <h4 class="list-header-title">
-                        <span><sdFeatherIcons type="menu" class="handle" /> {{ element.title }}</span>
-                        <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
-                          <template #overlay>
-                            <a @click="e => onBoardEditable(e, element.boardId, element.title)" href="#">
-                              <span>Edit Card Title</span>
+                  <perfect-scrollbar
+                    :options="{
+                      wheelSpeed: 2,
+                      swipeEasing: true,
+                      suppressScrollX: true,
+                    }"
+                  >
+                    <div class="sDash_kanban-board-item-scrolable">
+                      <div
+                        :class="
+                          element.boardId === titleBoardId
+                            ? 'sDash_kanban-board-item__header editable'
+                            : 'sDash_kanban-board-item__header'
+                        "
+                      >
+                        <h4 class="list-header-title">
+                          <span><sdFeatherIcons type="menu" class="handle" /> {{ element.title }}</span>
+                          <sdDropdown :action="['click']" class="wide-dropdwon kanbanCard-more">
+                            <template #overlay>
+                              <a @click="e => onBoardEditable(e, element.boardId, element.title)" href="#">
+                                <span>Edit Card Title</span>
+                              </a>
+                              <a @click="() => deleteColumnHandler(element.boardId)" href="#">
+                                <span>Delete Card</span>
+                              </a>
+                            </template>
+                            <a href="#" class="btn-more">
+                              <sdFeatherIcons type="more-horizontal" size="14" />
                             </a>
-                            <a @click="() => deleteColumnHandler(element.boardId)" href="#">
-                              <span>Delete Card</span>
-                            </a>
-                          </template>
-                          <a href="#" class="btn-more">
-                            <sdFeatherIcons type="more-horizontal" size="14" />
-                          </a>
-                        </sdDropdown>
-                      </h4>
-                      <BoardTitleUpdate
-                        :boardId="element.boardId"
-                        :boardTitle="boardTitle"
-                        :onBlur="onBoardEditableHide"
-                      />
-                    </div>
-
-                    <div class="sDash_kanvan-task">
-                      <TaskItem
-                        :id="element.boardId"
-                        :taskId="taskId"
-                        :onBackShadow="onBackShadow"
-                        :onTaskTitleUpdate="onTaskTitleUpdate"
-                        :onTaskTitleDelete="onTaskTitleDelete"
-                        :showModal="showModal"
-                      />
-                    </div>
-
-                    <div
-                      :class="
-                        element.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'
-                      "
-                    >
-                      <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, element.boardId)">
-                        <sdFeatherIcons type="plus" size="12" />
-                        <span>Add Task</span>
-                      </a>
-
-                      <div class="sDash_addTask-from">
-                        <a-input
-                          :name="`taskInput-${element.boardId}`"
-                          class="sDash_addTask-input"
-                          placeholder="Enter a Title"
-                          @pressEnter="() => addTaskHandler(element.boardId)"
+                          </sdDropdown>
+                        </h4>
+                        <BoardTitleUpdate
+                          :boardId="element.boardId"
+                          :boardTitle="boardTitle"
+                          :onBlur="onBoardEditableHide"
                         />
-                        <div class="sDash_addTask-action">
-                          <sdButton
-                            @click="() => addTaskHandler(element.boardId)"
-                            class="add-column"
-                            htmlType="submit"
-                            size="small"
-                            type="primary"
-                          >
-                            Add
-                          </sdButton>
-                          <a href="#" @click="handleOffAddTask">
-                            <sdFeatherIcons type="x" size="18" />
-                          </a>
+                      </div>
+
+                      <div class="sDash_kanvan-task">
+                        <TaskItem
+                          :id="element.boardId"
+                          :taskId="taskId"
+                          :onBackShadow="onBackShadow"
+                          :onTaskTitleUpdate="onTaskTitleUpdate"
+                          :onTaskTitleDelete="onTaskTitleDelete"
+                          :showModal="showModal"
+                        />
+                      </div>
+
+                      <div
+                        :class="
+                          element.boardId === boardId ? 'sDash_addTask-control add-task-on' : 'sDash_addTask-control'
+                        "
+                      >
+                        <a href="#" class="btn-addTask" @click="e => handleOnAddTask(e, element.boardId)">
+                          <sdFeatherIcons type="plus" size="12" />
+                          <span>Add Task</span>
+                        </a>
+
+                        <div class="sDash_addTask-from">
+                          <a-input
+                            :name="`taskInput-${element.boardId}`"
+                            class="sDash_addTask-input"
+                            placeholder="Enter a Title"
+                            @pressEnter="() => addTaskHandler(element.boardId)"
+                          />
+                          <div class="sDash_addTask-action">
+                            <sdButton
+                              @click="() => addTaskHandler(element.boardId)"
+                              class="add-column"
+                              htmlType="submit"
+                              size="small"
+                              type="primary"
+                            >
+                              Add
+                            </sdButton>
+                            <a href="#" @click="handleOffAddTask">
+                              <sdFeatherIcons type="x" size="18" />
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </perfect-scrollbar>
                 </div>
               </template>
               <template #footer>
@@ -146,6 +154,8 @@ import { KanvanBoardWrap, BackShadow } from './style';
 import KanbanBoardItem from './overview/KanbanBoardItem';
 import UpdateTask from './overview/UpdateTask';
 import { Main } from '../../styled';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
 import { toRefs, ref, computed, reactive } from 'vue';
 import { useStore } from 'vuex';
 import draggable from 'vuedraggable';
@@ -163,6 +173,7 @@ const Kanban = {
     UpdateTask,
     draggable,
     TaskItem,
+    PerfectScrollbar,
   },
   setup() {
     const { state, dispatch } = useStore();

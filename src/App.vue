@@ -13,7 +13,6 @@
   >
     <Suspense>
       <template #default>
-        <!-- <WithAuthLayout /> -->
         <router-view></router-view>
       </template>
       <template #fallback>
@@ -30,14 +29,10 @@ import { theme } from './config/theme/themeVariables';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
-// const WithAdminLayout = defineAsyncComponent(() => import('./layout/withAdminLayout'));
-// const WithAuthLayout = defineAsyncComponent(() => import('./layout/withAuthLayout'));
-
 export default {
   name: 'App',
   components: {
     ThemeProvider,
-    // WithAuthLayout,
   },
   setup() {
     const { state } = useStore();

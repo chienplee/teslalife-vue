@@ -17,7 +17,14 @@
       <a-row :gutter="25">
         <a-col :md="12" :xs="24">
           <sdCards title="Google Basic Map">
-            <BasicMap :apiKey="apiKey" />
+            <BasicMap
+              :apiKey="apiKey"
+              :center="{ lat: 40.689247, lng: -74.044502 }"
+              :position="{
+                lat: 50.797897,
+                lng: -1.077641,
+              }"
+            />
           </sdCards>
         </a-col>
 
@@ -73,7 +80,7 @@ export default defineComponent({
     AdvancedMap,
   },
   setup() {
-    return { apiKey: 'AIzaSyCWLSu-IIz-TNFJ7oGbgbP7FXiW14SWk08' };
+    return { apiKey: process.env.VUE_APP_GOOGLE_MAP_API };
   },
 });
 </script>

@@ -19,16 +19,47 @@
         <TodoStyleWrapper>
           <sdCards title="Task Lists">
             <TableWrapper class="table-responsive">
-              <a-table
-                :rowSelection="{
-                  type: 'checkbox',
-                  ...rowSelection,
-                }"
-                :columns="columns"
-                :dataSource="dataSource"
-                :pagination="false"
-                rowKey="index"
-              />
+              <div class="ant-table-content">
+                <table class="ant-table">
+                  <draggable v-model="myList" tag="tbody" group="people" handle=".handle" item-key="name">
+                    <template #item="{element}">
+                      <tr>
+                        <td>
+                          <a-checkbox @click="() => onSelectChange(element.key)" />
+                        </td>
+                        <td scope="row">
+                          <div class="user-info">
+                            {{ element.item }}
+                          </div>
+                        </td>
+                        <td>
+                          <div class="todos-action">
+                            <sdFeatherIcons
+                              classes="handle"
+                              :style="{ cursor: 'pointer', color: '#999' }"
+                              type="move"
+                            />
+                            <a
+                              :class="element.favorite ? 'star active' : 'star'"
+                              @click="() => dispatch('onStarUpdate', { data: todoData, id: element.key })"
+                              to="#"
+                            >
+                              <sdFeatherIcons
+                                type="star"
+                                :style="{ color: element.favorite ? 'gold' : '#888' }"
+                                :size="16"
+                              />
+                            </a>
+                            <a @click="() => onHandleDelete(element.key)" to="#">
+                              <sdFeatherIcons type="trash-2" size="16" />
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    </template>
+                  </draggable>
+                </table>
+              </div>
             </TableWrapper>
             <div class="new-todo-wrap">
               <sdButton @click="showModal" class="btn-toDoAdd" transparented type="primary" size="large">
@@ -61,6 +92,7 @@ import { Span, TodoStyleWrapper } from './style';
 import { Main, TableWrapper, BasicFormWrapper } from '../../styled';
 import { useStore } from 'vuex';
 import { computed, reactive, ref } from 'vue';
+import draggable from 'vuedraggable';
 
 const columns = [
   {
@@ -76,7 +108,7 @@ const columns = [
 
 const ToDo = {
   name: 'ToDo',
-  components: { Span, TodoStyleWrapper, Main, TableWrapper, BasicFormWrapper },
+  components: { Span, TodoStyleWrapper, Main, TableWrapper, BasicFormWrapper, draggable },
   setup() {
     const { state, dispatch } = useStore();
     const todoData = computed(() => state.todo.data);
@@ -89,44 +121,14 @@ const ToDo = {
     const formState = reactive({
       todoAdd: '',
     });
-    const dataSource = computed(() =>
-      todoData.value.map((item, index) => {
-        return {
-          key: index + 1,
-          index,
-          item: (
-            <Span class={selectedRowKeys.value.includes(index) ? 'todo-title active' : 'todo-title inactive'}>
-              {item.item}
-            </Span>
-          ),
-          action: (
-            <div class="todos-action">
-              <sdFeatherIcons size={16} style={{ cursor: 'pointer', color: '#999', display: 'none' }} type="move" />
-              <a
-                class={item.favorite ? 'star active' : 'star'}
-                onClick={() => dispatch('onStarUpdate', { data: todoData.value, id: item.key })}
-                to="#"
-              >
-                <sdFeatherIcons type="star" style={{ color: item.favorite ? 'gold' : '#888' }} size={16} />
-              </a>
-              <a onClick={() => onHandleDelete(item.key)} to="#">
-                <sdFeatherIcons type="trash-2" size={16} />
-              </a>
-            </div>
-          ),
-        };
-      }),
-    );
-    const onSelectChange = selectedRowKey => {
-      selectedRowKeys.value = selectedRowKey;
-    };
 
-    const rowSelection = {
-      onChange: onSelectChange,
-      getCheckboxProps: record => ({
-        disabled: record.name === 'Disabled User', // Column configuration not to be checked
-        name: record.name,
-      }),
+    const onSelectChange = selectedRowKey => {
+      if (selectedRowKeys.value.includes(selectedRowKey)) {
+        const row = selectedRowKeys.value.filter(value => value !== selectedRowKey);
+        selectedRowKeys.value = row;
+      } else {
+        selectedRowKeys.value.push(selectedRowKey);
+      }
     };
 
     const onSubmitHandler = () => {
@@ -170,13 +172,25 @@ const ToDo = {
       onCancel,
       showModal,
       onSubmitHandler,
-      // onInputChange,
-      rowSelection,
-      dataSource,
+      onHandleDelete,
+      onSelectChange,
       columns,
       formState,
       visible,
+      dispatch,
+      todoData,
+      selectedRowKeys,
     };
+  },
+  computed: {
+    myList: {
+      get() {
+        return this.$store.state.todo.data;
+      },
+      set(value) {
+        this.$store.dispatch('ToDoAddData', value);
+      },
+    },
   },
 };
 

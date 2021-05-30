@@ -7,8 +7,8 @@
           404
         </sdHeading>
         <p>Sorry! the page you are looking for doesn't exist.</p>
-        <router-link to="/admin">
-          <sdButton size="default" type="primary" to="/admin">
+        <router-link to="/">
+          <sdButton size="default" type="primary" to="/">
             Return Home
           </sdButton>
         </router-link>

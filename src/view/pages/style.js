@@ -525,6 +525,7 @@ const FaqCategoryBox = Styled.div`
         padding: ${({ theme }) => (!theme.rtl ? '12px 0 12px 20px' : '12px 20px 12px 0')};
         transition: all .3s ease;
         color: ${({ theme }) => theme['gray-color']};
+        background-color: #fff;
         &.active{
           padding-left: 28px;
           &:before{
@@ -1779,6 +1780,9 @@ const TestimonialStyleWrapper = Styled.div`
             font-size: 13px;
             opacity: .70;
             margin-bottom: 0;
+          }
+          .info{
+            background-color: #fff;
           }
         }
       }

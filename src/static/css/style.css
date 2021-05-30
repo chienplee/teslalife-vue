@@ -818,7 +818,7 @@ ul {
 }
 
 .project-modal {
-  padding: 5px !important;
+  padding: 0 5px !important;
 }
 
 .project-modal .projects-members {
@@ -839,9 +839,11 @@ ul {
   text-align: left !important;
 }
 .project-modal .ant-form-item:not(:last-child){
-  margin-bottom: 11px !important;
+  margin-bottom: 15px !important;
 }
-
+.project-modal button{
+  margin-top: 15px;
+}
 /* Create contact modal */
 .create-contact-modal{
   padding: 0 !important;
@@ -970,6 +972,10 @@ ul {
 
 .ant-drawer {
   z-index: 99999;
+}
+
+.ant-drawer .ant-input{
+  padding: 7px 11px;
 }
 
 /* Select Dropdwon */
@@ -1650,6 +1656,10 @@ table tbody >tr >td
   overflow-wrap: break-word;
 }
 
+.ant-table-content .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td{
+  background: #fafafa;
+}
+
 /* Table Responsive */
 
 .table-responsive .ant-table-content {
@@ -2112,6 +2122,7 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
 .sDash_task-details .ant-modal-body{
   max-height: 800px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 767px) {
@@ -2606,6 +2617,25 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   color: #fff;
 }
 
+/* SVG map Style */
+.svgMap-tooltip .svgMap-tooltip-content-container{
+  padding: 10px;
+  min-width: 130px;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-content{
+  display: none;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-flag-container.svgMap-tooltip-flag-container-emoji{
+  font-size: 22px !important;
+  line-height: 0 !important;
+  padding: 4px 0 6px !important;
+}
+.svgMap-tooltip .svgMap-tooltip-content-container .svgMap-tooltip-title{
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 0;
+}
+
 @media only screen and (max-width: 479px) {
   .placement-confirm {
     display: flex;
@@ -2967,8 +2997,8 @@ html[dir='rtl'] .ant-timeline-item-head-custom{
   right: 5px;
   transform: translate(50%, -50%);
 }
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail, .ant-timeline.ant-timeline-right .ant-timeline-item-tail,
-html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head, .ant-timeline.ant-timeline-right .ant-timeline-item-head,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-tail,
+html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head,
 html[dir='rtl'] .ant-timeline.ant-timeline-alternate .ant-timeline-item-head-custom,
 html[dir='rtl'] .ant-timeline.ant-timeline-right .ant-timeline-item-head-custom{
   left:auto;

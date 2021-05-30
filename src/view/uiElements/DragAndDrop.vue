@@ -1,5 +1,5 @@
 <template>
-  <sdPageHeader title="DatePicker">
+  <sdPageHeader title="Drag & Drop">
     <template v-slot:buttons>
       <div class="page-header-actions">
         <sdCalendarButton />

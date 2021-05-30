@@ -1334,6 +1334,9 @@ const BasicFormWrapper = Styled.div`
         padding: 12px 11px;
     }
     .ant-form {
+        .ant-form-item-label{
+            line-height: 1.45;
+        }
         .form-item{
             margin-bottom: 30px;
             label{
@@ -1428,14 +1431,16 @@ const BasicFormWrapper = Styled.div`
         .input-prepend{
             position: absolute;
             ${({ theme }) => (theme.rtl ? 'right' : 'left')}: 0;
+            top: 1px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 0 20px;
-            height: 48px;
+            height: 47px;
             border-radius: ${({ theme }) => (theme.rtl ? '0 4px 4px 0' : '4px 0 0 4px')};
             z-index: 10;
             border: 1px solid ${({ theme }) => theme['border-color-normal']};
+            border-bottom: 0 none;
             background-color: ${({ theme }) => theme['bg-color-light']};
             svg,
             i{
