@@ -113,7 +113,7 @@ const BadgeWraperStyle = Styled.div`
     padding: 0;
     height: 20px;
     line-height: 14px;
-    border: 3px solid #fff;    
+    border: 3px solid #fff;
   }
   .ant-scroll-number-custom-component{
     top: 10px !important;
@@ -355,32 +355,32 @@ const TimeLinePointerIconWrap = Styled.div`
     &:last-child{
       padding-bottom: 0;
     }
-    &.primary{
+    &.timeline-primary{
       .ant-timeline-item-head{
         background-color: #E7E8FD;
       }
     }
-    &.info{
+    &.timeline-info{
       .ant-timeline-item-head{
         background-color: #DFF0FF;
       }
     }
-    &.warning{
+    &.timeline-warning{
       .ant-timeline-item-head{
         background-color: #FFEEDA;
       }
     }
-    &.pink{
+    &.timeline-pink{
       .ant-timeline-item-head{
         background-color: #FFE8F2;
       }
     }
-    &.success{
+    &.timeline-success{
       .ant-timeline-item-head{
         background-color: #DDF7F0;
       }
     }
-    &.danger{
+    &.timeline-danger{
       .ant-timeline-item-head{
         background-color: #FFE4E5;
       }
@@ -435,7 +435,7 @@ const TimelineNormalWrap = Styled.div`
   .ant-timeline-item-last > .ant-timeline-item-content{
     min-height: auto;
   }
-  
+
   .ant-timeline-right{
     .ant-timeline-item-right{
       .ant-timeline-item-content{

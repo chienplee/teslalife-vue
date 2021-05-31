@@ -17,7 +17,7 @@
               <a-input v-model:value="formState.facebook" placeholder="URL">
                 <template #prefix>
                   <span class="facebook">
-                    <sdFeatherIcons type="facebook" />
+                    <font-awesome-icon :icon="faFacebookF" />
                   </span>
                 </template>
               </a-input>
@@ -26,7 +26,7 @@
               <a-input v-model:value="formState.twitter" placeholder="URL">
                 <template #prefix>
                   <span class="twitter">
-                    <sdFeatherIcons type="twitter" />
+                    <font-awesome-icon :icon="faTwitter" />
                   </span>
                 </template>
               </a-input>
@@ -35,7 +35,7 @@
               <a-input v-model:value="formState.linkedin" placeholder="URL">
                 <template #prefix>
                   <span class="linkedin">
-                    <sdFeatherIcons type="linkedin" />
+                    <font-awesome-icon :icon="faLinkedin" />
                   </span>
                 </template>
               </a-input>
@@ -44,7 +44,7 @@
               <a-input v-model:value="formState.instagram" placeholder="URL">
                 <template #prefix>
                   <span class="instagram">
-                    <sdFeatherIcons type="instagram" />
+                    <font-awesome-icon :icon="faInstagram" />
                   </span>
                 </template>
               </a-input>
@@ -53,7 +53,7 @@
               <a-input v-model:value="formState.github" placeholder="URL">
                 <template #prefix>
                   <span class="github">
-                    <sdFeatherIcons type="github" />
+                    <font-awesome-icon :icon="faGithub" />
                   </span>
                 </template>
               </a-input>
@@ -62,7 +62,7 @@
               <a-input v-model:value="formState.youtube" placeholder="Url">
                 <template #prefix>
                   <span class="youtube">
-                    <sdFeatherIcons type="youtube" />
+                    <font-awesome-icon :icon="faYoutube" />
                   </span>
                 </template>
               </a-input>
@@ -87,6 +87,14 @@
 <script>
 import { BasicFormWrapper } from '../../../styled';
 import { ref, reactive } from 'vue';
+import {
+  faFacebookF,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+  faGithub,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 const SocialProfile = {
   name: 'SocialProfile',
@@ -118,6 +126,12 @@ const SocialProfile = {
       rules,
       handleFinish,
       handleFinishFailed,
+      faFacebookF,
+      faYoutube,
+      faTwitter,
+      faInstagram,
+      faGithub,
+      faLinkedin,
     };
   },
 };

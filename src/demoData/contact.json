@@ -8,7 +8,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/1.png"
+    "img": "static/img/users/1.png",
+    "joining": "11 Jun 2020"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/2.png"
+    "img": "static/img/users/2.png",
+    "joining": "31 May 2021"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/1.png"
+    "img": "static/img/users/1.png",
+    "joining": "01 Apr 2021"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/4.png"
+    "img": "static/img/users/4.png",
+    "joining": "31 May 2021"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/5.png"
+    "img": "static/img/users/5.png",
+    "joining": "15 Feb 2021"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/6.png"
+    "img": "static/img/users/6.png",
+    "joining": "21 Dec 2017"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/7.png"
+    "img": "static/img/users/7.png",
+    "joining": "31 May 2021"
   },
   {
     "id": 8,
@@ -85,6 +92,7 @@
     "phone": "+90014525",
     "company": "Business Development",
     "email": "john@gmail.com",
-    "img": "static/img/users/8.png"
+    "img": "static/img/users/8.png",
+    "joining": "11 May 2018"
   }
 ]

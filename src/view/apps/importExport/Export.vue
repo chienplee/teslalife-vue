@@ -120,20 +120,23 @@ const Import = {
     const handleSearch = () => {
       dispatch('contactSearchData', searchData.value);
     };
-    const csvData = [['id', 'name', 'email', 'company', 'position']];
-    const csvJsonData = [{ id: 'id', name: 'name', email: 'email', company: 'company', position: 'position' }];
+    const csvData = [['id', 'name', 'email', 'company', 'joining', 'position']];
+    const csvJsonData = [
+      { id: 'id', name: 'name', email: 'email', company: 'company', joining: 'joining', position: 'position' },
+    ];
     const usersTableData = computed(() =>
       users.value
         .sort((a, b) => {
           return b.time - a.time;
         })
         .map(user => {
-          const { id, name, designation, email, company } = user;
+          const { id, name, designation, email, joining, company } = user;
           return {
             key: id,
             user: name,
             email,
             company,
+            joining: joining,
             position: designation,
           };
         }),
@@ -154,6 +157,11 @@ const Import = {
         title: 'Company',
         dataIndex: 'company',
         key: 'company',
+      },
+      {
+        title: 'Joining Date',
+        dataIndex: 'joining',
+        key: 'joining',
       },
       {
         title: 'Position',

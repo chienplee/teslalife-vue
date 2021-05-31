@@ -24,7 +24,7 @@
                   <p class="card__designation">{{ designation }}</p>
                 </div>
 
-                <div class="card__actions">
+                <div class="card__actions align-center-v justify-content-center">
                   <sdButton size="default" outlined type="white">
                     <sdFeatherIcons type="message-square" size="14" />
                     <span>Chat</span>
