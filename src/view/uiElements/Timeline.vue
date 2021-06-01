@@ -19,7 +19,7 @@
           <sdCards title="Basic">
             <TimeLinePointerIconWrap>
               <a-timeline>
-                <a-timeline-item class="primary">
+                <a-timeline-item class="timeline-primary">
                   <template #dot>
                     <SwRocket size="20" color="#5F63F2" />
                   </template>
@@ -27,43 +27,43 @@
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="info">
+                <a-timeline-item class="timeline-info">
                   <template #dot> <SwShieldCheck size="20" color="#2C99FF"/></template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="warning">
+                <a-timeline-item class="timeline-warning">
                   <template #dot> <SwPenTool size="24" color="#fa8b0c" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="pink">
+                <a-timeline-item class="timeline-pink">
                   <template #dot> <SwNotification size="17" color="#FF69A5" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="success">
+                <a-timeline-item class="timeline-success">
                   <template #dot> <SwUsers size="21" color="#20c997" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="danger">
+                <a-timeline-item class="timeline-danger">
                   <template #dot> <SwLayers size="21" color="#ff4d4f" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="primary">
+                <a-timeline-item class="timeline-primary">
                   <template #dot> <SwPicture size="21" color="#5f63f2" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   <span class="tags">HTML,CSS,VueJS</span>
                 </a-timeline-item>
-                <a-timeline-item class="pink">
+                <a-timeline-item class="timeline-pink">
                   <template #dot> <SwClock size="21" color="#ff69a5" /> </template>
                   <h3>02:30 PM</h3>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>

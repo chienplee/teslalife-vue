@@ -2308,6 +2308,13 @@ html[dir='rtl'] .sDash_task-details .ant-modal-body .sDash_checklist-row .sDash_
   color: #5F63F2 !important;
 }
 
+/* Vector map hover fill color */
+.svgMap-map-wrapper .svgMap-country.svgMap-active,
+.svgMap-map-wrapper .svgMap-country:hover {
+  stroke: transparent !important;
+  fill: #5F63F2;
+}
+
 /* Responsive CSS */
 
 @media only screen and (max-width: 1599px) {
