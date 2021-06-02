@@ -37,9 +37,12 @@
       </template>
       <div class="widget-photo-list">
         <a-row :gutter="10">
-          <a-col v-for="{ img, id } in gallery" :key="id" :xxl="8" :md="24" :sm="6" :xs="8">
-            <img v-if="id <= 6" style="width: 100%" :src="require(`../../../../${img}`)" alt="" />
+          <a-col v-for="({ img, id }, imageIndex) in gallery" :key="imageIndex" :xxl="8" :md="24" :sm="6" :xs="8">
+            <router-link to="#" v-if="id <= 6" @click="() => showImg(imageIndex)">
+              <img style="width: 100%" :src="require(`../../../../${img}`)" alt="" />
+            </router-link>
           </a-col>
+          <vue-easy-lightbox :visible="visible" :imgs="images" :index="index" @hide="handleHide"></vue-easy-lightbox>
         </a-row>
       </div>
     </sdCards>
@@ -65,7 +68,7 @@
   </RightAsideWrapper>
 </template>
 <script>
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import { RightAsideWrapper } from './style';
 
@@ -81,12 +84,36 @@ const RightAside = {
       isOpen.value = value;
     };
 
+    const visible = ref(false);
+    const index = ref(0);
+    const images = ref([]);
+
+    const showImg = ind => {
+      index.value = ind;
+      visible.value = true;
+    };
+
+    const handleHide = () => {
+      visible.value = false;
+    };
+
+    onMounted(() => {
+      gallery.value.map(({ img }) => {
+        return images.value.push({ src: require(`../../../../${img}`) });
+      });
+    });
+
     return {
+      showImg,
+      handleHide,
+      index,
       friends,
       gallery,
       isOpen,
       dispatch,
       setOpen,
+      images,
+      visible,
     };
   },
 };

@@ -126,8 +126,7 @@ const UpdateData = {
     const { state, dispatch } = useStore();
     const { params } = useRoute();
     const isLoading = computed(() => state.crud.loading);
-    const urlCustom = computed(() => state.crud.url);
-    const url = ref(urlCustom.value);
+    const url = computed(() => state.crud.url);
     const crud = computed(() => state.crud.data);
     const isFileLoading = computed(() => state.crud.fileLoading);
     const join = ref('2021/04/14');
@@ -185,7 +184,6 @@ const UpdateData = {
         formState.position = crud.value.position;
         formState.status = crud.value.status;
         formState.old_image = crud.value.image;
-        url.value = urlCustom.value || crud.value.image;
       }
     });
 
