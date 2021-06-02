@@ -119,6 +119,7 @@ const actions = {
       await commit('axiosSingleDataBegin');
       const query = await DataService.get(`/view/${id}`);
       commit('axiosSingleDataSuccess', query.data.data);
+      commit('axiosUploadSuccess', query.data.data.image);
     } catch (err) {
       await commit('axiosSingleDataErr', err);
     }
