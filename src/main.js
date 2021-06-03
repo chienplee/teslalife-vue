@@ -5,6 +5,7 @@ import './static/css/style.css';
 // Vue 3rd party plugins
 import '@/core/plugins/ant-design';
 import '@/core/plugins/fonts';
+import '@/core/plugins/lightbox';
 import '@/core/plugins/maps';
 import '@/core/plugins/masonry';
 import '@/core/plugins/apexcharts';
