@@ -4,7 +4,7 @@ import mutations from './mutations';
 
 const state = () => ({
   friends: initialState,
-  loading: false,
+  isLoading: false,
   error: null,
   posts,
   postLoading: false,
@@ -16,7 +16,7 @@ const actions = {
       commit('profileFriendsBegin');
       initialState.map(friend => {
         if (friend.key === key) {
-          return friend.status ? (friend.status = false) : (friend.status = true);
+          return (friend.status = !friend.status);
         }
         return commit('profileFriendsSuccess', initialState);
       });

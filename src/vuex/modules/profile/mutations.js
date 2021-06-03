@@ -1,15 +1,15 @@
 export default {
   profileFriendsBegin(state) {
-    state.sLoading = true;
+    state.isLoading = true;
   },
 
   profileFriendsSuccess(state, data) {
-    state.sLoading = false;
+    state.isLoading = false;
     state.friends = data;
   },
 
   profileFriendsErr(state, err) {
-    state.sLoading = false;
+    state.isLoading = false;
     state.error = err;
   },
 
