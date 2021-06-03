@@ -1,11 +1,11 @@
 <template>
   <AutoCompleteStyled v-if="customComponent" :style="{ width }" @select="onSelect" @search="onSearching">
-    <template v-if="myData.length" #options>
+    <template v-if="myData.length" #dataSource>
       <a-select-option v-for="item in myData" :key="item.title">
         {{ item.title }}
       </a-select-option>
     </template>
-    <template v-else #options>
+    <template v-else #dataSource>
       <a-select-option key="Data not found!">
         Data not found!
       </a-select-option>
@@ -23,12 +23,12 @@
     :placeholder="placeholder"
     @search="onSearching"
   >
-    <template v-if="myData.length" #options>
+    <template v-if="myData.length" #dataSource>
       <a-select-option v-for="item in myData" :key="item.title">
         {{ item.title }}
       </a-select-option>
     </template>
-    <template v-else #options>
+    <template v-else #dataSource>
       <a-select-option key="Data not found!">
         Data not found!
       </a-select-option>
@@ -55,12 +55,12 @@
     :value="value"
     v-else
   >
-    <template v-if="myData.length" #options>
+    <template v-if="myData.length" #dataSource>
       <a-select-option v-for="item in myData" :key="item.title">
         {{ item.title }}
       </a-select-option>
     </template>
-    <template v-else #options>
+    <template v-else #dataSource>
       <a-select-option key="Data not found!">
         Data not found!
       </a-select-option>
