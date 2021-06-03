@@ -224,7 +224,7 @@ export default {
 
     const toggleCollapsedMobile = () => {
       if (innerWidth <= 990) {
-        collapsed.value = false;
+        collapsed.value = !collapsed.value;
       }
     };
 
