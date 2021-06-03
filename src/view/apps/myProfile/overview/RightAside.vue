@@ -1,6 +1,5 @@
 span<template>
   <RightAsideWrapper>
-    <!-- <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} /> -->
     <sdCards title="Friends">
       <ul class="ff-widget">
         <template v-if="!isLoading">
@@ -41,11 +40,10 @@ span<template>
       <div class="widget-photo-list">
         <a-row :gutter="10">
           <a-col v-for="({ img, id }, imageIndex) in gallery" :key="imageIndex" :xxl="8" :md="24" :sm="6" :xs="8">
-            <router-link to="#" v-if="id <= 6" @click="() => showImg(imageIndex)">
+            <GlightBox v-if="id <= 6" type="image" :src="require(`../../../../${img}`)">
               <img style="width: 100%" :src="require(`../../../../${img}`)" alt="" />
-            </router-link>
+            </GlightBox>
           </a-col>
-          <vue-easy-lightbox :visible="visible" :imgs="images" :index="index" @hide="handleHide"></vue-easy-lightbox>
         </a-row>
       </div>
     </sdCards>
@@ -58,12 +56,12 @@ span<template>
       <div class="widget-video-list">
         <a-row :gutter="10">
           <a-col v-for="{ img, id } in gallery" :key="id" :xxl="8" :md="24" :sm="6" :xs="8">
-            <VideoModal src="https://vimeo.com/115041822" v-if="id <= 6" class="video">
+            <GlightBox type="video" src="https://vimeo.com/115041822" v-if="id <= 6" class="video">
               <img style="width: 100%" :src="require(`@/${img}`)" alt="" />
               <span>
                 <sdFeatherIcons type="play" />
               </span>
-            </VideoModal>
+            </GlightBox>
           </a-col>
         </a-row>
       </div>
@@ -71,54 +69,24 @@ span<template>
   </RightAsideWrapper>
 </template>
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import { RightAsideWrapper } from './style';
-import VideoModal from '@/components/utilities/VideoModal.vue';
+import GlightBox from '@/components/utilities/GlightBox.vue';
 
 const RightAside = {
   name: 'RightAside',
-  components: { RightAsideWrapper, VideoModal },
+  components: { RightAsideWrapper, GlightBox },
   setup() {
     const { state, dispatch } = useStore();
-    const isOpen = ref(false);
     const friends = computed(() => state.profile.friends);
     const isLoading = computed(() => state.profile.isLoading);
     const gallery = computed(() => state.gallery.data);
-    const setOpen = value => {
-      isOpen.value = value;
-    };
-
-    const visible = ref(false);
-    const index = ref(0);
-    const images = ref([]);
-
-    const showImg = ind => {
-      index.value = ind;
-      visible.value = true;
-    };
-
-    const handleHide = () => {
-      visible.value = false;
-    };
-
-    onMounted(() => {
-      gallery.value.map(({ img }) => {
-        return images.value.push({ src: require(`../../../../${img}`) });
-      });
-    });
 
     return {
-      showImg,
-      handleHide,
-      index,
       friends,
       gallery,
-      isOpen,
       dispatch,
-      setOpen,
-      images,
-      visible,
       isLoading,
     };
   },

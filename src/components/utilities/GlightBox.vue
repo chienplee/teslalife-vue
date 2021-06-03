@@ -1,6 +1,6 @@
 <template>
   <a
-    data-type="video"
+    :data-type="type"
     data-effect="fade"
     :data-width="width"
     data-height="auto"
@@ -19,13 +19,14 @@ import { onMounted } from 'vue';
 import PropTypes from 'vue-types';
 
 export default {
-  name: 'VideoModal',
+  name: 'GlightBox',
   props: {
     src: PropTypes.string.def('https://vimeo.com/115041822'),
     class: PropTypes.string.def('video'),
     width: PropTypes.string.def('900px'),
     zoomable: PropTypes.bool.def(true),
     draggable: PropTypes.bool.def(true),
+    type: PropTypes.oneOf(['image', 'video']).def('image'),
   },
   data() {
     return {
