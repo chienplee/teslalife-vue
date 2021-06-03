@@ -1,29 +1,32 @@
-<template>
+span<template>
   <RightAsideWrapper>
     <!-- <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} /> -->
     <sdCards title="Friends">
       <ul class="ff-widget">
-        <li v-for="{ name, key, designation, status, img } in friends" :key="key">
-          <div class="ff-info">
-            <img :src="require(`@/${img}`)" alt="" />
-            <p>
-              {{ name }} <span>{{ designation }}</span>
-            </p>
-          </div>
-          <sdButton
-            class="btn-ff"
-            @click="() => dispatch(profileFriendsChangeStatus(key))"
-            :outlined="!status"
-            :type="status ? 'primary' : 'white'"
-          >
-            <span v-if="!status">Follow</span>
+        <template v-if="!isLoading">
+          <li v-for="{ name, key, designation, status, img } in friends" :key="key">
+            <div class="ff-info">
+              <img :src="require(`@/${img}`)" alt="" />
+              <p>
+                {{ name }} <span>{{ designation }}</span>
+              </p>
+            </div>
+            <sdButton
+              :class="status ? 'btn-ff btn-following' : 'btn-ff'"
+              @click="() => dispatch('profileFriendsChangeStatus', key)"
+              :outlined="!status"
+              :type="status ? 'primary' : 'white'"
+            >
+              <template v-if="!status">Follow</template>
 
-            <span v-else>
-              <sdFeatherIcons type="check" />
-              Following
-            </span>
-          </sdButton>
-        </li>
+              <template v-else>
+                <sdFeatherIcons type="check" />
+                Following
+              </template>
+            </sdButton>
+          </li>
+        </template>
+        <p v-else>loading</p>
         <a to="#" class="btn-loadMore">
           Load more friends
         </a>
@@ -55,12 +58,12 @@
       <div class="widget-video-list">
         <a-row :gutter="10">
           <a-col v-for="{ img, id } in gallery" :key="id" :xxl="8" :md="24" :sm="6" :xs="8">
-            <a v-if="id <= 6" @click="() => setOpen(true)" class="video" to="#">
+            <VideoModal src="https://vimeo.com/115041822" v-if="id <= 6" class="video">
               <img style="width: 100%" :src="require(`@/${img}`)" alt="" />
               <span>
                 <sdFeatherIcons type="play" />
               </span>
-            </a>
+            </VideoModal>
           </a-col>
         </a-row>
       </div>
@@ -71,14 +74,16 @@
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import { RightAsideWrapper } from './style';
+import VideoModal from '@/components/utilities/VideoModal.vue';
 
 const RightAside = {
   name: 'RightAside',
-  components: { RightAsideWrapper },
+  components: { RightAsideWrapper, VideoModal },
   setup() {
     const { state, dispatch } = useStore();
     const isOpen = ref(false);
     const friends = computed(() => state.profile.friends);
+    const isLoading = computed(() => state.profile.isLoading);
     const gallery = computed(() => state.gallery.data);
     const setOpen = value => {
       isOpen.value = value;
@@ -114,6 +119,7 @@ const RightAside = {
       setOpen,
       images,
       visible,
+      isLoading,
     };
   },
 };

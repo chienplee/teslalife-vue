@@ -326,6 +326,9 @@ const RightAsideWrapper = Styled.div`
                 }
             }
         }
+        .btn-following {
+            border: 1px solid;
+        }
     }
     .widget-photo-list,
     .widget-video-list{
