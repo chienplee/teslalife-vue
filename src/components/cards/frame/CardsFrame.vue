@@ -14,7 +14,7 @@
     </template>
     <slot name="caption"></slot>
     <template v-slot:extra>
-      <sdDropdown v-if="more" :action="['click']" placement="bottomCenter">
+      <sdDropdown v-if="more" :action="['click']" placement="bottomRight">
         <template v-slot:overlay>
           <slot name="more"></slot>
         </template>
