@@ -22,38 +22,24 @@
       <div class="post-content">
         <div v-if="img.length" class="gallery">
           <div :cols="img.length <= 2 ? img.length : 2" class="my-masonry-grid" columnclass="my-masonry-grid_column">
-            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
-              <img v-if="key <= 1" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
-            </a>
-            <vue-easy-lightbox
-              v-if="img.length <= 2"
-              escDisabled
-              moveDisabled
-              :visible="visible"
-              :imgs="imagePath"
-              :index="index"
-              @hide="handleHide"
-            ></vue-easy-lightbox>
+            <template v-for="(src, key) in img" :key="key + 1">
+              <GlightBox v-if="key <= 1" type="image" :src="require(`@/${src}`)">
+                <img :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+              </GlightBox>
+            </template>
           </div>
+
           <div
             v-if="img.length > 2"
             :cols="img.length <= 2 ? img.length : 3"
             class="my-masonry-grid"
             columnclass="my-masonry-grid_column"
           >
-            <a v-for="(src, key) in img" :key="key + 1" @click="showImage(key)" data-attribute="SRL">
-              <img v-if="key <= 2" :key="key + 1" style="width: 100%" :src="require(`@/${src}`)" alt="" />
-            </a>
-
-            <vue-easy-lightbox
-              v-if="img.length > 2"
-              escDisabled
-              moveDisabled
-              :visible="visible"
-              :imgs="imagePath"
-              :index="index"
-              @hide="handleHide"
-            ></vue-easy-lightbox>
+            <template v-for="(src, key) in img" :key="key + 1">
+              <GlightBox v-if="key <= 2" :key="key + 1" type="image" :src="require(`@/${src}`)">
+                <img v-if="key <= 2" style="width: 100%" :src="require(`@/${src}`)" alt="" />
+              </GlightBox>
+            </template>
           </div>
         </div>
         <div class="post-text">
@@ -152,8 +138,8 @@ import PropTypes from 'vue-types';
 import { AllPosts, BackShadowEmoji, Title } from './style';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
-import VueEasyLightbox from 'vue-easy-lightbox';
 import EmojiPicker from '@/components/utilities/Emoji.vue';
+import GlightBox from '@/components/utilities/GlightBox.vue';
 
 const ExampleComment = {
   name: 'ExampleComment',
@@ -186,7 +172,7 @@ const ExampleComment = {
 
 const Posts = {
   name: 'Posts',
-  components: { AllPosts, BackShadowEmoji, Title, ExampleComment, VueEasyLightbox, EmojiPicker },
+  components: { AllPosts, BackShadowEmoji, Title, ExampleComment, GlightBox, EmojiPicker },
   props: {
     postId: PropTypes.number,
     from: PropTypes.string,
