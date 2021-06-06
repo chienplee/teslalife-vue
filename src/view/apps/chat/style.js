@@ -369,7 +369,7 @@ const Footer = Styled.div`
       transform: translateY(-50%);
       display: flex;
       align-items: center;
-      z-index: 997;
+      z-index: 9999;
       @media only screen and (max-width: 575px){
         top: 26px;
       }
@@ -377,6 +377,14 @@ const Footer = Styled.div`
           position: absolute;
           z-index: 999999999;
           bottom: 0;
+          @media only screen and (max-width: 991px){
+            right: auto;
+            left: 100%;
+          }
+          @media only screen and (max-width: 479px){
+            right: auto;
+            left: -35px;
+          }
           .emoji-search{
             padding: 8px;
             height: auto;

@@ -30,6 +30,7 @@ const KanvanBoardWrap = Styled.div`
       }
       .ps{
         max-height: 400px;
+        height: auto;
       }
       .sDash_kanban-board-item-scrolable{
         border-radius: 5px;

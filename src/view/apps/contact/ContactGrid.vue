@@ -20,7 +20,7 @@
 
   <Main>
     <a-row :gutter="25">
-      <a-col v-for="user in users" :key="user.id" :md="6">
+      <a-col v-for="user in users" :key="user.id" :lg="6" :md="8" :sm="12" :xs="24">
         <sdCards headless>
           <ContactCard :showEditModal="showEditModal" :user="user" />
         </sdCards>
