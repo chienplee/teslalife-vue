@@ -421,11 +421,7 @@
                     Alert
                   </router-link>
                 </li>
-                <li @click="addParentActive">
-                  <router-link :to="`/components/autoComplete`">
-                    AutoComplete
-                  </router-link>
-                </li>
+
                 <li @click="addParentActive">
                   <router-link :to="`/components/avatar`">
                     Avatar

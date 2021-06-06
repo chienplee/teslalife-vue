@@ -29,7 +29,7 @@ const KanvanBoardWrap = Styled.div`
         flex: 0 0 100%;
       }
       .ps{
-        height: 400px;
+        max-height: 400px;
       }
       .sDash_kanban-board-item-scrolable{
         border-radius: 5px;

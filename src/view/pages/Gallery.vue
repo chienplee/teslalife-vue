@@ -68,7 +68,7 @@
           </div>
         </a-col>
         <a-col v-else v-for="(item, index) in gallery" :key="index + 1" :xxl="6" :lg="8" :sm="12" :xs="24">
-          <GalleryCards :item="item" />
+          <GalleryCards :item="item" :index="index" />
         </a-col>
       </a-row>
     </Main>

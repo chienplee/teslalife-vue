@@ -461,11 +461,7 @@
             Alerts
           </router-link>
         </a-menu-item>
-        <a-menu-item @click="toggleCollapsed" key="autoComplete">
-          <router-link to="/components/autoComplete">
-            AutoComplete
-          </router-link>
-        </a-menu-item>
+
         <a-menu-item @click="toggleCollapsed" key="avatar">
           <router-link to="/components/avatar">
             Avatar

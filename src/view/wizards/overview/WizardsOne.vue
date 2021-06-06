@@ -134,7 +134,7 @@
                                     <a-select-option value="">MM</a-select-option>
 
                                     <a-select-option v-for="value in month" :key="value" :value="value">
-                                      {value}
+                                      {{ value }}
                                     </a-select-option>
                                   </a-select>
                                 </a-form-item>
