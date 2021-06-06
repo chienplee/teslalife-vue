@@ -17,10 +17,10 @@
         <a-col :xs="24">
           <TopLandingPages />
         </a-col>
-        <a-col :xs="12">
+        <a-col :sm="12" :xs="24">
           <TopSellingProduct />
         </a-col>
-        <a-col :xs="12">
+        <a-col :sm="12" :xs="24">
           <RevenueGenerated />
         </a-col>
 

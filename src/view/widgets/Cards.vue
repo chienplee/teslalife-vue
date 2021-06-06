@@ -24,8 +24,8 @@
         <a-col v-for="product in products" :key="product.id" :xxl="6" :sm="12" :xs="24">
           <ProductCards v-if="product.id <= 4" :product="product" />
         </a-col>
-        <a-col v-for="item in gallery" :key="item.id" :xxl="6" :md="12" :sm="12" :xs="24">
-          <GalleryCards :item="item" />
+        <a-col v-for="(item, index) in gallery" :key="index + 1" :xxl="6" :md="12" :sm="12" :xs="24">
+          <GalleryCards :item="item" :index="index" />
         </a-col>
         <a-col v-for="user in contactUsers" :key="user.id" :xxl="6" :md="12" :sm="12" :xs="24">
           <sdCards headless v-if="user.id <= 4"> <ContactCard :user="user" /> </sdCards>
