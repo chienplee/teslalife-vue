@@ -79,7 +79,7 @@
         <a-col :xxl="18" :lg="16" :md="14" :sm="13">
           <FaqWrapper>
             <sdCards headless title="Using Applications">
-              <a-collapse :bordered="false" default-active-key="1">
+              <a-collapse v-model:activeKey="activeKey" accordion :bordered="false">
                 <template #expandIcon="props">
                   <sdFeatherIcons type="plus" v-if="!props.isActive" size="14" />
                   <sdFeatherIcons type="minus" v-else size="14" />
@@ -235,6 +235,7 @@
 <script>
 import { Main } from '../styled';
 import { Badge, FaqCategoryBox, FaqSupportBox, FaqWrapper } from './style';
+import { ref } from 'vue';
 
 export default {
   name: 'Faqs',
@@ -244,6 +245,12 @@ export default {
     FaqCategoryBox,
     FaqWrapper,
     FaqSupportBox,
+  },
+  setup() {
+    const activeKey = ref(['1']);
+    return {
+      activeKey,
+    };
   },
   methods: {
     handleChange(e) {
