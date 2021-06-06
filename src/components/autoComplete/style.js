@@ -23,7 +23,7 @@ const AutoCompleteStyled = Styled(AutoComplete, props)`
                 svg,
                 i{
                     position: relative;
-                    top: 1.5px;
+                    /* top: 1.5px; */
                     color: ${({ theme }) => theme['extra-light-color']};
                 }
             }

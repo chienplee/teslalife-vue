@@ -134,7 +134,7 @@ const CartTable = {
                   </sdButton>
                 </div>
               ),
-              total: <span class="cart-single-t-price">${quantity * price}</span>,
+              total: <span class="cart-single-t-price">${(quantity * price).toFixed(2)}</span>,
               action: (
                 <div class="table-action">
                   <sdButton

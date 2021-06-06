@@ -129,7 +129,6 @@ const ProjectSorting = Styled.div`
             align-items: center;
             justify-content: space-between;
             li{
-                ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 12px;
                 ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 11px;
                 ${({ theme }) => (theme.rtl ? 'border-left' : 'border-right')}: 1px solid ${({ theme }) =>
   theme['border-color-light']};
@@ -141,10 +140,16 @@ const ProjectSorting = Styled.div`
                 a{
                     color: ${({ theme }) => theme['gray-solid']};
                     font-weight: 400;
+                    ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 11px;
                 }
                 &.active{
                     a{
                         color: ${({ theme }) => theme['primary-color']};
+                    }
+                }
+                &:last-child{
+                    a{
+                        ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 0;
                     }
                 }
             }

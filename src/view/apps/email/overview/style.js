@@ -77,6 +77,9 @@ const Style = Styled(Table)`
                     color: ${({ theme }) => theme['gray-solid']};
                   }
                 }
+                i svg{
+                  top: -2px;
+                }
               }
             }
           }

@@ -369,7 +369,7 @@ const Footer = Styled.div`
       transform: translateY(-50%);
       display: flex;
       align-items: center;
-      z-index: 99999999;
+      z-index: 997;
       @media only screen and (max-width: 575px){
         top: 26px;
       }

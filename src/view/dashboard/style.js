@@ -441,6 +441,9 @@ const CardGroup = Styled.div`
                 ${({ theme }) => (theme.rtl ? 'padding-left' : 'padding-right')}: 0 none !important;
                 padding: ${({ theme }) => (theme.rtl ? '0 10px 0 0' : '0 0 0 10px')};
             }
+            @media only screen and (max-width: 575px){
+                padding-right: 0 none;
+            }
             .ant-col-md-12{
                 &:first-child{
                     padding: 0 16px 0 24px;

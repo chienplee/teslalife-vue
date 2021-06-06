@@ -145,9 +145,9 @@
                 </a-col>
                 <a-col :md="12" :xs="24">
                   <div class="admin-footer__links">
-                    <a to="#">About</a>
-                    <a to="#">Team</a>
-                    <a to="#">Contact</a>
+                    <router-link to="/app/social/profile/overview">Profile</router-link>
+                    <router-link to="/app/users/team">Team</router-link>
+                    <router-link to="/app/contact/contact-grid">Contacts</router-link>
                   </div>
                 </a-col>
               </a-row>
@@ -224,7 +224,7 @@ export default {
 
     const toggleCollapsedMobile = () => {
       if (innerWidth <= 990) {
-        collapsed.value = false;
+        collapsed.value = !collapsed.value;
       }
     };
 
