@@ -123,6 +123,9 @@ const UserTableStyleWrapper = Styled.div`
 `;
 
 const AddUser = Styled.div`
+  .ant-card-head-title{
+    padding: 0 !important;
+  }
   .form-title{
     font-size: 18px;
     font-weight: 500;
@@ -166,12 +169,12 @@ const AddUser = Styled.div`
   .card-nav{
     ul{
       flex-wrap: wrap;
-      margin-bottom: -4px -10px;
+      margin-bottom: -4px -12px;
       @media only screen and (max-width: 575px){
         justify-content: center;
       }
       li{
-        margin: 4px 10px !important;
+        margin: 4px 12px !important;
         &:not(:last-child){
           ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 26px;
           @media only screen and (max-width: 575px){
@@ -183,6 +186,8 @@ const AddUser = Styled.div`
           padding: 22px 0;
           font-size: 14px;
           font-weight: 500;
+          display: inline-flex;
+          align-items: center;
           color: ${({ theme }) => theme['gray-color']};
           @media only screen and (max-width: 575px){
             padding: 0;
@@ -221,6 +226,9 @@ const AddUser = Styled.div`
           span{
             color: ${({ theme }) => theme['light-color']};
             ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 10px;
+          }
+          i svg{
+            margin-right: 0;
           }
         }
       }
