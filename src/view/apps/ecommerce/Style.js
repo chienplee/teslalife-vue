@@ -629,11 +629,15 @@ const ProductDetailsWrapper = Styled.div`
     .pdbl__image{
         width: 80px;
         height: 80px;
-        // ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 6px;
         figure{
             height: 100%;
+            a{
+                display: block;
+                height: 100%;
+            }
         }
         img{
+            object-fit: cover;
             border-radius: 10px;
             width: 100%;
             height: 100%;

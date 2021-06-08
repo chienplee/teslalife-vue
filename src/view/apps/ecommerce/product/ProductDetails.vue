@@ -14,13 +14,17 @@
   </sdPageHeader>
   <Main>
     <sdCards headless>
-      <ProductDetailsWrapper>
+      <ProductDetailsWrapper v-if="product[0]">
         <div class="product-details-box">
           <a-row :gutter="30">
             <a-col :xs="24" :lg="10">
               <div class="product-details-box__left pdbl">
                 <figure>
-                  <img :style="{ width: '100%' }" :src="product && require(`../../../../${product[0].img}`)" alt="" />
+                  <img
+                    :style="{ width: '100%' }"
+                    :src="product[0] && require(`../../../../${product[0].img}`)"
+                    alt=""
+                  />
                 </figure>
                 <div class="pdbl__slider pdbs">
                   <a-row v-if="filterData.length" :gutter="5">
@@ -43,6 +47,9 @@
           </a-row>
         </div>
       </ProductDetailsWrapper>
+      <div v-else class="spin">
+        <a-spin />
+      </div>
     </sdCards>
   </Main>
 </template>
@@ -60,6 +67,7 @@ const ProductDetails = {
   setup() {
     const { state, dispatch } = useStore();
     const product = computed(() => state.ecommerce.product);
+    const isProductLoading = computed(() => state.ecommerce.isProductLoading);
     const products = computed(() => product.value && state.ecommerce.products);
     const filterData = computed(() =>
       products.value.filter(value => {
@@ -78,6 +86,7 @@ const ProductDetails = {
       product,
       path,
       filterData,
+      isProductLoading,
     };
   },
 };
