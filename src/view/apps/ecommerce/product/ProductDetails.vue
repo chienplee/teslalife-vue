@@ -47,6 +47,9 @@
           </a-row>
         </div>
       </ProductDetailsWrapper>
+      <div v-else class="spin">
+        <a-spin />
+      </div>
     </sdCards>
   </Main>
 </template>
