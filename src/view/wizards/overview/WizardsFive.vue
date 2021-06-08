@@ -290,7 +290,7 @@
                     <sdCards headless>
                       <div class="submission-successModal">
                         <span class="icon-success">
-                          <sdFeatherIcons type="check" size="14" />
+                          <sdFeatherIcons type="check" size="30" />
                         </span>
                         <p>All is good! Please confirm the form submission.</p>
                         <div class="submission-action">
