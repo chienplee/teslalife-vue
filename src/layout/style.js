@@ -1,5 +1,5 @@
 import Styled from 'vue3-styled-components';
-const props = ['hide', 'searchHide', 'darkMode', 'topMenu', 'theme'];
+const props = ['hide', 'searchHide', 'darkMode', 'topMenu'];
 const Div = Styled('div', props)`
     position: relative;
     header{

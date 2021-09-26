@@ -52,7 +52,7 @@
     "vue3-googl-chart": "^0.0.1",
     "vue3-google-map": "^0.6.0",
     "vue3-perfect-scrollbar": "^1.5.5",
-    "vue3-styled-components": "^1.2.0",
+    "vue3-styled-components": "^1.2.1",
     "vuedraggable": "^4.0.1",
     "vuex": "^4.0.0",
     "xlsx": "^0.16.9"
