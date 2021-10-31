@@ -5,21 +5,21 @@
       <a-form @finish="handleSubmit" :model="formState" layout="vertical">
         <sdHeading as="h3"> Sign in to <span class="color-secondary">Admin</span> </sdHeading>
         <a-form-item name="username" label="Username or Email Address">
-          <a-input type="email" v-model:value="formState.email" />
+          <a-input required type="email" v-model:value="formState.email" />
         </a-form-item>
         <a-form-item name="password" initialValue="123456" label="Password">
-          <a-input type="password" v-model:value="formState.password" placeholder="Password" />
+          <a-input required type="password" v-model:value="formState.password" placeholder="Password" />
         </a-form-item>
         <div class="auth-form-action">
           <a-checkbox @change="onChange">Keep me logged in</a-checkbox>
-          <router-link class="forgot-pass-link" to="/auth/forgotPassword">
-            Forgot password?
-          </router-link>
+          <router-link class="forgot-pass-link" to="/auth/forgotPassword"> Forgot password? </router-link>
         </div>
         <a-form-item>
-          <sdButton class="btn-signin" htmlType="submit" type="primary" size="large">
-            {{ isLoading ? 'Loading...' : 'Sign In' }}
+          <sdButton v-if="!loadingIconVisible" class="btn-signin" htmlType="submit" type="primary" size="large">
+            <!-- {{ isLoading ? 'Loading...' : 'Sign In' }} -->
+            Sign in
           </sdButton>
+          <Spinner v-else />
         </a-form-item>
         <p class="form-divider">
           <span>Or</span>
@@ -42,72 +42,94 @@
             </a>
           </li>
         </ul>
-        <div class="auth0-login">
-          <a href="#" @click="() => lock.show()">
-            Sign In with Auth0
-          </a>
-        </div>
+        <!--  <div class="auth0-login">
+          <a href="#" @click="() => lock.show()"> Sign In with Auth0 </a>
+        </div> -->
       </a-form>
     </div>
   </AuthWrapper>
 </template>
 <script>
-import { FacebookOutlined, TwitterOutlined } from '@ant-design/icons-vue';
-import { computed, reactive, ref } from 'vue';
-import { useStore } from 'vuex';
-import { AuthWrapper } from './style';
-import { useRouter } from 'vue-router';
-import { Auth0Lock } from 'auth0-lock';
-import { auth0options } from '@/config/auth0';
+import { FacebookOutlined, TwitterOutlined } from '@ant-design/icons-vue'
+import { reactive, ref } from 'vue'
+import { useStore } from 'vuex'
+import { AuthWrapper } from './style'
+import { useRouter } from 'vue-router'
+import Spinner from '@/components/spinner/Spinner.vue'
+import axios from 'axios'
+import { message } from 'ant-design-vue'
+/* import { Auth0Lock } from 'auth0-lock'
+import { auth0options } from '@/config/auth0' */
 
-const domain = process.env.VUE_APP_AUTH0_DOMAIN;
-const clientId = process.env.VUE_APP_AUTH0_CLIENT_ID;
+/* const domain = process.env.VUE_APP_AUTH0_DOMAIN;
+const clientId = process.env.VUE_APP_AUTH0_CLIENT_ID; */
 
 const SignIn = {
   name: 'SignIn',
-  components: { FacebookOutlined, TwitterOutlined, AuthWrapper },
+  components: { FacebookOutlined, TwitterOutlined, AuthWrapper, Spinner },
   setup() {
-    const { state, dispatch } = useStore();
-    const isLoading = computed(() => state.auth.loading);
-    const checked = ref(null);
-    const router = useRouter();
+    const { state, dispatch } = useStore()
+    /* const isLoading = computed(() => state.auth.loading); */
+    const loadingIconVisible = ref(false)
+    const checked = ref(null)
+    const router = useRouter()
+
+    /*  const handleSubmit = () => {
+      
+    } */
+    /* const onChange = (checked) => {
+      checked.value = checked
+    } */
+
+    console.log(state, dispatch, router)
+    const formState = reactive({
+      email: '',
+      password: '',
+    })
 
     const handleSubmit = () => {
-      router.push('/');
-      dispatch('login');
-    };
-    const onChange = checked => {
-      checked.value = checked;
-    };
+      loadingIconVisible.value = true
+      //post request to login
+      axios
+        .post('https://teslalife.tw/wp-json/jwt-auth/v1/token', {
+          username: formState.email,
+          password: formState.password,
+        })
+        .then((res) => {
+          console.log(res.data.token)
+          dispatch('login', res.data)
+          message.success({ content: `  Successfully Logged In As ${res.data.user_display_name}`, duration: 1.8 })
+          router.push('/')
+        })
+        .catch((err) => {
+          message.error({ content: err.response.data.code, duration: 1.5 })
+          loadingIconVisible.value = false
+        })
+    }
 
-    const formState = reactive({
-      email: 'example@email.com',
-      password: '1234565',
-    });
+    //const lock = new Auth0Lock(clientId, domain, auth0options)
 
-    const lock = new Auth0Lock(clientId, domain, auth0options);
-
-    lock.on('authenticated', authResult => {
-      lock.getUserInfo(authResult.accessToken, error => {
+    /*  lock.on('authenticated', (authResult) => {
+      lock.getUserInfo(authResult.accessToken, (error) => {
         if (error) {
-          return;
+          return
         }
 
-        handleSubmit();
-        lock.hide();
-      });
-    });
+        handleSubmit()
+        lock.hide()
+      })
+    }) */
 
     return {
-      isLoading,
+      loadingIconVisible,
       checked,
       handleSubmit,
-      onChange,
+      //onChange,
       formState,
-      lock,
-    };
+      //lock,
+    }
   },
-};
+}
 
-export default SignIn;
+export default SignIn
 </script>

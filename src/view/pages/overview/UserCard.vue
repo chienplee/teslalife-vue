@@ -27,25 +27,19 @@
             <a-row :gutter="15">
               <a-col :xs="8">
                 <div class="info-single">
-                  <sdHeading class="info-single__title" as="h2">
-                    $72,572
-                  </sdHeading>
+                  <sdHeading class="info-single__title" as="h2"> $72,572 </sdHeading>
                   <p>Total Revenue</p>
                 </div>
               </a-col>
               <a-col :xs="8">
                 <div class="info-single">
-                  <sdHeading class="info-single__title" as="h2">
-                    3,257
-                  </sdHeading>
+                  <sdHeading class="info-single__title" as="h2"> 3,257 </sdHeading>
                   <p>Orders</p>
                 </div>
               </a-col>
               <a-col :xs="8">
                 <div class="info-single">
-                  <sdHeading class="info-single__title" as="h2">
-                    74
-                  </sdHeading>
+                  <sdHeading class="info-single__title" as="h2"> 74 </sdHeading>
                   <p>Products</p>
                 </div>
               </a-col>
@@ -57,7 +51,7 @@
   </sdUserCard>
 </template>
 <script>
-import PropTypes from 'vue-types';
+import PropTypes from 'vue-types'
 
 const UserCards = {
   name: 'UserCards',
@@ -67,7 +61,7 @@ const UserCards = {
   setup() {
     // return { UserCard };
   },
-};
+}
 
-export default UserCards;
+export default UserCards
 </script>

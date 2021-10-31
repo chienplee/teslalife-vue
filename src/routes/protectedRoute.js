@@ -3,6 +3,8 @@ import adminRoutes from './AdminRoutes';
 import authRoutes from './authRoutes';
 import store from '@/vuex/store';
 
+
+
 const routes = [
   {
     name: 'Admin',
@@ -33,10 +35,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  //console.log(store.state.auth.isLoggedIn)
   // console.log(to, store);
-  if (to.meta.auth && store.state.auth.login) {
+  if (to.meta.auth && store.state.auth.isLoggedIn) {
     next({ to: '/' });
-  } else if (!to.meta.auth && !store.state.auth.login) {
+  } else if (!to.meta.auth && !store.state.auth.isLoggedIn) {
     next({ name: 'login' });
   } else {
     next();

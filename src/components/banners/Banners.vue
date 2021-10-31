@@ -10,8 +10,8 @@ import {
   BannerLongWrap,
   BannerCardWrap,
   BannerCtaWrap,
-} from './Style';
-import { defineComponent } from 'vue';
+} from './Style'
+import { defineComponent } from 'vue'
 
 export const Banner1 = {
   name: 'Banner1',
@@ -26,9 +26,9 @@ export const Banner1 = {
           </sdButton>
         </sdCards>
       </BannerNormal>
-    );
+    )
   },
-};
+}
 
 export const Banner2 = () => {
   return (
@@ -54,8 +54,8 @@ export const Banner2 = () => {
         </Figure2>
       </sdCards>
     </BannerWrapper>
-  );
-};
+  )
+}
 
 export const Banner3 = () => {
   return (
@@ -79,8 +79,8 @@ export const Banner3 = () => {
         </Figure3>
       </sdCards>
     </BannerWrapper>
-  );
-};
+  )
+}
 
 export const Banner4 = () => {
   return (
@@ -105,8 +105,8 @@ export const Banner4 = () => {
         </Figure3>
       </sdCards>
     </BannerWrapper>
-  );
-};
+  )
+}
 
 export const Banner5 = () => {
   return (
@@ -133,8 +133,8 @@ export const Banner5 = () => {
         </Figure3>
       </sdCards>
     </BannerWrapper>
-  );
-};
+  )
+}
 
 export const Banner6 = () => {
   return (
@@ -162,8 +162,8 @@ export const Banner6 = () => {
         </Figure6>
       </sdCards>
     </BannerWrapper>
-  );
-};
+  )
+}
 
 export const Banner7 = () => {
   return (
@@ -181,8 +181,8 @@ export const Banner7 = () => {
         </Figure7>
       </sdCards>
     </BannerNormal>
-  );
-};
+  )
+}
 
 export const BannerCarousel = defineComponent({
   name: 'BannerCarousel',
@@ -222,9 +222,9 @@ export const BannerCarousel = defineComponent({
           {/* End of /.banner-signle */}
         </a-carousel>
       </BannerCarouselWrap>
-    );
+    )
   },
-});
+})
 
 export const BannerLong = () => {
   return (
@@ -234,8 +234,8 @@ export const BannerLong = () => {
         <img src={require('../../static/img/banner/9.png')} alt="" />
       </div>
     </BannerLongWrap>
-  );
-};
+  )
+}
 
 export const BannerCard = () => {
   return (
@@ -252,8 +252,8 @@ export const BannerCard = () => {
         </sdButton>
       </div>
     </BannerCardWrap>
-  );
-};
+  )
+}
 
 export const BannerCard2 = () => {
   return (
@@ -271,8 +271,8 @@ export const BannerCard2 = () => {
         </sdButton>
       </div>
     </BannerCardWrap>
-  );
-};
+  )
+}
 
 export const BannerCta = () => {
   return (
@@ -291,8 +291,8 @@ export const BannerCta = () => {
         </div>
       </div>
     </BannerCtaWrap>
-  );
-};
+  )
+}
 
 export const BannerCta2 = () => {
   return (
@@ -312,8 +312,8 @@ export const BannerCta2 = () => {
         </div>
       </div>
     </BannerCtaWrap>
-  );
-};
+  )
+}
 
-export default Banner1;
+export default Banner1
 </script>

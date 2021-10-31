@@ -40,7 +40,7 @@
               <figure class="user-dropdwon__info">
                 <img :src="require('../../../static/img/avatar/chat-auth.png')" alt="" />
                 <figcaption>
-                  <sdHeading as="h5">Abdullah Bin Talha</sdHeading>
+                  <sdHeading as="h5">{{ userName }}</sdHeading>
                   <p>UI Expert</p>
                 </figcaption>
               </figure>
@@ -74,14 +74,15 @@
 </template>
 
 <script>
-import { InfoWraper, NavAuth, UserDropDwon } from './auth-info-style';
-import Support from './Support';
-import Settings from './Settings';
-import Notification from './Notification';
-import Message from './Message';
-import { useStore } from 'vuex';
-import { useRouter } from 'vue-router';
-import { LogoutOutlined } from '@ant-design/icons-vue';
+import { InfoWraper, NavAuth, UserDropDwon } from './auth-info-style'
+import Support from './Support'
+import Settings from './Settings'
+import Notification from './Notification'
+import Message from './Message'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { LogoutOutlined } from '@ant-design/icons-vue'
 
 export default {
   name: 'AuthInfo',
@@ -98,25 +99,26 @@ export default {
   data() {
     return {
       flag: 'english',
-    };
+    }
   },
   setup() {
-    const { dispatch } = useStore();
-    const { push } = useRouter();
-    const SignOut = e => {
-      e.preventDefault();
-      push('/auth/login');
-      dispatch('logOut');
-    };
-
+    const { dispatch, state } = useStore()
+    const { push } = useRouter()
+    const SignOut = (e) => {
+      e.preventDefault()
+      push('/auth/login')
+      dispatch('logOut')
+    }
+    const userName = computed(() => state.auth.username)
     return {
       SignOut,
-    };
+      userName,
+    }
   },
   methods: {
-    onFlagChangeHandle: function(value) {
-      this.flag = value;
+    onFlagChangeHandle: function (value) {
+      this.flag = value
     },
   },
-};
+}
 </script>

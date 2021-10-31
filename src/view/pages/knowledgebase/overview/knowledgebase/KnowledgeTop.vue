@@ -17,9 +17,7 @@
                 <a-input v-model:value="formState.search" placeholder="Search anything" />
               </a-form-item>
               <a-form-item>
-                <sdButton class="btn-search" html-type="submit" type="primary" size="large">
-                  Search
-                </sdButton>
+                <sdButton class="btn-search" html-type="submit" type="primary" size="large"> Search </sdButton>
               </a-form-item>
             </div>
           </a-form>
@@ -46,8 +44,8 @@
 </template>
 
 <script>
-import { reactive } from 'vue';
-import { KnowledgebaseTopWrap } from '../../style';
+import { reactive } from 'vue'
+import { KnowledgebaseTopWrap } from '../../style'
 export default {
   name: 'KnowledgeTop',
   components: {
@@ -57,10 +55,10 @@ export default {
     const formState = reactive({
       search: '',
       type: undefined,
-    });
+    })
     return {
       formState,
-    };
+    }
   },
-};
+}
 </script>

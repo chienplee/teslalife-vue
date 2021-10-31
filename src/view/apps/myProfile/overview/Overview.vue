@@ -181,13 +181,13 @@
   </a-row>
 </template>
 <script>
-import { ProductOverviewTable } from './style';
-import { CardBarChart2, EChartCard, PerformanceChartWrapper } from '../../../dashboard/style';
-import { chartLinearGradient, customTooltips } from '@/components/utilities/utilities';
+import { ProductOverviewTable } from './style'
+import { CardBarChart2, EChartCard, PerformanceChartWrapper } from '../../../dashboard/style'
+import { chartLinearGradient, customTooltips } from '@/components/utilities/utilities'
 
-import { computed, onMounted } from 'vue';
-import Chart from '@/components/utilities/chartjs';
-import { useStore } from 'vuex';
+import { computed, onMounted } from 'vue'
+import Chart from '@/components/utilities/chartjs'
+import { useStore } from 'vuex'
 
 const chartOptions = {
   legend: {
@@ -220,7 +220,7 @@ const chartOptions = {
       },
     ],
   },
-};
+}
 
 const dataSource = [
   {
@@ -258,7 +258,7 @@ const dataSource = [
     sold: 24,
     revenue: '$38,536',
   },
-];
+]
 
 const columns = [
   {
@@ -283,16 +283,16 @@ const columns = [
     dataIndex: 'revenue',
     key: 'revenue',
   },
-];
+]
 
 const Overview = {
   name: 'Overview',
   components: { CardBarChart2, EChartCard, PerformanceChartWrapper, ProductOverviewTable, Chart },
   setup() {
-    const { state, dispatch } = useStore();
+    const { state, dispatch } = useStore()
 
-    const performanceState = computed(() => state.chartContent.performanceData);
-    onMounted(() => dispatch('performanceGetData'));
+    const performanceState = computed(() => state.chartContent.performanceData)
+    onMounted(() => dispatch('performanceGetData'))
 
     const performanceDatasets = computed(
       () =>
@@ -316,7 +316,7 @@ const Overview = {
             hoverBorderWidth: 5,
           },
         ],
-    );
+    )
     const performanceOption = {
       maintainAspectRatio: true,
       elements: {
@@ -338,11 +338,11 @@ const Overview = {
         custom: customTooltips,
         callbacks: {
           title() {
-            return 'General Statistics';
+            return 'General Statistics'
           },
           label(t, d) {
-            const { yLabel, datasetIndex } = t;
-            return `<span class="chart-data">${yLabel}k</span> <span class="data-label">${d.datasets[datasetIndex].label}</span>`;
+            const { yLabel, datasetIndex } = t
+            return `<span class="chart-data">${yLabel}k</span> <span class="data-label">${d.datasets[datasetIndex].label}</span>`
           },
         },
       },
@@ -363,7 +363,7 @@ const Overview = {
               max: 80,
               stepSize: 20,
               callback(label) {
-                return `${label}k`;
+                return `${label}k`
               },
             },
           },
@@ -384,7 +384,7 @@ const Overview = {
           },
         ],
       },
-    };
+    }
     return {
       performanceState,
       chartOptions,
@@ -394,9 +394,9 @@ const Overview = {
       customTooltips,
       height: window.innerWidth <= 575 ? 200 : 86,
       performanceOption,
-    };
+    }
   },
-};
+}
 
-export default Overview;
+export default Overview
 </script>
