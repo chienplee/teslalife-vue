@@ -111,9 +111,7 @@
               </li>
             </ul>
           </perfect-scrollbar>
-          <router-link class="btn-seeAll" to="#">
-            See all incoming activity
-          </router-link>
+          <router-link class="btn-seeAll" to="#"> See all incoming activity </router-link>
         </AtbdTopDropdwon>
       </template>
       <a-badge dot :offset="[-8, -5]">
@@ -125,9 +123,9 @@
   </div>
 </template>
 <script>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
-import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
-import { AtbdTopDropdwon } from './auth-info-style';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
+import { AtbdTopDropdwon } from './auth-info-style'
 
 export default {
   name: 'Notification',
@@ -135,7 +133,7 @@ export default {
     AtbdTopDropdwon,
     PerfectScrollbar,
   },
-};
+}
 </script>
 <style scoped>
 .ps {

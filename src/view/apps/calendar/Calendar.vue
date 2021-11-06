@@ -49,32 +49,32 @@
   </Main>
 </template>
 <script>
-import { Aside, CalendarWrapper } from './Style';
-import { Main } from '../../styled';
-import { useStore } from 'vuex';
-import { computed, reactive, ref } from 'vue';
-import './overview/style.css';
+import { Aside, CalendarWrapper } from './Style'
+import { Main } from '../../styled'
+import { useStore } from 'vuex'
+import { computed, reactive, ref } from 'vue'
+import './overview/style.css'
 
 const Calendars = {
   name: 'Calendars',
   components: { Aside, CalendarWrapper, Main },
   setup() {
-    const { state, dispatch } = useStore();
-    const isVisible = computed(() => state.calendar.eventVisible);
-    const events = computed(() => state.calendar.events);
-    const date = ref(new Date());
-    const visible = ref(false);
-    const onChange = dt => (date.value = dt);
+    const { state, dispatch } = useStore()
+    const isVisible = computed(() => state.calendar.eventVisible)
+    const events = computed(() => state.calendar.events)
+    const date = ref(new Date())
+    const visible = ref(false)
+    const onChange = (dt) => (date.value = dt)
     const onHandleVisible = () => {
-      dispatch('eventVisible', !isVisible.value);
-    };
-    const calendarData = reactive({});
+      dispatch('eventVisible', !isVisible.value)
+    }
+    const calendarData = reactive({})
     const calendarConfigs = reactive({
       sundayStart: false,
       dateFormat: 'dd/mm/yyyy',
       isDatePicker: false,
       isDateRange: false,
-    });
+    })
     return {
       onHandleVisible,
       onChange,
@@ -84,9 +84,9 @@ const Calendars = {
       visible,
       calendarData,
       calendarConfigs,
-    };
+    }
   },
-};
+}
 
-export default Calendars;
+export default Calendars
 </script>

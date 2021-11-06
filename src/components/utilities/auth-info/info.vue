@@ -1,8 +1,8 @@
 <template>
   <InfoWraper>
-    <Message />
+    <!--  <Message /> -->
     <Notification />
-    <Settings />
+    <!--  <Settings /> -->
     <Support />
     <div class="nav-author">
       <sdDropdown placement="bottomRight" :action="['click']">
@@ -12,7 +12,7 @@
               <img :src="require('../../../static/img/flag/english.png')" alt="" />
               <span>English</span>
             </router-link>
-            <router-link @click="() => onFlagChangeHandle('germany')" to="#">
+            <!-- <router-link @click="() => onFlagChangeHandle('germany')" to="#">
               <img :src="require('../../../static/img/flag/germany.png')" alt="" />
               <span>Germany</span>
             </router-link>
@@ -23,7 +23,7 @@
             <router-link @click="() => onFlagChangeHandle('turky')" to="#">
               <img :src="require('../../../static/img/flag/turky.png')" alt="" />
               <span>Turky</span>
-            </router-link>
+            </router-link> -->
           </NavAuth>
         </template>
         <a to="#" class="head-example">
@@ -57,11 +57,11 @@
                 <li>
                   <a to="#"> <sdFeatherIcons type="users" /> Activity </a>
                 </li>
-                <li>
+                <!-- <li>
                   <a to="#"> <sdFeatherIcons type="bell" /> Help </a>
-                </li>
+                </li> -->
               </ul>
-              <a @click="SignOut" class="user-dropdwon__bottomAction" href="#"> <LogoutOutlined /> Sign Out </a>
+              <a @click="LogOut" class="user-dropdwon__bottomAction" href="#"> <LogoutOutlined /> Log Out </a>
             </div>
           </UserDropDwon>
         </template>
@@ -76,9 +76,9 @@
 <script>
 import { InfoWraper, NavAuth, UserDropDwon } from './auth-info-style'
 import Support from './Support'
-import Settings from './Settings'
+//import Settings from './Settings'
 import Notification from './Notification'
-import Message from './Message'
+/* import Message from './Message' */
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
@@ -91,9 +91,9 @@ export default {
     NavAuth,
     UserDropDwon,
     Support,
-    Settings,
+    //Settings,
     Notification,
-    Message,
+    //Message,
     LogoutOutlined,
   },
   data() {
@@ -104,14 +104,14 @@ export default {
   setup() {
     const { dispatch, state } = useStore()
     const { push } = useRouter()
-    const SignOut = (e) => {
+    const LogOut = (e) => {
       e.preventDefault()
       push('/auth/login')
       dispatch('logOut')
     }
     const userName = computed(() => state.auth.username)
     return {
-      SignOut,
+      LogOut,
       userName,
     }
   },

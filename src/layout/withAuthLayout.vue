@@ -10,7 +10,7 @@
             <br />
             <br />
             <sdHeading as="h1">
-              StrikingDash Vue <br />
+              Tesla life <br />
               Web Application
             </sdHeading>
             <img class="auth-content-figure" :src="require('@/static/img/auth/Illustration.png')" alt="" />
@@ -25,12 +25,12 @@
   </a-row>
 </template>
 <script>
-import { Aside, Content } from './style';
+import { Aside, Content } from './style'
 
 const AuthLayout = {
   name: 'AuthLayout',
   components: { Aside, Content },
-};
+}
 
-export default AuthLayout;
+export default AuthLayout
 </script>

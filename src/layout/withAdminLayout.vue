@@ -33,7 +33,7 @@
                   :class="`${activeSearch ? 'search-toggle active' : 'search-toggle'}`"
                   @click="
                     () => {
-                      toggleSearch();
+                      toggleSearch()
                     }
                   "
                   href="#"
@@ -159,18 +159,18 @@
   </Div>
 </template>
 <script>
-import { Layout } from 'ant-design-vue';
-import { Div, SmallScreenSearch, SmallScreenAuthInfo, TopMenuSearch } from './style';
-import HeaderSearch from '../components/header-search/HeaderSearch';
+import { Layout } from 'ant-design-vue'
+import { Div, SmallScreenSearch, SmallScreenAuthInfo, TopMenuSearch } from './style'
+import HeaderSearch from '../components/header-search/HeaderSearch'
 
-import AuthInfo from '../components/utilities/auth-info/info';
-import AsideItems from './Aside';
-import TopMenu from './TopMenuItems';
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
-import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css';
-import { computed, ref } from 'vue';
-import { useStore } from 'vuex';
-const { Header, Footer, Sider, Content } = Layout;
+import AuthInfo from '../components/utilities/auth-info/info'
+import AsideItems from './Aside'
+import TopMenu from './TopMenuItems'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
+import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
+const { Header, Footer, Sider, Content } = Layout
 
 export default {
   name: 'WithAdminLayout',
@@ -191,70 +191,70 @@ export default {
     PerfectScrollbar,
   },
   setup() {
-    const collapsed = ref(false);
-    const hide = ref(true);
-    const searchHide = ref(true);
-    const customizerAction = ref(false);
-    const activeSearch = ref(false);
+    const collapsed = ref(false)
+    const hide = ref(true)
+    const searchHide = ref(true)
+    const customizerAction = ref(false)
+    const activeSearch = ref(false)
 
     // const store = useStore();
-    const { dispatch, state } = useStore();
+    const { dispatch, state } = useStore()
 
-    const rtl = computed(() => state.themeLayout.rtlData);
-    const darkMode = computed(() => state.themeLayout.data);
-    const topMenu = computed(() => state.themeLayout.topMenu);
+    const rtl = computed(() => state.themeLayout.rtlData)
+    const darkMode = computed(() => state.themeLayout.data)
+    const topMenu = computed(() => state.themeLayout.topMenu)
 
-    collapsed.value = window.innerWidth <= 1200 && true;
+    collapsed.value = window.innerWidth <= 1200 && true
 
-    const toggleCollapsed = e => {
-      e.preventDefault();
-      collapsed.value = !collapsed.value;
-    };
-    const handleSearchHide = search => {
-      searchHide.value = !search;
-      hide.value = true;
-    };
-    const onShowHide = h => {
-      hide.value = !h;
-      searchHide.value = true;
-    };
+    const toggleCollapsed = (e) => {
+      e.preventDefault()
+      collapsed.value = !collapsed.value
+    }
+    const handleSearchHide = (search) => {
+      searchHide.value = !search
+      hide.value = true
+    }
+    const onShowHide = (h) => {
+      hide.value = !h
+      searchHide.value = true
+    }
     const toggleSearch = () => {
-      activeSearch.value = !activeSearch.value;
-    };
+      activeSearch.value = !activeSearch.value
+    }
 
     const toggleCollapsedMobile = () => {
       if (innerWidth <= 990) {
-        collapsed.value = !collapsed.value;
+        collapsed.value = !collapsed.value
       }
-    };
+    }
 
     const onRtlChange = () => {
-      const html = document.querySelector('html');
-      html.setAttribute('dir', 'rtl');
-      dispatch('changeRtlMode', true);
-    };
+      const html = document.querySelector('html')
+      html.setAttribute('dir', 'rtl')
+      dispatch('changeRtlMode', true)
+    }
 
     const onLtrChange = () => {
-      const html = document.querySelector('html');
-      html.setAttribute('dir', 'ltr');
-      dispatch('changeRtlMode', false);
-    };
+      const html = document.querySelector('html')
+      html.setAttribute('dir', 'ltr')
+      dispatch('changeRtlMode', false)
+    }
 
     const modeChangeDark = () => {
-      dispatch('changeLayoutMode', true);
-    };
+      dispatch('changeLayoutMode', true)
+    }
 
     const modeChangeLight = () => {
-      dispatch('changeLayoutMode', false);
-    };
+      dispatch('changeLayoutMode', false)
+    }
 
     const modeChangeTopNav = () => {
-      dispatch('changeMenuMode', true);
-    };
+      dispatch('changeMenuMode', true)
+    }
 
     const modeChangeSideNav = () => {
-      dispatch('changeMenuMode', false);
-    };
+      dispatch('changeMenuMode', false)
+    }
 
     const onEventChange = {
       onRtlChange,
@@ -263,7 +263,7 @@ export default {
       modeChangeLight,
       modeChangeTopNav,
       modeChangeSideNav,
-    };
+    }
     //console.log(topMenu.value);
     return {
       toggleCollapsed,
@@ -281,9 +281,9 @@ export default {
       darkMode,
       topMenu,
       onEventChange,
-    };
+    }
   },
-};
+}
 </script>
 <style>
 .ps {

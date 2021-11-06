@@ -6,9 +6,7 @@
   <AllPosts v-else>
     <sdCards more>
       <template #more>
-        <a @click="() => onPostDelete(postId)" to="#">
-          Delete
-        </a>
+        <a @click="() => onPostDelete(postId)" to="#"> Delete </a>
       </template>
       <template #title>
         <Title>
@@ -133,13 +131,13 @@
   </AllPosts>
 </template>
 <script>
-import moment from 'moment';
-import PropTypes from 'vue-types';
-import { AllPosts, BackShadowEmoji, Title } from './style';
-import { computed, ref } from 'vue';
-import { useStore } from 'vuex';
-import EmojiPicker from '@/components/utilities/Emoji.vue';
-import GlightBox from '@/components/utilities/GlightBox.vue';
+import moment from 'moment'
+import PropTypes from 'vue-types'
+import { AllPosts, BackShadowEmoji, Title } from './style'
+import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
+import EmojiPicker from '@/components/utilities/Emoji.vue'
+import GlightBox from '@/components/utilities/GlightBox.vue'
 
 const ExampleComment = {
   name: 'ExampleComment',
@@ -166,9 +164,9 @@ const ExampleComment = {
       >
         {this.$slots.default()}
       </a-comment>
-    );
+    )
   },
-};
+}
 
 const Posts = {
   name: 'Posts',
@@ -185,45 +183,45 @@ const Posts = {
   },
 
   setup(prop) {
-    const { state, dispatch } = useStore();
-    const posts = computed(() => state.profile.posts);
-    const isLoading = computed(() => state.profile.loading);
-    const isPostLoading = computed(() => state.profile.postLoading);
-    const imagePath = ref([]);
-    const inputValue = ref('');
-    const visible = ref(false);
-    const index = ref(0);
-    const fileList = ref([]);
-    const fileList2 = ref([]);
+    const { state, dispatch } = useStore()
+    const posts = computed(() => state.profile.posts)
+    const isLoading = computed(() => state.profile.loading)
+    const isPostLoading = computed(() => state.profile.postLoading)
+    const imagePath = ref([])
+    const inputValue = ref('')
+    const visible = ref(false)
+    const index = ref(0)
+    const fileList = ref([])
+    const fileList2 = ref([])
 
-    const pickerShow = ref(false);
-    const textValue = ref('');
+    const pickerShow = ref(false)
+    const textValue = ref('')
 
-    const showImage = imgIndex => {
-      prop.img.map(data => {
-        imagePath.value.push(window.location.origin + require(`@/${data}`));
+    const showImage = (imgIndex) => {
+      prop.img.map((data) => {
+        imagePath.value.push(window.location.origin + require(`@/${data}`))
       }),
-        (index.value = imgIndex); // index of imgList
-      show();
-    };
+        (index.value = imgIndex) // index of imgList
+      show()
+    }
     const show = () => {
-      visible.value = true;
-    };
+      visible.value = true
+    }
     const handleHide = () => {
-      visible.value = false;
-    };
-    const onEmojiClick = emojiObject => {
-      console.log(emojiObject);
-      textValue.value = textValue.value + emojiObject;
-    };
+      visible.value = false
+    }
+    const onEmojiClick = (emojiObject) => {
+      console.log(emojiObject)
+      textValue.value = textValue.value + emojiObject
+    }
 
     const onPickerShow = () => {
-      pickerShow.value = !pickerShow.value;
-    };
+      pickerShow.value = !pickerShow.value
+    }
 
-    const onTextChange = e => {
-      textValue.value = e.target.value;
-    };
+    const onTextChange = (e) => {
+      textValue.value = e.target.value
+    }
     const props = {
       name: 'file',
       action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -234,7 +232,7 @@ const Posts = {
       onChange(info) {
         if (info.file.status !== 'uploading') {
           // console.log(info.file, info.fileList);
-          fileList.value = info.fileList;
+          fileList.value = info.fileList
         }
         if (info.file.status === 'done') {
           // message.success(`${info.file.name} file uploaded successfully`);
@@ -242,7 +240,7 @@ const Posts = {
           // message.error(`${info.file.name} file upload failed.`);
         }
       },
-    };
+    }
 
     const attachment = {
       name: 'file',
@@ -253,7 +251,7 @@ const Posts = {
       onChange(info) {
         if (info.file.status !== 'uploading') {
           // console.log(info.file, info.fileList);
-          fileList2.value = info.fileList;
+          fileList2.value = info.fileList
         }
         if (info.file.status === 'done') {
           // message.success(`${info.file.name} file uploaded successfully`);
@@ -261,19 +259,19 @@ const Posts = {
           // message.error(`${info.file.name} file upload failed.`);
         }
       },
-    };
-    const onLikeUpdate = id => {
-      return dispatch('likeUpdate', { posts, id });
-    };
+    }
+    const onLikeUpdate = (id) => {
+      return dispatch('likeUpdate', { posts, id })
+    }
 
-    const onCommentUpdate = id => {
-      dispatch('commentUpdate', { posts, id, textValue });
-      textValue.value = '';
-    };
+    const onCommentUpdate = (id) => {
+      dispatch('commentUpdate', { posts, id, textValue })
+      textValue.value = ''
+    }
 
-    const onPostDelete = id => {
-      dispatch('postDelete', { posts, id });
-    };
+    const onPostDelete = (id) => {
+      dispatch('postDelete', { posts, id })
+    }
     return {
       onPostDelete,
       onEmojiClick,
@@ -298,9 +296,9 @@ const Posts = {
       show,
       handleHide,
       imagePath,
-    };
+    }
   },
-};
+}
 
-export default Posts;
+export default Posts
 </script>

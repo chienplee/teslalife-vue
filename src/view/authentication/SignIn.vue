@@ -1,6 +1,5 @@
 <template>
-  <AuthWrapper
-    ><button>hello</button>
+  <AuthWrapper>
     <p class="auth-notice">Don&rsquo;t have an account? <router-link to="/auth/register">Sign up now</router-link></p>
     <div class="auth-contents">
       <a-form @finish="handleSubmit" :model="formState" layout="vertical">

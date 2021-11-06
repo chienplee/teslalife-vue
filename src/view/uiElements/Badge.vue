@@ -148,15 +148,15 @@
 </template>
 
 <script>
-import { Main } from '../styled';
+import { Main } from '../styled'
 import {
   BadgeWraperStyle,
   BadgeStandAloneStyle,
   BadgeOverflowStyle,
   BadgeRedStyle,
   BadgeDynamicStyle,
-} from './ui-elements-styled';
-import { mapState } from 'vuex';
+} from './ui-elements-styled'
+import { mapState } from 'vuex'
 export default {
   name: 'Badge',
   components: {
@@ -186,26 +186,26 @@ export default {
       ],
       count: 5,
       show: true,
-    };
+    }
   },
 
   methods: {
     increase() {
-      this.count = this.count + 1;
+      this.count = this.count + 1
     },
     decline() {
-      let count = this.count - 1;
+      let count = this.count - 1
       if (count < 0) {
-        count = 0;
+        count = 0
       }
-      this.count = count;
+      this.count = count
     },
     onChange(show) {
-      this.show = show;
+      this.show = show
     },
   },
   computed: {
     ...mapState(['rtl']),
   },
-};
+}
 </script>

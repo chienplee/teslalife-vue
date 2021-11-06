@@ -3,9 +3,9 @@
     <sdPageHeader title="Social Media Dashboard">
       <template v-slot:buttons>
         <div class="page-header-actions">
-          <sdCalendarButton />
+          <!--  <sdCalendarButton />
           <sdExportButton />
-          <sdShareButton />
+          <sdShareButton /> -->
           <sdButton size="small" type="primary">
             <sdFeatherIcons type="plus" size="14" />
             Add New
@@ -105,16 +105,16 @@
 </template>
 
 <script>
-import { Main } from '../styled';
-import { defineAsyncComponent } from 'vue';
+import { Main } from '../styled'
+import { defineAsyncComponent } from 'vue'
 
-const SocialMediaOverview = defineAsyncComponent(() => import('./overview/index/SocialMediaOverview'));
-const FacebookOverview = defineAsyncComponent(() => import('./overview/index/FacebookOverview'));
-const YoutubeSubscribers = defineAsyncComponent(() => import('./overview/index/YoutubeSubscribers'));
-const TwitterOverview = defineAsyncComponent(() => import('./overview/index/TwitterOverview'));
-const InstagramOverview = defineAsyncComponent(() => import('./overview/index/InstagramOverview'));
-const LinkedinKeyMetrics = defineAsyncComponent(() => import('./overview/index/LinkedinKeyMetrics'));
-const SocialTrafficMetrics = defineAsyncComponent(() => import('./overview/index/SocialTrafficMetrics'));
+const SocialMediaOverview = defineAsyncComponent(() => import('./overview/index/SocialMediaOverview'))
+const FacebookOverview = defineAsyncComponent(() => import('./overview/index/FacebookOverview'))
+const YoutubeSubscribers = defineAsyncComponent(() => import('./overview/index/YoutubeSubscribers'))
+const TwitterOverview = defineAsyncComponent(() => import('./overview/index/TwitterOverview'))
+const InstagramOverview = defineAsyncComponent(() => import('./overview/index/InstagramOverview'))
+const LinkedinKeyMetrics = defineAsyncComponent(() => import('./overview/index/LinkedinKeyMetrics'))
+const SocialTrafficMetrics = defineAsyncComponent(() => import('./overview/index/SocialTrafficMetrics'))
 
 export default {
   name: 'SocialMedia',
@@ -129,5 +129,5 @@ export default {
     SocialTrafficMetrics,
   },
   async setup() {},
-};
+}
 </script>
