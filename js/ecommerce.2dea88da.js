@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["ecommerce"],{"0a47":function(e,c,n){"use strict";n.r(c);var o=n("7a23");function r(e,c,n,r,t,a){var p=Object(o["resolveComponent"])("router-view");return Object(o["openBlock"])(),Object(o["createBlock"])(p)}var t={name:"Ecommerce"},a=n("d959"),p=n.n(a);const s=p()(t,[["render",r]]);c["default"]=s}}]);
+//# sourceMappingURL=ecommerce.2dea88da.js.map

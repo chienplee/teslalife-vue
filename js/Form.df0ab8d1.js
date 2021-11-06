@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Form"],{"76de":function(e,n,o){"use strict";o.r(n);var r=o("7a23");function t(e,n,o,t,c,a){var s=Object(r["resolveComponent"])("router-view");return Object(r["openBlock"])(),Object(r["createBlock"])(s)}var c={name:"Forms"},a=o("d959"),s=o.n(a);const p=s()(c,[["render",t]]);n["default"]=p}}]);
+//# sourceMappingURL=Form.df0ab8d1.js.map

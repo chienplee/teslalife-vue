@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Dashboard"],{"6a14":function(e,n,o){"use strict";o.r(n);var r=o("7a23");function a(e,n,o,a,t,c){var s=Object(r["resolveComponent"])("router-view");return Object(r["openBlock"])(),Object(r["createBlock"])(s)}var t={name:"Dashboard"},c=o("d959"),s=o.n(c);const b=s()(t,[["render",a]]);n["default"]=b}}]);
+//# sourceMappingURL=Dashboard.4c3ac1d1.js.map

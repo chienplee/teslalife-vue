@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["widgets"],{b435:function(e,n,t){"use strict";t.r(n);var o=t("7a23");function r(e,n,t,r,c,a){var s=Object(o["resolveComponent"])("router-view");return Object(o["openBlock"])(),Object(o["createBlock"])(s)}var c={name:"Widgets"},a=t("d959"),s=t.n(a);const i=s()(c,[["render",r]]);n["default"]=i}}]);
+//# sourceMappingURL=widgets.6b21d293.js.map
