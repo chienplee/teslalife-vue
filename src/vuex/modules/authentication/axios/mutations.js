@@ -18,9 +18,9 @@ export default {
     state.error = err;
   },
 
-  logoutBegin(state) {
+ /*  logoutBegin(state) {
     state.loading = true;
-  },
+  }, */
 
   logoutSuccess(state) {
     state.username = null;

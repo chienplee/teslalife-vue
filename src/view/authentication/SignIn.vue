@@ -1,5 +1,6 @@
 <template>
-  <AuthWrapper>
+  <AuthWrapper
+    ><button>hello</button>
     <p class="auth-notice">Don&rsquo;t have an account? <router-link to="/auth/register">Sign up now</router-link></p>
     <div class="auth-contents">
       <a-form @finish="handleSubmit" :model="formState" layout="vertical">
@@ -45,6 +46,7 @@
         <!--  <div class="auth0-login">
           <a href="#" @click="() => lock.show()"> Sign In with Auth0 </a>
         </div> -->
+        <button>hello</button>
       </a-form>
     </div>
   </AuthWrapper>
